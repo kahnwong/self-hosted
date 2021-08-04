@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+  todotxt-to-calendar:
+    container_name: todotxt-to-calendar
+    build: ./todotxt-to-calendar
+    environment:
+      todo_path: ${todo_path}
+      todo_url: ${todo_url}
+      webdav_username: ${webdav_username}
+      webdav_password: ${webdav_password}
+      caldav_url: ${caldav_url}
+      caldav_username: ${caldav_username}
+      caldav_password: ${caldav_password}
+      calendar_name: ${calendar_name}
+      update_interval: 300 # 5 minutes
+      TZ: Asia/Bangkok
+    restart: unless-stopped

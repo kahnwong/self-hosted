@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  dashboard:
+    image: b4bz/homer:latest
+    container_name: homer
+    restart: unless-stopped
+    volumes:
+      - ./homer/assets:/www/assets
+    ports:
+      - 9533:8080
+    networks:
+      - homer
+
+networks:
+  homer:
+    driver: bridge

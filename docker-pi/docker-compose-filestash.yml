@@ -1,0 +1,11 @@
+version: '3.3'
+
+services:
+  filestash:
+    container_name: filestash
+    image: ugeek/filestash:arm
+    restart: always
+    # environment:
+    # - APPLICATION_URL=filestash.karnwong.me
+    ports:
+    - "8334:8334"

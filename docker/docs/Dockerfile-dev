@@ -1,0 +1,11 @@
+FROM node:15.14-alpine3.10
+
+WORKDIR /opt/docs
+COPY package.json .
+COPY package-lock.json .
+
+RUN npm install
+COPY ./ ./
+RUN yarn run build
+
+ENTRYPOINT yarn start --port 5333 --host 0.0.0.0

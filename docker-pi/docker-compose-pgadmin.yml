@@ -1,0 +1,9 @@
+version: '3.3'
+
+services:
+  pgadmin4:
+    ports:
+      - '5050:5050'
+    image: biarms/pgadmin4:latest
+    container_name: pgadmin4
+    restart: always

@@ -1,0 +1,38 @@
+version: '3.3'
+
+services:
+  ghost:
+    image: ghost:4.9.1-alpine
+    container_name: ghost
+    restart: always
+    volumes: 
+      - /opt/ghost/content:/var/lib/ghost/content
+    ports:
+      - 8080:2368
+    environment:
+      # see https://docs.ghost.org/docs/config#section-running-ghost-with-config-env-variables
+      database__client: mysql
+      database__connection__host: ghost_db
+      database__connection__user: root
+      database__connection__password: hellofriend
+      database__connection__database: ghost
+      url: https://blog.karnwong.me/
+    depends_on:
+      - ghost_db
+    networks:
+      - ghost
+
+  ghost_db:
+    image: mariadb:10.5.8
+    container_name: ghost_db
+    restart: always
+    volumes: 
+      - /opt/ghost/data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: hellofriend
+    networks:
+      - ghost
+
+networks:
+  ghost:
+    driver: bridge

@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+  jdownloader:
+    image: jlesage/jdownloader-2
+    container_name: jdownloader
+    # build: .
+    ports:
+      - "5800:5800"
+    volumes:
+      - /opt/jdownloader/config:/config
+      - /opt/jdownloader/downloads:/output
+    networks:
+      - jdownloader
+
+networks:
+  jdownloader:
+    driver: bridge

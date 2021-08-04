@@ -1,0 +1,19 @@
+version: '3.3'
+
+services:
+  komga:
+    image: gotson/komga:latest
+    container_name: komga
+    volumes:
+      - /opt/komga/config:/config
+      - /opt/syncthing/Magazines:/books/Magazines
+      - /opt/syncthing/Comics:/books/Comics
+    ports:
+      - 4946:8080
+    restart: always
+    networks:
+      - komga
+
+networks:
+  komga:
+    driver: bridge
