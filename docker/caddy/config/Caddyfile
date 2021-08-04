@@ -67,3 +67,6 @@ docs.karnwong.me {
     }
     reverse_proxy 127.0.0.1:5333
 }
+slackbot.karnwong.me {
+    reverse_proxy 127.0.0.1:8000
+}
