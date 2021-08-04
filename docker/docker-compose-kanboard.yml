@@ -1,0 +1,20 @@
+version: '3.3'
+
+services:
+  kanboard:
+    image: kanboard/kanboard:v1.2.19
+    container_name: kanboard
+    ports:
+      - "9822:80"
+    environment:
+      PLUGIN_INSTALLER: "true"
+    volumes:
+      - /opt/kanboard/data:/var/www/app/data
+      - /opt/kanboard/plugins:/var/www/app/plugins
+    restart: always
+    networks:
+      - kanboard
+
+networks:
+  kanboard:
+    driver: bridge

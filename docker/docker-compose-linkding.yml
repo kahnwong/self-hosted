@@ -1,0 +1,19 @@
+version: '3.3'
+
+services:
+  linkding:
+    # # admin user setup
+    # docker exec -it linkding python manage.py createsuperuser --username=joe --email=joe@example.com
+    image: sissbruecker/linkding:latest
+    container_name: linkding
+    ports:
+      - 9090:9090
+    volumes:
+      - /opt/linkding/data:/etc/linkding/data
+    restart: always
+    networks:
+      - linkding
+
+networks:
+  linkding:
+    driver: bridge

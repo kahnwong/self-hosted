@@ -1,0 +1,25 @@
+version: '3.3'
+
+services:
+  booksonic:
+    image: linuxserver/booksonic-air
+    container_name: booksonic-air
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Bangkok
+      #- CONTEXT_PATH=/
+    volumes:
+      - /opt/booksonic/config:/config
+      - /opt/booksonic/audiobooks:/audiobooks
+      - /opt/booksonic/podcasts:/podcasts
+      - /opt/booksonic/others:/others
+    ports:
+      - 4040:4040
+    restart: always
+    networks:
+      - booksonic
+
+networks:
+  booksonic:
+    driver: bridge

@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: PyRSS2Gen
+Version: 1.1
+Summary: Generate RSS2 using a Python data structure
+Home-page: http://dalkescientific.com/Python/PyRSS2Gen.html
+Author: Andrew Dalke
+Author-email: dalke@dalkescientific.com
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN

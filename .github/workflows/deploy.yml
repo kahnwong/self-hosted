@@ -1,0 +1,60 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 'Checkout Repository'
+      uses: actions/checkout@v2
+
+    - name: Install SSH key
+      uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{ secrets.DEPLOY_KEY }}
+        known_hosts: unnecessary
+
+    - name: Setup node
+      uses: actions/setup-node@v2
+      with:
+        node-version: 15
+
+    - name: Setup git
+      run: |
+        git config --global user.name "gh actions"
+        git config --global user.email "$gh-actions@users.noreply.github.com"
+    - name: Deploy
+      run: |
+        cd docker/docs
+        npm install
+        npm run build
+        cd build
+        git init
+        git remote add origin git@github.com:kahnwong/docs.karnwong.me.git
+        git add -A
+        git checkout -b master
+        git commit -m "Automated deployment @ $(date '+%Y-%m-%d %H:%M:%S') ${TZ}"
+        git push -f origin master
+
+    - name: Sleep for 70 seconds
+      uses: jakejarvis/wait-action@master
+      with:
+        time: '70s'
+
+    - name: Index docusaurus
+      run: |
+        cd docker/docs
+        docker run \
+          -e APPLICATION_ID=${{ secrets.APPLICATION_ID }} \
+          -e API_KEY=${{ secrets.API_KEY }} \
+          -e DOCSEARCH_BASICAUTH_USERNAME=${{ secrets.DOCSEARCH_BASICAUTH_USERNAME }} \
+          -e DOCSEARCH_BASICAUTH_PASSWORD=${{ secrets.DOCSEARCH_BASICAUTH_PASSWORD }} \
+          -e "CONFIG=$(cat algolia-config.json | jq -r tostring)" \
+          algolia/docsearch-scraper

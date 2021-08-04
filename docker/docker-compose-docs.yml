@@ -1,0 +1,36 @@
+version: '3.3'
+services:
+  docs_gitsync:
+    build:
+      context: ./docs/gitsync
+    container_name: docs_gitsync
+    environment: 
+      - REPO=${GIT_REMOTE}
+      - REF=master
+      - DIR=/opt/gitsync
+      - REPO_HOST=github.com
+      - REPO_PORT=22
+      - SYNC_TIME=60
+      - PRIVATE_KEY=docs
+      - PRIVATE_KEY_CONTENT=${PRIVATE_KEY}
+    volumes:
+      - ./docs/build:/opt/gitsync
+    networks:
+      - docusaurus
+  docs:
+    build:
+      context: ./docs
+    container_name: docs
+    ports:
+      - "5333:80"
+    volumes:
+      - ./docs/build:/opt/docs
+    restart: always
+    networks:
+      - docusaurus
+    depends_on:
+      - docs_gitsync
+
+networks:
+  docusaurus:
+    driver: bridge
