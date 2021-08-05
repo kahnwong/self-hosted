@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   ghost:
-    image: ghost:4.9.1-alpine
+    image: ghost:4.11.0-alpine
     container_name: ghost
     restart: always
     volumes: 
