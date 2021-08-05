@@ -140,6 +140,9 @@ title: Data Science
 
 ## Misc
 - [Awkward Array](https://awkward-array.org/what-is-awkward.html) - Awkward Array is a library for nested, variable-sized data, including arbitrary-length lists, records, mixed types, and missing data, using NumPy-like idioms.
-- [dovpanda](https://github.com/dovpanda-dev/dovpanda) - Directions overlay for working with pandas in an analysis environment.
 - [Math Inspector](https://mathinspector.com) - A Visual Programming Environment for Scientific Computing.
+
+### Pandas
+- [dovpanda](https://github.com/dovpanda-dev/dovpanda) - Directions overlay for working with pandas in an analysis environment.
+- [Modin](https://github.com/modin-project/modin) - Modin: Speed up your Pandas workflows by changing a single line of code.
 - [swifter](https://github.com/jmcarpenter2/swifter) - A package which efficiently applies any function to a pandas dataframe or series in the fastest available manner.

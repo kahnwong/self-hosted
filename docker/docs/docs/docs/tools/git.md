@@ -2,6 +2,7 @@
 title: Git
 ---
 
+## Usage
 ```bash
 # set a commit as HEAD
 git reset --hard <commit_id>
@@ -20,7 +21,7 @@ git checkout -b test <name of remote>/test
 git push origin <your_branch_name> --force
 
 # visualize lineage
-git log --graph --oneline
+git log --graph --oneline --all
 
 # compare tips of different branches
 git diff branch1..branch2
@@ -46,4 +47,11 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+```
+
+## Visualize
+### gitinspector
+```
+$ npm i -g gitinspector
+$ gitinspector -T  -F html > stats.html
 ```

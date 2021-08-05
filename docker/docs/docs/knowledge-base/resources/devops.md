@@ -37,6 +37,12 @@ title: DevOps
 ## Kubernetes
 - [Lens](https://k8slens.dev) - the kubernetes ide for debugging.
 
+## Monitoring
+- [Uptime Kuma](https://github.com/louislam/uptime-kuma) - A fancy self-hosted monitoring tool.
+
+## Networking
+- [tailscale](https://tailscale.com) - A secure network that just works.
+
 ## Security
 - [Vault](https://www.vaultproject.io) - Secure, store and tightly control access to tokens, passwords, certificates, encryption keys for protecting secrets and other sensitive data using a UI, CLI, or HTTP API.
 
@@ -51,4 +57,5 @@ title: DevOps
 - [Stack on a budget](https://github.com/255kb/stack-on-a-budget) - A collection of services with great free tiers for developers on a budget.
 
 ## Resources
+- [DevOps Bookmarks](https://www.devopsbookmarks.org)
 - [DevOps Roadmap](https://roadmap.sh/devops)

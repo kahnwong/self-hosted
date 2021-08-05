@@ -17,6 +17,7 @@ module.exports = {
                     items: [
                         'docs/tools/android',
                         'docs/tools/apache2',
+                        'docs/tools/caddy',
                         'docs/tools/ffmpeg',
                         'docs/tools/fish',
                         'docs/tools/osx',

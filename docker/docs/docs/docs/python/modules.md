@@ -15,10 +15,10 @@ RUN apt-get install libssl-dev python3-dev gcc libc-dev libxml2-dev libxslt1-dev
 
 ## Modules List
 ### CLI
-`pip3 install topydo topydo[columns] youtube-dlc fava visidata pipenv --user`
+`pip3 install topydo topydo[columns] youtube-dlc fava visidata pipenv`
 
 ### Data science
-`pip3 install --only-binary pyspark==2.4.6 mlflow hyperopt numpy pandas sklearn jupyterlab seaborn matplotlib pytz flatten_json`
+`pip3 install --only-binary pyspark==3.1.2 mlflow hyperopt numpy pandas sklearn jupyterlab seaborn matplotlib pytz`
 
 ### Databases
 ```
@@ -72,6 +72,7 @@ boto3
 python-dotenv
 tqdm
 termcolor
+flatten_json
 ```
 
 ### Visualizations

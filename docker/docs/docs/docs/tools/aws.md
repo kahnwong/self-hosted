@@ -119,3 +119,12 @@ client.put_object(  Bucket=BUCKET_NAME,
                 Body=compressed_value,
                     Key='a/b.csv.gz'.format(proptype))
 ```
+
+## AWS EMR
+```bash
+# also change checkpoint dir to "mnt/checkpoint"
+spark-submit --py-files dist-matrix-module.zip  property_distance_matrix.py
+
+# alternative
+spark-submit --deploy-mode cluster s3://<PATH TO FILE>/sparky.py
+```
