@@ -4,6 +4,7 @@ services:
     build:
       context: ./docs/gitsync
     container_name: docs_gitsync
+    restart: always
     environment: 
       - REPO=${GIT_REMOTE}
       - REF=master
