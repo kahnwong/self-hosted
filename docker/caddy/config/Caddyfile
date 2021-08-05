@@ -70,3 +70,6 @@ docs.karnwong.me {
 slackbot.karnwong.me {
     reverse_proxy 127.0.0.1:8000
 }
+uptime.karnwong.me {
+    reverse_proxy 127.0.0.1:3002
+}

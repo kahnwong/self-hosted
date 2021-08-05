@@ -17,6 +17,7 @@ wallabag_backup_filename="wallabag-content-"$current_date".tar.gz"
 wallabag_sqldump_filename="wallabag-sqldump-"$current_date".psql"
 ttrss_backup_filename=$(ls -1 /var/lib/docker/volumes/ttrss-docker-compose_backups/_data/*.tar.gz | tail -1)
 ttrss_sqldump_filename=$(ls -1 /var/lib/docker/volumes/ttrss-docker-compose_backups/_data/*.sql.gz | tail -1)
+uptime_kuma_backup_filename="uptime-kuma-"$current_date".tar.gz"
 
 home_dir="/root"
 cd $home_dir
@@ -63,6 +64,9 @@ tar -czf $ghost_backup_filename /opt/ghost/content
 echo "syncthing..."
 tar -czf $syncthing_backup_filename /opt/syncthing/config
 
+echo "uptime kuma..."
+tar -czf $uptime_kuma_backup_filename /opt/uptime-kuma
+
 ### ftp transferr
 ftp -n $FTP_HOST <<END_SCRIPT
 quote USER $FTP_USER
@@ -82,6 +86,7 @@ put $navidrome_backup_filename
 put $syncthing_backup_filename
 put $ttrss_backup_filename
 put $ttrss_sqldump_filename
+put $uptime_kuma_backup_filename
 put $wallabag_backup_filename
 put $wallabag_sqldump_filename
 END_SCRIPT
@@ -98,5 +103,6 @@ rm $home_dir"/"$linkding_backup_filename
 rm $home_dir"/"$miniflux_sqldump_filename
 rm $home_dir"/"$navidrome_backup_filename
 rm $home_dir"/"$syncthing_backup_filename
+rm $home_dir"/"$uptime_kuma_backup_filename
 rm $home_dir"/"$wallabag_backup_filename
 rm $home_dir"/"$wallabag_sqldump_filename
