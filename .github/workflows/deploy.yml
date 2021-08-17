@@ -37,7 +37,7 @@ jobs:
         npm run build
         cd build
         git init
-        git remote add origin git@github.com:kahnwong/docs.karnwong.me.git
+        git remote add origin git@github.com:kahnwong/docs.git
         git add -A
         git checkout -b master
         git commit -m "Automated deployment @ $(date '+%Y-%m-%d %H:%M:%S') ${TZ}"

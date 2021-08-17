@@ -2,7 +2,7 @@
 module.exports = {
   title: 'Fringe Division',
   // tagline: 'The tagline of my site',
-  url: 'https://docs.karnwong.me',
+  url: 'https://www.karnwong.me/docs',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
