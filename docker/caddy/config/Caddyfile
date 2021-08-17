@@ -61,12 +61,12 @@ wallabag.karnwong.me {
 skriegersrss.duckdns.org {
     reverse_proxy 127.0.0.1:81
 }
-docs.karnwong.me {
-    basicauth * {
-        kahnwong JDJhJDE0JHhGTDd1RXV4bGE0aHJMMEFyZlRGdnVnL2JGL3FKMEF5MWpqQ2JBWDU4OXd2azcxSy9ucUFl
-    }
-    reverse_proxy 127.0.0.1:5333
-}
+# docs.karnwong.me {
+#     basicauth * {
+#         kahnwong JDJhJDE0JHhGTDd1RXV4bGE0aHJMMEFyZlRGdnVnL2JGL3FKMEF5MWpqQ2JBWDU4OXd2azcxSy9ucUFl
+#     }
+#     reverse_proxy 127.0.0.1:5333
+# }
 slackbot.karnwong.me {
     reverse_proxy 127.0.0.1:8000
 }

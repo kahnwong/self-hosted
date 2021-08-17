@@ -72,7 +72,7 @@ services:
         url: "https://calendar.google.com/"
         logo: "assets/tools/calendar.png"
       - name: "Docs"
-        url: "https://docs.karnwong.me/"
+        url: "https://www.karnwong.me/docs/"
         logo: "assets/tools/docusaurus.png"
       - name: "Confluence"
         url: "https://baania-dev.atlassian.net/wiki/spaces/DS/overview"
