@@ -1,11 +1,11 @@
 {
   "index_name": "docusaurus-2",
   "start_urls": [
-    "https://www.karnwong.me/docs/"
+    "https://docs.karnwong.me"
   ],
   "allowed_domains": ["docs.karnwong.me"],
   "sitemap_urls": [
-    "https://www.karnwong.me/docs/sitemap.xml"
+    "https://docs.karnwong.me/sitemap.xml"
   ],
   "sitemap_alternate_links": true,
   "stop_urls": [],
