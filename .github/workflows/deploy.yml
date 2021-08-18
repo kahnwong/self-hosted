@@ -36,6 +36,7 @@ jobs:
         npm install
         npm run build
         cd build
+        echo "docs.karnwonng.me" > CNAME
         git init
         git remote add origin git@github.com:kahnwong/docs.git
         git add -A
