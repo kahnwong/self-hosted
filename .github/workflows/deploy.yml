@@ -55,7 +55,5 @@ jobs:
         docker run \
           -e APPLICATION_ID=${{ secrets.APPLICATION_ID }} \
           -e API_KEY=${{ secrets.API_KEY }} \
-          -e DOCSEARCH_BASICAUTH_USERNAME=${{ secrets.DOCSEARCH_BASICAUTH_USERNAME }} \
-          -e DOCSEARCH_BASICAUTH_PASSWORD=${{ secrets.DOCSEARCH_BASICAUTH_PASSWORD }} \
           -e "CONFIG=$(cat algolia-config.json | jq -r tostring)" \
           algolia/docsearch-scraper
