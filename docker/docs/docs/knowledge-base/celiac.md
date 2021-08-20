@@ -48,7 +48,6 @@ Notes:
 
 ## Vendors
 - [iHerb](https://th.iherb.com/)
-- [Organic Pavillion](https://shopee.co.th/organicpavilion)
 - [Villa Market](https://shoponline.villamarket.com/home)
 
 ## Cosmetics

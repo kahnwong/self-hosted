@@ -21,6 +21,7 @@ title: Shopping
 - [Earthborn](https://shopee.co.th/shop/5244692/search?originalCategoryId=102003&page=0)
 - [Irin](http://irin.co.th/Product)
 - [Moisture You](https://www.facebook.com/Moistureyouhome/)
+- [Olivos](https://shopee.co.th/gennotech)
 - [Organics Buddy](https://organicsbuddy.com/official-store?productType=official-store-personal-care)
 - [Petitscents](https://www.petitscents.com/products)
 - [Soap for Soul](https://shopee.co.th/shop/27256077/search)
@@ -60,7 +61,10 @@ title: Shopping
 - [KEMISTRY](https://kemistry.in.th/index.php)
 
 ## Grocery
+- [Capital Organic](https://www.capital-organic.com/catalog.aspx) - Noodles
 - [HATCH](https://www.facebook.com/hatchgoodies) - Rice
+- [KC Maharaja](https://shopee.co.th/shop/7163184) - Spices
+- [Organic Pavillion](https://shopee.co.th/organicpavilion)
 
 ## Stationery
 - [Baronfig](https://www.baronfig.com/accessories/vanguard-softcover-notebook)

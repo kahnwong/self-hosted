@@ -34,6 +34,7 @@ title: Misc
 
 ## Git
 - [Git Explorer](https://gitexplorer.com)
+- [Oh Shit, Git!?!](https://ohshitgit.com)
 
 ## Hosts File
 - [The Big Blocklist Collection](https://firebog.net)
