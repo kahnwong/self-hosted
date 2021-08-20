@@ -33,10 +33,11 @@ jobs:
     - name: Deploy
       run: |
         cd docker/docs
-        git clone git@github.com:kahnwong/docs.git build
+        git clone git@github.com:kahnwong/docs.git build_git
         npm install
         npm run build
-        cd build
+        mv -v build/* build_git/
+        cd build_git
         echo "docs.karnwong.me" > CNAME
         git add -A
         git commit -m "Automated deployment @ $(date '+%Y-%m-%d %H:%M:%S') ${TZ}"
