@@ -33,21 +33,19 @@ jobs:
     - name: Deploy
       run: |
         cd docker/docs
+        git clone git@github.com:kahnwong/docs.git build
         npm install
         npm run build
         cd build
         echo "docs.karnwong.me" > CNAME
-        git init
-        git remote add origin git@github.com:kahnwong/docs.git
         git add -A
-        git checkout -b master
         git commit -m "Automated deployment @ $(date '+%Y-%m-%d %H:%M:%S') ${TZ}"
-        git push -f origin master
+        git push
 
-    - name: Sleep for 70 seconds
+    - name: Sleep for 30 seconds
       uses: jakejarvis/wait-action@master
       with:
-        time: '70s'
+        time: '30s'
 
     - name: Index docusaurus
       run: |
