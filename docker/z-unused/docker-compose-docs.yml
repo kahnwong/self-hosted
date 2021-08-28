@@ -5,7 +5,7 @@ services:
       context: ./docs/gitsync
     container_name: docs_gitsync
     restart: always
-    environment: 
+    environment:
       - REPO=${GIT_REMOTE}
       - REF=master
       - DIR=/opt/gitsync

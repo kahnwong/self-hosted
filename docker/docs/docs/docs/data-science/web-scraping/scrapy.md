@@ -61,9 +61,9 @@ yield scrapy.Request(url=start_url,
 
 ```python title="formdata"
 yield scrapy.FormRequest(
-    'api.example.com', 
+    'api.example.com',
     callback=self.parse,
-    method='POST', 
+    method='POST',
     formdata=params
 )
 ```

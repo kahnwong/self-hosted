@@ -95,7 +95,7 @@ fig = plt.figure(figsize=(20,20))
 
 for line in range(0,df.shape[0]):
      ax.text(df.sale_hat_y[line], df.yield_11m_y[line], df.district[line], horizontalalignment='center', size='medium', color='black', weight='semibold')
-        
+
 fig.savefig('scatter.png')
 ```
 
@@ -105,7 +105,7 @@ fig = plt.figure(figsize=(20,10))
 for index, d in df.iterrows():
     plt.arrow(d['sale_hat_x'], d['yield_11m_x'], d['sale_hat_y']-d['sale_hat_x'], d['yield_11m_y']-d['yield_11m_x'], head_width=0.004, head_length=60000, color='r', linewidth=0.03) # , , length_includes_head=True
     plt.annotate(s=d['district'], xy=(d['sale_hat_y'], d['yield_11m_y']-0.003), color='g')
-    
+
 plt.scatter(df.sale_hat_x, df.yield_11m_x, color='green')
 plt.scatter(df.sale_hat_y-60000, df.yield_11m_y, color='black')
 
@@ -135,10 +135,10 @@ c = 0
 for i in tt:
     c+=i
     left.append(c)
-    
+
 
 fig = plt.figure(figsize=(30,10))
-plt.bar(left, data, width , 
+plt.bar(left, data, width ,
         alpha = 0.6, align='edge', edgecolor = 'k', linewidth = 2, color=[(random(), random(), random()) for i in range(len(df))])
 
 
@@ -146,7 +146,7 @@ plt.bar(left, data, width ,
 for i, j, k in zip(left, data, df['district'].tolist()):
     y = j if j>0 else 0
     plt.annotate(s=k, xy=(i, y+0.0005), color='black', rotation=45)
-    
+
 plt.ylim(-0.007, 0.0075)
 plt.xlim(0,300)
 # plt.xlabel('listing_count')

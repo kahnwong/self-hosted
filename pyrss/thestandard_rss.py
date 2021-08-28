@@ -1,27 +1,21 @@
 # install module from http://www.dalkescientific.com/Python/PyRSS2Gen.html
-
 import datetime
+
 import PyRSS2Gen
-from bs4 import BeautifulSoup
 import requests
-import pytz
-from dateutil.parser import parse
+from bs4 import BeautifulSoup
 
 
 def generate_entries(url, name):
 
     r = requests.get(url)
-    soup = BeautifulSoup(r.content, 'html.parser')
+    soup = BeautifulSoup(r.content, "html.parser")
 
     titles = [
-        i.get_text().strip() for i in
-        soup.select('div.news-item h2.news-title a')
+        i.get_text().strip() for i in soup.select("div.news-item h2.news-title a")
     ]
 
-    links = [
-        i.get('href') for i in
-        soup.select('div.news-item h2.news-title a')
-    ]
+    links = [i.get("href") for i in soup.select("div.news-item h2.news-title a")]
 
     descriptions = titles
     guids = links
@@ -30,23 +24,27 @@ def generate_entries(url, name):
 
     entries = []
     for title, link, description, guid, pubdate in zip(
-            titles, links, descriptions, guids, pubdates):
+        titles, links, descriptions, guids, pubdates
+    ):
         entries.append(
             PyRSS2Gen.RSSItem(
                 title=title,
                 link=link,
                 description=description,
                 guid=PyRSS2Gen.Guid(guid),
-                pubDate=pubdate), )
+                pubDate=pubdate,
+            ),
+        )
 
     # return entries
 
     rss = PyRSS2Gen.RSS2(
         title=name,
         link=url,
-        description='Latest in {}'.format(name),
+        description="Latest in {}".format(name),
         lastBuildDate=datetime.datetime.now(),
-        items=entries)
+        items=entries,
+    )
 
     filename = name + ".xml"
     rss.write_xml(open(filename, "w"))
@@ -60,6 +58,5 @@ def generate_entries(url, name):
     #     f.writelines(new_data)
 
 
-generate_entries('https://thestandard.co/pop/eat-drink/',
-                 'thestandard-eat-drink')
-generate_entries('https://thestandard.co/opinion/', 'thestandard-opinion')
+generate_entries("https://thestandard.co/pop/eat-drink/", "thestandard-eat-drink")
+generate_entries("https://thestandard.co/opinion/", "thestandard-opinion")

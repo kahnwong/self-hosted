@@ -23,7 +23,7 @@ export longitude=
 ```
 4. `pip3 install -r requirements.txt`
 5. Run `python3 create_html.py` (will ask you to authenticate in browser on first run only)
-6. set htaccess password (first time only. use the outputu file to create a hardcopy and add during Dockerfile build instead): 
+6. set htaccess password (first time only. use the outputu file to create a hardcopy and add during Dockerfile build instead):
 ```bash
 docker exec -it gcal-agenda /bin/bash
 echo "${PASSWORD}" | htpasswd -c -i /etc/apache2/.htpasswd ${USER}

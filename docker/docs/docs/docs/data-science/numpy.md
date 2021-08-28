@@ -18,6 +18,6 @@ def generate_array_with_random_nan(lower_bound, upper_bound, size):
     a = np.random.randint(lower_bound, upper_bound+1, size=size).astype(float)
     mask = np.random.choice([1, 0], a.shape, p=[.2, .8]).astype(bool)
     a[mask] = np.nan
-    
+
     return a
 ```

@@ -8,7 +8,7 @@ title: Unix
 # create archive
 tar -czvf ARCHIVE_NAME.tar.gz FILE_OR_FOLDER_PATH
 
-# extract 
+# extract
 tar -xzvf archive.tar.gz -C /tmp
 ```
 
@@ -33,7 +33,7 @@ zip -r foo.zip .
 zip -g venv.zip lambda_function.py
 
 # remove file from zip archive
-zip -d gallery.zip "picture_43_9.jpg" 
+zip -d gallery.zip "picture_43_9.jpg"
 
 # zip individual files seprately
 $ for i in *; do zip `basename $i .wmv`.zip $i; done
@@ -195,7 +195,7 @@ https://nextcloud.karnwong.me/remote.php/dav/files/$USERNAME/Apps/ /home/pi/app_
 
 ## rsync
 ```bash
-rsync -avz --exclude=.DS_Store --progress ~/Git/ nextcloud:/home/macbook_git  
+rsync -avz --exclude=.DS_Store --progress ~/Git/ nextcloud:/home/macbook_git
 
 rsync -Pav -e "ssh -i $HOME/.ssh/somekey" username@hostname:/from/dir/ /to/dir/
 
@@ -225,7 +225,7 @@ ssh-keygen -b 2048 -t rsa
 ```
 
 ### SSH config
-```ssh-config 
+```ssh-config
 Host github.com
   HostName github.com
   User git
@@ -238,7 +238,7 @@ Host github-COMPANY
 ```
 
 ### Disable password auth
-```bash 
+```bash
 $ sudo nano /etc/ssh/sshd_config
 
 # change this line
@@ -249,12 +249,12 @@ $ sudo /etc/init.d/ssh restart
 ```
 
 ### Port forwarding
-```bash 
+```bash
 ssh -L 5000:targethost:5000   NAME@TUNNEL_HOST
 ```
 
 ### OPENSSH setup
-```bash 
+```bash
 # install
 $ sudo apt-get install openssh-server openssh-client
 $ sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.original_copy

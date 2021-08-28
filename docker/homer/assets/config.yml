@@ -47,7 +47,7 @@ links:
     target: "_blank" # optional html a tag target attribute
   - name: "Landing page"
     icon: "fas fa-copyright"
-    url: "https://www.karnwong.me/"  
+    url: "https://www.karnwong.me/"
   - name: "Blog"
     icon: "fas fa-ghost"
     url: "https://blog.karnwong.me/"
@@ -129,7 +129,7 @@ services:
       logo: "assets/tools/ttrss.png"
     - name: "Wallabag"
       url: "https://wallabag.karnwong.me/"
-      logo: "assets/tools/wallabag.png"          
+      logo: "assets/tools/wallabag.png"
 
   - name: "Utilities"
     icon: "fas fa-toolbox"

@@ -2,7 +2,7 @@
 title: Data
 ---
 
-- [List of oldest continuously inhabited cities - Wikipedia](https://en.wikipedia.org/wiki/List_of_oldest_continuously_inhabited_cities) - 
+- [List of oldest continuously inhabited cities - Wikipedia](https://en.wikipedia.org/wiki/List_of_oldest_continuously_inhabited_cities) -
 - [World Food Atlas](https://www.tasteatlas.com/search) - Discover 13096 Local Dishes & Ingredients
 - [จำนวนประชากร](https://stat.bora.dopa.go.th/new_stat/webPage/statByYear.php)
 - [ระบบค้นหารูปแปลงที่ดิน](http://dolwms.dol.go.th/tvwebp/)

@@ -15,9 +15,9 @@ ALTER TABLE province ADD COLUMN geom geometry(Point, 4326);
 UPDATE province
 SET geom = ST_SetSRID(
     ST_MakePoint(
-        cast(longitude AS DOUBLE PRECISION), 
+        cast(longitude AS DOUBLE PRECISION),
         cast(latitude AS DOUBLE PRECISION)
-        ), 
+        ),
     4326)
 WHERE latitude IS NOT NULL AND longitude IS NOT NULL;
 ```
@@ -25,7 +25,7 @@ WHERE latitude IS NOT NULL AND longitude IS NOT NULL;
 ### Cast projection unit to meter
 ```sql
 ST_Distance(
-    geom::geography, 
+    geom::geography,
     ST_MakePoint(100.5257413,13.7338892)::geography) <= 3000
 ```
 
@@ -33,7 +33,7 @@ ST_Distance(
 ```sql
 -- single point
 SELECT *
-FROM province 
+FROM province
 WHERE ST_DWithin(ST_SetSRID(ST_POINT(100.5858333,13.7422222),4326)::geography, geom,0);
 
 --- against another table
@@ -49,16 +49,16 @@ unit depends on projection, in which `WGS4826` is `meter`
 
 ```sql
 ST_Distance(
-    the_geom::geography, 
-    ST_MakePoint(100.5257413,13.7338892)::geography) 
+    the_geom::geography,
+    ST_MakePoint(100.5257413,13.7338892)::geography)
 AS distance_from_holy_land
 ```
 
 ### Count points in polygon
 ```sql
-SELECT grid.gid, count(kioskdhd3.geom) AS totale 
-FROM grid LEFT JOIN kioskdhd3 
-ON st_contains(grid.geom,kioskdhd3.geom) 
+SELECT grid.gid, count(kioskdhd3.geom) AS totale
+FROM grid LEFT JOIN kioskdhd3
+ON st_contains(grid.geom,kioskdhd3.geom)
 GROUP BY grid.gid;
 ```
 

@@ -85,7 +85,7 @@ df[['sentiment', 'weight']] = df['y'].str.split(', ', expand=True)
 pd.read_csv('project.csv', sep=',').apply(lambda x: x.str.strip() if x.dtype == "object" else x)
 
 # strip string in string columns
-df[df_obj.columns] = df_obj.apply(lambda x: x.str.strip()) 
+df[df_obj.columns] = df_obj.apply(lambda x: x.str.strip())
 ```
 
 ### Join

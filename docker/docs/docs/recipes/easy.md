@@ -11,7 +11,7 @@ import Mermaid from '@theme/Mermaid';
 Three heads. Two hours. Don't Peel.
 
 # mashed
-- Three heads. Chopped. 1.30 hours. 
+- Three heads. Chopped. 1.30 hours.
 - 6 heads. Chopped. 2 hours
 ```
 

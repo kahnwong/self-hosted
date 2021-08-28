@@ -4,8 +4,6 @@ services:
     restart: always
     ports:
       - '3002:3001'
-    volumes:
-      - 'uptime-kuma:/app/data'
     container_name: uptime-kuma
     image: 'louislam/uptime-kuma:1'
     volumes:

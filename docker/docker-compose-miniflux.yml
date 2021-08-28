@@ -7,7 +7,7 @@ services:
 
   ## restore
   # start db container first, pg_restore and reset admin password
-    
+
   miniflux_db:
     container_name: miniflux_db
     image: postgres:13.1-alpine

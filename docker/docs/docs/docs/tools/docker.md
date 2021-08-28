@@ -52,7 +52,7 @@ docker run -d -v hello:/container/path/for/volume container_image my_command
 ### docker-compose
 ```yaml
 version: '3'
-services:  
+services:
   jupyter:
     image: jupyter/pyspark-notebook:latest
     ports:

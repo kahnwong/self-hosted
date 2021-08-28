@@ -3,7 +3,7 @@ version: '3.3'
 services:
   # https://docs.linuxserver.io/images/docker-jellyfin#nvidia
   # https://jellyfin.org/docs/general/networking/apache.html
-  
+
   jellyfin:
     container_name: jellyfin
     image: linuxserver/jellyfin:version-10.7.6-1

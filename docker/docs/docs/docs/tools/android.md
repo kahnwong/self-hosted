@@ -23,9 +23,9 @@ $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-ke
 ### Backup & Restore
 ```bash
 adb backup -f wallabag.ab -apk fr.gaulupeau.apps.InThePoche
-adb backup -all -f backup.ab -apk -nosystem -obb 
+adb backup -all -f backup.ab -apk -nosystem -obb
 
-adb backup -all -f backup.ab -apk -noshared -system  
+adb backup -all -f backup.ab -apk -noshared -system
 adb restore backup.ab
 ```
 

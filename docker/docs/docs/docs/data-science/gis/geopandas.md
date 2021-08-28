@@ -62,7 +62,7 @@ geodata.to_postgis(
 from shapely.ops import nearest_points
 
 nearest = project.geometry == nearest_points(
-    Point(100.5197637498, 13.8590163404), 
+    Point(100.5197637498, 13.8590163404),
     project.geometry.unary_union)\
     [1]
 
@@ -83,9 +83,9 @@ xmin,ymin,xmax,ymax = urban.total_bounds
 length = 0.00157
 width = 0.00157
 
-# cols = list(range(int(np.floor(xmin)), int(np.ceil(xmax)), wide)) 
+# cols = list(range(int(np.floor(xmin)), int(np.ceil(xmax)), wide))
 cols = np.arange(xmin, xmax, length).tolist()
-# rows = list(range(int(np.floor(ymin)), int(np.ceil(ymax)), lenght)) 
+# rows = list(range(int(np.floor(ymin)), int(np.ceil(ymax)), lenght))
 rows = np.arange(ymin, ymax, width).tolist()
 rows.reverse()
 

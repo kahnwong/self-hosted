@@ -32,7 +32,7 @@ title: Data Science
 - [data ⎰ describe](https://github.com/data-describe/data-describe) - data-describe is a Python toolkit for Exploratory Data Analysis (EDA). It aims to accelerate data exploration and analysis by providing automated and polished analysis widgets.
 - [Data Profiler](https://github.com/capitalone/DataProfiler) - What's in your data? Extract schema, statistics and entities from datasets.
 - [Lux](https://github.com/lux-org/lux) - Python API for Intelligent Visual Data Discovery.
-- [missingno](https://github.com/ResidentMario/missingno) - missingno provides a small toolset of flexible and easy-to-use missing data visualizations and utilities that allows you to get a quick visual summary of the completeness (or lack thereof) of your dataset. 
+- [missingno](https://github.com/ResidentMario/missingno) - missingno provides a small toolset of flexible and easy-to-use missing data visualizations and utilities that allows you to get a quick visual summary of the completeness (or lack thereof) of your dataset.
 - [Pandas Profiling](https://github.com/pandas-profiling/pandas-profiling) - Generates profile reports from a pandas DataFrame.
 - [sweetviz](https://github.com/fbdesignpro/sweetviz) - Generates beautiful, high-density visualizations to kickstart EDA (Exploratory Data Analysis) with just two lines of code.
 

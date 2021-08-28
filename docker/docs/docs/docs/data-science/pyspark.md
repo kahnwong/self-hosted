@@ -205,14 +205,14 @@ df2\
 # Join
 project\
     .join(
-        unittype, 
+        unittype,
         ['project_id'], # project.project_id == unittype.project_id in case keys are different, otherwise [COL_NAME] to prevent column duplicates
         how='left')
 
 # Explode array
 df = df\
         .withColumn("tmp", F.explode("tmp"))\
-        .select(*df.columns, 
+        .select(*df.columns,
             col("tmp.temp_property_type_title_th").alias("propertytype_name_th"),
             col("tmp.temp_property_type_title_en").alias("propertytype_name_en"),
             col("tmp.temp_property_type_id").alias("propertytype_id"))
@@ -296,11 +296,11 @@ small_transformed_df = small_transformed_df.select('*', F.explode('replicate').a
 ## magic happens here
 t0 = datetime.now()
 result2 = skewed_transformed_df.join(small_transformed_df, (skewed_transformed_df['x'] == small_transformed_df['a']) & (skewed_transformed_df['salt'] == small_transformed_df['salt']) )
-result2.count() 
+result2.count()
 print "The direct join takes %s"%(str(datetime.now() - t0))
 ```
 
-## Optimization  
+## Optimization
 ### Caching
 [More details](https://stackoverflow.com/questions/26870537/what-is-the-difference-between-cache-and-persist)
 
@@ -356,13 +356,13 @@ if partitionOverwriteMode_before != 'dynamic':
 ## JDBC Interfaces
 ### MySQL
 ```python
-table = """(SELECT id, 
-        person, 
-        manager, 
-        CAST(tdate AS CHAR) AS tdate, 
-        CAST(start AS CHAR) AS start, 
-        CAST(end AS CHAR) as end, 
-        CAST(duration AS CHAR) AS duration 
+table = """(SELECT id,
+        person,
+        manager,
+        CAST(tdate AS CHAR) AS tdate,
+        CAST(start AS CHAR) AS start,
+        CAST(end AS CHAR) as end,
+        CAST(duration AS CHAR) AS duration
     FROM EmployeeTimes) AS EmployeeTimes""",
 
 spark = get_spark_session()
@@ -393,8 +393,8 @@ table_name = "(SELECT ACTIONCOLOR FROM xininsure.action) tmp"
 df = spark.read\
         .format("jdbc") \
         .option("url", "jdbc:oracle:thin:@//{}:{}/{}".format(
-            os.environ['HOST'], 
-            os.environ['PORT'], 
+            os.environ['HOST'],
+            os.environ['PORT'],
             os.environ['SID'])) \
         .option("dbtable", table_name) \
         .option("user", os.environ['USER']) \

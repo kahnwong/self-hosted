@@ -25,4 +25,4 @@ services:
 
 networks:
   bitwarden:
-    driver: bridge  
+    driver: bridge

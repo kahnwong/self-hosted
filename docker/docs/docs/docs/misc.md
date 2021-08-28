@@ -28,7 +28,7 @@ title: Misc
 
 https://www.reddit.com/r/GooglePixelC/comments/5resoy/keyboard_no_longer_pairing/dk5dr4v/
 
-It sounds dumb and fake, but if you connect the tablet to the keyboard and then hold `Left Shift + P + A + I + R` at the same time for 2 seconds it fixes the issue and allows you to pair the keyboard! I found the fix posted on Reddit so make sure to thank the user. 
+It sounds dumb and fake, but if you connect the tablet to the keyboard and then hold `Left Shift + P + A + I + R` at the same time for 2 seconds it fixes the issue and allows you to pair the keyboard! I found the fix posted on Reddit so make sure to thank the user.
 
 ### Bluetooth audio delay
 `150ms` delay

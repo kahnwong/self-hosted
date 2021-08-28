@@ -63,7 +63,7 @@ json.loads(aJsonString, object_hook=json_util.object_hook)
 
 ## List
 ```python
-### split on nth occurrence 
+### split on nth occurrence
 >>> "a b c,d,e,f".rsplit(',',1)
 ['a b c,d,e', 'f']
 
@@ -266,7 +266,7 @@ import timeit
 start = timeit.default_timer()
 #Your statements here
 stop = timeit.default_timer()
-print('Time: ', stop - start) 
+print('Time: ', stop - start)
 ```
 
 ### Countdown function
@@ -283,7 +283,7 @@ def countdown(t):
 
 ### Time decorator
 ```python
-from horology import timed # pip install horology 
+from horology import timed # pip install horology
 
 
 @timed # put this line above ALL functions
@@ -315,7 +315,7 @@ except Exception as e:
 ## Dict
 ```python
 # sort dict based on value
-sorted(list_to_be_sorted, key=lambda k: k['name']) 
+sorted(list_to_be_sorted, key=lambda k: k['name'])
 
 # find key diff
 list(set(keep_keys)-set(input_keys))
@@ -335,7 +335,7 @@ def gen_hash(row):
     values = list(row)
     print(list(values))
     print('====')
-    
+
     return joblib.hash(values)
 ```
 
@@ -346,10 +346,10 @@ def gen_hash(row):
 class Logger:
     def info(self, text:str):
         print("[INFO] " + text)
-        
+
     def warn(self, text:str):
         print("[WARN] " + text)
-        
+
     def error(self, text:str):
         print("[ERROR] " + text)
 ```

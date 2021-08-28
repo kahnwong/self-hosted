@@ -17,7 +17,7 @@ cur = conn.cursor(cursor_factory=RealDictCursor)
 cur.execute("""
                 SELECT *
                 FROM data
-                LIMIT 100; 
+                LIMIT 100;
                 """)
 on_sale_raw = [i for i in cur]
 
@@ -58,17 +58,17 @@ for collection_name in sorted(collections):
     output_dir = f'data/{db}'
     filename =  f'{output_dir}/{collection_name}.jl'
     collection = client[db][collection_name]
-    
+
     print(f'processing {filename}')
-    
+
     os.makedirs(output_dir, exist_ok=True)
     cursor = collection.find({})
     total_records = collection.estimated_document_count()
-    
+
     with open(filename, 'w') as f:
         for i in tqdm(cursor, total=total_records):
             f.write(json.dumps(i, default=myconverter, ensure_ascii=False))
-            f.write('\n')   
-    
+            f.write('\n')
+
     # break
 ```

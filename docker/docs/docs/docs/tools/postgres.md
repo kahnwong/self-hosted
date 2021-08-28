@@ -4,10 +4,10 @@ title: Postgres
 
 ## Administration
 ### Get activity log
-```sql 
-SELECT usename,datname,count(*) 
-FROM pg_stat_activity 
-GROUP BY usename,datname 
+```sql
+SELECT usename,datname,count(*)
+FROM pg_stat_activity
+GROUP BY usename,datname
 ORDER BY 3 DESC;
 ```
 
@@ -42,20 +42,20 @@ SELECT
 
 ### Get access permission
 ```sql
-SELECT grantee, privilege_type 
-FROM information_schema.role_table_grants 
+SELECT grantee, privilege_type
+FROM information_schema.role_table_grants
 WHERE table_name='mytable'
 ```
 
 ### Terminate process
-```sql 
+```sql
 SELECT * FROM pg_stat_activity;
 
 SELECT pg_terminate_backend(${PID});
 ```
 
 ### Grant permission
-```sql 
+```sql
 -- admin
 GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO {ROLE};
 -- readonly
@@ -65,7 +65,7 @@ GRANT SELECT ON {SCHEMA} TO {ROLE};
 ```
 
 ### Backup and restore
-```bash 
+```bash
 # backup
 $ pg_dump --host HOST --port 5432 --username USERNAME --format plain --verbose --file OUTFILE.sql --table public.TABLE_NAME DB_NAME
 $ psql --host HOST --port 5432 --username USERNAME -d DB_NAME < BACKUP.sql
