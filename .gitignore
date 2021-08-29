@@ -17,3 +17,4 @@ docker/wirehole/
 docker/docs/build
 docker/docs/build_o
 .git_o/
+docker/oracle-free-tier-wirehole/
