@@ -60,7 +60,7 @@ links:
   # see url field and assets/additionnal-page.yml.dist used in this example:
   - name: "another page!"
     icon: "fas fa-file-alt"
-    url: "#additionnal-page" 
+    url: "#additionnal-page"
 
 # Services
 # First level array represent a group.

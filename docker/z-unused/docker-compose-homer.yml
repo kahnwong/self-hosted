@@ -7,6 +7,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./homer/assets:/www/assets
+#      - ./www:/www
     ports:
       - 9533:8080
     networks:

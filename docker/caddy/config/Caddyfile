@@ -4,14 +4,8 @@ agenda.karnwong.me {
     }
     reverse_proxy 127.0.0.1:8921
 }
-bitwarden.karnwong.me {
-    reverse_proxy 127.0.0.1:4323
-}
 audiobooks.karnwong.me {
     reverse_proxy 127.0.0.1:4040
-}
-bookstack.karnwong.me {
-    reverse_proxy 127.0.0.1:6875
 }
 books.karnwong.me {
     reverse_proxy 127.0.0.1:8083
@@ -19,17 +13,8 @@ books.karnwong.me {
 comics.karnwong.me {
     reverse_proxy 127.0.0.1:4946
 }
-dashboard.karnwong.me {
-    basicauth * {
-        kahnwong JDJhJDE0JE5UMkU2RnBtRGIvVGY1eGd2OTZMRGVjTG0zV3paYUgzd0NHa1Uxczh1UVpBaHlzMDhvbDlP
-    }
-    reverse_proxy 127.0.0.1:9533
-}
 cloud.karnwong.me {
     reverse_proxy 127.0.0.1:9850
-}
-blog.karnwong.me {
-    reverse_proxy 127.0.0.1:8080
 }
 invidious.karnwong.me {
     reverse_proxy 127.0.0.1:4313
@@ -61,15 +46,6 @@ wallabag.karnwong.me {
 skriegersrss.duckdns.org {
     reverse_proxy 127.0.0.1:81
 }
-# docs.karnwong.me {
-#     basicauth * {
-#         kahnwong JDJhJDE0JHhGTDd1RXV4bGE0aHJMMEFyZlRGdnVnL2JGL3FKMEF5MWpqQ2JBWDU4OXd2azcxSy9ucUFl
-#     }
-#     reverse_proxy 127.0.0.1:5333
-# }
 slackbot.karnwong.me {
     reverse_proxy 127.0.0.1:8000
-}
-uptime.karnwong.me {
-    reverse_proxy 127.0.0.1:3002
 }
