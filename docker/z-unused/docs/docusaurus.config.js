@@ -47,12 +47,12 @@ module.exports = {
           position: 'right',
         },
       ],
-      
+
     },
     footer: {
       style: 'dark',
       links: [
- 
+
         // {
         //   title: 'More',
         //   items: [

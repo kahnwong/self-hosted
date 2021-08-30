@@ -36,7 +36,7 @@ fi
 
 if [ $PRIVATE_KEY ]; then
     # Put the private keys in /keys path
-    
+
     cp -rL /keys/* ~/.ssh/
     chmod 600 ~/.ssh/*
     echo -e "Host $REPO_HOST\n  Port $REPO_PORT\n  IdentityFile ~/.ssh/$PRIVATE_KEY" > ~/.ssh/config
