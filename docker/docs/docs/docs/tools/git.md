@@ -29,6 +29,9 @@ git diff branch1..branch2
 # ignore whitespace
 git diff -w
 
+# update submodule
+git submodule foreach git pull origin master
+
 # remove some commits in-between
 ## https://stackoverflow.com/questions/51249344/deleting-commits-with-git-rebase
 ## Assuming the structure of your repo is like this (the letters denote commits)
@@ -51,7 +54,9 @@ on:
 
 ## Visualize
 ### gitinspector
+Notes: use python3.7
+
 ```
 $ npm i -g gitinspector
-$ gitinspector -T  -F html > stats.html
+$ gitinspector -F html --timeline=TRUE > stats.html
 ```

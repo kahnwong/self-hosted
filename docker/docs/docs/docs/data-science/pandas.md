@@ -4,8 +4,11 @@ title: Pandas
 
 ## I/O
 ```python
-### read json in pandas
+### read json
 pd.read_json(FILENAME)
+
+### read excel
+pd.read_excel(FILE, engine='openpyxl')
 
 ### read in chunk
 for index, chunk in enumerate(pd.read_csv(i, chunksize=chunksize)):
