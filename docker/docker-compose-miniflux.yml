@@ -22,7 +22,7 @@ services:
 
   miniflux:
     container_name: miniflux
-    image: miniflux/miniflux:2.0.31
+    image: miniflux/miniflux:2.0.33
     ports:
       - "350:8080"
     depends_on:
