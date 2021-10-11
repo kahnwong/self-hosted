@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  audioserve:
+    image: izderadicka/audioserve
+    restart: unless-stopped
+    command: --search-cache /audiobooks
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - AUDIOSERVE_SHARED_SECRET=VGM4oDS6wGKge9
+    volumes:
+#      - /opt/audioserve/config:/home/audioserve/.audioserve
+      - /opt/booksonic/audiobooks:/audiobooks
+    ports:
+      - 4040:3000
+    restart: always
+    networks:
+      - audioserve
+
+networks:
+  audioserve:
+    driver: bridge
