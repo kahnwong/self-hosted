@@ -139,7 +139,7 @@ rm $home_dir"/"$wallabag_sqldump_filename
 jellyfin_backup_filename="jellyfin-"$current_date".tar.gz"
 
 echo "jellyfin..."
-tar --exclude "/opt/jellyfin/config/data/transcodes" -czf $jellyfin_backup_filename /opt/jellyfin/config
+tar --exclude "/opt/jellyfin/config/data/metadata" --exclude "/opt/jellyfin/config/data/transcodes" -czf $jellyfin_backup_filename /opt/jellyfin/config
 
 dbxcli put $jellyfin_backup_filename "$backup_path_prefix/$jellyfin_backup_filename"
 rm $home_dir"/"$jellyfin_backup_filename
