@@ -11,7 +11,9 @@ def header(font_awesome_kit_id):
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <script src="https://kit.fontawesome.com/{}.js" crossorigin="anonymous"></script>
     </head>
-    """.format(font_awesome_kit_id)
+    """.format(
+        font_awesome_kit_id
+    )
 
     return s
 
@@ -19,20 +21,23 @@ def header(font_awesome_kit_id):
 def weather(weather_entry):
     i = weather_entry
 
-    temperature = i['temperature']
+    temperature = i["temperature"]
     if temperature:
-        temperature = '{} °C'.format(str(temperature))
+        temperature = "{} °C".format(str(temperature))
     else:
-        temperature = ''
+        temperature = ""
 
     s = """
         <div class="contact-item">
         <b class="weather">{}:</b> <i class="fas fa-{}"></i>{}<br>
         {}
     </div>
-    """.format(i['title'], i['icon'], temperature, i['summary'])
+    """.format(
+        i["title"], i["icon"], temperature, i["summary"]
+    )
 
     return s
+
 
 def header_extend():
     s = """
@@ -243,17 +248,21 @@ def header_extend():
 
     return s
 
+
 def header_today():
     from datetime import datetime
+
     current_date = datetime.now().date()
-    display_date = current_date.strftime('%b %d, %Y')
+    display_date = current_date.strftime("%b %d, %Y")
 
     s = """
                             <b>Today</b> {}
                         </div>
                     </div>
 
-    """.format(display_date)
+    """.format(
+        display_date
+    )
 
     return s
 
@@ -264,16 +273,22 @@ def section_day(day_name):
             <div class="section-title">
                 {}
             </div>
-""".format(day_name)
+""".format(
+        day_name
+    )
 
     return s
 
 
 def event(start, end, summary, next_event_in):
+    start_end = f"{start} - {end}"
+    if start_end == "00:00 - 00:00":
+        start_end = "|"
+
     s = f"""
                 <div class="block">
                     <div class="block-title">
-                        <b>{start} - {end} </b> {summary}
+                        <b>{start_end} </b> {summary}
             """
 
     if next_event_in:
