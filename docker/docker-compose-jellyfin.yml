@@ -18,10 +18,6 @@ services:
       # - UMASK_SET=<022> #optional
     volumes:
       - /opt/jellyfin/config:/config
-      - /opt/jellyfin/shows:/data/tvshows
-      - /opt/jellyfin/movies:/data/movies
-      - /opt/jellyfin/videos:/data/videos
-      - /opt/jellyfin/asmr:/data/asmr
       - /mnt/media:/data/media
       # - /opt/vc/lib:/opt/vc/lib #optional
     ports:
