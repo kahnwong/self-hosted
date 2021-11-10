@@ -43,7 +43,7 @@ def get_events(calendarId="primary"):
             d = {}
             d["start"] = start
             d["end"] = end
-            d["summary"] = event["summary"]
+            d["summary"] = event.get("summary")
             output.append(d)
 
         return output
