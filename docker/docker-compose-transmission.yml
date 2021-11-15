@@ -16,7 +16,7 @@ services:
       - /opt/transmission/downloads:/downloads
       - /opt/transmission/watch:/watch
     ports:
-      - 9091:9091
+      - 9000:9091
       - 51413:51413
       - 51413:51413/udp
     restart: always
