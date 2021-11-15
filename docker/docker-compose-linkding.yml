@@ -7,7 +7,7 @@ services:
     image: sissbruecker/linkding:latest
     container_name: linkding
     ports:
-      - 9090:9090
+      - 9089:9090
     volumes:
       - /opt/linkding/data:/etc/linkding/data
     restart: always
