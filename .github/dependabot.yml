@@ -23,7 +23,7 @@ updates:
 #       prefix: "chore"
 #       include: "scope"
 
-- package-ecosystem: pipenv
+- package-ecosystem: pip
   directory: "/docker/gcal-agenda"
   schedule:
     interval: daily
@@ -34,7 +34,7 @@ updates:
       prefix: "chore"
       include: "scope"
       
-- package-ecosystem: pipenv
+- package-ecosystem: pip
   directory: "/docker/todotxt-to-calendar"
   schedule:
     interval: daily
