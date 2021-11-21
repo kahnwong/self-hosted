@@ -66,10 +66,10 @@ def main():
     events_todo = get_events("c_qkcd4g7q4o325okcii4s1jpmg8@group.calendar.google.com")
     events_todo = add_event_prefix(events_todo, "[TODO]")
 
-    events_conferences = get_events(
-        "c_9l25epokrvvi100kc4gj10oln8@group.calendar.google.com"
-    )
-    events_conferences = add_event_prefix(events_conferences, "[CONF]")
+    # events_conferences = get_events(
+    #     "c_9l25epokrvvi100kc4gj10oln8@group.calendar.google.com"
+    # )
+    # events_conferences = add_event_prefix(events_conferences, "[CONF]")
 
     events_j = get_events("jumpolg@baania.com")
     events_j = add_event_prefix(events_j, "[J]")
@@ -77,7 +77,7 @@ def main():
     ################
     # wrangling
     ################
-    events = formatting(events, events_todo, events_conferences, events_j)
+    events = formatting(events, events_todo, events_j)
     generate_html(events)
 
 

@@ -93,10 +93,10 @@ def get_weather():
     return weathers
 
 
-def formatting(events, events_todo, events_conferences, events_j):
+def formatting(events, events_todo, events_j):
     ###
     events.extend(events_todo)
-    events.extend(events_conferences)
+    # events.extend(events_conferences)
     events.extend(events_j)
 
     events = sorted(events, key=lambda d: d["start"])
