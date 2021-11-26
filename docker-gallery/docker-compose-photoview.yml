@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  db:
+    image: mariadb:latest
+    restart: unless-stopped
+    environment:
+      - MYSQL_DATABASE=photoview
+      - MYSQL_USER=photoview
+      - MYSQL_PASSWORD=photosecret
+      - MYSQL_RANDOM_ROOT_PASSWORD=1
+    volumes:
+      - /opt/photoview/db:/var/lib/mysql
+
+  photoview:
+    image: viktorstrate/photoview:2
+    restart: unless-stopped
+    ports:
+      - "2141:2141"
+    depends_on:
+      - db
+    environment:
+      - PHOTOVIEW_DATABASE_DRIVER=mysql
+      - PHOTOVIEW_MYSQL_URL=photoview:photosecret@tcp(db)/photoview
+      - PHOTOVIEW_LISTEN_IP=photoview
+      - PHOTOVIEW_LISTEN_PORT=2141
+      - PHOTOVIEW_MEDIA_CACHE=/app/cache
+      - MAPBOX_TOKEN=${MAPBOX_TOKEN}
+    volumes:
+      - /opt/photoview/api_cache:/app/cache
+      - ./images:/photos:ro
+
+# default login: demo/demo

@@ -1,0 +1,30 @@
+version: '3'
+services:
+  pigallery-db:
+    container_name: pigallery-db
+    image: mariadb
+    volumes:
+      - /opt/pigallery/db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=putsomethinginherethatyouwouldlikeasthepassword
+      - MYSQL_USER=pigallery2
+      - MYSQL_PASSWORD=pigallery2_pass
+      - MYSQL_DATABASE=pigallery2
+    restart: unless-stopped
+
+  pigallery2:
+    image: bpatrik/pigallery2:latest-debian-buster
+    command: sh -c 'bin/wait-for pigallery-db:3306 -- --Server-Database-mysql-host=pigallery-db --Server-Database-mysql-username=pigallery2 --Server-Database-mysql-password=pigallery2_pass --Server-Database-mysql-database=pigallery2'
+    container_name: pigallery2
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - /opt/pigallery/config:/app/data/config
+      - /opt/pigallery/db:/app/data/db
+      - ./images:/app/data/images
+      - /opt/pigallery/tmp:/app/data/tmp
+    ports:
+      - 8712:80
+    restart: unless-stopped
+
+# default login: admin/admin
