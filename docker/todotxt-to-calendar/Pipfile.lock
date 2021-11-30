@@ -18,12 +18,11 @@
     "default": {
         "caldav": {
             "hashes": [
-                "sha256:4ca1a02a75d7fe9f60cbf95d18be3032b4a41c8cbdc974326305197be6053ae6",
-                "sha256:8231a219d7da4a909f3f3505d2c055e5772baf3af83fed8d1a16bd569f6355b4",
-                "sha256:d4e9bd3b98857777b49a53c86ba04b36fbd8a8cc88c38c71e0a70459b6385316"
+                "sha256:5576182112d97f6287d5ad74b828639c3a7e73a290b03547868471758ea06e82",
+                "sha256:f37dfcecdb6753259a179794ba19ec0bdaf2d28fa745a8b2336c6ed252a0c777"
             ],
             "index": "pypi",
-            "version": "==0.8.1"
+            "version": "==0.8.2"
         },
         "certifi": {
             "hashes": [
@@ -924,11 +923,11 @@
         },
         "setuptools": {
             "hashes": [
-                "sha256:10635f160e9e71546b883e337646567156a02808ecc0e7fafc12021deabf205e",
-                "sha256:da27016d4b3b89cc9b672d93597520e44afa3f87a9aac32d3f084f37fa667ce7"
+                "sha256:b4c634615a0cf5b02cf83c7bedffc8da0ca439f00e79452699454da6fbd4153d",
+                "sha256:feb5ff19b354cde9efd2344ef6d5e79880ce4be643037641b49508bbb850d060"
             ],
             "markers": "python_version >= '3.6'",
-            "version": "==59.3.0"
+            "version": "==59.4.0"
         },
         "six": {
             "hashes": [
