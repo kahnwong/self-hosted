@@ -9,7 +9,7 @@ services:
       - MYSQL_DATABASE=lychee
       - MYSQL_USER=lychee
       - MYSQL_PASSWORD=password
-    expose: 
+    expose:
       - 3306
     volumes:
       - /opt/lychee/db:/var/lib/mysql

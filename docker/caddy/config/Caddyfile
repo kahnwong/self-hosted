@@ -52,12 +52,3 @@ slackbot.karnwong.me {
 secrets.karnwong.me {
     reverse_proxy 127.0.0.1:8082
 }
-pigallery.karnwong.me {
-    reverse_proxy 127.0.0.1:8712
-}
-photoview.karnwong.me {
-    reverse_proxy 127.0.0.1:2141
-}
-photoprism.karnwong.me {
-    reverse_proxy 127.0.0.1:2342
-}
