@@ -16,9 +16,6 @@ comics.karnwong.me {
 cloud.karnwong.me {
     reverse_proxy 127.0.0.1:9850
 }
-invidious.karnwong.me {
-    reverse_proxy 127.0.0.1:4313
-}
 jellyfin.karnwong.me {
     reverse_proxy 127.0.0.1:6589
 }
