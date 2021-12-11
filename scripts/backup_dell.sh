@@ -146,3 +146,6 @@ tar --exclude "/opt/jellyfin/config/data/metadata" \
 
 dbxcli put $jellyfin_backup_filename "$backup_path_prefix/$jellyfin_backup_filename"
 rm $home_dir"/"$jellyfin_backup_filename
+
+
+curl -d "Successfully backup DELL 🤩" ntfy.sh/kwdellbackup
