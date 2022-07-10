@@ -1,0 +1,31 @@
+---
+version: '3.3'
+
+services:
+  # https://docs.linuxserver.io/images/docker-jellyfin#nvidia
+  # https://jellyfin.org/docs/general/networking/apache.html
+
+  jellyfin:
+    container_name: jellyfin
+    image: linuxserver/jellyfin:10.7.7
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Asia/Bangkok
+      # - NVIDIA_VISIBLE_DEVICES=all
+      # - UMASK_SET=<022> #optional
+    volumes:
+    - /opt/jellyfin/config:/config
+    - /opt/jellyfin/media:/data/media
+      # - /opt/vc/lib:/opt/vc/lib #optional
+    ports:
+    - 6589:8096
+    - 7359:7359/udp   #optional
+    - 1900:1900/udp   #optional
+    restart: always
+    networks:
+    - jellyfin
+
+networks:
+  jellyfin:
+    driver: bridge

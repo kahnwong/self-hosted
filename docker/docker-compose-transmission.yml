@@ -1,0 +1,30 @@
+---
+version: '3.3'
+
+services:
+  transmission:
+    image: linuxserver/transmission:version-3.00-r5
+    container_name: transmission
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Asia/Bangkok
+      TRANSMISSION_WEB_HOME: /combustion-release/ #optional
+      USER: transmission #optional
+      PASS: ${TRANSMISSION_PASSWORD} #optional
+    volumes:
+    - /opt/transmission/config:/config
+    - /opt/transmission/downloads:/downloads
+    - /opt/transmission/watch:/watch
+    ports:
+    - 9000:9091
+    - 51413:51413
+    - 51413:51413/udp
+    restart: always
+    env_file: .transmission.env
+    networks:
+    - transmission
+
+networks:
+  transmission:
+    driver: bridge

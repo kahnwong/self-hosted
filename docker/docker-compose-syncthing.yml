@@ -1,0 +1,27 @@
+---
+version: '3.3'
+
+services:
+  syncthing:
+    image: linuxserver/syncthing:1.20.1
+    container_name: syncthing
+    environment:
+      PUID: 0
+      PGID: 0
+      TZ: Asia/Bangkok
+      UMASK_SET: <022>
+    volumes:
+    - /opt/syncthing/config:/config
+    - /opt/syncthing/:/data
+    - /opt/photoprism/images:/data/photoprism/images:ro
+    ports:
+    - 8384:8384
+    - 22000:22000
+    - 21027:21027/udp
+    restart: always
+    networks:
+    - syncthing
+
+networks:
+  syncthing:
+    driver: bridge

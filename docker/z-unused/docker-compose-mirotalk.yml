@@ -1,0 +1,18 @@
+---
+version: '3'
+
+services:
+  mirotalk:
+    image: ghcr.io/kahnwong/mirotalk:latest
+    container_name: mirotalk
+    volumes:
+    - .mirotalk.env:/usr/src/app/.env:ro
+    restart: always
+    ports:
+    - 3008:3000
+    networks:
+    - mirotalk
+
+networks:
+  mirotalk:
+    driver: bridge

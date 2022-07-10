@@ -1,0 +1,37 @@
+# projects
+docker/oracle-free-tier-wirehole/
+docker/ttrss-docker-compose/
+docker/wallabag/
+docker/wirehole/
+docker/dockprom
+
+# python
+**/.ipynb_checkpoints/
+**/__pycache__
+
+# services
+**/images
+**/pyrss
+
+# env
+.env
+.miniflux.env
+.mirotalk.env
+.todotxtcalendar.env
+.transmission.env
+.photoprism.env
+
+.duckdns.env
+.gcalagenda.env
+.flame-password
+
+secrets.yaml
+
+# files
+*.html
+
+# terraform
+tf-cloudflare/.terraform
+tf-cloudflare/.terraform.lock.hcl
+tf-cloudflare/terraform.tfstate*
+tf-cloudflare/.infracost

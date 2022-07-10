@@ -1,0 +1,47 @@
+# caddy hash-password --algorithm bcrypt for basicauth
+
+books.karnwong.me {
+    reverse_proxy 127.0.0.1:8083
+}
+comics.karnwong.me {
+    reverse_proxy 127.0.0.1:4946
+}
+jellyfin.karnwong.me {
+    reverse_proxy 127.0.0.1:6589
+}
+linkding.karnwong.me {
+    reverse_proxy 127.0.0.1:9089
+}
+miniflux.karnwong.me {
+    reverse_proxy 127.0.0.1:350
+}
+music.karnwong.me {
+    reverse_proxy 127.0.0.1:4533
+}
+syncthing.karnwong.me {
+    reverse_proxy 127.0.0.1:8384
+}
+ttrss.karnwong.me {
+    reverse_proxy 127.0.0.1:8280
+}
+wallabag.karnwong.me {
+    reverse_proxy 127.0.0.1:100
+}
+skriegersrss.duckdns.org {
+    reverse_proxy 127.0.0.1:81
+}
+secrets.karnwong.me {
+    reverse_proxy 127.0.0.1:8082
+}
+budget.karnwong.me {
+    basicauth * {
+        kahnwong JDJhJDE0JFBCUGpmLk83dkFEdEFUMXRnRmJLdmV2R1A2cUNFV2NMamVLYkJNR1hLMUlrRDI2NUZoN0Jp
+    }
+    reverse_proxy 127.0.0.1:5004
+}
+photos.karnwong.me {
+    reverse_proxy 127.0.0.1:2342
+}
+kanboard.karnwong.me {
+    reverse_proxy 127.0.0.1:2000
+}

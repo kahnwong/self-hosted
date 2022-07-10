@@ -1,0 +1,29 @@
+---
+version: '3.3'
+
+services:
+  bitwarden:
+    image: vaultwarden/server:1.22.2
+    container_name: vaultwarden
+    restart: always
+    volumes:
+    - /opt/bitwarden/data:/data
+    ports:
+    - 4323:80
+    environment:
+      SIGNUPS_ALLOWED: 'false' # set to `true` on first run only to create admin account
+      SMTP_HOST: ${BITWARDEN_SMTP_HOST}
+      SMTP_FROM: ${BITWARDEN_SMTP_FROM}
+      SMTP_PORT: ${BITWARDEN_SMTP_PORT}
+      SMTP_SSL: ${BITWARDEN_SMTP_SSL}
+      SMTP_USERNAME: ${BITWARDEN_SMTP_USERNAME}
+      SMTP_PASSWORD: ${BITWARDEN_SMTP_PASSWORD} # replace in admin panel
+      ADMIN_TOKEN: ${BITWARDEN_ADMIN_TOKEN}
+      SMTP_EXPLICIT_TLS: ${BITWARDEN_SMTP_EXPLICIT_TLS}
+      DOMAIN: ${BITWARDEN_DOMAIN}
+    networks:
+    - bitwarden
+
+networks:
+  bitwarden:
+    driver: bridge

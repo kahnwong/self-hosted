@@ -1,0 +1,20 @@
+---
+version: '3.3'
+services:
+  fava:
+    image: ghcr.io/kahnwong/docker-fava:latest
+    container_name: fava
+    environment:
+      # BEANCOUNT_FILE: /input.beancount
+      TZ: Asia/Bangkok
+    ports:
+    - 5004:5000
+    volumes:
+    - /opt/syncthing/cloud/Apps/fava/beans.beancount:/input.beancount
+    restart: always
+    networks:
+    - fava
+
+networks:
+  fava:
+    driver: bridge
