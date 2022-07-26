@@ -45,3 +45,6 @@ photos.karnwong.me {
 kanboard.karnwong.me {
     reverse_proxy 127.0.0.1:2000
 }
+sourcegraph.karnwong.me {
+    reverse_proxy 127.0.0.1:3080
+}
