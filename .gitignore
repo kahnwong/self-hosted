@@ -20,6 +20,7 @@ docker/dockprom
 .todotxtcalendar.env
 .transmission.env
 .photoprism.env
+.podgrab.env
 
 .duckdns.env
 .gcalagenda.env

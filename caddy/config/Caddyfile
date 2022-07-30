@@ -48,3 +48,6 @@ kanboard.karnwong.me {
 sourcegraph.karnwong.me {
     reverse_proxy 127.0.0.1:3080
 }
+podgrab.karnwong.me {
+    reverse_proxy 127.0.0.1:352
+}
