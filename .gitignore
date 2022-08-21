@@ -3,7 +3,8 @@ docker/oracle-free-tier-wirehole/
 docker/ttrss-docker-compose/
 docker/wallabag/
 docker/wirehole/
-docker/dockprom
+docker/dockprom/
+docker/deploy-sourcegraph-docker/
 
 # python
 **/.ipynb_checkpoints/
