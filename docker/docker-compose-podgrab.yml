@@ -5,17 +5,17 @@ services:
     image: akhilrex/podgrab
     container_name: podgrab
     environment:
-    - CHECK_FREQUENCY=240
+      - CHECK_FREQUENCY=240
      # - PASSWORD=password     ## Uncomment to enable basic authentication, username = podgrab
     volumes:
-    - /opt/podgrab/config:/config
-    - /opt/podgrab/data:/assets
+      - /opt/podgrab/config:/config
+      - /opt/podgrab/data:/assets
     ports:
-    - 352:8080
+      - 352:8080
     restart: always
     env_file: .podgrab.env
     networks:
-    - podgrab
+      - podgrab
 networks:
   podgrab:
     driver: bridge

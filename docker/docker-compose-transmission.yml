@@ -13,17 +13,17 @@ services:
       USER: transmission #optional
       PASS: ${TRANSMISSION_PASSWORD} #optional
     volumes:
-    - /opt/transmission/config:/config
-    - /opt/transmission/downloads:/downloads
-    - /opt/transmission/watch:/watch
+      - /opt/transmission/config:/config
+      - /opt/transmission/downloads:/downloads
+      - /opt/transmission/watch:/watch
     ports:
-    - 9000:9091
-    - 51413:51413
-    - 51413:51413/udp
+      - 9000:9091
+      - 51413:51413
+      - 51413:51413/udp
     restart: always
     env_file: .transmission.env
     networks:
-    - transmission
+      - transmission
 
 networks:
   transmission:

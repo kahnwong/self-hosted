@@ -7,9 +7,9 @@ services:
     image: rssbridge/rss-bridge:latest
     restart: always
     ports:
-    - 81:80
+      - 81:80
     networks:
-    - rss-bridge
+      - rss-bridge
 
 networks:
   rss-bridge:

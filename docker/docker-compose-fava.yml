@@ -8,12 +8,12 @@ services:
       # BEANCOUNT_FILE: /input.beancount
       TZ: Asia/Bangkok
     ports:
-    - 5004:5000
+      - 5004:5000
     volumes:
-    - /opt/syncthing/cloud/Apps/fava/beans.beancount:/input.beancount
+      - /opt/syncthing/cloud/Apps/fava/beans.beancount:/input.beancount
     restart: always
     networks:
-    - fava
+      - fava
 
 networks:
   fava:

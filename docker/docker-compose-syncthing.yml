@@ -11,16 +11,16 @@ services:
       TZ: Asia/Bangkok
       UMASK_SET: <022>
     volumes:
-    - /opt/syncthing/config:/config
-    - /opt/syncthing/:/data
-    - /opt/photoprism/images:/data/photoprism/images:ro
+      - /opt/syncthing/config:/config
+      - /opt/syncthing/:/data
+      - /opt/photoprism/images:/data/photoprism/images:ro
     ports:
-    - 8384:8384
-    - 22000:22000
-    - 21027:21027/udp
+      - 8384:8384
+      - 22000:22000
+      - 21027:21027/udp
     restart: always
     networks:
-    - syncthing
+      - syncthing
 
 networks:
   syncthing:

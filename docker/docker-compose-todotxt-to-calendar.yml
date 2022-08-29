@@ -19,7 +19,7 @@ services:
     restart: always
     env_file: .todotxtcalendar.env
     networks:
-    - todotxt-calendar
+      - todotxt-calendar
 
 networks:
   todotxt-calendar:

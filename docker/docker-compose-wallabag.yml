@@ -20,16 +20,16 @@ services:
       SYMFONY__ENV__REDIS_PASSWORD: redispwd
       SYMFONY__ENV__DOMAIN_NAME: https://wallabag.karnwong.me/
     ports:
-    - 100:80
+      - 100:80
     restart: always
     volumes:
-    - /opt/wallabag/images:/var/www/wallabag/web/assets/images
-    - ./wallabag/graby-site-config:/var/www/wallabag/vendor/j0k3r/graby-site-config/
+      - /opt/wallabag/images:/var/www/wallabag/web/assets/images
+      - ./wallabag/graby-site-config:/var/www/wallabag/vendor/j0k3r/graby-site-config/
     networks:
-    - wallabag
+      - wallabag
     depends_on:
-    - wallabag_db
-    - wallabag_redis
+      - wallabag_db
+      - wallabag_redis
 
   wallabag_db:
     container_name: wallabag_db
@@ -38,10 +38,10 @@ services:
       POSTGRES_PASSWORD: my-secret-pw
       POSTGRES_USER: my-super-user
     volumes:
-    - /opt/wallabag/data:/var/lib/postgresql/data
+      - /opt/wallabag/data:/var/lib/postgresql/data
     restart: always
     networks:
-    - wallabag
+      - wallabag
 
   wallabag_redis:
     image: redis:6.0.9-alpine
@@ -51,7 +51,7 @@ services:
       REDIS_HOST_PASSWORD: redispwd
     command: redis-server --requirepass redispwd
     networks:
-    - wallabag
+      - wallabag
 
 networks:
   wallabag:

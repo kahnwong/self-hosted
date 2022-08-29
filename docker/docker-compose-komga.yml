@@ -6,14 +6,14 @@ services:
     image: gotson/komga:latest
     container_name: komga
     volumes:
-    - /opt/komga/config:/config
-    - /opt/syncthing/magazines:/books/Magazines
-    - /opt/syncthing/comics:/books/Comics
+      - /opt/komga/config:/config
+      - /opt/syncthing/magazines:/books/Magazines
+      - /opt/syncthing/comics:/books/Comics
     ports:
-    - 4946:8080
+      - 4946:8080
     restart: always
     networks:
-    - komga
+      - komga
 
 networks:
   komga:

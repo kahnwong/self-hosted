@@ -6,7 +6,7 @@ services:
     image: deluan/navidrome:0.47.5
     container_name: navidrome
     ports:
-    - 4533:4533
+      - 4533:4533
     restart: always
     environment:
       ND_SCANINTERVAL: 12h
@@ -14,10 +14,10 @@ services:
       ND_SESSIONTIMEOUT: 24h
       ND_BASEURL: ''
     volumes:
-    - /opt/navidrome/config:/data
-    - /opt/syncthing/music:/music:ro
+      - /opt/navidrome/config:/data
+      - /opt/syncthing/music:/music:ro
     networks:
-    - navidrome
+      - navidrome
 
 networks:
   navidrome:

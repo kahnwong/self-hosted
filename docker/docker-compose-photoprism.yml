@@ -8,13 +8,13 @@ services:
     container_name: photoprism
     image: photoprism/photoprism:latest
     depends_on:
-    - mariadb
+      - mariadb
     restart: always
     security_opt:
-    - seccomp:unconfined
-    - apparmor:unconfined
+      - seccomp:unconfined
+      - apparmor:unconfined
     ports:
-    - 2342:2342
+      - 2342:2342
     environment:
       PHOTOPRISM_ADMIN_PASSWORD: photoprism
       PHOTOPRISM_DATABASE_DRIVER: mysql              # Use MariaDB 10.5+ or MySQL 8+ instead of SQLite for improved performance
@@ -26,29 +26,29 @@ services:
     env_file: .photoprism.env
     working_dir: /photoprism
     volumes:
-    - /opt/photoprism/images:/photoprism/originals
-    - /opt/photoprism/storage:/photoprism/storage
+      - /opt/photoprism/images:/photoprism/originals
+      - /opt/photoprism/storage:/photoprism/storage
     networks:
-    - photoprism
+      - photoprism
 
   mariadb:
     container_name: photoprism_db
     restart: always
     image: mariadb:10.6
     security_opt:
-    - seccomp:unconfined
-    - apparmor:unconfined
+      - seccomp:unconfined
+      - apparmor:unconfined
     command: mysqld --transaction-isolation=READ-COMMITTED --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --max-connections=512 --innodb-rollback-on-timeout=OFF
       --innodb-lock-wait-timeout=120
     volumes:
-    - /opt/photoprism/db:/var/lib/mysql
+      - /opt/photoprism/db:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: insecure
       MYSQL_DATABASE: photoprism
       MYSQL_USER: photoprism
       MYSQL_PASSWORD: insecure
     networks:
-    - photoprism
+      - photoprism
 
 networks:
   photoprism:

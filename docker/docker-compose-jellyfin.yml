@@ -15,16 +15,16 @@ services:
       # - NVIDIA_VISIBLE_DEVICES=all
       # - UMASK_SET=<022> #optional
     volumes:
-    - /opt/jellyfin/config:/config
-    - /opt/jellyfin/media:/data/media
+      - /opt/jellyfin/config:/config
+      - /opt/jellyfin/media:/data/media
       # - /opt/vc/lib:/opt/vc/lib #optional
     ports:
-    - 6589:8096
-    - 7359:7359/udp   #optional
-    - 1900:1900/udp   #optional
+      - 6589:8096
+      - 7359:7359/udp #optional
+      - 1900:1900/udp #optional
     restart: always
     networks:
-    - jellyfin
+      - jellyfin
 
 networks:
   jellyfin:

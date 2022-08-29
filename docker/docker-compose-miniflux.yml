@@ -16,18 +16,18 @@ services:
       POSTGRES_USER: miniflux
       POSTGRES_PASSWORD: secret
     volumes:
-    - /opt/miniflux/data:/var/lib/postgresql/data
+      - /opt/miniflux/data:/var/lib/postgresql/data
     restart: always
     networks:
-    - miniflux
+      - miniflux
 
   miniflux:
     container_name: miniflux
     image: miniflux/miniflux:2.0.38
     ports:
-    - 350:8080
+      - 350:8080
     depends_on:
-    - miniflux_db
+      - miniflux_db
     environment:
       DATABASE_URL: postgres://miniflux:secret@miniflux_db/miniflux?sslmode=disable
       RUN_MIGRATIONS: 1
@@ -43,7 +43,7 @@ services:
     restart: always
     env_file: .miniflux.env
     networks:
-    - miniflux
+      - miniflux
 
 networks:
   miniflux:
