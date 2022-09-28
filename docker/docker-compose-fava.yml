@@ -10,7 +10,7 @@ services:
     ports:
       - 5004:5000
     volumes:
-      - /opt/syncthing/cloud/Apps/fava/beans.beancount:/input.beancount
+      - /opt/syncthing/cloud/Apps/fava:/opt/
     restart: always
     networks:
       - fava
