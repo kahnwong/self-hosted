@@ -16,16 +16,16 @@ cd $home_dir
 # dbxcli put $bitwarden_backup_filename "$backup_path_prefix/$bitwarden_backup_filename"
 # rm $home_dir"/"$bitwarden_backup_filename
 
-###############
-# kanboard
-###############
-kanboard_sqldump_filename="kanboard-"$current_date".sql"
+# ###############
+# # kanboard
+# ###############
+# kanboard_sqldump_filename="kanboard-"$current_date".sql"
 
-echo "kanboard..."
-docker exec kanboard_db /usr/bin/mysqldump -u root --password=secret kanboard > $kanboard_sqldump_filename
+# echo "kanboard..."
+# docker exec kanboard_db /usr/bin/mysqldump -u root --password=secret kanboard > $kanboard_sqldump_filename
 
-dbxcli put $kanboard_sqldump_filename "$backup_path_prefix/$kanboard_sqldump_filename"
-rm $home_dir"/"$kanboard_sqldump_filename
+# dbxcli put $kanboard_sqldump_filename "$backup_path_prefix/$kanboard_sqldump_filename"
+# rm $home_dir"/"$kanboard_sqldump_filename
 
 ###############
 # komga

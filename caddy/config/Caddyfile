@@ -42,12 +42,12 @@ budget.karnwong.me {
 photos.karnwong.me {
     reverse_proxy 127.0.0.1:2342
 }
-kanboard.karnwong.me {
-    reverse_proxy 127.0.0.1:2000
-}
 sourcegraph.karnwong.me {
     reverse_proxy 127.0.0.1:3080
 }
 podgrab.karnwong.me {
     reverse_proxy 127.0.0.1:352
+}
+ed.karnwong.me {
+    reverse_proxy 127.0.0.1:8555
 }
