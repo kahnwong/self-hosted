@@ -27,9 +27,6 @@ ttrss.karnwong.me {
 wallabag.karnwong.me {
     reverse_proxy 127.0.0.1:100
 }
-skriegersrss.duckdns.org {
-    reverse_proxy 127.0.0.1:81
-}
 secrets.karnwong.me {
     reverse_proxy 127.0.0.1:8082
 }

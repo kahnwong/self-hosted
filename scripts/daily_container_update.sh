@@ -1,10 +1,10 @@
 #!/bin/bash
 cd /root/self-hosted/docker
 
-# rss-bridge
-docker-compose -f docker-compose-rss-bridge.yml pull
-docker-compose -f docker-compose-rss-bridge.yml down
-docker-compose -f docker-compose-rss-bridge.yml up -d
+# # rss-bridge
+# docker-compose -f docker-compose-rss-bridge.yml pull
+# docker-compose -f docker-compose-rss-bridge.yml down
+# docker-compose -f docker-compose-rss-bridge.yml up -d
 
 # komga
 docker-compose -f docker-compose-komga.yml pull
