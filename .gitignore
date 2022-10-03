@@ -5,6 +5,7 @@ docker/wallabag/
 docker/wirehole/
 docker/dockprom/
 docker/deploy-sourcegraph-docker/
+docker/work-dashboard
 
 # python
 **/.ipynb_checkpoints/
@@ -22,6 +23,7 @@ docker/deploy-sourcegraph-docker/
 .transmission.env
 .photoprism.env
 .podgrab.env
+secrets.yaml
 
 .duckdns.env
 .gcalagenda.env

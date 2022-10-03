@@ -48,3 +48,9 @@ podgrab.karnwong.me {
 ed.karnwong.me {
     reverse_proxy 127.0.0.1:8555
 }
+work-dashboard.karnwong.me {
+    basicauth * {
+        unicorn $2a$14$m5EnKYBl0TK4835z.CNZpulIPfCeg7Cz117NzjeJL0KdOmqmbqlOK
+    }
+    reverse_proxy 127.0.0.1:8844
+}
