@@ -3,7 +3,7 @@ version: '3.3'
 
 services:
   wallabag:
-    image: wallabag/wallabag:2.5.1
+    image: wallabag/wallabag:2.5.2
     container_name: wallabag
     environment:
       POSTGRES_PASSWORD: my-secret-pw
