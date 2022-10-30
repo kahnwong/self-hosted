@@ -29,7 +29,7 @@ $ pipx ensurepath
 6. Set wallabag's graby site config
 7. Spin up docker-composes
 8. `chmod -R 0755 /opt/`
-9. Setup [tailscae](https://tailscale.com/)
+9. Setup [tailscale](https://tailscale.com/)
 
 ## FFMPEG binary
 https://www.johnvansickle.com/ffmpeg/
