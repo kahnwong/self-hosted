@@ -18,6 +18,10 @@ resource "cloudflare_pages_project" "docs" {
     web_analytics_tag   = "/y224zpVq0juV7R1QSfDcshL4yOuy1aV" # can be any random string
     web_analytics_token = "U+q+gyJF5/G90gzbOAG9aUk+83ucJX5P" # can be any random string
   }
+
+  lifecycle {
+    ignore_changes = [deployment_configs]
+  }
 }
 
 #############
