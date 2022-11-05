@@ -1,8 +1,5 @@
 # caddy hash-password --algorithm bcrypt for basicauth
 
-books.karnwong.me {
-    reverse_proxy 127.0.0.1:8083
-}
 comics.karnwong.me {
     reverse_proxy 127.0.0.1:4946
 }
