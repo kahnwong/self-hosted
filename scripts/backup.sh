@@ -1,6 +1,10 @@
 #!/bin/bash
-current_date=`date +%Y%m%d`
-backup_path_prefix="/Apps/kw-dell-backup/$current_date"
+# https://developers.cloudflare.com/r2/examples/aws-cli/
+
+
+current_date=`date +%Y-%m-%d`
+backup_path_prefix="s3://backup/$current_date"
+r2_endpoint="https://$cloudflare_account_id.r2.cloudflarestorage.com"
 
 home_dir="/root"
 cd $home_dir
@@ -13,7 +17,7 @@ cd $home_dir
 # echo "bitwarden..."
 # tar -czf $bitwarden_backup_filename /opt/bitwarden
 
-# dbxcli put $bitwarden_backup_filename "$backup_path_prefix/$bitwarden_backup_filename"
+# aws s3 cp --endpoint-url $r2_endpoint $bitwarden_backup_filename "$backup_path_prefix/$bitwarden_backup_filename"
 # rm $home_dir"/"$bitwarden_backup_filename
 
 # ###############
@@ -24,7 +28,7 @@ cd $home_dir
 # echo "kanboard..."
 # docker exec kanboard_db /usr/bin/mysqldump -u root --password=secret kanboard > $kanboard_sqldump_filename
 
-# dbxcli put $kanboard_sqldump_filename "$backup_path_prefix/$kanboard_sqldump_filename"
+# aws s3 cp --endpoint-url $r2_endpoint $kanboard_sqldump_filename "$backup_path_prefix/$kanboard_sqldump_filename"
 # rm $home_dir"/"$kanboard_sqldump_filename
 
 ###############
@@ -35,7 +39,7 @@ komga_backup_filename="komga-"$current_date".tar.gz"
 echo "komga..."
 tar -czf $komga_backup_filename /opt/komga/config/database.sqlite
 
-dbxcli put $komga_backup_filename "$backup_path_prefix/$komga_backup_filename"
+aws s3 cp --endpoint-url $r2_endpoint $komga_backup_filename "$backup_path_prefix/$komga_backup_filename"
 rm $home_dir"/"$komga_backup_filename
 
 ###############
@@ -46,7 +50,7 @@ navidrome_backup_filename="navidrome-"$current_date".tar.gz"
 echo "navidrome..."
 tar --exclude "/opt/navidrome/config/cache" -czf $navidrome_backup_filename /opt/navidrome/config
 
-dbxcli put $navidrome_backup_filename "$backup_path_prefix/$navidrome_backup_filename"
+aws s3 cp --endpoint-url $r2_endpoint $navidrome_backup_filename "$backup_path_prefix/$navidrome_backup_filename"
 rm $home_dir"/"$navidrome_backup_filename
 
 ###############
@@ -57,7 +61,7 @@ linkding_backup_filename="linkding-"$current_date".tar.gz"
 echo "linkding..."
 tar -czf $linkding_backup_filename /opt/linkding
 
-dbxcli put $linkding_backup_filename "$backup_path_prefix/$linkding_backup_filename"
+aws s3 cp --endpoint-url $r2_endpoint $linkding_backup_filename "$backup_path_prefix/$linkding_backup_filename"
 rm $home_dir"/"$linkding_backup_filename
 
 
@@ -69,7 +73,7 @@ transmission_backup_filename="transmission-"$current_date".tar.gz"
 echo "transmission..."
 tar -czf $transmission_backup_filename /opt/transmission/config
 
-dbxcli put $transmission_backup_filename "$backup_path_prefix/$transmission_backup_filename"
+aws s3 cp --endpoint-url $r2_endpoint $transmission_backup_filename "$backup_path_prefix/$transmission_backup_filename"
 rm $home_dir"/"$transmission_backup_filename
 
 ###############
@@ -79,8 +83,8 @@ echo "ttrss..."
 ttrss_backup_filename=$(ls -1 /var/lib/docker/volumes/ttrss-docker-compose_backups/_data/*.tar.gz | tail -1)
 ttrss_sqldump_filename=$(ls -1 /var/lib/docker/volumes/ttrss-docker-compose_backups/_data/*.sql.gz | tail -1)
 
-dbxcli put $ttrss_backup_filename "$backup_path_prefix/ttrss-config"$current_date".tar.gz"
-dbxcli put $ttrss_sqldump_filename "$backup_path_prefix/ttrss-sqldump-"$current_date".tar.gz"
+aws s3 cp --endpoint-url $r2_endpoint $ttrss_backup_filename "$backup_path_prefix/ttrss-config"$current_date".tar.gz"
+aws s3 cp --endpoint-url $r2_endpoint $ttrss_sqldump_filename "$backup_path_prefix/ttrss-sqldump-"$current_date".tar.gz"
 
 ###############
 # miniflux
@@ -91,7 +95,7 @@ echo "miniflux..."
 PGPASSWORD=secret
 /usr/bin/docker-compose -f /root/self-hosted/docker/docker-compose-miniflux.yml exec -T miniflux_db pg_dump -Fc -c -U miniflux > $home_dir"/"$miniflux_sqldump_filename
 
-dbxcli put $miniflux_sqldump_filename "$backup_path_prefix/$miniflux_sqldump_filename"
+aws s3 cp --endpoint-url $r2_endpoint $miniflux_sqldump_filename "$backup_path_prefix/$miniflux_sqldump_filename"
 rm $home_dir"/"$miniflux_sqldump_filename
 
 ###############
@@ -106,10 +110,10 @@ echo "wallabag db..."
 PGPASSWORD=wallapass
 /usr/bin/docker-compose -f /root/self-hosted/docker/docker-compose-wallabag.yml exec -T wallabag_db pg_dump -Fc -c -U wallabag > $home_dir"/"$wallabag_sqldump_filename
 
-dbxcli put $wallabag_backup_filename "$backup_path_prefix/$wallabag_backup_filename"
+aws s3 cp --endpoint-url $r2_endpoint $wallabag_backup_filename "$backup_path_prefix/$wallabag_backup_filename"
 rm $home_dir"/"$wallabag_backup_filename
 
-dbxcli put $wallabag_sqldump_filename "$backup_path_prefix/$wallabag_sqldump_filename"
+aws s3 cp --endpoint-url $r2_endpoint $wallabag_sqldump_filename "$backup_path_prefix/$wallabag_sqldump_filename"
 rm $home_dir"/"$wallabag_sqldump_filename
 
 
@@ -121,7 +125,7 @@ photoprism_sqldump_filename="photoprism-sqldump-"$current_date".sql"
 echo "photoprism..."
 /usr/bin/docker-compose -f /root/self-hosted/docker/docker-compose-photoprism.yml exec -T photoprism photoprism backup -i - > $home_dir"/"$photoprism_sqldump_filename
 
-dbxcli put $photoprism_sqldump_filename "$backup_path_prefix/$photoprism_sqldump_filename"
+aws s3 cp --endpoint-url $r2_endpoint $photoprism_sqldump_filename "$backup_path_prefix/$photoprism_sqldump_filename"
 rm $home_dir"/"$photoprism_sqldump_filename
 
 
@@ -136,7 +140,7 @@ rm $home_dir"/"$photoprism_sqldump_filename
 #     --exclude "/opt/jellyfin/config/cache" \
 #     -czf $jellyfin_backup_filename /opt/jellyfin/config
 
-# dbxcli put $jellyfin_backup_filename "$backup_path_prefix/$jellyfin_backup_filename"
+# aws s3 cp --endpoint-url $r2_endpoint $jellyfin_backup_filename "$backup_path_prefix/$jellyfin_backup_filename"
 # rm $home_dir"/"$jellyfin_backup_filename
 
 

@@ -77,7 +77,12 @@ PATH=/usr/bin
 
 0 4 * * * bash /root/self-hosted/scripts/daily_container_update.sh > /dev/null 2>&1
 0 5 * * * bash /root/self-hosted/scripts/daily_cleanup.sh > /dev/null 2>&1
-0 2 * * * bash /root/self-hosted/scripts/backup_dell.sh  > /dev/null 2>&1
+
+# backup
+PATH=/bin:/usr/local/bin
+cloudflare_account_id=""
+AWS_PROFILE="r2"
+0 2 * * * bash /root/self-hosted/scripts/backup.sh > /dev/null 2>&1
 ```
 
 ## wallabag
