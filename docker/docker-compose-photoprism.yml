@@ -17,11 +17,11 @@ services:
       - 2342:2342
     environment:
       PHOTOPRISM_ADMIN_PASSWORD: photoprism
-      PHOTOPRISM_DATABASE_DRIVER: mysql              # Use MariaDB 10.5+ or MySQL 8+ instead of SQLite for improved performance
-      PHOTOPRISM_DATABASE_SERVER: mariadb:3306     # MariaDB or MySQL database server (hostname:port)
-      PHOTOPRISM_DATABASE_NAME: photoprism           # MariaDB or MySQL database schema name
-      PHOTOPRISM_DATABASE_USER: photoprism           # MariaDB or MySQL database user name
-      PHOTOPRISM_DATABASE_PASSWORD: insecure       # MariaDB or MySQL database user password
+      PHOTOPRISM_DATABASE_DRIVER: mysql # Use MariaDB 10.5+ or MySQL 8+ instead of SQLite for improved performance
+      PHOTOPRISM_DATABASE_SERVER: mariadb:3306 # MariaDB or MySQL database server (hostname:port)
+      PHOTOPRISM_DATABASE_NAME: photoprism # MariaDB or MySQL database schema name
+      PHOTOPRISM_DATABASE_USER: photoprism # MariaDB or MySQL database user name
+      PHOTOPRISM_DATABASE_PASSWORD: insecure # MariaDB or MySQL database user password
       HOME: /photoprism
     env_file: .photoprism.env
     working_dir: /photoprism
@@ -34,7 +34,7 @@ services:
   mariadb:
     container_name: photoprism_db
     restart: always
-    image: mariadb:10.6
+    image: mariadb:10.9
     security_opt:
       - seccomp:unconfined
       - apparmor:unconfined
