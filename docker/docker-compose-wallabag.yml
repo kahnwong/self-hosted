@@ -33,12 +33,12 @@ services:
 
   wallabag_db:
     container_name: wallabag_db
-    image: postgres:13.1-alpine
+    image: postgres:15.1-alpine
     environment:
-      POSTGRES_PASSWORD: my-secret-pw
       POSTGRES_USER: my-super-user
+      POSTGRES_PASSWORD: my-secret-pw
     volumes:
-      - /opt/wallabag/data:/var/lib/postgresql/data
+      - /opt/wallabag/db:/var/lib/postgresql/data
     restart: always
     networks:
       - wallabag
