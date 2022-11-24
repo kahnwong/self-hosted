@@ -1,0 +1,40 @@
+---
+version: '2.3'
+
+services:
+  statping:
+    container_name: statping
+    image: adamboutcher/statping-ng:latest
+    restart: always
+    networks:
+      - statping
+    depends_on:
+      - statping_db
+    volumes:
+      - /opt/statping/data:/app
+    ports:
+      - 8832:8080
+    environment:
+      VIRTUAL_HOST: localhost
+      VIRTUAL_PORT: 8080
+      DB_CONN: postgres
+      DB_HOST: statping_db
+      DB_USER: statup
+      DB_PASS: password123
+      DB_DATABASE: statup
+  statping_db:
+    container_name: statping_db
+    image: postgres:15.1-alpine
+    restart: always
+    networks:
+      - statping
+    volumes:
+      - /opt/statping/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: password123
+      POSTGRES_USER: statup
+      POSTGRES_DB: statup
+
+networks:
+  statping:
+    driver: bridge
