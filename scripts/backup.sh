@@ -3,7 +3,9 @@
 
 
 current_date=`date +%Y-%m-%d`
-backup_path_prefix="s3://backup/$current_date"
+remove_backup_before_date=`date +%Y-%m-%d -d "3 day ago"`
+bucket_name="backup"
+backup_path_prefix="s3://$bucket_name/$current_date"
 r2_endpoint="https://$cloudflare_account_id.r2.cloudflarestorage.com"
 
 home_dir="/root"
@@ -143,5 +145,14 @@ rm $home_dir"/"$photoprism_sqldump_filename
 # aws s3 cp --endpoint-url $r2_endpoint $jellyfin_backup_filename "$backup_path_prefix/$jellyfin_backup_filename"
 # rm $home_dir"/"$jellyfin_backup_filename
 
-
 curl -d "Successfully backup DELL 🤩" ntfy.sh/kwdellbackup
+
+########
+# REMOVE OLD BACKUPS
+########
+
+aws s3api list-objects-v2 \
+--endpoint-url $r2_endpoint \
+--bucket $bucket_name  \
+--output text \
+--query "Contents[?LastModified<= '$remove_backup_before_date'].[Key]" | xargs printf -- "s3://$bucket_name/%s\n" | xargs -L 1 aws s3 rm --endpoint-url $r2_endpoint
