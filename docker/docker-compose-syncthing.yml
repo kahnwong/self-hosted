@@ -3,7 +3,7 @@ version: '3.3'
 
 services:
   syncthing:
-    image: linuxserver/syncthing:1.20.1
+    image: linuxserver/syncthing:1.22.1
     container_name: syncthing
     environment:
       PUID: 0
