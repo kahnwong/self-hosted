@@ -54,3 +54,6 @@ work-dashboard.karnwong.me {
 status.karnwong.me {
     reverse_proxy 127.0.0.1:8832
 }
+basemaps.karnwong.me {
+    reverse_proxy 127.0.0.1:8352
+}
