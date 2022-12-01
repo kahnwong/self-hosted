@@ -6,11 +6,10 @@ Notes: do not use snap docker. It has mount permission issues.
 
 1. Setup env via nix: <https://github.com/kahnwong/nix>
 2. Setup duckdns
-3. Change login shell: `chsh` and type `/usr/bin/fish`
-4. Set wallabag's graby site config
-5. Spin up docker-composes
-6. `chmod -R 0755 /opt/`
-7. `tailscale up`
+3. Set wallabag's graby site config
+4. Spin up docker-composes
+5. `chmod -R 0755 /opt/`
+6. `tailscale up`
 
 ## Snippets
 
