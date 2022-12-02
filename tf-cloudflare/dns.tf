@@ -33,3 +33,12 @@ resource "cloudflare_record" "selfhosted_dns" {
   value    = data.sops_file.secrets.data["ddns"]
   zone_id  = data.sops_file.secrets.data["zone_id"]
 }
+
+resource "cloudflare_record" "standardnotes_listed" {
+  name    = "listed"
+  proxied = true
+  ttl     = 1
+  type    = "A"
+  value   = "18.205.249.107"
+  zone_id = data.sops_file.secrets.data["zone_id"]
+}
