@@ -24,7 +24,7 @@ services:
     restart: always
     volumes:
       - /opt/wallabag/images:/var/www/wallabag/web/assets/images
-      - ./wallabag/graby-site-config:/var/www/wallabag/vendor/j0k3r/graby-site-config/
+      - ./wallabag/graby-site-config:/var/www/wallabag/vendor/j0k3r/graby-site-config:ro
     networks:
       - wallabag
     depends_on:
