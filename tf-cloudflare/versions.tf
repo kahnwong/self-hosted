@@ -1,4 +1,12 @@
 terraform {
+  cloud {
+    organization = "fringe-division"
+    hostname     = "app.terraform.io"
+
+    workspaces {
+      tags = ["cloudflare"]
+    }
+  }
   required_providers {
     sops = {
       source  = "carlpett/sops"
