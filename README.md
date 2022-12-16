@@ -13,6 +13,13 @@ Notes: do not use snap docker. It has mount permission issues.
 
 ## Snippets
 
+### Use docker without sudo
+
+```bash
+sudo groupadd docker
+sudo usermod -aG docker $USER
+```
+
 ### Auto mount storage
 
 ```bash
@@ -50,17 +57,15 @@ gunzip < all_databases.gz | mysql -u USERNAME -p DATABASE
 ## crontab
 
 ```bash
-*/1 * * * * /root/duckdns/duck.sh >/dev/null 2>&1
-
 PATH=/usr/bin
-*/1 * * * * cd /root/self-hosted && git pull
 
-0 4 * * * bash /root/self-hosted/scripts/daily_container_update.sh > /dev/null 2>&1
-0 5 * * * bash /root/self-hosted/scripts/daily_cleanup.sh > /dev/null 2>&1
+*/1 * * * * "$HOME"/duckdns/duckdns.sh >/dev/null 2>&1
 
-# backup
-PATH=/bin:/usr/local/bin
+0 4 * * * "$HOME"/self-hosted/scripts/daily_container_update.sh > /dev/null 2>&1
+0 5 * * * "$HOME"/self-hosted/scripts/daily_cleanup.sh > /dev/null 2>&1
+
+PATH=/usr/bin:/home/kahnwong/.nix-profile/bin
 cloudflare_account_id=""
 AWS_PROFILE="r2"
-0 2 * * * bash /root/self-hosted/scripts/backup.sh > /dev/null 2>&1
+0 2 * * * "$HOME"/self-hosted/scripts/backup.sh > /dev/null 2>&1
 ```

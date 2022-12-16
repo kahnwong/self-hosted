@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /root/self-hosted/docker
+cd "$HOME"/self-hosted/docker
 
 # komga
 docker-compose -f docker-compose-komga.yml pull
