@@ -1,4 +1,4 @@
-# caddy hash-password --algorithm bcrypt for basicauth
+# `caddy hash-password --algorithm bcrypt` for basicauth
 
 comics.karnwong.me {
     reverse_proxy 127.0.0.1:4946
@@ -59,4 +59,10 @@ basemaps.karnwong.me {
 }
 redash.karnwong.me {
     reverse_proxy 127.0.0.1:7821
+}
+api-docs.karnwong.me {
+    basicauth * {
+        unicorn $2a$14$TqCcoQ/1EnAo9mETlEjUIO7AW8spV3ndeXjLGWY.mrh6epZFYTzn6
+    }
+    reverse_proxy 127.0.0.1:5333
 }
