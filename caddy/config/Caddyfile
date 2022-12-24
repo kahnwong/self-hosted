@@ -57,3 +57,6 @@ status.karnwong.me {
 basemaps.karnwong.me {
     reverse_proxy 127.0.0.1:8352
 }
+redash.karnwong.me {
+    reverse_proxy 127.0.0.1:7821
+}
