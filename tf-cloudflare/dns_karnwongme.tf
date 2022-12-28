@@ -1,3 +1,5 @@
+# github pages
+
 resource "cloudflare_record" "terraform_managed_resource_d7cb14251baaa29cd5c3651d97b18cf7" {
   name    = "karnwong.me"
   proxied = true
