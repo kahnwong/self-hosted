@@ -3,7 +3,7 @@ locals {
   selfhosted_proxied = toset([
     "linkding", "miniflux", "secrets", "ttrss", "wallabag", "budget",
     "photos", "comics", "jellyfin", "music", "syncthing", "sourcegraph", "podgrab",
-    "work-dashboard", "status", "basemaps", "redash", "api-docs",
+    "work-dashboard", "basemaps", "redash", "api-docs",
     "ed"
   ])
   selfhosted_non_proxied = toset([])
