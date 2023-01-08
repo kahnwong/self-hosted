@@ -5,11 +5,12 @@ Notes: do not use snap docker. It has mount permission issues.
 ## Instructions
 
 1. Setup env via nix: <https://github.com/kahnwong/nix>
-2. Setup duckdns
-3. Set wallabag's graby site config
-4. Spin up docker-composes
-5. `chmod -R 0755 /opt/`
-6. `tailscale up`
+2. Setup Kubernetes: <https://github.com/kahnwong/k8s-playground>
+3. Setup duckdns
+4. Set wallabag's graby site config
+5. Spin up docker-composes
+6. `chmod -R 0755 /opt/`
+7. `tailscale up`
 
 ## Snippets
 
