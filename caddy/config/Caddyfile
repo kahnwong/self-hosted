@@ -31,7 +31,7 @@ budget.karnwong.me {
     basicauth * {
         kahnwong JDJhJDE0JFBCUGpmLk83dkFEdEFUMXRnRmJLdmV2R1A2cUNFV2NMamVLYkJNR1hLMUlrRDI2NUZoN0Jp
     }
-    reverse_proxy 127.0.0.1:5004
+    reverse_proxy 127.0.0.1:30001
 }
 photos.karnwong.me {
     reverse_proxy 127.0.0.1:2342
