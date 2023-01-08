@@ -25,7 +25,7 @@ wallabag.karnwong.me {
     reverse_proxy 127.0.0.1:100
 }
 secrets.karnwong.me {
-    reverse_proxy 127.0.0.1:8082
+    reverse_proxy 127.0.0.1:30000
 }
 budget.karnwong.me {
     basicauth * {
