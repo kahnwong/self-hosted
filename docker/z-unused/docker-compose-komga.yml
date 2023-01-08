@@ -7,8 +7,8 @@ services:
     container_name: komga
     volumes:
       - /opt/komga/config:/config
-      - /opt/syncthing/magazines:/books/Magazines
-      - /opt/syncthing/comics:/books/Comics
+      - /opt/syncthing/magazines:/books/Magazines:ro
+      - /opt/syncthing/comics:/books/Comics:ro
     ports:
       - 4946:8080
     restart: always
