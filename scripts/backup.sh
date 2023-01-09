@@ -57,23 +57,16 @@ aws s3 cp --endpoint-url $r2_endpoint $transmission_backup_filename "$backup_pat
 rm $HOME"/"$transmission_backup_filename
 
 ###############
-# ttrss
-###############
-echo "ttrss..."
-ttrss_backup_filename=$(ls -1 /var/lib/docker/volumes/ttrss-docker-compose_backups/_data/*.tar.gz | tail -1)
-ttrss_sqldump_filename=$(ls -1 /var/lib/docker/volumes/ttrss-docker-compose_backups/_data/*.sql.gz | tail -1)
-
-aws s3 cp --endpoint-url $r2_endpoint $ttrss_backup_filename "$backup_path_prefix/ttrss-config"$current_date".tar.gz"
-aws s3 cp --endpoint-url $r2_endpoint $ttrss_sqldump_filename "$backup_path_prefix/ttrss-sqldump-"$current_date".tar.gz"
-
-###############
 # miniflux
 ###############
 miniflux_sqldump_filename="miniflux-sqldump-"$current_date".psql"
 
 echo "miniflux..."
+MINIFLUX_POD_NAME="$(kubectl get pods -l=app.kubernetes.io/name=miniflux | tail -1 | awk '{print $1}')"
+echo $MINIFLUX_POD_NAME
+
 PGPASSWORD=secret
-/usr/bin/docker-compose -f /root/self-hosted/docker/docker-compose-miniflux.yml exec -T miniflux_db pg_dump -Fc -c -U miniflux > $HOME"/"$miniflux_sqldump_filename
+kubectl exec $MINIFLUX_POD_NAME -c postgres -- pg_dump -Fc -c -U miniflux > $HOME"/"$miniflux_sqldump_filename
 
 aws s3 cp --endpoint-url $r2_endpoint $miniflux_sqldump_filename "$backup_path_prefix/$miniflux_sqldump_filename"
 rm $HOME"/"$miniflux_sqldump_filename
@@ -81,17 +74,24 @@ rm $HOME"/"$miniflux_sqldump_filename
 ###############
 # wallabag
 ###############
+### content
 wallabag_backup_filename="wallabag-content-"$current_date".tar.gz"
-wallabag_sqldump_filename="wallabag-sqldump-"$current_date".psql"
 
 echo "wallabag content..."
 tar -czf $wallabag_backup_filename /opt/wallabag/images
-echo "wallabag db..."
-PGPASSWORD=wallapass
-/usr/bin/docker-compose -f /root/self-hosted/docker/docker-compose-wallabag.yml exec -T wallabag_db pg_dump -Fc -c -U wallabag > $HOME"/"$wallabag_sqldump_filename
 
 aws s3 cp --endpoint-url $r2_endpoint $wallabag_backup_filename "$backup_path_prefix/$wallabag_backup_filename"
 rm $HOME"/"$wallabag_backup_filename
+
+### db
+wallabag_sqldump_filename="wallabag-sqldump-"$current_date".psql"
+
+echo "wallabag db..."
+WALLABAG_POD_NAME="$(kubectl get pods -l=app.kubernetes.io/name=wallabag | tail -1 | awk '{print $1}')"
+echo $WALLABAG_POD_NAME
+
+PGPASSWORD=wallapass
+kubectl exec $WALLABAG_POD_NAME -c postgres -- pg_dump -Fc -c -U wallabag > $HOME"/"$wallabag_sqldump_filename
 
 aws s3 cp --endpoint-url $r2_endpoint $wallabag_sqldump_filename "$backup_path_prefix/$wallabag_sqldump_filename"
 rm $HOME"/"$wallabag_sqldump_filename
@@ -103,11 +103,12 @@ rm $HOME"/"$wallabag_sqldump_filename
 photoprism_sqldump_filename="photoprism-sqldump-"$current_date".sql"
 
 echo "photoprism..."
-/usr/bin/docker-compose -f /root/self-hosted/docker/docker-compose-photoprism.yml exec -T photoprism photoprism backup -i - > $HOME"/"$photoprism_sqldump_filename
+PHOTOPRISM_POD_NAME="$(kubectl get pods -l=app.kubernetes.io/name=photoprism | tail -1 | awk '{print $1}')"
+echo $PHOTOPRISM_POD_NAME
+kubectl exec $PHOTOPRISM_POD_NAME -c photoprism -- photoprism backup -i - > $HOME"/"$photoprism_sqldump_filename
 
 aws s3 cp --endpoint-url $r2_endpoint $photoprism_sqldump_filename "$backup_path_prefix/$photoprism_sqldump_filename"
 rm $HOME"/"$photoprism_sqldump_filename
-
 
 curl -d "Successfully backup DELL 🤩" ntfy.sh/kwdellbackup
 

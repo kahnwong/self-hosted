@@ -33,3 +33,13 @@
 
 # aws s3 cp --endpoint-url $r2_endpoint $jellyfin_backup_filename "$backup_path_prefix/$jellyfin_backup_filename"
 # rm $HOME"/"$jellyfin_backup_filename
+
+###############
+# ttrss
+###############
+echo "ttrss..."
+ttrss_backup_filename=$(ls -1 /var/lib/docker/volumes/ttrss-docker-compose_backups/_data/*.tar.gz | tail -1)
+ttrss_sqldump_filename=$(ls -1 /var/lib/docker/volumes/ttrss-docker-compose_backups/_data/*.sql.gz | tail -1)
+
+aws s3 cp --endpoint-url $r2_endpoint $ttrss_backup_filename "$backup_path_prefix/ttrss-config"$current_date".tar.gz"
+aws s3 cp --endpoint-url $r2_endpoint $ttrss_sqldump_filename "$backup_path_prefix/ttrss-sqldump-"$current_date".tar.gz"
