@@ -40,7 +40,10 @@ sourcegraph.karnwong.me {
     reverse_proxy 127.0.0.1:3080
 }
 podgrab.karnwong.me {
-    reverse_proxy 127.0.0.1:352
+    basicauth * {
+        podgrab $2a$14$s1l.L4xhGyEwCjt/MhP4dO0v3YF1g1zwE0KjkYSVFRAeETBNGDeyG
+    }
+    reverse_proxy 127.0.0.1:30004
 }
 ed.karnwong.me {
     reverse_proxy 127.0.0.1:8555
