@@ -49,7 +49,6 @@ spec:
         - name: music
           hostPath:
             path: /opt/syncthing/music
-            readOnly: true
         - name: navidrome-data
           hostPath:
             path: /opt/navidrome/config

@@ -43,11 +43,9 @@ spec:
         - name: books-magazines
           hostPath:
             path: /opt/syncthing/magazines
-            readOnly: true
         - name: books-comics
           hostPath:
             path: /opt/syncthing/comics
-            readOnly: true
         - name: komga-data
           hostPath:
             path: /opt/komga/config
