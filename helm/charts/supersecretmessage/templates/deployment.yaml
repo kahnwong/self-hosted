@@ -23,7 +23,6 @@ spec:
           ports:
             - name: http
               containerPort: 8082
-              protocol: TCP
           livenessProbe:
             httpGet:
               path: /
@@ -41,7 +40,6 @@ spec:
           image: vault:latest
           ports:
             - containerPort: 8200
-              protocol: TCP
           livenessProbe:
             httpGet:
               path: /ui/vault

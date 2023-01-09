@@ -8,6 +8,7 @@ spec:
   selector:
     app.kubernetes.io/name: supersecretmessage
   ports:
-    - port: 8082
+    - name: http
+      port: 8082
       targetPort: 8082
       nodePort: 30000
