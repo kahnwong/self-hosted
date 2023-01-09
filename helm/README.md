@@ -12,4 +12,5 @@ helm install linkding ./charts/linkding
 helm install navidrome ./charts/navidrome
 helm install miniflux ./charts/miniflux
 helm install photoprism ./charts/photoprism
+helm install wallabag ./charts/wallabag
 ```

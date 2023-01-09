@@ -22,7 +22,7 @@ ttrss.karnwong.me {
     reverse_proxy 127.0.0.1:8280
 }
 wallabag.karnwong.me {
-    reverse_proxy 127.0.0.1:100
+    reverse_proxy 127.0.0.1:30009
 }
 secrets.karnwong.me {
     reverse_proxy 127.0.0.1:30000
