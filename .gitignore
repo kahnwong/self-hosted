@@ -26,19 +26,19 @@ docker/tileserver-playground/
 .transmission.env
 .photoprism.env
 .podgrab.env
-secrets.yaml
 
 .duckdns.env
 .gcalagenda.env
 .flame-password
 
-secrets.yaml
+secrets*.yaml
 
 # files
 *.html
 
 # terraform
-tf-cloudflare/.terraform
-tf-cloudflare/.terraform.lock.hcl
-tf-cloudflare/terraform.tfstate*
-tf-cloudflare/.infracost
+**/.terraform
+**/.terraform.lock.hcl
+**/terraform.tfstate*
+**/.infracost
+**/terraform.tfvars
