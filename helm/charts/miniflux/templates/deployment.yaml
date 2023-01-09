@@ -1,0 +1,77 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: miniflux
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: miniflux
+      app.kubernetes.io/instance: miniflux
+      app.kubernetes.io/name: miniflux
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/component: miniflux
+        app.kubernetes.io/instance: miniflux
+        app.kubernetes.io/name: miniflux
+    spec:
+      ## init
+      # docker-compose up db
+      # docker-compose up miniflux
+
+      ## restore
+      # start db container first, pg_restore and reset admin password
+      containers:
+        - name: miniflux
+          image: miniflux/miniflux:2.0.41
+          ports:
+            - name: http
+              containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8080
+              scheme: HTTP
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: DATABASE_URL
+              value: postgres://miniflux:secret@localhost/miniflux?sslmode=disable
+            - name: RUN_MIGRATIONS
+              value: "1"
+            - name: CREATE_ADMIN
+              value: "1"
+            - name: BASE_URL
+              value: https://miniflux.karnwong.me
+            - name: POLLING_FREQUENCY
+              value: "60"
+            - name: BATCH_SIZE
+              value: "300"
+            - name: POLLING_SCHEDULER
+              value: entry_frequency
+            - name: SCHEDULER_ENTRY_FREQUENCY_MIN_INTERVAL
+              value: "5"
+            - name: SCHEDULER_ENTRY_FREQUENCY_MAX_INTERVAL
+              value: "24*60"
+          envFrom:
+            - secretRef:
+                name: miniflux
+        - name: postgres
+          image: postgres:15.1-alpine
+          ports:
+            - containerPort: 5432
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: POSTGRES_USER
+              value: miniflux
+            - name: POSTGRES_PASSWORD
+              value: secret
+          volumeMounts:
+            - name: miniflux-data
+              mountPath: /var/lib/postgresql/data
+      restartPolicy: Always
+      volumes:
+        - name: miniflux-data
+          hostPath:
+            path: /opt/miniflux/db

@@ -10,4 +10,5 @@ helm install jellyfin ./charts/jellyfin
 helm install podgrab ./charts/podgrab
 helm install linkding ./charts/linkding
 helm install navidrome ./charts/navidrome
+helm install miniflux ./charts/miniflux
 ```

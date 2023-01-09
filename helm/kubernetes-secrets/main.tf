@@ -7,7 +7,7 @@ resource "kubernetes_secret" "miniflux" {
   }
 
   data = {
-    MINIFLUX_USER     = data.sops_file.miniflux.data["miniflux_user"]
-    MINIFLUX_PASSWORD = data.sops_file.miniflux.data["miniflux_password"]
+    ADMIN_USERNAME = data.sops_file.miniflux.data["ADMIN_USERNAME"]
+    ADMIN_PASSWORD = data.sops_file.miniflux.data["ADMIN_PASSWORD"]
   }
 }

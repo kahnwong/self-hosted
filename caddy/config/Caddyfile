@@ -10,7 +10,7 @@ linkding.karnwong.me {
     reverse_proxy 127.0.0.1:30005
 }
 miniflux.karnwong.me {
-    reverse_proxy 127.0.0.1:350
+    reverse_proxy 127.0.0.1:30007
 }
 music.karnwong.me {
     reverse_proxy 127.0.0.1:30006
