@@ -1,0 +1,88 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: photoprism
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: photoprism
+      app.kubernetes.io/instance: photoprism
+      app.kubernetes.io/name: photoprism
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/component: photoprism
+        app.kubernetes.io/instance: photoprism
+        app.kubernetes.io/name: photoprism
+    spec:
+      containers:
+        - name: photoprism
+          image: photoprism/photoprism:latest
+          ports:
+            - name: http
+              containerPort: 2342
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 2342
+              scheme: HTTP
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: PHOTOPRISM_DATABASE_DRIVER
+              value: mysql
+            - name: PHOTOPRISM_DATABASE_SERVER
+              value: localhost:3306
+            - name: PHOTOPRISM_DATABASE_NAME
+              value: photoprism
+            - name: PHOTOPRISM_DATABASE_USER
+              value: photoprism
+            - name: PHOTOPRISM_DATABASE_PASSWORD
+              value: insecure
+            - name: HOME
+              value: /photoprism
+          envFrom:
+            - secretRef:
+                name: photoprism
+          volumeMounts:
+            - name: photoprism-images
+              mountPath: /photoprism/originals
+            - name: photoprism-storage
+              mountPath: /photoprism/storage
+        - name: mariadb
+          image: mariadb:10.9
+          ports:
+            - containerPort: 3306
+          imagePullPolicy: IfNotPresent
+          args:
+            - mysqld
+            - --transaction-isolation=READ-COMMITTED
+            - --character-set-server=utf8mb4
+            - --collation-server=utf8mb4_unicode_ci
+            - --max-connections=512
+            - --innodb-rollback-on-timeout=OFF
+            - --innodb-lock-wait-timeout=120
+          env:
+            - name: MYSQL_DATABASE
+              value: photoprism
+            - name: MYSQL_PASSWORD
+              value: insecure
+            - name: MYSQL_ROOT_PASSWORD
+              value: insecure
+            - name: MYSQL_USER
+              value: photoprism
+          volumeMounts:
+            - name: photoprism-data
+              mountPath: /var/lib/mysql
+      restartPolicy: Always
+      volumes:
+        - name: photoprism-images
+          hostPath:
+            path: /opt/photoprism/images
+        - name: photoprism-storage
+          hostPath:
+            path: /opt/photoprism/storage
+        - name: photoprism-data
+          hostPath:
+            path: /opt/photoprism/db

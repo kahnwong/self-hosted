@@ -34,7 +34,7 @@ budget.karnwong.me {
     reverse_proxy 127.0.0.1:30001
 }
 photos.karnwong.me {
-    reverse_proxy 127.0.0.1:2342
+    reverse_proxy 127.0.0.1:30008
 }
 sourcegraph.karnwong.me {
     reverse_proxy 127.0.0.1:3080
