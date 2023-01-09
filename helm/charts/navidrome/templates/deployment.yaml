@@ -1,0 +1,55 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: navidrome
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: navidrome
+      app.kubernetes.io/instance: navidrome
+      app.kubernetes.io/name: navidrome
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/component: navidrome
+        app.kubernetes.io/instance: navidrome
+        app.kubernetes.io/name: navidrome
+    spec:
+      containers:
+        - name: navidrome
+          image: deluan/navidrome:0.48.0
+          ports:
+            - name: http
+              containerPort: 4533
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 4533
+              scheme: HTTP
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: ND_SCANINTERVAL
+              value: 12h
+            - name: ND_LOGLEVEL
+              value: info
+            - name: ND_SESSIONTIMEOUT
+              value: 24h
+            - name: ND_BASEURL
+              value: ''
+          volumeMounts:
+            - name: music
+              mountPath: /music
+              readOnly: true
+            - name: navidrome-data
+              mountPath: /data
+      restartPolicy: Always
+      volumes:
+        - name: music
+          hostPath:
+            path: /opt/syncthing/music
+            readOnly: true
+        - name: navidrome-data
+          hostPath:
+            path: /opt/navidrome/config

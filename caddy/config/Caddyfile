@@ -13,7 +13,7 @@ miniflux.karnwong.me {
     reverse_proxy 127.0.0.1:350
 }
 music.karnwong.me {
-    reverse_proxy 127.0.0.1:4533
+    reverse_proxy 127.0.0.1:30006
 }
 syncthing.karnwong.me {
     reverse_proxy 127.0.0.1:8384
