@@ -69,7 +69,7 @@ PATH=/usr/bin
 
 */1 * * * * "$HOME"/duckdns/duckdns.sh >/dev/null 2>&1
 
-0 4 * * * "$HOME"/self-hosted/scripts/daily_container_update.sh > /dev/null 2>&1
+# 0 4 * * * "$HOME"/self-hosted/scripts/daily_container_update.sh > /dev/null 2>&1
 0 5 * * * "$HOME"/self-hosted/scripts/daily_cleanup.sh > /dev/null 2>&1
 
 PATH=/usr/bin:/home/kahnwong/.nix-profile/bin
