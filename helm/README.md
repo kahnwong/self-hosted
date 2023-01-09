@@ -14,3 +14,31 @@ helm install miniflux ./charts/miniflux
 helm install photoprism ./charts/photoprism
 helm install wallabag ./charts/wallabag
 ```
+
+## kubernetes-dashboard
+
+```bash
+kubectl create namespace kubernetes-dashboard
+helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard/
+
+helm install kubernetes-dashboard \
+    --set metricsScraper.enabled=true \
+    --set metricsServer.enabled=true \
+    --set replicaCount=1 \
+    --set rbac.clusterReadOnlyRole=true \
+    --namespace kubernetes-dashboard \
+    kubernetes-dashboard/kubernetes-dashboard
+```
+
+## kube-prometheus-stack
+
+```bash
+kubectl create namespace kube-prometheus-stack
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
+# login - admin:prom-operator
+helm install kube-prometheus-stack \
+    --set grafana.defaultDashboardsTimezone="Asia/Bangkok" \
+    --namespace kube-prometheus-stack \
+    prometheus-community/kube-prometheus-stack
+```
