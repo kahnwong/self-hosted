@@ -6,4 +6,5 @@ Upgrade via `helm upgrade ...`
 helm install supersecretmessage ./charts/supersecretmessage
 helm install fava ./charts/fava
 helm install komga ./charts/komga
+helm install jellyfin ./charts/jellyfin
 ```

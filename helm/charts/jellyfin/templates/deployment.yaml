@@ -1,0 +1,57 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jellyfin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: jellyfin
+      app.kubernetes.io/instance: jellyfin
+      app.kubernetes.io/name: jellyfin
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/component: jellyfin
+        app.kubernetes.io/instance: jellyfin
+        app.kubernetes.io/name: jellyfin
+    spec:
+      containers:
+        - name: jellyfin
+          image: linuxserver/jellyfin:10.7.7
+          ports:
+            - name: http
+              containerPort: 8096
+            - name: udp-a
+              containerPort: 7359
+              protocol: UDP
+            - name: udp-b
+              containerPort: 1900
+              protocol: UDP
+          env:
+            - name: PGID
+              value: "1000"
+            - name: PUID
+              value: "1000"
+            - name: TZ
+              value: Asia/Bangkok
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8096
+              scheme: HTTP
+          imagePullPolicy: IfNotPresent
+          volumeMounts:
+            - name: jellyfin-media
+              mountPath: /data/media
+            - name: jellyfin-data
+              mountPath: /config
+      restartPolicy: Always
+      volumes:
+        - name: jellyfin-media
+          hostPath:
+            path: /opt/jellyfin/media
+        - name: jellyfin-data
+          hostPath:
+            path: /opt/jellyfin/config

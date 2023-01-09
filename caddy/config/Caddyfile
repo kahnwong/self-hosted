@@ -4,7 +4,7 @@ comics.karnwong.me {
     reverse_proxy 127.0.0.1:30002
 }
 jellyfin.karnwong.me {
-    reverse_proxy 127.0.0.1:6589
+    reverse_proxy 127.0.0.1:30003
 }
 linkding.karnwong.me {
     reverse_proxy 127.0.0.1:9089
