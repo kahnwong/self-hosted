@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: fava
-          image: ghcr.io/kahnwong/docker-fava:latest
+          image: ghcr.io/kahnwong/docker-fava:2dd6d82
           ports:
             - name: http
               containerPort: 5000
@@ -34,7 +34,7 @@ spec:
               value: Asia/Bangkok
           volumeMounts:
             - name: fava-data
-              mountPath: /opt
+              mountPath: /opt/fava
       restartPolicy: Always
       volumes:
         - name: fava-data
