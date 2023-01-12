@@ -1,0 +1,132 @@
+---
+grafana:
+  enabled: false
+nodeExporter:
+  enabled: false
+cadvisor:
+  enabled: false
+openTelemetry:
+  enabled: false
+
+frontend:
+  replicas: 1
+
+gitServer:
+  replicas: 1
+  resources:
+    limits:
+      cpu: "8"
+      memory: 8G
+    requests:
+      cpu: "4"
+      memory: 4G
+  storageSize: "8Gi"
+  env:
+    SRC_LOG_LEVEL:
+      value: "warn"
+
+indexedSearch:
+  replicas: 1
+  storageSize: "1Gi"
+  webserver:
+    resources:
+      limits:
+        cpu: "2"
+        memory: 16G
+      requests:
+        cpu: "1"
+        memory: 16G
+  indexserver:
+    resources:
+      limits:
+        cpu: "4"
+        memory: 16G
+      requests:
+        cpu: "4"
+        memory: 8G
+
+blobstore:
+  resources:
+    limits:
+      cpu: "1"
+      memory: "500M"
+    requests:
+      cpu: "1"
+      memory: "500M"
+  storageSize: "1Gi"
+
+pgsql:
+  storageSize: "1Gi"
+
+prometheus:
+  storageSize: "1Gi"
+
+searcher:
+  resources:
+    limits:
+      cpu: "2"
+      memory: 4G
+    requests:
+      cpu: 500m
+      memory: 1G
+
+symbols:
+  resources:
+    limits:
+      cpu: "4"
+      memory: 4G
+      ephemeral-storage: "10G"
+    requests:
+      cpu: "1"
+      memory: 1G
+      ephemeral-storage: "10G"
+
+redisCache:
+  resources:
+    limits:
+      cpu: "1"
+      memory: 7Gi
+    requests:
+      cpu: "1"
+      memory: 7Gi
+  storageSize: 1Gi
+
+redisStore:
+  resources:
+    limits:
+      cpu: "1"
+      memory: 7Gi
+    requests:
+      cpu: "1"
+      memory: 7Gi
+  storageSize: 1Gi
+
+codeInsightsDB:
+  resources:
+    limits:
+      cpu: "4"
+      memory: 2Gi
+    requests:
+      cpu: "4"
+      memory: 2Gi
+  storageSize: 1Gi
+
+codeIntelDB:
+  resources:
+    limits:
+      cpu: "4"
+      memory: 4Gi
+    requests:
+      cpu: "4"
+      memory: 4Gi
+  storageSize: 1Gi
+
+gitserver:
+  resources:
+    limits:
+      cpu: "4"
+      memory: 8G
+    requests:
+      cpu: "4"
+      memory: 8G
+  storageSize: 1Gi

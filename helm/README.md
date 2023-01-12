@@ -42,3 +42,16 @@ helm install kube-prometheus-stack \
     --namespace kube-prometheus-stack \
     prometheus-community/kube-prometheus-stack
 ```
+
+## Sourcegraph (unused)
+
+```bash
+kubectl create namespace sourcegraph
+helm repo add sourcegraph https://helm.sourcegraph.com/release
+
+helm install \
+    --version 4.3.1 \
+    --values ./charts/sourcegraph/values.yaml \
+    --namespace sourcegraph \
+    sourcegraph sourcegraph/sourcegraph
+```
