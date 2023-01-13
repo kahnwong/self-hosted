@@ -4,7 +4,6 @@ docker/ttrss-docker-compose/
 docker/wallabag/
 docker/wirehole/
 docker/dockprom/
-docker/deploy-sourcegraph-docker/
 docker/work-dashboard
 docker/postman-to-docusaurus/
 docker/redash/

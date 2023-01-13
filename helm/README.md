@@ -13,6 +13,7 @@ helm install navidrome ./charts/navidrome
 helm install miniflux ./charts/miniflux
 helm install photoprism ./charts/photoprism
 helm install wallabag ./charts/wallabag
+helm install sourcegraph ./charts/sourcegraph
 ```
 
 ## kubernetes-dashboard
@@ -43,7 +44,7 @@ helm install kube-prometheus-stack \
     prometheus-community/kube-prometheus-stack
 ```
 
-## Sourcegraph (unused)
+## Sourcegraph (official helm chart, unused)
 
 ```bash
 kubectl create namespace sourcegraph

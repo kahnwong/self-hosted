@@ -37,7 +37,7 @@ photos.karnwong.me {
     reverse_proxy 127.0.0.1:30008
 }
 sourcegraph.karnwong.me {
-    reverse_proxy 127.0.0.1:3080
+    reverse_proxy 127.0.0.1:30010
 }
 podgrab.karnwong.me {
     basicauth * {
