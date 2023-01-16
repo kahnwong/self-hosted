@@ -1,0 +1,98 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ttrss
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: ttrss
+      app.kubernetes.io/instance: ttrss
+      app.kubernetes.io/name: ttrss
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/component: ttrss
+        app.kubernetes.io/instance: ttrss
+        app.kubernetes.io/name: ttrss
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:15.1-alpine
+          ports:
+            - containerPort: 5432
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: POSTGRES_PASSWORD
+              value: pgpassword
+          volumeMounts:
+            - name: ttrss-data
+              mountPath: /var/lib/postgresql/data
+        # ------ random password will be generated, look for it in the 'app' container logs. ------ #
+        - name: app
+          image: cthulhoo/ttrss-fpm-pgsql-static
+          ports:
+            - containerPort: 9000
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: TTRSS_DB_USER
+              value: postgres
+            - name: TTRSS_DB_NAME
+              value: postgres
+            - name: TTRSS_DB_PASS
+              value: pgpassword
+            - name: TTRSS_DB_HOST
+              value: localhost
+            - name: OWNER_UID
+              value: "1000"
+            - name: OWNER_GID
+              value: "1000"
+            - name: TTRSS_SELF_URL_PATH
+              value: http://localhost:8280/tt-rss
+          volumeMounts:
+            - name: ttrss-app
+              mountPath: /var/www/html
+        - name: nginx
+          image: cthulhoo/ttrss-web-nginx
+          ports:
+            - containerPort: 80
+          # livenessProbe:
+          #   httpGet:
+          #     path: /tt-rss
+          #     port: 80
+          #     scheme: HTTP
+          imagePullPolicy: IfNotPresent
+          # env:
+          #   - name: HTTP_PORT
+          #     value: 80
+          volumeMounts:
+            - name: ttrss-app
+              mountPath: /var/www/html
+              readOnly: true
+        # - name: postgres
+        #   image: postgres:15.1-alpine
+        #   ports:
+        #     - containerPort: 5432
+        #   livenessProbe:
+        #     httpGet:
+        #       path: /tt-rss
+        #       port: 80
+        #       scheme: HTTP
+        #   imagePullPolicy: IfNotPresent
+        #   env:
+        #     - name: POSTGRES_PASSWORD
+        #       value: my-secret-pw
+        #   volumeMounts:
+        #     - name: ttrss-data
+        #       mountPath: /var/lib/postgresql/data
+
+
+      restartPolicy: Always
+      volumes:
+        - name: ttrss-data
+          hostPath:
+            path: /opt/ttrss/db
+        - name: ttrss-app
+          hostPath:
+            path: /opt/ttrss/app
