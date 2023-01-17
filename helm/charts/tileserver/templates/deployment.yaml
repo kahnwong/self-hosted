@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: tileserver
-          image: maptiler/tileserver-gl:v4.3.3
+          image: maptiler/tileserver-gl:v4.4.1
           ports:
             - name: http
               containerPort: 8080
