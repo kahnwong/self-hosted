@@ -14,6 +14,7 @@ helm install miniflux ./charts/miniflux
 helm install photoprism ./charts/photoprism
 helm install wallabag ./charts/wallabag
 helm install sourcegraph ./charts/sourcegraph
+helm install tileserver ./charts/tileserver
 ```
 
 ## kubernetes-dashboard
