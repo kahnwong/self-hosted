@@ -2,19 +2,21 @@
 
 Upgrade via `helm upgrade ...`
 
+## Apps
+
 ```bash
-helm install supersecretmessage ./charts/supersecretmessage
-helm install fava ./charts/fava
-helm install komga ./charts/komga
-helm install jellyfin ./charts/jellyfin
-helm install podgrab ./charts/podgrab
-helm install linkding ./charts/linkding
-helm install navidrome ./charts/navidrome
-helm install miniflux ./charts/miniflux
-helm install photoprism ./charts/photoprism
-helm install wallabag ./charts/wallabag
-helm install sourcegraph ./charts/sourcegraph
-helm install tileserver ./charts/tileserver
+helm install supersecretmessage ./app/supersecretmessage
+helm install fava ./app/fava
+helm install komga ./app/komga
+helm install jellyfin ./app/jellyfin
+helm install podgrab ./app/podgrab
+helm install linkding ./app/linkding
+helm install navidrome ./app/navidrome
+helm install miniflux ./app/miniflux
+helm install photoprism ./app/photoprism
+helm install wallabag ./app/wallabag
+helm install sourcegraph ./app/sourcegraph
+helm install tileserver ./app/tileserver
 ```
 
 ## kubernetes-dashboard
