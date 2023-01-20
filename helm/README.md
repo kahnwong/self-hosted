@@ -19,7 +19,9 @@ helm install sourcegraph ./app/sourcegraph
 helm install tileserver ./app/tileserver
 ```
 
-## kubernetes-dashboard
+## Monitoring
+
+### kubernetes-dashboard
 
 ```bash
 kubectl create namespace kubernetes-dashboard
@@ -34,7 +36,7 @@ helm install kubernetes-dashboard \
     kubernetes-dashboard/kubernetes-dashboard
 ```
 
-## kube-prometheus-stack
+### kube-prometheus-stack
 
 ```bash
 kubectl create namespace kube-prometheus-stack
@@ -47,7 +49,9 @@ helm install kube-prometheus-stack \
     prometheus-community/kube-prometheus-stack
 ```
 
-## Sourcegraph (official helm chart, unused)
+## Misc
+
+### Sourcegraph (official helm chart, unused)
 
 ```bash
 kubectl create namespace sourcegraph
