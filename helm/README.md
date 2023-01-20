@@ -38,15 +38,17 @@ helm install kubernetes-dashboard \
 
 ### kube-prometheus-stack
 
+#### Base
+
 ```bash
-kubectl create namespace kube-prometheus-stack
+kubectl create namespace monitoring
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 
 # login - admin:prom-operator
-helm install kube-prometheus-stack \
+helm install kube-prometheus-stack prometheus-community/kube-prometheus-stack \
     --set grafana.defaultDashboardsTimezone="Asia/Bangkok" \
-    --namespace kube-prometheus-stack \
-    prometheus-community/kube-prometheus-stack
+    --namespace monitoring
+```
 ```
 
 ## Misc
