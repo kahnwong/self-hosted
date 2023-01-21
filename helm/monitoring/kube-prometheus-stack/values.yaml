@@ -23,3 +23,10 @@ prometheus:
             # Ensure blackbox-exporter is reachable from Prometheus
           - target_label: __address__
             replacement: blackbox-exporter-prometheus-blackbox-exporter:9115 # make sure this points to the correct service
+      - job_name: elasticsearch
+        scrape_interval: 45s
+        scrape_timeout: 30s
+        metrics_path: "/metrics"
+        static_configs:
+          - targets:
+              - elasticsearch-exporter-prometheus-elasticsearch-exporter:9108

@@ -57,6 +57,13 @@ helm install kube-prometheus-stack prometheus-community/kube-prometheus-stack \
 helm install blackbox-exporter prometheus-community/prometheus-blackbox-exporter \
     --namespace monitoring
 ```
+
+#### Elasticsearch exporter
+
+```bash
+helm install elasticsearch-exporter prometheus-community/prometheus-elasticsearch-exporter \
+    --values ./monitoring/elasticsearch-exporter/values.yaml \
+    --namespace monitoring
 ```
 
 ## Misc
