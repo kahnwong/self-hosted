@@ -1,0 +1,10 @@
+---
+config:
+  datasource:
+    host:
+    user:
+    password:
+    database:
+# extraEnvs:
+#   - name: DATA_SOURCE_NAME
+#     value: postgresql://POSTGRES_USER:PASSWORD@host1:5432/postgres?sslmode=disable,postgresql://POSTGRES_USER:PASSWORD@host2:5432/postgres?sslmode=disable

@@ -33,6 +33,7 @@ docker/tileserver-playground/
 secrets*.yaml
 
 helm/monitoring/elasticsearch-exporter/values.yaml
+helm/monitoring/postgres-exporter/values.yaml
 
 # files
 *.html

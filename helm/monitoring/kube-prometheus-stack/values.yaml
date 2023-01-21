@@ -30,3 +30,8 @@ prometheus:
         static_configs:
           - targets:
               - elasticsearch-exporter-prometheus-elasticsearch-exporter:9108
+      - job_name: postgres
+        scrape_interval: 5m
+        static_configs:
+          - targets:
+              - postgres-exporter-prometheus-postgres-exporter:80

@@ -66,6 +66,14 @@ helm install elasticsearch-exporter prometheus-community/prometheus-elasticsearc
     --namespace monitoring
 ```
 
+#### Postgres exporter
+
+```bash
+helm install postgres-exporter prometheus-community/prometheus-postgres-exporter \
+    --values ./monitoring/postgres-exporter/values.yaml \
+    --namespace monitoring
+```
+
 ## Misc
 
 ### Sourcegraph (official helm chart, unused)
