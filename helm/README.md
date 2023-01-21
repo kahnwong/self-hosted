@@ -34,6 +34,9 @@ helm install kubernetes-dashboard \
     --set rbac.clusterReadOnlyRole=true \
     --namespace kubernetes-dashboard \
     kubernetes-dashboard/kubernetes-dashboard
+
+# get dashboard token
+kubectl -n kubernetes-dashboard create token kubernetes-dashboard | pbcopy
 ```
 
 ### kube-prometheus-stack
@@ -50,6 +53,13 @@ helm install kube-prometheus-stack prometheus-community/kube-prometheus-stack \
     --set grafana.defaultDashboardsTimezone="Asia/Bangkok" \
     --namespace monitoring
 ```
+
+##### Dashboards
+
+- <https://grafana.com/grafana/dashboards/17594-elasticsearch-index-usage/>
+- <https://grafana.com/grafana/dashboards/9628-postgresql-database/>
+- <https://grafana.com/grafana/dashboards/12485-postgresql-exporter/>
+- <https://grafana.com/grafana/dashboards/14928-prometheus-blackbox-exporter/>
 
 #### Blackbox exporter
 

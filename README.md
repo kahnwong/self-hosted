@@ -21,13 +21,6 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 ```
 
-### Kubernetes
-
-```bash
-# get dashboard token
-kubectl -n kubernetes-dashboard create token kubernetes-dashboard | pbcopy
-```
-
 ### Auto mount storage
 
 ```bash
