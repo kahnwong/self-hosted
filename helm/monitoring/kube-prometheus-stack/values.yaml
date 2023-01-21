@@ -1,0 +1,25 @@
+---
+prometheus:
+  prometheusSpec:
+    additionalScrapeConfigs:
+      - job_name: blackbox
+        metrics_path: /probe
+        params:
+          module: [http_2xx]
+        static_configs:
+          # Add URLs as target parameter
+          - targets:
+              - https://example.com
+              - https://www.google.com
+              - https://stackoverflow.com
+              - https://scala-lang.org
+              - https://helm.sh
+        relabel_configs:
+          - source_labels: [__address__]
+            target_label: __param_target
+          - source_labels: [__param_target]
+            # Important!
+            target_label: target
+            # Ensure blackbox-exporter is reachable from Prometheus
+          - target_label: __address__
+            replacement: blackbox-exporter-prometheus-blackbox-exporter:9115 # make sure this points to the correct service
