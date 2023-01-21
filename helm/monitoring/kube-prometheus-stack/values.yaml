@@ -37,10 +37,10 @@ prometheus:
         static_configs:
           - targets:
               - postgres-exporter-prometheus-postgres-exporter:80
-      - job_name: mongodb
-        scrape_interval: 45s
-        scrape_timeout: 30s
-        metrics_path: "/metrics"
-        static_configs:
-          - targets:
-              - mongodb-exporter-prometheus-mongodb-exporter:9216
+      # - job_name: mongodb
+      #   scrape_interval: 45s
+      #   scrape_timeout: 30s
+      #   metrics_path: "/metrics"
+      #   static_configs:
+      #     - targets:
+      #         - mongodb-exporter-prometheus-mongodb-exporter:9216
