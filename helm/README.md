@@ -74,6 +74,14 @@ helm install postgres-exporter prometheus-community/prometheus-postgres-exporter
     --namespace monitoring
 ```
 
+#### Mongodb exporter
+
+```bash
+helm install mongodb-exporter prometheus-community/prometheus-mongodb-exporter \
+    --values ./monitoring/mongodb-exporter/values.yaml \
+    --namespace monitoring
+```
+
 ## Misc
 
 ### Sourcegraph (official helm chart, unused)

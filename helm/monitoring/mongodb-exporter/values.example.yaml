@@ -1,0 +1,3 @@
+---
+mongodb:
+  uri: mongodb+srv://USERNAME:PASSWORD@HOSTNAME/DATABASE?authMechanism=DEFAULT&authSource=admin
