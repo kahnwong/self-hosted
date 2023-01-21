@@ -5,18 +5,18 @@ Upgrade via `helm upgrade ...`
 ## Apps
 
 ```bash
-helm install supersecretmessage ./app/supersecretmessage
 helm install fava ./app/fava
-helm install komga ./app/komga
 helm install jellyfin ./app/jellyfin
-helm install podgrab ./app/podgrab
+helm install komga ./app/komga
 helm install linkding ./app/linkding
-helm install navidrome ./app/navidrome
 helm install miniflux ./app/miniflux
+helm install navidrome ./app/navidrome
 helm install photoprism ./app/photoprism
-helm install wallabag ./app/wallabag
+helm install podgrab ./app/podgrab
 helm install sourcegraph ./app/sourcegraph
+helm install supersecretmessage ./app/supersecretmessage
 helm install tileserver ./app/tileserver
+helm install wallabag ./app/wallabag
 ```
 
 ## Monitoring
