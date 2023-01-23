@@ -10,4 +10,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: opencost
-    namespace: opencost
+    namespace: monitoring

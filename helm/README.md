@@ -92,20 +92,12 @@ helm install mongodb-exporter prometheus-community/prometheus-mongodb-exporter \
     --namespace monitoring
 ``` -->
 
-<!-- ## Cost
+<!-- #### Opencost
 
 <https://www.opencost.io/docs/install>
 
 ```bash
-kubectl create namespace opencost
-
-helm install prometheus prometheus-community/prometheus \
-  --values ./opencost/prometheus/values.yaml \
-  --namespace opencost \
-  --set pushgateway.enabled=false \
-  --set alertmanager.enabled=false
-
-helm install opencost ./opencost/opencost --namespace opencost
+helm install opencost ./monitoring/opencost --namespace monitoring
 ``` -->
 
 ## Misc
