@@ -21,7 +21,7 @@ spec:
           ## admin user setup
           # docker exec -it linkding python manage.py createsuperuser --username=joe --email=joe@example.com
         - name: linkding
-          image: sissbruecker/linkding:1.16.1
+          image: sissbruecker/linkding:1.17.1
           ports:
             - name: http
               containerPort: 9090
