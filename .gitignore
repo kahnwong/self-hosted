@@ -33,6 +33,7 @@ docker/tileserver-playground/
 secrets*.yaml
 
 helm/monitoring*/*-exporter/values.yaml
+helm/monitoring/grafana*/**/configmap.yaml
 
 # files
 *.html

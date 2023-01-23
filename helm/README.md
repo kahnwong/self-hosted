@@ -21,6 +21,36 @@ helm install wallabag ./app/wallabag
 
 ## Monitoring
 
+### Grafana agent
+
+<https://grafana.com/docs/grafana-cloud/kubernetes-monitoring/configuration/config-k8s-agent-guide/>
+
+- For `configmap.yaml`, in `grafana-agent` and `grafana-logs-agent`, obtain it from the [Kubernetes integrations UI].
+
+```bash
+kubectl create namespace monitoring
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+
+helm install grafana-agent ./monitoring/grafana-agent -n monitoring
+helm install ksm prometheus-community/kube-state-metrics --set image.tag=v2.4.2 -n monitoring
+helm install nodeexporter prometheus-community/prometheus-node-exporter -n monitoring
+
+helm install grafana-logs-agent ./monitoring/grafana-logs-agent -n monitoring
+```
+
+<!-- ### Grafana agent operator
+
+```bash
+kubectl create namespace monitoring
+
+helm repo add grafana https://grafana.github.io/helm-charts
+helm repo update
+helm install grafana-agent-operator grafana/grafana-agent-operator -n monitoring
+``` -->
+
+Then follow instructions in <https://grafana.com/docs/grafana-cloud/kubernetes-monitoring/configuration/config-k8s-agent-operator-guide/>.
+
 ### Dashboards
 
 - <https://grafana.com/grafana/dashboards/17594-elasticsearch-index-usage/>
