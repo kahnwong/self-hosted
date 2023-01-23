@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: sourcegraph
-          image: sourcegraph/server:4.3.1
+          image: sourcegraph/server:4.4.0
           ports:
             - containerPort: 7080
             - containerPort: 3370
