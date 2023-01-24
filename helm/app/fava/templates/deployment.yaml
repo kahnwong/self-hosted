@@ -37,7 +37,7 @@ spec:
               mountPath: /opt/fava
           resources:
             requests:
-              cpu: "200m"
+              cpu: "10m"
               memory: "128Mi"
             limits:
               cpu: "999m"
