@@ -43,7 +43,7 @@ spec:
             - name: SYMFONY__ENV__DATABASE_HOST
               value: localhost
             - name: SYMFONY__ENV__DATABASE_PORT
-              value: "5432"
+              value: '5432'
             - name: SYMFONY__ENV__DATABASE_NAME
               value: wallabag
             - name: SYMFONY__ENV__DATABASE_USER
@@ -64,11 +64,11 @@ spec:
               readOnly: true
           resources:
             requests:
-              cpu: "200m"
-              memory: "512Mi"
+              cpu: 200m
+              memory: 512Mi
             limits:
-              cpu: "999m"
-              memory: "1G"
+              cpu: 999m
+              memory: 1G
         - name: postgres
           image: postgres:15.1-alpine
           ports:
@@ -84,11 +84,11 @@ spec:
               mountPath: /var/lib/postgresql/data
           resources:
             requests:
-              cpu: "200m"
-              memory: "128Mi"
+              cpu: 200m
+              memory: 128Mi
             limits:
-              cpu: "999m"
-              memory: "512Mi"
+              cpu: 999m
+              memory: 512Mi
         - name: redis
           image: redis:6.0.9-alpine
           ports:
@@ -99,11 +99,11 @@ spec:
               value: redispwd
           resources:
             requests:
-              cpu: "200m"
-              memory: "64Mi"
+              cpu: 200m
+              memory: 64Mi
             limits:
-              cpu: "999m"
-              memory: "512Mi"
+              cpu: 999m
+              memory: 512Mi
       restartPolicy: Always
       volumes:
         - name: wallabag-images

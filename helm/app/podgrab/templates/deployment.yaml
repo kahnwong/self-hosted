@@ -25,7 +25,7 @@ spec:
               containerPort: 8080
           env:
             - name: CHECK_FREQUENCY
-              value: "240"
+              value: '240'
           livenessProbe:
             httpGet:
               path: /
@@ -39,11 +39,11 @@ spec:
               mountPath: /config
           resources:
             requests:
-              cpu: "200m"
-              memory: "64Mi"
+              cpu: 200m
+              memory: 64Mi
             limits:
-              cpu: "999m"
-              memory: "512Mi"
+              cpu: 999m
+              memory: 512Mi
       restartPolicy: Always
       volumes:
         - name: podgrab-media

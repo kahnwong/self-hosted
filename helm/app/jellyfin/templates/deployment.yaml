@@ -31,9 +31,9 @@ spec:
               protocol: UDP
           env:
             - name: PGID
-              value: "1000"
+              value: '1000'
             - name: PUID
-              value: "1000"
+              value: '1000'
             - name: TZ
               value: Asia/Bangkok
           livenessProbe:
@@ -49,11 +49,11 @@ spec:
               mountPath: /config
           resources:
             requests:
-              cpu: "1"
-              memory: "2G"
+              cpu: 512m
+              memory: 512Mi
             limits:
-              cpu: "2"
-              memory: "4G"
+              cpu: '2'
+              memory: 2G
       restartPolicy: Always
       volumes:
         - name: jellyfin-media

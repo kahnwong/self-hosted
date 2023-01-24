@@ -40,11 +40,11 @@ spec:
               mountPath: /config
           resources:
             requests:
-              cpu: "200m"
-              memory: "2G"
+              cpu: 128m
+              memory: 1G
             limits:
-              cpu: "999m"
-              memory: "4G"
+              cpu: 999m
+              memory: 4G
       restartPolicy: Always
       volumes:
         - name: books-magazines

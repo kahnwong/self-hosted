@@ -39,31 +39,31 @@ spec:
             - name: DATABASE_URL
               value: postgres://miniflux:secret@localhost/miniflux?sslmode=disable
             - name: RUN_MIGRATIONS
-              value: "1"
+              value: '1'
             - name: CREATE_ADMIN
-              value: "1"
+              value: '1'
             - name: BASE_URL
               value: https://miniflux.karnwong.me
             - name: POLLING_FREQUENCY
-              value: "60"
+              value: '60'
             - name: BATCH_SIZE
-              value: "300"
+              value: '300'
             - name: POLLING_SCHEDULER
               value: entry_frequency
             - name: SCHEDULER_ENTRY_FREQUENCY_MIN_INTERVAL
-              value: "5"
+              value: '5'
             - name: SCHEDULER_ENTRY_FREQUENCY_MAX_INTERVAL
-              value: "24*60"
+              value: '1440' # 24*60
           envFrom:
             - secretRef:
                 name: miniflux
           resources:
             requests:
-              cpu: "200m"
-              memory: "64Mi"
+              cpu: 256m
+              memory: 64Mi
             limits:
-              cpu: "999m"
-              memory: "512Mi"
+              cpu: 999m
+              memory: 512Mi
         - name: postgres
           image: postgres:15.1-alpine
           ports:
@@ -79,11 +79,11 @@ spec:
               mountPath: /var/lib/postgresql/data
           resources:
             requests:
-              cpu: "200m"
-              memory: "1G"
+              cpu: 200m
+              memory: 256Mi
             limits:
-              cpu: "999m"
-              memory: "2G"
+              cpu: 999m
+              memory: 2G
       restartPolicy: Always
       volumes:
         - name: miniflux-data

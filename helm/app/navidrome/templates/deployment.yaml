@@ -46,11 +46,11 @@ spec:
               mountPath: /data
           resources:
             requests:
-              cpu: "200m"
-              memory: "1G"
+              cpu: 50m
+              memory: 512Mi
             limits:
-              cpu: "999m"
-              memory: "2G"
+              cpu: 512m
+              memory: 1G
       restartPolicy: Always
       volumes:
         - name: music

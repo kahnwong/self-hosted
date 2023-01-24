@@ -38,11 +38,11 @@ spec:
               value: supersecret
           resources:
             requests:
-              cpu: "200m"
-              memory: "64Mi"
+              cpu: 20m
+              memory: 64Mi
             limits:
-              cpu: "999m"
-              memory: "512Mi"
+              cpu: 999m
+              memory: 512Mi
         - name: vault
           image: vault:latest
           ports:
@@ -62,9 +62,9 @@ spec:
               value: supersecret
           resources:
             requests:
-              cpu: "200m"
-              memory: "64Mi"
+              cpu: 20m
+              memory: 64Mi
             limits:
-              cpu: "999m"
-              memory: "512Mi"
+              cpu: 999m
+              memory: 512Mi
       restartPolicy: Always

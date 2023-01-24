@@ -52,11 +52,11 @@ spec:
               mountPath: /photoprism/storage
           resources:
             requests:
-              cpu: "512m"
-              memory: "256Mi"
+              cpu: 256m
+              memory: 1.5G
             limits:
-              cpu: "999m"
-              memory: "1G"
+              cpu: '3'
+              memory: 3G
         - name: mariadb
           image: mariadb:10.9
           ports:
@@ -84,11 +84,11 @@ spec:
               mountPath: /var/lib/mysql
           resources:
             requests:
-              cpu: "200m"
-              memory: "256Mi"
+              cpu: 200m
+              memory: 256Mi
             limits:
-              cpu: "999m"
-              memory: "1G"
+              cpu: 999m
+              memory: 1G
       restartPolicy: Always
       volumes:
         - name: photoprism-images
