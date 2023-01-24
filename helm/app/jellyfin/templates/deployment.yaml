@@ -47,6 +47,13 @@ spec:
               mountPath: /data/media
             - name: jellyfin-data
               mountPath: /config
+          resources:
+            requests:
+              cpu: "1"
+              memory: "2G"
+            limits:
+              cpu: "2"
+              memory: "4G"
       restartPolicy: Always
       volumes:
         - name: jellyfin-media

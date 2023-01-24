@@ -36,6 +36,13 @@ spec:
               value: http://localhost:8200 # all containers in the same pod share the same host
             - name: VAULT_TOKEN
               value: supersecret
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "64Mi"
+            limits:
+              cpu: "999m"
+              memory: "512Mi"
         - name: vault
           image: vault:latest
           ports:
@@ -53,4 +60,11 @@ spec:
           env:
             - name: VAULT_DEV_ROOT_TOKEN_ID
               value: supersecret
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "64Mi"
+            limits:
+              cpu: "999m"
+              memory: "512Mi"
       restartPolicy: Always

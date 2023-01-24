@@ -32,6 +32,13 @@ spec:
           volumeMounts:
             - name: tileserver-data
               mountPath: /data
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "256Mi"
+            limits:
+              cpu: "999m"
+              memory: "512Mi"
       restartPolicy: Always
       volumes:
         - name: tileserver-data

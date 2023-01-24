@@ -35,6 +35,13 @@ spec:
           volumeMounts:
             - name: fava-data
               mountPath: /opt/fava
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "128Mi"
+            limits:
+              cpu: "999m"
+              memory: "1G"
       restartPolicy: Always
       volumes:
         - name: fava-data

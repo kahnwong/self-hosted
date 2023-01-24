@@ -34,6 +34,13 @@ spec:
           volumeMounts:
             - name: linkding-data
               mountPath: /etc/linkding/data
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "256Mi"
+            limits:
+              cpu: "999m"
+              memory: "1G"
       restartPolicy: Always
       volumes:
         - name: linkding-data

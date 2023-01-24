@@ -34,6 +34,13 @@ spec:
               mountPath: /etc/sourcegraph
             - name: sourcegraph-data
               mountPath: /var/opt/sourcegraph
+          resources:
+            requests:
+              cpu: "1"
+              memory: "2G"
+            limits:
+              cpu: "2"
+              memory: "4G"
       restartPolicy: Always
       volumes:
         - name: sourcegraph-config

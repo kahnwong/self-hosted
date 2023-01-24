@@ -37,6 +37,13 @@ spec:
               mountPath: /assets
             - name: podgrab-data
               mountPath: /config
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "64Mi"
+            limits:
+              cpu: "999m"
+              memory: "512Mi"
       restartPolicy: Always
       volumes:
         - name: podgrab-media

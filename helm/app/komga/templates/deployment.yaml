@@ -38,6 +38,13 @@ spec:
               readOnly: true
             - name: komga-data
               mountPath: /config
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "2G"
+            limits:
+              cpu: "999m"
+              memory: "4G"
       restartPolicy: Always
       volumes:
         - name: books-magazines

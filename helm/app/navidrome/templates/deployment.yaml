@@ -44,6 +44,13 @@ spec:
               readOnly: true
             - name: navidrome-data
               mountPath: /data
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "1G"
+            limits:
+              cpu: "999m"
+              memory: "2G"
       restartPolicy: Always
       volumes:
         - name: music
