@@ -58,13 +58,19 @@ Then follow instructions in <https://grafana.com/docs/grafana-cloud/kubernetes-m
 - <https://grafana.com/grafana/dashboards/12485-postgresql-exporter/>
 - <https://grafana.com/grafana/dashboards/14928-prometheus-blackbox-exporter/>
 
-<!-- #### Opencost
+#### Opencost
 
 <https://www.opencost.io/docs/install>
 
 ```bash
-helm install opencost ./monitoring/opencost --namespace monitoring
-``` -->
+kubectl create namespace opencost
+
+helm install prometheus prometheus-community/prometheus \
+  --values ./opencost/prometheus/values.yaml \
+  --namespace opencost
+
+helm install opencost ./opencost/opencost --namespace opencost
+```
 
 ## Misc
 

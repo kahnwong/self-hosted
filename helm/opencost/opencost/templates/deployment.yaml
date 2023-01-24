@@ -34,16 +34,11 @@ spec:
               memory: "1G"
           env:
             - name: PROMETHEUS_SERVER_ENDPOINT
-              value: http://kube-prometheus-stack-prometheus.monitoring.svc:9090 # The endpoint should have the form http://<service-name>.<namespace-name>.svc
+              value: "http://prometheus-server.opencost.svc" # The endpoint should have the form http://<service-name>.<namespace-name>.svc
             - name: CLOUD_PROVIDER_API_KEY
               value: "AIzaSyD29bGxmHAVEOBYtgd8sYM2gM2ekfxQX4U" # The GCP Pricing API requires a key. This is supplied just for evaluation.
             - name: CLUSTER_ID
               value: "cluster-one" # Default cluster ID to use if cluster_id is not set in Prometheus metrics.
-            # https://docs.kubecost.com/architecture/ksm-metrics
-            - name: EMIT_KSM_V1_METRICS
-              value: "false"
-            - name: EMIT_KSM_V1_METRICS_ONLY
-              value: "true"
           imagePullPolicy: Always
         - image: quay.io/kubecost1/opencost-ui:latest
           name: opencost-ui
