@@ -7,6 +7,14 @@ alertmanager:
   enabled: false
 kube-state-metrics:
   enabled: false
+server:
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 500m
+      memory: 512Mi
 extraScrapeConfigs: |
   - job_name: opencost
     honor_labels: true

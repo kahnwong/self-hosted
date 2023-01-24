@@ -26,6 +26,13 @@ spec:
                 fieldRef:
                   fieldPath: spec.nodeName
           image: grafana/agent:v0.27.1
+          resources:
+            requests:
+              cpu: "200m"
+              memory: "256Mi"
+            limits:
+              cpu: "999m"
+              memory: "1G"
           imagePullPolicy: IfNotPresent
           name: grafana-agent-logs
           ports:
