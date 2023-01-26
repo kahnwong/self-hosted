@@ -31,9 +31,8 @@ docker/tileserver-playground/
 .flame-password
 
 secrets*.yaml
-
-helm/monitoring*/*-exporter/values.yaml
-helm/monitoring/grafana*/**/configmap.yaml
+**/*-exporter/values.yaml
+**/grafana*/**/configmap.yaml
 
 # files
 *.html

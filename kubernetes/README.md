@@ -1,4 +1,4 @@
-# helm
+# Kubernetes
 
 Upgrade via `helm upgrade ...`
 
