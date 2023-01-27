@@ -24,3 +24,16 @@ resource "kubernetes_secret" "photoprism" {
     PHOTOPRISM_ADMIN_PASSWORD = data.sops_file.photoprism.data["PHOTOPRISM_ADMIN_PASSWORD"]
   }
 }
+
+data "sops_file" "transmission" {
+  source_file = "./secrets/transmission.sops.yaml"
+}
+resource "kubernetes_secret" "transmission" {
+  metadata {
+    name = "transmission"
+  }
+
+  data = {
+    TRANSMISSION_PASSWORD = data.sops_file.transmission.data["TRANSMISSION_PASSWORD"]
+  }
+}
