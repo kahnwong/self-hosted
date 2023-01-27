@@ -8,6 +8,11 @@ spec:
   selector:
     app.kubernetes.io/name: {{ template "name" . }}
   ports:
+    {{ if .Values.service.port }}
     - port: {{ .Values.service.port }}
       targetPort: {{ .Values.service.port }}
       nodePort: {{ .Values.service.nodePort }}
+    {{ end }}
+  {{ if .Values.service.ports }}
+  ports: {{ .Values.service.ports | default list | toYaml | nindent 4 }}
+  {{ end }}

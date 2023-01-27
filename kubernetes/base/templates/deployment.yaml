@@ -22,8 +22,13 @@ spec:
         {{ range .Values.containers }}
           - name:  {{ .name }}
             image: "{{ .repository }}:{{ .tag }}"
+            {{ if .port }}
             ports:
               - containerPort: {{ .port }}
+            {{ end}}
+            {{ if .ports }}
+            ports: {{ .ports | default list | toYaml | nindent 14 }}
+            {{ end }}
             {{ if not (eq .healthcheck false)}}
             livenessProbe:
               httpGet:
