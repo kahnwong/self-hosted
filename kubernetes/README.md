@@ -15,7 +15,7 @@ helm install photoprism ./app/photoprism
 helm install podgrab ./base --values podgrab.yaml
 helm install sourcegraph ./base --values sourcegraph.yaml
 helm install supersecretmessage ./base --values supersecretmessage.yaml
-helm install tileserver ./app/tileserver
+helm install tileserver ./base --values tileserver.yaml
 helm install wallabag ./app/wallabag
 ```
 
