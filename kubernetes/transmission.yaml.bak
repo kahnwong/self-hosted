@@ -62,8 +62,10 @@ service:
     - name: transmission-tcp
       port: 51413
       targetPort: 51413
+      nodePort: 51413
       protocol: TCP
     - name: transmission-udp
       port: 51413
       targetPort: 51413
+      nodePort: 51413
       protocol: UDP
