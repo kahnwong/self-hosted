@@ -24,13 +24,17 @@ spec:
             image: "{{ .repository }}:{{ .tag }}"
             ports:
               - containerPort: {{ .port }}
+            {{ if not (eq .healthcheck false)}}
             livenessProbe:
               httpGet:
                 path: /
                 port: {{ .port }}
                 scheme: HTTP
+            {{ end }}
             securityContext: {{ toYaml .securityContext | default list | nindent 14 }}
+            args: {{ .args | default list | toYaml | nindent 14 }}
             env: {{ .env | default list | toYaml | nindent 14 }}
+            envFrom: {{ .envFrom | default list | toYaml | nindent 14 }}
             resources: {{ toYaml .resources | default list | nindent 14 }}
             volumeMounts: {{ toYaml .volumeMounts | default list | nindent 14 }}
         {{ end }}
