@@ -8,7 +8,7 @@ Upgrade via `helm upgrade ...`
 helm install fava ./base --values fava.yaml
 helm install jellyfin ./base --values jellyfin.yaml
 helm install komga ./base --values komga.yaml
-helm install linkding ./app/linkding
+helm install linkding ./base --values linkding.yaml
 helm install miniflux ./app/miniflux
 helm install navidrome ./base --values navidrome.yaml
 helm install photoprism ./app/photoprism

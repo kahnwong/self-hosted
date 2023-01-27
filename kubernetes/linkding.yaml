@@ -1,0 +1,30 @@
+---
+name: linkding
+replicaCount: 1
+
+containers:
+  ## admin user setup
+  # docker exec -it linkding python manage.py createsuperuser --username=joe --email=joe@example.com
+  - name: linkding
+    repository: sissbruecker/linkding
+    tag: 1.17.1
+    port: 9090
+    resources:
+      limits:
+        cpu: 512m
+        memory: 512Mi
+      requests:
+        cpu: 200m
+        memory: 256Mi
+    volumeMounts:
+      - name: linkding-data
+        mountPath: /etc/linkding/data
+
+volumes:
+  - name: linkding-data
+    hostPath:
+      path: /opt/linkding/data
+
+service:
+  port: 9090
+  nodePort: 30005
