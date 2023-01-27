@@ -14,6 +14,7 @@ locals {
     "podgrab",
     "redash",
     "secrets",
+    "sourcegraph-mfec",
     "sourcegraph-personal",
     "sourcegraph",
     "syncthing",

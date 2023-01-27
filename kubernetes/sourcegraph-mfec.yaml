@@ -1,9 +1,9 @@
 ---
-name: sourcegraph-personal
+name: sourcegraph-mfec
 replicaCount: 1
 
 containers:
-  - name: sourcegraph-personal
+  - name: sourcegraph-mfec
     repository: sourcegraph/server
     tag: 4.4.1
     port: 7080
@@ -15,19 +15,19 @@ containers:
         cpu: "1.5"
         memory: 2G
     volumeMounts:
-      - name: sourcegraph-personal-config
+      - name: sourcegraph-mfec-config
         mountPath: /etc/sourcegraph
-      - name: sourcegraph-personal-data
+      - name: sourcegraph-mfec-data
         mountPath: /var/opt/sourcegraph
 
 volumes:
-  - name: sourcegraph-personal-config
+  - name: sourcegraph-mfec-config
     hostPath:
-      path: /opt/sourcegraph-personal/config
-  - name: sourcegraph-personal-data
+      path: /opt/sourcegraph-mfec/config
+  - name: sourcegraph-mfec-data
     hostPath:
-      path: /opt/sourcegraph-personal/data
+      path: /opt/sourcegraph-mfec/data
 
 service:
   port: 7080
-  nodePort: 30012
+  nodePort: 30013

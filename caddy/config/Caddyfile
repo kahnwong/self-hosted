@@ -42,6 +42,9 @@ sourcegraph.karnwong.me {
 sourcegraph-personal.karnwong.me {
     reverse_proxy 127.0.0.1:30012
 }
+sourcegraph-mfec.karnwong.me {
+    reverse_proxy 127.0.0.1:30013
+}
 podgrab.karnwong.me {
     basicauth * {
         podgrab $2a$14$s1l.L4xhGyEwCjt/MhP4dO0v3YF1g1zwE0KjkYSVFRAeETBNGDeyG
