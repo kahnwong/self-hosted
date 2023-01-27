@@ -30,7 +30,7 @@ spec:
                 port: {{ .port }}
                 scheme: HTTP
             securityContext: {{ toYaml .securityContext | default list | nindent 14 }}
-            env: {{ toYaml .env | default list | nindent 12 }}
+            env: {{ .env | default dict | toYaml | nindent 14 }}
             resources: {{ toYaml .resources | default list | nindent 14 }}
             volumeMounts: {{ toYaml .volumeMounts | default list | nindent 14 }}
         {{ end }}
