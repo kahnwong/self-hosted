@@ -1,10 +1,25 @@
 locals {
   github_pages = toset(["www", "blog", "dashboard", "jupyterlite", ])
   selfhosted_proxied = toset([
-    "linkding", "miniflux", "secrets", "ttrss", "wallabag", "budget",
-    "photos", "comics", "jellyfin", "music", "syncthing", "sourcegraph", "podgrab",
-    "work-dashboard", "basemaps", "redash", "api-docs",
-    "ed"
+    "api-docs",
+    "basemaps",
+    "budget",
+    "comics",
+    "ed",
+    "jellyfin",
+    "linkding",
+    "miniflux",
+    "music",
+    "photos",
+    "podgrab",
+    "redash",
+    "secrets",
+    "sourcegraph-personal",
+    "sourcegraph",
+    "syncthing",
+    "ttrss",
+    "wallabag",
+    "work-dashboard",
   ])
   selfhosted_non_proxied = toset([])
 }
