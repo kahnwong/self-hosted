@@ -14,7 +14,7 @@ helm install navidrome ./app/navidrome
 helm install photoprism ./app/photoprism
 helm install podgrab ./app/podgrab
 helm install sourcegraph ./app/sourcegraph
-helm install supersecretmessage ./app/supersecretmessage
+helm install supersecretmessage ./base --values supersecretmessage.yaml
 helm install tileserver ./app/tileserver
 helm install wallabag ./app/wallabag
 ```
