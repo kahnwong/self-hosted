@@ -12,8 +12,8 @@ containers:
         cpu: "8"
         memory: 8G
       requests:
-        cpu: "1.5"
-        memory: 2G
+        cpu: "0.5"
+        memory: 1G
     volumeMounts:
       - name: sourcegraph-mfec-config
         mountPath: /etc/sourcegraph
