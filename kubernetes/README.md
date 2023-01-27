@@ -5,7 +5,7 @@ Upgrade via `helm upgrade ...`
 ## Apps
 
 ```bash
-helm install fava ./app/fava
+helm install fava ./base --values fava.yaml
 helm install jellyfin ./app/jellyfin
 helm install komga ./app/komga
 helm install linkding ./app/linkding

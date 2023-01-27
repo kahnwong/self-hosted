@@ -1,0 +1,30 @@
+---
+name: "fava"
+replicaCount: 1
+
+containers:
+  - name: fava
+    repository: ghcr.io/kahnwong/docker-fava
+    tag: 2dd6d82
+    port: 5000
+    env:
+      - name: TZ
+        value: Asia/Bangkok
+    resources:
+      limits:
+        cpu: 100m
+        memory: 256Mi
+      requests:
+        cpu: 32m
+        memory: 128Mi
+    volumeMounts:
+      - name: fava-data
+        mountPath: /opt/fava
+
+volumes:
+  - name: fava-data
+    hostPath:
+      path: /opt/syncthing/cloud/Apps/fava
+service:
+  port: 5000
+  nodePort: 30001
