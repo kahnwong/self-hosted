@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "name" . }}
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: {{ template "name" . }}
+      app.kubernetes.io/instance: {{ template "name" . }}
+      app.kubernetes.io/name: {{ template "name" . }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/component: {{ template "name" . }}
+        app.kubernetes.io/instance: {{ template "name" . }}
+        app.kubernetes.io/name: {{ template "name" . }}
+    spec:
+      containers:
+        {{ range .Values.containers }}
+          - name:  {{ .name }}
+            image: "{{ .repository }}:{{ .tag }}"
+            ports:
+              - containerPort: {{ .port }}
+            livenessProbe:
+              httpGet:
+                path: /
+                port: {{ .port }}
+                scheme: HTTP
+            securityContext: {{ toYaml .securityContext | default list | nindent 14 }}
+            env: {{ toYaml .env | default list | nindent 12 }}
+            resources: {{ toYaml .resources | default list | nindent 14 }}
+            volumeMounts: {{ toYaml .volumeMounts | default list | nindent 14 }}
+        {{ end }}
+      volumes: {{ toYaml .Values.volumes | default list | nindent 8 }}
