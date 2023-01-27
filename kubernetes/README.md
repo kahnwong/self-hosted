@@ -10,7 +10,7 @@ helm install jellyfin ./app/jellyfin
 helm install komga ./app/komga
 helm install linkding ./app/linkding
 helm install miniflux ./app/miniflux
-helm install navidrome ./app/navidrome
+helm install navidrome ./base --values navidrome.yaml
 helm install photoprism ./app/photoprism
 helm install podgrab ./base --values podgrab.yaml
 helm install sourcegraph ./base --values sourcegraph.yaml
