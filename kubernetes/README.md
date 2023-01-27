@@ -7,7 +7,7 @@ Upgrade via `helm upgrade ...`
 ```bash
 helm install fava ./base --values fava.yaml
 helm install jellyfin ./app/jellyfin
-helm install komga ./app/komga
+helm install komga ./base --values komga.yaml
 helm install linkding ./app/linkding
 helm install miniflux ./app/miniflux
 helm install navidrome ./base --values navidrome.yaml

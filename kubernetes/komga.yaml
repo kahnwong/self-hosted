@@ -1,0 +1,40 @@
+---
+name: komga
+replicaCount: 1
+
+containers:
+  - name: komga
+    repository: gotson/komga
+    tag: 0.160.0
+    port: 8080
+    resources:
+      limits:
+        cpu: 999m
+        memory: 4G
+      requests:
+        cpu: 128m
+        memory: 1G
+    volumeMounts:
+      - name: books-magazines
+        mountPath: /books/Magazines
+        readOnly: true
+      - name: books-comics
+        mountPath: /books/Comics
+        readOnly: true
+      - name: komga-data
+        mountPath: /config
+
+volumes:
+  - name: books-magazines
+    hostPath:
+      path: /opt/syncthing/magazines
+  - name: books-comics
+    hostPath:
+      path: /opt/syncthing/comics
+  - name: komga-data
+    hostPath:
+      path: /opt/komga/config
+
+service:
+  port: 8080
+  nodePort: 30002
