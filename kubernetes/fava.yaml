@@ -1,5 +1,5 @@
 ---
-name: "fava"
+name: fava
 replicaCount: 1
 
 containers:
@@ -25,6 +25,7 @@ volumes:
   - name: fava-data
     hostPath:
       path: /opt/syncthing/cloud/Apps/fava
+
 service:
   port: 5000
   nodePort: 30001

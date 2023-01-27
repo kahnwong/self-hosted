@@ -12,7 +12,7 @@ helm install linkding ./app/linkding
 helm install miniflux ./app/miniflux
 helm install navidrome ./app/navidrome
 helm install photoprism ./app/photoprism
-helm install podgrab ./app/podgrab
+helm install podgrab ./base --values podgrab.yaml
 helm install sourcegraph ./app/sourcegraph
 helm install supersecretmessage ./base --values supersecretmessage.yaml
 helm install tileserver ./app/tileserver
