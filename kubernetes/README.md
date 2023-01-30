@@ -9,7 +9,7 @@ helm install fava ./base --values fava.yaml
 helm install jellyfin ./base --values jellyfin.yaml
 helm install komga ./base --values komga.yaml
 helm install linkding ./base --values linkding.yaml
-helm install miniflux ./app/miniflux
+helm install miniflux ./base --values miniflux.yaml
 helm install navidrome ./base --values navidrome.yaml
 helm install photoprism ./base --values photoprism.yaml
 helm install podgrab ./base --values podgrab.yaml

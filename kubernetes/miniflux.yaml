@@ -1,0 +1,73 @@
+---
+name: miniflux
+replicaCount: 1
+
+containers:
+  ## init
+  # docker-compose up db
+  # docker-compose up miniflux
+
+  ## restore
+  # start db container first, pg_restore and reset admin password
+  - name: miniflux
+    repository: miniflux/miniflux
+    tag: 2.0.41
+    port: 8080
+    env:
+      - name: DATABASE_URL
+        value: postgres://miniflux:secret@localhost/miniflux?sslmode=disable
+      - name: RUN_MIGRATIONS
+        value: "1"
+      - name: CREATE_ADMIN
+        value: "1"
+      - name: BASE_URL
+        value: https://miniflux.karnwong.me
+      - name: POLLING_FREQUENCY
+        value: "60"
+      - name: BATCH_SIZE
+        value: "300"
+      - name: POLLING_SCHEDULER
+        value: entry_frequency
+      - name: SCHEDULER_ENTRY_FREQUENCY_MIN_INTERVAL
+        value: "5"
+      - name: SCHEDULER_ENTRY_FREQUENCY_MAX_INTERVAL
+        value: "1440" # 24*60
+    envFrom:
+      - secretRef:
+          name: miniflux
+    resources:
+      limits:
+        cpu: 999m
+        memory: 512Mi
+      requests:
+        cpu: 256m
+        memory: 64Mi
+  - name: postgres
+    repository: postgres
+    tag: 15.1-alpine
+    port: 5432
+    healthcheck: false
+    env:
+      - name: POSTGRES_USER
+        value: miniflux
+      - name: POSTGRES_PASSWORD
+        value: secret
+    resources:
+      limits:
+        cpu: 999m
+        memory: 2G
+      requests:
+        cpu: 256m
+        memory: 256Mi
+    volumeMounts:
+      - name: miniflux-data
+        mountPath: /var/lib/postgresql/data
+
+volumes:
+  - name: miniflux-data
+    hostPath:
+      path: /opt/miniflux/db
+
+service:
+  port: 8080
+  nodePort: 30007
