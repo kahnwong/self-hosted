@@ -18,8 +18,8 @@ helm install sourcegraph-mfec ./base --values sourcegraph-mfec.yaml
 helm install sourcegraph-personal ./base --values sourcegraph-personal.yaml
 helm install supersecretmessage ./base --values supersecretmessage.yaml
 helm install tileserver ./base --values tileserver.yaml
-helm install transmission ./base --values transmission.yaml
-helm install wallabag ./app/wallabag
+# helm install transmission ./base --values transmission.yaml
+helm install wallabag ./base --values wallabag.yaml
 ```
 
 ## Monitoring
