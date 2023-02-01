@@ -5,7 +5,7 @@ replicaCount: 1
 containers:
   - name: wallabag
     repository: wallabag/wallabag
-    tag: 2.5.2
+    tag: 2.5.3
     port: 80
     env:
       - name: POSTGRES_PASSWORD
