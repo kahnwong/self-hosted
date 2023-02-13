@@ -8,6 +8,9 @@ containers:
     tag: 2.22.0
     port: 8080
     healthcheck: false
+    env:
+      - name: GEOSERVER_CSRF_WHITELIST
+        value: geoserver.karnwong.me
     resources:
       limits:
         cpu: "2"
