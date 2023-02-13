@@ -7,13 +7,13 @@ containers:
     repository: sourcegraph/server
     tag: 4.4.2
     port: 7080
-    resources:
-      limits:
-        cpu: "8"
-        memory: 8G
-      requests:
-        cpu: "0.5"
-        memory: 1G
+    # resources:
+    #   limits:
+    #     cpu: "8"
+    #     memory: 8G
+    #   requests:
+    #     cpu: "0.5"
+    #     memory: 1G
     volumeMounts:
       - name: sourcegraph-mfec-config
         mountPath: /etc/sourcegraph

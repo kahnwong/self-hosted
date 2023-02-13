@@ -1,0 +1,31 @@
+---
+name: geoserver
+replicaCount: 1
+
+containers:
+  - name: geoserver
+    repository: docker.osgeo.org/geoserver
+    tag: 2.22.0
+    port: 8080
+    # env:
+    #   - name: PROXY_BASE_URL
+    #     value: -DPROXY_BASE_URL=https://geoserver.karnwong.me/
+    resources:
+      limits:
+        cpu: "2"
+        memory: 4G
+      requests:
+        cpu: "1"
+        memory: 2G
+    volumeMounts:
+      - name: geoserver-data
+        mountPath: /opt/geoserver_data
+
+volumes:
+  - name: geoserver-data
+    hostPath:
+      path: /opt/geoserver/data
+
+service:
+  port: 8080
+  nodePort: 30014
