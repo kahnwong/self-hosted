@@ -7,9 +7,7 @@ containers:
     repository: docker.osgeo.org/geoserver
     tag: 2.22.0
     port: 8080
-    # env:
-    #   - name: PROXY_BASE_URL
-    #     value: -DPROXY_BASE_URL=https://geoserver.karnwong.me/
+    healthcheck: false
     resources:
       limits:
         cpu: "2"
