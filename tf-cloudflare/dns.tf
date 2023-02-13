@@ -6,6 +6,7 @@ locals {
     "budget",
     "comics",
     "ed",
+    "geoserver",
     "jellyfin",
     "linkding",
     "miniflux",

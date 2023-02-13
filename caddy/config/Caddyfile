@@ -72,3 +72,6 @@ api-docs.karnwong.me {
     }
     reverse_proxy 127.0.0.1:5333
 }
+geoserver.karnwong.me {
+    reverse_proxy 127.0.0.1:30014
+}
