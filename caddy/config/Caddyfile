@@ -72,6 +72,9 @@ api-docs.karnwong.me {
     }
     reverse_proxy 127.0.0.1:5333
 }
-geoserver.karnwong.me {
-    reverse_proxy 127.0.0.1:30014
+mapserver.karnwong.me {
+    basicauth * {
+        kahnwong $2a$14$GtDIU0U5h8mH0pKxlosiUeIdJMft/vrcScw7cFkZRqjB8KRhmLINS
+    }
+    reverse_proxy 127.0.0.1:30015
 }
