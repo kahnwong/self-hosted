@@ -1,0 +1,31 @@
+---
+name: qgis-server
+replicaCount: 1
+
+containers:
+  - name: qgis-server
+    repository: camptocamp/qgis-server
+    tag: 3.28
+    port: 80
+    env:
+      - name: QGIS_SERVER_LANDING_PAGE_PROJECTS_DIRECTORIES
+        value: /etc/qgisserver
+    healthcheck: false
+    resources:
+      limits:
+        cpu: "2"
+        memory: 4G
+      requests:
+        cpu: "1"
+        memory: 1G
+    volumeMounts:
+      - name: qgis-server-data
+        mountPath: /etc/qgisserver
+volumes:
+  - name: qgis-server-data
+    hostPath:
+      path: /opt/qgis-server/data
+
+service:
+  port: 80
+  nodePort: 30015
