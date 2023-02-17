@@ -4,7 +4,7 @@ resource "cloudflare_pages_project" "this" {
   production_branch = var.production_branch
 
   lifecycle {
-    ignore_changes = [deployment_configs]
+    ignore_changes = [deployment_configs, source]
   }
 }
 

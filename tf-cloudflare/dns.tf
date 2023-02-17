@@ -62,3 +62,24 @@ resource "cloudflare_record" "standardnotes_listed" {
   value   = "18.205.249.107"
   zone_id = data.sops_file.secrets.data["zone_id"]
 }
+
+resource "cloudflare_record" "root_dummy" { # need for redirection to www
+  name    = "karnwong.me"
+  proxied = true
+  ttl     = 1
+  type    = "A"
+  value   = "192.0.2.1"
+  zone_id = data.sops_file.secrets.data["zone_id"]
+}
+resource "cloudflare_page_rule" "redirect_to_www" {
+  zone_id  = data.sops_file.secrets.data["zone_id"]
+  target   = "karnwong.me/*"
+  priority = 1
+
+  actions {
+    forwarding_url {
+      url         = "https://www.karnwong.me/$1"
+      status_code = 301
+    }
+  }
+}

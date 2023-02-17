@@ -3,7 +3,6 @@ locals {
   zone_id    = data.sops_file.secrets.data["zone_id"]
 }
 
-
 module "docs" {
   source = "./modules/cloudflare-pages"
 
