@@ -1,5 +1,8 @@
 locals {
-  github_pages = toset(["www", "blog", "dashboard", "jupyterlite", ])
+  github_pages = toset([
+    "dashboard",
+    "jupyterlite",
+  ])
   selfhosted_proxied = toset([
     "api-docs",
     "basemaps",
