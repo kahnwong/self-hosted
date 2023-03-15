@@ -25,6 +25,19 @@ resource "kubernetes_secret" "photoprism" {
   }
 }
 
+data "sops_file" "picoshare" {
+  source_file = "./secrets/picoshare.sops.yaml"
+}
+resource "kubernetes_secret" "picoshare" {
+  metadata {
+    name = "picoshare"
+  }
+
+  data = {
+    PS_SHARED_SECRET = data.sops_file.picoshare.data["PS_SHARED_SECRET"]
+  }
+}
+
 data "sops_file" "transmission" {
   source_file = "./secrets/transmission.sops.yaml"
 }
