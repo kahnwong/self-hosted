@@ -25,7 +25,7 @@ locals {
     "wallabag",
     "work-dashboard",
   ])
-  selfhosted_non_proxied = toset([])
+  selfhosted_non_proxied = toset(["share"])
 }
 locals {
   proxied_dict     = { for name in local.selfhosted_proxied : name => true }
