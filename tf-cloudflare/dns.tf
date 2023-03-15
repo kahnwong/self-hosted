@@ -7,7 +7,6 @@ locals {
     "api-docs",
     "basemaps",
     "budget",
-    "comics",
     "ed",
     "jellyfin",
     "linkding",
