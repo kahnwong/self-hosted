@@ -1,0 +1,31 @@
+---
+name: picoshare
+replicaCount: 1
+
+containers:
+  - name: picoshare
+    repository: mtlynch/picoshare
+    tag: 1.3.1
+    port: 4001
+    envFrom:
+      - secretRef:
+          name: picoshare
+    resources:
+      limits:
+        cpu: "2"
+        memory: 1G
+      requests:
+        cpu: "1"
+        memory: 512Mi
+    volumeMounts:
+      - name: picoshare-data
+        mountPath: /data
+
+volumes:
+  - name: picoshare-data
+    hostPath:
+      path: /opt/picoshare/data
+
+service:
+  port: 4001
+  nodePort: 30017

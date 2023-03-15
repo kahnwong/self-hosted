@@ -12,11 +12,10 @@ helm install linkding ./base --values linkding.yaml
 helm install miniflux ./base --values miniflux.yaml
 helm install navidrome ./base --values navidrome.yaml
 helm install photoprism ./base --values photoprism.yaml
+helm install picoshare ./base --values picoshare.yaml
 helm install podgrab ./base --values podgrab.yaml
 helm install qgis-server ./base --values qgis-server.yaml
-helm install qgis-server ./base --values qgis-server.yaml
 helm install sourcegraph ./base --values sourcegraph.yaml
-helm install sourcegraph-mfec ./base --values sourcegraph-mfec.yaml
 helm install sourcegraph-personal ./base --values sourcegraph-personal.yaml
 helm install supersecretmessage ./base --values supersecretmessage.yaml
 helm install tileserver ./base --values tileserver.yaml
