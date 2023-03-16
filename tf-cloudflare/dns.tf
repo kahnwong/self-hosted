@@ -1,13 +1,11 @@
 locals {
   github_pages = toset([
-    "dashboard",
     "jupyterlite",
   ])
   selfhosted_proxied = toset([
     "api-docs",
     "basemaps",
     "budget",
-    "ed",
     "jellyfin",
     "linkding",
     "mapserver",
@@ -17,7 +15,6 @@ locals {
     "podgrab",
     "redash",
     "secrets",
-    "sourcegraph-mfec",
     "sourcegraph-personal",
     "sourcegraph",
     "syncthing",
