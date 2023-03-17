@@ -15,6 +15,7 @@ locals {
     "podgrab",
     "redash",
     "secrets",
+    "share",
     "sourcegraph-personal",
     "sourcegraph",
     "syncthing",
@@ -22,7 +23,7 @@ locals {
     "wallabag",
     "work-dashboard",
   ])
-  selfhosted_non_proxied = toset(["share"])
+  selfhosted_non_proxied = toset([])
 }
 locals {
   proxied_dict     = { for name in local.selfhosted_proxied : name => true }
