@@ -59,8 +59,8 @@ containers:
         value: my-secret-pw
     resources:
       limits:
-        cpu: 999m
-        memory: 512Mi
+        cpu: 2
+        memory: 2G
       requests:
         cpu: 256m
         memory: 128Mi
