@@ -77,11 +77,11 @@ containers:
         value: redispwd
     resources:
       limits:
-        cpu: 999m
-        memory: 512Mi
+        cpu: "2"
+        memory: 4G
       requests:
-        cpu: 200m
-        memory: 64Mi
+        cpu: 256m
+        memory: 1G
 
 volumes:
   - name: wallabag-images
