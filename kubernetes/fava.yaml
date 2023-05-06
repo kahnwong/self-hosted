@@ -5,8 +5,9 @@ replicaCount: 1
 containers:
   - name: fava
     repository: ghcr.io/kahnwong/docker-fava
-    tag: 1da39c9
+    tag: 4243f58
     port: 5000
+    healthcheck: false
     env:
       - name: TZ
         value: Asia/Bangkok
