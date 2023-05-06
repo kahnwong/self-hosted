@@ -5,7 +5,7 @@ replicaCount: 1
 containers:
   - name: photoprism
     repository: photoprism/photoprism
-    tag: 221118-jammy
+    tag: 230504
     port: 2342
     env:
       - name: PHOTOPRISM_DATABASE_DRIVER
