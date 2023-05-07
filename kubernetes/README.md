@@ -2,6 +2,10 @@
 
 Upgrade via `helm upgrade ...`
 
+## Notes
+
+- Syncthing doesn't play nice with Kubernetes
+
 ## Apps
 
 ```bash
