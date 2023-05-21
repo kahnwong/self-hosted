@@ -6,7 +6,6 @@ locals {
     "api-docs",
     "basemaps",
     "budget",
-    "jellyfin",
     "linkding",
     "mapserver",
     "miniflux",
@@ -23,7 +22,9 @@ locals {
     "wallabag",
     "work-dashboard",
   ])
-  selfhosted_non_proxied = toset([])
+  selfhosted_non_proxied = toset([
+    "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
+  ])
 }
 locals {
   proxied_dict     = { for name in local.selfhosted_proxied : name => true }
