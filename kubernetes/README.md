@@ -51,7 +51,7 @@ Then follow instructions in <https://grafana.com/docs/grafana-cloud/kubernetes-m
 - <https://grafana.com/grafana/dashboards/12485-postgresql-exporter/>
 - <https://grafana.com/grafana/dashboards/14928-prometheus-blackbox-exporter/>
 
-#### Opencost
+## Opencost
 
 <https://www.opencost.io/docs/install>
 
@@ -63,6 +63,17 @@ helm install prometheus prometheus-community/prometheus \
   --namespace opencost
 
 helm install opencost ./opencost/opencost --namespace opencost
+```
+
+## coroot
+
+<https://github.com/coroot/coroot>
+
+```bash
+helm repo add coroot https://coroot.github.io/helm-charts
+helm repo update
+
+helm install --namespace coroot --create-namespace coroot coroot/coroot
 ```
 
 ## Misc
