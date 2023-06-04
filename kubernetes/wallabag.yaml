@@ -2,6 +2,10 @@
 name: wallabag
 replicaCount: 1
 
+# NOTES: can use same creds for POSTGRES_* AND SYMFONY__ENV__DATABASE_*
+# also need to set this to false: SYMFONY__ENV__FOSUSER_REGISTRATION
+# create user: /var/www/wallabag/bin/console --env=prod fos:user:create $USERNAME $EMAIL $PASSWORD --super-admin
+
 containers:
   - name: wallabag
     repository: wallabag/wallabag
