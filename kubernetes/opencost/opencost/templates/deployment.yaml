@@ -24,7 +24,7 @@ spec:
       serviceAccountName: opencost
       containers:
         - name: opencost
-          image: quay.io/kubecost1/kubecost-cost-model:latest
+          image: quay.io/kubecost1/kubecost-cost-model:1.104.0
           resources:
             requests:
               cpu: "10m"
@@ -41,7 +41,7 @@ spec:
               value: "cluster-one" # Default cluster ID to use if cluster_id is not set in Prometheus metrics.
           imagePullPolicy: Always
         - name: opencost-ui
-          image: quay.io/kubecost1/opencost-ui:latest
+          image: quay.io/kubecost1/opencost-ui:1.104.0
           resources:
             requests:
               cpu: "10m"
