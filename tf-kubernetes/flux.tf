@@ -16,8 +16,8 @@ resource "github_repository_deploy_key" "this" {
 ################
 # main
 ################
-resource "flux_bootstrap_git" "this" {
-  path           = "flux"
-  network_policy = true
-  #   kustomization_override = file("${path.module}/kustomization.yaml")
-}
+# resource "flux_bootstrap_git" "this" {
+#   path           = "flux"
+#   network_policy = true
+#   #   kustomization_override = file("${path.module}/kustomization.yaml")
+# }
