@@ -76,6 +76,12 @@ helm repo update
 helm install --namespace coroot --create-namespace coroot coroot/coroot
 ```
 
+## GitOps
+
+- [guide](https://fluxcd.io/flux/get-started/)
+- [bootstrap with terraform](https://fluxcd.io/flux/installation/#bootstrap-with-terraform)
+
+
 ## Misc
 
 ### Sourcegraph (official helm chart, unused)
