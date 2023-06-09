@@ -6,7 +6,7 @@ terraform {
     hostname     = "app.terraform.io"
 
     workspaces {
-      tags = ["kubernetes-secrets"]
+      tags = ["kubernetes"]
     }
   }
 
