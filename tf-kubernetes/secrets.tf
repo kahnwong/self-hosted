@@ -50,3 +50,17 @@ resource "kubernetes_secret" "transmission" {
     TRANSMISSION_PASSWORD = data.sops_file.transmission.data["TRANSMISSION_PASSWORD"]
   }
 }
+
+data "sops_file" "minio" {
+  source_file = "./secrets/minio.sops.yaml"
+}
+resource "kubernetes_secret" "minio" {
+  metadata {
+    name = "minio"
+  }
+
+  data = {
+    MINIO_ROOT_USER     = data.sops_file.minio.data["MINIO_ROOT_USER"]
+    MINIO_ROOT_PASSWORD = data.sops_file.minio.data["MINIO_ROOT_PASSWORD"]
+  }
+}

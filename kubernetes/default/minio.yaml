@@ -21,11 +21,13 @@ containers:
         containerPort: 9090
     healthcheck: false
     command: ["minio"]
-    args:
-      ["server", "/data", "--address", ":9000", "--console-address", ":9090"]
+    args: ["server", "/data", "--address", ":9000", "--console-address", ":9090"]
     volumeMounts:
       - name: data
         mountPath: /data
+    envFrom:
+      - secretRef:
+          name: minio
 
 volumes:
   - name: data
