@@ -28,6 +28,13 @@ containers:
     envFrom:
       - secretRef:
           name: minio
+    env:
+      - name: MINIO_COMPRESSION_ENABLE
+        value: "on"
+      - name: MINIO_COMPRESSION_EXTENSIONS
+        value: ".txt,.log,.csv,.json,.tar,.xml,.bin"
+      - name: MINIO_COMPRESSION_MIME_TYPES
+        value: "text/*,application/json,application/xml"
 
 volumes:
   - name: data
