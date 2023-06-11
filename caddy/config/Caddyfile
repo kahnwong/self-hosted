@@ -78,3 +78,9 @@ mapserver.karnwong.me {
     }
     reverse_proxy 127.0.0.1:30015
 }
+meet.karnwong.me {
+    basicauth / {
+        kahnwong $2a$14$r4Du7Qu.f8MtGQKXBmYfBufOv1OAfMXbKak599wgIQ.G2SDo0oppK
+    }
+    reverse_proxy 127.0.0.1:30019
+}
