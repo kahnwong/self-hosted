@@ -84,3 +84,6 @@ meet.karnwong.me {
     }
     reverse_proxy 127.0.0.1:30019
 }
+storage.karnwong.me {
+    reverse_proxy 127.0.0.1:30020
+}
