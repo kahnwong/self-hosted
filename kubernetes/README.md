@@ -9,7 +9,7 @@ Upgrade via `helm upgrade ...`
 ## Apps
 
 ```bash
-helm install fava ./base --values fava.yaml
+helm install fava ./default/base --values fava.yaml
 ```
 
 ## Monitoring
@@ -76,11 +76,10 @@ helm repo update
 helm install --namespace coroot --create-namespace coroot coroot/coroot
 ```
 
-## GitOps
+## GitOps (unused)
 
 - [guide](https://fluxcd.io/flux/get-started/)
 - [bootstrap with terraform](https://fluxcd.io/flux/installation/#bootstrap-with-terraform)
-
 
 ## Misc
 
