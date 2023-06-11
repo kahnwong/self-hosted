@@ -18,14 +18,23 @@ spec:
         app.kubernetes.io/instance: {{ template "name" . }}
         app.kubernetes.io/name: {{ template "name" . }}
     spec:
+      {{ if .Values.initContainers }}
+      initContainers: {{ toYaml .Values.initContainers | default list | nindent 8 }}
+      {{ end }}
       containers:
         {{ range .Values.containers }}
           - name:  {{ .name }}
             image: "{{ .repository }}:{{ .tag }}"
+            {{ if .command }}
+            command: {{ .command }}
+            {{ end }}
+            {{ if .args }}
+            args: {{ .args }}
+            {{ end }}
             {{ if .port }}
             ports:
               - containerPort: {{ .port }}
-            {{ end}}
+            {{ end }}
             {{ if .ports }}
             ports: {{ .ports | default list | toYaml | nindent 14 }}
             {{ end }}

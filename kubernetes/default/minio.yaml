@@ -1,0 +1,44 @@
+---
+name: minio
+replicaCount: 1
+
+initContainers:
+  - name: volume-permissions
+    image: busybox
+    command: ["/bin/sh"]
+    args: ["-c", "chown -R root:root /data"]
+    volumeMounts:
+      - name: data
+        mountPath: /data
+containers:
+  - name: minio
+    repository: quay.io/minio/minio
+    tag: RELEASE.2023-06-09T07-32-12Z
+    ports:
+      - name: api
+        containerPort: 9000
+      - name: console
+        containerPort: 9090
+    healthcheck: false
+    command: ["minio"]
+    args:
+      ["server", "/data", "--address", ":9000", "--console-address", ":9090"]
+    volumeMounts:
+      - name: data
+        mountPath: /data
+
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/minio/data
+
+service:
+  ports:
+    - name: api
+      port: 9000
+      targetPort: 9000
+      nodePort: 30020
+    - name: console
+      port: 9090
+      targetPort: 9090
+      nodePort: 30021

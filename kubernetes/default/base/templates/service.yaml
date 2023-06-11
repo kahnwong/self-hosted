@@ -7,12 +7,12 @@ spec:
   type: NodePort
   selector:
     app.kubernetes.io/name: {{ template "name" . }}
+  {{ if .Values.service.port }}
   ports:
-    {{ if .Values.service.port }}
     - port: {{ .Values.service.port }}
       targetPort: {{ .Values.service.port }}
       nodePort: {{ .Values.service.nodePort }}
-    {{ end }}
+  {{ end }}
   {{ if .Values.service.ports }}
   ports: {{ .Values.service.ports | default list | toYaml | nindent 4 }}
   {{ end }}
