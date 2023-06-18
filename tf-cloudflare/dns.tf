@@ -23,8 +23,7 @@ locals {
   ])
   selfhosted_non_proxied = toset([
     "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
-    "meet",
-    "share", # prevent request entity too large
+    "share",    # prevent request entity too large
     "storage",
   ])
 }
