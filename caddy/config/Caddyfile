@@ -1,31 +1,10 @@
 # `caddy hash-password --algorithm bcrypt` for basicauth
 
-share.karnwong.me {
-    reverse_proxy 127.0.0.1:30017
-}
-jellyfin.karnwong.me {
-    reverse_proxy 127.0.0.1:30003
-}
-linkding.karnwong.me {
-    reverse_proxy 127.0.0.1:30005
-}
-miniflux.karnwong.me {
-    reverse_proxy 127.0.0.1:30007
-}
-music.karnwong.me {
-    reverse_proxy 127.0.0.1:30006
-}
-syncthing.karnwong.me {
-    reverse_proxy 127.0.0.1:8384
-}
-ttrss.karnwong.me {
-    reverse_proxy 127.0.0.1:8280
-}
-wallabag.karnwong.me {
-    reverse_proxy 127.0.0.1:30009
-}
-secrets.karnwong.me {
-    reverse_proxy 127.0.0.1:30000
+api-docs.karnwong.me {
+    basicauth * {
+        unicorn $2a$14$TqCcoQ/1EnAo9mETlEjUIO7AW8spV3ndeXjLGWY.mrh6epZFYTzn6
+    }
+    reverse_proxy 127.0.0.1:5333
 }
 budget.karnwong.me {
     basicauth * {
@@ -33,8 +12,44 @@ budget.karnwong.me {
     }
     reverse_proxy 127.0.0.1:30001
 }
+linkding.karnwong.me {
+    reverse_proxy 127.0.0.1:30005
+}
+mapserver.karnwong.me {
+    basicauth * {
+        kahnwong $2a$14$GtDIU0U5h8mH0pKxlosiUeIdJMft/vrcScw7cFkZRqjB8KRhmLINS
+    }
+    reverse_proxy 127.0.0.1:30015
+}
+miniflux.karnwong.me {
+    reverse_proxy 127.0.0.1:30007
+}
+music.karnwong.me {
+    reverse_proxy 127.0.0.1:30006
+}
+
+
+
+share.karnwong.me {
+    reverse_proxy 127.0.0.1:30017
+}
+jellyfin.karnwong.me {
+    reverse_proxy 127.0.0.1:30003
+}
 photos.karnwong.me {
     reverse_proxy 127.0.0.1:30008
+}
+podgrab.karnwong.me {
+    basicauth * {
+        podgrab $2a$14$s1l.L4xhGyEwCjt/MhP4dO0v3YF1g1zwE0KjkYSVFRAeETBNGDeyG
+    }
+    reverse_proxy 127.0.0.1:30004
+}
+redash.karnwong.me {
+    reverse_proxy 127.0.0.1:7821
+}
+secrets.karnwong.me {
+    reverse_proxy 127.0.0.1:30000
 }
 sourcegraph.karnwong.me {
     reverse_proxy 127.0.0.1:30010
@@ -45,14 +60,17 @@ sourcegraph-personal.karnwong.me {
 sourcegraph-mfec.karnwong.me {
     reverse_proxy 127.0.0.1:30013
 }
-podgrab.karnwong.me {
-    basicauth * {
-        podgrab $2a$14$s1l.L4xhGyEwCjt/MhP4dO0v3YF1g1zwE0KjkYSVFRAeETBNGDeyG
-    }
-    reverse_proxy 127.0.0.1:30004
+syncthing.karnwong.me {
+    reverse_proxy 127.0.0.1:8384
 }
-ed.karnwong.me {
-    reverse_proxy 127.0.0.1:8555
+tile.karnwong.me {
+    reverse_proxy 127.0.0.1:30011
+}
+ttrss.karnwong.me {
+    reverse_proxy 127.0.0.1:8280
+}
+wallabag.karnwong.me {
+    reverse_proxy 127.0.0.1:30009
 }
 work-dashboard.karnwong.me {
     basicauth * {
@@ -60,30 +78,17 @@ work-dashboard.karnwong.me {
     }
     reverse_proxy 127.0.0.1:8844
 }
-tile.karnwong.me {
-    reverse_proxy 127.0.0.1:30011
+storage.karnwong.me {
+    reverse_proxy 127.0.0.1:30020
 }
-redash.karnwong.me {
-    reverse_proxy 127.0.0.1:7821
-}
-api-docs.karnwong.me {
-    basicauth * {
-        unicorn $2a$14$TqCcoQ/1EnAo9mETlEjUIO7AW8spV3ndeXjLGWY.mrh6epZFYTzn6
-    }
-    reverse_proxy 127.0.0.1:5333
-}
-mapserver.karnwong.me {
-    basicauth * {
-        kahnwong $2a$14$GtDIU0U5h8mH0pKxlosiUeIdJMft/vrcScw7cFkZRqjB8KRhmLINS
-    }
-    reverse_proxy 127.0.0.1:30015
+
+
+ed.karnwong.me {
+    reverse_proxy 127.0.0.1:8555
 }
 meet.karnwong.me {
     basicauth / {
         kahnwong $2a$14$r4Du7Qu.f8MtGQKXBmYfBufOv1OAfMXbKak599wgIQ.G2SDo0oppK
     }
     reverse_proxy 127.0.0.1:30019
-}
-storage.karnwong.me {
-    reverse_proxy 127.0.0.1:30020
 }
