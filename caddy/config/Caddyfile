@@ -60,7 +60,7 @@ work-dashboard.karnwong.me {
     }
     reverse_proxy 127.0.0.1:8844
 }
-basemaps.karnwong.me {
+tile.karnwong.me {
     reverse_proxy 127.0.0.1:30011
 }
 redash.karnwong.me {

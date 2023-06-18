@@ -4,7 +4,6 @@ locals {
   ])
   selfhosted_proxied = toset([
     "api-docs",
-    "basemaps",
     "budget",
     "linkding",
     "mapserver",
@@ -17,6 +16,7 @@ locals {
     "sourcegraph-personal",
     "sourcegraph",
     "syncthing",
+    "tile",
     "ttrss",
     "wallabag",
     "work-dashboard",
