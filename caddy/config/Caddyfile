@@ -37,6 +37,14 @@ podgrab.karnwong.me {
     }
     reverse_proxy 127.0.0.1:30004
 }
+registry.karnwong.me {
+    reverse_proxy 127.0.0.1:30501 {
+        transport http {
+            tls_insecure_skip_verify
+        }
+    }
+
+}
 secrets.karnwong.me {
     reverse_proxy 127.0.0.1:30000
 }

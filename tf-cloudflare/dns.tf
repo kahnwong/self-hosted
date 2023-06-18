@@ -11,6 +11,7 @@ locals {
     "music",
     "photos",
     "podgrab",
+    "registry",
     "secrets",
     "sourcegraph",
     "syncthing",
