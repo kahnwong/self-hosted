@@ -1,0 +1,12 @@
+---
+# adminPassword: $ADMIN_PASSWORD
+service:
+  type: NodePort
+  ports:
+    http: 90
+    https: 91
+    notary: 92
+  nodePorts:
+    http: 30500
+    https: 30501
+    notary: 30502

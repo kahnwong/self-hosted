@@ -12,6 +12,13 @@ Upgrade via `helm upgrade ...`
 helm install fava ./default/base --values fava.yaml
 ```
 
+## Harbor
+
+```bash
+kubectl create namespace harbor
+helm install harbor oci://registry-1.docker.io/bitnamicharts/harbor --namespace harbor --values values.yaml
+```
+
 ## Monitoring
 
 ### Grafana agent
