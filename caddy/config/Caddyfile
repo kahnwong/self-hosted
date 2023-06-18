@@ -1,5 +1,6 @@
 # `caddy hash-password --algorithm bcrypt` for basicauth
 
+### proxied
 api-docs.karnwong.me {
     basicauth * {
         unicorn $2a$14$TqCcoQ/1EnAo9mETlEjUIO7AW8spV3ndeXjLGWY.mrh6epZFYTzn6
@@ -27,15 +28,6 @@ miniflux.karnwong.me {
 music.karnwong.me {
     reverse_proxy 127.0.0.1:30006
 }
-
-
-
-share.karnwong.me {
-    reverse_proxy 127.0.0.1:30017
-}
-jellyfin.karnwong.me {
-    reverse_proxy 127.0.0.1:30003
-}
 photos.karnwong.me {
     reverse_proxy 127.0.0.1:30008
 }
@@ -45,20 +37,11 @@ podgrab.karnwong.me {
     }
     reverse_proxy 127.0.0.1:30004
 }
-redash.karnwong.me {
-    reverse_proxy 127.0.0.1:7821
-}
 secrets.karnwong.me {
     reverse_proxy 127.0.0.1:30000
 }
 sourcegraph.karnwong.me {
     reverse_proxy 127.0.0.1:30010
-}
-sourcegraph-personal.karnwong.me {
-    reverse_proxy 127.0.0.1:30012
-}
-sourcegraph-mfec.karnwong.me {
-    reverse_proxy 127.0.0.1:30013
 }
 syncthing.karnwong.me {
     reverse_proxy 127.0.0.1:8384
@@ -72,17 +55,14 @@ ttrss.karnwong.me {
 wallabag.karnwong.me {
     reverse_proxy 127.0.0.1:30009
 }
-work-dashboard.karnwong.me {
-    basicauth * {
-        unicorn $2a$14$m5EnKYBl0TK4835z.CNZpulIPfCeg7Cz117NzjeJL0KdOmqmbqlOK
-    }
-    reverse_proxy 127.0.0.1:8844
+
+### non-proxied
+jellyfin.karnwong.me {
+    reverse_proxy 127.0.0.1:30003
+}
+share.karnwong.me {
+    reverse_proxy 127.0.0.1:30017
 }
 storage.karnwong.me {
     reverse_proxy 127.0.0.1:30020
-}
-
-
-ed.karnwong.me {
-    reverse_proxy 127.0.0.1:8555
 }
