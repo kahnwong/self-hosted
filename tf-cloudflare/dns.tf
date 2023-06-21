@@ -6,7 +6,6 @@ locals {
     "api-docs",
     "budget",
     "linkding",
-    "mapserver",
     "miniflux",
     "music",
     "photos",
@@ -21,7 +20,8 @@ locals {
   ])
   selfhosted_non_proxied = toset([
     "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
-    "share",    # prevent request entity too large
+    "mapserver",
+    "share", # prevent request entity too large
     "storage",
   ])
 }
