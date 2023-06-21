@@ -14,13 +14,13 @@ containers:
         value: "1000"
       - name: TZ
         value: Asia/Bangkok
-    resources:
-      limits:
-        cpu: "2"
-        memory: 2G
-      requests:
-        cpu: 512m
-        memory: 512Mi
+    # resources:
+    #   limits:
+    #     cpu: "2"
+    #     memory: 2G
+    #   requests:
+    #     cpu: 512m
+    #     memory: 512Mi
     volumeMounts:
       - name: jellyfin-media
         mountPath: /data/media
