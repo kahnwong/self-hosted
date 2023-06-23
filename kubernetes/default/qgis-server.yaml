@@ -5,7 +5,7 @@ replicaCount: 1
 containers:
   - name: postgres
     repository: postgis/postgis
-    tag: 15-3.3-alpine
+    tag: 15-3.3
     port: 5432
     healthcheck: false
     env:
@@ -25,7 +25,7 @@ containers:
         mountPath: /var/lib/postgresql/data
   - name: qgis-server
     repository: camptocamp/qgis-server
-    tag: 3.28
+    tag: "3.30"
     port: 80
     env:
       - name: QGIS_SERVER_LANDING_PAGE_PROJECTS_DIRECTORIES
