@@ -23,13 +23,13 @@ containers:
     envFrom:
       - secretRef:
           name: photoprism
-    resources:
-      limits:
-        cpu: "3"
-        memory: 3G
-      requests:
-        cpu: 256m
-        memory: 1.5G
+    # resources:
+    #   limits:
+    #     cpu: "3"
+    #     memory: 3G
+    #   requests:
+    #     cpu: 256m
+    #     memory: 1.5G
     volumeMounts:
       - name: photoprism-images
         mountPath: /photoprism/originals
@@ -57,13 +57,13 @@ containers:
         value: insecure
       - name: MYSQL_USER
         value: photoprism
-    resources:
-      limits:
-        cpu: 999m
-        memory: 1G
-      requests:
-        cpu: 200m
-        memory: 256Mi
+    # resources:
+    #   limits:
+    #     cpu: 999m
+    #     memory: 1G
+    #   requests:
+    #     cpu: 200m
+    #     memory: 256Mi
     volumeMounts:
       - name: photoprism-data
         mountPath: /var/lib/mysql

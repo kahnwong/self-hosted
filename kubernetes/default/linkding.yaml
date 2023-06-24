@@ -9,13 +9,13 @@ containers:
     repository: sissbruecker/linkding
     tag: 1.19.0
     port: 9090
-    resources:
-      limits:
-        cpu: 512m
-        memory: 512Mi
-      requests:
-        cpu: 200m
-        memory: 256Mi
+    # resources:
+    #   limits:
+    #     cpu: 200m
+    #     memory: 512Mi
+    #   requests:
+    #     cpu: 100m
+    #     memory: 256Mi
     volumeMounts:
       - name: linkding-data
         mountPath: /etc/linkding/data

@@ -20,7 +20,7 @@ containers:
         value: "true"
     resources:
       limits:
-        cpu: 512m
+        cpu: 256m
         memory: 1G
       requests:
         cpu: 50m

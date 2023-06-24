@@ -10,10 +10,10 @@ containers:
     resources:
       limits:
         cpu: 999m
-        memory: 512Mi
+        memory: 1G
       requests:
         cpu: 200m
-        memory: 256Mi
+        memory: 512Mi
     volumeMounts:
       - name: tileserver-data
         mountPath: /data

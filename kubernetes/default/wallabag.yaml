@@ -38,13 +38,13 @@ containers:
         value: redispwd
       - name: SYMFONY__ENV__DOMAIN_NAME
         value: https://wallabag.karnwong.me/
-        resources:
-          limits:
-            cpu: 999m
-            memory: 1G
-          requests:
-            cpu: 256m
-            memory: 512Mi
+        # resources:
+        #   limits:
+        #     cpu: 999m
+        #     memory: 1G
+        #   requests:
+        #     cpu: 256m
+        #     memory: 512Mi
     volumeMounts:
       - name: wallabag-images
         mountPath: /var/www/wallabag/web/assets/images
@@ -61,13 +61,13 @@ containers:
         value: my-super-user
       - name: POSTGRES_PASSWORD
         value: my-secret-pw
-    resources:
-      limits:
-        cpu: 2
-        memory: 2G
-      requests:
-        cpu: 256m
-        memory: 128Mi
+    # resources:
+    #   limits:
+    #     cpu: 2
+    #     memory: 2G
+    #   requests:
+    #     cpu: 256m
+    #     memory: 128Mi
     volumeMounts:
       - name: wallabag-data
         mountPath: /var/lib/postgresql/data
@@ -79,13 +79,13 @@ containers:
     env:
       - name: REDIS_HOST_PASSWORD
         value: redispwd
-    resources:
-      limits:
-        cpu: "2"
-        memory: 4G
-      requests:
-        cpu: 256m
-        memory: 1G
+    # resources:
+    #   limits:
+    #     cpu: "2"
+    #     memory: 4G
+    #   requests:
+    #     cpu: 256m
+    #     memory: 1G
 
 volumes:
   - name: wallabag-images

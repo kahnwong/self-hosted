@@ -15,11 +15,11 @@ containers:
         value: postgrespassword
     resources:
       limits:
-        cpu: 999m
+        cpu: 512m
         memory: 2G
       requests:
         cpu: 256m
-        memory: 256Mi
+        memory: 1G
     volumeMounts:
       - name: qgis-database
         mountPath: /var/lib/postgresql/data

@@ -35,13 +35,13 @@ containers:
     envFrom:
       - secretRef:
           name: miniflux
-    resources:
-      limits:
-        cpu: 999m
-        memory: 512Mi
-      requests:
-        cpu: 256m
-        memory: 64Mi
+    # resources:
+    #   limits:
+    #     cpu: 999m
+    #     memory: 512Mi
+    #   requests:
+    #     cpu: 256m
+    #     memory: 64Mi
   - name: postgres
     repository: postgres
     tag: 15.1-alpine
@@ -52,13 +52,13 @@ containers:
         value: miniflux
       - name: POSTGRES_PASSWORD
         value: secret
-    resources:
-      limits:
-        cpu: 999m
-        memory: 2G
-      requests:
-        cpu: 256m
-        memory: 256Mi
+    # resources:
+    #   limits:
+    #     cpu: 999m
+    #     memory: 2G
+    #   requests:
+    #     cpu: 256m
+    #     memory: 256Mi
     volumeMounts:
       - name: miniflux-data
         mountPath: /var/lib/postgresql/data
