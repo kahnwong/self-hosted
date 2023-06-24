@@ -69,7 +69,8 @@ helm install prometheus prometheus-community/prometheus \
   --values ./opencost/prometheus/values.yaml \
   --namespace opencost
 
-helm install opencost ./opencost/opencost --namespace opencost
+helm repo add opencost https://opencost.github.io/opencost-helm-chart
+helm install opencost opencost/opencost --namespace opencost
 ```
 
 ## coroot
