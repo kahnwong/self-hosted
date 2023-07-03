@@ -1,0 +1,17 @@
+---
+formatter: markdown table
+recursive:
+  enabled: false
+  path: .
+sections:
+  show: []
+output:
+  file: README.md
+  mode: inject
+settings:
+  default: true
+  html: false
+  anchor: false
+  required: true
+  type: true
+  hide-empty: true
