@@ -19,11 +19,11 @@ contexts:
 - name: default-context
   context:
     cluster: default-cluster
-    namespace: default
+    namespace: ${namespace}
     user: $name
 current-context: default-context
 users:
 - name: $name
   user:
     token: ${token}
-" > $name.kubeconfig
+" >$name.kubeconfig
