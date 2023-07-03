@@ -20,11 +20,15 @@
 
 | Name | Type |
 |------|------|
+| [kubernetes_cluster_role.readonly](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/cluster_role) | resource |
+| [kubernetes_cluster_role_binding.readonly](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/cluster_role_binding) | resource |
+| [kubernetes_secret.foo](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/secret) | resource |
 | [kubernetes_secret.miniflux](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/secret) | resource |
 | [kubernetes_secret.minio](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/secret) | resource |
 | [kubernetes_secret.photoprism](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/secret) | resource |
 | [kubernetes_secret.picoshare](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/secret) | resource |
 | [kubernetes_secret.transmission](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/secret) | resource |
+| [kubernetes_service_account.foo](https://registry.terraform.io/providers/hashicorp/kubernetes/2.21.1/docs/resources/service_account) | resource |
 | [sops_file.miniflux](https://registry.terraform.io/providers/carlpett/sops/0.7.2/docs/data-sources/file) | data source |
 | [sops_file.minio](https://registry.terraform.io/providers/carlpett/sops/0.7.2/docs/data-sources/file) | data source |
 | [sops_file.photoprism](https://registry.terraform.io/providers/carlpett/sops/0.7.2/docs/data-sources/file) | data source |
