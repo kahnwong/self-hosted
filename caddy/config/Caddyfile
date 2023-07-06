@@ -82,7 +82,14 @@ ttrss.karnwong.me {
     reverse_proxy 127.0.0.1:8280
 }
 wallabag.karnwong.me {
-    reverse_proxy 127.0.0.1:30009
+    reverse_proxy 127.0.0.1:30009 {
+        transport http {
+            dial_timeout 5m
+            response_header_timeout 5m
+            read_timeout 5m
+            write_timeout 5m
+        }
+    }
 }
 
 ### non-proxied

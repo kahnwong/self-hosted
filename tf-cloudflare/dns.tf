@@ -16,13 +16,13 @@ locals {
     "syncthing",
     "tile",
     "ttrss",
-    "wallabag",
   ])
   selfhosted_non_proxied = toset([
     "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
     "mapserver",
     "share", # prevent request entity too large
     "storage",
+    "wallabag",
   ])
 }
 locals {
