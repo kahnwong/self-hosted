@@ -58,14 +58,6 @@ podgrab.karnwong.me {
     }
     reverse_proxy 127.0.0.1:30004
 }
-registry.karnwong.me {
-    reverse_proxy 127.0.0.1:30501 {
-        transport http {
-            tls_insecure_skip_verify
-        }
-    }
-
-}
 secrets.karnwong.me {
     reverse_proxy 127.0.0.1:30000
 }
@@ -81,6 +73,25 @@ tile.karnwong.me {
 ttrss.karnwong.me {
     reverse_proxy 127.0.0.1:8280
 }
+
+
+### non-proxied
+jellyfin.karnwong.me {
+    reverse_proxy 127.0.0.1:30003
+}
+registry.karnwong.me {
+    reverse_proxy 127.0.0.1:30501 {
+        transport http {
+            tls_insecure_skip_verify
+        }
+    }
+}
+share.karnwong.me {
+    reverse_proxy 127.0.0.1:30017
+}
+storage.karnwong.me {
+    reverse_proxy 127.0.0.1:30020
+}
 wallabag.karnwong.me {
     reverse_proxy 127.0.0.1:30009 {
         transport http {
@@ -90,15 +101,4 @@ wallabag.karnwong.me {
             write_timeout 5m
         }
     }
-}
-
-### non-proxied
-jellyfin.karnwong.me {
-    reverse_proxy 127.0.0.1:30003
-}
-share.karnwong.me {
-    reverse_proxy 127.0.0.1:30017
-}
-storage.karnwong.me {
-    reverse_proxy 127.0.0.1:30020
 }
