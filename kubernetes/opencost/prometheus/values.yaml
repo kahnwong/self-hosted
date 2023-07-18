@@ -23,7 +23,7 @@ extraScrapeConfigs: |
     metrics_path: /metrics
     scheme: http
     dns_sd_configs:
-      - names:
-          - opencost.opencost
-        type: "A"
-        port: 9003
+    - names:
+      - opencost.opencost
+      type: "A"
+      port: 9003
