@@ -1,8 +1,0 @@
----
-name: grafana-logs-agent
-version: 0.0.1
-apiVersion: v1
-keywords:
-  - grafana-logs-agent
-sources:
-home:

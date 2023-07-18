@@ -1,13 +1,9 @@
 # projects
-docker/oracle-free-tier-wirehole/
 docker/ttrss-docker-compose/
-docker/wallabag/
 docker/wirehole/
-docker/dockprom/
 docker/work-dashboard
 docker/postman-to-docusaurus/
 docker/redash/
-docker/tileserver-playground/
 
 # python
 **/.ipynb_checkpoints/
@@ -33,6 +29,7 @@ docker/tileserver-playground/
 secrets*.yaml
 **/*-exporter/values.yaml
 **/grafana*/**/configmap.yaml
+**/grafana-agent-operator/values.yaml
 
 # files
 *.html

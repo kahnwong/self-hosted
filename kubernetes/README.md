@@ -16,7 +16,7 @@ helm install fava ./default/base --values fava.yaml
 
 ```bash
 kubectl create namespace harbor
-helm install harbor oci://registry-1.docker.io/bitnamicharts/harbor --namespace harbor --values values.yaml
+helm install harbor oci://registry-1.docker.io/bitnamicharts/harbor --namespace harbor --values ./harbor/values.yaml
 ```
 
 ## Monitoring
@@ -29,14 +29,10 @@ helm install harbor oci://registry-1.docker.io/bitnamicharts/harbor --namespace 
 
 ```bash
 kubectl create namespace monitoring
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo add grafana https://grafana.github.io/helm-charts
 helm repo update
-
-helm install grafana-agent ./monitoring/grafana-agent -n monitoring
-helm install ksm prometheus-community/kube-state-metrics --set image.tag=v2.4.2 -n monitoring
-helm install nodeexporter prometheus-community/prometheus-node-exporter -n monitoring
-
-helm install grafana-logs-agent ./monitoring/grafana-logs-agent -n monitoring
+helm install grafana-agent-operator grafana/grafana-agent-operator -n monitoring
+kubectl apply -f ./monitoring/grafana-agent-operator/values.yaml -n monitoring
 ```
 
 <!-- ### Grafana agent operator
