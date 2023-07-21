@@ -12,17 +12,6 @@ cd $HOME
 
 
 ###############
-# komga
-###############
-komga_backup_filename="komga-"$current_date".tar.gz"
-
-echo "komga..."
-tar -czf $komga_backup_filename /opt/komga/config/database.sqlite
-
-aws s3 cp --endpoint-url $r2_endpoint $komga_backup_filename "$backup_path_prefix/$komga_backup_filename"
-rm $HOME"/"$komga_backup_filename
-
-###############
 # navidrome
 ###############
 navidrome_backup_filename="navidrome-"$current_date".tar.gz"
