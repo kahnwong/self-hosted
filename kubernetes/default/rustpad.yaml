@@ -1,0 +1,20 @@
+---
+name: rustpad
+replicaCount: 1
+
+containers:
+  - name: rustpad
+    repository: ekzhang/rustpad
+    tag: latest
+    port: 3030
+    resources:
+      limits:
+        cpu: "1"
+        memory: 512Mi
+      requests:
+        cpu: "0.25"
+        memory: 64Mi
+
+service:
+  port: 3030
+  nodePort: 30019

@@ -10,6 +10,7 @@ locals {
     "music",
     "photos",
     "podgrab",
+    "rustpad",
     "secrets",
     "sourcegraph",
     "syncthing",

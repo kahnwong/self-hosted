@@ -58,6 +58,9 @@ podgrab.karnwong.me {
     }
     reverse_proxy 127.0.0.1:30004
 }
+rustpad.karnwong.me {
+    reverse_proxy 127.0.0.1:30019
+}
 secrets.karnwong.me {
     reverse_proxy 127.0.0.1:30000
 }
