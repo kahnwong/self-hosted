@@ -18,8 +18,8 @@ locals {
     "ttrss",
   ])
   selfhosted_non_proxied = toset([
-    "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
-    "mapserver",
+    "jellyfin",  # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
+    "mapserver", # [TODO] rename to `map`
     "registry",
     "share", # prevent request entity too large
     "storage",
