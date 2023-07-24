@@ -11,7 +11,7 @@ containers:
   # start db container first, pg_restore and reset admin password
   - name: miniflux
     repository: miniflux/miniflux
-    tag: 2.0.45
+    tag: 2.0.46
     port: 8080
     env:
       - name: DATABASE_URL
