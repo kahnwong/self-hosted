@@ -23,6 +23,17 @@ aws s3 cp --endpoint-url $r2_endpoint $navidrome_backup_filename "$backup_path_p
 rm $HOME"/"$navidrome_backup_filename
 
 ###############
+# ntfy
+###############
+ntfy_backup_filename="ntfy-"$current_date".tar.gz"
+
+echo "ntfy..."
+tar -czf $ntfy_backup_filename /opt/ntfy
+
+aws s3 cp --endpoint-url $r2_endpoint $ntfy_backup_filename "$backup_path_prefix/$ntfy_backup_filename"
+rm $HOME"/"$ntfy_backup_filename
+
+###############
 # linkding
 ###############
 linkding_backup_filename="linkding-"$current_date".tar.gz"

@@ -8,6 +8,7 @@ locals {
     "linkding",
     "miniflux",
     "music",
+    "ntfy",
     "photos",
     "podgrab",
     "rustpad",
