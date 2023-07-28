@@ -1,0 +1,86 @@
+# ------------------------ service account ------------------------ #
+# https://github.com/hashicorp/terraform-provider-kubernetes/issues/1943#issuecomment-1369546028
+resource "kubernetes_secret" "sa_github" {
+  metadata {
+    annotations = {
+      "kubernetes.io/service-account.name" = kubernetes_service_account.sa_github.metadata.0.name
+    }
+    namespace = "default"
+    name      = "${kubernetes_service_account.sa_github.metadata.0.name}-token"
+  }
+  type                           = "kubernetes.io/service-account-token"
+  wait_for_service_account_token = true
+}
+resource "kubernetes_service_account" "sa_github" {
+  metadata {
+    name      = "sa-github"
+    namespace = "default"
+  }
+}
+
+# ------------------------ cluster role ------------------------ #
+resource "kubernetes_cluster_role" "allow_deploy" {
+  metadata {
+    name = "cr-allow-deploy"
+  }
+
+  # https://stackoverflow.com/a/70669341
+  rule {
+    api_groups = [""]
+    resources  = ["pods"]
+    verbs      = ["list", "get", "watch", "create", "delete"]
+  }
+  rule {
+    api_groups = [""]
+    resources  = ["pods/exec"]
+    verbs      = ["create"]
+  }
+  rule {
+    api_groups = [""]
+    resources  = ["pods/log"]
+    verbs      = ["get"]
+  }
+  rule {
+    api_groups = [""]
+    resources  = ["pods/attach"]
+    verbs      = ["list", "get", "create", "delete", "update"]
+  }
+  rule {
+    api_groups = [""]
+    resources  = ["secrets"]
+    verbs      = ["list", "get", "create", "delete", "update"]
+  }
+  rule {
+    api_groups = [""]
+    resources  = ["configmaps"]
+    verbs      = ["list", "get", "create", "delete", "update"]
+  }
+  rule {
+    api_groups = [""]
+    resources  = ["services"]
+    verbs      = ["list", "get", "create", "delete", "update", "patch"]
+  }
+  rule {
+    api_groups = ["apps"]
+    resources  = ["deployments"]
+    verbs      = ["list", "get", "create", "delete", "update", "patch"]
+  }
+}
+
+# ------------------------ cluster role binding ------------------------ #
+resource "kubernetes_cluster_role_binding" "allow_deploy" {
+  # https://github.com/kubernetes/kubernetes/issues/30924#issuecomment-240887810
+  metadata {
+    name = "crb-allow-deploy-default"
+  }
+  role_ref {
+    api_group = "rbac.authorization.k8s.io"
+    kind      = "ClusterRole"
+    name      = kubernetes_cluster_role.allow_deploy.metadata.0.name
+  }
+  subject {
+    kind      = "ServiceAccount"
+    name      = kubernetes_service_account.sa_github.metadata.0.name
+    namespace = "default"
+  }
+}
