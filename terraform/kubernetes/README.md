@@ -1,4 +1,4 @@
-# kubernetes-secrets
+# tf-kubernetes
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
