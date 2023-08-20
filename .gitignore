@@ -15,18 +15,11 @@ docker/redash/
 
 # env
 .env
-.miniflux.env
-.mirotalk.env
-.todotxtcalendar.env
 .transmission.env
-.photoprism.env
-.podgrab.env
 
 .duckdns.env
-.gcalagenda.env
-.flame-password
 
-secrets*.yaml
+*.plaintext.yaml
 **/*-exporter/values.yaml
 **/grafana*/**/configmap.yaml
 **/grafana-agent-operator/values.yaml
@@ -36,7 +29,6 @@ secrets*.yaml
 
 # terraform
 **/.terraform
-**/.terraform.lock.hcl
 **/terraform.tfstate*
 **/.infracost
 **/terraform.tfvars
