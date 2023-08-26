@@ -44,3 +44,16 @@ resource "github_actions_secret" "docs_algolia" {
   secret_name     = each.key
   plaintext_value = each.value
 }
+
+locals {
+  pgconn_secrets = tomap({
+    PYPI_API_TOKEN = sensitive(data.sops_file.secrets.data["repos.pgconn.PYPI_API_TOKEN"])
+  })
+}
+resource "github_actions_secret" "pgconn" {
+  for_each = local.pgconn_secrets
+
+  repository      = "pgconn"
+  secret_name     = each.key
+  plaintext_value = each.value
+}
