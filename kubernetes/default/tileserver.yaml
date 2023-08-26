@@ -5,7 +5,7 @@ replicaCount: 1
 containers:
   - name: tileserver
     repository: maptiler/tileserver-gl
-    tag: v4.4.9
+    tag: v4.5.0
     port: 8080
     resources:
       limits:
