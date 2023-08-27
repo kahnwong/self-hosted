@@ -63,3 +63,21 @@ helm install mongodb-exporter prometheus-community/prometheus-mongodb-exporter \
     --values ./monitoring/mongodb-exporter/values.yaml \
     --namespace monitoring
 ``` -->
+
+### Dashboards
+
+- <https://grafana.com/grafana/dashboards/17594-elasticsearch-index-usage/>
+- <https://grafana.com/grafana/dashboards/9628-postgresql-database/>
+- <https://grafana.com/grafana/dashboards/12485-postgresql-exporter/>
+- <https://grafana.com/grafana/dashboards/14928-prometheus-blackbox-exporter/>
+
+## coroot
+
+<https://github.com/coroot/coroot>
+
+```bash
+helm repo add coroot https://coroot.github.io/helm-charts
+helm repo update
+
+helm install --namespace coroot --create-namespace coroot coroot/coroot
+```
