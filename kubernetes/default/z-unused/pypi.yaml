@@ -1,0 +1,32 @@
+---
+# usage: `pipx install --index-url https://pypi.org/simple --pip-args="--extra-index-url https://pypi.karnwong.me" pgconn-cli`
+# Dockerfile: |
+#   FROM python:3-alpine
+
+#   WORKDIR /repo
+
+#   EXPOSE 8000
+
+#   CMD ["python", "-m", "http.server", "8000"]
+
+name: pypi
+replicaCount: 1
+
+containers:
+  - name: pypi
+    repository: registry.karnwong.me/test/pypi
+    tag: latest
+    port: 8000
+    volumeMounts:
+      - name: pypi-data
+        mountPath: /repo
+imagePullSecrets:
+  - name: harbor-cfg
+
+volumes:
+  - name: pypi-data
+    hostPath:
+      path: /opt/pypi/data
+service:
+  port: 8000
+  nodePort: 30023
