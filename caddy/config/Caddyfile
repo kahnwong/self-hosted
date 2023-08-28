@@ -92,6 +92,9 @@ registry.karnwong.me {
         }
     }
 }
+pypi.karnwong.me {
+    reverse_proxy 127.0.0.1:30023
+}
 share.karnwong.me {
     reverse_proxy 127.0.0.1:30017
 }

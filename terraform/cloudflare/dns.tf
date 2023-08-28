@@ -21,11 +21,12 @@ locals {
   selfhosted_non_proxied = toset([
     "jellyfin",  # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
     "mapserver", # [TODO] rename to `map`
+    "pypi",
+    "recon",
     "registry",
     "share", # prevent request entity too large
     "storage",
     "wallabag",
-    "recon",
   ])
 }
 locals {
