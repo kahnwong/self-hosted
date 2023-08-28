@@ -13,7 +13,7 @@
 
 | Name | Version |
 |------|---------|
-| kubernetes | 2.21.1 |
+| kubernetes | 2.22.0 |
 | sops | 0.7.2 |
 
 ## Resources
@@ -23,6 +23,7 @@
 | [kubernetes_cluster_role.readonly](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/cluster_role) | resource |
 | [kubernetes_cluster_role_binding.readonly](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/cluster_role_binding) | resource |
 | [kubernetes_secret.foo](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret) | resource |
+| [kubernetes_secret.harbor_config](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret) | resource |
 | [kubernetes_secret.miniflux](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret) | resource |
 | [kubernetes_secret.minio](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret) | resource |
 | [kubernetes_secret.photoprism](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret) | resource |
@@ -43,4 +44,7 @@
 | client\_key | n/a | `string` | n/a | yes |
 | cluster\_ca\_certificate | n/a | `string` | n/a | yes |
 | host | n/a | `string` | n/a | yes |
+| registry\_password | n/a | `string` | n/a | yes |
+| registry\_server | n/a | `string` | n/a | yes |
+| registry\_username | n/a | `string` | n/a | yes |
 <!-- END_TF_DOCS -->
