@@ -52,4 +52,5 @@ spec:
             resources: {{ toYaml .resources | default list | nindent 14 }}
             volumeMounts: {{ toYaml .volumeMounts | default list | nindent 14 }}
         {{ end }}
+      imagePullSecrets: {{ toYaml .Values.imagePullSecrets | default list | nindent 8 }}
       volumes: {{ toYaml .Values.volumes | default list | nindent 8 }}
