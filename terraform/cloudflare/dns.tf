@@ -26,6 +26,7 @@ locals {
     "storage",
     "wallabag",
     "recon",
+    "proxmox",
   ])
 }
 locals {
