@@ -7,6 +7,7 @@ containers:
     repository: mtlynch/picoshare
     tag: 1.3.6
     port: 4001
+    args: ["-db", "/data/store.db", "-vacuum", "true"]
     envFrom:
       - secretRef:
           name: picoshare
