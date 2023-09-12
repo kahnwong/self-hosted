@@ -5,7 +5,7 @@ replicaCount: 1
 containers:
   - name: gke-autopilot-cost-calculator
     repository: ghcr.io/kahnwong/gke-autopilot-cost-calculator
-    tag: 9140bd6
+    tag: 99c7d95
     port: 8501
     resources:
       limits:
