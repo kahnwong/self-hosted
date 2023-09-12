@@ -5,6 +5,7 @@ locals {
   selfhosted_proxied = toset([
     "api-docs",
     "budget",
+    "gke-autopilot-cost-calculator",
     "linkding",
     "miniflux",
     "music",
