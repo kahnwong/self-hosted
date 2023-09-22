@@ -35,16 +35,16 @@ containers:
     envFrom:
       - secretRef:
           name: miniflux
-    # resources:
-    #   limits:
-    #     cpu: 999m
-    #     memory: 512Mi
-    #   requests:
-    #     cpu: 256m
-    #     memory: 64Mi
+    resources:
+      limits:
+        cpu: 999m
+        memory: 512Mi
+      requests:
+        cpu: 256m
+        memory: 64Mi
   - name: postgres
     repository: postgres
-    tag: 15.1-alpine
+    tag: 15.4-alpine
     port: 5432
     healthcheck: false
     env:
