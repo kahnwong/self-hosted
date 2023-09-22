@@ -26,6 +26,8 @@ containers:
         mountPath: /data/media
       - name: jellyfin-data
         mountPath: /config
+      - name: audiobooks
+        mountPath: /data/media-audiobooks
 
 volumes:
   - name: jellyfin-media
@@ -34,6 +36,9 @@ volumes:
   - name: jellyfin-data
     hostPath:
       path: /opt/jellyfin/config
+  - name: audiobooks
+    hostPath:
+      path: /opt/syncthing/audiobooks
 
 service:
   port: 8096
