@@ -26,8 +26,6 @@ locals {
     "share", # prevent request entity too large
     "storage",
     "wallabag",
-    "recon",
-    "proxmox",
   ])
 }
 locals {

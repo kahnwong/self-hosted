@@ -111,20 +111,3 @@ wallabag.karnwong.me {
         }
     }
 }
-
-
-### temp
-recon.karnwong.me {
-    basicauth * {
-        wewill $2a$14$ZBDCUQnL1Jd.57HqYi64New5Gnrqtdx3BpHF6EPXvXY1Tcx5VUZ.2 # notdie
-    }
-    reverse_proxy 127.0.0.1:8501
-}
-
-proxmox.karnwong.me {
-  reverse_proxy 192.168.1.70:8006 {
-    transport http {
-      tls_insecure_skip_verify
-    }
-  }
-}
