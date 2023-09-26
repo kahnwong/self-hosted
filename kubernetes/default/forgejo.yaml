@@ -1,4 +1,6 @@
 ---
+# don't forget to forward port `32000` on your router
+
 name: forgejo
 replicaCount: 1
 
@@ -38,7 +40,12 @@ deployments:
     - name: forgejo
       repository: codeberg.org/forgejo/forgejo
       tag: 1.20.4-1
-      port: 3000
+      ports:
+        - name: web
+          containerPort: 3000
+        - name: ssh
+          containerPort: 22
+      healthcheck: false
       env:
         - name: USER_UID
           value: "1000"
@@ -58,6 +65,10 @@ deployments:
           value: "true"
         - name: FORGEJO__server__ROOT_URL
           value: https://git.karnwong.me
+        - name: FORGEJO__server__SSH_PORT
+          value: "32000"
+        - name: FORGEJO__server__SSH_LISTEN_PORT
+          value: "22"
         - name: FORGEJO__repository__DEFAULT_BRANCH
           value: master
       volumeMounts:
@@ -68,5 +79,12 @@ deployments:
       hostPath:
         path: /opt/forgejo/data
   service:
-    port: 3000
-    nodePort: 30026
+    ports:
+      - name: web
+        port: 3000
+        targetPort: 3000
+        nodePort: 30026
+      - name: ssh
+        port: 22
+        targetPort: 22
+        nodePort: 32000
