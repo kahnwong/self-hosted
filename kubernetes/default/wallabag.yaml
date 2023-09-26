@@ -7,98 +7,107 @@ replicaCount: 1
 # create user: /var/www/wallabag/bin/console --env=prod fos:user:create $USERNAME $EMAIL $PASSWORD --super-admin
 # migrate schema: /var/www/wallabag/bin/console --env=prod doctrine:migrations:migrate
 
-containers:
-  - name: wallabag
-    repository: wallabag/wallabag
-    tag: 2.6.4
+statefulSets:
+  containers:
+    - name: postgres
+      repository: postgres
+      tag: 15.1-alpine
+      port: 5432
+      healthcheck: false
+      env:
+        - name: POSTGRES_USER
+          value: my-super-user
+        - name: POSTGRES_PASSWORD
+          value: my-secret-pw
+      # resources:
+      #   limits:
+      #     cpu: 2
+      #     memory: 2G
+      #   requests:
+      #     cpu: 256m
+      #     memory: 128Mi
+      volumeMounts:
+        - name: wallabag-data
+          mountPath: /var/lib/postgresql/data
+    - name: redis
+      repository: redis
+      tag: 6.0.9-alpine
+      port: 6379
+      healthcheck: false
+      env:
+        - name: REDIS_HOST_PASSWORD
+          value: redispwd
+      # resources:
+      #   limits:
+      #     cpu: "2"
+      #     memory: 4G
+      #   requests:
+      #     cpu: 256m
+      #     memory: 1G
+  volumes:
+    - name: wallabag-data
+      hostPath:
+        path: /opt/wallabag/db
+  service:
+    ports:
+      - name: postgres
+        port: 5432
+      - name: redis
+        port: 6379
+
+deployments:
+  containers:
+    - name: wallabag
+      repository: wallabag/wallabag
+      tag: 2.6.4
+      port: 80
+      env:
+        - name: POSTGRES_PASSWORD
+          value: my-secret-pw
+        - name: POSTGRES_USER
+          value: my-super-user
+        - name: SYMFONY__ENV__SECRET
+          value: F00B4R
+        - name: SYMFONY__ENV__DATABASE_DRIVER
+          value: pdo_pgsql
+        - name: SYMFONY__ENV__DATABASE_DRIVER_CLASS
+          value: Wallabag\CoreBundle\Doctrine\DBAL\Driver\CustomPostgreSQLDriver
+        - name: SYMFONY__ENV__DATABASE_HOST
+          value: wallabag-statefulset.default.svc.cluster.local
+        - name: SYMFONY__ENV__DATABASE_PORT
+          value: "5432"
+        - name: SYMFONY__ENV__DATABASE_NAME
+          value: wallabag
+        - name: SYMFONY__ENV__DATABASE_USER
+          value: wallabag
+        - name: SYMFONY__ENV__DATABASE_PASSWORD
+          value: wallapass
+        - name: SYMFONY__ENV__REDIS_HOST
+          value: wallabag-statefulset.default.svc.cluster.local
+        - name: SYMFONY__ENV__REDIS_PASSWORD
+          value: redispwd
+        - name: SYMFONY__ENV__DOMAIN_NAME
+          value: https://wallabag.karnwong.me/
+          # resources:
+          #   limits:
+          #     cpu: 999m
+          #     memory: 1G
+          #   requests:
+          #     cpu: 256m
+          #     memory: 512Mi
+      volumeMounts:
+        - name: wallabag-images
+          mountPath: /var/www/wallabag/web/assets/images
+        - name: wallabag-site-config
+          mountPath: /var/www/wallabag/vendor/j0k3r/graby-site-config
+          readOnly: true
+  volumes:
+    - name: wallabag-images
+      hostPath:
+        path: /opt/wallabag/images
+    - name: wallabag-site-config
+      hostPath:
+        path: /opt/wallabag/graby-site-config
+  service:
     port: 80
-    env:
-      - name: POSTGRES_PASSWORD
-        value: my-secret-pw
-      - name: POSTGRES_USER
-        value: my-super-user
-      - name: SYMFONY__ENV__SECRET
-        value: F00B4R
-      - name: SYMFONY__ENV__DATABASE_DRIVER
-        value: pdo_pgsql
-      - name: SYMFONY__ENV__DATABASE_DRIVER_CLASS
-        value: Wallabag\CoreBundle\Doctrine\DBAL\Driver\CustomPostgreSQLDriver
-      - name: SYMFONY__ENV__DATABASE_HOST
-        value: localhost
-      - name: SYMFONY__ENV__DATABASE_PORT
-        value: "5432"
-      - name: SYMFONY__ENV__DATABASE_NAME
-        value: wallabag
-      - name: SYMFONY__ENV__DATABASE_USER
-        value: wallabag
-      - name: SYMFONY__ENV__DATABASE_PASSWORD
-        value: wallapass
-      - name: SYMFONY__ENV__REDIS_HOST
-        value: localhost
-      - name: SYMFONY__ENV__REDIS_PASSWORD
-        value: redispwd
-      - name: SYMFONY__ENV__DOMAIN_NAME
-        value: https://wallabag.karnwong.me/
-        # resources:
-        #   limits:
-        #     cpu: 999m
-        #     memory: 1G
-        #   requests:
-        #     cpu: 256m
-        #     memory: 512Mi
-    volumeMounts:
-      - name: wallabag-images
-        mountPath: /var/www/wallabag/web/assets/images
-      - name: wallabag-site-config
-        mountPath: /var/www/wallabag/vendor/j0k3r/graby-site-config
-        readOnly: true
-  - name: postgres
-    repository: postgres
-    tag: 15.1-alpine
-    port: 5432
-    healthcheck: false
-    env:
-      - name: POSTGRES_USER
-        value: my-super-user
-      - name: POSTGRES_PASSWORD
-        value: my-secret-pw
-    # resources:
-    #   limits:
-    #     cpu: 2
-    #     memory: 2G
-    #   requests:
-    #     cpu: 256m
-    #     memory: 128Mi
-    volumeMounts:
-      - name: wallabag-data
-        mountPath: /var/lib/postgresql/data
-  - name: redis
-    repository: redis
-    tag: 6.0.9-alpine
-    port: 6379
-    healthcheck: false
-    env:
-      - name: REDIS_HOST_PASSWORD
-        value: redispwd
-    # resources:
-    #   limits:
-    #     cpu: "2"
-    #     memory: 4G
-    #   requests:
-    #     cpu: 256m
-    #     memory: 1G
-
-volumes:
-  - name: wallabag-images
-    hostPath:
-      path: /opt/wallabag/images
-  - name: wallabag-site-config
-    hostPath:
-      path: /opt/wallabag/graby-site-config
-  - name: wallabag-data
-    hostPath:
-      path: /opt/wallabag/db
-
-service:
-  port: 80
-  nodePort: 30009
+    nodePort: 30009

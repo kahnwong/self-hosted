@@ -18,11 +18,11 @@ spec:
         app.kubernetes.io/instance: {{ template "name" . }}
         app.kubernetes.io/name: {{ template "name" . }}
     spec:
-      {{ if .Values.initContainers }}
-      initContainers: {{ toYaml .Values.initContainers | default list | nindent 8 }}
+      {{ if .Values.deployments.initContainers }}
+      initContainers: {{ toYaml .Values.deployments.initContainers | default list | nindent 8 }}
       {{ end }}
       containers:
-        {{ range .Values.containers }}
+        {{ range .Values.deployments.containers }}
           - name:  {{ .name }}
             image: "{{ .repository }}:{{ .tag }}"
             {{ if .command }}
@@ -53,4 +53,4 @@ spec:
             volumeMounts: {{ toYaml .volumeMounts | default list | nindent 14 }}
         {{ end }}
       imagePullSecrets: {{ toYaml .Values.imagePullSecrets | default list | nindent 8 }}
-      volumes: {{ toYaml .Values.volumes | default list | nindent 8 }}
+      volumes: {{ toYaml .Values.deployments.volumes | default list | nindent 8 }}

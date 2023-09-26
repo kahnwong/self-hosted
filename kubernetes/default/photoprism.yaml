@@ -2,83 +2,88 @@
 name: photoprism
 replicaCount: 1
 
-containers:
-  - name: photoprism
-    repository: photoprism/photoprism
-    tag: 230625
-    port: 2342
-    env:
-      - name: PHOTOPRISM_DATABASE_DRIVER
-        value: mysql
-      - name: PHOTOPRISM_DATABASE_SERVER
-        value: localhost:3306
-      - name: PHOTOPRISM_DATABASE_NAME
-        value: photoprism
-      - name: PHOTOPRISM_DATABASE_USER
-        value: photoprism
-      - name: PHOTOPRISM_DATABASE_PASSWORD
-        value: insecure
-      - name: HOME
-        value: /photoprism
-    envFrom:
-      - secretRef:
-          name: photoprism
-    # resources:
-    #   limits:
-    #     cpu: "3"
-    #     memory: 3G
-    #   requests:
-    #     cpu: 256m
-    #     memory: 1.5G
-    volumeMounts:
-      - name: photoprism-images
-        mountPath: /photoprism/originals
-      - name: photoprism-storage
-        mountPath: /photoprism/storage
-  - name: mariadb
-    repository: mariadb
-    tag: 10.9
+statefulSets:
+  containers:
+    - name: mariadb
+      repository: mariadb
+      tag: 10.9
+      port: 3306
+      healthcheck: false
+      args:
+        - mysqld
+        - --transaction-isolation=READ-COMMITTED
+        - --character-set-server=utf8mb4
+        - --collation-server=utf8mb4_unicode_ci
+        - --max-connections=512
+        - --innodb-rollback-on-timeout=OFF
+        - --innodb-lock-wait-timeout=120
+      env:
+        - name: MYSQL_DATABASE
+          value: photoprism
+        - name: MYSQL_PASSWORD
+          value: insecure
+        - name: MYSQL_ROOT_PASSWORD
+          value: insecure
+        - name: MYSQL_USER
+          value: photoprism
+      # resources:
+      #   limits:
+      #     cpu: 999m
+      #     memory: 1G
+      #   requests:
+      #     cpu: 200m
+      #     memory: 256Mi
+      volumeMounts:
+        - name: photoprism-data
+          mountPath: /var/lib/mysql
+  volumes:
+    - name: photoprism-data
+      hostPath:
+        path: /opt/photoprism/db
+  service:
     port: 3306
-    healthcheck: false
-    args:
-      - mysqld
-      - --transaction-isolation=READ-COMMITTED
-      - --character-set-server=utf8mb4
-      - --collation-server=utf8mb4_unicode_ci
-      - --max-connections=512
-      - --innodb-rollback-on-timeout=OFF
-      - --innodb-lock-wait-timeout=120
-    env:
-      - name: MYSQL_DATABASE
-        value: photoprism
-      - name: MYSQL_PASSWORD
-        value: insecure
-      - name: MYSQL_ROOT_PASSWORD
-        value: insecure
-      - name: MYSQL_USER
-        value: photoprism
-    # resources:
-    #   limits:
-    #     cpu: 999m
-    #     memory: 1G
-    #   requests:
-    #     cpu: 200m
-    #     memory: 256Mi
-    volumeMounts:
-      - name: photoprism-data
-        mountPath: /var/lib/mysql
 
-volumes:
-  - name: photoprism-images
-    hostPath:
-      path: /opt/photoprism/images
-  - name: photoprism-storage
-    hostPath:
-      path: /opt/photoprism/storage
-  - name: photoprism-data
-    hostPath:
-      path: /opt/photoprism/db
-
-service:
-  port: 2342
-  nodePort: 30008
+deployments:
+  containers:
+    - name: photoprism
+      repository: photoprism/photoprism
+      tag: 230625
+      port: 2342
+      env:
+        - name: PHOTOPRISM_DATABASE_DRIVER
+          value: mysql
+        - name: PHOTOPRISM_DATABASE_SERVER
+          value: photoprism-statefulset.default.svc.cluster.local:3306
+        - name: PHOTOPRISM_DATABASE_NAME
+          value: photoprism
+        - name: PHOTOPRISM_DATABASE_USER
+          value: photoprism
+        - name: PHOTOPRISM_DATABASE_PASSWORD
+          value: insecure
+        - name: HOME
+          value: /photoprism
+      envFrom:
+        - secretRef:
+            name: photoprism
+      # resources:
+      #   limits:
+      #     cpu: "3"
+      #     memory: 3G
+      #   requests:
+      #     cpu: 256m
+      #     memory: 1.5G
+      volumeMounts:
+        - name: photoprism-images
+          mountPath: /photoprism/originals
+        - name: photoprism-storage
+          mountPath: /photoprism/storage
+  volumes:
+    - name: photoprism-images
+      hostPath:
+        path: /opt/photoprism/images
+    - name: photoprism-storage
+      hostPath:
+        path: /opt/photoprism/storage
+  service:
+    port: 2342
+    nodePort: 30008

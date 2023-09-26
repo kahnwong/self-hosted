@@ -2,44 +2,43 @@
 name: jellyfin
 replicaCount: 1
 
-containers:
-  - name: jellyfin
-    repository: linuxserver/jellyfin
-    tag: 10.8.10
+deployments:
+  containers:
+    - name: jellyfin
+      repository: linuxserver/jellyfin
+      tag: 10.8.10
+      port: 8096
+      env:
+        - name: PGID
+          value: "1000"
+        - name: PUID
+          value: "1000"
+        - name: TZ
+          value: Asia/Bangkok
+      resources:
+        limits:
+          cpu: "2"
+          memory: 2G
+        requests:
+          cpu: 512m
+          memory: 512Mi
+      volumeMounts:
+        - name: jellyfin-media
+          mountPath: /data/media
+        - name: jellyfin-data
+          mountPath: /config
+        - name: audiobooks
+          mountPath: /data/media-audiobooks
+  volumes:
+    - name: jellyfin-media
+      hostPath:
+        path: /opt/jellyfin/media
+    - name: jellyfin-data
+      hostPath:
+        path: /opt/jellyfin/config
+    - name: audiobooks
+      hostPath:
+        path: /opt/syncthing/audiobooks
+  service:
     port: 8096
-    env:
-      - name: PGID
-        value: "1000"
-      - name: PUID
-        value: "1000"
-      - name: TZ
-        value: Asia/Bangkok
-    resources:
-      limits:
-        cpu: "2"
-        memory: 2G
-      requests:
-        cpu: 512m
-        memory: 512Mi
-    volumeMounts:
-      - name: jellyfin-media
-        mountPath: /data/media
-      - name: jellyfin-data
-        mountPath: /config
-      - name: audiobooks
-        mountPath: /data/media-audiobooks
-
-volumes:
-  - name: jellyfin-media
-    hostPath:
-      path: /opt/jellyfin/media
-  - name: jellyfin-data
-    hostPath:
-      path: /opt/jellyfin/config
-  - name: audiobooks
-    hostPath:
-      path: /opt/syncthing/audiobooks
-
-service:
-  port: 8096
-  nodePort: 30003
+    nodePort: 30003

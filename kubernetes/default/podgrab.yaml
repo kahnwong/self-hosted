@@ -2,35 +2,34 @@
 name: podgrab
 replicaCount: 1
 
-containers:
-  - name: podgrab
-    repository: akhilrex/podgrab
-    tag: latest
+deployments:
+  containers:
+    - name: podgrab
+      repository: akhilrex/podgrab
+      tag: latest
+      port: 8080
+      env:
+        - name: CHECK_FREQUENCY
+          value: "240"
+      resources:
+        limits:
+          cpu: 512m
+          memory: 128Mi
+        requests:
+          cpu: 200m
+          memory: 64Mi
+      volumeMounts:
+        - name: podgrab-media
+          mountPath: /assets
+        - name: podgrab-data
+          mountPath: /config
+  volumes:
+    - name: podgrab-media
+      hostPath:
+        path: /opt/podgrab/data
+    - name: podgrab-data
+      hostPath:
+        path: /opt/podgrab/config
+  service:
     port: 8080
-    env:
-      - name: CHECK_FREQUENCY
-        value: "240"
-    resources:
-      limits:
-        cpu: 512m
-        memory: 128Mi
-      requests:
-        cpu: 200m
-        memory: 64Mi
-    volumeMounts:
-      - name: podgrab-media
-        mountPath: /assets
-      - name: podgrab-data
-        mountPath: /config
-
-volumes:
-  - name: podgrab-media
-    hostPath:
-      path: /opt/podgrab/data
-  - name: podgrab-data
-    hostPath:
-      path: /opt/podgrab/config
-
-service:
-  port: 8080
-  nodePort: 30004
+    nodePort: 30004

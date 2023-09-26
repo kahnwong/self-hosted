@@ -2,19 +2,19 @@
 name: gke-autopilot-cost-calculator
 replicaCount: 1
 
-containers:
-  - name: gke-autopilot-cost-calculator
-    repository: ghcr.io/kahnwong/gke-autopilot-cost-calculator
-    tag: 860e0cb
+deployments:
+  containers:
+    - name: gke-autopilot-cost-calculator
+      repository: ghcr.io/kahnwong/gke-autopilot-cost-calculator
+      tag: 860e0cb
+      port: 8501
+      resources:
+        limits:
+          cpu: "1"
+          memory: 512Mi
+        requests:
+          cpu: "0.25"
+          memory: 128Mi
+  service:
     port: 8501
-    resources:
-      limits:
-        cpu: "1"
-        memory: 512Mi
-      requests:
-        cpu: "0.25"
-        memory: 128Mi
-
-service:
-  port: 8501
-  nodePort: 30024
+    nodePort: 30024

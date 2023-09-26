@@ -2,44 +2,43 @@
 name: navidrome
 replicaCount: 1
 
-containers:
-  - name: navidrome
-    repository: deluan/navidrome
-    tag: 0.49.3
+deployments:
+  containers:
+    - name: navidrome
+      repository: deluan/navidrome
+      tag: 0.49.3
+      port: 4533
+      env:
+        - name: ND_SCANINTERVAL
+          value: 12h
+        - name: ND_LOGLEVEL
+          value: info
+        - name: ND_SESSIONTIMEOUT
+          value: 24h
+        - name: ND_BASEURL
+          value: ""
+        - name: ND_ENABLESHARING
+          value: "true"
+      resources:
+        limits:
+          cpu: 256m
+          memory: 1G
+        requests:
+          cpu: 50m
+          memory: 512Mi
+      volumeMounts:
+        - name: music
+          mountPath: /music
+          readOnly: true
+        - name: navidrome-data
+          mountPath: /data
+  volumes:
+    - name: music
+      hostPath:
+        path: /opt/syncthing/music
+    - name: navidrome-data
+      hostPath:
+        path: /opt/navidrome/config
+  service:
     port: 4533
-    env:
-      - name: ND_SCANINTERVAL
-        value: 12h
-      - name: ND_LOGLEVEL
-        value: info
-      - name: ND_SESSIONTIMEOUT
-        value: 24h
-      - name: ND_BASEURL
-        value: ""
-      - name: ND_ENABLESHARING
-        value: "true"
-    resources:
-      limits:
-        cpu: 256m
-        memory: 1G
-      requests:
-        cpu: 50m
-        memory: 512Mi
-    volumeMounts:
-      - name: music
-        mountPath: /music
-        readOnly: true
-      - name: navidrome-data
-        mountPath: /data
-
-volumes:
-  - name: music
-    hostPath:
-      path: /opt/syncthing/music
-  - name: navidrome-data
-    hostPath:
-      path: /opt/navidrome/config
-
-service:
-  port: 4533
-  nodePort: 30006
+    nodePort: 30006

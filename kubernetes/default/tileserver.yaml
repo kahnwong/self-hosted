@@ -2,27 +2,26 @@
 name: tileserver
 replicaCount: 1
 
-containers:
-  - name: tileserver
-    repository: maptiler/tileserver-gl
-    tag: v4.5.0
+deployments:
+  containers:
+    - name: tileserver
+      repository: maptiler/tileserver-gl
+      tag: v4.5.0
+      port: 8080
+      resources:
+        limits:
+          cpu: 999m
+          memory: 1G
+        requests:
+          cpu: 200m
+          memory: 512Mi
+      volumeMounts:
+        - name: tileserver-data
+          mountPath: /data
+  volumes:
+    - name: tileserver-data
+      hostPath:
+        path: /opt/tileserver
+  service:
     port: 8080
-    resources:
-      limits:
-        cpu: 999m
-        memory: 1G
-      requests:
-        cpu: 200m
-        memory: 512Mi
-    volumeMounts:
-      - name: tileserver-data
-        mountPath: /data
-
-volumes:
-  - name: tileserver-data
-    hostPath:
-      path: /opt/tileserver
-
-service:
-  port: 8080
-  nodePort: 30011
+    nodePort: 30011

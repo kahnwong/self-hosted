@@ -2,19 +2,19 @@
 name: caddy
 replicaCount: 1
 
-containers:
-  - name: caddy
-    repository: caddy
-    tag: latest
+deployments:
+  containers:
+    - name: caddy
+      repository: caddy
+      tag: latest
+      port: 80
+      resources:
+        limits:
+          cpu: "1"
+          memory: 512Mi
+        requests:
+          cpu: "0.25"
+          memory: 64Mi
+  service:
     port: 80
-    resources:
-      limits:
-        cpu: "1"
-        memory: 512Mi
-      requests:
-        cpu: "0.25"
-        memory: 64Mi
-
-service:
-  port: 80
-  nodePort: 30049
+    nodePort: 30049

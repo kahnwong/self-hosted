@@ -2,32 +2,31 @@
 name: sourcegraph
 replicaCount: 1
 
-containers:
-  - name: sourcegraph
-    repository: sourcegraph/server
-    tag: 4.4.2
+deployments:
+  containers:
+    - name: sourcegraph
+      repository: sourcegraph/server
+      tag: 4.4.2
+      port: 7080
+      resources:
+        limits:
+          cpu: "8"
+          memory: 8G
+        requests:
+          cpu: "0.5"
+          memory: 1.5G
+      volumeMounts:
+        - name: sourcegraph-config
+          mountPath: /etc/sourcegraph
+        - name: sourcegraph-data
+          mountPath: /var/opt/sourcegraph
+  volumes:
+    - name: sourcegraph-config
+      hostPath:
+        path: /opt/sourcegraph/config
+    - name: sourcegraph-data
+      hostPath:
+        path: /opt/sourcegraph/data
+  service:
     port: 7080
-    resources:
-      limits:
-        cpu: "8"
-        memory: 8G
-      requests:
-        cpu: "0.5"
-        memory: 1.5G
-    volumeMounts:
-      - name: sourcegraph-config
-        mountPath: /etc/sourcegraph
-      - name: sourcegraph-data
-        mountPath: /var/opt/sourcegraph
-
-volumes:
-  - name: sourcegraph-config
-    hostPath:
-      path: /opt/sourcegraph/config
-  - name: sourcegraph-data
-    hostPath:
-      path: /opt/sourcegraph/data
-
-service:
-  port: 7080
-  nodePort: 30010
+    nodePort: 30010
