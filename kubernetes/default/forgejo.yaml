@@ -1,0 +1,70 @@
+---
+name: forgejo
+replicaCount: 1
+
+statefulSets:
+  containers:
+    - name: postgres
+      repository: postgres
+      tag: 15.4-alpine
+      port: 5432
+      healthcheck: false
+      env:
+        - name: POSTGRES_USER
+          value: forgejo
+        - name: POSTGRES_PASSWORD
+          value: forgejopassword
+        - name: POSTGRES_DB
+          value: forgejo
+      # resources:
+      #   limits:
+      #     cpu: 2
+      #     memory: 2G
+      #   requests:
+      #     cpu: 256m
+      #     memory: 128Mi
+      volumeMounts:
+        - name: forgejo-db
+          mountPath: /var/lib/postgresql/data
+  volumes:
+    - name: forgejo-db
+      hostPath:
+        path: /opt/forgejo/db
+  service:
+    port: 5432
+
+deployments:
+  containers:
+    - name: forgejo
+      repository: codeberg.org/forgejo/forgejo
+      tag: 1.20.4-1
+      port: 3000
+      env:
+        - name: USER_UID
+          value: "1000"
+        - name: USER_GID
+          value: "1000"
+        - name: FORGEJO__database__DB_TYPE
+          value: postgres
+        - name: FORGEJO__database__HOST
+          value: forgejo-statefulset.default.svc.cluster.local:5432 # change me
+        - name: FORGEJO__database__NAME
+          value: forgejo
+        - name: FORGEJO__database__USER
+          value: forgejo
+        - name: FORGEJO__database__PASSWD
+          value: forgejopassword
+        - name: FORGEJO__service__DISABLE_REGISTRATION
+          value: "true"
+        - name: FORGEJO__repository__DEFAULT_BRANCH
+          value: master
+      volumeMounts:
+        - name: forgejo-data
+          mountPath: /data
+  volumes:
+    - name: forgejo-data
+      hostPath:
+        path: /opt/forgejo/data
+  service:
+    port: 3000
+    nodePort: 30026
