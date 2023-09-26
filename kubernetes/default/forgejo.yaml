@@ -56,6 +56,8 @@ deployments:
           value: forgejopassword
         - name: FORGEJO__service__DISABLE_REGISTRATION
           value: "true"
+        - name: FORGEJO__server__ROOT_URL
+          value: https://git.karnwong.me
         - name: FORGEJO__repository__DEFAULT_BRANCH
           value: master
       volumeMounts:
