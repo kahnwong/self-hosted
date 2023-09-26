@@ -85,6 +85,9 @@ ttrss.karnwong.me {
 
 
 ### non-proxied
+git.karnwong.me {
+    reverse_proxy 127.0.0.1:30026
+}
 jellyfin.karnwong.me {
     reverse_proxy 127.0.0.1:30003
 }
