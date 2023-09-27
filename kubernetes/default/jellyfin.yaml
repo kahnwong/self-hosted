@@ -27,8 +27,6 @@ deployments:
           mountPath: /data/media
         - name: jellyfin-data
           mountPath: /config
-        - name: audiobooks
-          mountPath: /data/media-audiobooks
   volumes:
     - name: jellyfin-media
       hostPath:
@@ -36,9 +34,6 @@ deployments:
     - name: jellyfin-data
       hostPath:
         path: /opt/jellyfin/config
-    - name: audiobooks
-      hostPath:
-        path: /opt/syncthing/audiobooks
   service:
     port: 8096
     nodePort: 30003
