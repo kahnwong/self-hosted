@@ -39,7 +39,7 @@ deployments:
   containers:
     - name: forgejo
       repository: codeberg.org/forgejo-experimental/forgejo
-      tag: 1.20.4-1
+      tag: 1.21
       ports:
         - name: web
           containerPort: 3000
