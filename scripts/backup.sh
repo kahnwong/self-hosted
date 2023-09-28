@@ -72,7 +72,7 @@ rm "$HOME/$transmission_backup_filename"
 miniflux_sqldump_filename="miniflux-sqldump-$current_date.psql"
 
 echo "miniflux..."
-MINIFLUX_POD_NAME="$(kubectl get pods -l=app.kubernetes.io/name=miniflux | tail -1 | awk '{print $1}')"
+MINIFLUX_POD_NAME="$(kubectl get pods -l=app.kubernetes.io/name=miniflux-statefulset | tail -1 | awk '{print $1}')"
 echo "$MINIFLUX_POD_NAME"
 
 PGPASSWORD=secret
@@ -97,7 +97,7 @@ rm "$HOME/$wallabag_backup_filename"
 wallabag_sqldump_filename="wallabag-sqldump-$current_date.psql"
 
 echo "wallabag db..."
-WALLABAG_POD_NAME="$(kubectl get pods -l=app.kubernetes.io/name=wallabag | tail -1 | awk '{print $1}')"
+WALLABAG_POD_NAME="$(kubectl get pods -l=app.kubernetes.io/name=wallabag-statefulset | tail -1 | awk '{print $1}')"
 echo "$WALLABAG_POD_NAME"
 
 # shellcheck disable=SC2034
@@ -113,7 +113,7 @@ rm "$HOME/$wallabag_sqldump_filename"
 photoprism_sqldump_filename="photoprism-sqldump-$current_date.sql"
 
 echo "photoprism..."
-PHOTOPRISM_POD_NAME="$(kubectl get pods -l=app.kubernetes.io/name=photoprism | tail -1 | awk '{print $1}')"
+PHOTOPRISM_POD_NAME="$(kubectl get pods -l=app.kubernetes.io/name=photoprism-statefulset | tail -1 | awk '{print $1}')"
 echo "$PHOTOPRISM_POD_NAME"
 kubectl exec "$PHOTOPRISM_POD_NAME" -c photoprism -- photoprism backup -i - >"$HOME/$photoprism_sqldump_filename"
 
