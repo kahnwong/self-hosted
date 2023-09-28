@@ -70,9 +70,6 @@ rustpad.karnwong.me {
 secrets.karnwong.me {
     reverse_proxy 127.0.0.1:30025
 }
-sourcegraph.karnwong.me {
-    reverse_proxy 127.0.0.1:30010
-}
 syncthing.karnwong.me {
     reverse_proxy 127.0.0.1:8384
 }
