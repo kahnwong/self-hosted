@@ -113,7 +113,7 @@ rm "$HOME/$wallabag_sqldump_filename"
 photoprism_sqldump_filename="photoprism-sqldump-$current_date.sql"
 
 echo "photoprism..."
-PHOTOPRISM_POD_NAME="$(kubectl get pods -l=app.kubernetes.io/name=photoprism-statefulset | tail -1 | awk '{print $1}')"
+PHOTOPRISM_POD_NAME="$(kubectl get pods -l=app.kubernetes.io/name=photoprism | tail -1 | awk '{print $1}')"
 echo "$PHOTOPRISM_POD_NAME"
 kubectl exec "$PHOTOPRISM_POD_NAME" -c photoprism -- photoprism backup -i - >"$HOME/$photoprism_sqldump_filename"
 
