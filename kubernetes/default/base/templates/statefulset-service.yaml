@@ -12,7 +12,6 @@ spec:
   ports:
     - port: {{ .Values.statefulSets.service.port }}
       targetPort: {{ .Values.statefulSets.service.port }}
-      nodePort: {{ .Values.statefulSets.service.nodePort }}
   {{ end }}
   {{ if .Values.statefulSets.service.ports }}
   ports: {{ .Values.statefulSets.service.ports | default list | toYaml | nindent 4 }}
