@@ -41,7 +41,7 @@ spec:
             {{ if not (eq .healthcheck false)}}
             livenessProbe:
               httpGet:
-                path: /
+                path: {{ .livenessProbePath | default "/" }}
                 port: {{ .port }}
                 scheme: HTTP
             {{ end }}
