@@ -28,7 +28,7 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 
 # login - admin:prom-operator
 helm install kube-prometheus-stack prometheus-community/kube-prometheus-stack \
-    --values ./monitoring/kube-prometheus-stack/values.yaml \
+    --values ./kube-prometheus-stack/values.yaml \
     --set grafana.defaultDashboardsTimezone="Asia/Bangkok" \
     --namespace monitoring
 ```
