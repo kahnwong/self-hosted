@@ -10,8 +10,8 @@ deployments:
       port: 7080
       resources:
         limits:
-          cpu: "8"
-          memory: 8G
+          cpu: "2"
+          memory: 2.5G
         requests:
           cpu: "0.5"
           memory: 1.5G

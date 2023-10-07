@@ -10,11 +10,11 @@ deployments:
       port: 8501
       resources:
         limits:
-          cpu: "1"
-          memory: 512Mi
+          cpu: 512m
+          memory: 256Mi
         requests:
-          cpu: "0.25"
-          memory: 128Mi
+          cpu: 512m
+          memory: 256Mi
   service:
     port: 8501
     nodePort: 30024

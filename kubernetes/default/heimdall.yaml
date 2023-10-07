@@ -17,11 +17,11 @@ deployments:
           value: Asia/Bangkok
       resources:
         limits:
-          cpu: "1"
-          memory: 512Mi
+          cpu: 512m
+          memory: 256Mi
         requests:
-          cpu: "0.25"
-          memory: 64Mi
+          cpu: 512m
+          memory: 256Mi
       volumeMounts:
         - name: heimdall-data
           mountPath: /config
