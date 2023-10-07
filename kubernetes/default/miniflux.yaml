@@ -67,11 +67,11 @@ deployments:
             name: miniflux
       resources:
         limits:
-          cpu: 999m
-          memory: 512Mi
+          cpu: 512m
+          memory: 128Mi
         requests:
-          cpu: 256m
-          memory: 64Mi
+          cpu: 100m
+          memory: 80Mi
   service:
     port: 8080
     nodePort: 30007
