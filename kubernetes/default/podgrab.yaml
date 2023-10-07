@@ -11,13 +11,6 @@ deployments:
       env:
         - name: CHECK_FREQUENCY
           value: "240"
-      resources:
-        limits:
-          cpu: 512m
-          memory: 128Mi
-        requests:
-          cpu: 200m
-          memory: 64Mi
       volumeMounts:
         - name: podgrab-media
           mountPath: /assets

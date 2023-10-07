@@ -1,3 +1,6 @@
+# ide
+.idea
+
 # projects
 docker/ttrss-docker-compose/
 docker/wirehole/

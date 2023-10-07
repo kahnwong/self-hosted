@@ -19,13 +19,6 @@ deployments:
           value: ""
         - name: ND_ENABLESHARING
           value: "true"
-      resources:
-        limits:
-          cpu: 256m
-          memory: 1G
-        requests:
-          cpu: 50m
-          memory: 512Mi
       volumeMounts:
         - name: music
           mountPath: /music

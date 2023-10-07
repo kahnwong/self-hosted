@@ -12,13 +12,6 @@ deployments:
       envFrom:
         - secretRef:
             name: picoshare
-      resources:
-        limits:
-          cpu: "2"
-          memory: 1G
-        requests:
-          cpu: "1"
-          memory: 512Mi
       volumeMounts:
         - name: picoshare-data
           mountPath: /data

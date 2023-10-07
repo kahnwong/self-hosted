@@ -88,13 +88,6 @@ deployments:
           value: redispwd
         - name: SYMFONY__ENV__DOMAIN_NAME
           value: https://wallabag.karnwong.me/
-          # resources:
-          #   limits:
-          #     cpu: 999m
-          #     memory: 1G
-          #   requests:
-          #     cpu: 256m
-          #     memory: 512Mi
       volumeMounts:
         - name: wallabag-images
           mountPath: /var/www/wallabag/web/assets/images

@@ -8,13 +8,6 @@ deployments:
       repository: ghcr.io/advplyr/audiobookshelf
       tag: latest # change me
       port: 80
-      resources:
-        limits:
-          cpu: 200m
-          memory: 128Mi
-        requests:
-          cpu: 100m
-          memory: 64Mi
       volumeMounts:
         - name: audiobookshelf-config
           mountPath: /config

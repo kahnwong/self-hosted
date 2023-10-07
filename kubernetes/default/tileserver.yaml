@@ -8,13 +8,6 @@ deployments:
       repository: maptiler/tileserver-gl
       tag: v4.5.0
       port: 8080
-      resources:
-        limits:
-          cpu: 999m
-          memory: 1G
-        requests:
-          cpu: 200m
-          memory: 512Mi
       volumeMounts:
         - name: tileserver-data
           mountPath: /data

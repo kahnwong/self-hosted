@@ -10,10 +10,6 @@ deployments:
       repository: sissbruecker/linkding
       tag: 1.22.0
       port: 9090
-      resources:
-        requests:
-          cpu: 512m
-          memory: 512Mi
       volumeMounts:
         - name: linkding-data
           mountPath: /etc/linkding/data

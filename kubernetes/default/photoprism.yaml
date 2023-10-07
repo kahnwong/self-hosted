@@ -65,13 +65,6 @@ deployments:
       envFrom:
         - secretRef:
             name: photoprism
-      # resources:
-      #   limits:
-      #     cpu: "3"
-      #     memory: 3G
-      #   requests:
-      #     cpu: 256m
-      #     memory: 1.5G
       volumeMounts:
         - name: photoprism-images
           mountPath: /photoprism/originals
