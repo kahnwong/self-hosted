@@ -11,7 +11,9 @@ spec:
   ports:
     - port: {{ .Values.deployments.service.port }}
       targetPort: {{ .Values.deployments.service.port }}
+      {{ if .Values.deployments.service.nodePort }}
       nodePort: {{ .Values.deployments.service.nodePort }}
+      {{ end }}
   {{ end }}
   {{ if .Values.deployments.service.ports }}
   ports: {{ .Values.deployments.service.ports | default list | toYaml | nindent 4 }}
