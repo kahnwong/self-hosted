@@ -1,0 +1,27 @@
+---
+{{ if .Values.deployments.ingress }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ template "name" . }}
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt"
+
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - {{ .Values.deployments.ingress.host }}
+    secretName: {{ template "name" . }}-tls
+  rules:
+    - host: {{ .Values.deployments.ingress.host }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: {{ template "name" . }}
+                port:
+                  number: {{ .Values.deployments.service.port }}
+{{ end }}

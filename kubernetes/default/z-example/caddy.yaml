@@ -18,3 +18,6 @@ deployments:
   service:
     port: 80
     nodePort: 30049
+
+  # ingress:
+  #   host: foo.example.com
