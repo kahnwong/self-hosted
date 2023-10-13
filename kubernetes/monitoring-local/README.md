@@ -99,3 +99,26 @@ export MONITORING_ID=xxxxxxxxxx
 export BACKEND_HOST=http://backend.ddosify.svc.cluster.local:8008
 helm upgrade --install --namespace ddosify alaz ddosify/alaz --set monitoringID=$MONITORING_ID --set backendHost=$BACKEND_HOST
 ```
+
+## cilium
+
+<https://docs.cilium.io/en/stable/gettingstarted/k8s-install-default/#k8s-install-quick>
+
+Don't forget to set custom CNI during k8s installation.
+
+```bash
+## on local
+cilium install --version 1.14.2
+cilium hubble enable
+cilium hubble enable --ui
+
+# open ui
+cilium hubble ui
+
+# test hubble
+## if pod fails run this on linux host
+sudo sysctl fs.inotify.max_user_watches=524288
+sudo sysctl fs.inotify.max_user_instances=512
+
+while true; do cilium connectivity test; done
+```
