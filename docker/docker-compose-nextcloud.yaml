@@ -9,6 +9,7 @@ services:
       - POSTGRES_PASSWORD=nextcloud
       - POSTGRES_DB=nextcloud
       - POSTGRES_USER=nextcloud
+      - NEXTCLOUD_TRUSTED_DOMAINS=nextcloud.karnwong.me
     ports:
       - 30028:80
     restart: always
