@@ -3,8 +3,6 @@ locals {
     "jupyterlite",
   ])
   selfhosted_proxied = toset([
-    "api-docs",
-    "budget",
     "gke-autopilot-cost-calculator",
     "linkding",
     "miniflux",
@@ -14,15 +12,13 @@ locals {
     "podgrab",
     "rustpad",
     "secrets",
-    "sourcegraph",
     "syncthing",
-    "tile",
     "ttrss",
   ])
   selfhosted_non_proxied = toset([
     "git",
-    "jellyfin",  # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
-    "mapserver", # [TODO] rename to `map`
+    "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
+    "nextcloud",
     "registry",
     "share", # prevent request entity too large
     "storage",

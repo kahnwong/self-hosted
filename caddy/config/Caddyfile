@@ -88,6 +88,9 @@ git.karnwong.me {
 jellyfin.karnwong.me {
     reverse_proxy 127.0.0.1:30003
 }
+nextcloud.karnwong.me {
+    reverse_proxy 127.0.0.1:30028
+}
 registry.karnwong.me {
     reverse_proxy 127.0.0.1:30501 {
         transport http {
