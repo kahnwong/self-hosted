@@ -13,7 +13,6 @@ locals {
     "rustpad",
     "secrets",
     "syncthing",
-    "ttrss",
   ])
   selfhosted_non_proxied = toset([
     "git",
