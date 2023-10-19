@@ -21,6 +21,6 @@ module "karnwong_me" {
   zone_id    = local.zone_id
 
   project_name = "karnwong-me"
-  subdomain    = "www"
-  domain_name  = "www.karnwong.me"
+  subdomain    = "@"
+  domain_name  = "karnwong.me"
 }
