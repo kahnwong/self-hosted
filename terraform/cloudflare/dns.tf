@@ -16,11 +16,10 @@ locals {
   ])
   selfhosted_non_proxied = toset([
     "git",
+    "harbor",
     "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
-    "nextcloud",
-    "registry",
+    "minio",
     "share", # prevent request entity too large
-    "storage",
     "wallabag",
   ])
 }

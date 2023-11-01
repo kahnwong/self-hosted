@@ -1,18 +1,6 @@
 # `caddy hash-password --algorithm bcrypt` for basicauth
 
 ### proxied
-api-docs.karnwong.me {
-    basicauth * {
-        unicorn $2a$14$TqCcoQ/1EnAo9mETlEjUIO7AW8spV3ndeXjLGWY.mrh6epZFYTzn6
-    }
-    reverse_proxy 127.0.0.1:5333
-}
-budget.karnwong.me {
-    basicauth * {
-        kahnwong JDJhJDE0JFBCUGpmLk83dkFEdEFUMXRnRmJLdmV2R1A2cUNFV2NMamVLYkJNR1hLMUlrRDI2NUZoN0Jp
-    }
-    reverse_proxy 127.0.0.1:30001
-}
 gke-autopilot-cost-calculator.karnwong.me {
     reverse_proxy 127.0.0.1:30024
 }
@@ -85,10 +73,7 @@ git.karnwong.me {
 jellyfin.karnwong.me {
     reverse_proxy 127.0.0.1:30003
 }
-nextcloud.karnwong.me {
-    reverse_proxy 127.0.0.1:30028
-}
-registry.karnwong.me {
+harbor.karnwong.me {
     reverse_proxy 127.0.0.1:30501 {
         transport http {
             tls_insecure_skip_verify
@@ -98,7 +83,7 @@ registry.karnwong.me {
 share.karnwong.me {
     reverse_proxy 127.0.0.1:30017
 }
-storage.karnwong.me {
+minio.karnwong.me {
     reverse_proxy 127.0.0.1:30020
 }
 wallabag.karnwong.me {
