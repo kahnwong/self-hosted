@@ -1,0 +1,30 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: email-to-epub
+spec:
+  schedule: "0 0 * * *"
+  jobTemplate:
+    metadata:
+      name: email-to-epub
+    spec:
+      template:
+        spec:
+          containers:
+            - name: email-to-epub
+              image: ghcr.io/kahnwong/email-to-epub:8e5212d
+              volumeMounts:
+                - name: main
+                  mountPath: /usr/local/bin/.env
+                  subPath: .env
+                - name: rclone
+                  mountPath: /root/.config/rclone
+          restartPolicy: Never
+          volumes:
+            - name: main
+              hostPath:
+                path: /opt/email-to-epub/main
+            - name: rclone
+              hostPath:
+                path: /opt/email-to-epub/rclone
