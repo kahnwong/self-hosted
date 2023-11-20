@@ -13,6 +13,10 @@ deployments:
       volumeMounts:
         - name: linkding-data
           mountPath: /etc/linkding/data
+      resources:
+        limits:
+          cpu: 1
+          memory: 1G
   volumes:
     - name: linkding-data
       hostPath:

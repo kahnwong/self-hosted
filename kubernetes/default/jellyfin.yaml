@@ -20,6 +20,10 @@ deployments:
           mountPath: /data/media
         - name: jellyfin-data
           mountPath: /config
+      resources:
+        limits:
+          cpu: 2
+          memory: 2G
   volumes:
     - name: jellyfin-media
       hostPath:
