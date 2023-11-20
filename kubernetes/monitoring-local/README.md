@@ -100,11 +100,19 @@ export BACKEND_HOST=http://backend.ddosify.svc.cluster.local:8008
 helm upgrade --install --namespace ddosify alaz ddosify/alaz --set monitoringID=$MONITORING_ID --set backendHost=$BACKEND_HOST
 ```
 
-## cilium
+## Cilium
 
 <https://docs.cilium.io/en/stable/gettingstarted/k8s-install-default/#k8s-install-quick>
 
-Don't forget to set custom CNI during k8s installation.
+### K3S
+
+```bash
+sudo mount bpffs -t bpf /sys/fs/bpf
+export MASTER_IP=$(ip a |grep global | grep -v '10.0.2.15' | awk '{print $2}' | cut -f1 -d '/')
+curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--flannel-backend=none --disable=traefik --node-external-ip=${MASTER_IP} --bind-address=${MASTER_IP}" sh -
+```
+
+### Cilium
 
 ```bash
 ## on local
