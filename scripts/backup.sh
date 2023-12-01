@@ -19,7 +19,7 @@ navidrome_backup_filename="navidrome-$current_date.tar.gz"
 echo "navidrome..."
 tar --exclude "/opt/navidrome/config/cache" -czf "$navidrome_backup_filename" /opt/navidrome/config
 
-aws s3 cp --endpoint-url "$r2_endpoint" --profile r2" $navidrome_backup_filename" "$backup_path_prefix/$navidrome_backup_filename"
+aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$navidrome_backup_filename" "$backup_path_prefix/$navidrome_backup_filename"
 rm "$HOME/$navidrome_backup_filename"
 
 ###############
@@ -30,7 +30,7 @@ ntfy_backup_filename="ntfy-$current_date.tar.gz"
 echo "ntfy..."
 tar -czf "$ntfy_backup_filename" /opt/ntfy
 
-aws s3 cp --endpoint-url "$r2_endpoint" --profile r2" $ntfy_backup_filename" "$backup_path_prefix/$ntfy_backup_filename"
+aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$ntfy_backup_filename" "$backup_path_prefix/$ntfy_backup_filename"
 rm "$HOME/$ntfy_backup_filename"
 
 ###############
@@ -41,7 +41,7 @@ heimdall_backup_filename="heimdall-$current_date.tar.gz"
 echo "heimdall..."
 tar -czf "$heimdall_backup_filename" /opt/heimdall
 
-aws s3 cp --endpoint-url "$r2_endpoint" --profile r2" $heimdall_backup_filename" "$backup_path_prefix/$heimdall_backup_filename"
+aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$heimdall_backup_filename" "$backup_path_prefix/$heimdall_backup_filename"
 rm "$HOME/$heimdall_backup_filename"
 
 ###############
@@ -52,7 +52,7 @@ linkding_backup_filename="linkding-$current_date.tar.gz"
 echo "linkding..."
 tar -czf "$linkding_backup_filename" /opt/linkding
 
-aws s3 cp --endpoint-url "$r2_endpoint" --profile r2" $linkding_backup_filename" "$backup_path_prefix/$linkding_backup_filename"
+aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$linkding_backup_filename" "$backup_path_prefix/$linkding_backup_filename"
 rm "$HOME/$linkding_backup_filename"
 
 ###############
@@ -63,7 +63,7 @@ transmission_backup_filename="transmission-$current_date.tar.gz"
 echo "transmission..."
 tar -czf "$transmission_backup_filename" /opt/transmission/config
 
-aws s3 cp --endpoint-url "$r2_endpoint" --profile r2" $transmission_backup_filename" "$backup_path_prefix/$transmission_backup_filename"
+aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$transmission_backup_filename" "$backup_path_prefix/$transmission_backup_filename"
 rm "$HOME/$transmission_backup_filename"
 
 ###############
@@ -78,7 +78,7 @@ echo "$MINIFLUX_POD_NAME"
 PGPASSWORD=secret
 kubectl exec "$MINIFLUX_POD_NAME" -c postgres -- pg_dump -Fc -c -U miniflux >"$HOME/$miniflux_sqldump_filename"
 
-aws s3 cp --endpoint-url "$r2_endpoint" --profile r2" $miniflux_sqldump_filename" "$backup_path_prefix/$miniflux_sqldump_filename"
+aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$miniflux_sqldump_filename" "$backup_path_prefix/$miniflux_sqldump_filename"
 rm "$HOME/$miniflux_sqldump_filename"
 
 ###############
@@ -90,7 +90,7 @@ wallabag_backup_filename="wallabag-content-$current_date.tar.gz"
 echo "wallabag content..."
 tar -czf "$wallabag_backup_filename" /opt/wallabag/images
 
-aws s3 cp --endpoint-url "$r2_endpoint" --profile r2" $wallabag_backup_filename" "$backup_path_prefix/$wallabag_backup_filename"
+aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$wallabag_backup_filename" "$backup_path_prefix/$wallabag_backup_filename"
 rm "$HOME/$wallabag_backup_filename"
 
 ### db
@@ -104,7 +104,7 @@ echo "$WALLABAG_POD_NAME"
 PGPASSWORD=wallapass
 kubectl exec "$WALLABAG_POD_NAME" -c postgres -- pg_dump -Fc -c -U wallabag >"$HOME/$wallabag_sqldump_filename"
 
-aws s3 cp --endpoint-url "$r2_endpoint" --profile r2" $wallabag_sqldump_filename" "$backup_path_prefix/$wallabag_sqldump_filename"
+aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$wallabag_sqldump_filename" "$backup_path_prefix/$wallabag_sqldump_filename"
 rm "$HOME/$wallabag_sqldump_filename"
 
 ###############
@@ -117,7 +117,7 @@ PHOTOPRISM_POD_NAME="$(kubectl get pods -l=app.kubernetes.io/name=photoprism | t
 echo "$PHOTOPRISM_POD_NAME"
 kubectl exec "$PHOTOPRISM_POD_NAME" -c photoprism -- photoprism backup -i - >"$HOME/$photoprism_sqldump_filename"
 
-aws s3 cp --endpoint-url "$r2_endpoint" --profile r2" $photoprism_sqldump_filename" "$backup_path_prefix/$photoprism_sqldump_filename"
+aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$photoprism_sqldump_filename" "$backup_path_prefix/$photoprism_sqldump_filename"
 rm "$HOME/$photoprism_sqldump_filename"
 
 curl -d "Successfully backup DELL 🤩" ntfy.sh/kwdellbackup
@@ -131,7 +131,7 @@ forgejo_backup_filename="forgejo-data-$current_date.tar.gz"
 echo "forgejo data..."
 tar -czf "$forgejo_backup_filename" /opt/forgejo/data
 
-aws s3 cp --endpoint-url "$r2_endpoint" --profile r2" $forgejo_backup_filename" "$backup_path_prefix/$forgejo_backup_filename"
+aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$forgejo_backup_filename" "$backup_path_prefix/$forgejo_backup_filename"
 rm "$HOME/$forgejo_backup_filename"
 
 ### db
@@ -145,7 +145,7 @@ echo "$FORGEJO_POD_NAME"
 PGPASSWORD=forgejopassword
 kubectl exec --namespace forgejo "$FORGEJO_POD_NAME" -c postgres -- pg_dump -Fc -c -U forgejo >"$HOME/$forgejo_sqldump_filename"
 
-aws s3 cp --endpoint-url "$r2_endpoint" --profile r2" $forgejo_sqldump_filename" "$backup_path_prefix/$forgejo_sqldump_filename"
+aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$forgejo_sqldump_filename" "$backup_path_prefix/$forgejo_sqldump_filename"
 rm "$HOME/$forgejo_sqldump_filename"
 
 ########
