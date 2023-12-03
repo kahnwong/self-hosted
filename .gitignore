@@ -26,6 +26,7 @@ docker/redash/
 **/*-exporter/values.yaml
 **/grafana*/**/configmap.yaml
 **/grafana-agent-operator/values.yaml
+all.Caddyfile
 
 # files
 *.html

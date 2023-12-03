@@ -14,14 +14,14 @@ locals {
     "secrets",
     "syncthing",
   ])
-  selfhosted_non_proxied = toset([
+  selfhosted_non_proxied = setunion(toset([
     "git",
     "harbor",
     "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
     "minio",
     "share", # prevent request entity too large
     "wallabag",
-  ])
+  ]), var.private_dns)
 }
 locals {
   proxied_dict     = { for name in local.selfhosted_proxied : name => true }

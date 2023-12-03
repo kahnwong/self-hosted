@@ -42,4 +42,10 @@
 | [cloudflare_record.terraform_managed_resource_989f8a3455d739ec043a6e073c70a1bb](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
 | [cloudflare_record.www_dummy](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
 | [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/0.7.1/docs/data-sources/file) | data source |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| private\_dns | n/a | `set(string)` | n/a | yes |
 <!-- END_TF_DOCS -->
