@@ -1,6 +1,6 @@
 ---
-# adminPassword: $ADMIN_PASSWORD
-externalURL: https://registry.karnwong.me
+# adminPassword:
+externalURL: https://harbor.karnwong.me
 service:
   type: NodePort
   ports:
