@@ -1,0 +1,21 @@
+---
+name: llm
+replicaCount: 1
+
+deployments:
+  containers:
+    - name: llm
+      repository: harbor.karnwong.me/llm/llm
+      tag: latest
+      port: 8080
+  livenessProbe:
+    httpGet:
+      path: /version
+      port: 8080
+      scheme: HTTP
+  service:
+    port: 8080
+    nodePort: 30029
+
+imagePullSecrets:
+  - name: harbor-cfg
