@@ -6,13 +6,15 @@ deployments:
   containers:
     - name: llm
       repository: harbor.karnwong.me/llm/llm
-      tag: latest
+      tag: baked
       port: 8080
-  livenessProbe:
-    httpGet:
-      path: /version
-      port: 8080
-      scheme: HTTP
+      livenessProbePath: /version
+      resources:
+        limits:
+          cpu: 1
+          memory: 1.5G
+  # autoscaling:
+  #   averageCPUUtilization: 80
   service:
     port: 8080
     nodePort: 30029
