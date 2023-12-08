@@ -6,7 +6,7 @@ deployments:
   containers:
     - name: picoshare
       repository: mtlynch/picoshare
-      tag: 1.4.0
+      tag: 1.4.1
       port: 4001
       args: ["-db", "/data/store.db", "-vacuum", "true"]
       envFrom:
