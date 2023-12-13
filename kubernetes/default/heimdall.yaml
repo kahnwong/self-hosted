@@ -15,6 +15,10 @@ deployments:
           value: "1000"
         - name: TZ
           value: Asia/Bangkok
+      resources:
+        limits:
+          cpu: 0.5
+          memory: 500Mi
       volumeMounts:
         - name: heimdall-data
           mountPath: /config

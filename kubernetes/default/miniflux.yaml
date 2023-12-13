@@ -20,13 +20,6 @@ statefulSets:
           value: miniflux
         - name: POSTGRES_PASSWORD
           value: secret
-      # resources:
-      #   limits:
-      #     cpu: 999m
-      #     memory: 2G
-      #   requests:
-      #     cpu: 256m
-      #     memory: 256Mi
       volumeMounts:
         - name: miniflux-data
           mountPath: /var/lib/postgresql/data
@@ -65,6 +58,10 @@ deployments:
       envFrom:
         - secretRef:
             name: miniflux
+      resources:
+        limits:
+          cpu: 1
+          memory: 1G
   service:
     port: 8080
     nodePort: 30007
