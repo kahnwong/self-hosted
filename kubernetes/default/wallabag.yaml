@@ -94,6 +94,10 @@ deployments:
         - name: wallabag-site-config
           mountPath: /var/www/wallabag/vendor/j0k3r/graby-site-config
           readOnly: true
+      resources:
+        limits:
+          cpu: 1
+          memory: 1G
   volumes:
     - name: wallabag-images
       hostPath:
