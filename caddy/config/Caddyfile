@@ -8,31 +8,31 @@ linkding.karnwong.me {
     reverse_proxy 127.0.0.1:30005
 }
 
-(cors) {
-  @cors_preflight method OPTIONS
-  @cors header Origin {args.0}
+# (cors) {
+#   @cors_preflight method OPTIONS
+#   @cors header Origin {args.0}
 
-  handle @cors_preflight {
-    header Access-Control-Allow-Origin "{args.0}"
-    header Access-Control-Allow-Methods "GET, POST, PUT, PATCH, DELETE"
-    header Access-Control-Allow-Headers "Content-Type"
-    header Access-Control-Max-Age "3600"
-    respond "" 204
-  }
+#   handle @cors_preflight {
+#     header Access-Control-Allow-Origin "{args.0}"
+#     header Access-Control-Allow-Methods "GET, POST, PUT, PATCH, DELETE"
+#     header Access-Control-Allow-Headers "Content-Type"
+#     header Access-Control-Max-Age "3600"
+#     respond "" 204
+#   }
 
-  handle @cors {
-    header Access-Control-Allow-Origin "{args.0}"
-    header Access-Control-Expose-Headers "Link"
-  }
-}
-mapserver.karnwong.me {
-    basicauth * {
-        kahnwong $2a$14$GtDIU0U5h8mH0pKxlosiUeIdJMft/vrcScw7cFkZRqjB8KRhmLINS
-    }
-    reverse_proxy 127.0.0.1:30015
+#   handle @cors {
+#     header Access-Control-Allow-Origin "{args.0}"
+#     header Access-Control-Expose-Headers "Link"
+#   }
+# }
+# mapserver.karnwong.me {
+#     basicauth * {
+#         kahnwong $2a$14$GtDIU0U5h8mH0pKxlosiUeIdJMft/vrcScw7cFkZRqjB8KRhmLINS
+#     }
+#     reverse_proxy 127.0.0.1:30015
 
-    import cors *
-}
+#     import cors *
+# }
 
 miniflux.karnwong.me {
     reverse_proxy 127.0.0.1:30007
@@ -60,9 +60,6 @@ secrets.karnwong.me {
 }
 syncthing.karnwong.me {
     reverse_proxy 127.0.0.1:8384
-}
-tile.karnwong.me {
-    reverse_proxy 127.0.0.1:30011
 }
 
 
