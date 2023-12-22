@@ -36,7 +36,7 @@ resource "cloudflare_record" "github_pages_dns" {
   ttl      = 1
   type     = "CNAME"
   value    = "kahnwong.github.io"
-  zone_id  = data.sops_file.secrets.data["zone_id"]
+  zone_id  = local.cloudflare_zone_id
 }
 
 resource "cloudflare_record" "selfhosted_dns" {
@@ -45,8 +45,8 @@ resource "cloudflare_record" "selfhosted_dns" {
   proxied  = each.value
   ttl      = 1
   type     = "CNAME"
-  value    = data.sops_file.secrets.data["ddns"]
-  zone_id  = data.sops_file.secrets.data["zone_id"]
+  value    = data.sops_file.secrets.data["DDNS_CNAME"]
+  zone_id  = local.cloudflare_zone_id
 }
 
 resource "cloudflare_record" "standardnotes_listed" {
@@ -55,7 +55,7 @@ resource "cloudflare_record" "standardnotes_listed" {
   ttl     = 1
   type    = "A"
   value   = "18.205.249.107"
-  zone_id = data.sops_file.secrets.data["zone_id"]
+  zone_id = local.cloudflare_zone_id
 }
 
 resource "cloudflare_record" "www_dummy" { # need for redirection
@@ -64,10 +64,10 @@ resource "cloudflare_record" "www_dummy" { # need for redirection
   ttl     = 1
   type    = "A"
   value   = "192.0.2.1"
-  zone_id = data.sops_file.secrets.data["zone_id"]
+  zone_id = local.cloudflare_zone_id
 }
 resource "cloudflare_page_rule" "redirect_www_to_root" {
-  zone_id  = data.sops_file.secrets.data["zone_id"]
+  zone_id  = local.cloudflare_zone_id
   target   = "www.karnwong.me/*"
   priority = 1
 
