@@ -1,0 +1,21 @@
+---
+name: llm-frontend
+replicaCount: 1
+
+deployments:
+  containers:
+    - name: llm
+      repository: harbor.karnwong.me/llm/llm-frontend
+      tag: latest
+      port: 7860
+      envFrom:
+        - secretRef:
+            name: llm
+  # autoscaling:
+  #   averageCPUUtilization: 80
+  service:
+    port: 7860
+    nodePort: 30030
+
+imagePullSecrets:
+  - name: harbor-cfg
