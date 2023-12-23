@@ -84,3 +84,15 @@ resource "kubernetes_secret" "harbor_config" {
     })
   }
 }
+
+
+data "sops_file" "llm" {
+  source_file = "./secrets/llm.sops.yaml"
+}
+resource "kubernetes_secret" "llm" {
+  metadata {
+    name = "llm"
+  }
+
+  data = nonsensitive(data.sops_file.llm.data)
+}
