@@ -6,15 +6,15 @@ deployments:
   containers:
     - name: llm
       repository: harbor.karnwong.me/llm/llm-frontend
-      tag: latest
-      port: 7860
+      tag: d6b6ba2
+      port: 8501
       envFrom:
         - secretRef:
             name: llm
   # autoscaling:
   #   averageCPUUtilization: 80
   service:
-    port: 7860
+    port: 8501
     nodePort: 30030
 
 imagePullSecrets:
