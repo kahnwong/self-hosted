@@ -1,48 +1,26 @@
-data "sops_file" "miniflux" {
-  source_file = "./secrets/miniflux.sops.yaml"
+locals {
+  secrets = toset([
+    "miniflux",
+    "photoprism",
+    "picoshare",
+    "minio",
+    "llm",
+  ])
 }
-resource "kubernetes_secret" "miniflux" {
+
+data "sops_file" "this" {
+  for_each    = local.secrets
+  source_file = "./secrets/${each.key}.sops.yaml"
+}
+resource "kubernetes_secret" "this" {
+  for_each = local.secrets
+
   metadata {
-    name = "miniflux"
+    name = each.key
   }
-
-  data = nonsensitive(data.sops_file.miniflux.data)
+  data = nonsensitive(data.sops_file.this[each.key].data)
 }
 
-data "sops_file" "photoprism" {
-  source_file = "./secrets/photoprism.sops.yaml"
-}
-resource "kubernetes_secret" "photoprism" {
-  metadata {
-    name = "photoprism"
-  }
-
-  data = nonsensitive(data.sops_file.photoprism.data)
-}
-
-data "sops_file" "picoshare" {
-  source_file = "./secrets/picoshare.sops.yaml"
-}
-resource "kubernetes_secret" "picoshare" {
-  metadata {
-    name = "picoshare"
-  }
-
-  data = nonsensitive(data.sops_file.picoshare.data)
-}
-
-
-
-data "sops_file" "minio" {
-  source_file = "./secrets/minio.sops.yaml"
-}
-resource "kubernetes_secret" "minio" {
-  metadata {
-    name = "minio"
-  }
-
-  data = nonsensitive(data.sops_file.minio.data)
-}
 
 resource "kubernetes_secret" "harbor_config" {
   metadata {
@@ -62,16 +40,4 @@ resource "kubernetes_secret" "harbor_config" {
       }
     })
   }
-}
-
-
-data "sops_file" "llm" {
-  source_file = "./secrets/llm.sops.yaml"
-}
-resource "kubernetes_secret" "llm" {
-  metadata {
-    name = "llm"
-  }
-
-  data = nonsensitive(data.sops_file.llm.data)
 }
