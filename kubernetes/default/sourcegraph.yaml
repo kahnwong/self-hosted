@@ -13,6 +13,9 @@ deployments:
           mountPath: /etc/sourcegraph
         - name: sourcegraph-data
           mountPath: /var/opt/sourcegraph
+      env:
+        - name: DISABLE_OBSERVABILITY
+          value: "true"
   volumes:
     - name: sourcegraph-config
       hostPath:
