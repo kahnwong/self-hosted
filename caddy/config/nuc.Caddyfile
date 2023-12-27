@@ -1,6 +1,3 @@
-git.karnwong.me {
-    reverse_proxy 127.0.0.1:30026
-}
 harbor.karnwong.me {
     reverse_proxy 127.0.0.1:30501 {
         transport http {
