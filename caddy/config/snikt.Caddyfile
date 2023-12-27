@@ -1,0 +1,15 @@
+gke-autopilot-cost-calculator.karnwong.me {
+    reverse_proxy snikt:30024
+}
+minio.karnwong.me {
+    reverse_proxy snikt:30020
+}
+rustpad.karnwong.me {
+    reverse_proxy snikt:30019
+}
+secrets.karnwong.me {
+    reverse_proxy snikt:30025
+}
+share.karnwong.me {
+    reverse_proxy snikt:30017
+}
