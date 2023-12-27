@@ -153,6 +153,7 @@ rm "$HOME/$forgejo_sqldump_filename"
 ########
 aws s3api list-objects-v2 \
 	--endpoint-url "$r2_endpoint" \
+	--profile r2 \
 	--bucket "$bucket_name" \
 	--output text \
-	--query "Contents[?LastModified<= '$remove_backup_before_date'].[Key]" | xargs printf -- "s3://$bucket_name/%s\n" | xargs -L 1 aws s3 rm --endpoint-url "$r2_endpoint"
+	--query "Contents[?LastModified<= '$remove_backup_before_date'].[Key]" | xargs printf -- "s3://$bucket_name/%s\n" | xargs -L 1 aws s3 rm --endpoint-url "$r2_endpoint" --profile r2
