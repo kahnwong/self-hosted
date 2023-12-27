@@ -9,7 +9,7 @@ Upgrade via `helm upgrade ...`
 ## Apps
 
 ```bash
-helm install fava ./default/base --values fava.yaml
+helm install fava ./base/chart --values fava.yaml
 ```
 
 ## Packaging helm chart
