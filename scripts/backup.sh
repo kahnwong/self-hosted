@@ -122,31 +122,31 @@ rm "$HOME/$photoprism_sqldump_filename"
 
 curl -d "Successfully backup DELL 🤩" ntfy.sh/kwdellbackup
 
-###############
-# forgejo
-###############
-### data
-forgejo_backup_filename="forgejo-data-$current_date.tar.gz"
+# ###############
+# # forgejo
+# ###############
+# ### data
+# forgejo_backup_filename="forgejo-data-$current_date.tar.gz"
 
-echo "forgejo data..."
-tar -czf "$forgejo_backup_filename" /opt/forgejo/data
+# echo "forgejo data..."
+# tar -czf "$forgejo_backup_filename" /opt/forgejo/data
 
-aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$forgejo_backup_filename" "$backup_path_prefix/$forgejo_backup_filename"
-rm "$HOME/$forgejo_backup_filename"
+# aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$forgejo_backup_filename" "$backup_path_prefix/$forgejo_backup_filename"
+# rm "$HOME/$forgejo_backup_filename"
 
-### db
-forgejo_sqldump_filename="forgejo-sqldump-$current_date.psql"
+# ### db
+# forgejo_sqldump_filename="forgejo-sqldump-$current_date.psql"
 
-echo "forgejo db..."
-FORGEJO_POD_NAME="$(kubectl get pods -l=app.kubernetes.io/name=forgejo-statefulset --namespace forgejo | tail -1 | awk '{print $1}')"
-echo "$FORGEJO_POD_NAME"
+# echo "forgejo db..."
+# FORGEJO_POD_NAME="$(kubectl get pods -l=app.kubernetes.io/name=forgejo-statefulset --namespace forgejo | tail -1 | awk '{print $1}')"
+# echo "$FORGEJO_POD_NAME"
 
-# shellcheck disable=SC2034
-PGPASSWORD=forgejopassword
-kubectl exec --namespace forgejo "$FORGEJO_POD_NAME" -c postgres -- pg_dump -Fc -c -U forgejo >"$HOME/$forgejo_sqldump_filename"
+# # shellcheck disable=SC2034
+# PGPASSWORD=forgejopassword
+# kubectl exec --namespace forgejo "$FORGEJO_POD_NAME" -c postgres -- pg_dump -Fc -c -U forgejo >"$HOME/$forgejo_sqldump_filename"
 
-aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$forgejo_sqldump_filename" "$backup_path_prefix/$forgejo_sqldump_filename"
-rm "$HOME/$forgejo_sqldump_filename"
+# aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$forgejo_sqldump_filename" "$backup_path_prefix/$forgejo_sqldump_filename"
+# rm "$HOME/$forgejo_sqldump_filename"
 
 ########
 # REMOVE OLD BACKUPS
