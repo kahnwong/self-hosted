@@ -2,9 +2,6 @@ locals {
   secrets = toset([
     "miniflux",
     "photoprism",
-    "picoshare",
-    "minio",
-    "llm",
   ])
 }
 

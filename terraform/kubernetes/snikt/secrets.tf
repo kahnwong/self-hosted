@@ -1,3 +1,24 @@
+locals {
+  secrets = toset([
+    "minio",
+    "picoshare",
+    "llm",
+  ])
+}
+
+data "sops_file" "this" {
+  for_each    = local.secrets
+  source_file = "./secrets/${each.key}.sops.yaml"
+}
+resource "kubernetes_secret" "this" {
+  for_each = local.secrets
+
+  metadata {
+    name = each.key
+  }
+  data = nonsensitive(data.sops_file.this[each.key].data)
+}
+
 resource "kubernetes_secret" "harbor_config" {
   metadata {
     name = "harbor-cfg"

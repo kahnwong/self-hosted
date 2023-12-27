@@ -2,7 +2,7 @@
 
 ### proxied
 gke-autopilot-cost-calculator.karnwong.me {
-    reverse_proxy 127.0.0.1:30024
+    reverse_proxy snikt:30024
 }
 linkding.karnwong.me {
     reverse_proxy 127.0.0.1:30005
@@ -53,10 +53,10 @@ podgrab.karnwong.me {
     reverse_proxy 127.0.0.1:30004
 }
 rustpad.karnwong.me {
-    reverse_proxy 127.0.0.1:30019
+    reverse_proxy snikt:30019
 }
 secrets.karnwong.me {
-    reverse_proxy 127.0.0.1:30025
+    reverse_proxy snikt:30025
 }
 syncthing.karnwong.me {
     reverse_proxy 127.0.0.1:8384
@@ -81,7 +81,7 @@ share.karnwong.me {
     reverse_proxy 127.0.0.1:30017
 }
 minio.karnwong.me {
-    reverse_proxy 127.0.0.1:30020
+    reverse_proxy snikt:30020
 }
 wallabag.karnwong.me {
     reverse_proxy 127.0.0.1:30009 {
