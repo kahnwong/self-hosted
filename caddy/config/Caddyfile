@@ -78,7 +78,7 @@ harbor.karnwong.me {
     }
 }
 share.karnwong.me {
-    reverse_proxy 127.0.0.1:30017
+    reverse_proxy snikt:30017
 }
 minio.karnwong.me {
     reverse_proxy snikt:30020
