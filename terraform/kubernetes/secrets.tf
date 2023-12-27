@@ -6,10 +6,7 @@ resource "kubernetes_secret" "miniflux" {
     name = "miniflux"
   }
 
-  data = {
-    ADMIN_USERNAME = data.sops_file.miniflux.data["ADMIN_USERNAME"]
-    ADMIN_PASSWORD = data.sops_file.miniflux.data["ADMIN_PASSWORD"]
-  }
+  data = nonsensitive(data.sops_file.miniflux.data)
 }
 
 data "sops_file" "photoprism" {
@@ -20,9 +17,7 @@ resource "kubernetes_secret" "photoprism" {
     name = "photoprism"
   }
 
-  data = {
-    PHOTOPRISM_ADMIN_PASSWORD = data.sops_file.photoprism.data["PHOTOPRISM_ADMIN_PASSWORD"]
-  }
+  data = nonsensitive(data.sops_file.photoprism.data)
 }
 
 data "sops_file" "picoshare" {
@@ -33,9 +28,7 @@ resource "kubernetes_secret" "picoshare" {
     name = "picoshare"
   }
 
-  data = {
-    PS_SHARED_SECRET = data.sops_file.picoshare.data["PS_SHARED_SECRET"]
-  }
+  data = nonsensitive(data.sops_file.picoshare.data)
 }
 
 data "sops_file" "transmission" {
@@ -46,9 +39,7 @@ resource "kubernetes_secret" "transmission" {
     name = "transmission"
   }
 
-  data = {
-    TRANSMISSION_PASSWORD = data.sops_file.transmission.data["TRANSMISSION_PASSWORD"]
-  }
+  data = nonsensitive(data.sops_file.transmission.data)
 }
 
 data "sops_file" "minio" {
@@ -59,10 +50,7 @@ resource "kubernetes_secret" "minio" {
     name = "minio"
   }
 
-  data = {
-    MINIO_ROOT_USER     = data.sops_file.minio.data["MINIO_ROOT_USER"]
-    MINIO_ROOT_PASSWORD = data.sops_file.minio.data["MINIO_ROOT_PASSWORD"]
-  }
+  data = nonsensitive(data.sops_file.minio.data)
 }
 
 resource "kubernetes_secret" "harbor_config" {
