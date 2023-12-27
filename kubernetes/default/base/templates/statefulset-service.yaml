@@ -5,7 +5,7 @@ kind: Service
 metadata:
   name: "{{ template "name" . }}-statefulset"
 spec:
-  type: NodePort
+  # type: NodePort
   selector:
     app.kubernetes.io/name: "{{ template "name" . }}-statefulset"
   {{ if .Values.statefulSets.service.port }}
