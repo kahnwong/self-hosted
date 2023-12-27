@@ -31,16 +31,7 @@ resource "kubernetes_secret" "picoshare" {
   data = nonsensitive(data.sops_file.picoshare.data)
 }
 
-data "sops_file" "transmission" {
-  source_file = "./secrets/transmission.sops.yaml"
-}
-resource "kubernetes_secret" "transmission" {
-  metadata {
-    name = "transmission"
-  }
 
-  data = nonsensitive(data.sops_file.transmission.data)
-}
 
 data "sops_file" "minio" {
   source_file = "./secrets/minio.sops.yaml"
