@@ -1,0 +1,37 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: backup-ntfy
+spec:
+  schedule: "1 0 * * *"
+  jobTemplate:
+    metadata:
+      name: backup-ntfy
+    spec:
+      template:
+        spec:
+          containers:
+            - name: backup-ntfy
+              image: ghcr.io/kahnwong/docker-aws-backup:ace0f3a
+              command: ["sh", "-c"]
+              args:
+                - |
+                  SERVICE_NAME="ntfy"
+                  current_date=$(date +%Y-%m-%d)
+                  backup_prefix="s3://backup/$current_date"
+                  filename="$SERVICE_NAME-$current_date.tar.gz"
+                  tar --exclude "/opt/ntfy/config/cache" -czf "$filename" /opt/ntfy
+                  aws s3 cp --endpoint-url "$S3_ENDPOINT" "$filename" "$backup_prefix/$filename"
+                  curl -d "Successfully backup ntfy" https://ntfy.karnwong.me/nuc-backup
+              envFrom:
+                - secretRef:
+                    name: r2
+              volumeMounts:
+                - name: ntfy
+                  mountPath: /opt/ntfy
+          restartPolicy: Never
+          volumes:
+            - name: ntfy
+              hostPath:
+                path: /opt/ntfy
