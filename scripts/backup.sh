@@ -12,17 +12,6 @@ r2_endpoint="https://$cloudflare_account_id.r2.cloudflarestorage.com"
 cd "$HOME" || exit
 
 ###############
-# linkding
-###############
-linkding_backup_filename="linkding-$current_date.tar.gz"
-
-echo "linkding..."
-tar -czf "$linkding_backup_filename" /opt/linkding
-
-aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$linkding_backup_filename" "$backup_path_prefix/$linkding_backup_filename"
-rm "$HOME/$linkding_backup_filename"
-
-###############
 # transmission
 ###############
 transmission_backup_filename="transmission-$current_date.tar.gz"
