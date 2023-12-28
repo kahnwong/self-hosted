@@ -12,17 +12,6 @@ r2_endpoint="https://$cloudflare_account_id.r2.cloudflarestorage.com"
 cd "$HOME" || exit
 
 ###############
-# transmission
-###############
-transmission_backup_filename="transmission-$current_date.tar.gz"
-
-echo "transmission..."
-tar -czf "$transmission_backup_filename" /opt/transmission/config
-
-aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$transmission_backup_filename" "$backup_path_prefix/$transmission_backup_filename"
-rm "$HOME/$transmission_backup_filename"
-
-###############
 # miniflux
 ###############
 miniflux_sqldump_filename="miniflux-sqldump-$current_date.psql"
