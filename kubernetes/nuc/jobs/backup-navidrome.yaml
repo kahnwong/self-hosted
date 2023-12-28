@@ -1,0 +1,30 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: backup-navidrome
+spec:
+  schedule: "1 0 * * *"
+  jobTemplate:
+    metadata:
+      name: backup-navidrome
+    spec:
+      template:
+        spec:
+          containers:
+            - name: backup-navidrome
+              image: amazon/aws-cli:latest
+              command: ["sh", "-c"]
+              args:
+                - aws s3 ls s3://backup/ --endpoint-url $S3_ENDPOINT
+              envFrom:
+                - secretRef:
+                    name: r2
+              volumeMounts:
+                - name: navidrome
+                  mountPath: /opt/navidrome
+          restartPolicy: Never
+          volumes:
+            - name: navidrome
+              hostPath:
+                path: /opt/navidrome
