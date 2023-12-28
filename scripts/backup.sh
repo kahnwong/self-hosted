@@ -12,21 +12,6 @@ r2_endpoint="https://$cloudflare_account_id.r2.cloudflarestorage.com"
 cd "$HOME" || exit
 
 ###############
-# miniflux
-###############
-miniflux_sqldump_filename="miniflux-sqldump-$current_date.psql"
-
-echo "miniflux..."
-MINIFLUX_POD_NAME="$(kubectl get pods -l=app.kubernetes.io/name=miniflux-statefulset | tail -1 | awk '{print $1}')"
-echo "$MINIFLUX_POD_NAME"
-
-PGPASSWORD=secret
-kubectl exec "$MINIFLUX_POD_NAME" -c postgres -- pg_dump -Fc -c -U miniflux >"$HOME/$miniflux_sqldump_filename"
-
-aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$miniflux_sqldump_filename" "$backup_path_prefix/$miniflux_sqldump_filename"
-rm "$HOME/$miniflux_sqldump_filename"
-
-###############
 # wallabag
 ###############
 ### content
