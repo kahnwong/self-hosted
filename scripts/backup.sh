@@ -12,17 +12,6 @@ r2_endpoint="https://$cloudflare_account_id.r2.cloudflarestorage.com"
 cd "$HOME" || exit
 
 ###############
-# navidrome
-###############
-navidrome_backup_filename="navidrome-$current_date.tar.gz"
-
-echo "navidrome..."
-tar --exclude "/opt/navidrome/config/cache" -czf "$navidrome_backup_filename" /opt/navidrome/config
-
-aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$navidrome_backup_filename" "$backup_path_prefix/$navidrome_backup_filename"
-rm "$HOME/$navidrome_backup_filename"
-
-###############
 # ntfy
 ###############
 ntfy_backup_filename="ntfy-$current_date.tar.gz"
