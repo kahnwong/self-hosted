@@ -23,20 +23,6 @@ tar -czf "$wallabag_backup_filename" /opt/wallabag/images
 aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$wallabag_backup_filename" "$backup_path_prefix/$wallabag_backup_filename"
 rm "$HOME/$wallabag_backup_filename"
 
-### db
-wallabag_sqldump_filename="wallabag-sqldump-$current_date.psql"
-
-echo "wallabag db..."
-WALLABAG_POD_NAME="$(kubectl get pods -l=app.kubernetes.io/name=wallabag-statefulset | tail -1 | awk '{print $1}')"
-echo "$WALLABAG_POD_NAME"
-
-# shellcheck disable=SC2034
-PGPASSWORD=wallapass
-kubectl exec "$WALLABAG_POD_NAME" -c postgres -- pg_dump -Fc -c -U wallabag >"$HOME/$wallabag_sqldump_filename"
-
-aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$wallabag_sqldump_filename" "$backup_path_prefix/$wallabag_sqldump_filename"
-rm "$HOME/$wallabag_sqldump_filename"
-
 ###############
 # photoprism
 ###############
@@ -50,7 +36,7 @@ kubectl exec "$PHOTOPRISM_POD_NAME" -c photoprism -- photoprism backup -i - >"$H
 aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$photoprism_sqldump_filename" "$backup_path_prefix/$photoprism_sqldump_filename"
 rm "$HOME/$photoprism_sqldump_filename"
 
-curl -d "Successfully backup DELL 🤩" ntfy.sh/kwdellbackup
+curl -d "Successfully backup PHOTOPRISM" ntfy.sh/kwdellbackup
 
 # ###############
 # # forgejo

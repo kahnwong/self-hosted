@@ -1,0 +1,30 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: backup-wallabag-db
+spec:
+  schedule: "2 0 * * *"
+  jobTemplate:
+    metadata:
+      name: backup-wallabag-db
+    spec:
+      template:
+        spec:
+          containers:
+            - name: backup-wallabag-db
+              image: ghcr.io/kahnwong/docker-aws-backup:c148869
+              command: ["sh", "-c"]
+              args:
+                - |
+                  SERVICE_NAME="wallabag"
+                  current_date=$(date +%Y-%m-%d)
+                  backup_prefix="s3://backup/$current_date"
+                  filename="$SERVICE_NAME-sqldump-$current_date.bin"
+                  PGPASSWORD=wallapass pg_dump -Fc -c -U wallabag --host wallabag-statefulset.default.svc.cluster.local >"$filename"
+                  aws s3 cp --endpoint-url "$S3_ENDPOINT" "$filename" "$backup_prefix/$filename"
+                  curl -d "Successfully backup wallabag-db" https://ntfy.karnwong.me/nuc-backup
+              envFrom:
+                - secretRef:
+                    name: r2
+          restartPolicy: Never
