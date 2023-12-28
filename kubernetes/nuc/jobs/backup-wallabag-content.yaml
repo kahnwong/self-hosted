@@ -1,0 +1,37 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: backup-wallabag-content
+spec:
+  schedule: "0 2 * * 0"
+  jobTemplate:
+    metadata:
+      name: backup-wallabag-content
+    spec:
+      template:
+        spec:
+          containers:
+            - name: backup-wallabag-content
+              image: ghcr.io/kahnwong/docker-aws-backup:ace0f3a
+              command: ["sh", "-c"]
+              args:
+                - |
+                  SERVICE_NAME="wallabag"
+                  current_date=$(date +%Y-%m-%d)
+                  backup_prefix="s3://backup/$current_date"
+                  filename="$SERVICE_NAME-content-$current_date.tar.gz"
+                  tar -czf "$filename" /opt/wallabag/images
+                  aws s3 cp --endpoint-url "$S3_ENDPOINT" "$filename" "$backup_prefix/$filename"
+                  curl -d "Successfully backup wallabag-content" https://ntfy.karnwong.me/nuc-backup
+              envFrom:
+                - secretRef:
+                    name: r2
+              volumeMounts:
+                - name: wallabag
+                  mountPath: /opt/wallabag
+          restartPolicy: Never
+          volumes:
+            - name: wallabag
+              hostPath:
+                path: /opt/wallabag

@@ -12,18 +12,6 @@ r2_endpoint="https://$cloudflare_account_id.r2.cloudflarestorage.com"
 cd "$HOME" || exit
 
 ###############
-# wallabag
-###############
-### content
-wallabag_backup_filename="wallabag-content-$current_date.tar.gz"
-
-echo "wallabag content..."
-tar -czf "$wallabag_backup_filename" /opt/wallabag/images
-
-aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$wallabag_backup_filename" "$backup_path_prefix/$wallabag_backup_filename"
-rm "$HOME/$wallabag_backup_filename"
-
-###############
 # photoprism
 ###############
 photoprism_sqldump_filename="photoprism-sqldump-$current_date.sql"
