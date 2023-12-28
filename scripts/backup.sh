@@ -2,7 +2,6 @@
 # https://developers.cloudflare.com/r2/examples/aws-cli/
 
 current_date=$(date +%Y-%m-%d)
-remove_backup_before_date=$(date +%Y-%m-%d -d "3 day ago")
 bucket_name="backup"
 backup_path_prefix="s3://$bucket_name/$current_date"
 
@@ -51,13 +50,3 @@ curl -d "Successfully backup PHOTOPRISM" ntfy.sh/kwdellbackup
 
 # aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$forgejo_sqldump_filename" "$backup_path_prefix/$forgejo_sqldump_filename"
 # rm "$HOME/$forgejo_sqldump_filename"
-
-########
-# REMOVE OLD BACKUPS
-########
-aws s3api list-objects-v2 \
-	--endpoint-url "$r2_endpoint" \
-	--profile r2 \
-	--bucket "$bucket_name" \
-	--output text \
-	--query "Contents[?LastModified<= '$remove_backup_before_date'].[Key]" | xargs printf -- "s3://$bucket_name/%s\n" | xargs -L 1 aws s3 rm --endpoint-url "$r2_endpoint" --profile r2

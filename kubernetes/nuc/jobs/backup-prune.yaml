@@ -1,0 +1,30 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: backup-prune
+spec:
+  schedule: "5 0 * * *"
+  jobTemplate:
+    metadata:
+      name: backup-prune
+    spec:
+      template:
+        spec:
+          containers:
+            - name: backup-prune
+              image: ghcr.io/kahnwong/docker-aws-backup:ace0f3a
+              command: ["sh", "-c"]
+              args:
+                - |
+                  current_date=$(date +%Y-%m-%d)
+                  remove_backup_before_date=$(date +%Y-%m-%d -d "3 day ago")
+                  aws s3api list-objects-v2 \
+                    --endpoint-url "$S3_ENDPOINT" \
+                    --bucket "backup" \
+                    --output text \
+                    --query "Contents[?LastModified<= '$remove_backup_before_date'].[Key]" | xargs printf -- "s3://backup/%s\n" | xargs -L 1 aws s3 rm --endpoint-url "$S3_ENDPOINT"
+              envFrom:
+                - secretRef:
+                    name: r2
+          restartPolicy: Never
