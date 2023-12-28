@@ -24,8 +24,10 @@
 | [kubernetes_cluster_role_binding.readonly](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/cluster_role_binding) | resource |
 | [kubernetes_secret.foo](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret) | resource |
 | [kubernetes_secret.harbor_config](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret) | resource |
+| [kubernetes_secret.jobs_r2](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret) | resource |
 | [kubernetes_secret.this](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret) | resource |
 | [kubernetes_service_account.foo](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/service_account) | resource |
+| [sops_file.jobs_r2](https://registry.terraform.io/providers/carlpett/sops/0.7.2/docs/data-sources/file) | data source |
 | [sops_file.this](https://registry.terraform.io/providers/carlpett/sops/0.7.2/docs/data-sources/file) | data source |
 
 ## Inputs

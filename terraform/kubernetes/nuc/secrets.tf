@@ -38,3 +38,14 @@ resource "kubernetes_secret" "harbor_config" {
     })
   }
 }
+
+data "sops_file" "jobs_r2" {
+  source_file = "./secrets/r2.sops.yaml"
+}
+resource "kubernetes_secret" "jobs_r2" {
+  metadata {
+    name      = "r2"
+    namespace = "jobs"
+  }
+  data = nonsensitive(data.sops_file.jobs_r2.data)
+}
