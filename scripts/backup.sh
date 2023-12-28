@@ -12,17 +12,6 @@ r2_endpoint="https://$cloudflare_account_id.r2.cloudflarestorage.com"
 cd "$HOME" || exit
 
 ###############
-# heimdall
-###############
-heimdall_backup_filename="heimdall-$current_date.tar.gz"
-
-echo "heimdall..."
-tar -czf "$heimdall_backup_filename" /opt/heimdall
-
-aws s3 cp --endpoint-url "$r2_endpoint" --profile r2 "$heimdall_backup_filename" "$backup_path_prefix/$heimdall_backup_filename"
-rm "$HOME/$heimdall_backup_filename"
-
-###############
 # linkding
 ###############
 linkding_backup_filename="linkding-$current_date.tar.gz"
