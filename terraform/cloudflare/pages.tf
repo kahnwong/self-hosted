@@ -24,3 +24,14 @@ module "karnwong_me" {
   subdomain    = "@"
   domain_name  = "karnwong.me"
 }
+
+module "h3_viewer" {
+  source = "./modules/cloudflare-pages"
+
+  account_id = local.cloudflare_account_id
+  zone_id    = local.cloudflare_zone_id
+
+  project_name = "h3-viewer"
+  subdomain    = "h3-viewer"
+  domain_name  = "h3-viewer.karnwong.me"
+}

@@ -6,6 +6,7 @@ locals {
   cloudflare_pages_repos = toset([
     "docs",
     "karnwong.me",
+    "h3-viewer",
   ])
   cloudflare_secrets = tomap({
     CLOUDFLARE_ACCOUNT_ID = sensitive(data.sops_file.secrets.data["global.cloudflare.CLOUDFLARE_ACCOUNT_ID"])

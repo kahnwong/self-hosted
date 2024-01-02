@@ -21,6 +21,7 @@
 | Name | Source | Version |
 |------|--------|---------|
 | docs | ./modules/cloudflare-pages | n/a |
+| h3\_viewer | ./modules/cloudflare-pages | n/a |
 | karnwong\_me | ./modules/cloudflare-pages | n/a |
 
 ## Resources
