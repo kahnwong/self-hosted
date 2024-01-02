@@ -1,0 +1,30 @@
+---
+# sample comes from https://github.com/docker/awesome-compose
+
+services:
+  frontend:
+    image: alswl/excalidraw:v0.17.0-fork-b2
+    environment:
+      - VITE_APP_BACKEND_V2_GET_URL=https://test.com/api/v2/
+      - VITE_APP_BACKEND_V2_POST_URL=https://test.com/api/v2/post/
+      - VITE_APP_WS_SERVER_URL=http://127.0.0.1:8082
+      - VITE_APP_FIREBASE_CONFIG={}
+      # alswl'fork env
+      # forked excalidraw can use env https://github.com/alswl/excalidraw/pull/5
+      - VITE_APP_HTTP_STORAGE_BACKEND_URL=http://127.0.0.1:8081/api/v2
+      - VITE_APP_STORAGE_BACKEND=http
+    ports:
+      - 80:80
+
+  storage:
+    image: alswl/excalidraw-storage-backend:v2023.11.11
+    restart: always
+    environment: # docs https://github.com/alswl/excalidraw-storage-backend#environement-variables
+      - PORT=8081
+    ports:
+      - 8081:8081
+
+  room:
+    image: excalidraw/excalidraw-room:sha-49bf529
+    ports:
+      - 8082:80

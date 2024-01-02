@@ -1,0 +1,17 @@
+---
+name: excalidraw-storage-backend
+replicaCount: 1
+
+deployments:
+  containers:
+    - name: excalidraw-storage-backend
+      repository: ghcr.io/kahnwong/excalidraw-storage-backend
+      tag: f8673b3
+      port: 8081
+      healthcheck: false
+      env:
+        - name: PORT
+          value: "8081"
+  service:
+    port: 8081
+    nodePort: 30101

@@ -1,0 +1,27 @@
+---
+name: excalidraw
+replicaCount: 1
+
+deployments:
+  containers:
+    - name: excalidraw
+      repository: alswl/excalidraw
+      tag: v0.17.0-fork-b2
+      port: 8081
+      healthcheck: false
+      env: # https://github.com/alswl/excalidraw-collaboration/blob/master/docker-compose.yaml
+        - name: VITE_APP_BACKEND_V2_GET_URL
+          value: https://test.com/api/v2/
+        - name: VITE_APP_BACKEND_V2_POST_URL
+          value: https://test.com/api/v2/post/
+        - name: VITE_APP_WS_SERVER_URL
+          value: https://excalidraw-room.karnwong.me
+        - name: VITE_APP_FIREBASE_CONFIG
+          value: "{}"
+        - name: VITE_APP_HTTP_STORAGE_BACKEND_URL
+          value: https://excalidraw-storage-backend.karnwong.me/api/v2
+        - name: VITE_APP_STORAGE_BACKEND
+          value: http
+  service:
+    port: 80
+    nodePort: 30102
