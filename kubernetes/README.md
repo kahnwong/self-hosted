@@ -15,10 +15,10 @@ helm install fava ./base/chart --values fava.yaml
 ## Packaging helm chart
 
 ```bash
-helm package $CHART
-helm registry login registry.karnwong.me -u $USER
-helm push demo-0.1.0.tgz oci://registry.karnwong.me/helm
+helm package base/chart
+helm registry login harbor.karnwong.me -u $USER
+helm push base-0.1.0.tgz oci://harbor.karnwong.me/charts
 
 # usage
-helm install <my-release> oci://registry.karnwong.me/charts/base
+helm install <my-release> oci://harbor.karnwong.me/charts/base
 ```
