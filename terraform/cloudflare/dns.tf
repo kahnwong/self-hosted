@@ -13,6 +13,10 @@ locals {
     "rustpad",
     "secrets",
     "syncthing",
+    # excalidraw
+    "excalidraw",
+    "excalidraw-storage-backend",
+    "excalidraw-room",
   ])
   selfhosted_non_proxied = setunion(toset([
     "git",

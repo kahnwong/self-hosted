@@ -16,3 +16,14 @@ secrets.karnwong.me {
 share.karnwong.me {
     reverse_proxy snikt:30017
 }
+
+# excalidraw
+excalidraw.karnwong.me {
+    reverse_proxy snikt:30102
+}
+excalidraw-storage-backend.karnwong.me {
+    reverse_proxy snikt:30101
+}
+excalidraw-room.karnwong.me {
+    reverse_proxy snikt:30100
+}
