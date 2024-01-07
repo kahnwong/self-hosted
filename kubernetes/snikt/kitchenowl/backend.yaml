@@ -1,0 +1,24 @@
+---
+name: kitchenowl-backend
+replicaCount: 1
+
+deployments:
+  containers:
+    - name: kitchenowl-backend
+      repository: tombursch/kitchenowl
+      tag: v93
+      port: 5000
+      healthcheck: false
+      envFrom:
+        - secretRef:
+            name: kitchenowl
+      volumeMounts:
+        - name: kitchenowl-data
+          mountPath: /data
+  volumes:
+    - name: kitchenowl-data
+      hostPath:
+        path: /opt/kitchenowl/data
+  service:
+    port: 5000
+    nodePort: 30031

@@ -1,0 +1,16 @@
+---
+name: kitchenowl-frontend
+replicaCount: 1
+
+deployments:
+  containers:
+    - name: kitchenowl-frontend
+      repository: tombursch/kitchenowl-web
+      tag: v0.4.21
+      port: 80
+      env:
+        - name: BACK_URL
+          value: kitchenowl-backend.kitchenowl.svc.cluster.local:5000
+  service:
+    port: 80
+    nodePort: 30032
