@@ -1,8 +1,8 @@
 locals {
   secrets = toset([
+    "llm",
     "minio",
     "picoshare",
-    "llm",
   ])
 }
 
@@ -17,6 +17,18 @@ resource "kubernetes_secret" "this" {
     name = each.key
   }
   data = nonsensitive(data.sops_file.this[each.key].data)
+}
+
+
+data "sops_file" "kitchenowl" {
+  source_file = "./secrets/kitchenowl.sops.yaml"
+}
+resource "kubernetes_secret" "kitchenowl" {
+  metadata {
+    name      = "kitchenowl"
+    namespace = "kitchenowl"
+  }
+  data = nonsensitive(data.sops_file.kitchenowl.data)
 }
 
 resource "kubernetes_secret" "harbor_config" {
