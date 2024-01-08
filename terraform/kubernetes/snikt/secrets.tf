@@ -1,35 +1,40 @@
 locals {
-  secrets = toset([
-    "llm",
-    "minio",
-    "picoshare",
-  ])
+  secrets = [
+    # default
+    {
+      name      = "llm"
+      namespace = "default"
+    },
+    {
+      name      = "minio"
+      namespace = "default"
+    },
+    # jobs
+    {
+      name      = "picoshare"
+      namespace = "default"
+    },
+  ]
+}
+locals {
+  secrets_dict = { for o in local.secrets : o.name => o }
+  secrets_name = toset(local.secrets[*].name)
 }
 
 data "sops_file" "this" {
-  for_each    = local.secrets
+  for_each    = local.secrets_name
   source_file = "./secrets/${each.key}.sops.yaml"
 }
 resource "kubernetes_secret" "this" {
-  for_each = local.secrets
+  for_each = local.secrets_name
 
   metadata {
-    name = each.key
+    name      = each.key
+    namespace = local.secrets_dict[each.key]["namespace"]
   }
   data = nonsensitive(data.sops_file.this[each.key].data)
 }
 
-
-data "sops_file" "kitchenowl" {
-  source_file = "./secrets/kitchenowl.sops.yaml"
-}
-resource "kubernetes_secret" "kitchenowl" {
-  metadata {
-    name      = "kitchenowl"
-    namespace = "kitchenowl"
-  }
-  data = nonsensitive(data.sops_file.kitchenowl.data)
-}
 
 resource "kubernetes_secret" "harbor_config" {
   metadata {

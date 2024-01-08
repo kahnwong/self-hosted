@@ -1,19 +1,37 @@
 locals {
-  secrets = toset([
-    "miniflux",
-    "photoprism",
-  ])
+  secrets = [
+    # default
+    {
+      name      = "miniflux"
+      namespace = "default"
+    },
+    {
+      name      = "photoprism"
+      namespace = "default"
+    },
+    # jobs
+    {
+      name      = "r2"
+      namespace = "jobs"
+    },
+  ]
+}
+locals {
+  secrets_dict = { for o in local.secrets : o.name => o }
+  secrets_name = toset(local.secrets[*].name)
 }
 
+
 data "sops_file" "this" {
-  for_each    = local.secrets
+  for_each    = local.secrets_name
   source_file = "./secrets/${each.key}.sops.yaml"
 }
 resource "kubernetes_secret" "this" {
-  for_each = local.secrets
+  for_each = local.secrets_name
 
   metadata {
-    name = each.key
+    name      = each.key
+    namespace = local.secrets_dict[each.key]["namespace"]
   }
   data = nonsensitive(data.sops_file.this[each.key].data)
 }
@@ -37,15 +55,4 @@ resource "kubernetes_secret" "harbor_config" {
       }
     })
   }
-}
-
-data "sops_file" "jobs_r2" {
-  source_file = "./secrets/r2.sops.yaml"
-}
-resource "kubernetes_secret" "jobs_r2" {
-  metadata {
-    name      = "r2"
-    namespace = "jobs"
-  }
-  data = nonsensitive(data.sops_file.jobs_r2.data)
 }
