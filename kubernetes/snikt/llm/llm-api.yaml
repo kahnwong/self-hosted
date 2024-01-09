@@ -9,10 +9,10 @@ deployments:
       tag: latest
       port: 8080
       livenessProbePath: /version
-      resources:
-        limits:
-          cpu: 1
-          memory: 1.5G
+#      resources:
+#        limits:
+#          cpu: 1
+#          memory: 1.5G
   # autoscaling:
   #   averageCPUUtilization: 80
   service:

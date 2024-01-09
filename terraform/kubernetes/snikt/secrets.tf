@@ -1,13 +1,16 @@
 locals {
+  namespaces = toset(["default", "llm"])
+
   secrets = [
     # default
     {
-      name      = "llm"
-      namespace = "default"
-    },
-    {
       name      = "minio"
       namespace = "default"
+    },
+    # llm
+    {
+      name      = "llm"
+      namespace = "llm"
     },
     # jobs
     {
@@ -37,8 +40,11 @@ resource "kubernetes_secret" "this" {
 
 
 resource "kubernetes_secret" "harbor_config" {
+  for_each = local.namespaces
+
   metadata {
-    name = "harbor-cfg"
+    name      = "harbor-cfg"
+    namespace = each.key
   }
 
   type = "kubernetes.io/dockerconfigjson"
