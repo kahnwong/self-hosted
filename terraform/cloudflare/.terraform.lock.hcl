@@ -6,6 +6,7 @@ provider "registry.terraform.io/carlpett/sops" {
   constraints = "0.7.1"
   hashes = [
     "h1:/LNLI9qKgRjlHhyl1M/6BA+HVUMQ9RQApZgyfV4RAJ4=",
+    "h1:m8vjAiURL0j7z3Ns4U/jroO+lhzg1A2YcWnMhqIvdzQ=",
     "zh:203d5ab6af38efb9fc84fdbb303218aa5012dc8d28e700642be41bbc4b1c2fa1",
     "zh:5684a2dc65da50824fb4275c10ac452e6512dd0d60a9abd5f505e67e7b9d759a",
     "zh:b4311d7cae0b29f2dcf5a18a8297ed0787f59b140102547da9f8b61af27e15b6",
@@ -21,6 +22,7 @@ provider "registry.terraform.io/cloudflare/cloudflare" {
   constraints = "~> 3.34.0"
   hashes = [
     "h1:4jOI2ZUyp/EvIVE9rNvCMTqrIaG7j7XxUD1i43xD0Jg=",
+    "h1:FVdU3vjh0OmQXd+KHHG0AhoF1EVmre6ndicihazZRZA=",
     "zh:03729b0fcf189e732aca54452a105d82fec839580cb5d0137317af9163e0e4dd",
     "zh:121b16a779e9f2fe8c96e98f32514ee9228346fc240ce12c3fb440958b93d127",
     "zh:14509f521845eedd57a8791d76958e50bea4928760a152cd853e43f2c81a329b",

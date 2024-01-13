@@ -6,13 +6,13 @@ locals {
     "gke-autopilot-cost-calculator",
     "linkding",
     "miniflux",
-    "music",
     "ntfy",
-    "photos",
     "podgrab",
     "rustpad",
+    "music",
     "secrets",
-    "syncthing",
+    "photos",
+    "shouldideploytoday",
     # excalidraw
     "excalidraw",
     "excalidraw-storage-backend",
@@ -24,6 +24,7 @@ locals {
     "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
     "minio",
     "share", # prevent request entity too large
+    "syncthing",
     "wallabag",
   ]), var.private_dns)
 }
