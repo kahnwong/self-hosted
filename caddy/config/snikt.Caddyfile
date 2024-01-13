@@ -16,6 +16,9 @@ secrets.karnwong.me {
 share.karnwong.me {
     reverse_proxy snikt:30017
 }
+shouldideploytoday.karnwong.me {
+    reverse_proxy snikt:30040
+}
 
 # excalidraw
 excalidraw.karnwong.me {
