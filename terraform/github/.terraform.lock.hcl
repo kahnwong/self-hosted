@@ -6,6 +6,7 @@ provider "registry.terraform.io/carlpett/sops" {
   constraints = "0.7.2"
   hashes = [
     "h1:eetjYKFBQb6nbgxjehD/gzzAmH2ru94ha2tEzXNiNy8=",
+    "h1:nWrLW+9JjGLwfss4T7pTaE+JiZlBJQGoYxt4pDe5OE8=",
     "zh:43f218054ea3a72c9756bf989aeebb9d0f23b66fd08e9fb4ae75d4f921295e82",
     "zh:57fd326388042a6b7ecd60f740f81e5ef931546c4f068f054e7df34acf65d190",
     "zh:87b970db8c137f4c2fcbff7a5705419a0aea9268ae0ac94f1ec5b978e42ab0d2",
@@ -21,6 +22,7 @@ provider "registry.terraform.io/integrations/github" {
   constraints = "5.43.0"
   hashes = [
     "h1:0R8PBmN5NRTTzDdfyCpBJLLBdAcMwrosZRVUrH7r/xs=",
+    "h1:V3K1njCcIRlZ8WKTGUgYEJORewZn8GwKGAR0PmuLfz8=",
     "zh:12cec13344f9ea4e8fdf23e0be2649ed40a3e5663dbc5e8f855fb631578012ce",
     "zh:154542a308be6227bc03ffb03c46888a59e03146d6807c8915c91340f2ab7a4f",
     "zh:2abdf54015a5ea5812b5b5c232659df8df478253c3d860fa7d8e048c2a7a1e17",
