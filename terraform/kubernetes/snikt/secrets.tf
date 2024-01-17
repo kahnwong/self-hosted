@@ -1,5 +1,5 @@
 locals {
-  namespaces = toset(["default", "llm"])
+  namespaces = toset(["default", "llm", "job-family-alerts"])
 
   secrets = [
     # default
@@ -22,6 +22,14 @@ locals {
 locals {
   secrets_dict = { for o in local.secrets : o.name => o }
   secrets_name = toset(local.secrets[*].name)
+}
+
+resource "kubernetes_namespace" "this" {
+  for_each = setsubtract(local.namespaces, toset(["default"]))
+
+  metadata {
+    name = each.key
+  }
 }
 
 data "sops_file" "this" {
@@ -52,7 +60,7 @@ resource "kubernetes_secret" "harbor_config" {
   data = {
     ".dockerconfigjson" = jsonencode({
       auths = {
-        "${var.registry_server}" = {
+        (var.registry_server) = {
           "username" = var.registry_username
           "password" = var.registry_password
           "auth"     = base64encode("${var.registry_username}:${var.registry_password}")
