@@ -1,5 +1,5 @@
 locals {
-  namespaces = toset(["default", "llm", "job-family-alerts"])
+  namespaces = toset(["default", "llm", "jobs-family-alerts"])
 
   secrets = [
     # default
@@ -7,16 +7,20 @@ locals {
       name      = "minio"
       namespace = "default"
     },
+    {
+      name      = "picoshare"
+      namespace = "default"
+    },
     # llm
     {
       name      = "llm"
       namespace = "llm"
     },
-    # jobs
+    # jobs-family-alerts
     {
-      name      = "picoshare"
-      namespace = "default"
-    },
+      name      = "family-alerts"
+      namespace = "jobs-family-alerts"
+    }
   ]
 }
 locals {
