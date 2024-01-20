@@ -35,6 +35,7 @@ repos:
     rev: v1.81.0
     hooks:
       - id: terraform_fmt
+        exclude: (sops\.tfvars)$
       - id: terraform_validate
       - id: terraform_docs
         args:
