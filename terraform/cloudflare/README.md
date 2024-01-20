@@ -6,15 +6,15 @@
 
 | Name | Version |
 |------|---------|
-| cloudflare | ~> 3.34.0 |
-| sops | 0.7.1 |
+| cloudflare | ~> 4.22.0 |
+| sops | 1.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| cloudflare | 3.34.0 |
-| sops | 0.7.1 |
+| cloudflare | 4.22.0 |
+| sops | 1.0.0 |
 
 ## Modules
 
@@ -41,11 +41,14 @@
 | [cloudflare_record.terraform_managed_resource_46e88ec4e3f8942732a3a9c25ee4f83c](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
 | [cloudflare_record.terraform_managed_resource_989f8a3455d739ec043a6e073c70a1bb](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
 | [cloudflare_record.www_dummy](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
-| [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/0.7.1/docs/data-sources/file) | data source |
+| [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.0.0/docs/data-sources/file) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| cloudflare\_account\_id | n/a | `string` | n/a | yes |
+| cloudflare\_api\_token | n/a | `string` | n/a | yes |
+| cloudflare\_zone\_id | n/a | `string` | n/a | yes |
 | private\_dns | n/a | `set(string)` | n/a | yes |
 <!-- END_TF_DOCS -->

@@ -1,8 +1,3 @@
-locals {
-  cloudflare_account_id = data.sops_file.secrets.data["CLOUDFLARE_ACCOUNT_ID"]
-  cloudflare_zone_id    = data.sops_file.secrets.data["CLOUDFLARE_ZONE_ID"]
-}
-
 module "docs" {
   source = "./modules/cloudflare-pages"
 
