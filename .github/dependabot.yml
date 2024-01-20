@@ -2,7 +2,7 @@
 version: 2
 updates:
   - package-ecosystem: terraform
-    directory: "/tf-cloudflare"
+    directory: "./terraform/cloudflare"
     schedule:
       interval: daily
       time: "00:00"
@@ -12,7 +12,27 @@ updates:
       prefix: "chore"
       include: "scope"
   - package-ecosystem: terraform
-    directory: "/tf-kubernetes"
+    directory: "./terraform/github"
+    schedule:
+      interval: daily
+      time: "00:00"
+      timezone: Asia/Bangkok
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+  - package-ecosystem: terraform
+    directory: "./terraform/kubernetes/nuc"
+    schedule:
+      interval: daily
+      time: "00:00"
+      timezone: Asia/Bangkok
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+  - package-ecosystem: terraform
+    directory: "./terraform/kubernetes/snikt"
     schedule:
       interval: daily
       time: "00:00"
