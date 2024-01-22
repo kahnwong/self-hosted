@@ -1,5 +1,11 @@
 locals {
-  namespaces = toset(["default", "llm", "jobs-family-alerts"])
+  namespaces = toset([
+    "default",
+    "forgejo",
+    "excalidraw",
+    "llm",
+    "jobs-family-alerts"
+  ])
 }
 
 resource "kubernetes_namespace" "this" {

@@ -10,6 +10,10 @@ locals {
     "sshx",
     "supersecretmessage",
   ])
+
+  deployments_excalidraw = toset([
+
+  ])
 }
 resource "helm_release" "ns_default" {
   for_each   = local.deployments_default
