@@ -14,6 +14,7 @@
 
 | Name | Version |
 |------|---------|
+| helm | 2.12.1 |
 | kubernetes | 2.25.2 |
 | sops | 1.0.0 |
 
@@ -21,6 +22,7 @@
 
 | Name | Type |
 |------|------|
+| [helm_release.ns_default](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [kubernetes_namespace.this](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/namespace) | resource |
 | [kubernetes_secret.harbor_config](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/secret) | resource |
 | [kubernetes_secret.this](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/secret) | resource |
