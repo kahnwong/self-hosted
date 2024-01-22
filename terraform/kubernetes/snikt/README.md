@@ -6,24 +6,25 @@
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.6 |
-| kubernetes | 2.22.0 |
-| sops | 0.7.2 |
+| helm | 2.12.1 |
+| kubernetes | 2.25.2 |
+| sops | 1.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| kubernetes | 2.22.0 |
-| sops | 0.7.2 |
+| kubernetes | 2.25.2 |
+| sops | 1.0.0 |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [kubernetes_namespace.this](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/namespace) | resource |
-| [kubernetes_secret.harbor_config](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret) | resource |
-| [kubernetes_secret.this](https://registry.terraform.io/providers/hashicorp/kubernetes/2.22.0/docs/resources/secret) | resource |
-| [sops_file.this](https://registry.terraform.io/providers/carlpett/sops/0.7.2/docs/data-sources/file) | data source |
+| [kubernetes_namespace.this](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/namespace) | resource |
+| [kubernetes_secret.harbor_config](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/secret) | resource |
+| [kubernetes_secret.this](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/secret) | resource |
+| [sops_file.this](https://registry.terraform.io/providers/carlpett/sops/1.0.0/docs/data-sources/file) | data source |
 
 ## Inputs
 
