@@ -1,6 +1,4 @@
 locals {
-  namespaces = toset(["default", "llm", "jobs-family-alerts"])
-
   secrets = [
     # default
     {
@@ -28,13 +26,6 @@ locals {
   secrets_name = toset(local.secrets[*].name)
 }
 
-resource "kubernetes_namespace" "this" {
-  for_each = setsubtract(local.namespaces, toset(["default"]))
-
-  metadata {
-    name = each.key
-  }
-}
 
 data "sops_file" "this" {
   for_each    = local.secrets_name
