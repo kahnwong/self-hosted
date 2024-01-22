@@ -12,9 +12,12 @@ locals {
   ])
 
   deployments_excalidraw = toset([
-
+    "excalidraw-room",
+    "excalidraw-storage-backend",
+    "excalidraw",
   ])
 }
+
 resource "helm_release" "ns_default" {
   for_each   = local.deployments_default
   name       = each.key
@@ -25,5 +28,18 @@ resource "helm_release" "ns_default" {
 
   values = [
     file("../../../kubernetes/snikt/default/${each.key}.yaml")
+  ]
+}
+
+resource "helm_release" "ns_excalidraw" {
+  for_each   = local.deployments_excalidraw
+  name       = each.key
+  namespace  = "excalidraw"
+  repository = "oci://harbor.karnwong.me/charts"
+  version    = "0.1.0"
+  chart      = "base"
+
+  values = [
+    file("../../../kubernetes/snikt/excalidraw/${each.key}.yaml")
   ]
 }
