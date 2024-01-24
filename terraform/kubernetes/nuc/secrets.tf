@@ -1,6 +1,4 @@
 locals {
-  namespaces = toset(["jobs"])
-
   secrets = [
     # default
     {
@@ -21,14 +19,6 @@ locals {
 locals {
   secrets_dict = { for o in local.secrets : o.name => o }
   secrets_name = toset(local.secrets[*].name)
-}
-
-resource "kubernetes_namespace" "this" {
-  for_each = setsubtract(local.namespaces, toset(["default"]))
-
-  metadata {
-    name = each.key
-  }
 }
 
 
