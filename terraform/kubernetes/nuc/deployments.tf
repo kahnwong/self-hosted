@@ -4,7 +4,6 @@ locals {
     "jellyfin",
     "miniflux",
     "navidrome",
-    "ntfy",
     "photoprism",
     "podgrab",
     "wallabag",

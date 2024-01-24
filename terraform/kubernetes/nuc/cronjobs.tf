@@ -2,7 +2,6 @@ locals {
   jobs = toset([
     "backup-miniflux",
     "backup-navidrome",
-    "backup-ntfy",
     "backup-prune",
     "backup-transmission",
     "backup-wallabag-content",

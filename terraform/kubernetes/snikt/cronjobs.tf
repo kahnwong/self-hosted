@@ -1,6 +1,7 @@
 locals {
   jobs = toset([
     "backup-linkding",
+    "backup-ntfy",
   ])
 
   jobs_family_alerts = toset([

@@ -4,6 +4,7 @@ locals {
     "gke-autopilot-cost-calculator",
     "linkding",
     "minio",
+    "ntfy",
     "picoshare",
     "rustpad",
     "shouldideploytoday",
