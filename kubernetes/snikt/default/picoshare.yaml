@@ -8,7 +8,7 @@ deployments:
       repository: mtlynch/picoshare
       tag: 1.4.1
       port: 4001
-      args: ["-db", "/data/store.db", "-vacuum", "true"]
+      args: ["-db", "/data/store.db", "-vacuum"]
       envFrom:
         - secretRef:
             name: picoshare
