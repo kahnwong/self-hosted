@@ -1,5 +1,8 @@
 locals {
-  namespaces = toset(["jobs"])
+  namespaces = toset([
+    "harbor",
+    "jobs"
+  ])
 }
 
 
