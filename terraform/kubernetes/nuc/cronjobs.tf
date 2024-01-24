@@ -1,6 +1,5 @@
 locals {
   jobs = toset([
-    "backup-linkding",
     "backup-miniflux",
     "backup-navidrome",
     "backup-ntfy",

@@ -2,7 +2,6 @@ locals {
   deployments_default = toset([
     "audiobookshelf",
     "jellyfin",
-    "linkding",
     "miniflux",
     "navidrome",
     "ntfy",

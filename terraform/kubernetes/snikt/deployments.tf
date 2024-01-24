@@ -2,6 +2,7 @@ locals {
   deployments_default = toset([
     "dashy",
     "gke-autopilot-cost-calculator",
+    "linkding",
     "minio",
     "picoshare",
     "rustpad",

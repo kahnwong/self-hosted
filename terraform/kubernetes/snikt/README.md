@@ -26,6 +26,7 @@
 | [helm_release.ns_excalidraw](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [helm_release.ns_forgejo](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [kubernetes_manifest.family_alerts](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/manifest) | resource |
+| [kubernetes_manifest.jobs](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/manifest) | resource |
 | [kubernetes_namespace.this](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/namespace) | resource |
 | [kubernetes_secret.harbor_config](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/secret) | resource |
 | [kubernetes_secret.this](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/secret) | resource |
