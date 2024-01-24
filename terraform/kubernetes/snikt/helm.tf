@@ -16,6 +16,10 @@ locals {
     "excalidraw-storage-backend",
     "excalidraw",
   ])
+
+  deployments_forgejo = toset([
+    "forgejo"
+  ])
 }
 
 resource "helm_release" "ns_default" {
@@ -41,5 +45,18 @@ resource "helm_release" "ns_excalidraw" {
 
   values = [
     file("../../../kubernetes/snikt/excalidraw/${each.key}.yaml")
+  ]
+}
+
+resource "helm_release" "ns_forgejo" {
+  for_each   = local.deployments_forgejo
+  name       = each.key
+  namespace  = "forgejo"
+  repository = "oci://harbor.karnwong.me/charts"
+  version    = "0.1.0"
+  chart      = "base"
+
+  values = [
+    file("../../../kubernetes/snikt/forgejo/${each.key}.yaml")
   ]
 }
