@@ -4,6 +4,9 @@ gke-autopilot-cost-calculator.karnwong.me {
 git.karnwong.me {
     reverse_proxy snikt:30026
 }
+linkding.karnwong.me {
+    reverse_proxy snikt:30005
+}
 minio.karnwong.me {
     reverse_proxy snikt:30020
 }
