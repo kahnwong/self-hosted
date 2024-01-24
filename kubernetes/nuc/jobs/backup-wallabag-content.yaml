@@ -3,6 +3,7 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: backup-wallabag-content
+  namespace: jobs
 spec:
   schedule: "0 23 1 * *"
   jobTemplate:

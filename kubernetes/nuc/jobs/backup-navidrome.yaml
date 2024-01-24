@@ -3,6 +3,7 @@ apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: backup-navidrome
+  namespace: jobs
 spec:
   schedule: "1 0 * * *"
   jobTemplate:
