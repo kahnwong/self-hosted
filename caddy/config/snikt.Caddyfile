@@ -7,6 +7,9 @@ git.karnwong.me {
 linkding.karnwong.me {
     reverse_proxy snikt:30005
 }
+meetings.karnwong.me {
+    reverse_proxy snikt:30027
+}
 minio.karnwong.me {
     reverse_proxy snikt:30020
 }

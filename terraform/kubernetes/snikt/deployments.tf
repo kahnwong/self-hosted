@@ -3,6 +3,7 @@ locals {
     "dashy",
     "gke-autopilot-cost-calculator",
     "linkding",
+    "meetings",
     "minio",
     "ntfy",
     "picoshare",

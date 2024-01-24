@@ -5,6 +5,7 @@ locals {
   selfhosted_proxied = toset([
     "gke-autopilot-cost-calculator",
     "linkding",
+    "meetings",
     "miniflux",
     "ntfy",
     "podgrab",
