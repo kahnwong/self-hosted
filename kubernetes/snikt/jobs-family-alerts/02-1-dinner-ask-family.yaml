@@ -1,0 +1,26 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: 02-1-dinner-ask-family
+  namespace: jobs-family-alerts
+spec:
+  schedule: "0 9 * * *" # 4:00 PM Asia/Bangkok
+  jobTemplate:
+    metadata:
+      name: 02-1-dinner-ask-family
+    spec:
+      template:
+        spec:
+          containers:
+            - name: 02-1-dinner-ask-family
+              image: harbor.karnwong.me/family-alerts/family-alerts:7a49948
+              command: ["python3"]
+              args:
+                - family_alerts/02.1_dinner_ask_family.py
+              envFrom:
+                - secretRef:
+                    name: family-alerts
+          imagePullSecrets:
+            - name: harbor-cfg
+          restartPolicy: Never

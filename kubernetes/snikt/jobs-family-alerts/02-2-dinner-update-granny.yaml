@@ -1,0 +1,26 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: 02-2-dinner-update-granny
+  namespace: jobs-family-alerts
+spec:
+  schedule: "30 9 * * *" # 4:30 PM Asia/Bangkok
+  jobTemplate:
+    metadata:
+      name: 02-2-dinner-update-granny
+    spec:
+      template:
+        spec:
+          containers:
+            - name: 02-2-dinner-update-granny
+              image: harbor.karnwong.me/family-alerts/family-alerts:7a49948
+              command: ["python3"]
+              args:
+                - family_alerts/02.2_dinner_update_granny.py
+              envFrom:
+                - secretRef:
+                    name: family-alerts
+          imagePullSecrets:
+            - name: harbor-cfg
+          restartPolicy: Never

@@ -1,0 +1,26 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: 01-2-lunch-order
+  namespace: jobs-family-alerts
+spec:
+  schedule: "0 4 * * *" # 11:00 AM Asia/Bangkok
+  jobTemplate:
+    metadata:
+      name: 01-2-lunch-order
+    spec:
+      template:
+        spec:
+          containers:
+            - name: 01-2-lunch-order
+              image: harbor.karnwong.me/family-alerts/family-alerts:7a49948
+              command: ["python3"]
+              args:
+                - family_alerts/01.2_lunch_order.py
+              envFrom:
+                - secretRef:
+                    name: family-alerts
+          imagePullSecrets:
+            - name: harbor-cfg
+          restartPolicy: Never
