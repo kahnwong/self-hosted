@@ -10,10 +10,10 @@ locals {
       namespace = "default"
     },
     # llm
-    {
-      name      = "llm"
-      namespace = "llm"
-    },
+    # {
+    #   name      = "llm"
+    #   namespace = "llm"
+    # },
     # jobs-family-alerts
     {
       name      = "family-alerts"

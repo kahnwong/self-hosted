@@ -3,7 +3,7 @@ locals {
     "default",
     "forgejo",
     "excalidraw",
-    "llm",
+    # "llm",
     "jobs-family-alerts"
   ])
 }
