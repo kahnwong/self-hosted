@@ -1,55 +1,29 @@
 locals {
-  #  deployments_default = toset([
-  #    "dashy",
-  #    "gke-autopilot-cost-calculator",
-  #    "minio",
-  #    "picoshare",
-  #    "rustpad",
-  #    "shouldideploytoday",
-  #    "sourcegraph",
-  #    "sshx",
-  #    "supersecretmessage",
-  #  ])
+  deployments_default = toset([
+    "audiobookshelf",
+    "jellyfin",
+    "linkding",
+    "miniflux",
+    "navidrome",
+    "ntfy",
+    "photoprism",
+    "podgrab",
+    "wallabag",
+  ])
 }
 
-#resource "helm_release" "ns_default" {
-#  for_each   = local.deployments_default
-#  name       = each.key
-#  namespace  = "default"
-#  repository = "oci://harbor.karnwong.me/charts"
-#  version    = "0.1.0"
-#  chart      = "base"
-#
-#  values = [
-#    file("../../../kubernetes/snikt/default/${each.key}.yaml")
-#  ]
-#}
-#
-#resource "helm_release" "ns_excalidraw" {
-#  for_each   = local.deployments_excalidraw
-#  name       = each.key
-#  namespace  = "excalidraw"
-#  repository = "oci://harbor.karnwong.me/charts"
-#  version    = "0.1.0"
-#  chart      = "base"
-#
-#  values = [
-#    file("../../../kubernetes/snikt/excalidraw/${each.key}.yaml")
-#  ]
-#}
-#
-#resource "helm_release" "ns_forgejo" {
-#  for_each   = local.deployments_forgejo
-#  name       = each.key
-#  namespace  = "forgejo"
-#  repository = "oci://harbor.karnwong.me/charts"
-#  version    = "0.1.0"
-#  chart      = "base"
-#
-#  values = [
-#    file("../../../kubernetes/snikt/forgejo/${each.key}.yaml")
-#  ]
-#}
+resource "helm_release" "ns_default" {
+  for_each   = local.deployments_default
+  name       = each.key
+  namespace  = "default"
+  repository = "oci://harbor.karnwong.me/charts"
+  version    = "0.1.0"
+  chart      = "base"
+
+  values = [
+    file("../../../kubernetes/nuc/default/${each.key}.yaml")
+  ]
+}
 
 resource "helm_release" "harbor" {
   name       = "harbor"
