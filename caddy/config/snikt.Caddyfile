@@ -10,6 +10,9 @@ linkding.karnwong.me {
 minio.karnwong.me {
     reverse_proxy snikt:30020
 }
+ntfy.karnwong.me {
+    reverse_proxy snikt:30022
+}
 rustpad.karnwong.me {
     reverse_proxy snikt:30019
 }

@@ -14,9 +14,6 @@ miniflux.karnwong.me {
 music.karnwong.me {
     reverse_proxy 127.0.0.1:30006
 }
-ntfy.karnwong.me {
-    reverse_proxy 127.0.0.1:30022
-}
 photos.karnwong.me {
     reverse_proxy 127.0.0.1:30008
 }
