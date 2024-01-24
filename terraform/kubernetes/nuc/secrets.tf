@@ -1,6 +1,6 @@
 locals {
   secrets = [
-    # default
+    # ------- default ------- #
     {
       name      = "miniflux"
       namespace = "default"
@@ -9,7 +9,7 @@ locals {
       name      = "photoprism"
       namespace = "default"
     },
-    # jobs
+    # ------- jobs ------- #
     {
       name      = "r2"
       namespace = "jobs"

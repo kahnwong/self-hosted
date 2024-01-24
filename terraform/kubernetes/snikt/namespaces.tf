@@ -4,6 +4,7 @@ locals {
     "forgejo",
     "excalidraw",
     # "llm",
+    "jobs",
     "jobs-family-alerts"
   ])
 }

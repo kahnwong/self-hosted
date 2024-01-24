@@ -1,6 +1,6 @@
 locals {
   secrets = [
-    # default
+    # ------- default ------- #
     {
       name      = "minio"
       namespace = "default"
@@ -9,12 +9,17 @@ locals {
       name      = "picoshare"
       namespace = "default"
     },
-    # llm
+    # ------- llm ------- #
     # {
     #   name      = "llm"
     #   namespace = "llm"
     # },
-    # jobs-family-alerts
+    # ------- jobs ------- #
+    {
+      name      = "r2"
+      namespace = "jobs"
+    },
+    # ------- jobs-family-alerts ------- #
     {
       name      = "family-alerts"
       namespace = "jobs-family-alerts"
