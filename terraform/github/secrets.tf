@@ -7,6 +7,7 @@ locals {
     "docs",
     "karnwong.me",
     "h3-viewer",
+    "retriever",
     "slc"
   ])
   cloudflare_secrets = tomap({

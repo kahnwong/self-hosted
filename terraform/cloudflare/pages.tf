@@ -31,6 +31,16 @@ module "h3_viewer" {
   domain_name  = "h3-viewer.karnwong.me"
 }
 
+module "retriever" {
+  source = "./modules/cloudflare-pages"
+
+  account_id = local.cloudflare_account_id
+  zone_id    = local.cloudflare_zone_id
+
+  project_name = "retriever"
+  subdomain    = "retriever"
+  domain_name  = "retriever.karnwong.me"
+}
 
 module "slc" {
   source = "./modules/cloudflare-pages"
