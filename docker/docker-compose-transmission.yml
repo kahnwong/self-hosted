@@ -1,5 +1,5 @@
 ---
-version: '3.3'
+version: '3.7'
 
 services:
   transmission:
@@ -21,6 +21,10 @@ services:
       - 51413:51413/udp
     restart: always
     env_file: .transmission.env
+    deploy:
+      resources:
+        limits:
+          memory: 2G
     networks:
       - transmission
 
