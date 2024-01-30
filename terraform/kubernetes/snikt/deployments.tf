@@ -1,7 +1,7 @@
 locals {
   deployments_default = toset([
     "dashy",
-    "gatus",
+    #    "gatus",
     "gke-autopilot-cost-calculator",
     "linkding",
     "meetings",
