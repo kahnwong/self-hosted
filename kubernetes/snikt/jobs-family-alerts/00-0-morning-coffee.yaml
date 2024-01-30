@@ -1,0 +1,26 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: 00-0-morning-coffee
+  namespace: jobs-family-alerts
+spec:
+  schedule: "15 1 * * *" # 6:15 AM Asia/Bangkok
+  jobTemplate:
+    metadata:
+      name: 00-0-morning-coffee
+    spec:
+      template:
+        spec:
+          containers:
+            - name: 00-0-morning-coffee
+              image: harbor.karnwong.me/family-alerts/family-alerts:5a8a0f3
+              command: ["python3"]
+              args:
+                - family_alerts/00.0_morning_coffee.py
+              envFrom:
+                - secretRef:
+                    name: family-alerts
+          imagePullSecrets:
+            - name: harbor-cfg
+          restartPolicy: Never

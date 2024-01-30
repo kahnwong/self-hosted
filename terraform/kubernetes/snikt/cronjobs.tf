@@ -5,6 +5,7 @@ locals {
   ])
 
   jobs_family_alerts = toset([
+    "00-0-morning-coffee",
     "01-1-lunch-ask",
     "01-2-lunch-order",
     "02-1-dinner-ask-family",
