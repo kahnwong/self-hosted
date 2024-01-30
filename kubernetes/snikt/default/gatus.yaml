@@ -1,0 +1,25 @@
+---
+name: gatus
+replicaCount: 1
+
+deployments:
+  containers:
+    - name: gatus
+      repository: twinproduction/gatus
+      tag: v5.7.0
+      port: 8080
+      volumeMounts:
+        - name: gatus-config
+          mountPath: /config
+        - name: gatus-data
+          mountPath: /data
+  volumes:
+    - name: gatus-config
+      hostPath:
+        path: /opt/gatus/config
+    - name: gatus-data
+      hostPath:
+        path: /opt/gatus/data
+  service:
+    port: 8080
+    nodePort: 30029
