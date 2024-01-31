@@ -5,7 +5,7 @@ metadata:
   name: 00-0-morning-coffee
   namespace: jobs-family-alerts
 spec:
-  schedule: "15 1 * * *" # 6:15 AM Asia/Bangkok
+  schedule: "15 23 * * *" # 6:15 AM Asia/Bangkok
   jobTemplate:
     metadata:
       name: 00-0-morning-coffee
