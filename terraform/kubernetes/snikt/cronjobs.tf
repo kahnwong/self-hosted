@@ -10,6 +10,7 @@ locals {
     "01-2-lunch-order",
     "02-1-dinner-ask-family",
     "02-2-dinner-update-granny",
+    "02-3-coffee-or-tea",
   ])
 }
 

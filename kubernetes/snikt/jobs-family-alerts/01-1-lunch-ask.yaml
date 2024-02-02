@@ -14,10 +14,12 @@ spec:
         spec:
           containers:
             - name: 01-1-lunch-ask
-              image: harbor.karnwong.me/family-alerts/family-alerts:7a49948
+              image: harbor.karnwong.me/family-alerts/family-alerts:a5cd118
               command: ["python3"]
               args:
-                - family_alerts/01.1_lunch_ask.py
+                - family_alerts/main.py
+                - --message
+                - "ถามคนแก่ว่าเที่ยงกินอะไร"
               envFrom:
                 - secretRef:
                     name: family-alerts

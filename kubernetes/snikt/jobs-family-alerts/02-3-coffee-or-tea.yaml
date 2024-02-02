@@ -2,24 +2,24 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: 02-2-dinner-update-granny
+  name: 02-3-coffee-or-tea
   namespace: jobs-family-alerts
 spec:
-  schedule: "30 9 * * *" # 4:30 PM Asia/Bangkok
+  schedule: "00 10 * * *" # 5:00 PM Asia/Bangkok
   jobTemplate:
     metadata:
-      name: 02-2-dinner-update-granny
+      name: 02-3-coffee-or-tea
     spec:
       template:
         spec:
           containers:
-            - name: 02-2-dinner-update-granny
+            - name: 02-3-coffee-or-tea
               image: harbor.karnwong.me/family-alerts/family-alerts:a5cd118
               command: ["python3"]
               args:
                 - family_alerts/main.py
                 - --message
-                - "บอกคนแก่ถ้ามีคนไม่กินข้าวบ้าน"
+                - "เอาขาหรือกาแฟ"
               envFrom:
                 - secretRef:
                     name: family-alerts

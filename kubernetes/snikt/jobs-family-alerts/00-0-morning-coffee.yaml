@@ -14,10 +14,12 @@ spec:
         spec:
           containers:
             - name: 00-0-morning-coffee
-              image: harbor.karnwong.me/family-alerts/family-alerts:5a8a0f3
+              image: harbor.karnwong.me/family-alerts/family-alerts:a5cd118
               command: ["python3"]
               args:
-                - family_alerts/00.0_morning_coffee.py
+                - family_alerts/main.py
+                - --message
+                - "อย่าลืมหยิบกาแฟในตู้เย็น"
               envFrom:
                 - secretRef:
                     name: family-alerts
