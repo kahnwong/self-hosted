@@ -20,7 +20,7 @@ spec:
                 - |
                   SERVICE_NAME="wallabag"
                   current_date=$(date +%Y-%m-%d)
-                  backup_prefix="s3://backup/$current_date"
+                  backup_prefix="s3://wallabag/$current_date"
                   filename="$SERVICE_NAME-content-$current_date.tar.gz"
                   tar -czf "$filename" /opt/wallabag/images
                   aws s3 cp --endpoint-url "$S3_ENDPOINT" "$filename" "$backup_prefix/$filename"
