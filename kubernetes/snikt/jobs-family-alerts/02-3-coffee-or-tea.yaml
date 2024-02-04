@@ -19,7 +19,7 @@ spec:
               args:
                 - family_alerts/main.py
                 - --message
-                - "เอาขาหรือกาแฟ"
+                - "เอาชาหรือกาแฟ"
               envFrom:
                 - secretRef:
                     name: family-alerts
