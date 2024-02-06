@@ -8,7 +8,7 @@ locals {
     "karnwong.me",
     "h3-viewer",
     "retriever",
-    "slc"
+    "slc",
   ])
   cloudflare_secrets = tomap({
     CLOUDFLARE_ACCOUNT_ID = sensitive(data.sops_file.secrets.data["global.cloudflare.CLOUDFLARE_ACCOUNT_ID"])

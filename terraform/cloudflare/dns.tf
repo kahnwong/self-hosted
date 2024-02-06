@@ -55,12 +55,12 @@ resource "cloudflare_record" "selfhosted_dns" {
   zone_id  = local.cloudflare_zone_id
 }
 
-resource "cloudflare_record" "standardnotes_listed" {
-  name    = "listed"
+resource "cloudflare_record" "vaultwarden" {
+  name    = "vaultwarden"
   proxied = true
   ttl     = 1
   type    = "A"
-  value   = "18.205.249.107"
+  value   = "34.145.66.238"
   zone_id = local.cloudflare_zone_id
 }
 
