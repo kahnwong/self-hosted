@@ -1,5 +1,6 @@
 locals {
   jobs = toset([
+    "backup-memos",
     "backup-miniflux",
     "backup-navidrome",
     "backup-prune",
