@@ -12,7 +12,7 @@ updates:
       prefix: "chore"
       include: "scope"
   - package-ecosystem: terraform
-    directory: "./terraform/github"
+    directory: "./github"
     schedule:
       interval: daily
       time: "00:00"
