@@ -1,12 +1,11 @@
-module "docs" {
-  source = "./modules/cloudflare-pages"
-
-  account_id = local.cloudflare_account_id
-  zone_id    = local.cloudflare_zone_id
-
-  project_name = "docs"
-  subdomain    = "docs"
-  domain_name  = "docs.karnwong.me"
+locals {
+  pages = toset([
+    "docs",
+    "h3-viewer",
+    "jupyterlite",
+    "retriever",
+    "slc",
+  ])
 }
 
 module "karnwong_me" {
@@ -20,46 +19,15 @@ module "karnwong_me" {
   domain_name  = "karnwong.me"
 }
 
-module "h3_viewer" {
+module "pages" {
+  for_each = local.pages
+
   source = "./modules/cloudflare-pages"
 
   account_id = local.cloudflare_account_id
   zone_id    = local.cloudflare_zone_id
 
-  project_name = "h3-viewer"
-  subdomain    = "h3-viewer"
-  domain_name  = "h3-viewer.karnwong.me"
-}
-
-module "jupyterlite" {
-  source = "./modules/cloudflare-pages"
-
-  account_id = local.cloudflare_account_id
-  zone_id    = local.cloudflare_zone_id
-
-  project_name = "jupyterlite"
-  subdomain    = "jupyterlite"
-  domain_name  = "jupyterlite.karnwong.me"
-}
-
-module "retriever" {
-  source = "./modules/cloudflare-pages"
-
-  account_id = local.cloudflare_account_id
-  zone_id    = local.cloudflare_zone_id
-
-  project_name = "retriever"
-  subdomain    = "retriever"
-  domain_name  = "retriever.karnwong.me"
-}
-
-module "slc" {
-  source = "./modules/cloudflare-pages"
-
-  account_id = local.cloudflare_account_id
-  zone_id    = local.cloudflare_zone_id
-
-  project_name = "slc"
-  subdomain    = "slc"
-  domain_name  = "slc.karnwong.me"
+  project_name = each.key
+  subdomain    = each.key
+  domain_name  = "${each.key}.karnwong.me"
 }
