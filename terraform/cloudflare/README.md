@@ -6,14 +6,14 @@
 
 | Name | Version |
 |------|---------|
-| cloudflare | ~> 4.22.0 |
+| cloudflare | ~> 4.24.0 |
 | sops | 1.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| cloudflare | 4.22.0 |
+| cloudflare | 4.24.0 |
 | sops | 1.0.0 |
 
 ## Modules
@@ -22,6 +22,7 @@
 |------|--------|---------|
 | docs | ./modules/cloudflare-pages | n/a |
 | h3\_viewer | ./modules/cloudflare-pages | n/a |
+| jupyterlite | ./modules/cloudflare-pages | n/a |
 | karnwong\_me | ./modules/cloudflare-pages | n/a |
 | retriever | ./modules/cloudflare-pages | n/a |
 | slc | ./modules/cloudflare-pages | n/a |
@@ -31,7 +32,6 @@
 | Name | Type |
 |------|------|
 | [cloudflare_page_rule.redirect_www_to_root](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/page_rule) | resource |
-| [cloudflare_record.github_pages_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
 | [cloudflare_record.pop_mx_send](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
 | [cloudflare_record.pop_txt_key](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
 | [cloudflare_record.pop_txt_send](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |

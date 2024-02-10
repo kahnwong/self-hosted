@@ -1,16 +1,15 @@
 locals {
-  github_pages = toset([
-    "jupyterlite",
-  ])
+  #  github_pages = toset([
+  #  ])
   selfhosted_proxied = toset([
     "gke-autopilot-cost-calculator",
     "linkding",
     "meetings",
     "miniflux",
+    "music",
     "ntfy",
     "podgrab",
     "rustpad",
-    "music",
     "secrets",
     "photos",
     "shouldideploytoday",
@@ -35,15 +34,15 @@ locals {
   selfhosted_dns   = merge(local.proxied_dict, local.non_proxied_dict)
 }
 
-resource "cloudflare_record" "github_pages_dns" {
-  for_each = local.github_pages
-  name     = each.key
-  proxied  = true
-  ttl      = 1
-  type     = "CNAME"
-  value    = "kahnwong.github.io"
-  zone_id  = local.cloudflare_zone_id
-}
+#resource "cloudflare_record" "github_pages_dns" {
+#  for_each = local.github_pages
+#  name     = each.key
+#  proxied  = true
+#  ttl      = 1
+#  type     = "CNAME"
+#  value    = "kahnwong.github.io"
+#  zone_id  = local.cloudflare_zone_id
+#}
 
 resource "cloudflare_record" "selfhosted_dns" {
   for_each = local.selfhosted_dns

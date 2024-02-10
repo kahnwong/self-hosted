@@ -5,8 +5,9 @@ data "sops_file" "secrets" {
 locals {
   cloudflare_pages_repos = toset([
     "docs",
-    "karnwong.me",
     "h3-viewer",
+    "jupyterlite",
+    "karnwong.me",
     "retriever",
     "slc",
   ])

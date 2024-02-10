@@ -31,6 +31,17 @@ module "h3_viewer" {
   domain_name  = "h3-viewer.karnwong.me"
 }
 
+module "jupyterlite" {
+  source = "./modules/cloudflare-pages"
+
+  account_id = local.cloudflare_account_id
+  zone_id    = local.cloudflare_zone_id
+
+  project_name = "jupyterlite"
+  subdomain    = "jupyterlite"
+  domain_name  = "jupyterlite.karnwong.me"
+}
+
 module "retriever" {
   source = "./modules/cloudflare-pages"
 
