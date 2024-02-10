@@ -19,7 +19,7 @@ resource "helm_release" "ns_default" {
   chart      = "base"
 
   values = [
-    file("../../../kubernetes/nuc/default/${each.key}.yaml")
+    file("./deployments/default/${each.key}.yaml")
   ]
 }
 
@@ -31,7 +31,7 @@ resource "helm_release" "harbor" {
   chart      = "harbor"
 
   values = [
-    file("../../../kubernetes/nuc/harbor/values.yaml")
+    file("./deployments/harbor/values.yaml")
   ]
 
   set {
