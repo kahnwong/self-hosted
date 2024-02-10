@@ -2,7 +2,7 @@
 version: 2
 updates:
   - package-ecosystem: terraform
-    directory: "./terraform/cloudflare"
+    directory: "./cloudflare"
     schedule:
       interval: daily
       time: "00:00"
