@@ -18,11 +18,11 @@ locals {
 resource "kubernetes_manifest" "jobs" {
   for_each = local.jobs
 
-  manifest = yamldecode(file("../../../kubernetes/snikt/jobs/${each.key}.yaml"))
+  manifest = yamldecode(file("./deployments/jobs/${each.key}.yaml"))
 }
 
 resource "kubernetes_manifest" "family_alerts" {
   for_each = local.jobs_family_alerts
 
-  manifest = yamldecode(file("../../../kubernetes/snikt/jobs-family-alerts/${each.key}.yaml"))
+  manifest = yamldecode(file("./deployments/jobs-family-alerts/${each.key}.yaml"))
 }

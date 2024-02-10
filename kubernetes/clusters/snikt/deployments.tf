@@ -35,7 +35,7 @@ resource "helm_release" "ns_default" {
   chart      = "base"
 
   values = [
-    file("../../../kubernetes/snikt/default/${each.key}.yaml")
+    file("./deployments/default/${each.key}.yaml")
   ]
 }
 
@@ -48,7 +48,7 @@ resource "helm_release" "ns_excalidraw" {
   chart      = "base"
 
   values = [
-    file("../../../kubernetes/snikt/excalidraw/${each.key}.yaml")
+    file("./deployments/excalidraw/${each.key}.yaml")
   ]
 }
 
@@ -61,6 +61,6 @@ resource "helm_release" "ns_forgejo" {
   chart      = "base"
 
   values = [
-    file("../../../kubernetes/snikt/forgejo/${each.key}.yaml")
+    file("./deployments/forgejo/${each.key}.yaml")
   ]
 }
