@@ -2,6 +2,7 @@ locals {
   deployments_default = toset([
     "audiobookshelf",
     "jellyfin",
+    "memos",
     "miniflux",
     "navidrome",
     "photoprism",
