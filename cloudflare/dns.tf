@@ -5,6 +5,7 @@ locals {
     "gke-autopilot-cost-calculator",
     "linkding",
     "meetings",
+    "memos",
     "miniflux",
     "music",
     "ntfy",

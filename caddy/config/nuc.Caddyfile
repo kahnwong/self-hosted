@@ -8,6 +8,9 @@ harbor.karnwong.me {
 jellyfin.karnwong.me {
     reverse_proxy 127.0.0.1:30003
 }
+memos.karnwong.me {
+    reverse_proxy 127.0.0.1:30028
+}
 miniflux.karnwong.me {
     reverse_proxy 127.0.0.1:30007
 }
