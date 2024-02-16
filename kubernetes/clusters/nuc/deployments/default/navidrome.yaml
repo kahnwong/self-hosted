@@ -6,7 +6,7 @@ deployments:
   containers:
     - name: navidrome
       repository: deluan/navidrome
-      tag: 0.51.0
+      tag: 0.51.1
       port: 4533
       env:
         - name: ND_SCANINTERVAL
