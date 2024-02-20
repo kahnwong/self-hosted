@@ -2,6 +2,7 @@ locals {
   #  github_pages = toset([
   #  ])
   selfhosted_proxied = toset([
+    "gcp-azure-cost-calculator",
     "gke-autopilot-cost-calculator",
     "linkding",
     "meetings",

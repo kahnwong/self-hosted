@@ -1,0 +1,20 @@
+---
+name: gcp-azure-cost-calculator
+replicaCount: 1
+
+deployments:
+  containers:
+    - name: gcp-azure-cost-calculator
+      repository: ghcr.io/kahnwong/gcp-azure-cost-calculator
+      tag: 7058db7
+      port: 8501
+#      resources:
+#        limits:
+#          cpu: 512m
+#          memory: 256Mi
+#        requests:
+#          cpu: 512m
+#          memory: 256Mi
+  service:
+    port: 8501
+    nodePort: 30030

@@ -1,3 +1,6 @@
+gcp-azure-cost-calculator.karnwong.me {
+    reverse_proxy snikt:30030
+}
 gke-autopilot-cost-calculator.karnwong.me {
     reverse_proxy snikt:30024
 }
