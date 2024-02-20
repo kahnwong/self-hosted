@@ -34,7 +34,7 @@ deployments:
   containers:
     - name: miniflux
       repository: miniflux/miniflux
-      tag: 2.0.51
+      tag: 2.1.0
       port: 8080
       env:
         - name: DATABASE_URL
