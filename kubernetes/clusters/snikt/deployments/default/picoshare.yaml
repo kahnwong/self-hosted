@@ -6,7 +6,7 @@ deployments:
   containers:
     - name: picoshare
       repository: mtlynch/picoshare
-      tag: 1.4.1
+      tag: 1.4.2
       port: 4001
       envFrom:
         - secretRef:
