@@ -1,5 +1,7 @@
 #!/bin/bash
 
+kubectl config use-context nuc
+
 WALLABAG_POD_NAME="$(kubectl get pods -l=app.kubernetes.io/name=wallabag | tail -1 | awk '{print $1}')"
 echo $WALLABAG_POD_NAME
 
