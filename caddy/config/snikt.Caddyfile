@@ -34,6 +34,16 @@ share.karnwong.me {
 shouldideploytoday.karnwong.me {
     reverse_proxy snikt:30040
 }
+wallabag.karnwong.me {
+    reverse_proxy snikt:30009 {
+        transport http {
+            dial_timeout 5m
+            response_header_timeout 5m
+            read_timeout 5m
+            write_timeout 5m
+        }
+    }
+}
 
 # excalidraw
 excalidraw.karnwong.me {

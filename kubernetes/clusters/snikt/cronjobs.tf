@@ -3,6 +3,8 @@ locals {
     "backup-memos",
     "backup-linkding",
     "backup-ntfy",
+    "backup-wallabag-content",
+    "backup-wallabag-db",
   ])
 
   jobs_family_alerts = toset([

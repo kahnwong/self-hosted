@@ -14,6 +14,7 @@ locals {
     "shouldideploytoday",
     "sshx",
     "supersecretmessage",
+    "wallabag",
   ])
 
   deployments_excalidraw = toset([

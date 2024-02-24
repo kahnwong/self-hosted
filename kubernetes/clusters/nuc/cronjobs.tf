@@ -4,8 +4,6 @@ locals {
     "backup-navidrome",
     "backup-prune",
     "backup-transmission",
-    "backup-wallabag-content",
-    "backup-wallabag-db",
     "email-to-epub",
   ])
 }

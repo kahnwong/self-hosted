@@ -6,7 +6,6 @@ locals {
     "navidrome",
     "photoprism",
     "podgrab",
-    "wallabag",
   ])
 }
 

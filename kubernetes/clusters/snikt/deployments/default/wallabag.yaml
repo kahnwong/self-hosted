@@ -6,12 +6,14 @@ replicaCount: 1
 # also need to set this to false: SYMFONY__ENV__FOSUSER_REGISTRATION
 # create user: /var/www/wallabag/bin/console --env=prod fos:user:create $USERNAME $EMAIL $PASSWORD --super-admin
 # migrate schema: /var/www/wallabag/bin/console --env=prod doctrine:migrations:migrate
+# restore with (after initial deployment):
+## pg_restore --user my-super-user --dbname wallabag $BACKUP_FILE
 
 statefulSets:
   containers:
     - name: postgres
       repository: postgres
-      tag: 15.1-alpine
+      tag: 16.2-alpine
       port: 5432
       healthcheck: false
       env:
@@ -94,10 +96,10 @@ deployments:
         - name: wallabag-site-config
           mountPath: /var/www/wallabag/vendor/j0k3r/graby-site-config
           readOnly: true
-      resources:
-        limits:
-          cpu: 1
-          memory: 1G
+#      resources:
+#        limits:
+#          cpu: 1
+#          memory: 1G
   volumes:
     - name: wallabag-images
       hostPath:
