@@ -6,6 +6,7 @@ locals {
     "gke-autopilot-cost-calculator",
     "linkding",
     "meetings",
+    "memos",
     "minio",
     "ntfy",
     "picoshare",

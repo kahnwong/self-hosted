@@ -21,4 +21,4 @@ deployments:
         path: /opt/memos/data
   service:
     port: 5230
-    nodePort: 30028
+    nodePort: 30031
