@@ -11,7 +11,6 @@ locals {
     "picoshare",
     "rustpad",
     "shouldideploytoday",
-    "sourcegraph",
     "sshx",
     "supersecretmessage",
   ])
