@@ -14,7 +14,7 @@ meetings.karnwong.me {
     reverse_proxy snikt:30027
 }
 memos.karnwong.me {
-    reverse_proxy 127.0.0.1:30031
+    reverse_proxy snikt:30031
 }
 minio.karnwong.me {
     reverse_proxy snikt:30020
