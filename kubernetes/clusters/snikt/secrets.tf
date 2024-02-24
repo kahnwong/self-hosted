@@ -9,11 +9,6 @@ locals {
       name      = "picoshare"
       namespace = "default"
     },
-    # ------- llm ------- #
-    # {
-    #   name      = "llm"
-    #   namespace = "llm"
-    # },
     # ------- jobs ------- #
     {
       name      = "r2"
