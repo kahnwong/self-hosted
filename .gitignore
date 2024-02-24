@@ -2,19 +2,12 @@
 .idea
 
 # projects
-docker/ttrss-docker-compose/
-docker/wirehole/
-docker/work-dashboard
-docker/postman-to-docusaurus/
-docker/redash/
+docker-compose-livegrep.yml
 
 # python
 **/.ipynb_checkpoints/
 **/__pycache__
 
-# services
-**/images
-**/pyrss
 
 # env
 .env
