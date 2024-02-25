@@ -13,6 +13,7 @@ cd "$HOME" || exit
 ###############
 # photoprism
 ###############
+kubectl config use-context nuc
 photoprism_sqldump_filename="photoprism-sqldump-$current_date.sql"
 
 echo "photoprism..."
