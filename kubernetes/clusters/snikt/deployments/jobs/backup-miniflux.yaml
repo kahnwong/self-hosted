@@ -14,7 +14,7 @@ spec:
         spec:
           containers:
             - name: backup-miniflux
-              image: ghcr.io/kahnwong/docker-aws-backup:c148869
+              image: ghcr.io/kahnwong/docker-aws-backup:a898d2d
               command: ["sh", "-c"]
               args:
                 - |

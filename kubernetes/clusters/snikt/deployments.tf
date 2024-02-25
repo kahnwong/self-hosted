@@ -7,6 +7,7 @@ locals {
     "linkding",
     "meetings",
     "memos",
+    "miniflux",
     "minio",
     "ntfy",
     "picoshare",

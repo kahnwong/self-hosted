@@ -10,9 +10,10 @@ statefulSets:
 
     ## restore
     # start db container first, pg_restore and reset admin password
+    ## pg_restore --user miniflux --dbname miniflux $BACKUP_FILE
     - name: postgres
       repository: postgres
-      tag: 15.4-alpine
+      tag: 16.2-alpine
       port: 5432
       healthcheck: false
       env:
@@ -58,10 +59,10 @@ deployments:
       envFrom:
         - secretRef:
             name: miniflux
-      resources:
-        limits:
-          cpu: 1
-          memory: 1G
+#      resources:
+#        limits:
+#          cpu: 1
+#          memory: 1G
   service:
     port: 8080
     nodePort: 30007
