@@ -65,6 +65,8 @@ deployments:
           value: "true"
         - name: FORGEJO__server__ROOT_URL
           value: https://git.karnwong.me
+        - name: FORGEJO__server__SSH_DOMAIN
+          value: git.karnwong.me
         - name: FORGEJO__server__SSH_PORT
           value: "32000"
         - name: FORGEJO__server__SSH_LISTEN_PORT
