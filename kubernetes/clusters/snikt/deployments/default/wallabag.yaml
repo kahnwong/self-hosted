@@ -8,6 +8,7 @@ replicaCount: 1
 # migrate schema: /var/www/wallabag/bin/console --env=prod doctrine:migrations:migrate
 # restore with (after initial deployment):
 ## pg_restore --user my-super-user --dbname wallabag $BACKUP_FILE
+# for `images` folder permission, set `777`: <https://github.com/wallabag/wallabag/issues/3687#issuecomment-448148527>
 
 statefulSets:
   containers:
