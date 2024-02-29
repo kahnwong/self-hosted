@@ -6,7 +6,7 @@ deployments:
   containers:
     - name: gcp-azure-cost-calculator
       repository: ghcr.io/kahnwong/gcp-azure-cost-calculator
-      tag: 4ddb12d
+      tag: a659087
       port: 8501
 #      resources:
 #        limits:
