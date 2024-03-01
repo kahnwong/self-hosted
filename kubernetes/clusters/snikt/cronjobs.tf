@@ -1,11 +1,13 @@
 locals {
   jobs = toset([
+    "backup-linkding",
     "backup-memos",
     "backup-miniflux",
-    "backup-linkding",
     "backup-ntfy",
+    "backup-prune",
     "backup-wallabag-content",
     "backup-wallabag-db",
+    "email-to-epub",
   ])
 
   jobs_family_alerts = toset([

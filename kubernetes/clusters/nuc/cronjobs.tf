@@ -1,9 +1,7 @@
 locals {
   jobs = toset([
     "backup-navidrome",
-    "backup-prune",
     "backup-transmission",
-    "email-to-epub",
   ])
 }
 
