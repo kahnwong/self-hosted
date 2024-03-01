@@ -1,6 +1,7 @@
 locals {
   deployments_default = toset([
     "dashy",
+    "firefly",
     #    "gatus",
     "gcp-azure-cost-calculator",
     "gke-autopilot-cost-calculator",

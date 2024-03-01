@@ -1,3 +1,6 @@
+firefly.karnwong.me {
+    reverse_proxy snikt:30032
+}
 gcp-azure-cost-calculator.karnwong.me {
     reverse_proxy snikt:30030
 }
