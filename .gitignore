@@ -3,7 +3,6 @@
 
 # projects
 docker-compose-livegrep.yml
-docker-compose-livegrep-org.yml
 
 # python
 **/.ipynb_checkpoints/
