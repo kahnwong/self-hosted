@@ -14,17 +14,14 @@ spec:
         spec:
           containers:
             - name: backup-transmission
-              image: ghcr.io/kahnwong/docker-aws-backup:ace0f3a
-              command: ["sh", "-c"]
-              args:
-                - |
-                  SERVICE_NAME="transmission"
-                  current_date=$(date +%Y-%m-%d)
-                  backup_prefix="s3://backup/$current_date"
-                  filename="$SERVICE_NAME-$current_date.tar.gz"
-                  tar -czf "$filename" /opt/transmission/config
-                  aws s3 cp --endpoint-url "$S3_ENDPOINT" "$filename" "$backup_prefix/$filename"
-                  curl -d "Successfully backup transmission" https://ntfy.karnwong.me/nuc-backup
+              image: ghcr.io/kahnwong/docker-aws-backup:ec210d8
+              env:
+                - name: MODE
+                  value: ARCHIVE
+                - name: SERVICE_NAME
+                  value: transmission
+                - name: BACKUP_PATH
+                  value: /opt/transmission/config
               envFrom:
                 - secretRef:
                     name: r2
