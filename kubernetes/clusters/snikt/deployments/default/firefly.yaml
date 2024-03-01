@@ -55,6 +55,8 @@ deployments:
           value: "465"
         - name: MAIL_ENCRYPTION
           value: tls
+        - name: TRUSTED_PROXIES
+          value: "*"
       envFrom:
         - secretRef:
             name: firefly
