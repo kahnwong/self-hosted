@@ -1,5 +1,6 @@
 locals {
   jobs = toset([
+    "backup-firefly-db",
     "backup-linkding",
     "backup-memos",
     "backup-miniflux",
