@@ -14,17 +14,18 @@ spec:
         spec:
           containers:
             - name: backup-wallabag-db
-              image: ghcr.io/kahnwong/docker-aws-backup:a898d2d
-              command: ["sh", "-c"]
-              args:
-                - |
-                  SERVICE_NAME="wallabag"
-                  current_date=$(date +%Y-%m-%d)
-                  backup_prefix="s3://backup/$current_date"
-                  filename="$SERVICE_NAME-sqldump-$current_date.bin"
-                  PGPASSWORD=wallapass pg_dump -Fc -c -U wallabag --host wallabag-statefulset.default.svc.cluster.local >"$filename"
-                  aws s3 cp --endpoint-url "$S3_ENDPOINT" "$filename" "$backup_prefix/$filename"
-                  curl -d "Successfully backup wallabag-db" https://ntfy.karnwong.me/nuc-backup
+              image: ghcr.io/kahnwong/docker-aws-backup:6ac0a75
+              env:
+                - name: MODE
+                  value: DB_POSTGRES
+                - name: SERVICE_NAME
+                  value: wallabag
+                - name: POSTGRES_USERNAME
+                  value: wallabag
+                - name: POSTGRES_PASSWORD
+                  value: wallapass
+                - name: POSTGRES_HOSTNAME
+                  value: wallabag-statefulset.default.svc.cluster.local
               envFrom:
                 - secretRef:
                     name: r2
