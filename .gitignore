@@ -4,6 +4,10 @@
 # projects
 docker-compose-livegrep.yml
 
+# deployments
+foo.yaml
+bar.yaml
+
 # python
 **/.ipynb_checkpoints/
 **/__pycache__
