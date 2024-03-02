@@ -14,17 +14,16 @@ spec:
         spec:
           containers:
             - name: backup-navidrome
-              image: ghcr.io/kahnwong/docker-aws-backup:ace0f3a
-              command: ["sh", "-c"]
-              args:
-                - |
-                  SERVICE_NAME="navidrome"
-                  current_date=$(date +%Y-%m-%d)
-                  backup_prefix="s3://backup/$current_date"
-                  filename="$SERVICE_NAME-$current_date.tar.gz"
-                  tar --exclude "/opt/navidrome/config/cache" -czf "$filename" /opt/navidrome/config
-                  aws s3 cp --endpoint-url "$S3_ENDPOINT" "$filename" "$backup_prefix/$filename"
-                  curl -d "Successfully backup NAVIDROME" https://ntfy.karnwong.me/nuc-backup
+              image: ghcr.io/kahnwong/docker-aws-backup:7da9c32
+              env:
+                - name: MODE
+                  value: ARCHIVE
+                - name: SERVICE_NAME
+                  value: navidrome
+                - name: BACKUP_PATH
+                  value: /opt/navidrome/config
+                - name: BACKUP_PATH_EXCLUDED
+                  value: /opt/navidrome/config/cache
               envFrom:
                 - secretRef:
                     name: r2

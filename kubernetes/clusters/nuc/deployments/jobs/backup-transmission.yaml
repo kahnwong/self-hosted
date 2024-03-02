@@ -14,7 +14,7 @@ spec:
         spec:
           containers:
             - name: backup-transmission
-              image: ghcr.io/kahnwong/docker-aws-backup:ec210d8
+              image: ghcr.io/kahnwong/docker-aws-backup:7da9c32
               env:
                 - name: MODE
                   value: ARCHIVE
