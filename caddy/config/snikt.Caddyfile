@@ -1,20 +1,11 @@
 firefly.karnwong.me {
     reverse_proxy snikt:30032
 }
-gcp-azure-cost-calculator.karnwong.me {
-    reverse_proxy snikt:30030
-}
-gke-autopilot-cost-calculator.karnwong.me {
-    reverse_proxy snikt:30024
-}
 git.karnwong.me {
     reverse_proxy snikt:30026
 }
 linkding.karnwong.me {
     reverse_proxy snikt:30005
-}
-meetings.karnwong.me {
-    reverse_proxy snikt:30027
 }
 memos.karnwong.me {
     reverse_proxy snikt:30031
