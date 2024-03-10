@@ -9,10 +9,11 @@ locals {
 }
 
 resource "helm_release" "ns_default" {
-  for_each   = local.deployments_default
-  name       = each.key
-  namespace  = "default"
-  repository = "oci://harbor.karnwong.me/charts"
+  for_each  = local.deployments_default
+  name      = each.key
+  namespace = "default"
+  #  repository = "oci://harbor.karnwong.me/charts"
+  repository = "oci://registry-1.docker.io/karnwong"
   version    = "0.1.0"
   chart      = "base"
 
