@@ -6,7 +6,7 @@ deployments:
   containers:
     - name: memos
       repository: neosmemo/memos
-      tag: "0.20.0"
+      tag: "0.20.1"
       port: 5230
       env:
         # https://github.com/usememos/memos/issues/1782
