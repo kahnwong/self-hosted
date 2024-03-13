@@ -3,7 +3,7 @@
 export PATH=$PATH:/home/kahnwong/.nix-profile/bin
 
 # ------- wallabag -------
-kubectl config use-context snikt
+kubectl config use-context snikt --namespace default
 
 WALLABAG_POD_NAME="$(kubectl get pods -l=app.kubernetes.io/name=wallabag | tail -1 | awk '{print $1}')"
 echo $WALLABAG_POD_NAME
@@ -17,4 +17,4 @@ kubectl exec $WALLABAG_STATEFULSET_POD_NAME -c postgres -- psql -U wallabag -d w
 
 # ------- livegrep -------
 kubectl config use-context snikt
-kubectl rollout restart deploy livegrep
+kubectl rollout restart deploy livegrep --namespace livegrep
