@@ -3,6 +3,7 @@ locals {
     "default",
     "forgejo",
     "excalidraw",
+    "livegrep",
     "jobs",
     "jobs-family-alerts"
   ])

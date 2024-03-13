@@ -2,7 +2,7 @@
 .idea
 
 # projects
-docker-compose-livegrep.yml
+livegrep-indexer.yaml
 
 # deployments
 foo.yaml
