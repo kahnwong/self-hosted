@@ -14,7 +14,7 @@ spec:
         spec:
           containers:
             - name: email-to-epub
-              image: ghcr.io/kahnwong/email-to-epub:8e5212d
+              image: ghcr.io/kahnwong/email-to-epub:c610ecb
               volumeMounts:
                 - name: main
                   mountPath: /usr/local/bin/.env
