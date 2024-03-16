@@ -16,6 +16,13 @@ miniflux.karnwong.me {
 minio.karnwong.me {
     reverse_proxy snikt:30020
 }
+monica.karnwong.me {
+    reverse_proxy snikt:30034 {
+        transport http {
+            tls_insecure_skip_verify
+        }
+    }
+}
 ntfy.karnwong.me {
     reverse_proxy snikt:30022
 }

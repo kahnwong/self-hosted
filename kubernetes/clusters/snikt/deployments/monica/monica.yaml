@@ -1,0 +1,68 @@
+---
+name: monica
+replicaCount: 1
+
+statefulSets:
+  containers:
+    - name: mariadb
+      repository: mariadb
+      tag: 11
+      port: 3306
+      healthcheck: false
+      env:
+        - name: MARIADB_ROOT_PASSWORD
+          value: AQh13iIkjL
+        - name: MYSQL_DATABASE
+          value: monica
+        - name: MYSQL_USER
+          value: monica
+        - name: MYSQL_PASSWORD
+          value: secret
+      volumeMounts:
+        - name: monica-data
+          mountPath: /var/lib/mysql
+  volumes:
+    - name: monica-data
+      hostPath:
+        path: /opt/monica/db
+  service:
+    ports:
+      - name: mariadb
+        port: 3306
+
+deployments:
+  containers:
+    - name: monica
+      repository: monica
+      tag: 4.0.0
+      port: 80
+      healthcheck: false
+      env:
+        - name: APP_ENV
+          value: production
+        - name: DB_HOST
+          value: monica-statefulset.monica.svc.cluster.local
+        - name: DB_DATABASE
+          value: monica
+        - name: DB_USERNAME
+          value: monica
+        - name: DB_PASSWORD
+          value: secret
+        - name: LOG_CHANNEL
+          value: stderr
+        - name: CACHE_DRIVER
+          value: database
+        - name: SESSION_DRIVER
+          value: database
+        - name: QUEUE_DRIVER
+          value: sync
+      volumeMounts:
+        - name: monica-web
+          mountPath: /var/www/html/storage
+  volumes:
+    - name: monica-web
+      hostPath:
+        path: /opt/monica/web
+  service:
+    port: 80
+    nodePort: 30034
