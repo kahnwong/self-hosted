@@ -1,5 +1,5 @@
 ---
-name: twentycrm
+name: twentycrm-backend
 replicaCount: 1
 
 
@@ -25,7 +25,7 @@ statefulSets:
 
 deployments:
   containers:
-    - name: backend
+    - name: twentycrm-backend
       repository: twentycrm/twenty-server
       tag: 0.3.2
       port: 3000
@@ -44,22 +44,6 @@ deployments:
       envFrom:
         - secretRef:
             name: twentycrm
-    - name: frontend
-      repository: twentycrm/twenty-front
-      tag: 0.3.2
-      port: 3001
-      healthcheck: false
-      env:
-        - name: SIGN_IN_PREFILLED
-          value: "true"
-        - name: REACT_APP_SERVER_BASE_URL
-          value: https://twentycrm.karnwong.me
-        - name: REACT_APP_SERVER_AUTH_URL
-          value: https://twentycrm.karnwong.me/auth
-        - name: REACT_APP_SERVER_FILES_URL
-          value: https://twentycrm.karnwong.me/files
-        - name: PORT
-          value: "3001"
   service:
-    port: 3001
+    port: 3000
     nodePort: 30034

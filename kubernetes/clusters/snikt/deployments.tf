@@ -27,7 +27,8 @@ locals {
   ])
 
   deployments_twentycrm = toset([
-    "twentycrm"
+    "twentycrm-backend",
+    "twentycrm-frontend"
   ])
 }
 
