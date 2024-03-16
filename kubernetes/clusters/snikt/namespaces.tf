@@ -5,7 +5,8 @@ locals {
     "excalidraw",
     "livegrep",
     "jobs",
-    "jobs-family-alerts"
+    "jobs-family-alerts",
+    "twentycrm",
   ])
 }
 

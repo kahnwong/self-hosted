@@ -26,6 +26,11 @@ locals {
     {
       name      = "family-alerts"
       namespace = "jobs-family-alerts"
+    },
+    # ------- twentycrm ------- #
+    {
+      name      = "twentycrm"
+      namespace = "twentycrm"
     }
   ]
 }
