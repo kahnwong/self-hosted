@@ -25,10 +25,6 @@ locals {
   deployments_forgejo = toset([
     "forgejo"
   ])
-
-  deployments_monica = toset([
-    "monica"
-  ])
 }
 
 resource "helm_release" "ns_default" {
@@ -49,7 +45,7 @@ resource "helm_release" "ns_excalidraw" {
   for_each   = local.deployments_excalidraw
   name       = each.key
   namespace  = "excalidraw"
-  repository = "oci://registry-1.docker.io/karnwong"
+  repository = "oci://harbor.karnwong.me/charts"
   version    = "0.1.0"
   chart      = "base"
 
@@ -62,25 +58,11 @@ resource "helm_release" "ns_forgejo" {
   for_each   = local.deployments_forgejo
   name       = each.key
   namespace  = "forgejo"
-  repository = "oci://registry-1.docker.io/karnwong"
+  repository = "oci://harbor.karnwong.me/charts"
   version    = "0.1.0"
   chart      = "base"
 
   values = [
     file("./deployments/forgejo/${each.key}.yaml")
-  ]
-}
-
-
-resource "helm_release" "ns_monica" {
-  for_each   = local.deployments_monica
-  name       = each.key
-  namespace  = "monica"
-  repository = "oci://registry-1.docker.io/karnwong"
-  version    = "0.1.0"
-  chart      = "base"
-
-  values = [
-    file("./deployments/monica/${each.key}.yaml")
   ]
 }
