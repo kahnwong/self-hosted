@@ -32,9 +32,6 @@ shouldideploytoday.karnwong.me {
     reverse_proxy snikt:30040
 }
 twentycrm.karnwong.me {
-    reverse_proxy snikt:30035
-}
-twentycrm-api.karnwong.me {
     reverse_proxy snikt:30034
 }
 wallabag.karnwong.me {

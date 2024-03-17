@@ -13,13 +13,11 @@ locals {
     "secrets",
     "photos",
     "shouldideploytoday",
+    "twentycrm",
     # excalidraw
     "excalidraw",
     "excalidraw-storage-backend",
     "excalidraw-room",
-    # twentycrm
-    "twentycrm",
-    "twentycrm-api",
   ])
   selfhosted_non_proxied = setunion(toset([
     "git",
