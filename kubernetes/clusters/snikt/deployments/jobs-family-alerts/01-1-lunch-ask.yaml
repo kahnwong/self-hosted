@@ -14,15 +14,13 @@ spec:
         spec:
           containers:
             - name: 01-1-lunch-ask
-              image: harbor.karnwong.me/family-alerts/family-alerts:a5cd118
+              image: ghcr.io/kahnwong/line-notify:dc61980
               command: ["python3"]
               args:
-                - family_alerts/main.py
+                - line_notify/main.py
                 - --message
                 - "ถามคนแก่ว่าเที่ยงกินอะไร"
               envFrom:
                 - secretRef:
                     name: family-alerts
-          imagePullSecrets:
-            - name: harbor-cfg
           restartPolicy: Never

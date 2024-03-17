@@ -14,15 +14,13 @@ spec:
         spec:
           containers:
             - name: 02-1-dinner-ask-family
-              image: harbor.karnwong.me/family-alerts/family-alerts:a5cd118
+              image: ghcr.io/kahnwong/line-notify:dc61980
               command: ["python3"]
               args:
-                - family_alerts/main.py
+                - line_notify/main.py
                 - --message
                 - "เช็คว่ามีใครไม่กินข้าวบ้านบ้าง"
               envFrom:
                 - secretRef:
                     name: family-alerts
-          imagePullSecrets:
-            - name: harbor-cfg
           restartPolicy: Never
