@@ -45,7 +45,7 @@ resource "helm_release" "ns_excalidraw" {
   for_each   = local.deployments_excalidraw
   name       = each.key
   namespace  = "excalidraw"
-  repository = "oci://harbor.karnwong.me/charts"
+  repository = "oci://registry-1.docker.io/karnwong"
   version    = "0.1.0"
   chart      = "base"
 
@@ -58,7 +58,7 @@ resource "helm_release" "ns_forgejo" {
   for_each   = local.deployments_forgejo
   name       = each.key
   namespace  = "forgejo"
-  repository = "oci://harbor.karnwong.me/charts"
+  repository = "oci://registry-1.docker.io/karnwong"
   version    = "0.1.0"
   chart      = "base"
 
