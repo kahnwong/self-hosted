@@ -31,9 +31,6 @@ share.karnwong.me {
 shouldideploytoday.karnwong.me {
     reverse_proxy snikt:30040
 }
-twentycrm.karnwong.me {
-    reverse_proxy snikt:30034
-}
 wallabag.karnwong.me {
     reverse_proxy snikt:30009 {
         transport http {

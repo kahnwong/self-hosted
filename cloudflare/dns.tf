@@ -13,7 +13,6 @@ locals {
     "secrets",
     "photos",
     "shouldideploytoday",
-    "twentycrm",
     # excalidraw
     "excalidraw",
     "excalidraw-storage-backend",
