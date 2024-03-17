@@ -62,6 +62,8 @@ deployments:
           value: insecure
         - name: HOME
           value: /photoprism
+        - name: PHOTOPRISM_SITE_URL
+          value: https://photos.karnwong.me
       envFrom:
         - secretRef:
             name: photoprism
