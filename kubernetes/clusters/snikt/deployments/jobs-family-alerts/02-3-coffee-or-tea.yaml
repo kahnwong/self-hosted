@@ -5,7 +5,7 @@ metadata:
   name: 02-3-coffee-or-tea
   namespace: jobs-family-alerts
 spec:
-  schedule: "00 10 * * *" # 5:00 PM Asia/Bangkok
+  schedule: "00 8 * * *" # 3:00 PM Asia/Bangkok
   jobTemplate:
     metadata:
       name: 02-3-coffee-or-tea
