@@ -2,7 +2,7 @@ locals {
   #  github_pages = toset([
   #  ])
   selfhosted_proxied = toset([
-    "duckdns",
+    "duckdb",
     "firefly",
     "linkding",
     "memos",
