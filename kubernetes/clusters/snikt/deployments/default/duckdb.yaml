@@ -1,0 +1,13 @@
+---
+name: duckdb
+replicaCount: 1
+
+deployments:
+  containers:
+    - name: duckdb
+      repository: ghcr.io/kahnwong/duckdb-wasm
+      tag: 51d4de1
+      port: 80
+  service:
+    port: 80
+    nodePort: 30034
