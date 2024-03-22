@@ -64,5 +64,5 @@ resource "cloudflare_record" "google_workspace_smtp" {
   ttl      = 1
   type     = "MX"
   value    = "smtp.google.com"
-  zone_id  = local.cloudflare_zone_id
+  zone_id  = var.cloudflare_zone_id
 }

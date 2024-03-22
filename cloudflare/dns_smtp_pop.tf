@@ -5,7 +5,7 @@ resource "cloudflare_record" "pop_mx_send" {
   ttl      = 1
   type     = "MX"
   value    = data.sops_file.secrets.data["POP_MX_SEND"]
-  zone_id  = local.cloudflare_zone_id
+  zone_id  = var.cloudflare_zone_id
 }
 
 resource "cloudflare_record" "pop_txt_send" {
@@ -14,7 +14,7 @@ resource "cloudflare_record" "pop_txt_send" {
   ttl     = 1
   type    = "TXT"
   value   = data.sops_file.secrets.data["POP_TXT_SEND"]
-  zone_id = local.cloudflare_zone_id
+  zone_id = var.cloudflare_zone_id
 }
 
 resource "cloudflare_record" "pop_txt_key" {
@@ -23,5 +23,5 @@ resource "cloudflare_record" "pop_txt_key" {
   ttl     = 1
   type    = "TXT"
   value   = data.sops_file.secrets.data["POP_TXT_KEY"]
-  zone_id = local.cloudflare_zone_id
+  zone_id = var.cloudflare_zone_id
 }

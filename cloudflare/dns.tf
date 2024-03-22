@@ -52,7 +52,7 @@ resource "cloudflare_record" "selfhosted_dns" {
   ttl      = 1
   type     = "CNAME"
   value    = data.sops_file.secrets.data["DDNS_CNAME"]
-  zone_id  = local.cloudflare_zone_id
+  zone_id  = var.cloudflare_zone_id
 }
 
 resource "cloudflare_record" "vaultwarden" {
@@ -61,7 +61,7 @@ resource "cloudflare_record" "vaultwarden" {
   ttl     = 1
   type    = "A"
   value   = "34.145.66.238"
-  zone_id = local.cloudflare_zone_id
+  zone_id = var.cloudflare_zone_id
 }
 
 resource "cloudflare_record" "www_dummy" { # need for redirection
@@ -70,10 +70,10 @@ resource "cloudflare_record" "www_dummy" { # need for redirection
   ttl     = 1
   type    = "A"
   value   = "192.0.2.1"
-  zone_id = local.cloudflare_zone_id
+  zone_id = var.cloudflare_zone_id
 }
 resource "cloudflare_page_rule" "redirect_www_to_root" {
-  zone_id  = local.cloudflare_zone_id
+  zone_id  = var.cloudflare_zone_id
   target   = "www.karnwong.me/*"
   priority = 1
 
