@@ -1,15 +1,6 @@
 terraform {
   required_version = ">= 1.3.6"
 
-  cloud {
-    organization = "fringe-division"
-    hostname     = "app.terraform.io"
-
-    workspaces {
-      tags = ["kubernetes-snikt"]
-    }
-  }
-
   required_providers {
     helm = {
       source  = "hashicorp/helm"
