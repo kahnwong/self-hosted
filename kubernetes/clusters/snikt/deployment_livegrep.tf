@@ -1,7 +1,7 @@
 resource "helm_release" "ns_livegrep" {
   name       = "livegrep"
   namespace  = "livegrep"
-  repository = "oci://registry-1.docker.io/karnwong"
+  repository = "oci://ghcr.io/kahnwong/charts"
   version    = "0.1.0"
   chart      = "base"
 
