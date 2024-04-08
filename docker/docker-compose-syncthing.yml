@@ -14,6 +14,7 @@ services:
       - /opt/syncthing/config:/config
       - /opt/syncthing/:/data
       - /opt/photoprism/images:/data/photoprism/images
+      - /opt/immich/upload:/data/immich/upload
     ports:
       - 8384:8384
       - 22000:22000
