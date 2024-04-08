@@ -3,7 +3,7 @@ locals {
     "audiobookshelf",
     "jellyfin",
     "navidrome",
-    "photoprism",
+    #     "photoprism",
     "podgrab",
   ])
 }
