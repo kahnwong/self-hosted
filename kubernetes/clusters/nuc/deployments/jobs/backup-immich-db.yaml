@@ -1,0 +1,38 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: backup-immich-db
+  namespace: jobs
+spec:
+  schedule: "2 5 * * *"
+  jobTemplate:
+    metadata:
+      name: backup-immich-db
+    spec:
+      template:
+        spec:
+          containers:
+            - name: backup-immich-db
+              image: ghcr.io/kahnwong/docker-aws-backup:6ac0a75
+              env:
+                - name: MODE
+                  value: DB_POSTGRES
+                - name: SERVICE_NAME
+                  value: immich-db
+                - name: POSTGRES_USERNAME
+                  valueFrom:
+                    secretKeyRef:
+                      name: immich-postgres
+                      key: POSTGRES_USER
+                - name: POSTGRES_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: immich-postgres
+                      key: POSTGRES_PASSWORD
+                - name: POSTGRES_HOSTNAME
+                  value: immich-statefulset.immich.svc.cluster.local
+              envFrom:
+                - secretRef:
+                    name: r2
+          restartPolicy: Never

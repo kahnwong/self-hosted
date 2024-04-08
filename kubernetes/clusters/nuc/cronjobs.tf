@@ -1,5 +1,6 @@
 locals {
   jobs = toset([
+    "backup-immich-db",
     "backup-navidrome",
     "backup-syncthing",
     "backup-transmission",
