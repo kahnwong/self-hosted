@@ -5,6 +5,9 @@ harbor.karnwong.me {
         }
     }
 }
+immich.karnwong.me {
+    reverse_proxy 127.0.0.1:30030
+}
 jellyfin.karnwong.me {
     reverse_proxy 127.0.0.1:30003
 }

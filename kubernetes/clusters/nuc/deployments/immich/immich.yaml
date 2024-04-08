@@ -1,0 +1,80 @@
+---
+name: immich
+replicaCount: 1
+
+statefulSets:
+  containers:
+    - name: postgres
+      repository: tensorchord/pgvecto-rs
+      tag: pg14-v0.2.0
+      port: 5432
+      healthcheck: false
+      envFrom:
+        - secretRef:
+            name: immich-postgres
+      volumeMounts:
+        - name: immich-data
+          mountPath: /var/lib/postgresql/data
+    - name: redis
+      repository: redis
+      tag: 6.2-alpine
+      port: 6379
+      healthcheck: false
+  volumes:
+    - name: immich-data
+      hostPath:
+        path: /opt/immich/db
+  service:
+    ports:
+      - name: postgres
+        port: 5432
+      - name: redis
+        port: 6379
+deployments:
+  containers:
+    - name: immich-machine-learning
+      repository: ghcr.io/immich-app/immich-machine-learning
+      tag: v1.101.0
+      port: 3003  # https://github.com/immich-app/immich/blob/main/machine-learning/app/config.py#L28C17-L28C21
+      envFrom:
+        - secretRef:
+            name: immich
+      volumeMounts:
+        - name: immich-cache
+          mountPath: /cache
+    - name: immich-microservices
+      repository: ghcr.io/immich-app/immich-server
+      tag: v1.101.0
+      port: 3003  # https://github.com/immich-app/immich/blob/main/machine-learning/app/config.py#L28C17-L28C21
+      envFrom:
+        - secretRef:
+            name: immich
+      args:
+        - start.sh
+        - microservices
+      volumeMounts:
+        - name: immich-upload
+          mountPath: /usr/src/app/upload
+    - name: immich-server
+      repository: ghcr.io/immich-app/immich-server
+      tag: v1.101.0
+      port: 3001
+      envFrom:
+        - secretRef:
+            name: immich
+      args:
+        - start.sh
+        - immich
+      volumeMounts:
+        - name: immich-upload
+          mountPath: /usr/src/app/upload
+  volumes:
+    - name: immich-cache
+      hostPath:
+        path: /opt/immich/cache
+    - name: immich-upload
+      hostPath:
+        path: /opt/immich/upload
+  service:
+    port: 3001
+    nodePort: 30030

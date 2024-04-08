@@ -38,3 +38,15 @@ resource "helm_release" "harbor" {
     value = var.registry_password
   }
 }
+
+resource "helm_release" "immich" {
+  name       = "immich"
+  namespace  = "immich"
+  repository = "oci://ghcr.io/kahnwong/charts"
+  version    = "0.1.0"
+  chart      = "base"
+
+  values = [
+    file("./deployments/immich/immich.yaml")
+  ]
+}

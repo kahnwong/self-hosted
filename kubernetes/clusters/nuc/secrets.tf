@@ -5,6 +5,15 @@ locals {
       name      = "photoprism"
       namespace = "default"
     },
+    # ------- immich ------- #
+    {
+      name      = "immich-postgres"
+      namespace = "immich"
+    },
+    {
+      name      = "immich"
+      namespace = "immich"
+    },
     # ------- jobs ------- #
     {
       name      = "r2"

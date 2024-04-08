@@ -23,6 +23,7 @@
 | Name | Type |
 |------|------|
 | [helm_release.harbor](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
+| [helm_release.immich](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [helm_release.ns_default](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [kubernetes_cluster_role.readonly](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/cluster_role) | resource |
 | [kubernetes_cluster_role_binding.readonly](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/cluster_role_binding) | resource |
