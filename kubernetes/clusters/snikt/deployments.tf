@@ -1,7 +1,6 @@
 locals {
   deployments_default = toset([
     "dashy",
-    #    "duckdb",
     "firefly",
     #    "gatus",
     "linkding",
