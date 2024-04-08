@@ -1,6 +1,7 @@
 locals {
   jobs = toset([
     "backup-navidrome",
+    "backup-syncthing",
     "backup-transmission",
   ])
 }
