@@ -15,6 +15,7 @@ locals {
     "secrets",
     "photos",
     "shouldideploytoday",
+    "traggo",
     # excalidraw
     "excalidraw",
     "excalidraw-storage-backend",
