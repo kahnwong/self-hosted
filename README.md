@@ -38,38 +38,13 @@ $ systemctl reload caddy
 $ caddy hash-password --algorithm bcrypt # create password hash
 ```
 
-### db backup & restore
-
-```bash
-# Backup !!!! add -T flag for docker exec if used in crontab !!!
-docker exec CONTAINER /usr/bin/mysqldump -u root --password=root DATABASE > backup.sql
-docker-compose -f /home/pi/self-hosted/docker/wallabag/docker-compose.yml exec db pg_dump -Fc -c -U wallabag > $home_dir"/"$wallabag_sqldump_filename
-
-# Restore
-cat backup.sql | docker exec -i CONTAINER /usr/bin/mysql -u root --password=root DATABASE
-gunzip < all_databases.gz | mysql -u USERNAME -p DATABASE
-
-## pg
-1. cp *.psql to container
-1.5. drop database `DROP DATABASE database_to_drop WITH (FORCE)`
-2. `pg_restore -d wallabag -U wallabag -C -c  wallabagdump.psql`
-```
-
 ## crontab
 
 ```bash
 PATH=/usr/bin
 
-*/1 * * * * "$HOME"/duckdns/duckdns.sh >/dev/null 2>&1
-
-# 0 4 * * * "$HOME"/self-hosted/scripts/daily_container_update.sh > /dev/null 2>&1
-
+*/1 * * * * "$HOME"/ddns/cloudflare.sh >/dev/null 2>&1
 
 PATH=/usr/bin:/home/kahnwong/.nix-profile/bin
-
-0 5 * * * "$HOME"/self-hosted/scripts/daily_cleanup.sh > /dev/null 2>&1
-
-cloudflare_account_id=""
-# AWS_PROFILE="r2"
-0 2 * * * "$HOME"/self-hosted/scripts/backup.sh > /dev/null 2>&1
+0 5 * * * "$HOME"/Git/kahnwong/self-hosted/scripts/daily_cleanup.sh > /dev/null 2>&1
 ```
