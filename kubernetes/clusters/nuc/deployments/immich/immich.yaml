@@ -45,7 +45,7 @@ deployments:
     - name: immich-microservices
       repository: ghcr.io/immich-app/immich-server
       tag: v1.101.0
-      port: 3003  # https://github.com/immich-app/immich/blob/main/machine-learning/app/config.py#L28C17-L28C21
+      port: 3002  # https://github.com/immich-app/immich/blob/9e122764e7e795addd8c6d266806db78dec0b815/server/src/main.ts#L19
       envFrom:
         - secretRef:
             name: immich
