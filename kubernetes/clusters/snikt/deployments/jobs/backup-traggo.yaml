@@ -1,0 +1,35 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: backup-traggo
+  namespace: jobs
+spec:
+  schedule: "1 6 * * *"
+  jobTemplate:
+    metadata:
+      name: backup-traggo
+    spec:
+      template:
+        spec:
+          containers:
+            - name: backup-traggo
+              image: ghcr.io/kahnwong/docker-aws-backup:7da9c32
+              env:
+                - name: MODE
+                  value: ARCHIVE
+                - name: SERVICE_NAME
+                  value: traggo
+                - name: BACKUP_PATH
+                  value: /opt/traggo/data
+              envFrom:
+                - secretRef:
+                    name: r2
+              volumeMounts:
+                - name: traggo
+                  mountPath: /opt/traggo/data
+          restartPolicy: Never
+          volumes:
+            - name: traggo
+              hostPath:
+                path: /opt/traggo/data
