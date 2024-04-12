@@ -14,7 +14,7 @@ spec:
         spec:
           containers:
             - name: backup-ntfy
-              image: ghcr.io/kahnwong/docker-aws-backup:6ac0a75
+              image: ghcr.io/kahnwong/docker-aws-backup:4783b2e
               env:
                 - name: MODE
                   value: ARCHIVE
@@ -24,7 +24,7 @@ spec:
                   value: /opt/ntfy
               envFrom:
                 - secretRef:
-                    name: r2
+                    name: backup
               volumeMounts:
                 - name: ntfy
                   mountPath: /opt/ntfy

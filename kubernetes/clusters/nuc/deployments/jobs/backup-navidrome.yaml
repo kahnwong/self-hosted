@@ -14,7 +14,7 @@ spec:
         spec:
           containers:
             - name: backup-navidrome
-              image: ghcr.io/kahnwong/docker-aws-backup:7da9c32
+              image: ghcr.io/kahnwong/docker-aws-backup:4783b2e
               env:
                 - name: MODE
                   value: ARCHIVE
@@ -22,11 +22,11 @@ spec:
                   value: navidrome
                 - name: BACKUP_PATH
                   value: /opt/navidrome/config
-                - name: BACKUP_PATH_EXCLUDED
+                - name: BACKUP_PATH_EXCLUDE
                   value: /opt/navidrome/config/cache
               envFrom:
                 - secretRef:
-                    name: r2
+                    name: backup
               volumeMounts:
                 - name: navidrome
                   mountPath: /opt/navidrome

@@ -19,7 +19,7 @@ locals {
     },
     # ------- jobs ------- #
     {
-      name      = "r2"
+      name      = "backup"
       namespace = "jobs"
     },
     # ------- jobs-family-alerts ------- #
