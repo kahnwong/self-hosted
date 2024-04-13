@@ -6,7 +6,7 @@ deployments:
   containers:
     - name: sshx
       repository: ghcr.io/kahnwong/sshx
-      tag: 01204f7
+      tag: "7758893"
       port: 8051
   service:
     port: 8051
