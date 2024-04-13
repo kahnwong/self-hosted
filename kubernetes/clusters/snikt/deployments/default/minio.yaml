@@ -14,7 +14,7 @@ deployments:
   containers:
     - name: minio
       repository: quay.io/minio/minio
-      tag: RELEASE.2024-01-18T22-51-28Z
+      tag: RELEASE.2024-04-06T05-26-02Z
       ports:
         - name: api
           containerPort: 9000
