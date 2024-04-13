@@ -19,7 +19,7 @@ spec:
         app.kubernetes.io/name: {{ template "name" . }}
     spec:
       {{ if .Values.initContainers }}
-      initContainers: {{ toYaml .Values.deployments.initContainers | default list | nindent 8 }}
+      initContainers: {{ toYaml .Values.initContainers | default list | nindent 8 }}
       {{ end }}
       containers:
         {{ range .Values.containers }}
