@@ -47,14 +47,3 @@ wallabag.karnwong.me {
         }
     }
 }
-
-# excalidraw
-excalidraw.karnwong.me {
-    reverse_proxy snikt:30102
-}
-excalidraw-storage-backend.karnwong.me {
-    reverse_proxy snikt:30101
-}
-excalidraw-room.karnwong.me {
-    reverse_proxy snikt:30100
-}

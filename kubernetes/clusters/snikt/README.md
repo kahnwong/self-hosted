@@ -23,7 +23,6 @@
 | Name | Type |
 |------|------|
 | [helm_release.ns_default](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
-| [helm_release.ns_excalidraw](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [helm_release.ns_firefly](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [helm_release.ns_forgejo](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [helm_release.ns_livegrep](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |

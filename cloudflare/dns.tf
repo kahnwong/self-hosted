@@ -16,10 +16,6 @@ locals {
     "photos",
     "shouldideploytoday",
     "traggo",
-    # excalidraw
-    "excalidraw",
-    "excalidraw-storage-backend",
-    "excalidraw-room",
   ])
   selfhosted_non_proxied = setunion(toset([
     "git",

@@ -13,12 +13,6 @@ locals {
     "traggo",
   ])
 
-  deployments_excalidraw = toset([
-    "excalidraw-room",
-    "excalidraw-storage-backend",
-    "excalidraw",
-  ])
-
   deployments_firefly = toset([
     "firefly",
     "firefly-postgres",
@@ -56,19 +50,6 @@ resource "helm_release" "ns_default" {
 
   values = [
     file("./deployments/default/${each.key}.yaml")
-  ]
-}
-
-resource "helm_release" "ns_excalidraw" {
-  for_each   = local.deployments_excalidraw
-  name       = each.key
-  namespace  = "excalidraw"
-  repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.2.0"
-  chart      = "base"
-
-  values = [
-    file("./deployments/excalidraw/${each.key}.yaml")
   ]
 }
 
