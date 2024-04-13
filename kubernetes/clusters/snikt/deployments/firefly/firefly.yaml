@@ -1,0 +1,50 @@
+---
+kind: Deployment
+name: firefly
+replicaCount: 1
+
+containers:
+  - name: firefly
+    repository: fireflyiii/core
+    tag: version-6.1.13
+    port: 8080
+    env:
+      - name: DB_CONNECTION
+        value: pgsql
+      - name: DEFAULT_LANGUAGE
+        value: en_US
+      - name: TZ
+        value: Asia/Bangkok
+      - name: DB_HOST
+        value: firefly-postgres.firefly.svc.cluster.local
+      - name: DB_PORT
+        value: "5432"
+      - name: DB_DATABASE
+        value: firefly
+      - name: DB_USERNAME
+        value: firefly
+      - name: DB_PASSWORD
+        value: secret_firefly_password
+      - name: MAIL_MAILER
+        value: smtp
+      - name: MAIL_HOST
+        value: smtp.resend.com
+      - name: MAIL_PORT
+        value: "465"
+      - name: MAIL_ENCRYPTION
+        value: tls
+      - name: TRUSTED_PROXIES
+        value: "*"
+    envFrom:
+      - secretRef:
+          name: firefly
+    volumeMounts:
+      - name: firefly-upload
+        mountPath: /var/www/html/storage/upload
+volumes:
+  - name: firefly-upload
+    hostPath:
+      path: /opt/firefly/upload
+service:
+  port: 8080
+  nodePort: 30032

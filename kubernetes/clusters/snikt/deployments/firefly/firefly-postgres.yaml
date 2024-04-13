@@ -1,0 +1,25 @@
+---
+kind: StatefulSet
+name: firefly-postgres
+replicaCount: 1
+
+containers:
+  - name: postgres
+    repository: postgres
+    tag: 16.2-alpine
+    port: 5432
+    livenessProbeScheme: tcp
+    env:
+      - name: POSTGRES_USER
+        value: firefly
+      - name: POSTGRES_PASSWORD
+        value: secret_firefly_password
+    volumeMounts:
+      - name: firefly-data
+        mountPath: /var/lib/postgresql/data
+service:
+  port: 5432
+volumes:
+  - name: firefly-data
+    hostPath:
+      path: /opt/firefly/db
