@@ -28,7 +28,7 @@ deployments:
   containers:
     - name: firefly
       repository: fireflyiii/core
-      tag: version-6.1.9
+      tag: version-6.1.13
       port: 8080
       env:
         - name: DB_CONNECTION
