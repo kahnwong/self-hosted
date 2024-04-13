@@ -39,7 +39,7 @@ spec:
             ports: {{ .ports | default list | toYaml | nindent 14 }}
             {{ end }}
             livenessProbe:
-              {{ if not (eq .livenessProbe.scheme "tcp")}}
+              {{ if not (eq .livenessProbeScheme "tcp")}}
               httpGet:
                 path: {{ .livenessProbePath | default "/" }}
                 port: {{ .port }}
