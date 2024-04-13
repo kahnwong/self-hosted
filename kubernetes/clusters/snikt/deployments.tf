@@ -5,7 +5,7 @@ locals {
     "linkding",
     "memos",
     #     "miniflux",
-    #     "minio",
+    "minio",
     "ntfy",
     "picoshare",
     "rustpad",

@@ -1,52 +1,52 @@
 ---
+kind: Deployment
 name: minio
 replicaCount: 1
 
-deployments:
-  initContainers:
-    - name: volume-permissions
-      image: busybox
-      command: ["/bin/sh"]
-      args: ["-c", "chown -R root:root /data"]
-      volumeMounts:
-        - name: data
-          mountPath: /data
-  containers:
-    - name: minio
-      repository: quay.io/minio/minio
-      tag: RELEASE.2024-04-06T05-26-02Z
-      ports:
-        - name: api
-          containerPort: 9000
-        - name: console
-          containerPort: 9090
-      healthcheck: false
-      command: ["minio"]
-      args: ["server", "/data", "--address", ":9000", "--console-address", ":9090"]
-      volumeMounts:
-        - name: data
-          mountPath: /data
-      envFrom:
-        - secretRef:
-            name: minio
-      env:
-        - name: MINIO_COMPRESSION_ENABLE
-          value: "on"
-        - name: MINIO_COMPRESSION_EXTENSIONS
-          value: ".txt,.log,.csv,.json,.tar,.xml,.bin"
-        - name: MINIO_COMPRESSION_MIME_TYPES
-          value: "text/*,application/json,application/xml"
-  volumes:
-    - name: data
-      hostPath:
-        path: /opt/minio/data
-  service:
+initContainers:
+  - name: volume-permissions
+    image: busybox
+    command: ["/bin/sh"]
+    args: ["-c", "chown -R root:root /data"]
+    volumeMounts:
+      - name: data
+        mountPath: /data
+containers:
+  - name: minio
+    repository: quay.io/minio/minio
+    tag: RELEASE.2024-04-06T05-26-02Z
     ports:
       - name: api
-        port: 9000
-        targetPort: 9000
-        nodePort: 30020
+        containerPort: 9000
       - name: console
-        port: 9090
-        targetPort: 9090
-        nodePort: 30021
+        containerPort: 9090
+    livenessProbePort: 9090
+    command: ["minio"]
+    args: ["server", "/data", "--address", ":9000", "--console-address", ":9090"]
+    volumeMounts:
+      - name: data
+        mountPath: /data
+    envFrom:
+      - secretRef:
+          name: minio
+    env:
+      - name: MINIO_COMPRESSION_ENABLE
+        value: "on"
+      - name: MINIO_COMPRESSION_EXTENSIONS
+        value: ".txt,.log,.csv,.json,.tar,.xml,.bin"
+      - name: MINIO_COMPRESSION_MIME_TYPES
+        value: "text/*,application/json,application/xml"
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/minio/data
+service:
+  ports:
+    - name: api
+      port: 9000
+      targetPort: 9000
+      nodePort: 30020
+    - name: console
+      port: 9090
+      targetPort: 9090
+      nodePort: 30021
