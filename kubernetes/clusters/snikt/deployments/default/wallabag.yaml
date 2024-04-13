@@ -62,7 +62,7 @@ deployments:
   containers:
     - name: wallabag
       repository: wallabag/wallabag
-      tag: 2.6.7
+      tag: 2.6.9
       port: 80
       env:
         - name: POSTGRES_PASSWORD
