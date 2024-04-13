@@ -1,0 +1,35 @@
+---
+kind: Deployment
+name: miniflux
+replicaCount: 1
+
+containers:
+  - name: miniflux
+    repository: miniflux/miniflux
+    tag: 2.1.2
+    port: 8080
+    env:
+      - name: DATABASE_URL
+        value: postgres://miniflux:secret@miniflux-postgres.miniflux.svc.cluster.local/miniflux?sslmode=disable
+      - name: RUN_MIGRATIONS
+        value: "1"
+      - name: CREATE_ADMIN
+        value: "1"
+      - name: BASE_URL
+        value: https://miniflux.karnwong.me
+      - name: POLLING_FREQUENCY
+        value: "60"
+      - name: BATCH_SIZE
+        value: "300"
+      - name: POLLING_SCHEDULER
+        value: entry_frequency
+      - name: SCHEDULER_ENTRY_FREQUENCY_MIN_INTERVAL
+        value: "5"
+      - name: SCHEDULER_ENTRY_FREQUENCY_MAX_INTERVAL
+        value: "1440" # 24*60
+    envFrom:
+      - secretRef:
+          name: miniflux
+service:
+  port: 8080
+  nodePort: 30007

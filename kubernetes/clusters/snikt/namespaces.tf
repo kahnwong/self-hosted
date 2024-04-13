@@ -7,6 +7,7 @@ locals {
     "jobs",
     "jobs-family-alerts",
     "livegrep",
+    "miniflux",
   ])
 }
 

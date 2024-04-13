@@ -1,0 +1,32 @@
+---
+kind: StatefulSet
+name: miniflux-postgres
+replicaCount: 1
+
+containers:
+  ## init
+  # docker-compose up db
+  # docker-compose up miniflux
+
+  ## restore
+  # start db container first, pg_restore and reset admin password
+  ## pg_restore --user miniflux --dbname miniflux $BACKUP_FILE
+  - name: postgres
+    repository: postgres
+    tag: 16.2-alpine
+    port: 5432
+    livenessProbeScheme: tcp
+    env:
+      - name: POSTGRES_USER
+        value: miniflux
+      - name: POSTGRES_PASSWORD
+        value: secret
+    volumeMounts:
+      - name: miniflux-data
+        mountPath: /var/lib/postgresql/data
+service:
+  port: 5432
+volumes:
+  - name: miniflux-data
+    hostPath:
+      path: /opt/miniflux/db

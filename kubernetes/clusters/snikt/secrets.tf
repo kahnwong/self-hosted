@@ -2,10 +2,6 @@ locals {
   secrets = [
     # ------- default ------- #
     {
-      name      = "miniflux"
-      namespace = "default"
-    },
-    {
       name      = "minio"
       namespace = "default"
     },
@@ -17,6 +13,11 @@ locals {
     {
       name      = "firefly"
       namespace = "firefly"
+    },
+    # ------- miniflux ------- #
+    {
+      name      = "miniflux"
+      namespace = "miniflux"
     },
     # ------- jobs ------- #
     {

@@ -3,7 +3,6 @@ locals {
     "dashy",
     "linkding",
     "memos",
-    #     "miniflux",
     "minio",
     "ntfy",
     "picoshare",
@@ -34,6 +33,11 @@ locals {
   deployments_livegrep = toset([
     "livegrep-backend",
     "livegrep-frontend"
+  ])
+
+  deployments_miniflux = toset([
+    "miniflux",
+    "miniflux-postgres"
   ])
 }
 
@@ -89,8 +93,6 @@ resource "helm_release" "ns_forgejo" {
   ]
 }
 
-
-### livegrep
 resource "helm_release" "ns_livegrep" {
   for_each   = local.deployments_livegrep
   name       = each.key
@@ -105,4 +107,17 @@ resource "helm_release" "ns_livegrep" {
 }
 resource "kubernetes_manifest" "job_livegrep" {
   manifest = yamldecode(file("./deployments/livegrep/livegrep-indexer.yaml"))
+}
+
+resource "helm_release" "ns_miniflux" {
+  for_each   = local.deployments_miniflux
+  name       = each.key
+  namespace  = "miniflux"
+  repository = "oci://ghcr.io/kahnwong/charts"
+  version    = "0.2.0"
+  chart      = "base"
+
+  values = [
+    file("./deployments/miniflux/${each.key}.yaml")
+  ]
 }
