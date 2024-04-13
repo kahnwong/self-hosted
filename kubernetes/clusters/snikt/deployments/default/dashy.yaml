@@ -6,7 +6,7 @@ deployments:
   containers:
     - name: dashy
       repository: lissy93/dashy
-      tag: 2.1.1
+      tag: 2.1.2
       port: 80
       resources:
         limits:
