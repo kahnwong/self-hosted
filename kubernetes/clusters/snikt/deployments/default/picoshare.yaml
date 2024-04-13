@@ -1,26 +1,26 @@
 ---
+kind: Deployment
 name: picoshare
 replicaCount: 1
 
-deployments:
-  containers:
-    - name: picoshare
-      repository: mtlynch/picoshare
-      tag: 1.4.2
-      port: 4001
-      envFrom:
-        - secretRef:
-            name: picoshare
-      volumeMounts:
-        - name: picoshare-data
-          mountPath: /data
-  volumes:
-    - name: picoshare-data
-      hostPath:
-        path: /opt/picoshare/data
-  service:
+containers:
+  - name: picoshare
+    repository: mtlynch/picoshare
+    tag: 1.4.2
     port: 4001
-    nodePort: 30017
+    envFrom:
+      - secretRef:
+          name: picoshare
+    volumeMounts:
+      - name: picoshare-data
+        mountPath: /data
+volumes:
+  - name: picoshare-data
+    hostPath:
+      path: /opt/picoshare/data
+service:
+  port: 4001
+  nodePort: 30017
 
-  # vacuum with
-  # sqlite3 data/store.db "VACUUM"
+# vacuum with
+# sqlite3 data/store.db "VACUUM"

@@ -7,7 +7,7 @@ locals {
     #     "miniflux",
     #     "minio",
     "ntfy",
-    #     "picoshare",
+    "picoshare",
     #     "rustpad",
     #     "shouldideploytoday",
     #     "sshx",
