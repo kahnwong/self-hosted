@@ -42,7 +42,11 @@ spec:
               {{ if not (eq .livenessProbeScheme "tcp")}}
               httpGet:
                 path: {{ .livenessProbePath | default "/" }}
+                {{ if .healthcheckPort }}
+                port: {{ .healthcheckPort }}
+                {{ else }}
                 port: {{ .port }}
+                {{ end }}
                 scheme: HTTP
               {{ else }}
               tcpSocket:
