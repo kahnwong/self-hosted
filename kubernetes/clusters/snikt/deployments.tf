@@ -12,7 +12,7 @@ locals {
     "shouldideploytoday",
     "sshx",
     #     "supersecretmessage",
-    #     "traggo",
+    "traggo",
     #     "wallabag",
   ])
 

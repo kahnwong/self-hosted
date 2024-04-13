@@ -1,23 +1,23 @@
 ---
+kind: Deployment
 name: traggo
 replicaCount: 1
 
-deployments:
-  containers:
-    - name: traggo
-      repository: traggo/server
-      tag: latest
-      port: 3030
-      env:
-        - name: TRAGGO_PORT
-          value: "3030"
-      volumeMounts:
-        - name: traggo-data
-          mountPath: /opt/traggo/data
-  volumes:
-    - name: traggo-data
-      hostPath:
-        path: /opt/traggo/data
-  service:
+containers:
+  - name: traggo
+    repository: traggo/server
+    tag: latest
     port: 3030
-    nodePort: 30034
+    env:
+      - name: TRAGGO_PORT
+        value: "3030"
+    volumeMounts:
+      - name: traggo-data
+        mountPath: /opt/traggo/data
+volumes:
+  - name: traggo-data
+    hostPath:
+      path: /opt/traggo/data
+service:
+  port: 3030
+  nodePort: 30034
