@@ -1,19 +1,19 @@
 locals {
   deployments_default = toset([
     "dashy",
-    "firefly",
-    "linkding",
-    "memos",
-    "miniflux",
-    "minio",
-    "ntfy",
-    "picoshare",
-    "rustpad",
-    "shouldideploytoday",
-    "sshx",
-    "supersecretmessage",
-    "traggo",
-    "wallabag",
+    #     "firefly",
+    #     "linkding",
+    #     "memos",
+    #     "miniflux",
+    #     "minio",
+    #     "ntfy",
+    #     "picoshare",
+    #     "rustpad",
+    #     "shouldideploytoday",
+    #     "sshx",
+    #     "supersecretmessage",
+    #     "traggo",
+    #     "wallabag",
   ])
 
   deployments_excalidraw = toset([
@@ -38,7 +38,7 @@ resource "helm_release" "ns_default" {
   name       = each.key
   namespace  = "default"
   repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.1.0"
+  version    = "0.2.0"
   chart      = "base"
 
   values = [
