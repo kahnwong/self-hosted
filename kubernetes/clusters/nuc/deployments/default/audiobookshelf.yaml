@@ -1,30 +1,30 @@
 ---
+kind: Deployment
 name: audiobookshelf
 replicaCount: 1
 
-deployments:
-  containers:
-    - name: audiobookshelf
-      repository: ghcr.io/advplyr/audiobookshelf
-      tag: latest # change me
-      port: 80
-      volumeMounts:
-        - name: audiobookshelf-config
-          mountPath: /config
-        - name: audiobookshelf-metadata
-          mountPath: /metadata
-        - name: audiobooks
-          mountPath: /audiobooks
-  volumes:
-    - name: audiobookshelf-config
-      hostPath:
-        path: /opt/audiobookshelf/config
-    - name: audiobookshelf-metadata
-      hostPath:
-        path: /opt/audiobookshelf/metadata
-    - name: audiobooks
-      hostPath:
-        path: /opt/syncthing/audiobooks
-  service:
+containers:
+  - name: audiobookshelf
+    repository: ghcr.io/advplyr/audiobookshelf
+    tag: latest # change me
     port: 80
-    nodePort: 30027
+    volumeMounts:
+      - name: audiobookshelf-config
+        mountPath: /config
+      - name: audiobookshelf-metadata
+        mountPath: /metadata
+      - name: audiobooks
+        mountPath: /audiobooks
+volumes:
+  - name: audiobookshelf-config
+    hostPath:
+      path: /opt/audiobookshelf/config
+  - name: audiobookshelf-metadata
+    hostPath:
+      path: /opt/audiobookshelf/metadata
+  - name: audiobooks
+    hostPath:
+      path: /opt/syncthing/audiobooks
+service:
+  port: 80
+  nodePort: 30027
