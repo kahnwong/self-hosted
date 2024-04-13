@@ -10,7 +10,7 @@ locals {
     "picoshare",
     "rustpad",
     "shouldideploytoday",
-    #     "sshx",
+    "sshx",
     #     "supersecretmessage",
     #     "traggo",
     #     "wallabag",

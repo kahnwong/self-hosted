@@ -1,13 +1,13 @@
 ---
+kind: Deployment
 name: sshx
 replicaCount: 1
 
-deployments:
-  containers:
-    - name: sshx
-      repository: ghcr.io/kahnwong/sshx
-      tag: "7758893"
-      port: 8051
-  service:
+containers:
+  - name: sshx
+    repository: ghcr.io/kahnwong/sshx
+    tag: "7758893"
     port: 8051
-    nodePort: 30028
+service:
+  port: 8051
+  nodePort: 30028
