@@ -6,7 +6,7 @@ locals {
     "memos",
     #     "miniflux",
     #     "minio",
-    #     "ntfy",
+    "ntfy",
     #     "picoshare",
     #     "rustpad",
     #     "shouldideploytoday",
