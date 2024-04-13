@@ -1,0 +1,27 @@
+---
+kind: StatefulSet
+name: forgejo-postgres
+replicaCount: 1
+
+containers:
+  - name: postgres
+    repository: postgres
+    tag: 16.2-alpine
+    port: 5432
+    livenessProbeScheme: tcp
+    env:
+      - name: POSTGRES_USER
+        value: forgejo
+      - name: POSTGRES_PASSWORD
+        value: forgejopassword
+      - name: POSTGRES_DB
+        value: forgejo
+    volumeMounts:
+      - name: forgejo-db
+        mountPath: /var/lib/postgresql/data
+volumes:
+  - name: forgejo-db
+    hostPath:
+      path: /opt/forgejo/db
+service:
+  port: 5432
