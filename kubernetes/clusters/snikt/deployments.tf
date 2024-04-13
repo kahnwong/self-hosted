@@ -8,7 +8,7 @@ locals {
     #     "minio",
     "ntfy",
     "picoshare",
-    #     "rustpad",
+    "rustpad",
     #     "shouldideploytoday",
     #     "sshx",
     #     "supersecretmessage",

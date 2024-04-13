@@ -1,13 +1,13 @@
 ---
+kind: Deployment
 name: rustpad
 replicaCount: 1
 
-deployments:
-  containers:
-    - name: rustpad
-      repository: ekzhang/rustpad
-      tag: latest
-      port: 3030
-  service:
+containers:
+  - name: rustpad
+    repository: ekzhang/rustpad
+    tag: latest
     port: 3030
-    nodePort: 30019
+service:
+  port: 3030
+  nodePort: 30019
