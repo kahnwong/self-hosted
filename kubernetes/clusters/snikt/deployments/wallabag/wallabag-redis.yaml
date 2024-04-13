@@ -1,0 +1,16 @@
+---
+kind: StatefulSet
+name: wallabag-redis
+replicaCount: 1
+
+containers:
+  - name: redis
+    repository: redis
+    tag: 6.0.9-alpine
+    port: 6379
+    livenessProbeScheme: tcp
+    env:
+      - name: REDIS_HOST_PASSWORD
+        value: redispwd
+service:
+  port: 6379

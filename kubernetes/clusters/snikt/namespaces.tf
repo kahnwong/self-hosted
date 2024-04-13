@@ -8,6 +8,7 @@ locals {
     "jobs-family-alerts",
     "livegrep",
     "miniflux",
+    "wallabag",
   ])
 }
 

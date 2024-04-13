@@ -11,7 +11,6 @@ locals {
     "sshx",
     #     "supersecretmessage",
     "traggo",
-    #     "wallabag",
   ])
 
   deployments_excalidraw = toset([
@@ -38,6 +37,12 @@ locals {
   deployments_miniflux = toset([
     "miniflux",
     "miniflux-postgres"
+  ])
+
+  deployments_wallabag = toset([
+    "wallabag",
+    "wallabag-postgres",
+    "wallabag-redis",
   ])
 }
 
@@ -119,5 +124,18 @@ resource "helm_release" "ns_miniflux" {
 
   values = [
     file("./deployments/miniflux/${each.key}.yaml")
+  ]
+}
+
+resource "helm_release" "ns_wallabag" {
+  for_each   = local.deployments_wallabag
+  name       = each.key
+  namespace  = "wallabag"
+  repository = "oci://ghcr.io/kahnwong/charts"
+  version    = "0.2.0"
+  chart      = "base"
+
+  values = [
+    file("./deployments/wallabag/${each.key}.yaml")
   ]
 }

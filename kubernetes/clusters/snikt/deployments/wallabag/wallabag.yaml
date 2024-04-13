@@ -1,0 +1,53 @@
+---
+kind: Deployment
+name: wallabag
+replicaCount: 1
+
+containers:
+  - name: wallabag
+    repository: wallabag/wallabag
+    tag: 2.6.9
+    port: 80
+    env:
+      - name: POSTGRES_PASSWORD
+        value: my-secret-pw
+      - name: POSTGRES_USER
+        value: my-super-user
+      - name: SYMFONY__ENV__SECRET
+        value: F00B4R
+      - name: SYMFONY__ENV__DATABASE_DRIVER
+        value: pdo_pgsql
+      - name: SYMFONY__ENV__DATABASE_DRIVER_CLASS
+        value: Wallabag\CoreBundle\Doctrine\DBAL\Driver\CustomPostgreSQLDriver
+      - name: SYMFONY__ENV__DATABASE_HOST
+        value: wallabag-postgres.wallabag.svc.cluster.local
+      - name: SYMFONY__ENV__DATABASE_PORT
+        value: "5432"
+      - name: SYMFONY__ENV__DATABASE_NAME
+        value: wallabag
+      - name: SYMFONY__ENV__DATABASE_USER
+        value: wallabag
+      - name: SYMFONY__ENV__DATABASE_PASSWORD
+        value: wallapass
+      - name: SYMFONY__ENV__REDIS_HOST
+        value: wallabag-redis.wallabag.svc.cluster.local
+      - name: SYMFONY__ENV__REDIS_PASSWORD
+        value: redispwd
+      - name: SYMFONY__ENV__DOMAIN_NAME
+        value: https://wallabag.karnwong.me/
+    volumeMounts:
+      - name: wallabag-images
+        mountPath: /var/www/wallabag/web/assets/images
+      - name: wallabag-site-config
+        mountPath: /var/www/wallabag/vendor/j0k3r/graby-site-config
+        readOnly: true
+volumes:
+  - name: wallabag-images
+    hostPath:
+      path: /opt/wallabag/images
+  - name: wallabag-site-config
+    hostPath:
+      path: /opt/wallabag/graby-site-config
+service:
+  port: 80
+  nodePort: 30009
