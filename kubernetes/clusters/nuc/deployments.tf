@@ -1,7 +1,7 @@
 locals {
   deployments_default = toset([
     #     "audiobookshelf",
-    #     "jellyfin",
+    "jellyfin",
     "navidrome",
     "podgrab",
   ])
