@@ -38,9 +38,8 @@ spec:
             {{ if .ports }}
             ports: {{ .ports | default list | toYaml | nindent 14 }}
             {{ end }}
-            {{ if not (eq .healthcheck false)}}
             livenessProbe:
-              {{ if not (eq .scheme "tcp")}}
+              {{ if not (eq .livenessProbe.scheme "tcp")}}
               httpGet:
                 path: {{ .livenessProbePath | default "/" }}
                 port: {{ .port }}
@@ -49,7 +48,6 @@ spec:
               tcpSocket:
                 port: {{ .port }}
               {{ end }}
-            {{ end }}
             securityContext: {{ toYaml .securityContext | default list | nindent 14 }}
             args: {{ .args | default list | toYaml | nindent 14 }}
             env: {{ .env | default list | toYaml | nindent 14 }}
