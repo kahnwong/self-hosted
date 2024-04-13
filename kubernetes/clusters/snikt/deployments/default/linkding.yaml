@@ -1,22 +1,22 @@
 ---
+kind: Deployment
 name: linkding
 replicaCount: 1
 
-deployments:
-  containers:
-    ## admin user setup
-    # docker exec -it linkding python manage.py createsuperuser --username=joe --email=joe@example.com
-    - name: linkding
-      repository: sissbruecker/linkding
-      tag: 1.28.0
-      port: 9090
-      volumeMounts:
-        - name: linkding-data
-          mountPath: /etc/linkding/data
-  volumes:
-    - name: linkding-data
-      hostPath:
-        path: /opt/linkding/data
-  service:
+containers:
+  ## admin user setup
+  # docker exec -it linkding python manage.py createsuperuser --username=joe --email=joe@example.com
+  - name: linkding
+    repository: sissbruecker/linkding
+    tag: 1.28.0
     port: 9090
-    nodePort: 30005
+    volumeMounts:
+      - name: linkding-data
+        mountPath: /etc/linkding/data
+volumes:
+  - name: linkding-data
+    hostPath:
+      path: /opt/linkding/data
+service:
+  port: 9090
+  nodePort: 30005
