@@ -1,11 +1,11 @@
 locals {
   namespaces = toset([
     "default",
-    "forgejo",
     "excalidraw",
-    "livegrep",
+    "forgejo",
     "jobs",
-    "jobs-family-alerts"
+    "jobs-family-alerts",
+    "livegrep",
   ])
 }
 
