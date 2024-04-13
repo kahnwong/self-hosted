@@ -3,7 +3,7 @@ locals {
     "dashy",
     #     "firefly",
     "linkding",
-    #     "memos",
+    "memos",
     #     "miniflux",
     #     "minio",
     #     "ntfy",

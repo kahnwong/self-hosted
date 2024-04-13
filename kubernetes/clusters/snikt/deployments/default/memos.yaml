@@ -1,24 +1,24 @@
 ---
+kind: Deployment
 name: memos
 replicaCount: 1
 
-deployments:
-  containers:
-    - name: memos
-      repository: neosmemo/memos
-      tag: "0.21.0"
-      port: 5230
-      env:
-        # https://github.com/usememos/memos/issues/1782
-        - name: MEMOS_PORT
-          value: "5230"
-      volumeMounts:
-        - name: memos-data
-          mountPath: /var/opt/memos
-  volumes:
-    - name: memos-data
-      hostPath:
-        path: /opt/memos/data
-  service:
+containers:
+  - name: memos
+    repository: neosmemo/memos
+    tag: "0.21.0"
     port: 5230
-    nodePort: 30031
+    env:
+      # https://github.com/usememos/memos/issues/1782
+      - name: MEMOS_PORT
+        value: "5230"
+    volumeMounts:
+      - name: memos-data
+        mountPath: /var/opt/memos
+volumes:
+  - name: memos-data
+    hostPath:
+      path: /opt/memos/data
+service:
+  port: 5230
+  nodePort: 30031
