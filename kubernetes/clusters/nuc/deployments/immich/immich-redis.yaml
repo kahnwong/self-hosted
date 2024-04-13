@@ -1,0 +1,13 @@
+---
+kind: StatefulSet
+name: immich-redis
+replicaCount: 1
+
+containers:
+  - name: redis
+    repository: redis
+    tag: 6.2-alpine
+    port: 6379
+    livenessProbeScheme: tcp
+service:
+  port: 6379

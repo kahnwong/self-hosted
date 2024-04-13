@@ -1,0 +1,23 @@
+---
+kind: StatefulSet
+name: immich-postgres
+replicaCount: 1
+
+containers:
+  - name: postgres
+    repository: tensorchord/pgvecto-rs
+    tag: pg14-v0.2.0
+    port: 5432
+    livenessProbeScheme: tcp
+    envFrom:
+      - secretRef:
+          name: immich-postgres
+    volumeMounts:
+      - name: immich-data
+        mountPath: /var/lib/postgresql/data
+volumes:
+  - name: immich-data
+    hostPath:
+      path: /opt/immich/db
+service:
+  port: 5432

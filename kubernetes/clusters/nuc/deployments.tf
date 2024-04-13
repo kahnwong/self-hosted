@@ -5,6 +5,13 @@ locals {
     "navidrome",
     "podgrab",
   ])
+
+  deployments_immich = toset([
+    "immich",
+    "immich-machine-learning",
+    "immich-postgres",
+    "immich-redis",
+  ])
 }
 
 resource "helm_release" "ns_default" {
@@ -38,13 +45,14 @@ resource "helm_release" "harbor" {
 }
 
 resource "helm_release" "immich" {
-  name       = "immich"
+  for_each   = local.deployments_immich
+  name       = each.key
   namespace  = "immich"
   repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.1.0"
+  version    = "0.2.0"
   chart      = "base"
 
   values = [
-    file("./deployments/immich/immich.yaml")
+    file("./deployments/immich/${each.value}.yaml")
   ]
 }
