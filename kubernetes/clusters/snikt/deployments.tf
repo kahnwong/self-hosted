@@ -2,7 +2,6 @@ locals {
   deployments_default = toset([
     "dashy",
     "firefly",
-    #    "gatus",
     "linkding",
     "memos",
     "miniflux",
