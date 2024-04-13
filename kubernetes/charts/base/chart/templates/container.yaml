@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: {{ .Values.kind }} # Deployment or StatefulSet
 metadata:
   name: {{ template "name" . }}
   labels:
@@ -18,11 +18,11 @@ spec:
         app.kubernetes.io/instance: {{ template "name" . }}
         app.kubernetes.io/name: {{ template "name" . }}
     spec:
-      {{ if .Values.deployments.initContainers }}
+      {{ if .Values.initContainers }}
       initContainers: {{ toYaml .Values.deployments.initContainers | default list | nindent 8 }}
       {{ end }}
       containers:
-        {{ range .Values.deployments.containers }}
+        {{ range .Values.containers }}
           - name:  {{ .name }}
             image: "{{ .repository }}:{{ .tag }}"
             {{ if .command }}
@@ -40,10 +40,15 @@ spec:
             {{ end }}
             {{ if not (eq .healthcheck false)}}
             livenessProbe:
+              {{ if not (eq .scheme "tcp")}}
               httpGet:
                 path: {{ .livenessProbePath | default "/" }}
                 port: {{ .port }}
                 scheme: HTTP
+              {{ else }}
+              tcpSocket:
+                port: {{ .port }}
+              {{ end }}
             {{ end }}
             securityContext: {{ toYaml .securityContext | default list | nindent 14 }}
             args: {{ .args | default list | toYaml | nindent 14 }}
@@ -53,4 +58,4 @@ spec:
             volumeMounts: {{ toYaml .volumeMounts | default list | nindent 14 }}
         {{ end }}
       imagePullSecrets: {{ toYaml .Values.imagePullSecrets | default list | nindent 8 }}
-      volumes: {{ toYaml .Values.deployments.volumes | default list | nindent 8 }}
+      volumes: {{ toYaml .Values.volumes | default list | nindent 8 }}

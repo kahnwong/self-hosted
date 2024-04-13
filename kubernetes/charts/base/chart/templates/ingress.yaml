@@ -1,5 +1,5 @@
 ---
-{{ if .Values.deployments.ingress }}
+{{ if .Values.ingress }}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -11,10 +11,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - {{ .Values.deployments.ingress.host }}
+    - {{ .Values.ingress.host }}
     secretName: {{ template "name" . }}-tls
   rules:
-    - host: {{ .Values.deployments.ingress.host }}
+    - host: {{ .Values.ingress.host }}
       http:
         paths:
           - path: /
@@ -23,5 +23,5 @@ spec:
               service:
                 name: {{ template "name" . }}
                 port:
-                  number: {{ .Values.deployments.service.port }}
+                  number: {{ .Values.service.port }}
 {{ end }}
