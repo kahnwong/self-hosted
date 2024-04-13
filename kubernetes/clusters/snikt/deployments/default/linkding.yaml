@@ -8,7 +8,7 @@ deployments:
     # docker exec -it linkding python manage.py createsuperuser --username=joe --email=joe@example.com
     - name: linkding
       repository: sissbruecker/linkding
-      tag: 1.27.1
+      tag: 1.28.0
       port: 9090
       volumeMounts:
         - name: linkding-data
