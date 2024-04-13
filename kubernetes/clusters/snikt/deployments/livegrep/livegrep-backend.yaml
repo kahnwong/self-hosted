@@ -1,0 +1,22 @@
+---
+kind: Deployment
+name: livegrep-backend
+replicaCount: 1
+
+containers:
+  - name: backend
+    repository: ghcr.io/livegrep/livegrep/base
+    tag: 033fa0e93c
+    port: 9999
+    livenessProbeScheme: tcp
+    command: ["/livegrep/bin/codesearch"]
+    args: ["-load_index=/data/livegrep.idx", "-grpc=0.0.0.0:9999"]
+    volumeMounts:
+      - name: data
+        mountPath: /data
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/livegrep
+service:
+  port: 9999

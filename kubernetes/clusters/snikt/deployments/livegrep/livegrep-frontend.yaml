@@ -1,0 +1,15 @@
+---
+kind: Deployment
+name: livegrep-frontend
+replicaCount: 1
+
+containers:
+  - name: frontend
+    repository: ghcr.io/livegrep/livegrep/base
+    tag: 033fa0e93c
+    port: 8910
+    command: ["/livegrep/bin/livegrep"]
+    args: ["-docroot=/livegrep/web", "-listen=0.0.0.0:8910", "--connect=livegrep-backend.livegrep.svc.cluster.local:9999"]
+service:
+  port: 8910
+  nodePort: 30033
