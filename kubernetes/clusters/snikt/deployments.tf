@@ -52,7 +52,7 @@ resource "helm_release" "ns_excalidraw" {
   name       = each.key
   namespace  = "excalidraw"
   repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.1.0"
+  version    = "0.2.0"
   chart      = "base"
 
   values = [
