@@ -8,10 +8,9 @@ locals {
 }
 
 resource "helm_release" "ns_default" {
-  for_each  = local.deployments_default
-  name      = each.key
-  namespace = "default"
-  #  repository = "oci://harbor.karnwong.me/charts"
+  for_each   = local.deployments_default
+  name       = each.key
+  namespace  = "default"
   repository = "oci://ghcr.io/kahnwong/charts"
   version    = "0.1.0"
   chart      = "base"
@@ -25,7 +24,7 @@ resource "helm_release" "harbor" {
   name       = "harbor"
   namespace  = "harbor"
   repository = "oci://registry-1.docker.io/bitnamicharts"
-  version    = "19.2.1"
+  version    = "21.1.1"
   chart      = "harbor"
 
   values = [
