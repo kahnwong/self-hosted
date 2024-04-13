@@ -1,13 +1,13 @@
 ---
+kind: Deployment
 name: shouldideploytoday
 replicaCount: 1
 
-deployments:
-  containers:
-    - name: shouldideploytoday
-      repository: ghcr.io/kahnwong/shouldideploy
-      tag: e6766dd
-      port: 3000
-  service:
+containers:
+  - name: shouldideploytoday
+    repository: ghcr.io/kahnwong/shouldideploy
+    tag: e6766dd
     port: 3000
-    nodePort: 30040
+service:
+  port: 3000
+  nodePort: 30040

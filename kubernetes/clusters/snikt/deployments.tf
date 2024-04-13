@@ -9,7 +9,7 @@ locals {
     "ntfy",
     "picoshare",
     "rustpad",
-    #     "shouldideploytoday",
+    "shouldideploytoday",
     #     "sshx",
     #     "supersecretmessage",
     #     "traggo",
