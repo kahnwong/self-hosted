@@ -1,7 +1,6 @@
 locals {
   namespaces = toset([
     "default",
-    "excalidraw",
     "firefly",
     "forgejo",
     "jobs",
