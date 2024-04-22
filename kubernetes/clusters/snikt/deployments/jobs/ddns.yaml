@@ -1,0 +1,27 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: ddns
+  namespace: jobs
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    metadata:
+      name: ddns
+    spec:
+      template:
+        spec:
+          containers:
+            - name: ddns
+              image: curlimages/curl
+              command: ["/bin/sh"]
+              args: ["/opt/ddns/cloudflare.sh"]
+              volumeMounts:
+                - name: ddns
+                  mountPath: /opt/ddns
+          restartPolicy: Never
+          volumes:
+            - name: ddns
+              hostPath:
+                path: /opt/ddns

@@ -9,6 +9,7 @@ locals {
     "backup-traggo",
     "backup-wallabag-content",
     "backup-wallabag-db",
+    "ddns",
     "email-to-epub",
   ])
 
