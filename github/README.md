@@ -22,7 +22,6 @@
 |------|------|
 | [github_actions_secret.cloudflare_pages](https://registry.terraform.io/providers/integrations/github/6.2.1/docs/resources/actions_secret) | resource |
 | [github_actions_secret.docs_algolia](https://registry.terraform.io/providers/integrations/github/6.2.1/docs/resources/actions_secret) | resource |
-| [github_actions_secret.pgconn](https://registry.terraform.io/providers/integrations/github/6.2.1/docs/resources/actions_secret) | resource |
 | [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.0.0/docs/data-sources/file) | data source |
 
 ## Inputs
