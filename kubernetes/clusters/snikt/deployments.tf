@@ -9,7 +9,6 @@ locals {
     "rustpad",
     "shouldideploytoday",
     "sshx",
-    #     "supersecretmessage",
     "traggo",
   ])
 
@@ -31,6 +30,11 @@ locals {
   deployments_miniflux = toset([
     "miniflux",
     "miniflux-postgres"
+  ])
+
+  deployments_supersecretmessage = toset([
+    "supersecretmessage",
+    "supersecretmessage-vault",
   ])
 
   deployments_wallabag = toset([
@@ -105,6 +109,19 @@ resource "helm_release" "ns_miniflux" {
 
   values = [
     file("./deployments/miniflux/${each.key}.yaml")
+  ]
+}
+
+resource "helm_release" "ns_supersecretmessage" {
+  for_each   = local.deployments_supersecretmessage
+  name       = each.key
+  namespace  = "supersecretmessage"
+  repository = "oci://ghcr.io/kahnwong/charts"
+  version    = "0.2.0"
+  chart      = "base"
+
+  values = [
+    file("./deployments/supersecretmessage/${each.key}.yaml")
   ]
 }
 

@@ -3,10 +3,11 @@ locals {
     "default",
     "firefly",
     "forgejo",
-    "jobs",
     "jobs-family-alerts",
+    "jobs",
     "livegrep",
     "miniflux",
+    "supersecretmessage",
     "wallabag",
   ])
 }
