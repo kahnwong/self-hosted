@@ -2,6 +2,7 @@ data "sops_file" "secrets" {
   source_file = "secrets.sops.yaml"
 }
 
+# cloudflare pages
 locals {
   cloudflare_pages_repos = toset([
     "calculator",
@@ -12,6 +13,15 @@ locals {
     "retriever",
     "slc",
   ])
+
+  docs_algolia_secrets = tomap({
+    ALGOLIA_APPLICATION_ID = sensitive(data.sops_file.secrets.data["repos.docs.ALGOLIA_APPLICATION_ID"])
+    ALGOLIA_API_KEY        = sensitive(data.sops_file.secrets.data["repos.docs.ALGOLIA_API_KEY"])
+  })
+}
+
+
+locals {
   cloudflare_secrets = tomap({
     CLOUDFLARE_ACCOUNT_ID = sensitive(data.sops_file.secrets.data["global.cloudflare.CLOUDFLARE_ACCOUNT_ID"])
     CLOUDFLARE_API_TOKEN  = sensitive(data.sops_file.secrets.data["global.cloudflare.CLOUDFLARE_API_TOKEN"])
@@ -36,12 +46,7 @@ resource "github_actions_secret" "cloudflare_pages" {
   plaintext_value = each.value.secret_value
 }
 
-locals {
-  docs_algolia_secrets = tomap({
-    ALGOLIA_APPLICATION_ID = sensitive(data.sops_file.secrets.data["repos.docs.ALGOLIA_APPLICATION_ID"])
-    ALGOLIA_API_KEY        = sensitive(data.sops_file.secrets.data["repos.docs.ALGOLIA_API_KEY"])
-  })
-}
+
 resource "github_actions_secret" "docs_algolia" {
   for_each = local.docs_algolia_secrets
 
