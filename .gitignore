@@ -33,3 +33,4 @@ all.Caddyfile
 **/terraform.tfstate*
 **/.infracost
 **/terraform.tfvars
+dns_private.tf
