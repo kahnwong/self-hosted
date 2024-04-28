@@ -10,7 +10,7 @@ locals {
     "immich",
     "immich-machine-learning",
     "immich-postgres",
-    "immich-redis",
+    "immich-valkey",
   ])
 }
 
