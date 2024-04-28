@@ -5,7 +5,7 @@ metadata:
   name: backup-immich-db
   namespace: jobs
 spec:
-  schedule: "15 0 * * *"
+  schedule: "30 0 * * *"
   jobTemplate:
     metadata:
       name: backup-immich-db
