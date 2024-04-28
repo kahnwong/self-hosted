@@ -6,7 +6,7 @@ replicaCount: 1
 containers:
   - name: firefly
     repository: fireflyiii/core
-    tag: version-6.1.13
+    tag: version-6.1.15
     port: 8080
     env:
       - name: DB_CONNECTION
