@@ -1,0 +1,20 @@
+---
+kind: Deployment
+name: actual
+replicaCount: 1
+
+containers:
+  - name: actual
+    repository: actualbudget/actual-server
+    tag: "latest"
+    port: 5006
+    volumeMounts:
+      - name: actual-data
+        mountPath: /data
+volumes:
+  - name: actual-data
+    hostPath:
+      path: /opt/actual/data
+service:
+  port: 5006
+  nodePort: 30042

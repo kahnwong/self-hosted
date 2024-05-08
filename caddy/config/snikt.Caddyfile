@@ -1,6 +1,9 @@
 # duckdb.karnwong.me {
 #     reverse_proxy snikt:30034
 # }
+actual.karnwong.me {
+    reverse_proxy snikt:30042
+}
 firefly.karnwong.me {
     reverse_proxy snikt:30032
 }
