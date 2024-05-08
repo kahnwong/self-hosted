@@ -1,0 +1,28 @@
+---
+kind: Deployment
+name: kanboard
+replicaCount: 1
+
+containers:
+  - name: kanboard
+    repository: kanboard/kanboard
+    tag: "latest"
+    port: 80
+    env:
+      - name: PLUGIN_INSTALLER
+        value: "true"
+    volumeMounts:
+      - name: kanboard-data
+        mountPath: /var/www/app/data
+      - name: kanboard-plugins
+        mountPath: /var/www/app/plugins
+volumes:
+  - name: kanboard-data
+    hostPath:
+      path: /opt/kanboard/data
+  - name: kanboard-plugins
+    hostPath:
+      path: /opt/kanboard/plugins
+service:
+  port: 80
+  nodePort: 30041

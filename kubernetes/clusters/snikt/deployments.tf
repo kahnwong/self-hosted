@@ -1,6 +1,7 @@
 locals {
   deployments_default = toset([
     "dashy",
+    "kanboard",
     "linkding",
     "memos",
     "minio",
