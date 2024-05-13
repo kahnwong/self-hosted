@@ -10,6 +10,9 @@ firefly.karnwong.me {
 git.karnwong.me {
     reverse_proxy snikt:30026
 }
+kanboard.karnwong.me {
+    reverse_proxy snikt:30041
+}
 linkding.karnwong.me {
     reverse_proxy snikt:30005
 }
