@@ -1,28 +1,28 @@
 harbor.karnwong.me {
-    reverse_proxy 127.0.0.1:30501 {
+    reverse_proxy 192.168.1.36:30501 {
         transport http {
             tls_insecure_skip_verify
         }
     }
 }
 immich.karnwong.me {
-    reverse_proxy 127.0.0.1:30030
+    reverse_proxy 192.168.1.36:30030
 }
 jellyfin.karnwong.me {
-    reverse_proxy 127.0.0.1:30003
+    reverse_proxy 192.168.1.36:30003
 }
 music.karnwong.me {
-    reverse_proxy 127.0.0.1:30006
+    reverse_proxy 192.168.1.36:30006
 }
 photos.karnwong.me {
-    reverse_proxy 127.0.0.1:30008
+    reverse_proxy 192.168.1.36:30008
 }
 podgrab.karnwong.me {
     basicauth * {
         podgrab $2a$14$s1l.L4xhGyEwCjt/MhP4dO0v3YF1g1zwE0KjkYSVFRAeETBNGDeyG
     }
-    reverse_proxy 127.0.0.1:30004
+    reverse_proxy 192.168.1.36:30004
 }
 syncthing.karnwong.me {
-    reverse_proxy 127.0.0.1:8384
+    reverse_proxy 192.168.1.36:8384
 }
