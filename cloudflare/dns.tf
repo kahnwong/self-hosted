@@ -60,7 +60,7 @@ resource "cloudflare_record" "vaultwarden" {
   proxied = true
   ttl     = 1
   type    = "A"
-  value   = "34.145.66.238"
+  value   = "35.212.236.89"
   zone_id = var.cloudflare_zone_id
 }
 
