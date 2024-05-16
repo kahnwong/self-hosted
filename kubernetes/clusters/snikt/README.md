@@ -1,5 +1,11 @@
 # snikt
 
+## Run this by hand
+
+```bash
+kubectl taint nodes bamf storage=true:NoSchedule
+```
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 

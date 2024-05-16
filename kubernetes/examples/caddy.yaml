@@ -15,9 +15,18 @@ containers:
       requests:
         cpu: "0.25"
         memory: 64Mi
+#tolerations:
+#  - key: "storage"
+#    operator: "Equal"
+#    value: "true"
+#    effect: "NoSchedule"
+#nodeSelector:
+#  kubernetes.io/hostname: "bamf"
 service:
   port: 80
   nodePort: 30049
 
 #ingress:
 #  host: foo.example.com
+
+#helm template caddy ../charts/base/chart --values caddy.yaml

@@ -61,3 +61,7 @@ spec:
         {{ end }}
       imagePullSecrets: {{ toYaml .Values.imagePullSecrets | default list | nindent 8 }}
       volumes: {{ toYaml .Values.volumes | default list | nindent 8 }}
+      tolerations: {{ toYaml .Values.tolerations | default list | nindent 8 }}
+      {{ if .Values.nodeSelector }}
+      nodeSelector: {{ toYaml .Values.nodeSelector | nindent 8 }}
+      {{ end }}
