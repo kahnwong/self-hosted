@@ -11,7 +11,6 @@ locals {
     "rustpad",
     "shouldideploytoday",
     "sshx",
-    "traggo",
   ])
 
   deployments_firefly = toset([

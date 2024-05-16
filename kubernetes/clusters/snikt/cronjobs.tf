@@ -6,7 +6,6 @@ locals {
     "backup-miniflux",
     "backup-ntfy",
     "backup-prune",
-    "backup-traggo",
     "backup-wallabag-content",
     "backup-wallabag-db",
     "ddns",

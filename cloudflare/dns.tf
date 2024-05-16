@@ -17,7 +17,6 @@ locals {
     "rustpad",
     "secrets",
     "shouldideploytoday",
-    "traggo",
   ])
   selfhosted_non_proxied = setunion(toset([
     "git",

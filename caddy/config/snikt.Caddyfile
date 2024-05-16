@@ -37,9 +37,6 @@ share.karnwong.me {
 shouldideploytoday.karnwong.me {
     reverse_proxy 192.168.1.51:30040
 }
-traggo.karnwong.me {
-    reverse_proxy 192.168.1.51:30034
-}
 wallabag.karnwong.me {
     reverse_proxy 192.168.1.51:30009 {
         transport http {
