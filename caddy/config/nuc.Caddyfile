@@ -1,3 +1,6 @@
+audiobookshelf.karnwong.me {
+    reverse_proxy 192.168.1.36:30027
+}
 harbor.karnwong.me {
     reverse_proxy 192.168.1.36:30501 {
         transport http {
