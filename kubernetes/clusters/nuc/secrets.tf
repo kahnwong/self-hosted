@@ -1,10 +1,5 @@
 locals {
   secrets = [
-    # ------- default ------- #
-    {
-      name      = "photoprism"
-      namespace = "default"
-    },
     # ------- immich ------- #
     {
       name      = "immich-postgres"
