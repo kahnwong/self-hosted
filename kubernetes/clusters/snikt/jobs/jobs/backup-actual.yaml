@@ -1,0 +1,25 @@
+---
+name: backup-actual
+schedule: "1 0 * * *"
+
+containers:
+  - name: backup-actual
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 4783b2e
+    env:
+      - name: MODE
+        value: ARCHIVE
+      - name: SERVICE_NAME
+        value: actual
+      - name: BACKUP_PATH
+        value: /opt/actual
+    envFrom:
+      - secretRef:
+          name: backup
+    volumeMounts:
+      - name: actual
+        mountPath: /opt/actual
+volumes:
+  - name: actual
+    hostPath:
+      path: /opt/actual
