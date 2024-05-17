@@ -1,0 +1,30 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ template "name" . }}
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+spec:
+  schedule: {{ .Values.schedule | quote}}
+  jobTemplate:
+    metadata:
+      name: {{ template "name" . }}
+    spec:
+      template:
+        spec:
+          containers:
+           {{ range .Values.containers }}
+            - name: {{ .name }}
+              image: "{{ .repository }}:{{ .tag }}"
+              command: {{ .command | default list | toYaml | nindent 16 }}
+              args: {{ .args | default list | toYaml | nindent 16 }}
+              env: {{ .env | default list | toYaml | nindent 16 }}
+              envFrom: {{ .envFrom | default list | toYaml | nindent 16 }}
+              volumeMounts: {{ toYaml .volumeMounts | default list | nindent 16 }}
+           {{ end }}
+          restartPolicy: Never
+          volumes: {{ toYaml .Values.volumes | default list | nindent 12 }}
+          tolerations: {{ toYaml .Values.tolerations | default list | nindent 12 }}
+          {{ if .Values.nodeSelector }}
+          nodeSelector: {{ toYaml .Values.nodeSelector | nindent 12 }}
+          {{ end }}

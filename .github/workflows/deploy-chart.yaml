@@ -36,3 +36,26 @@ jobs:
           helm package chart
           PKG_NAME=`ls *.tgz`
           helm push ${PKG_NAME} oci://ghcr.io/${REPO_OWNER}/charts
+  deploy-chart-cronjob:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Log in to the Container registry
+        uses: docker/login-action@v1
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      # https://gist.github.com/t83714/2a5e597e94053856e78257efe59003a3/raw/babc804cada53589f749ad4ac22091a5c38620a1/release.yaml
+      - name: Pushing Helm Chart
+        run: |
+          REPO_OWNER=`echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]'`
+          cd kubernetes/charts/base
+          helm package chart-cronjob
+          PKG_NAME=`ls *.tgz`
+          helm push ${PKG_NAME} oci://ghcr.io/${REPO_OWNER}/charts
