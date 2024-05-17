@@ -52,7 +52,4 @@ kubectl taint nodes fringe-division storage-required=true:NoSchedule
 | client\_key | n/a | `string` | n/a | yes |
 | cluster\_ca\_certificate | n/a | `string` | n/a | yes |
 | host | n/a | `string` | n/a | yes |
-| registry\_password | n/a | `string` | n/a | yes |
-| registry\_server | n/a | `string` | n/a | yes |
-| registry\_username | n/a | `string` | n/a | yes |
 <!-- END_TF_DOCS -->
