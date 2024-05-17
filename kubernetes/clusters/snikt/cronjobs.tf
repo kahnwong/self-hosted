@@ -9,7 +9,6 @@ locals {
     "backup-wallabag-content",
     "backup-wallabag-db",
     "ddns",
-    "email-to-epub",
   ])
 
   jobs_family_alerts = toset([
