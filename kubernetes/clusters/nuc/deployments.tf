@@ -1,30 +1,10 @@
 locals {
-  deployments_default = toset([
-    "audiobookshelf",
-    "jellyfin",
-    "navidrome",
-    "podgrab",
-  ])
-
   deployments_immich = toset([
     "immich",
     "immich-machine-learning",
     "immich-postgres",
     "immich-valkey",
   ])
-}
-
-resource "helm_release" "ns_default" {
-  for_each   = local.deployments_default
-  name       = each.key
-  namespace  = "default"
-  repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.2.0"
-  chart      = "base"
-
-  values = [
-    file("./deployments/default/${each.key}.yaml")
-  ]
 }
 
 resource "helm_release" "harbor" {

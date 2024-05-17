@@ -13,6 +13,13 @@ locals {
     "sshx",
   ])
 
+  deployments_fringe_division = toset([
+    "audiobookshelf",
+    "jellyfin",
+    "navidrome",
+    "podgrab",
+  ])
+
   deployments_firefly = toset([
     "firefly",
     "firefly-postgres",
@@ -55,6 +62,20 @@ resource "helm_release" "ns_default" {
 
   values = [
     file("./deployments/default/${each.key}.yaml")
+  ]
+}
+
+resource "helm_release" "ns_default_fringe_division" {
+  for_each   = local.deployments_fringe_division
+  name       = each.key
+  namespace  = "default"
+  repository = "oci://ghcr.io/kahnwong/charts"
+  version    = "0.2.0"
+  chart      = "base"
+
+  values = [
+    file("./deployments/default/${each.key}.yaml"),
+    file("valuesTaintNodeSelector.yaml"),
   ]
 }
 

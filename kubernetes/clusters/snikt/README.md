@@ -3,7 +3,7 @@
 ## Run this by hand
 
 ```bash
-kubectl taint nodes bamf storage=true:NoSchedule
+kubectl taint nodes fringe-division storage-required=true:NoSchedule
 ```
 
 <!-- BEGIN_TF_DOCS -->
@@ -29,6 +29,7 @@ kubectl taint nodes bamf storage=true:NoSchedule
 | Name | Type |
 |------|------|
 | [helm_release.ns_default](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
+| [helm_release.ns_default_fringe_division](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [helm_release.ns_firefly](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [helm_release.ns_forgejo](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [helm_release.ns_livegrep](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
