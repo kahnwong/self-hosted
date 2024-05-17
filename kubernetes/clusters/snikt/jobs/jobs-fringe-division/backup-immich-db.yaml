@@ -1,45 +1,28 @@
 ---
-apiVersion: batch/v1
-kind: CronJob
-metadata:
-  name: backup-immich-db
-  namespace: jobs
-spec:
-  schedule: "30 0 * * *"
-  jobTemplate:
-    metadata:
-      name: backup-immich-db
-    spec:
-      template:
-        spec:
-          containers:
-            - name: backup-immich-db
-              image: ghcr.io/kahnwong/docker-aws-backup:4783b2e
-              env:
-                - name: MODE
-                  value: DB_POSTGRES
-                - name: SERVICE_NAME
-                  value: immich-db
-                - name: POSTGRES_USERNAME
-                  valueFrom:
-                    secretKeyRef:
-                      name: immich-postgres
-                      key: POSTGRES_USER
-                - name: POSTGRES_PASSWORD
-                  valueFrom:
-                    secretKeyRef:
-                      name: immich-postgres
-                      key: POSTGRES_PASSWORD
-                - name: POSTGRES_HOSTNAME
-                  value: immich-postgres.immich.svc.cluster.local
-              envFrom:
-                - secretRef:
-                    name: backup
-          restartPolicy: Never
-          tolerations:
-            - key: "storage-required"
-              operator: "Equal"
-              value: "true"
-              effect: "NoSchedule"
-          nodeSelector:
-            kubernetes.io/hostname: "fringe-division"
+name: backup-immich-db
+schedule: "30 0 * * *"
+
+containers:
+  - name: backup-immich-db
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 4783b2e
+    env:
+      - name: MODE
+        value: DB_POSTGRES
+      - name: SERVICE_NAME
+        value: immich-db
+      - name: POSTGRES_USERNAME
+        valueFrom:
+          secretKeyRef:
+            name: immich-postgres
+            key: POSTGRES_USER
+      - name: POSTGRES_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: immich-postgres
+            key: POSTGRES_PASSWORD
+      - name: POSTGRES_HOSTNAME
+        value: immich-postgres.immich.svc.cluster.local
+    envFrom:
+      - secretRef:
+          name: backup

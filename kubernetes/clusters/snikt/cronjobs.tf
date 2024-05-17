@@ -29,16 +29,37 @@ locals {
 }
 
 
-resource "kubernetes_manifest" "jobs" {
-  for_each = local.jobs
+# resource "kubernetes_manifest" "jobs" {
+#   for_each = local.jobs
+#
+#   manifest = yamldecode(file("./jobs/jobs/${each.key}.yaml"))
+# }
 
-  manifest = yamldecode(file("./jobs/jobs/${each.key}.yaml"))
+resource "helm_release" "jobs" {
+  for_each   = local.jobs
+  name       = each.key
+  namespace  = "jobs"
+  repository = "oci://ghcr.io/kahnwong/charts"
+  version    = "0.1.0"
+  chart      = "base-cronjob"
+
+  values = [
+    file("./jobs/jobs/${each.key}.yaml"),
+  ]
 }
 
-resource "kubernetes_manifest" "jobs_fringe_division" {
-  for_each = local.jobs_fringe_division
+resource "helm_release" "jobs_fringe_division" {
+  for_each   = local.jobs_fringe_division
+  name       = each.key
+  namespace  = "jobs"
+  repository = "oci://ghcr.io/kahnwong/charts"
+  version    = "0.1.0"
+  chart      = "base-cronjob"
 
-  manifest = yamldecode(file("./jobs/jobs-fringe-division/${each.key}.yaml"))
+  values = [
+    file("./jobs/jobs-fringe-division/${each.key}.yaml"),
+    file("valuesTaintNodeSelector.yaml"),
+  ]
 }
 
 resource "kubernetes_manifest" "family_alerts" {

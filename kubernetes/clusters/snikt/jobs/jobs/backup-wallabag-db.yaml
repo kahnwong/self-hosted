@@ -1,32 +1,22 @@
 ---
-apiVersion: batch/v1
-kind: CronJob
-metadata:
-  name: backup-wallabag-db
-  namespace: jobs
-spec:
-  schedule: "2 0 * * *"
-  jobTemplate:
-    metadata:
-      name: backup-wallabag-db
-    spec:
-      template:
-        spec:
-          containers:
-            - name: backup-wallabag-db
-              image: ghcr.io/kahnwong/docker-aws-backup:4783b2e
-              env:
-                - name: MODE
-                  value: DB_POSTGRES
-                - name: SERVICE_NAME
-                  value: wallabag
-                - name: POSTGRES_USERNAME
-                  value: wallabag
-                - name: POSTGRES_PASSWORD
-                  value: wallapass
-                - name: POSTGRES_HOSTNAME
-                  value: wallabag-postgres.wallabag.svc.cluster.local
-              envFrom:
-                - secretRef:
-                    name: backup
-          restartPolicy: Never
+name: backup-wallabag-db
+schedule: "2 0 * * *"
+
+containers:
+  - name: backup-wallabag-db
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 4783b2e
+    env:
+      - name: MODE
+        value: DB_POSTGRES
+      - name: SERVICE_NAME
+        value: wallabag
+      - name: POSTGRES_USERNAME
+        value: wallabag
+      - name: POSTGRES_PASSWORD
+        value: wallapass
+      - name: POSTGRES_HOSTNAME
+        value: wallabag-postgres.wallabag.svc.cluster.local
+    envFrom:
+      - secretRef:
+          name: backup

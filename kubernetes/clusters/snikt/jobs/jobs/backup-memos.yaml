@@ -1,35 +1,25 @@
 ---
-apiVersion: batch/v1
-kind: CronJob
-metadata:
-  name: backup-memos
-  namespace: jobs
-spec:
-  schedule: "1 0 * * *"
-  jobTemplate:
-    metadata:
-      name: backup-memos
-    spec:
-      template:
-        spec:
-          containers:
-            - name: backup-memos
-              image: ghcr.io/kahnwong/docker-aws-backup:4783b2e
-              env:
-                - name: MODE
-                  value: ARCHIVE
-                - name: SERVICE_NAME
-                  value: memos
-                - name: BACKUP_PATH
-                  value: /opt/memos
-              envFrom:
-                - secretRef:
-                    name: backup
-              volumeMounts:
-                - name: memos
-                  mountPath: /opt/memos
-          restartPolicy: Never
-          volumes:
-            - name: memos
-              hostPath:
-                path: /opt/memos
+name: backup-memos
+schedule: "1 0 * * *"
+
+containers:
+  - name: backup-memos
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 4783b2e
+    env:
+      - name: MODE
+        value: ARCHIVE
+      - name: SERVICE_NAME
+        value: memos
+      - name: BACKUP_PATH
+        value: /opt/memos
+    envFrom:
+      - secretRef:
+          name: backup
+    volumeMounts:
+      - name: memos
+        mountPath: /opt/memos
+volumes:
+  - name: memos
+    hostPath:
+      path: /opt/memos

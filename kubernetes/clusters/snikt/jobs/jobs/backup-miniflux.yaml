@@ -1,32 +1,22 @@
 ---
-apiVersion: batch/v1
-kind: CronJob
-metadata:
-  name: backup-miniflux
-  namespace: jobs
-spec:
-  schedule: "2 0 * * *"
-  jobTemplate:
-    metadata:
-      name: backup-miniflux
-    spec:
-      template:
-        spec:
-          containers:
-            - name: backup-miniflux
-              image: ghcr.io/kahnwong/docker-aws-backup:4783b2e
-              env:
-                - name: MODE
-                  value: DB_POSTGRES
-                - name: SERVICE_NAME
-                  value: miniflux
-                - name: POSTGRES_USERNAME
-                  value: miniflux
-                - name: POSTGRES_PASSWORD
-                  value: secret
-                - name: POSTGRES_HOSTNAME
-                  value: miniflux-postgres.miniflux.svc.cluster.local
-              envFrom:
-                - secretRef:
-                    name: backup
-          restartPolicy: Never
+name: backup-miniflux
+schedule: "2 0 * * *"
+
+containers:
+  - name: backup-miniflux
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 4783b2e
+    env:
+      - name: MODE
+        value: DB_POSTGRES
+      - name: SERVICE_NAME
+        value: miniflux
+      - name: POSTGRES_USERNAME
+        value: miniflux
+      - name: POSTGRES_PASSWORD
+        value: secret
+      - name: POSTGRES_HOSTNAME
+        value: miniflux-postgres.miniflux.svc.cluster.local
+    envFrom:
+      - secretRef:
+          name: backup
