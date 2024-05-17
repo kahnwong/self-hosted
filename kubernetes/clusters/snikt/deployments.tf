@@ -18,6 +18,7 @@ locals {
     "jellyfin",
     "navidrome",
     "podgrab",
+    "foo",
   ])
 
   deployments_firefly = toset([
