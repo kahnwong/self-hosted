@@ -11,6 +11,13 @@ locals {
     "ddns",
   ])
 
+  jobs_fringe_division = toset([
+    "backup-immich-db",
+    "backup-navidrome",
+    "backup-syncthing",
+    "backup-transmission",
+  ])
+
   jobs_family_alerts = toset([
     "00-0-morning-coffee",
     "01-1-lunch-ask",
@@ -26,6 +33,12 @@ resource "kubernetes_manifest" "jobs" {
   for_each = local.jobs
 
   manifest = yamldecode(file("./jobs/jobs/${each.key}.yaml"))
+}
+
+resource "kubernetes_manifest" "jobs_fringe_division" {
+  for_each = local.jobs_fringe_division
+
+  manifest = yamldecode(file("./jobs/jobs-fringe-division/${each.key}.yaml"))
 }
 
 resource "kubernetes_manifest" "family_alerts" {

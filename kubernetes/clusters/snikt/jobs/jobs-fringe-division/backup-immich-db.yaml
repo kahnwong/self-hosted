@@ -36,3 +36,10 @@ spec:
                 - secretRef:
                     name: backup
           restartPolicy: Never
+          tolerations:
+            - key: "storage-required"
+              operator: "Equal"
+              value: "true"
+              effect: "NoSchedule"
+          nodeSelector:
+            kubernetes.io/hostname: "fringe-division"

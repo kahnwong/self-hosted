@@ -1,0 +1,44 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: backup-navidrome
+  namespace: jobs
+spec:
+  schedule: "1 0 * * *"
+  jobTemplate:
+    metadata:
+      name: backup-navidrome
+    spec:
+      template:
+        spec:
+          containers:
+            - name: backup-navidrome
+              image: ghcr.io/kahnwong/docker-aws-backup:4783b2e
+              env:
+                - name: MODE
+                  value: ARCHIVE
+                - name: SERVICE_NAME
+                  value: navidrome
+                - name: BACKUP_PATH
+                  value: /opt/navidrome/config
+                - name: BACKUP_PATH_EXCLUDE
+                  value: /opt/navidrome/config/cache
+              envFrom:
+                - secretRef:
+                    name: backup
+              volumeMounts:
+                - name: navidrome
+                  mountPath: /opt/navidrome
+          restartPolicy: Never
+          volumes:
+            - name: navidrome
+              hostPath:
+                path: /opt/navidrome
+          tolerations:
+            - key: "storage-required"
+              operator: "Equal"
+              value: "true"
+              effect: "NoSchedule"
+          nodeSelector:
+            kubernetes.io/hostname: "fringe-division"
