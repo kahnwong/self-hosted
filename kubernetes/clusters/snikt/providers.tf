@@ -7,11 +7,11 @@ provider "helm" {
     cluster_ca_certificate = base64decode(var.cluster_ca_certificate)
   }
 
-  registry {
-    url      = "oci://${var.registry_server}"
-    username = var.registry_username
-    password = var.registry_password
-  }
+  #   registry {
+  #     url      = "oci://${var.registry_server}"
+  #     username = var.registry_username
+  #     password = var.registry_password
+  #   }
 }
 
 provider "kubernetes" {
