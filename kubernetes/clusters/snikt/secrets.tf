@@ -14,6 +14,15 @@ locals {
       name      = "firefly"
       namespace = "firefly"
     },
+    # ------- immich ------- #
+    {
+      name      = "immich-postgres"
+      namespace = "immich"
+    },
+    {
+      name      = "immich"
+      namespace = "immich"
+    },
     # ------- miniflux ------- #
     {
       name      = "miniflux"

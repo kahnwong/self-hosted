@@ -28,6 +28,7 @@ kubectl taint nodes fringe-division storage-required=true:NoSchedule
 
 | Name | Type |
 |------|------|
+| [helm_release.immich](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [helm_release.ns_default](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [helm_release.ns_default_fringe_division](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [helm_release.ns_firefly](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |

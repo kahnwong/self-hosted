@@ -1,14 +1,6 @@
 locals {
   secrets = [
-    # ------- immich ------- #
-    {
-      name      = "immich-postgres"
-      namespace = "immich"
-    },
-    {
-      name      = "immich"
-      namespace = "immich"
-    },
+
     # ------- jobs ------- #
     {
       name      = "backup"
@@ -53,28 +45,4 @@ resource "kubernetes_secret" "backup_jobs" {
     namespace = local.secrets_backup_jobs_dict[each.key]["namespace"]
   }
   data = nonsensitive(data.sops_file.this[each.key].data)
-}
-
-
-resource "kubernetes_secret" "harbor_config" {
-  for_each = local.namespaces
-
-  metadata {
-    name      = "harbor-cfg"
-    namespace = each.key
-  }
-
-  type = "kubernetes.io/dockerconfigjson"
-
-  data = {
-    ".dockerconfigjson" = jsonencode({
-      auths = {
-        (var.registry_server) = {
-          "username" = var.registry_username
-          "password" = var.registry_password
-          "auth"     = base64encode("${var.registry_username}:${var.registry_password}")
-        }
-      }
-    })
-  }
 }
