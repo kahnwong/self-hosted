@@ -31,7 +31,7 @@ spec:
                       name: immich-postgres
                       key: POSTGRES_PASSWORD
                 - name: POSTGRES_HOSTNAME
-                  value: immich-statefulset.immich.svc.cluster.local
+                  value: immich-postgres.immich.svc.cluster.local
               envFrom:
                 - secretRef:
                     name: backup

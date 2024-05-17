@@ -25,7 +25,7 @@ spec:
                 - name: POSTGRES_PASSWORD
                   value: secret_firefly_password
                 - name: POSTGRES_HOSTNAME
-                  value: firefly-statefulset.default.svc.cluster.local
+                  value: firefly-postgres.firefly.svc.cluster.local
               envFrom:
                 - secretRef:
                     name: backup

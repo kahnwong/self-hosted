@@ -25,7 +25,7 @@ spec:
                 - name: POSTGRES_PASSWORD
                   value: wallapass
                 - name: POSTGRES_HOSTNAME
-                  value: wallabag-statefulset.default.svc.cluster.local
+                  value: wallabag-postgres.wallabag.svc.cluster.local
               envFrom:
                 - secretRef:
                     name: backup
