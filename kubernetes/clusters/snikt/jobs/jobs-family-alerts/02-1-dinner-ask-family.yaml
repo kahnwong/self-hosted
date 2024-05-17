@@ -1,26 +1,16 @@
 ---
-apiVersion: batch/v1
-kind: CronJob
-metadata:
-  name: 02-1-dinner-ask-family
-  namespace: jobs-family-alerts
-spec:
-  schedule: "0 9 * * *" # 4:00 PM Asia/Bangkok
-  jobTemplate:
-    metadata:
-      name: 02-1-dinner-ask-family
-    spec:
-      template:
-        spec:
-          containers:
-            - name: 02-1-dinner-ask-family
-              image: ghcr.io/kahnwong/line-notify:dc61980
-              command: ["python3"]
-              args:
-                - line_notify/main.py
-                - --message
-                - "เช็คว่ามีใครไม่กินข้าวบ้านบ้าง"
-              envFrom:
-                - secretRef:
-                    name: family-alerts
-          restartPolicy: Never
+name: 02-1-dinner-ask-family
+schedule: "0 9 * * *" # 4:00 PM Asia/Bangkok
+
+containers:
+  - name: 02-1-dinner-ask-family
+    repository: ghcr.io/kahnwong/line-notify
+    tag: dc61980
+    command: ["python3"]
+    args:
+      - line_notify/main.py
+      - --message
+      - "เช็คว่ามีใครไม่กินข้าวบ้านบ้าง"
+    envFrom:
+      - secretRef:
+          name: family-alerts

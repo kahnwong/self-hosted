@@ -1,26 +1,16 @@
 ---
-apiVersion: batch/v1
-kind: CronJob
-metadata:
-  name: 02-3-coffee-or-tea
-  namespace: jobs-family-alerts
-spec:
-  schedule: "00 8 * * *" # 3:00 PM Asia/Bangkok
-  jobTemplate:
-    metadata:
-      name: 02-3-coffee-or-tea
-    spec:
-      template:
-        spec:
-          containers:
-            - name: 02-3-coffee-or-tea
-              image: ghcr.io/kahnwong/line-notify:dc61980
-              command: ["python3"]
-              args:
-                - line_notify/main.py
-                - --message
-                - "เอาชาหรือกาแฟ"
-              envFrom:
-                - secretRef:
-                    name: family-alerts
-          restartPolicy: Never
+name: 02-3-coffee-or-tea
+schedule: "00 8 * * *" # 3:00 PM Asia/Bangkok
+
+containers:
+  - name: 02-3-coffee-or-tea
+    repository: ghcr.io/kahnwong/line-notify
+    tag: dc61980
+    command: ["python3"]
+    args:
+      - line_notify/main.py
+      - --message
+      - "เอาชาหรือกาแฟ"
+    envFrom:
+      - secretRef:
+          name: family-alerts

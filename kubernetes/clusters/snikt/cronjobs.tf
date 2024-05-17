@@ -62,8 +62,15 @@ resource "helm_release" "jobs_fringe_division" {
   ]
 }
 
-resource "kubernetes_manifest" "family_alerts" {
-  for_each = local.jobs_family_alerts
+resource "helm_release" "family_alerts" {
+  for_each   = local.jobs_family_alerts
+  name       = each.key
+  namespace  = "jobs-family-alerts"
+  repository = "oci://ghcr.io/kahnwong/charts"
+  version    = "0.1.0"
+  chart      = "base-cronjob"
 
-  manifest = yamldecode(file("./jobs/jobs-family-alerts/${each.key}.yaml"))
+  values = [
+    file("./jobs/jobs-family-alerts/${each.key}.yaml"),
+  ]
 }

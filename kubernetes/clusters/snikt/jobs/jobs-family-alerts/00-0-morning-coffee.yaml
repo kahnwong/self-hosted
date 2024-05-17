@@ -1,26 +1,16 @@
 ---
-apiVersion: batch/v1
-kind: CronJob
-metadata:
-  name: 00-0-morning-coffee
-  namespace: jobs-family-alerts
-spec:
-  schedule: "15 23 * * *" # 6:15 AM Asia/Bangkok
-  jobTemplate:
-    metadata:
-      name: 00-0-morning-coffee
-    spec:
-      template:
-        spec:
-          containers:
-            - name: 00-0-morning-coffee
-              image: ghcr.io/kahnwong/line-notify:dc61980
-              command: ["python3"]
-              args:
-                - line_notify/main.py
-                - --message
-                - "อย่าลืมหยิบกาแฟในตู้เย็น"
-              envFrom:
-                - secretRef:
-                    name: family-alerts
-          restartPolicy: Never
+name: 00-0-morning-coffee
+schedule: "15 23 * * *" # 6:15 AM Asia/Bangkok
+
+containers:
+  - name: 00-0-morning-coffee
+    repository: ghcr.io/kahnwong/line-notify
+    tag: dc61980
+    command: ["python3"]
+    args:
+      - line_notify/main.py
+      - --message
+      - "อย่าลืมหยิบกาแฟในตู้เย็น"
+    envFrom:
+      - secretRef:
+          name: family-alerts
