@@ -6,7 +6,7 @@ replicaCount: 1
 containers:
   - name: immich-microservices
     repository: ghcr.io/immich-app/immich-server
-    tag: v1.102.3
+    tag: v1.105.1
     port: 3002  # https://github.com/immich-app/immich/blob/9e122764e7e795addd8c6d266806db78dec0b815/server/src/main.ts#L19
     livenessProbeScheme: tcp
     envFrom:
@@ -20,7 +20,7 @@ containers:
         mountPath: /usr/src/app/upload
   - name: immich-server
     repository: ghcr.io/immich-app/immich-server
-    tag: v1.102.3
+    tag: v1.105.1
     port: 3001
     envFrom:
       - secretRef:
