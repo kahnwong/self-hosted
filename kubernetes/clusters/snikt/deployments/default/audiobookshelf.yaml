@@ -6,7 +6,7 @@ replicaCount: 1
 containers:
   - name: audiobookshelf
     repository: ghcr.io/advplyr/audiobookshelf
-    tag: latest # change me
+    tag: 2.9.0
     port: 80
     volumeMounts:
       - name: audiobookshelf-config
