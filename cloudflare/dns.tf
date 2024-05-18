@@ -12,7 +12,6 @@ locals {
     "miniflux",
     "music",
     "ntfy",
-    "photos",
     "podgrab",
     "rustpad",
     "secrets",
