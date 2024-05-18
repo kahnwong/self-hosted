@@ -1,27 +1,78 @@
-# `caddy hash-password --algorithm bcrypt` for basicauth
+audiobookshelf.karnwong.me {
+    reverse_proxy 192.168.1.51:30027
+}
+harbor.karnwong.me {
+    reverse_proxy 192.168.1.51:30501 {
+        transport http {
+            tls_insecure_skip_verify
+        }
+    }
+}
+immich.karnwong.me {
+    reverse_proxy 192.168.1.51:30030
+}
+jellyfin.karnwong.me {
+    reverse_proxy 192.168.1.51:30003
+}
+music.karnwong.me {
+    reverse_proxy 192.168.1.51:30006
+}
+podgrab.karnwong.me {
+    basicauth * {
+        podgrab $2a$14$s1l.L4xhGyEwCjt/MhP4dO0v3YF1g1zwE0KjkYSVFRAeETBNGDeyG
+    }
+    reverse_proxy 192.168.1.51:30004
+}
+syncthing.karnwong.me {
+    reverse_proxy 192.168.1.51:8384
+}
 
-# (cors) {
-#   @cors_preflight method OPTIONS
-#   @cors header Origin {args.0}
-
-#   handle @cors_preflight {
-#     header Access-Control-Allow-Origin "{args.0}"
-#     header Access-Control-Allow-Methods "GET, POST, PUT, PATCH, DELETE"
-#     header Access-Control-Allow-Headers "Content-Type"
-#     header Access-Control-Max-Age "3600"
-#     respond "" 204
-#   }
-
-#   handle @cors {
-#     header Access-Control-Allow-Origin "{args.0}"
-#     header Access-Control-Expose-Headers "Link"
-#   }
-# }
-# mapserver.karnwong.me {
-#     basicauth * {
-#         kahnwong $2a$14$GtDIU0U5h8mH0pKxlosiUeIdJMft/vrcScw7cFkZRqjB8KRhmLINS
-#     }
-#     reverse_proxy 127.0.0.1:30015
-
-#     import cors *
-# }
+actual.karnwong.me {
+    reverse_proxy 192.168.1.51:30042
+}
+firefly.karnwong.me {
+    reverse_proxy 192.168.1.51:30032
+}
+git.karnwong.me {
+    reverse_proxy 192.168.1.51:30026
+}
+kanboard.karnwong.me {
+    reverse_proxy 192.168.1.51:30041
+}
+linkding.karnwong.me {
+    reverse_proxy 192.168.1.51:30005
+}
+memos.karnwong.me {
+    reverse_proxy 192.168.1.51:30031
+}
+miniflux.karnwong.me {
+    reverse_proxy 192.168.1.51:30007
+}
+minio.karnwong.me {
+    reverse_proxy 192.168.1.51:30020
+}
+ntfy.karnwong.me {
+    reverse_proxy 192.168.1.51:30022
+}
+rustpad.karnwong.me {
+    reverse_proxy 192.168.1.51:30019
+}
+secrets.karnwong.me {
+    reverse_proxy 192.168.1.51:30025
+}
+share.karnwong.me {
+    reverse_proxy 192.168.1.51:30017
+}
+shouldideploytoday.karnwong.me {
+    reverse_proxy 192.168.1.51:30040
+}
+wallabag.karnwong.me {
+    reverse_proxy 192.168.1.51:30009 {
+        transport http {
+            dial_timeout 5m
+            response_header_timeout 5m
+            read_timeout 5m
+            write_timeout 5m
+        }
+    }
+}
