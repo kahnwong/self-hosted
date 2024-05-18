@@ -6,7 +6,7 @@ replicaCount: 1
 containers:
   - name: actual
     repository: actualbudget/actual-server
-    tag: "latest"
+    tag: 24.5.0
     port: 5006
     volumeMounts:
       - name: actual-data
