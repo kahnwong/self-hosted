@@ -6,7 +6,7 @@ replicaCount: 1
 containers:
   - name: kanboard
     repository: kanboard/kanboard
-    tag: "latest"
+    tag: v1.2.36
     port: 80
     env:
       - name: PLUGIN_INSTALLER
