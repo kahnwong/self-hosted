@@ -6,14 +6,14 @@
 
 | Name | Version |
 |------|---------|
-| cloudflare | ~> 4.28.0 |
+| cloudflare | ~> 4.33.0 |
 | sops | 1.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| cloudflare | 4.28.0 |
+| cloudflare | 4.33.0 |
 | sops | 1.0.0 |
 
 ## Modules
