@@ -45,7 +45,6 @@ kubectl taint nodes fringe-division storage-required=true:NoSchedule
 | [kubernetes_namespace.this](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/namespace) | resource |
 | [kubernetes_secret.backup_jobs](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/secret) | resource |
 | [kubernetes_secret.this](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/secret) | resource |
-| [sops_file.harbor_postgres](https://registry.terraform.io/providers/carlpett/sops/1.0.0/docs/data-sources/file) | data source |
 | [sops_file.this](https://registry.terraform.io/providers/carlpett/sops/1.0.0/docs/data-sources/file) | data source |
 
 ## Inputs

@@ -113,9 +113,6 @@ resource "helm_release" "ns_forgejo" {
   ]
 }
 
-data "sops_file" "harbor_postgres" {
-  source_file = "./secrets/harbor-postgres.sops.yaml"
-}
 resource "helm_release" "harbor" {
   name       = "harbor"
   namespace  = "harbor"
