@@ -29,6 +29,7 @@ kubectl taint nodes fringe-division storage-required=true:NoSchedule
 | Name | Type |
 |------|------|
 | [helm_release.family_alerts](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
+| [helm_release.harbor](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [helm_release.immich](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [helm_release.jobs](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [helm_release.jobs_fringe_division](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
@@ -44,6 +45,7 @@ kubectl taint nodes fringe-division storage-required=true:NoSchedule
 | [kubernetes_namespace.this](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/namespace) | resource |
 | [kubernetes_secret.backup_jobs](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/secret) | resource |
 | [kubernetes_secret.this](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/secret) | resource |
+| [sops_file.harbor_postgres](https://registry.terraform.io/providers/carlpett/sops/1.0.0/docs/data-sources/file) | data source |
 | [sops_file.this](https://registry.terraform.io/providers/carlpett/sops/1.0.0/docs/data-sources/file) | data source |
 
 ## Inputs
@@ -54,4 +56,5 @@ kubectl taint nodes fringe-division storage-required=true:NoSchedule
 | client\_key | n/a | `string` | n/a | yes |
 | cluster\_ca\_certificate | n/a | `string` | n/a | yes |
 | host | n/a | `string` | n/a | yes |
+| registry\_password | variable "registry\_server" { type = string }  variable "registry\_username" { type = string } | `string` | n/a | yes |
 <!-- END_TF_DOCS -->

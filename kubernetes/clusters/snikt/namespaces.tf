@@ -3,7 +3,7 @@ locals {
     "default",
     "firefly",
     "forgejo",
-    #     "harbor",
+    "harbor",
     "immich",
     "jobs",
     "jobs-family-alerts",
