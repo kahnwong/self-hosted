@@ -34,7 +34,7 @@ locals {
 # resource "kubernetes_manifest" "jobs" {
 #   for_each = local.jobs
 #
-#   manifest = yamldecode(file("./jobs/jobs/${each.key}.yaml"))
+#   manifest = yamldecode(file("./helm/jobs/jobs/${each.key}.yaml"))
 # }
 
 resource "helm_release" "jobs" {
@@ -46,7 +46,7 @@ resource "helm_release" "jobs" {
   chart      = "base-cronjob"
 
   values = [
-    file("./jobs/jobs/${each.key}.yaml"),
+    file("./helm/jobs/jobs/${each.key}.yaml"),
   ]
 }
 
@@ -59,8 +59,8 @@ resource "helm_release" "jobs_fringe_division" {
   chart      = "base-cronjob"
 
   values = [
-    file("./jobs/jobs-fringe-division/${each.key}.yaml"),
-    file("valuesTaintNodeSelector.yaml"),
+    file("./helm/jobs/jobs-fringe-division/${each.key}.yaml"),
+    file("./resources/valuesTaintNodeSelector.yaml"),
   ]
 }
 
@@ -73,6 +73,6 @@ resource "helm_release" "family_alerts" {
   chart      = "base-cronjob"
 
   values = [
-    file("./jobs/jobs-family-alerts/${each.key}.yaml"),
+    file("./helm/jobs/jobs-family-alerts/${each.key}.yaml"),
   ]
 }

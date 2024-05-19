@@ -69,7 +69,7 @@ resource "helm_release" "ns_default" {
   chart      = "base"
 
   values = [
-    file("./deployments/default/${each.key}.yaml")
+    file("./helm/deployments/default/${each.key}.yaml")
   ]
 }
 
@@ -82,8 +82,8 @@ resource "helm_release" "ns_default_fringe_division" {
   chart      = "base"
 
   values = [
-    file("./deployments/default/${each.key}.yaml"),
-    file("valuesTaintNodeSelector.yaml"),
+    file("./helm/deployments/default/${each.key}.yaml"),
+    file("./resources/valuesTaintNodeSelector.yaml"),
   ]
 }
 
@@ -96,7 +96,7 @@ resource "helm_release" "ns_firefly" {
   chart      = "base"
 
   values = [
-    file("./deployments/firefly/${each.key}.yaml")
+    file("./helm/deployments/firefly/${each.key}.yaml")
   ]
 }
 
@@ -109,7 +109,7 @@ resource "helm_release" "ns_forgejo" {
   chart      = "base"
 
   values = [
-    file("./deployments/forgejo/${each.key}.yaml")
+    file("./helm/deployments/forgejo/${each.key}.yaml")
   ]
 }
 
@@ -121,7 +121,7 @@ resource "helm_release" "ns_forgejo" {
 #   chart      = "harbor"
 #
 #   values = [
-#     file("./deployments/harbor/values.yaml"),
+#     file("./helm/deployments/harbor/values.yaml"),
 #   ]
 #
 #   set {
@@ -139,8 +139,8 @@ resource "helm_release" "immich" {
   chart      = "base"
 
   values = [
-    file("./deployments/immich/${each.value}.yaml"),
-    file("valuesTaintNodeSelector.yaml"),
+    file("./helm/deployments/immich/${each.value}.yaml"),
+    file("./resources/valuesTaintNodeSelector.yaml"),
   ]
 }
 
@@ -153,11 +153,11 @@ resource "helm_release" "ns_livegrep" {
   chart      = "base"
 
   values = [
-    file("./deployments/livegrep/${each.key}.yaml")
+    file("./helm/deployments/livegrep/${each.key}.yaml")
   ]
 }
 resource "kubernetes_manifest" "job_livegrep" {
-  manifest = yamldecode(file("./deployments/livegrep/livegrep-indexer.yaml"))
+  manifest = yamldecode(file("./helm/deployments/livegrep/livegrep-indexer.yaml"))
 }
 
 resource "helm_release" "ns_miniflux" {
@@ -169,7 +169,7 @@ resource "helm_release" "ns_miniflux" {
   chart      = "base"
 
   values = [
-    file("./deployments/miniflux/${each.key}.yaml")
+    file("./helm/deployments/miniflux/${each.key}.yaml")
   ]
 }
 
@@ -182,7 +182,7 @@ resource "helm_release" "ns_supersecretmessage" {
   chart      = "base"
 
   values = [
-    file("./deployments/supersecretmessage/${each.key}.yaml")
+    file("./helm/deployments/supersecretmessage/${each.key}.yaml")
   ]
 }
 
@@ -195,6 +195,6 @@ resource "helm_release" "ns_wallabag" {
   chart      = "base"
 
   values = [
-    file("./deployments/wallabag/${each.key}.yaml")
+    file("./helm/deployments/wallabag/${each.key}.yaml")
   ]
 }
