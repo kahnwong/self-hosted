@@ -5,6 +5,7 @@ data "sops_file" "secrets" {
 # cloudflare pages
 locals {
   cloudflare_pages_repos = toset([
+    "basemaps",
     "calculator",
     "docs",
     "h3-viewer",

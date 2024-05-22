@@ -4,6 +4,7 @@ locals {
     "docs",
     "h3-viewer",
     "jupyterlite",
+    "maps",
     "retriever",
     "slc",
   ])
