@@ -12,6 +12,7 @@ locals {
     "miniflux",
     "music",
     "ntfy",
+    "pmtiles",
     "podgrab",
     "rustpad",
     "secrets",
