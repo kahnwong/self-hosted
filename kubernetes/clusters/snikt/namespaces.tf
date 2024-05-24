@@ -1,7 +1,6 @@
 locals {
   namespaces = toset([
     "default",
-    "firefly",
     "forgejo",
     "harbor",
     "immich",

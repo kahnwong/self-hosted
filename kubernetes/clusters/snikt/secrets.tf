@@ -9,11 +9,6 @@ locals {
       name      = "picoshare"
       namespace = "default"
     },
-    # ------- firefly ------- #
-    {
-      name      = "firefly"
-      namespace = "firefly"
-    },
     # ------- immich ------- #
     {
       name      = "immich-postgres"

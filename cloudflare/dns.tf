@@ -4,7 +4,6 @@ locals {
   ])
   selfhosted_proxied = toset([
     "actual",
-    "firefly",
     "immich",
     "kanboard",
     "linkding",

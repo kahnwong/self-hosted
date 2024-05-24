@@ -30,9 +30,6 @@ syncthing.karnwong.me {
 actual.karnwong.me {
     reverse_proxy 192.168.1.51:30042
 }
-firefly.karnwong.me {
-    reverse_proxy 192.168.1.51:30032
-}
 git.karnwong.me {
     reverse_proxy 192.168.1.51:30026
 }

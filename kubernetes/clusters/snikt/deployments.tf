@@ -21,11 +21,6 @@ locals {
     "foo",
   ])
 
-  deployments_firefly = toset([
-    "firefly",
-    "firefly-postgres",
-  ])
-
   deployments_forgejo = toset([
     "forgejo",
     "forgejo-postgres"
@@ -84,19 +79,6 @@ resource "helm_release" "ns_default_fringe_division" {
   values = [
     file("./helm/deployments/default/${each.key}.yaml"),
     file("./resources/valuesTaintNodeSelector.yaml"),
-  ]
-}
-
-resource "helm_release" "ns_firefly" {
-  for_each   = local.deployments_firefly
-  name       = each.key
-  namespace  = "firefly"
-  repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.2.0"
-  chart      = "base"
-
-  values = [
-    file("./helm/deployments/firefly/${each.key}.yaml")
   ]
 }
 
