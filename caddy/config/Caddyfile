@@ -24,7 +24,7 @@ podgrab.karnwong.me {
     reverse_proxy 192.168.1.51:30004
 }
 syncthing.karnwong.me {
-    reverse_proxy 192.168.1.51:8384
+    reverse_proxy 192.168.1.36:8384
 }
 
 actual.karnwong.me {
