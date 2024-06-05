@@ -20,6 +20,7 @@ containers:
         mountPath: /opt/ntfy
       - name: ntfy-config
         mountPath: /etc/ntfy
+        readOnly: true
 volumes:
   - name: ntfy-cache
     hostPath:
@@ -28,8 +29,8 @@ volumes:
     hostPath:
       path: /opt/ntfy/data
   - name: ntfy-config
-    hostPath:
-      path: /opt/ntfy/config
+    configMap:
+      name: ntfy
 service:
   port: 80
   nodePort: 30022

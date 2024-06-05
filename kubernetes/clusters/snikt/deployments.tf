@@ -1,3 +1,6 @@
+# to test locally, run
+# helm template ntfy  ../../charts/base/chart --values helm/deployments/default/ntfy.yaml
+
 locals {
   deployments_default = toset([
     "actual",
