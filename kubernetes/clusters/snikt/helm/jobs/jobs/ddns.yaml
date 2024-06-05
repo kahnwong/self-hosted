@@ -11,7 +11,8 @@ containers:
     volumeMounts:
       - name: ddns
         mountPath: /opt/ddns
+        readOnly: true
 volumes:
   - name: ddns
-    hostPath:
-      path: /opt/ddns
+    configMap:
+      name: ddns
