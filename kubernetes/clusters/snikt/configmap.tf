@@ -38,3 +38,18 @@ resource "kubernetes_config_map" "dashy" {
     "conf.yml" = data.sops_file.dashy.raw
   }
 }
+
+
+data "sops_file" "gatus" {
+  source_file = "${path.module}/configmaps/gatus.sops.yaml"
+}
+resource "kubernetes_config_map" "gatus" {
+  metadata {
+    name      = "gatus"
+    namespace = "default"
+  }
+
+  data = {
+    "config.yaml" = data.sops_file.gatus.raw
+  }
+}

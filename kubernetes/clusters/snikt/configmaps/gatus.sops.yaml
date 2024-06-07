@@ -1,0 +1,31 @@
+storage:
+    type: ENC[AES256_GCM,data:ClH1cw66,iv:lbTdwm4UZOVlv28Qkf6qcByJe7a6JigwMuVRoT8r61E=,tag:qMS6ofO/62lhMA7TRfYDsA==,type:str]
+    path: ENC[AES256_GCM,data:wlg63ZgW9EqwvRZ3IQ==,iv:3oq49rVnO2FtMmF/njgT+K+k7qRGLV0LC/XwEj8WUr0=,tag:yr0v3B2O62gvskV8mSbaUA==,type:str]
+endpoints:
+    - ENC[AES256_GCM,data:prZOk0jvBnDTLv5Srzyzz40OtSNtm+nmm1rOyNfbP3q9jA==,iv:OyKHGNI1ICg0Ab/dFvdoB7k9mx9tSgBiqKBkHmqKato=,tag:NDINS7n/VVKLcFtH2joNMA==,type:comment]
+    - name: ENC[AES256_GCM,data:4xuRtCMP1Q==,iv:/Lo5fODlChVd9Au9GOBaSmAJ6GXM30VCP1BK4VyxMHE=,tag:aEJCHzskEnGEUoWtVmjPyA==,type:str]
+      group: ENC[AES256_GCM,data:2r0/qcoq/+aG,iv:Y2VFh7oY+Z7Pi67j1QEZg5mnxqCjvEiMWWej1DnFhNI=,tag:zn3Ty317GzEW5UyEU7QLeQ==,type:str]
+      url: ENC[AES256_GCM,data:+mhH1+th+lNYogNwqS2FiTM7PuuxgvdI,iv:LBZwEfxhb/N/Rn650S5YgDm8fvC8uxqISaBmWwyzhfo=,tag:cxIS4xqUU9nBWThDt4E02A==,type:str]
+      interval: ENC[AES256_GCM,data:LXM=,iv:cc5bf886jQp8oJXc1vYaZJkrrbUKUd+Qeh3s6EdKuE0=,tag:Vh9ktxYcrexUz8LO7j8oKA==,type:str]
+      conditions:
+        - ENC[AES256_GCM,data:1XHFEVVY0oS0G4umysm5,iv:KkNG2YsrVvcnEv3miPwvJ7h8YbP5FMdcI4GAWukLTZA=,tag:q5uqV15To5uWtoo/TGMLHw==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age14ke6m4zzfpgpu2herm8cu22wshyalyfkvjp2hjedm34h7wg0ypjss9e3ct
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBGenJVYWtuY2pWYXNkbTBo
+            NTVmYWtlUFk2cklDSUZBMWJaQmowR2ZwOG1RCmNodnMwWW03S2UvM0EydElXcHVO
+            SzVxN2d1M24zM0g4citjT1VDUFJhSkkKLS0tIDk3UTZEdEc2alpXU3A2bHEzRGJw
+            UnZ4UzdUNnE1eTlmOUlMQWlKQlhEOTQKzYA4twV9ADbNmYHULraBDqFpGRM7H7cd
+            MtcKJRWf4TNmTbJCFIyU4S3IZfNpprxJ3qZZzl/19XiPFF/R4ehV9Q==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-06-07T13:26:09Z"
+    mac: ENC[AES256_GCM,data:ov3D7gdM06qcrBOJpMHi++4gFp9ZZk1rHXIChNr1QcQTRVX0zVdOs+FpeEZfzjsuqdku8jpjSyXZNcyKLiBjFVhWB+KyFqmBXtTCgkm2nZHr2K8oZvGQ6w2nb8Fe/as65VCY0Agur/+cAy8149GpHOAngw7iIywchSTYOwb2nUM=,iv:R8P6TKuW4a4CrMixpd9Yhyn8glZ7bjVFnQNIPyrfPbk=,tag:8BCw102ZVIsln5oGqeH1+Q==,type:str]
+    pgp: []
+    unencrypted_suffix: _unencrypted
+    version: 3.8.1
