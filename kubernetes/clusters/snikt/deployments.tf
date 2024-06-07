@@ -130,6 +130,7 @@ resource "helm_release" "immich" {
   ]
 }
 
+
 resource "helm_release" "ns_livegrep" {
   for_each   = local.deployments_livegrep
   name       = each.key
@@ -142,8 +143,19 @@ resource "helm_release" "ns_livegrep" {
     file("./helm/deployments/livegrep/${each.key}.yaml")
   ]
 }
-resource "kubernetes_manifest" "job_livegrep" {
-  manifest = yamldecode(file("./helm/deployments/livegrep/livegrep-indexer.yaml"))
+data "sops_file" "livegrep" {
+  source_file = "./helm/deployments/livegrep/livegrep-indexer.sops.yaml"
+}
+resource "helm_release" "livegrep_indexer" {
+  name       = "livegrep-indexer"
+  namespace  = "livegrep"
+  repository = "oci://ghcr.io/kahnwong/charts"
+  version    = "0.1.0"
+  chart      = "base-cronjob"
+
+  values = [
+    data.sops_file.livegrep.raw
+  ]
 }
 
 resource "helm_release" "ns_miniflux" {
