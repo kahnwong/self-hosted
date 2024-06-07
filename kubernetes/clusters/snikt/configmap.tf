@@ -24,3 +24,17 @@ resource "kubernetes_config_map" "ddns" {
     "cloudflare.sh" = data.sops_file.ddns.raw
   }
 }
+
+data "sops_file" "dashy" {
+  source_file = "${path.module}/configmaps/dashy.sops.yml"
+}
+resource "kubernetes_config_map" "dashy" {
+  metadata {
+    name      = "dashy"
+    namespace = "default"
+  }
+
+  data = {
+    "conf.yml" = data.sops_file.dashy.raw
+  }
+}

@@ -15,10 +15,11 @@ containers:
     volumeMounts:
       - name: dashy-data
         mountPath: /app/public
+        readOnly: true
 volumes:
   - name: dashy-data
-    hostPath:
-      path: /opt/dashy
+    configMap:
+      name: dashy
 service:
   port: 80
   nodePort: 30023
