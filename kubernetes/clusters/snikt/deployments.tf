@@ -5,6 +5,7 @@ locals {
   deployments_default = toset([
     "actual",
     "dashy",
+    "excalidraw",
     "gatus",
     "kanboard",
     "linkding",
