@@ -4,6 +4,7 @@ locals {
   ])
   selfhosted_proxied = toset([
     "actual",
+    "excalidraw",
     "immich",
     "kanboard",
     "linkding",
