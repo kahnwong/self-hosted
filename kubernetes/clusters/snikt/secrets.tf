@@ -28,6 +28,10 @@ locals {
       name      = "backup"
       namespace = "jobs"
     },
+    {
+      name      = "water-cut-notify"
+      namespace = "jobs"
+    },
     # ------- jobs-family-alerts ------- #
     {
       name      = "family-alerts"

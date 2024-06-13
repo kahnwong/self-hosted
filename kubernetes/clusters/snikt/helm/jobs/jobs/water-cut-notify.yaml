@@ -1,0 +1,11 @@
+---
+name: water-cut-notify
+schedule: "*/3 * * * *"
+
+containers:
+  - name: water-cut-notify
+    repository: ghcr.io/kahnwong/water-cut-notify
+    tag: 8621bb7
+    envFrom:
+      - secretRef:
+          name: water-cut-notify

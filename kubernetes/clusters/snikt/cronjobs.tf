@@ -10,6 +10,7 @@ locals {
     "backup-wallabag-content",
     "backup-wallabag-db",
     "ddns",
+    "water-cut-notify",
   ])
 
   jobs_fringe_division = toset([
