@@ -5,7 +5,7 @@ schedule: "0 23 1 * *"
 containers:
   - name: backup-wallabag-content
     repository: ghcr.io/kahnwong/docker-aws-backup
-    tag: 4783b2e
+    tag: 5fa2188
     env:
       - name: MODE
         value: ARCHIVE
@@ -13,6 +13,8 @@ containers:
         value: wallabag
       - name: BACKUP_PATH
         value: /opt/wallabag/images
+      - name: BUCKET_NAME
+        value: wallabag
     envFrom:
       - secretRef:
           name: backup
