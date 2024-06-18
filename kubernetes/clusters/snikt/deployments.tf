@@ -11,6 +11,7 @@ locals {
     "linkding",
     "memos",
     "minio",
+    "monkeytype",
     "ntfy",
     "picoshare",
     "rustpad",

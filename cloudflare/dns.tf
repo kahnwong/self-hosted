@@ -10,6 +10,7 @@ locals {
     "linkding",
     "memos",
     "miniflux",
+    "monkeytype",
     "music",
     "ntfy",
     "pmtiles",
