@@ -5,7 +5,7 @@ schedule: "1 0 * * *"
 containers:
   - name: backup-ntfy
     repository: ghcr.io/kahnwong/docker-aws-backup
-    tag: 4783b2e
+    tag: 6b34640
     env:
       - name: MODE
         value: ARCHIVE
