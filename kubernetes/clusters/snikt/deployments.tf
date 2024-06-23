@@ -4,7 +4,7 @@
 locals {
   deployments = tomap({
     default = ["dashy", "excalidraw", "gatus", "linkding", "memos", "minio", "monkeytype", "ntfy", "picoshare", "rustpad", "shouldideploytoday", "sshx"]
-    forgejo = ["forgejo"]
+    forgejo = ["forgejo", "forgejo-postgres"]
   })
 }
 
@@ -28,10 +28,6 @@ locals {
     "navidrome",
     "podgrab",
     "foo",
-  ])
-
-  deployments_forgejo = toset([
-    "forgejo-postgres"
   ])
 
   deployments_immich = toset([
@@ -87,19 +83,6 @@ resource "helm_release" "ns_default_fringe_division" {
   values = [
     file("./helm/deployments/default/${each.key}.yaml"),
     file("./resources/valuesTaintNodeSelector.yaml"),
-  ]
-}
-
-resource "helm_release" "ns_forgejo" {
-  for_each   = local.deployments_forgejo
-  name       = each.key
-  namespace  = "forgejo"
-  repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.2.0"
-  chart      = "base"
-
-  values = [
-    file("./helm/deployments/forgejo/${each.key}.yaml")
   ]
 }
 
