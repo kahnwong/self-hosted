@@ -29,6 +29,10 @@ locals {
       namespace = "jobs"
     },
     {
+      name      = "ddns"
+      namespace = "jobs"
+    },
+    {
       name      = "water-cut-notify"
       namespace = "jobs"
     },

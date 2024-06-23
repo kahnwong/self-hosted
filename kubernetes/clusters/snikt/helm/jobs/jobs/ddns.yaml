@@ -4,15 +4,11 @@ schedule: "*/5 * * * *"
 
 containers:
   - name: ddns
-    repository: curlimages/curl
+    repository: favonia/cloudflare-ddns
     tag: latest
-    command: ["/bin/sh"]
-    args: ["/opt/ddns/cloudflare.sh"]
-    volumeMounts:
-      - name: ddns
-        mountPath: /opt/ddns
-        readOnly: true
-volumes:
-  - name: ddns
-    configMap:
-      name: ddns
+    env:
+      - name: UPDATE_CRON
+        value: "@once"
+    envFrom:
+      - secretRef:
+          name: ddns
