@@ -10,6 +10,9 @@ locals {
     supersecretmessage = ["supersecretmessage", "supersecretmessage-vault"]
     wallabag           = ["wallabag", "wallabag-postgres", "wallabag-redis"]
   })
+  deployments_fringe_division = tomap({
+    default = ["audiobookshelf", "jellyfin", "navidrome", "podgrab", "foo"]
+  })
 }
 
 locals {
@@ -22,18 +25,20 @@ locals {
     ]
   ])
   deployments_map = { for index, v in local.deployments_map_raw : v.deployment => v.namespace }
+
+  deployments_fringe_division_map_raw = flatten([
+    for namespace, deployments in local.deployments_fringe_division : [
+      for deployment in deployments : {
+        deployment = deployment
+        namespace  = namespace
+      }
+    ]
+  ])
+  deployments_fringe_division_map = { for index, v in local.deployments_fringe_division_map_raw : v.deployment => v.namespace }
 }
 
 
 locals {
-  deployments_fringe_division = toset([
-    "audiobookshelf",
-    "jellyfin",
-    "navidrome",
-    "podgrab",
-    "foo",
-  ])
-
   deployments_immich = toset([
     "immich",
     "immich-machine-learning",
@@ -55,19 +60,20 @@ resource "helm_release" "this" {
   ]
 }
 
-resource "helm_release" "ns_default_fringe_division" {
-  for_each   = local.deployments_fringe_division
+resource "helm_release" "fringe_division" {
+  for_each   = local.deployments_fringe_division_map
   name       = each.key
-  namespace  = "default"
+  namespace  = each.value
   repository = "oci://ghcr.io/kahnwong/charts"
   version    = "0.2.0"
   chart      = "base"
 
   values = [
-    file("./helm/deployments/default/${each.key}.yaml"),
+    file("./helm/deployments/${each.value}/${each.key}.yaml"),
     file("./resources/valuesTaintNodeSelector.yaml"),
   ]
 }
+
 
 # resource "helm_release" "harbor" {
 #   name       = "harbor"
