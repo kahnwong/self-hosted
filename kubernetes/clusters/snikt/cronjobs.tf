@@ -28,13 +28,6 @@ locals {
   ])
 }
 
-
-# resource "kubernetes_manifest" "jobs" {
-#   for_each = local.jobs
-#
-#   manifest = yamldecode(file("./helm/jobs/jobs/${each.key}.yaml"))
-# }
-
 resource "helm_release" "jobs" {
   for_each   = local.jobs
   name       = each.key
