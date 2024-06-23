@@ -12,6 +12,7 @@ locals {
   })
   deployments_fringe_division = tomap({
     default = ["audiobookshelf", "jellyfin", "navidrome", "podgrab", "foo"]
+    immich  = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
   })
 }
 
@@ -39,12 +40,6 @@ locals {
 
 
 locals {
-  deployments_immich = toset([
-    "immich",
-    "immich-machine-learning",
-    "immich-postgres",
-    "immich-valkey",
-  ])
 }
 
 resource "helm_release" "this" {
@@ -91,21 +86,6 @@ resource "helm_release" "fringe_division" {
 #     value = var.registry_password
 #   }
 # }
-
-resource "helm_release" "immich" {
-  for_each   = local.deployments_immich
-  name       = each.key
-  namespace  = "immich"
-  repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.2.0"
-  chart      = "base"
-
-  values = [
-    file("./helm/deployments/immich/${each.value}.yaml"),
-    file("./resources/valuesTaintNodeSelector.yaml"),
-  ]
-}
-
 
 data "sops_file" "livegrep" {
   source_file = "./helm/deployments/livegrep/livegrep-indexer.sops.yaml"
