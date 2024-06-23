@@ -6,6 +6,7 @@ locals {
     default  = ["dashy", "excalidraw", "gatus", "linkding", "memos", "minio", "monkeytype", "ntfy", "picoshare", "rustpad", "shouldideploytoday", "sshx"]
     forgejo  = ["forgejo", "forgejo-postgres"]
     livegrep = ["livegrep-backend", "livegrep-frontend"]
+    miniflux = ["miniflux", "miniflux-postgres"]
   })
 }
 
@@ -38,10 +39,7 @@ locals {
     "immich-valkey",
   ])
 
-  deployments_miniflux = toset([
-    "miniflux",
-    "miniflux-postgres"
-  ])
+
 
   deployments_supersecretmessage = toset([
     "supersecretmessage",
@@ -126,19 +124,6 @@ resource "helm_release" "livegrep_indexer" {
 
   values = [
     data.sops_file.livegrep.raw
-  ]
-}
-
-resource "helm_release" "ns_miniflux" {
-  for_each   = local.deployments_miniflux
-  name       = each.key
-  namespace  = "miniflux"
-  repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.2.0"
-  chart      = "base"
-
-  values = [
-    file("./helm/deployments/miniflux/${each.key}.yaml")
   ]
 }
 
