@@ -40,6 +40,7 @@ kubectl taint nodes fringe-division storage-required=true:NoSchedule
 | [helm_release.ns_miniflux](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [helm_release.ns_supersecretmessage](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [helm_release.ns_wallabag](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
+| [helm_release.this](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [kubernetes_config_map.this](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/config_map) | resource |
 | [kubernetes_namespace.this](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/namespace) | resource |
 | [kubernetes_secret.backup_jobs](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/secret) | resource |

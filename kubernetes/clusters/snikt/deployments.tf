@@ -2,8 +2,27 @@
 # helm template ntfy  ../../charts/base/chart --values helm/deployments/default/ntfy.yaml
 
 locals {
+  deployments = tomap({
+    default = ["dashy"]
+    forgejo = ["forgejo"]
+  })
+}
+
+locals {
+  deployments_map_raw = flatten([
+    for namespace, deployments in local.deployments : [
+      for deployment in deployments : {
+        deployment = deployment
+        namespace  = namespace
+      }
+    ]
+  ])
+  deployments_map = { for index, v in local.deployments_map_raw : index => v }
+}
+
+
+locals {
   deployments_default = toset([
-    "dashy",
     "excalidraw",
     "gatus",
     "linkding",
@@ -26,7 +45,6 @@ locals {
   ])
 
   deployments_forgejo = toset([
-    "forgejo",
     "forgejo-postgres"
   ])
 
@@ -57,6 +75,19 @@ locals {
     "wallabag-postgres",
     "wallabag-redis",
   ])
+}
+
+resource "helm_release" "this" {
+  for_each   = local.deployments_map
+  name       = each.value.deployment
+  namespace  = each.value.namespace
+  repository = "oci://ghcr.io/kahnwong/charts"
+  version    = "0.2.0"
+  chart      = "base"
+
+  values = [
+    file("./helm/deployments/${each.value.namespace}/${each.value.deployment}.yaml")
+  ]
 }
 
 resource "helm_release" "ns_default" {
