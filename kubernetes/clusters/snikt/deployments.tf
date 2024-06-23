@@ -20,7 +20,7 @@ locals {
       }
     ]
   ])
-  deployments_map = { for index, v in local.deployments_map_raw : index => v }
+  deployments_map = { for index, v in local.deployments_map_raw : v.deployment => v.namespace }
 }
 
 
@@ -53,14 +53,14 @@ locals {
 
 resource "helm_release" "this" {
   for_each   = local.deployments_map
-  name       = each.value.deployment
-  namespace  = each.value.namespace
+  name       = each.key
+  namespace  = each.value
   repository = "oci://ghcr.io/kahnwong/charts"
   version    = "0.2.0"
   chart      = "base"
 
   values = [
-    file("./helm/deployments/${each.value.namespace}/${each.value.deployment}.yaml")
+    file("./helm/deployments/${each.value}/${each.key}.yaml")
   ]
 }
 
