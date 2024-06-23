@@ -6,7 +6,6 @@ locals {
     "actual",
     "excalidraw",
     "immich",
-    "kanboard",
     "linkding",
     "memos",
     "miniflux",

@@ -7,7 +7,6 @@ locals {
     "dashy",
     "excalidraw",
     "gatus",
-    "kanboard",
     "linkding",
     "memos",
     "minio",

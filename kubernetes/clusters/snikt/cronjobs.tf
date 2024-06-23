@@ -1,7 +1,6 @@
 locals {
   jobs = toset([
     "backup-actual",
-    "backup-kanboard",
     "backup-linkding",
     "backup-memos",
     "backup-miniflux",
