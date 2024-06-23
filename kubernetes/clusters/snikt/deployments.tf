@@ -3,10 +3,11 @@
 
 locals {
   deployments = tomap({
-    default  = ["dashy", "excalidraw", "gatus", "linkding", "memos", "minio", "monkeytype", "ntfy", "picoshare", "rustpad", "shouldideploytoday", "sshx"]
-    forgejo  = ["forgejo", "forgejo-postgres"]
-    livegrep = ["livegrep-backend", "livegrep-frontend"]
-    miniflux = ["miniflux", "miniflux-postgres"]
+    default            = ["dashy", "excalidraw", "gatus", "linkding", "memos", "minio", "monkeytype", "ntfy", "picoshare", "rustpad", "shouldideploytoday", "sshx"]
+    forgejo            = ["forgejo", "forgejo-postgres"]
+    livegrep           = ["livegrep-backend", "livegrep-frontend"]
+    miniflux           = ["miniflux", "miniflux-postgres"]
+    supersecretmessage = ["supersecretmessage", "supersecretmessage-vault", ]
   })
 }
 
@@ -41,10 +42,7 @@ locals {
 
 
 
-  deployments_supersecretmessage = toset([
-    "supersecretmessage",
-    "supersecretmessage-vault",
-  ])
+
 
   deployments_wallabag = toset([
     "wallabag",
@@ -124,19 +122,6 @@ resource "helm_release" "livegrep_indexer" {
 
   values = [
     data.sops_file.livegrep.raw
-  ]
-}
-
-resource "helm_release" "ns_supersecretmessage" {
-  for_each   = local.deployments_supersecretmessage
-  name       = each.key
-  namespace  = "supersecretmessage"
-  repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.2.0"
-  chart      = "base"
-
-  values = [
-    file("./helm/deployments/supersecretmessage/${each.key}.yaml")
   ]
 }
 
