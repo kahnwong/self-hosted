@@ -1,40 +1,35 @@
-resource "kubernetes_config_map" "ntfy" {
+locals {
+  configmaps = tomap({
+    dashy = {
+      namespace = "default"
+      filename  = "conf.yml"
+    }
+    gatus = {
+      namespace = "default"
+      filename  = "config.yaml"
+    }
+    ntfy = {
+      namespace = "default"
+      filename  = "server.yaml",
+    },
+  })
+}
+
+data "sops_file" "configmaps" {
+  for_each    = local.configmaps
+  source_file = "${path.module}/configmaps/${each.key}.sops.yaml"
+}
+resource "kubernetes_config_map" "this" {
+  for_each = local.configmaps
+
   metadata {
-    name      = "ntfy"
-    namespace = "default"
+    name      = each.key
+    namespace = each.value.namespace
   }
 
   data = {
-    "server.yaml" = file("${path.module}/configmaps/ntfy.server.yml")
-  }
-}
-
-
-data "sops_file" "dashy" {
-  source_file = "${path.module}/configmaps/dashy.sops.yml"
-}
-resource "kubernetes_config_map" "dashy" {
-  metadata {
-    name      = "dashy"
-    namespace = "default"
+    (each.value.filename) = data.sops_file.configmaps[each.key].raw
   }
 
-  data = {
-    "conf.yml" = data.sops_file.dashy.raw
-  }
-}
-
-
-data "sops_file" "gatus" {
-  source_file = "${path.module}/configmaps/gatus.sops.yaml"
-}
-resource "kubernetes_config_map" "gatus" {
-  metadata {
-    name      = "gatus"
-    namespace = "default"
-  }
-
-  data = {
-    "config.yaml" = data.sops_file.gatus.raw
-  }
+  depends_on = [data.sops_file.configmaps]
 }
