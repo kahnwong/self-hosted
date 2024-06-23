@@ -3,8 +3,9 @@
 
 locals {
   deployments = tomap({
-    default = ["dashy", "excalidraw", "gatus", "linkding", "memos", "minio", "monkeytype", "ntfy", "picoshare", "rustpad", "shouldideploytoday", "sshx"]
-    forgejo = ["forgejo", "forgejo-postgres"]
+    default  = ["dashy", "excalidraw", "gatus", "linkding", "memos", "minio", "monkeytype", "ntfy", "picoshare", "rustpad", "shouldideploytoday", "sshx"]
+    forgejo  = ["forgejo", "forgejo-postgres"]
+    livegrep = ["livegrep-backend", "livegrep-frontend"]
   })
 }
 
@@ -35,11 +36,6 @@ locals {
     "immich-machine-learning",
     "immich-postgres",
     "immich-valkey",
-  ])
-
-  deployments_livegrep = toset([
-    "livegrep-backend",
-    "livegrep-frontend"
   ])
 
   deployments_miniflux = toset([
@@ -118,18 +114,6 @@ resource "helm_release" "immich" {
 }
 
 
-resource "helm_release" "ns_livegrep" {
-  for_each   = local.deployments_livegrep
-  name       = each.key
-  namespace  = "livegrep"
-  repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.2.0"
-  chart      = "base"
-
-  values = [
-    file("./helm/deployments/livegrep/${each.key}.yaml")
-  ]
-}
 data "sops_file" "livegrep" {
   source_file = "./helm/deployments/livegrep/livegrep-indexer.sops.yaml"
 }
