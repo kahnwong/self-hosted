@@ -2,7 +2,7 @@ locals {
   namespaces = toset([
     "default",
     "forgejo",
-    "harbor",
+    #     "harbor",
     "immich",
     "jobs",
     "jobs-family-alerts",
