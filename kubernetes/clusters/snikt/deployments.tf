@@ -3,7 +3,7 @@
 
 locals {
   deployments = tomap({
-    default = ["dashy"]
+    default = ["dashy", "excalidraw", "gatus", "linkding", "memos", "minio", "monkeytype", "ntfy", "picoshare", "rustpad", "shouldideploytoday", "sshx"]
     forgejo = ["forgejo"]
   })
 }
@@ -22,20 +22,6 @@ locals {
 
 
 locals {
-  deployments_default = toset([
-    "excalidraw",
-    "gatus",
-    "linkding",
-    "memos",
-    "minio",
-    "monkeytype",
-    "ntfy",
-    "picoshare",
-    "rustpad",
-    "shouldideploytoday",
-    "sshx",
-  ])
-
   deployments_fringe_division = toset([
     "audiobookshelf",
     "jellyfin",
@@ -87,19 +73,6 @@ resource "helm_release" "this" {
 
   values = [
     file("./helm/deployments/${each.value.namespace}/${each.value.deployment}.yaml")
-  ]
-}
-
-resource "helm_release" "ns_default" {
-  for_each   = local.deployments_default
-  name       = each.key
-  namespace  = "default"
-  repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.2.0"
-  chart      = "base"
-
-  values = [
-    file("./helm/deployments/default/${each.key}.yaml")
   ]
 }
 
