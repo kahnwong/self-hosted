@@ -7,7 +7,8 @@ locals {
     forgejo            = ["forgejo", "forgejo-postgres"]
     livegrep           = ["livegrep-backend", "livegrep-frontend"]
     miniflux           = ["miniflux", "miniflux-postgres"]
-    supersecretmessage = ["supersecretmessage", "supersecretmessage-vault", ]
+    supersecretmessage = ["supersecretmessage", "supersecretmessage-vault"]
+    wallabag           = ["wallabag", "wallabag-postgres", "wallabag-redis"]
   })
 }
 
@@ -38,16 +39,6 @@ locals {
     "immich-machine-learning",
     "immich-postgres",
     "immich-valkey",
-  ])
-
-
-
-
-
-  deployments_wallabag = toset([
-    "wallabag",
-    "wallabag-postgres",
-    "wallabag-redis",
   ])
 }
 
@@ -122,18 +113,5 @@ resource "helm_release" "livegrep_indexer" {
 
   values = [
     data.sops_file.livegrep.raw
-  ]
-}
-
-resource "helm_release" "ns_wallabag" {
-  for_each   = local.deployments_wallabag
-  name       = each.key
-  namespace  = "wallabag"
-  repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.2.0"
-  chart      = "base"
-
-  values = [
-    file("./helm/deployments/wallabag/${each.key}.yaml")
   ]
 }
