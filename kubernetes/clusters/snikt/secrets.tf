@@ -18,6 +18,10 @@ locals {
       name      = "immich"
       namespace = "immich"
     },
+    {
+      name      = "immich-machine-learning"
+      namespace = "immich"
+    },
     # ------- miniflux ------- #
     {
       name      = "miniflux"
