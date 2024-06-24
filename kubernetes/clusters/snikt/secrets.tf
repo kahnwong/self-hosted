@@ -1,14 +1,9 @@
 locals {
   secrets = tomap({
-    default = ["minio"]
+    default = ["minio", "picoshare"]
   })
 
-
   secrets_old = [
-    {
-      name      = "picoshare"
-      namespace = "default"
-    },
     # ------- immich ------- #
     {
       name      = "immich-postgres"
@@ -86,6 +81,8 @@ resource "kubernetes_secret" "secrets" {
     namespace = each.value
   }
   data = nonsensitive(data.sops_file.secrets[each.key].data)
+
+  depends_on = [data.sops_file.secrets]
 }
 
 data "sops_file" "this" {
