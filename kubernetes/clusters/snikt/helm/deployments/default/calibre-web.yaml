@@ -1,0 +1,26 @@
+---
+kind: Deployment
+name: calibre-web
+replicaCount: 1
+
+containers:
+  - name: calibre-web
+    repository: lscr.io/linuxserver/calibre-web
+    tag: "0.6.21"
+    port: 8083
+    volumeMounts:
+      - name: books
+        mountPath: /books
+        readOnly: true
+      - name: config
+        mountPath: /config
+volumes:
+  - name: books
+    hostPath:
+      path: /opt/syncthing/cloud/Books/Library
+  - name: config
+    hostPath:
+      path: /opt/calibre-web/config
+service:
+  port: 8083
+  nodePort: 30032
