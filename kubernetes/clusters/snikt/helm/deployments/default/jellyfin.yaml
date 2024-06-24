@@ -20,6 +20,8 @@ containers:
         mountPath: /data/media
       - name: jellyfin-data
         mountPath: /config
+      - name: audiobooks
+        mountPath: /data/audiobooks
     resources:
       limits:
         cpu: 2
@@ -31,6 +33,9 @@ volumes:
   - name: jellyfin-data
     hostPath:
       path: /opt/jellyfin/config
+  - name: audiobooks
+    hostPath:
+      path: /opt/syncthing/audiobooks
 service:
   port: 8096
   nodePort: 30003
