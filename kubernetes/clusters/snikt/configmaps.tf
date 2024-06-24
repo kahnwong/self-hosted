@@ -4,7 +4,9 @@ locals {
       {
         deployment = "dashy"
         filename   = "conf.yml"
-      },
+      }
+    ]
+    infrastructure = [
       {
         deployment = "gatus"
         filename   = "config.yaml"
@@ -12,8 +14,7 @@ locals {
       {
         deployment = "ntfy"
         filename   = "server.yaml"
-      }
-    ]
+    }]
   })
 }
 

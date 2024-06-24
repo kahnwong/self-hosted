@@ -1,7 +1,8 @@
 locals {
   secrets = tomap({
-    default            = ["minio", "picoshare"]
+    default            = ["picoshare"]
     immich             = ["immich", "immich-machine-learning", "immich-postgres"]
+    infrastructure     = ["minio"]
     miniflux           = ["miniflux"]
     jobs               = ["backup", "ddns", "water-cut-notify", "immich-postgres"]
     jobs-family-alerts = ["family-alerts"]

@@ -1,15 +1,15 @@
 locals {
   namespaces = toset([
     "default",
-    "forgejo",
-    #     "harbor",
     "immich",
+    "infrastructure",
     "jobs",
     "jobs-family-alerts",
     "livegrep",
     "miniflux",
     "supersecretmessage",
     "wallabag",
+    #     "harbor",
   ])
 }
 

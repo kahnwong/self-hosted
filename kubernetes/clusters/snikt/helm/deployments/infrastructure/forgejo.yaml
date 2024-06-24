@@ -22,7 +22,7 @@ containers:
       - name: FORGEJO__database__DB_TYPE
         value: postgres
       - name: FORGEJO__database__HOST
-        value: forgejo-postgres.forgejo.svc.cluster.local:5432 # change me
+        value: forgejo-postgres.infrastructure.svc.cluster.local:5432 # change me
       - name: FORGEJO__database__NAME
         value: forgejo
       - name: FORGEJO__database__USER
