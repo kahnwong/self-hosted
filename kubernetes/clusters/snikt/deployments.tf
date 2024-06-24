@@ -6,7 +6,7 @@ locals {
     default            = ["dashy", "excalidraw", "linkding", "memos", "monkeytype", "picoshare", "rustpad", "shouldideploytoday", "sshx"]
     livegrep           = ["livegrep-backend", "livegrep-frontend"]
     miniflux           = ["miniflux", "miniflux-postgres"]
-    infrastructure     = ["gatus", "minio", "ntfy", ] #"forgejo", "forgejo-postgres"]
+    infrastructure     = ["gatus", "minio", "ntfy", "forgejo", "forgejo-postgres"]
     supersecretmessage = ["supersecretmessage", "supersecretmessage-vault"]
     wallabag           = ["wallabag", "wallabag-postgres", "wallabag-redis"]
   })
