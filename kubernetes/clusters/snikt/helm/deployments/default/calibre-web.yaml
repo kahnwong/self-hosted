@@ -1,4 +1,6 @@
 ---
+# disable redirect-to-login-page with reverse-proxy
+# 'Admin' > 'Edit Basic Configuration' > 'Security Settings' > 'Session Protection'
 kind: Deployment
 name: calibre-web
 replicaCount: 1
