@@ -22,6 +22,8 @@ containers:
         mountPath: /config
       - name: audiobooks
         mountPath: /data/audiobooks
+      - name: sink
+        mountPath: /data/sink
     resources:
       limits:
         cpu: 2
@@ -36,6 +38,9 @@ volumes:
   - name: audiobooks
     hostPath:
       path: /opt/syncthing/audiobooks
+  - name: sink
+    hostPath:
+      path: /opt/transmission/downloads/complete
 service:
   port: 8096
   nodePort: 30003
