@@ -3,6 +3,7 @@ locals {
     "duckdb",
   ])
   selfhosted_proxied = toset([
+    "books",
     "excalidraw",
     "immich",
     "linkding",

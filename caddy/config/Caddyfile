@@ -103,3 +103,6 @@ excalidraw.karnwong.me {
 monkeytype.karnwong.me {
     reverse_proxy 192.168.1.51:30035
 }
+books.karnwong.me {
+    reverse_proxy 192.168.1.51:30032
+}
