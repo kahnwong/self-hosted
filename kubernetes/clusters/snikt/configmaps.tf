@@ -35,7 +35,7 @@ data "sops_file" "configmaps" {
   for_each    = local.configmaps_map
   source_file = "${path.module}/configmaps/${each.key}.sops.yaml"
 }
-resource "kubernetes_config_map" "this" {
+resource "kubernetes_config_map" "configmaps" {
   for_each = local.configmaps_map
 
   metadata {
