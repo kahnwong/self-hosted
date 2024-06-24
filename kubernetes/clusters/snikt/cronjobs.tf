@@ -21,12 +21,14 @@ locals {
     ]
   })
 
-  jobs_fringe_division = toset([
-    "backup-immich-db",
-    "backup-navidrome",
-    "backup-syncthing",
-    "backup-transmission",
-  ])
+  jobs_fringe_division = tomap({
+    jobs = [
+      "backup-immich-db",
+      "backup-navidrome",
+      "backup-syncthing",
+      "backup-transmission",
+    ]
+  })
 }
 
 locals {
@@ -39,6 +41,16 @@ locals {
     ]
   ])
   jobs_map = { for index, v in local.jobs_map_raw : v.job => v.namespace }
+
+  jobs_fringe_division_map_raw = flatten([
+    for namespace, jobs in local.jobs_fringe_division : [
+      for job in jobs : {
+        job       = job
+        namespace = namespace
+      }
+    ]
+  ])
+  jobs_fringe_division_map = { for index, v in local.jobs_fringe_division_map_raw : v.job => v.namespace }
 }
 
 resource "helm_release" "jobs" {
@@ -55,15 +67,15 @@ resource "helm_release" "jobs" {
 }
 
 resource "helm_release" "jobs_fringe_division" {
-  for_each   = local.jobs_fringe_division
+  for_each   = local.jobs_fringe_division_map
   name       = each.key
-  namespace  = "jobs"
+  namespace  = each.value
   repository = "oci://ghcr.io/kahnwong/charts"
   version    = "0.1.0"
   chart      = "base-cronjob"
 
   values = [
-    file("./helm/jobs/jobs-fringe-division/${each.key}.yaml"),
+    file("./helm/jobs/${each.value}/${each.key}.yaml"),
     file("./resources/valuesTaintNodeSelector.yaml"),
   ]
 }
