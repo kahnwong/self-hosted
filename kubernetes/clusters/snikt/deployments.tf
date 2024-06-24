@@ -3,11 +3,11 @@
 
 locals {
   deployments = tomap({
-    default            = ["dashy", "excalidraw", "linkding", "memos", "monkeytype", "picoshare", "rustpad", "shouldideploytoday", "sshx"]
-    livegrep           = ["livegrep-backend", "livegrep-frontend"]
+    default            = ["dashy", "excalidraw", "linkding", "memos", "monkeytype", "rustpad", "shouldideploytoday", "sshx"]
     miniflux           = ["miniflux", "miniflux-postgres"]
     infrastructure     = ["gatus", "minio", "ntfy", "forgejo", "forgejo-postgres"]
     supersecretmessage = ["supersecretmessage", "supersecretmessage-vault"]
+    tools              = ["livegrep-backend", "livegrep-frontend", "picoshare"]
     wallabag           = ["wallabag", "wallabag-postgres", "wallabag-redis"]
   })
   deployments_fringe_division = tomap({
@@ -63,20 +63,5 @@ resource "helm_release" "fringe_division" {
   values = [
     file("./helm/deployments/${each.value}/${each.key}.yaml"),
     file("./resources/valuesTaintNodeSelector.yaml"),
-  ]
-}
-
-data "sops_file" "livegrep" {
-  source_file = "./helm/deployments/livegrep/livegrep-indexer.sops.yaml"
-}
-resource "helm_release" "livegrep_indexer" {
-  name       = "livegrep-indexer"
-  namespace  = "livegrep"
-  repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.1.0"
-  chart      = "base-cronjob"
-
-  values = [
-    data.sops_file.livegrep.raw
   ]
 }

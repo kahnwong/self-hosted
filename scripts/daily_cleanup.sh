@@ -18,5 +18,5 @@ kubectl exec "$WALLABAG_STATEFULSET_POD_NAME" -c postgres -- psql -U wallabag -d
 
 # ------- livegrep -------
 kubectl config use-context snikt
-kubectl config set-context --current --namespace=livegrep
+kubectl config set-context --current --namespace=tools
 kubectl rollout restart deploy livegrep-backend

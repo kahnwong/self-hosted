@@ -79,3 +79,19 @@ resource "helm_release" "jobs_fringe_division" {
     file("./resources/valuesTaintNodeSelector.yaml"),
   ]
 }
+
+# livegrep
+data "sops_file" "livegrep" {
+  source_file = "./helm/jobs/jobs/livegrep-indexer.sops.yaml"
+}
+resource "helm_release" "livegrep_indexer" {
+  name       = "livegrep-indexer"
+  namespace  = "tools"
+  repository = "oci://ghcr.io/kahnwong/charts"
+  version    = "0.1.0"
+  chart      = "base-cronjob"
+
+  values = [
+    data.sops_file.livegrep.raw
+  ]
+}

@@ -5,9 +5,9 @@ locals {
     "infrastructure",
     "jobs",
     "jobs-family-alerts",
-    "livegrep",
     "miniflux",
     "supersecretmessage",
+    "tools",
     "wallabag",
     #     "harbor",
   ])

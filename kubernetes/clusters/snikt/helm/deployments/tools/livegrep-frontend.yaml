@@ -9,7 +9,7 @@ containers:
     tag: 033fa0e93c
     port: 8910
     command: ["/livegrep/bin/livegrep"]
-    args: ["-docroot=/livegrep/web", "-listen=0.0.0.0:8910", "--connect=livegrep-backend.livegrep.svc.cluster.local:9999"]
+    args: ["-docroot=/livegrep/web", "-listen=0.0.0.0:8910", "--connect=livegrep-backend.tools.svc.cluster.local:9999"]
 service:
   port: 8910
   nodePort: 30033
