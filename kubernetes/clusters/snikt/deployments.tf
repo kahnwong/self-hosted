@@ -30,8 +30,8 @@ locals {
   deployments_fringe_division_map_raw = flatten([
     for namespace, deployments in local.deployments_fringe_division : [
       for deployment in deployments : {
-        deployment = deployment
         namespace  = namespace
+        deployment = deployment
       }
     ]
   ])
