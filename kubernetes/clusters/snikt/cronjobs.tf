@@ -1,7 +1,12 @@
 locals {
-  jobs = toset([
-    "backup-linkding",
-    "backup-memos",
+  jobs = tomap({
+    jobs = [
+      "backup-linkding",
+      "backup-memos"
+    ]
+  })
+
+  jobs_old = toset([
     "backup-miniflux",
     "backup-ntfy",
     "backup-prune",
@@ -28,8 +33,33 @@ locals {
   ])
 }
 
+locals {
+  jobs_map_raw = flatten([
+    for namespace, jobs in local.jobs : [
+      for job in jobs : {
+        job       = job
+        namespace = namespace
+      }
+    ]
+  ])
+  jobs_map = { for index, v in local.jobs_map_raw : v.job => v.namespace }
+}
+
+resource "helm_release" "jobs_new" {
+  for_each   = local.jobs_map
+  name       = each.key
+  namespace  = each.value
+  repository = "oci://ghcr.io/kahnwong/charts"
+  version    = "0.1.0"
+  chart      = "base-cronjob"
+
+  values = [
+    file("./helm/jobs/${each.value}/${each.key}.yaml"),
+  ]
+}
+
 resource "helm_release" "jobs" {
-  for_each   = local.jobs
+  for_each   = local.jobs_old
   name       = each.key
   namespace  = "jobs"
   repository = "oci://ghcr.io/kahnwong/charts"
