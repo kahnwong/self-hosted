@@ -1,10 +1,10 @@
 locals {
-  secrets = [
-    # ------- default ------- #
-    {
-      name      = "minio"
-      namespace = "default"
-    },
+  secrets = tomap({
+    default = ["minio"]
+  })
+
+
+  secrets_old = [
     {
       name      = "picoshare"
       namespace = "default"
@@ -55,13 +55,38 @@ locals {
   ]
 }
 locals {
-  secrets_dict = { for o in local.secrets : o.name => o }
-  secrets_name = toset(local.secrets[*].name)
+  secrets_dict = { for o in local.secrets_old : o.name => o }
+  secrets_name = toset(local.secrets_old[*].name)
 
   secrets_backup_jobs_dict = { for o in local.secrets_backup_jobs : o.name => o }
   secrets_backup_jobs_name = toset(local.secrets_backup_jobs[*].name)
 }
 
+locals {
+  secrets_map_raw = flatten([
+    for namespace, secrets in local.secrets : [
+      for secret in secrets : {
+        secret    = secret
+        namespace = namespace
+      }
+    ]
+  ])
+  secrets_map = { for index, v in local.secrets_map_raw : v.secret => v.namespace }
+}
+
+data "sops_file" "secrets" {
+  for_each    = local.secrets_map
+  source_file = "./secrets/${each.key}.sops.yaml"
+}
+resource "kubernetes_secret" "secrets" {
+  for_each = local.secrets_map
+
+  metadata {
+    name      = each.key
+    namespace = each.value
+  }
+  data = nonsensitive(data.sops_file.secrets[each.key].data)
+}
 
 data "sops_file" "this" {
   for_each    = local.secrets_name
