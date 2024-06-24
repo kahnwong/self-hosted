@@ -3,11 +3,15 @@
 
 locals {
   deployments = tomap({
-    default        = ["dashy", "excalidraw", "linkding", "memos", "monkeytype", "rustpad", "shouldideploytoday", "sshx"]
+    default        = ["dashy", "linkding", "memos", "monkeytype"]
     miniflux       = ["miniflux", "miniflux-postgres"]
     infrastructure = ["gatus", "minio", "ntfy", "forgejo", "forgejo-postgres"]
-    tools          = ["livegrep-backend", "livegrep-frontend", "picoshare", "supersecretmessage", "supersecretmessage-vault"]
-    wallabag       = ["wallabag", "wallabag-postgres", "wallabag-redis"]
+    tools = [
+      "livegrep-backend", "livegrep-frontend",
+      "supersecretmessage", "supersecretmessage-vault",
+      "excalidraw", "picoshare", "rustpad", "shouldideploytoday", "sshx"
+    ]
+    wallabag = ["wallabag", "wallabag-postgres", "wallabag-redis"]
   })
   deployments_fringe_division = tomap({
     default = ["audiobookshelf", "jellyfin", "navidrome", "podgrab", "foo"]
