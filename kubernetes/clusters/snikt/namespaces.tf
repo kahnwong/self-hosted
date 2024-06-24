@@ -6,7 +6,6 @@ locals {
     "jobs",
     "jobs-family-alerts",
     "miniflux",
-    "supersecretmessage",
     "tools",
     "wallabag",
     #     "harbor",
