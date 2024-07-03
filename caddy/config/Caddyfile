@@ -27,9 +27,6 @@ syncthing.karnwong.me {
     reverse_proxy 192.168.1.36:8384
 }
 
-actual.karnwong.me {
-    reverse_proxy 192.168.1.51:30042
-}
 git.karnwong.me {
     reverse_proxy 192.168.1.51:30026
 }
