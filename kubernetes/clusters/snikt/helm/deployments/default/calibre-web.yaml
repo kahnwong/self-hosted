@@ -19,7 +19,7 @@ containers:
 volumes:
   - name: books
     hostPath:
-      path: /opt/syncthing/cloud/Books/Library
+      path: /opt/syncthing/books/Library
   - name: config
     hostPath:
       path: /opt/calibre-web/config
