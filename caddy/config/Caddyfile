@@ -17,6 +17,12 @@ jellyfin.karnwong.me {
 music.karnwong.me {
     reverse_proxy 192.168.1.51:30006
 }
+dagster.karnwong.me {
+    basicauth * {
+        tua $2a$14$IsmBNJCIaB6GeXqiboUEHOpodH4LtBLyR7u6oX3Ugdo0rEEeXvtYW
+    }
+    reverse_proxy 192.168.1.36:3000
+}
 podgrab.karnwong.me {
     basicauth * {
         podgrab $2a$14$s1l.L4xhGyEwCjt/MhP4dO0v3YF1g1zwE0KjkYSVFRAeETBNGDeyG
