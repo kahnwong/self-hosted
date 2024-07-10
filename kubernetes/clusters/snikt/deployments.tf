@@ -14,7 +14,7 @@ locals {
     wallabag = ["wallabag", "wallabag-postgres", "wallabag-redis"]
   })
   deployments_fringe_division = tomap({
-    default = ["audiobookshelf", "jellyfin", "navidrome", "podgrab", "foo", "calibre-web"]
+    default = ["audiobookshelf", "jellyfin", "navidrome", "podgrab", "foo", "calibre-web", "baz"]
     immich  = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
   })
 }
