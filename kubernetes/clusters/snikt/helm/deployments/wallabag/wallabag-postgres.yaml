@@ -17,11 +17,9 @@ containers:
     tag: 16.2-alpine
     port: 5432
     livenessProbeScheme: tcp
-    env:
-      - name: POSTGRES_USER
-        value: my-super-user
-      - name: POSTGRES_PASSWORD
-        value: my-secret-pw
+    envFrom:
+      - secretRef:
+          name: wallabag-postgres
     volumeMounts:
       - name: wallabag-data
         mountPath: /var/lib/postgresql/data

@@ -7,6 +7,7 @@ locals {
     jobs               = ["backup", "ddns", "water-cut-notify", "immich-postgres"]
     jobs-family-alerts = ["family-alerts"]
     tools              = ["picoshare"]
+    wallabag           = ["wallabag-postgres"]
   })
 }
 
