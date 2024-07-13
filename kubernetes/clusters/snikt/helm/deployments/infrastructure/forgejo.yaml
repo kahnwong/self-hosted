@@ -21,14 +21,6 @@ containers:
         value: "1000"
       - name: FORGEJO__database__DB_TYPE
         value: postgres
-      - name: FORGEJO__database__HOST
-        value: forgejo-postgres.infrastructure.svc.cluster.local:5432 # change me
-      - name: FORGEJO__database__NAME
-        value: forgejo
-      - name: FORGEJO__database__USER
-        value: forgejo
-      - name: FORGEJO__database__PASSWD
-        value: forgejopassword
       - name: FORGEJO__service__DISABLE_REGISTRATION
         value: "true"
       - name: FORGEJO__server__ROOT_URL
@@ -45,6 +37,9 @@ containers:
         value: "true"
       - name: FORGEJO__actions__ENABLED
         value: "true"
+    envFrom:
+      - secretRef:
+          name: forgejo
     volumeMounts:
       - name: forgejo-data
         mountPath: /data
