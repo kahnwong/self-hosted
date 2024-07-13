@@ -16,11 +16,9 @@ containers:
     tag: 16.2-alpine
     port: 5432
     livenessProbeScheme: tcp
-    env:
-      - name: POSTGRES_USER
-        value: miniflux
-      - name: POSTGRES_PASSWORD
-        value: secret
+    envFrom:
+      - secretRef:
+          name: miniflux-postgres
     volumeMounts:
       - name: miniflux-data
         mountPath: /var/lib/postgresql/data

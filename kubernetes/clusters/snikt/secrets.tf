@@ -3,7 +3,7 @@ locals {
     default            = []
     immich             = ["immich", "immich-machine-learning", "immich-postgres"]
     infrastructure     = ["forgejo", "forgejo-postgres", "minio", "mlflow", "mlflow-postgres"]
-    miniflux           = ["miniflux"]
+    miniflux           = ["miniflux", "miniflux-postgres"]
     jobs               = ["backup", "ddns", "water-cut-notify", "immich-postgres"]
     jobs-family-alerts = ["family-alerts"]
     tools              = ["picoshare"]
