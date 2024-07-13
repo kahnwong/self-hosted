@@ -9,8 +9,6 @@ containers:
     tag: 2.1.3
     port: 8080
     env:
-      - name: DATABASE_URL
-        value: postgres://miniflux:secret@miniflux-postgres.miniflux.svc.cluster.local/miniflux?sslmode=disable
       - name: RUN_MIGRATIONS
         value: "1"
       - name: CREATE_ADMIN
