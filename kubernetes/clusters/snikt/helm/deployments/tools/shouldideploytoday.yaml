@@ -6,7 +6,7 @@ replicaCount: 1
 containers:
   - name: shouldideploytoday
     repository: ghcr.io/kahnwong/shouldideploy
-    tag: e6766dd
+    tag: ebb95ee
     port: 3000
 service:
   port: 3000
