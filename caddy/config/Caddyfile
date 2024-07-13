@@ -109,3 +109,9 @@ monkeytype.karnwong.me {
 books.karnwong.me {
     reverse_proxy 192.168.1.51:30032
 }
+mlflow.karnwong.me {
+    basicauth * {
+        kahnwong $2a$14$aOzINeAOPdscwDAUsUuVaOf3g1Rvw3aDmQVwI.aZBVSFtCULtR2OO
+    }
+    reverse_proxy 192.168.1.36:30037
+}

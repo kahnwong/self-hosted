@@ -9,6 +9,7 @@ locals {
     "linkding",
     "memos",
     "miniflux",
+    "mlflow",
     "monkeytype",
     "music",
     "ntfy",
