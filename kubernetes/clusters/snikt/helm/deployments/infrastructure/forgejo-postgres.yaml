@@ -9,13 +9,9 @@ containers:
     tag: 16.2-alpine
     port: 5432
     livenessProbeScheme: tcp
-    env:
-      - name: POSTGRES_USER
-        value: forgejo
-      - name: POSTGRES_PASSWORD
-        value: forgejopassword
-      - name: POSTGRES_DB
-        value: forgejo
+    envFrom:
+      - secretRef:
+          name: forgejo-postgres
     volumeMounts:
       - name: forgejo-db
         mountPath: /var/lib/postgresql/data
