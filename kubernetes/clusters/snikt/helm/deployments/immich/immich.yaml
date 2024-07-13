@@ -6,7 +6,7 @@ replicaCount: 1
 containers:
   - name: immich-server
     repository: ghcr.io/immich-app/immich-server
-    tag: v1.106.4
+    tag: v1.108.0
     port: 3001
     envFrom:
       - secretRef:
