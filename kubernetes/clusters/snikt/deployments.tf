@@ -7,6 +7,7 @@ locals {
     miniflux = ["miniflux", "miniflux-postgres"]
     infrastructure = [
       "forgejo", "forgejo-postgres",
+      "mlflow-postgres",
       "gatus", "minio", "ntfy",
     ]
     tools = [

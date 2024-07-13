@@ -1,0 +1,23 @@
+---
+kind: StatefulSet
+name: mlflow-postgres
+replicaCount: 1
+
+containers:
+  - name: postgres
+    repository: postgres
+    tag: 16.3-alpine
+    port: 5432
+    livenessProbeScheme: tcp
+    envFrom:
+      - secretRef:
+          name: mlflow-postgres
+    volumeMounts:
+      - name: mlflow-db
+        mountPath: /var/lib/postgresql/data
+volumes:
+  - name: mlflow-db
+    hostPath:
+      path: /opt/mlflow/db
+service:
+  port: 5432

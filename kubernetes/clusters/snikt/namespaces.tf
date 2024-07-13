@@ -8,7 +8,6 @@ locals {
     "miniflux",
     "tools",
     "wallabag",
-    #     "harbor",
   ])
 }
 
