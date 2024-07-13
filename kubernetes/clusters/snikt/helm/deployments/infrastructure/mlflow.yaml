@@ -1,0 +1,16 @@
+---
+kind: Deployment
+name: mlflow
+replicaCount: 1
+
+containers:
+  - name: mlflow
+    repository: ghcr.io/kahnwong/docker-mlflow
+    tag: 72da701
+    port: 8080
+    envFrom:
+      - secretRef:
+          name: mlflow
+service:
+  port: 8080
+  nodePort: 30037
