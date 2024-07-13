@@ -5,11 +5,8 @@ schedule: "15 23 * * *" # 6:15 AM Asia/Bangkok
 containers:
   - name: 00-0-morning-coffee
     repository: ghcr.io/kahnwong/line-notify
-    tag: dc61980
-    command: ["python3"]
+    tag: 857a8cf
     args:
-      - line_notify/main.py
-      - --message
       - "อย่าลืมหยิบกาแฟในตู้เย็น"
     envFrom:
       - secretRef:

@@ -5,11 +5,8 @@ schedule: "30 9 * * *" # 4:30 PM Asia/Bangkok
 containers:
   - name: 02-2-dinner-update-granny
     repository: ghcr.io/kahnwong/line-notify
-    tag: dc61980
-    command: ["python3"]
+    tag: 857a8cf
     args:
-      - line_notify/main.py
-      - --message
       - "บอกคนแก่ถ้ามีคนไม่กินข้าวบ้าน"
     envFrom:
       - secretRef:

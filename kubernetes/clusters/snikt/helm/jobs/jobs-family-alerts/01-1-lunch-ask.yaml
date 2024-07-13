@@ -5,11 +5,8 @@ schedule: "30 3 * * *" # 10:30 AM Asia/Bangkok
 containers:
   - name: 01-1-lunch-ask
     repository: ghcr.io/kahnwong/line-notify
-    tag: dc61980
-    command: ["python3"]
+    tag: 857a8cf
     args:
-      - line_notify/main.py
-      - --message
       - "ถามคนแก่ว่าเที่ยงกินอะไร"
     envFrom:
       - secretRef:

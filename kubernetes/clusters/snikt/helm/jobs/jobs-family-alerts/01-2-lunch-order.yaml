@@ -5,11 +5,8 @@ schedule: "0 4 * * *" # 11:00 AM Asia/Bangkok
 containers:
   - name: 01-2-lunch-order
     repository: ghcr.io/kahnwong/line-notify
-    tag: dc61980
-    command: ["python3"]
+    tag: 857a8cf
     args:
-      - line_notify/main.py
-      - --message
       - "สั่งข้าวเที่ยง"
     envFrom:
       - secretRef:

@@ -5,11 +5,8 @@ schedule: "00 8 * * *" # 3:00 PM Asia/Bangkok
 containers:
   - name: 02-3-coffee-or-tea
     repository: ghcr.io/kahnwong/line-notify
-    tag: dc61980
-    command: ["python3"]
+    tag: 857a8cf
     args:
-      - line_notify/main.py
-      - --message
       - "เอาชาหรือกาแฟ"
     envFrom:
       - secretRef:
