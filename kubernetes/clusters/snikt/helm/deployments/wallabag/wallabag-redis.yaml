@@ -9,8 +9,8 @@ containers:
     tag: 6.0.9-alpine
     port: 6379
     livenessProbeScheme: tcp
-    env:
-      - name: REDIS_HOST_PASSWORD
-        value: redispwd
+    envFrom:
+      - secretRef:
+          name: wallabag-redis
 service:
   port: 6379
