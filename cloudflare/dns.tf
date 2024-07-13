@@ -18,16 +18,15 @@ locals {
     "rustpad",
     "secrets",
     "shouldideploytoday",
-    "subsonic-widgets",
   ])
   selfhosted_non_proxied = setunion(toset([
     "audiobookshelf",
     "books",
     "git",
-    "harbor",
     "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
     "minio",
     "share", # prevent request entity too large
+    "subsonic-widgets",
     "syncthing",
     "wallabag",
   ]), var.private_dns)
