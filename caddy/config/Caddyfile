@@ -115,3 +115,6 @@ mlflow.karnwong.me {
     }
     reverse_proxy 192.168.1.36:30037
 }
+subsonic-widgets.karnwong.me {
+    reverse_proxy 192.168.1.36:30038
+}

@@ -18,6 +18,7 @@ locals {
     "rustpad",
     "secrets",
     "shouldideploytoday",
+    "subsonic-widgets",
   ])
   selfhosted_non_proxied = setunion(toset([
     "audiobookshelf",
