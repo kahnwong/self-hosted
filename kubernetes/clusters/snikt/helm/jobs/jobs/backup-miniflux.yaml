@@ -12,9 +12,15 @@ containers:
       - name: SERVICE_NAME
         value: miniflux
       - name: POSTGRES_USERNAME
-        value: miniflux
+        valueFrom:
+          secretKeyRef:
+            name: miniflux-postgres
+            key: POSTGRES_USER
       - name: POSTGRES_PASSWORD
-        value: secret
+        valueFrom:
+          secretKeyRef:
+            name: miniflux-postgres
+            key: POSTGRES_PASSWORD
       - name: POSTGRES_HOSTNAME
         value: miniflux-postgres.miniflux.svc.cluster.local
     envFrom:

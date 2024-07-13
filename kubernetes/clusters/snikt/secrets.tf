@@ -1,10 +1,16 @@
 locals {
   secrets = tomap({
-    default            = []
-    immich             = ["immich", "immich-machine-learning", "immich-postgres"]
-    infrastructure     = ["forgejo", "forgejo-postgres", "minio", "mlflow", "mlflow-postgres"]
-    miniflux           = ["miniflux", "miniflux-postgres"]
-    jobs               = ["backup", "ddns", "water-cut-notify", "immich-postgres"]
+    default        = []
+    immich         = ["immich", "immich-machine-learning", "immich-postgres"]
+    infrastructure = ["forgejo", "forgejo-postgres", "minio", "mlflow", "mlflow-postgres"]
+    miniflux       = ["miniflux", "miniflux-postgres"]
+    jobs = [
+      "backup", "ddns", "water-cut-notify",
+      "forgejo-postgres",
+      "immich-postgres",
+      "miniflux-postgres",
+      "wallabag",
+    ]
     jobs-family-alerts = ["family-alerts"]
     tools              = ["picoshare"]
     wallabag           = ["wallabag", "wallabag-postgres", "wallabag-redis"]
