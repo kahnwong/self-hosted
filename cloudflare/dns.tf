@@ -2,6 +2,9 @@ locals {
   github_pages = toset([
     "duckdb",
   ])
+  vercel = toset([
+    "shouldideploytoday",
+  ])
   selfhosted_proxied = toset([
     "dagster",
     "excalidraw",
@@ -17,7 +20,6 @@ locals {
     "podgrab",
     "rustpad",
     "secrets",
-    "shouldideploytoday",
   ])
   selfhosted_non_proxied = setunion(toset([
     "audiobookshelf",
@@ -44,6 +46,16 @@ resource "cloudflare_record" "github_pages_dns" {
   ttl      = 1
   type     = "CNAME"
   value    = "kahnwong.github.io"
+  zone_id  = var.cloudflare_zone_id
+}
+
+resource "cloudflare_record" "vercel_dns" {
+  for_each = local.vercel
+  name     = each.key
+  proxied  = true
+  ttl      = 1
+  type     = "CNAME"
+  value    = "cname.vercel-dns.com."
   zone_id  = var.cloudflare_zone_id
 }
 

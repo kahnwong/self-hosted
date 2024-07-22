@@ -13,7 +13,7 @@ locals {
     tools = [
       "livegrep-backend", "livegrep-frontend",
       "supersecretmessage", "supersecretmessage-vault",
-      "excalidraw", "picoshare", "rustpad", "shouldideploytoday", "sshx"
+      "excalidraw", "picoshare", "rustpad", "sshx"
     ]
     wallabag = ["wallabag", "wallabag-postgres", "wallabag-redis"]
   })
