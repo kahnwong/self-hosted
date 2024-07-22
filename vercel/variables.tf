@@ -1,3 +1,3 @@
-variable "vercel_api_token" {
+variable "vercel_token" {
   type = string
 }
