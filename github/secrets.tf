@@ -16,6 +16,7 @@ locals {
   ])
 
   vercel_repos = toset([
+    "transform",
     "shouldideploy",
   ])
 }

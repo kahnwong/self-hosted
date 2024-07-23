@@ -3,6 +3,7 @@ locals {
     "duckdb",
   ])
   vercel = toset([
+    "transform",
     "shouldideploytoday",
   ])
   selfhosted_proxied = toset([
