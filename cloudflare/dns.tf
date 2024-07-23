@@ -14,7 +14,6 @@ locals {
     "memos",
     "miniflux",
     "mlflow",
-    "monkeytype",
     "music",
     "ntfy",
     "pmtiles",

@@ -103,9 +103,6 @@ pmtiles.karnwong.me {
 excalidraw.karnwong.me {
     reverse_proxy 192.168.1.51:30034
 }
-monkeytype.karnwong.me {
-    reverse_proxy 192.168.1.51:30035
-}
 books.karnwong.me {
     reverse_proxy 192.168.1.51:30032
 }

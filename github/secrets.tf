@@ -11,6 +11,7 @@ locals {
     "h3-viewer",
     "jupyterlite",
     "karnwong.me",
+    "monkeytype",
     "retriever",
     "slc",
   ])

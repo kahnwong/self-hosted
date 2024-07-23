@@ -5,6 +5,7 @@ locals {
     "h3-viewer",
     "jupyterlite",
     "maps",
+    "monkeytype",
     "retriever",
     "slc",
   ])
