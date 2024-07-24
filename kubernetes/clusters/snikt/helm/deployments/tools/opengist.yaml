@@ -1,0 +1,20 @@
+---
+kind: Deployment
+name: opengist
+replicaCount: 1
+
+containers:
+  - name: opengist
+    repository: ghcr.io/thomiceli/opengist
+    tag: 1.7
+    port: 6157
+    volumeMounts:
+      - name: data
+        mountPath: /opengist
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/opengist/data
+service:
+  port: 6157
+  nodePort: 30039
