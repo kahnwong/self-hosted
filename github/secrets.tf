@@ -14,6 +14,7 @@ locals {
     "monkeytype",
     "retriever",
     "slc",
+    "whattheduck",
   ])
 
   vercel_repos = toset([

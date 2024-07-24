@@ -8,6 +8,7 @@ locals {
     "monkeytype",
     "retriever",
     "slc",
+    "whattheduck",
   ])
 }
 
