@@ -13,7 +13,8 @@ locals {
     tools = [
       "livegrep-backend", "livegrep-frontend",
       "supersecretmessage", "supersecretmessage-vault",
-      "excalidraw", "opengist", "picoshare", "rustpad", "sshx"
+      "excalidraw", "opengist", "picoshare", "rustpad", "sshx",
+      "stirling-pdf",
     ]
     wallabag = ["wallabag", "wallabag-postgres", "wallabag-redis"]
   })
@@ -26,6 +27,7 @@ locals {
       "foo", "baz"
     ]
     immich = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
+    tools  = []
   })
 }
 

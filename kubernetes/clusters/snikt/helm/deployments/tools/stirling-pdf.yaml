@@ -1,0 +1,16 @@
+---
+kind: Deployment
+name: stirling-pdf
+replicaCount: 1
+
+containers:
+  - name: stirling-pdf
+    repository: frooodle/s-pdf
+    tag: 0.26.1-ultra-lite
+    port: 8080
+    env:
+      - name: LANGS
+        value: en_US
+service:
+  port: 8080
+  nodePort: 30040
