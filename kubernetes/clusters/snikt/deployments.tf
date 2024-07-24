@@ -6,7 +6,7 @@ locals {
     default  = ["dashy", "linkding", "memos", "subsonic-widgets"]
     miniflux = ["miniflux", "miniflux-postgres"]
     infrastructure = [
-      "forgejo", "forgejo-postgres",
+      #       "forgejo", "forgejo-postgres",
       "mlflow", "mlflow-postgres",
       "gatus", "minio", "ntfy",
     ]
