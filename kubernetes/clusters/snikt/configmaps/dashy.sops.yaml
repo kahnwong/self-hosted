@@ -19,6 +19,9 @@ sections:
         - title: ENC[AES256_GCM,data:RndyOltSvNE=,iv:J4Ue3tc907wFBPouD8AkwjoESnN/yA5YBpO/nc+2MPA=,tag:GpxGxT1DSHryIPWHYsRKcg==,type:str]
           icon: ENC[AES256_GCM,data:lkcrPB3Izp6lvZLkORC8X1lIGeT5Q5JMz8mhh/ipJHcuBoXnAkgScQjIMWfBVGC2Cdiop9r7To4Odift3byW6KlOAbuyN0R4sxtKi+MZkyjGx3KCQuKGwwO+,iv:bsbaGG++R+wscGPSQ9eznLBtRYwez9vn7gsSrN3Jaso=,tag:scqdsqma4QCFCpb4es8OOQ==,type:str]
           url: ENC[AES256_GCM,data:Z9FSV1bzBH6x6L2BSlgJqNDL,iv:rNXEvF80c+3K4Susrcj0vNffJDFLkY4qnNuqVEH6mVI=,tag:qEvQYasKI0ZWi3ZHOA1FGA==,type:str]
+        - title: ENC[AES256_GCM,data:FDK/CQ9uBow=,iv:O08RtRYPCQ7Gz+Mtz5PY/UYv/SoBxJxbfi4jWeEv4Rg=,tag:MtDYjlT4Kra4GLS1g5jw0w==,type:str]
+          icon: ENC[AES256_GCM,data:7DMYlgiFruyNzR7uIBL54fXJnD8jrHDbqsHP0RhnRYYrnRzreRbPbNvS1E5mNAlH5NBlE6lfH422AGYxRRzC2q9QkQ1HkoEjTzlsce4xMKfjHAELt9Z0TYELqHq8W3074KruDcb3fLN8h0XWyvzcPM0=,iv:raJ+5WkSdT7j1+tSYmpcUIYHPABHuBAPzNpuTkzaTvg=,tag:KiiTg14qZr6EFkhqhs4Xgg==,type:str]
+          url: ENC[AES256_GCM,data:GiFITC8Y+hu5vr90Lt9FOmsXulO495N5,iv:SZiGcXL0lBxQE14etgc6PkheX+n0hmoE7S9YHpfUdWM=,tag:EZ67kzoi6trtETJIMwwXSQ==,type:str]
         - title: ENC[AES256_GCM,data:FE9z5kk3YQ==,iv:JOTn+0FksUJoZpiSAb5DPX/cwLysQDoCZsFDKgoouRk=,tag:r4UArJiULbM3ziOzp5AkeQ==,type:str]
           icon: ENC[AES256_GCM,data:HToC8Ct4zEQ2l06FKs4NNQx1sklsVqcie8mmscM7znBR/omUXiRXqaNBcDIMbF2yptpq1feFQ+KQtvtlx5JN6CH6HCPQ8a2BWg==,iv:AmlxQjyyXZY2KR3v9PdewAk6QZcC/KgwyAWuUydfbwk=,tag:iVzutEoOD5BZhs/YtlOG6g==,type:str]
           url: ENC[AES256_GCM,data:LOql9IfCv8g0nKhwH3PgczRnUxY3esapVMqrMg==,iv:/LHhwVHLnN2AeEf7k+Kh84TRGbS3WwBptqzRolzH1s4=,tag:nSRS+/3WmMpvp+3c0lYBfA==,type:str]
@@ -143,8 +146,8 @@ sops:
             YUs3cXA2TnB4c21FQzg0bnFyTkRDejgKzf7PO4qiPs7dWhWadFXEwXmawv1p2xwZ
             Vjnq6Nqhj2Cvt+fCAh0wMHi1kI8XIjDoOMcwweKgjFMkv86gBkgtLg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-07-23T10:19:36Z"
-    mac: ENC[AES256_GCM,data:OOtymVF3jOatICNz+dPi6P9rWVXPmt7B7TfYMj0VUFTFmbBE7pRu+WezSIWsJZVUVk8WcC+OBAs8CWo8OGfnQjB16IWlICdb4IKCoQjUCytAff2Sk2W2HGdULdajrR49/Ka2mM/FLfMpsncQYikItL/tiNg7223PpQdnMaEKS0o=,iv:FirZGpVCszg2jHze2h6b/Q3f5J8gENTlOxSt0wZjXyg=,tag:mfx/x8RY8YDQCSEcx4ce8A==,type:str]
+    lastmodified: "2024-07-24T07:27:42Z"
+    mac: ENC[AES256_GCM,data:QqYFLCrSZjZIWqLX4Go1LTm3Sndo/tLQojFTOpqda3CNzzZpi4Y/AxfflymQEeBNMlxcQew5iPWtwPqLyceg2muZSjh4KJFDIZ/QAdVO8uxvvL/e9CkwKCAYZenIE+NvQ9qeHw3NlQ41WRdE3lENREhSpcfpCxur99KdSRK4b9Y=,iv:6LFrU2c8fNwjHmJmNhKzcwF6Em5a0rD6+ciG6hzbMns=,tag:If84oafd5dS3fnqxWN5s7w==,type:str]
     pgp: []
     unencrypted_suffix: _unencrypted
     version: 3.9.0
