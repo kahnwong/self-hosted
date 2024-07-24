@@ -1,4 +1,6 @@
 ---
+# note: disable signup in admin config
+
 kind: Deployment
 name: opengist
 replicaCount: 1
@@ -8,6 +10,9 @@ containers:
     repository: ghcr.io/thomiceli/opengist
     tag: 1.7
     port: 6157
+    env:
+      - name: OG_EXTERNAL_URL
+        value: https://gist.karnwong.me
     volumeMounts:
       - name: data
         mountPath: /opengist
