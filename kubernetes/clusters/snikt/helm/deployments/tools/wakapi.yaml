@@ -16,8 +16,8 @@ containers:
         value: "3000"
       - name: WAKAPI_AVATAR_URL_TEMPLATE
         value: https://gravatar.com/avatar/{email_hash}
-#      - name: WAKAPI_PUBLIC_URL
-#        value: https://wakapi.karnwong.me
+      - name: WAKAPI_PUBLIC_URL
+        value: https://wakapi.karnwong.me
       - name: WAKAPI_ALLOW_SIGNUP
         value: "false"
       - name: WAKAPI_DB_TYPE

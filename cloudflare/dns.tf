@@ -21,6 +21,7 @@ locals {
     "podgrab",
     "rustpad",
     "secrets",
+    "wakapi",
   ])
   selfhosted_non_proxied = setunion(toset([
     "audiobookshelf",
