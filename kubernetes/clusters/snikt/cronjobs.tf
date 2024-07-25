@@ -9,6 +9,7 @@ locals {
       "backup-wallabag-content",
       "backup-wallabag-db",
       "ddns",
+      "restart-livegrep",
       "water-cut-notify",
     ]
     jobs-family-alerts = [

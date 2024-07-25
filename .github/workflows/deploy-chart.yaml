@@ -4,7 +4,7 @@ on:
   push:
     branches: [master]
     paths:
-      - 'kubernetes/charts/base/chart/**/*.*'
+      - 'kubernetes/charts/base/chart*/**/*.*'
   workflow_dispatch:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

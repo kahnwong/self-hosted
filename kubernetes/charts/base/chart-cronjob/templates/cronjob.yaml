@@ -12,6 +12,7 @@ spec:
     spec:
       template:
         spec:
+          serviceAccountName: {{ .Values.serviceAccountName }}
           containers:
            {{ range .Values.containers }}
             - name: {{ .name }}

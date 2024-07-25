@@ -1,0 +1,15 @@
+---
+# https://stackoverflow.com/a/58378834
+
+name: restart-livegrep
+schedule: "1 0 * * *"
+
+serviceAccountName: sa-deployment-restart
+containers:
+  - name: kubectl
+    repository: bitnami/kubectl
+    tag: 1.30.3
+    command: ["sh", "-c"]
+    args:
+      - |
+        kubectl rollout restart deploy livegrep-backend --namespace tools

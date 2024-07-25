@@ -33,9 +33,13 @@ kubectl taint nodes fringe-division storage-required=true:NoSchedule
 | [helm_release.jobs_fringe_division](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [helm_release.livegrep_indexer](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [helm_release.this](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
+| [kubernetes_cluster_role.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/cluster_role) | resource |
+| [kubernetes_cluster_role_binding.readonly](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/cluster_role_binding) | resource |
 | [kubernetes_config_map.configmaps](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/config_map) | resource |
 | [kubernetes_namespace.this](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/namespace) | resource |
+| [kubernetes_secret.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/secret) | resource |
 | [kubernetes_secret.secrets](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/secret) | resource |
+| [kubernetes_service_account.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/service_account) | resource |
 | [sops_file.configmaps](https://registry.terraform.io/providers/carlpett/sops/1.0.0/docs/data-sources/file) | data source |
 | [sops_file.livegrep](https://registry.terraform.io/providers/carlpett/sops/1.0.0/docs/data-sources/file) | data source |
 | [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.0.0/docs/data-sources/file) | data source |
