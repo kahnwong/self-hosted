@@ -6,7 +6,7 @@ replicaCount: 1
 containers:
   - name: picoshare
     repository: mtlynch/picoshare
-    tag: 1.4.2
+    tag: 1.4.4
     port: 4001
     envFrom:
       - secretRef:
