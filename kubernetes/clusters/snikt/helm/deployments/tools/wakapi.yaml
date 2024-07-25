@@ -29,13 +29,6 @@ containers:
     envFrom:
       - secretRef:
           name: wakapi
-    volumeMounts:
-      - name: data
-        mountPath: /data
-volumes:
-  - name: data
-    hostPath:
-      path: /opt/wakapi/data
 service:
   port: 3000
   nodePort: 30041
