@@ -8,7 +8,7 @@ replicaCount: 1
 containers:
   - name: opengist
     repository: ghcr.io/thomiceli/opengist
-    tag: 1.7
+    tag: 1.7.3
     port: 6157
     env:
       - name: OG_EXTERNAL_URL
