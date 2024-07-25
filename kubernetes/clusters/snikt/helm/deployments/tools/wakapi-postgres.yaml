@@ -1,0 +1,23 @@
+---
+kind: StatefulSet
+name: wakapi-postgres
+replicaCount: 1
+
+containers:
+  - name: postgres
+    repository: postgres
+    tag: 16.3-alpine
+    port: 5432
+    livenessProbeScheme: tcp
+    envFrom:
+      - secretRef:
+          name: wakapi-postgres
+    volumeMounts:
+      - name: data
+        mountPath: /var/lib/postgresql/data
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/wakapi/db
+service:
+  port: 5432

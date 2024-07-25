@@ -1,0 +1,41 @@
+---
+kind: Deployment
+name: wakapi
+replicaCount: 1
+
+containers:
+  - name: wakapi
+    repository: ghcr.io/muety/wakapi
+    tag: 2.11
+    port: 3000
+    env:
+      #  SALT="$(cat /dev/urandom | LC_ALL=C tr -dc 'a-zA-Z0-9' | fold -w ${1:-32} | head -n 1)"
+      - name: ENVIRONMENT
+        value: prod
+      - name: WAKAPI_PORT # https://github.com/muety/wakapi/issues/567
+        value: "3000"
+      - name: WAKAPI_AVATAR_URL_TEMPLATE
+        value: https://gravatar.com/avatar/{email_hash}
+#      - name: WAKAPI_PUBLIC_URL
+#        value: https://wakapi.karnwong.me
+      - name: WAKAPI_ALLOW_SIGNUP
+        value: "false"
+      - name: WAKAPI_DB_TYPE
+        value: postgres
+      - name: WAKAPI_DB_HOST
+        value: wakapi-postgres.tools.svc.cluster.local
+      - name: WAKAPI_DB_PORT
+        value: "5432"
+    envFrom:
+      - secretRef:
+          name: wakapi
+    volumeMounts:
+      - name: data
+        mountPath: /data
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/wakapi/data
+service:
+  port: 3000
+  nodePort: 30041
