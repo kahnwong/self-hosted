@@ -32,7 +32,7 @@ resource "kubernetes_cluster_role" "deployment_restart" {
 }
 
 # ------------------------ cluster role binding ------------------------ #
-resource "kubernetes_cluster_role_binding" "readonly" {
+resource "kubernetes_cluster_role_binding" "deployment_restart" {
   metadata {
     name = "crb-deployment-restart"
   }
