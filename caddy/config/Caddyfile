@@ -127,3 +127,9 @@ dashboard.karnwong.me {
     }
     reverse_proxy 192.168.1.51:30023
 }
+livegrep.karnwong.me {
+    basicauth * {
+        kahnwong $2a$14$BLiTp5YhuvrKVArVHJPqnOteouRaAZ8P5ONob3LnGU0vr5/GVXXbm
+    }
+    reverse_proxy 192.168.1.51:30033
+}
