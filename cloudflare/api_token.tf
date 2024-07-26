@@ -38,3 +38,16 @@ resource "cloudflare_api_token" "r2_backup" {
     }
   }
 }
+
+resource "cloudflare_api_token" "r2_ro" {
+  name = "r2_ro"
+
+  policy {
+    permission_groups = [
+      data.cloudflare_api_token_permission_groups.all.account["Workers R2 Storage Read"],
+    ]
+    resources = {
+      "com.cloudflare.api.account.*" = "*"
+    }
+  }
+}

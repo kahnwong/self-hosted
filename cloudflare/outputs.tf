@@ -8,11 +8,23 @@ output "cloudflare_api_token_ddns_updater" {
   value     = cloudflare_api_token.ddns_updater.value
 }
 
-output "cloudflare_api_token_r2_backup_access_key_id" {
+
+output "cloudflare_api_token_r2_backup" {
   sensitive = true
-  value     = cloudflare_api_token.r2_backup.id
+
+  value = tomap({
+    "access_key_id" : cloudflare_api_token.r2_backup.id,
+    "secret_access_key" : sha256(cloudflare_api_token.r2_backup.value),
+    }
+  )
 }
-output "cloudflare_api_token_r2_backup_secret_access_key" {
+
+output "cloudflare_api_token_r2_ro" {
   sensitive = true
-  value     = sha256(cloudflare_api_token.r2_backup.value)
+
+  value = tomap({
+    "access_key_id" : cloudflare_api_token.r2_ro.id,
+    "secret_access_key" : sha256(cloudflare_api_token.r2_ro.value),
+    }
+  )
 }
