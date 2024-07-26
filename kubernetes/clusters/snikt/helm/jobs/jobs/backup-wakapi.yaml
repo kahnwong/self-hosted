@@ -1,0 +1,28 @@
+---
+name: backup-wakapi
+schedule: "3 0 * * *"
+
+containers:
+  - name: backup-wakapi
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 6b34640
+    env:
+      - name: MODE
+        value: DB_POSTGRES
+      - name: SERVICE_NAME
+        value: wakapi
+      - name: POSTGRES_USERNAME
+        valueFrom:
+          secretKeyRef:
+            name: wakapi-postgres
+            key: POSTGRES_USER
+      - name: POSTGRES_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: wakapi-postgres
+            key: POSTGRES_PASSWORD
+      - name: POSTGRES_HOSTNAME
+        value: wakapi-postgres.tools.svc.cluster.local
+    envFrom:
+      - secretRef:
+          name: backup

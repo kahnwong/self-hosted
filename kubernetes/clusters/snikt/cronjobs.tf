@@ -6,6 +6,7 @@ locals {
       "backup-miniflux",
       "backup-ntfy",
       "backup-prune",
+      "backup-wakapi",
       "backup-wallabag-content",
       "backup-wallabag-db",
       "ddns",

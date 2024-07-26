@@ -9,6 +9,7 @@ locals {
       "forgejo-postgres",
       "immich-postgres",
       "miniflux-postgres",
+      "wakapi-postgres",
       "wallabag",
     ]
     jobs-family-alerts = ["family-alerts"]
