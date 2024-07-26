@@ -2,7 +2,7 @@
 # https://stackoverflow.com/a/58378834
 
 name: restart-livegrep
-schedule: "1 0 * * *"
+schedule: "45 1 * * *"
 
 serviceAccountName: sa-deployment-restart
 containers:
