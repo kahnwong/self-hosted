@@ -34,6 +34,7 @@ All users - API Tokens:Edit
 
 | Name | Type |
 |------|------|
+| [cloudflare_api_token.ddns_updater](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/api_token) | resource |
 | [cloudflare_api_token.deploy_cloudflare_pages](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/api_token) | resource |
 | [cloudflare_page_rule.redirect_www_to_root](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/page_rule) | resource |
 | [cloudflare_r2_bucket.this](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/r2_bucket) | resource |
@@ -62,5 +63,6 @@ All users - API Tokens:Edit
 
 | Name | Description |
 |------|-------------|
+| cloudflare\_api\_token\_ddns\_updater | n/a |
 | cloudflare\_api\_token\_deploy\_cloudflare\_pages | n/a |
 <!-- END_TF_DOCS -->
