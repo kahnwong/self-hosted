@@ -30,7 +30,7 @@ locals {
     CLOUDFLARE_API_TOKEN  = sensitive(data.sops_file.secrets.data["global.cloudflare.CLOUDFLARE_API_TOKEN"])
   })
   cloudflare_secrets_mapping = flatten([
-    for repo in local.cloudflare_pages_repos : [
+    for repo in setunion(local.cloudflare_pages_repos, toset(var.private_cloudflare_pages_repos)) : [
       for secret_key, secret_value in local.cloudflare_secrets : {
         repo         = repo
         secret_key   = secret_key

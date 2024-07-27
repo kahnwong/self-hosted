@@ -30,4 +30,5 @@
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | github\_token | need for github auth | `string` | n/a | yes |
+| private\_cloudflare\_pages\_repos | n/a | `set(string)` | n/a | yes |
 <!-- END_TF_DOCS -->
