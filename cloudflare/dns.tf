@@ -13,7 +13,6 @@ locals {
     "gist",
     "immich",
     "linkding",
-    "livegrep",
     "memos",
     "miniflux",
     "mlflow",
