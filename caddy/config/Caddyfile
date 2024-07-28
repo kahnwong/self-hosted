@@ -121,9 +121,3 @@ gist.karnwong.me {
 wakapi.karnwong.me {
     reverse_proxy 192.168.1.36:30041
 }
-dashboard.karnwong.me {
-    basicauth * {
-        kahnwong $2a$14$RJ/Cv2FiAfetn4WVySdDruPF3eypHvWIDFsFV.8G8JzaenYndcrdC
-    }
-    reverse_proxy 192.168.1.51:30023
-}
