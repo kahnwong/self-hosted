@@ -14,6 +14,8 @@ sudo apt-get update
 sudo apt install authelia -y
 
 # access via <http://localhost:9091>
-sops -d configuration.sops.yaml > /etc/authelia/configuration.yml
-sops -d users_db.sops.yaml > /etc/authelia/users_db.yml
+sops -d configuration.sops.yml > configuration.yml && sudo cp configuration.yml /etc/authelia/configuration.yml
+sops -d users_db.sops.yml > users_db.yml && sudo cp users_db.yml /etc/authelia/users_db.yml
+
+sudo systemctl restart authelia
 ```
