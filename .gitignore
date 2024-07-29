@@ -35,3 +35,7 @@ all.Caddyfile
 **/.infracost
 **/terraform.tfvars
 dns_private.tf
+
+# authelia
+configuration.yml
+users_db.yml

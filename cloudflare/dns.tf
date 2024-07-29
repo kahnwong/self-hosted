@@ -7,6 +7,7 @@ locals {
     "shouldideploytoday",
   ])
   selfhosted_proxied = toset([
+    "auth",
     "dagster",
     "excalidraw",
     "gist",
