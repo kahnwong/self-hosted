@@ -1,11 +1,5 @@
-(trusted_proxy_list) {
-       ## Uncomment & adjust the following line to configure specific ranges which should be considered as trustworthy.
-       # trusted_proxies 10.0.0.0/8 172.16.0.0/12 192.168.0.0/16 fc00::/7
-}
 auth.karnwong.me {
-    reverse_proxy 192.168.1.36:9091 {
-        import trusted_proxy_list
-    }
+  reverse_proxy 192.168.1.36:9091
 }
 
 audiobookshelf.karnwong.me {
@@ -38,13 +32,8 @@ podgrab.karnwong.me {
               #uri /api/authz/forward-auth
               uri /api/authz/forward-auth?authelia_url=https://auth.karnwong.me/
               copy_headers Remote-User Remote-Groups Remote-Email Remote-Name
-
-              import trusted_proxy_list
       }
-      reverse_proxy 192.168.1.51:30004 {
-              ## This import needs to be included if you're relying on a trusted proxies configuration.
-              import trusted_proxy_list
-      }
+      reverse_proxy 192.168.1.51:30004
 }
 syncthing.karnwong.me {
     reverse_proxy 192.168.1.36:8384

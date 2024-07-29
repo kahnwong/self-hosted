@@ -7,7 +7,6 @@ locals {
     "shouldideploytoday",
   ])
   selfhosted_proxied = toset([
-    "auth",
     "dagster",
     "excalidraw",
     "gist",
@@ -25,6 +24,7 @@ locals {
   ])
   selfhosted_non_proxied = setunion(toset([
     "audiobookshelf",
+    "auth", # authelia
     "books",
     "git",
     "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
