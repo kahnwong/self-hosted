@@ -24,10 +24,11 @@ dagster.karnwong.me {
     reverse_proxy 192.168.1.36:3000
 }
 podgrab.karnwong.me {
-    basicauth * {
-        podgrab $2a$14$s1l.L4xhGyEwCjt/MhP4dO0v3YF1g1zwE0KjkYSVFRAeETBNGDeyG
+  forward_auth auth.karnwong.me {
+    uri /api/authz/forward-auth
+    copy_headers Remote-User Remote-Groups Remote-Email Remote-Name
     }
-    reverse_proxy 192.168.1.51:30004
+  reverse_proxy 192.168.1.51:30004
 }
 syncthing.karnwong.me {
     reverse_proxy 192.168.1.36:8384
