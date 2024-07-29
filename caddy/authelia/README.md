@@ -1,6 +1,8 @@
 # Authelia
 
-<https://blog.cyril.by/en/software/single-sign-on/installing-authelia-for-sso-all-in-one-guide>
+## Refs
+- <https://blog.cyril.by/en/software/single-sign-on/installing-authelia-for-sso-all-in-one-guide>
+- <https://docs.ibracorp.io/authelia/configuration-files/configuration.yml>
 
 ## Setup
 
