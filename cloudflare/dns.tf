@@ -19,7 +19,6 @@ locals {
     "music",
     "ntfy",
     "pmtiles",
-    "podgrab",
     "rustpad",
     "secrets",
     "wakapi",
@@ -30,7 +29,8 @@ locals {
     "git",
     "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
     "minio",
-    "share", # prevent request entity too large
+    "podgrab", # authelia
+    "share",   # prevent request entity too large
     "subsonic-widgets",
     "syncthing",
     "wallabag",
