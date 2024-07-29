@@ -11,10 +11,5 @@ services:
       AUTHELIA_STORAGE_ENCRYPTION_KEY_FILE: ${STORAGE_ENCRYPTION_KEY}
     volumes:
       - '/opt/authelia/config:/config'
-    networks:
-      net:
-        aliases: []
-    expose:
-      - 9091
     ports:
-      - '127.0.0.1:9091:9091'
+      - 9091:9091
