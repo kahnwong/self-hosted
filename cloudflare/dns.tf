@@ -1,6 +1,7 @@
 locals {
   github_pages = toset([
     "duckdb",
+    "postgres",
   ])
   vercel = toset([
     "transform",
