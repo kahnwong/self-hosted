@@ -14,7 +14,7 @@ locals {
       "livegrep-backend", "livegrep-frontend",
       "supersecretmessage", "supersecretmessage-vault",
       "excalidraw", "opengist", "picoshare", "rustpad", "sshx",
-      "stirling-pdf",
+      #       "stirling-pdf",
     ]
     wallabag = ["wallabag", "wallabag-postgres", "wallabag-redis"]
   })
