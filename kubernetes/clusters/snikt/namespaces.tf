@@ -5,7 +5,7 @@ locals {
     "infrastructure",
     "jobs",
     "jobs-family-alerts",
-    "miniflux",
+    "news",
     "tools",
     "wallabag",
   ])

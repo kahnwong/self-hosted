@@ -22,7 +22,7 @@ containers:
             name: miniflux-postgres
             key: POSTGRES_PASSWORD
       - name: POSTGRES_HOSTNAME
-        value: miniflux-postgres.miniflux.svc.cluster.local
+        value: miniflux-postgres.news.svc.cluster.local
     envFrom:
       - secretRef:
           name: backup

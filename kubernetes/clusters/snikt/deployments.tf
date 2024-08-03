@@ -3,8 +3,10 @@
 
 locals {
   deployments = tomap({
-    default  = ["dashy", "linkding", "memos", "subsonic-widgets"]
-    miniflux = ["miniflux", "miniflux-postgres"]
+    default = ["dashy", "linkding", "memos", "subsonic-widgets"]
+    news = [
+      "miniflux", "miniflux-postgres",
+    ]
     infrastructure = [
       #       "forgejo", "forgejo-postgres",
       "mlflow", "mlflow-postgres",

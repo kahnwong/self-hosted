@@ -3,7 +3,10 @@ locals {
     default        = ["subsonic-widgets"]
     immich         = ["immich", "immich-machine-learning", "immich-postgres"]
     infrastructure = ["forgejo", "forgejo-postgres", "minio", "mlflow", "mlflow-postgres"]
-    miniflux       = ["miniflux", "miniflux-postgres"]
+    news = [
+      "miniflux", "miniflux-postgres",
+      "wallabag", "wallabag-postgres", "wallabag-redis"
+    ]
     jobs = [
       "backup", "ddns", "water-cut-notify",
       "forgejo-postgres",
