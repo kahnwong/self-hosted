@@ -22,7 +22,7 @@ containers:
             name: wallabag
             key: SYMFONY__ENV__DATABASE_PASSWORD
       - name: POSTGRES_HOSTNAME
-        value: wallabag-postgres.wallabag.svc.cluster.local
+        value: wallabag-postgres.news.svc.cluster.local
     envFrom:
       - secretRef:
           name: backup

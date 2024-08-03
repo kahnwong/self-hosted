@@ -6,6 +6,7 @@ locals {
     default = ["dashy", "linkding", "memos", "subsonic-widgets"]
     news = [
       "miniflux", "miniflux-postgres",
+      "wallabag", "wallabag-postgres", "wallabag-redis"
     ]
     infrastructure = [
       #       "forgejo", "forgejo-postgres",
@@ -18,7 +19,6 @@ locals {
       "excalidraw", "opengist", "picoshare", "rustpad", "sshx",
       #       "stirling-pdf",
     ]
-    wallabag = ["wallabag", "wallabag-postgres", "wallabag-redis"]
   })
   deployments_fringe_division = tomap({
     default = [

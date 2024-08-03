@@ -7,7 +7,6 @@ locals {
     "jobs-family-alerts",
     "news",
     "tools",
-    "wallabag",
   ])
 }
 
