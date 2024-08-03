@@ -121,3 +121,6 @@ gist.karnwong.me {
 wakapi.karnwong.me {
     reverse_proxy 192.168.1.36:30041
 }
+go.karnwong.me {
+    reverse_proxy 192.168.1.36:30042
+}

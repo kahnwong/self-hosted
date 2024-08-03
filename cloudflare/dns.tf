@@ -11,6 +11,7 @@ locals {
     "dagster",
     "excalidraw",
     "gist",
+    "go",
     "immich",
     "linkding",
     "memos",

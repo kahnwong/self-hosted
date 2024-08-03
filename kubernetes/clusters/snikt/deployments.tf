@@ -16,7 +16,7 @@ locals {
     tools = [
       "livegrep-backend", "livegrep-frontend",
       "supersecretmessage", "supersecretmessage-vault",
-      "excalidraw", "opengist", "picoshare", "rustpad", "sshx",
+      "excalidraw", "go-playground", "opengist", "picoshare", "rustpad", "sshx",
       #       "stirling-pdf",
     ]
   })
