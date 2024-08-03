@@ -6,6 +6,7 @@ locals {
     "jupyterlite",
     "maps",
     "monkeytype",
+    "python",
     "retriever",
     "slc",
     "whattheduck",

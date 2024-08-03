@@ -12,6 +12,7 @@ locals {
     "jupyterlite",
     "karnwong.me",
     "monkeytype",
+    "python-playground",
     "retriever",
     "slc",
     "whattheduck",
