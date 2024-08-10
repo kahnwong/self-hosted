@@ -6,7 +6,7 @@ replicaCount: 1
 containers:
   - name: backend
     repository: ghcr.io/livegrep/livegrep/base
-    tag: 033fa0e93c
+    tag: cd8c63831c
     port: 9999
     livenessProbeScheme: tcp
     command: ["/livegrep/bin/codesearch"]

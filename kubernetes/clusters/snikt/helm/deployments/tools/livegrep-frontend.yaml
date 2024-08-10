@@ -6,7 +6,7 @@ replicaCount: 1
 containers:
   - name: frontend
     repository: ghcr.io/livegrep/livegrep/base
-    tag: 033fa0e93c
+    tag: cd8c63831c
     port: 8910
     command: ["/livegrep/bin/livegrep"]
     args: ["-docroot=/livegrep/web", "-listen=0.0.0.0:8910", "--connect=livegrep-backend.tools.svc.cluster.local:9999"]
