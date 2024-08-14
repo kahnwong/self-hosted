@@ -2,6 +2,7 @@ locals {
   jobs = tomap({
     jobs = [
       "backup-linkding",
+      "backup-linkwarden",
       "backup-memos",
       "backup-miniflux",
       "backup-ntfy",

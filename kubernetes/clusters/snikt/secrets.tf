@@ -11,6 +11,7 @@ locals {
       "backup", "ddns", "water-cut-notify",
       "forgejo-postgres",
       "immich-postgres",
+      "linkwarden-postgres",
       "miniflux-postgres",
       "wakapi-postgres",
       "wallabag",
