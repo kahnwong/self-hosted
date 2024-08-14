@@ -14,6 +14,7 @@ locals {
       "gatus", "minio", "ntfy",
     ]
     tools = [
+      "linkwarden", "linkwarden-postgres",
       "livegrep-backend", "livegrep-frontend",
       "supersecretmessage", "supersecretmessage-vault",
       "excalidraw", "go-playground", "opengist", "picoshare", "rustpad", "sshx",

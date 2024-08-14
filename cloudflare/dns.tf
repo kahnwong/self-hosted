@@ -14,6 +14,7 @@ locals {
     "go",
     "immich",
     "linkding",
+    "linkwarden",
     "memos",
     "miniflux",
     "mlflow",

@@ -1,0 +1,28 @@
+---
+kind: Deployment
+name: linkwarden
+replicaCount: 1
+
+containers:
+  - name: linkwarden
+    repository: ghcr.io/linkwarden/linkwarden
+    tag: v2.6.2
+    port: 3000
+    env:
+      - name: NEXT_PUBLIC_DISABLE_REGISTRATION
+        value: "true"
+      - name: NEXTAUTH_URL
+        value: https://linkwarden.karnwong.me/api/v1/auth
+    envFrom:
+      - secretRef:
+          name: linkwarden
+    volumeMounts:
+      - name: data
+        mountPath: /data/data
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/linkwarden/data
+service:
+  port: 3000
+  nodePort: 30043

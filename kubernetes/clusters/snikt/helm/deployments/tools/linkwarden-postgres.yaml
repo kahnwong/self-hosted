@@ -1,0 +1,23 @@
+---
+kind: StatefulSet
+name: linkwarden-postgres
+replicaCount: 1
+
+containers:
+  - name: postgres
+    repository: postgres
+    tag: 16.4-alpine
+    port: 5432
+    livenessProbeScheme: tcp
+    envFrom:
+      - secretRef:
+          name: linkwarden-postgres
+    volumeMounts:
+      - name: data
+        mountPath: /var/lib/postgresql/data
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/linkwarden/db
+service:
+  port: 5432
