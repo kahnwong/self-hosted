@@ -119,11 +119,8 @@ gist.karnwong.me {
     reverse_proxy 192.168.1.51:30039
 }
 wakapi.karnwong.me {
-    reverse_proxy 192.168.1.51:30041
+    reverse_proxy 192.168.1.36:30041
 }
 go.karnwong.me {
-    reverse_proxy 192.168.1.51:30042
-}
-linkwarden.karnwong.me {
-    reverse_proxy 192.168.1.51:30043
+    reverse_proxy 192.168.1.36:30042
 }
