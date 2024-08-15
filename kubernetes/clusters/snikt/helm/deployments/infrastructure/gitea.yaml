@@ -37,8 +37,8 @@ containers:
         value: "true"
       - name: GITEA__picture__DISABLE_GRAVATAR
         value: "false"
-#      - name: FORGEJO__actions__ENABLED
-#        value: "true"
+      - name: GITEA__actions__ENABLED
+        value: "false"
     envFrom:
       - secretRef:
           name: gitea
