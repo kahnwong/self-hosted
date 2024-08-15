@@ -9,7 +9,7 @@ locals {
       "wallabag", "wallabag-postgres", "wallabag-redis"
     ]
     infrastructure = [
-      #       "forgejo", "forgejo-postgres",
+      "gitea", "gitea-postgres",
       "mlflow", "mlflow-postgres",
       "gatus", "minio", "ntfy",
     ]

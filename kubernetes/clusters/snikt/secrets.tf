@@ -2,14 +2,14 @@ locals {
   secrets = tomap({
     default        = ["subsonic-widgets"]
     immich         = ["immich", "immich-machine-learning", "immich-postgres"]
-    infrastructure = ["forgejo", "forgejo-postgres", "minio", "mlflow", "mlflow-postgres"]
+    infrastructure = ["gitea", "gitea-postgres", "minio", "mlflow", "mlflow-postgres"]
     news = [
       "miniflux", "miniflux-postgres",
       "wallabag", "wallabag-postgres", "wallabag-redis"
     ]
     jobs = [
       "backup", "ddns", "water-cut-notify",
-      "forgejo-postgres",
+      "gitea-postgres",
       "immich-postgres",
       "miniflux-postgres",
       "wakapi-postgres",
