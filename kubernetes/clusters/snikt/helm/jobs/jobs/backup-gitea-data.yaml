@@ -1,0 +1,25 @@
+---
+name: backup-gitea-data
+schedule: "2 0 * * *"
+
+containers:
+  - name: backup-gitea
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 6b34640
+    env:
+      - name: MODE
+        value: ARCHIVE
+      - name: SERVICE_NAME
+        value: gitea-data
+      - name: BACKUP_PATH
+        value: /opt/gitea/data
+    envFrom:
+      - secretRef:
+          name: backup
+    volumeMounts:
+      - name: memos
+        mountPath: /opt/gitea/data
+volumes:
+  - name: memos
+    hostPath:
+      path: /opt/gitea/data

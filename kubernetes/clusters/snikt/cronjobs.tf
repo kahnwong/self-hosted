@@ -1,6 +1,8 @@
 locals {
   jobs = tomap({
     jobs = [
+      "backup-gitea-data",
+      "backup-gitea-db",
       "backup-linkding",
       "backup-memos",
       "backup-miniflux",

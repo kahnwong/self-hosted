@@ -1,0 +1,28 @@
+---
+name: backup-gitea-db
+schedule: "2 0 * * *"
+
+containers:
+  - name: backup-gitea
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 6b34640
+    env:
+      - name: MODE
+        value: DB_POSTGRES
+      - name: SERVICE_NAME
+        value: gitea-db
+      - name: POSTGRES_USERNAME
+        valueFrom:
+          secretKeyRef:
+            name: gitea-postgres
+            key: POSTGRES_USER
+      - name: POSTGRES_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: gitea-postgres
+            key: POSTGRES_PASSWORD
+      - name: POSTGRES_HOSTNAME
+        value: gitea-postgres.infrastructure.svc.cluster.local
+    envFrom:
+      - secretRef:
+          name: backup
