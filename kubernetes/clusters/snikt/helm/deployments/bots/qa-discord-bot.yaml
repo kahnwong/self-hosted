@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qa-discord-bot
+  namespace: bots
+  labels:
+    app: qa-discord-bot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: qa-discord-bot
+  template:
+    metadata:
+      labels:
+        app: qa-discord-bot
+    spec:
+      containers:
+        - name: qa-discord-bot
+          image: ghcr.io/kahnwong/qa-discord-bot:b677a29
+          envFrom:
+            - secretRef:
+                name: qa-discord-bot

@@ -83,3 +83,7 @@ resource "helm_release" "fringe_division" {
     file("./resources/valuesTaintNodeSelector.yaml"),
   ]
 }
+
+resource "kubernetes_manifest" "qa_discord_bot" {
+  manifest = yamldecode(file("./helm/deployments/bots/qa-discord-bot.yaml"))
+}
