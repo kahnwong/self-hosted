@@ -1,5 +1,6 @@
 locals {
   secrets = tomap({
+    bots           = ["qa-api"]
     default        = ["subsonic-widgets"]
     immich         = ["immich", "immich-machine-learning", "immich-postgres"]
     infrastructure = ["gitea", "gitea-postgres", "minio", "mlflow", "mlflow-postgres"]

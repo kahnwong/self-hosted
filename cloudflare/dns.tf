@@ -21,6 +21,7 @@ locals {
     "ntfy",
     "pmtiles",
     "podgrab",
+    "qa-api",
     "rustpad",
     "secrets",
     "wakapi",

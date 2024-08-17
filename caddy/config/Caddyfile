@@ -124,3 +124,6 @@ wakapi.karnwong.me {
 go.karnwong.me {
     reverse_proxy 192.168.1.36:30042
 }
+qa-api.karnwong.me {
+   reverse_proxy 192.168.1.51:30043
+}
