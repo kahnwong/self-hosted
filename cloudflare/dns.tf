@@ -21,6 +21,7 @@ locals {
     "ntfy",
     "pdf",
     "pmtiles",
+    "plausible",
     "podgrab",
     "qa-api",
     "rustpad",

@@ -130,3 +130,6 @@ qa-api.karnwong.me {
 pdf.karnwong.me {
     reverse_proxy 192.168.1.36:30040
 }
+plausible.karnwong.me {
+    reverse_proxy 192.168.1.45:8000
+}
