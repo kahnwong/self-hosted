@@ -19,6 +19,7 @@ locals {
     "mlflow",
     "music",
     "ntfy",
+    "pdf",
     "pmtiles",
     "podgrab",
     "qa-api",

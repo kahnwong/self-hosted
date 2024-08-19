@@ -18,7 +18,6 @@ locals {
       "livegrep-backend", "livegrep-frontend",
       "supersecretmessage", "supersecretmessage-vault",
       "excalidraw", "go-playground", "opengist", "picoshare", "rustpad", "sshx",
-      #       "stirling-pdf",
     ]
   })
   deployments_fringe_division = tomap({
@@ -30,7 +29,10 @@ locals {
       "foo", "baz"
     ]
     immich = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
-    tools  = ["wakapi", "wakapi-postgres"]
+    tools = [
+      "wakapi", "wakapi-postgres",
+      "stirling-pdf",
+    ]
   })
 }
 
