@@ -30,6 +30,7 @@ locals {
     ]
     immich = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
     plausible = [
+      "plausible-clickhouse",
       "plausible-postgres",
     ]
     tools = [

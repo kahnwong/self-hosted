@@ -50,3 +50,25 @@ resource "kubernetes_config_map" "configmaps" {
 
   depends_on = [data.sops_file.configmaps]
 }
+
+# plausible
+resource "kubernetes_config_map" "plausible_clickhouse_config" {
+  metadata {
+    name      = "plausible-clickhouse-config"
+    namespace = "plausible"
+  }
+
+  data = {
+    "clickhouse-config.xml" = file("${path.module}/configmaps/plausible.clickhouse-config.xml")
+  }
+}
+resource "kubernetes_config_map" "plausible_clickhouse_user_config" {
+  metadata {
+    name      = "plausible-clickhouse-user-config"
+    namespace = "plausible"
+  }
+
+  data = {
+    "clickhouse-user-config.xml" = file("${path.module}/configmaps/plausible.clickhouse-user-config.xml")
+  }
+}
