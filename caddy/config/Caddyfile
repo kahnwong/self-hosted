@@ -131,5 +131,5 @@ pdf.karnwong.me {
     reverse_proxy 192.168.1.36:30040
 }
 plausible.karnwong.me {
-    reverse_proxy 192.168.1.45:8000
+    reverse_proxy 192.168.1.36:30044
 }
