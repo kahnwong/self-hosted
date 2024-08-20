@@ -29,6 +29,9 @@ locals {
       "foo", "baz"
     ]
     immich = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
+    plausible = [
+      "plausible-postgres",
+    ]
     tools = [
       "wakapi", "wakapi-postgres",
       "stirling-pdf",

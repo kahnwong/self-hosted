@@ -8,6 +8,7 @@ locals {
       "miniflux", "miniflux-postgres",
       "wallabag", "wallabag-postgres", "wallabag-redis"
     ]
+    plausible = ["plausible-postgres"]
     jobs = [
       "backup", "ddns", "water-cut-notify",
       "gitea-postgres",
