@@ -6,7 +6,7 @@ replicaCount: 1
 containers:
   - name: jellyfin
     repository: linuxserver/jellyfin
-    tag: 10.9.2
+    tag: 10.9.9
     port: 8096
     env:
       - name: PGID
