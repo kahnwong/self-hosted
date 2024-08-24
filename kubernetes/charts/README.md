@@ -27,4 +27,7 @@ helm push base-0.1.0.tgz oci://registry-1.docker.io/$USER
 
 # usage
 helm install <my-release> oci://harbor.karnwong.me/charts/base
+
+# test
+helm upgrade --install forgejo oci://ghcr.io/kahnwong/charts/base --values forgejo.yaml --namespace forgejo
 ```
