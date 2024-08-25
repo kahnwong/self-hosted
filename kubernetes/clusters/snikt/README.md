@@ -38,6 +38,7 @@ kubectl taint nodes fringe-division storage-required=true:NoSchedule
 | [kubernetes_cluster_role_binding.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/cluster_role_binding) | resource |
 | [kubernetes_cluster_role_binding.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/cluster_role_binding) | resource |
 | [kubernetes_config_map.configmaps](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/config_map) | resource |
+| [kubernetes_config_map.livegrep-ignorelist](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/config_map) | resource |
 | [kubernetes_config_map.plausible_clickhouse_config](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/config_map) | resource |
 | [kubernetes_config_map.plausible_clickhouse_user_config](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/config_map) | resource |
 | [kubernetes_manifest.qa_discord_bot](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/manifest) | resource |
@@ -49,6 +50,7 @@ kubectl taint nodes fringe-division storage-required=true:NoSchedule
 | [kubernetes_service_account.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/2.25.2/docs/resources/service_account) | resource |
 | [sops_file.configmaps](https://registry.terraform.io/providers/carlpett/sops/1.0.0/docs/data-sources/file) | data source |
 | [sops_file.livegrep](https://registry.terraform.io/providers/carlpett/sops/1.0.0/docs/data-sources/file) | data source |
+| [sops_file.livegrep-ignorelist](https://registry.terraform.io/providers/carlpett/sops/1.0.0/docs/data-sources/file) | data source |
 | [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.0.0/docs/data-sources/file) | data source |
 
 ## Inputs
