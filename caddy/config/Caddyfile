@@ -13,22 +13,9 @@ jellyfin.karnwong.me {
 music.karnwong.me {
     reverse_proxy 192.168.1.51:30006
 }
-dagster.karnwong.me {
-    basicauth * {
-        tua $2a$14$IsmBNJCIaB6GeXqiboUEHOpodH4LtBLyR7u6oX3Ugdo0rEEeXvtYW
-    }
-    reverse_proxy 192.168.1.36:3000
-}
-podgrab.karnwong.me {
-    basicauth * {
-        podgrab $2a$14$s1l.L4xhGyEwCjt/MhP4dO0v3YF1g1zwE0KjkYSVFRAeETBNGDeyG
-    }
-    reverse_proxy 192.168.1.51:30004
-}
 syncthing.karnwong.me {
     reverse_proxy 192.168.1.36:8384
 }
-
 git.karnwong.me {
     reverse_proxy 192.168.1.51:30026
 }
@@ -101,12 +88,6 @@ excalidraw.karnwong.me {
 }
 books.karnwong.me {
     reverse_proxy 192.168.1.51:30032
-}
-mlflow.karnwong.me {
-    basicauth * {
-        kahnwong $2a$14$aOzINeAOPdscwDAUsUuVaOf3g1Rvw3aDmQVwI.aZBVSFtCULtR2OO
-    }
-    reverse_proxy 192.168.1.36:30037
 }
 subsonic-widgets.karnwong.me {
     reverse_proxy 192.168.1.51:30038
