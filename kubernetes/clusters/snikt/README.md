@@ -29,6 +29,7 @@ kubectl taint nodes fringe-division storage-required=true:NoSchedule
 | Name | Type |
 |------|------|
 | [helm_release.fringe_division](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
+| [helm_release.harbor](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [helm_release.jobs](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [helm_release.jobs_fringe_division](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
 | [helm_release.livegrep_indexer](https://registry.terraform.io/providers/hashicorp/helm/2.12.1/docs/resources/release) | resource |
@@ -61,4 +62,7 @@ kubectl taint nodes fringe-division storage-required=true:NoSchedule
 | client\_key | n/a | `string` | n/a | yes |
 | cluster\_ca\_certificate | n/a | `string` | n/a | yes |
 | host | n/a | `string` | n/a | yes |
+| registry\_password | n/a | `string` | n/a | yes |
+| registry\_server | n/a | `string` | n/a | yes |
+| registry\_username | n/a | `string` | n/a | yes |
 <!-- END_TF_DOCS -->

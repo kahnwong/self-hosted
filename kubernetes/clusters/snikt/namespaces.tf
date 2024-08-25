@@ -2,6 +2,7 @@ locals {
   namespaces = toset([
     "bots",
     "default",
+    "harbor",
     "immich",
     "infrastructure",
     "jobs",

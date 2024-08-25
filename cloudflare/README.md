@@ -13,15 +13,15 @@ All users - API Tokens:Edit
 
 | Name | Version |
 |------|---------|
-| cloudflare | ~> 4.35.0 |
-| sops | 1.0.0 |
+| cloudflare | ~> 4.40.0 |
+| sops | 1.1.1 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| cloudflare | 4.35.0 |
-| sops | 1.0.0 |
+| cloudflare | 4.40.0 |
+| sops | 1.1.1 |
 
 ## Modules
 
@@ -50,7 +50,7 @@ All users - API Tokens:Edit
 | [cloudflare_record.vercel_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
 | [cloudflare_record.www_dummy](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
 | [cloudflare_api_token_permission_groups.all](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/data-sources/api_token_permission_groups) | data source |
-| [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.0.0/docs/data-sources/file) | data source |
+| [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.1.1/docs/data-sources/file) | data source |
 
 ## Inputs
 

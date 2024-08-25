@@ -92,3 +92,20 @@ resource "helm_release" "fringe_division" {
 resource "kubernetes_manifest" "qa_discord_bot" {
   manifest = yamldecode(file("./helm/deployments/bots/qa-discord-bot.yaml"))
 }
+
+resource "helm_release" "harbor" {
+  name       = "harbor"
+  namespace  = "harbor"
+  repository = "https://helm.goharbor.io"
+  version    = "1.15.0"
+  chart      = "harbor"
+
+  values = [
+    file("./helm/deployments/harbor/values.yaml")
+  ]
+
+  set {
+    name  = "harborAdminPassword"
+    value = var.registry_password
+  }
+}

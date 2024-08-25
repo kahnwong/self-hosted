@@ -1,16 +1,20 @@
 ---
-# adminPassword:
+expose:
+  type: nodePort
+  tls:
+    enabled: false
+  nodePort:
+    name: harbor
+    ports:
+      http:
+        port: 80
+        nodePort: 30500
+      https:
+        port: 443
+        nodePort: 30501
+    annotations: {}
+
 externalURL: https://harbor.karnwong.me
-service:
-  type: NodePort
-  ports:
-    http: 90
-    https: 91
-    notary: 92
-  nodePorts:
-    http: 30500
-    https: 30501
-    notary: 30502
 
 nginx:
   tolerations:
@@ -60,6 +64,25 @@ trivy:
       effect: "NoSchedule"
   nodeSelector:
     kubernetes.io/hostname: "fringe-division"
+database:
+  internal:
+    tolerations:
+      - key: "storage-required"
+        operator: "Equal"
+        value: "true"
+        effect: "NoSchedule"
+    nodeSelector:
+      kubernetes.io/hostname: "fringe-division"
+redis:
+  type: internal
+  internal:
+    tolerations:
+      - key: "storage-required"
+        operator: "Equal"
+        value: "true"
+        effect: "NoSchedule"
+    nodeSelector:
+      kubernetes.io/hostname: "fringe-division"
 exporter:
   tolerations:
     - key: "storage-required"

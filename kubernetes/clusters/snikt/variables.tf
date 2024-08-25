@@ -14,13 +14,12 @@ variable "cluster_ca_certificate" {
   type = string
 }
 
-# variable "registry_server" {
-#   type = string
-# }
-#
-# variable "registry_username" {
-#   type = string
-# }
-# variable "registry_password" {
-#   type = string
-# }
+variable "registry_server" {
+  type = string
+}
+variable "registry_username" {
+  type = string
+}
+variable "registry_password" {
+  type = string
+}
