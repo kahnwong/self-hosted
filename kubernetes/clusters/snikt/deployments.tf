@@ -34,7 +34,7 @@ locals {
     ]
     tools = [
       "wakapi", "wakapi-postgres",
-      "stirling-pdf",
+      #      "stirling-pdf",
     ]
   })
 }
