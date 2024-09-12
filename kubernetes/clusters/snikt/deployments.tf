@@ -3,7 +3,7 @@
 
 locals {
   deployments = tomap({
-    bots    = ["qa-api"]
+    bots    = ["qa-api", "qa-api-rs"]
     default = ["dashy", "linkding", "memos", "subsonic-widgets"]
     news = [
       "miniflux", "miniflux-postgres",

@@ -1,0 +1,16 @@
+---
+kind: Deployment
+name: qa-api-rs
+replicaCount: 1
+
+containers:
+  - name: qa-api-rs
+    repository: ghcr.io/kahnwong/qa-api-rs
+    tag: "af40658"
+    port: 3000
+    envFrom:
+      - secretRef:
+          name: qa-api
+service:
+  port: 3000
+  nodePort: 30045
