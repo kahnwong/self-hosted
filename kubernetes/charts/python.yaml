@@ -1,0 +1,15 @@
+---
+kind: Deployment
+name: python
+replicaCount: 1
+
+containers:
+  - name: python
+    repository: harbor.karnwong.me/api-load-test/api-load-test-python
+    tag: "latest"
+    port: 3000
+service:
+  port: 3000
+  nodePort: 30003
+
+# helm upgrade --install python base/chart --values python.yaml

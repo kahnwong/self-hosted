@@ -1,0 +1,15 @@
+---
+kind: Deployment
+name: node
+replicaCount: 1
+
+containers:
+  - name: node
+    repository: harbor.karnwong.me/api-load-test/api-load-test-node
+    tag: "latest"
+    port: 3000
+service:
+  port: 3000
+  nodePort: 30002
+
+# helm upgrade --install node base/chart --values node.yaml

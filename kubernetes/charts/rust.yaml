@@ -1,0 +1,15 @@
+---
+kind: Deployment
+name: rust
+replicaCount: 1
+
+containers:
+  - name: rust
+    repository: harbor.karnwong.me/api-load-test/api-load-test-rust
+    tag: "latest"
+    port: 3000
+service:
+  port: 3000
+  nodePort: 30004
+
+# helm upgrade --install rust base/chart --values rust.yaml
