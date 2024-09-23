@@ -14,7 +14,7 @@ initContainers:
 containers:
   - name: minio
     repository: quay.io/minio/minio
-    tag: RELEASE.2024-04-06T05-26-02Z
+    tag: RELEASE.2024-09-13T20-26-02Z
     ports:
       - name: api
         containerPort: 9000
