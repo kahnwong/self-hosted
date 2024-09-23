@@ -6,7 +6,7 @@ replicaCount: 1
 containers:
   - name: subsonic-widgets
     repository: ghcr.io/kahnwong/subsonic-widgets
-    tag: "a84a4f5"
+    tag: be0562e
     port: 3000
     envFrom:
       - secretRef:
