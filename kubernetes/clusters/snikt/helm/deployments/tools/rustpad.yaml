@@ -5,8 +5,8 @@ replicaCount: 1
 
 containers:
   - name: rustpad
-    repository: ekzhang/rustpad
-    tag: latest
+    repository: ghcr.io/kahnwong/rustpad
+    tag: 6d82a68
     port: 3030
 service:
   port: 3030
