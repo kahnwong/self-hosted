@@ -20,6 +20,7 @@ locals {
       "00-0-morning-coffee",
       "01-1-lunch-ask",
       "01-2-lunch-order",
+      "01-3-check-order",
       "02-1-dinner-ask-family",
       "02-2-dinner-update-granny",
       "02-3-coffee-or-tea",

@@ -7,7 +7,7 @@ containers:
     repository: ghcr.io/kahnwong/line-notify
     tag: 857a8cf
     args:
-      - "บอกคนแก่ถ้ามีคนไม่กินข้าวบ้าน"
+      - "บอกคนแก่ถ้ามีคนไม่กินข้าวบ้าน ถ้าสั่งแกรบ, อย่าลืมปักหมุดเป็นที่บ้าน"
     envFrom:
       - secretRef:
           name: family-alerts

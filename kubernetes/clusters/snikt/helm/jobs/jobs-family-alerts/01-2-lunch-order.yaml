@@ -7,7 +7,7 @@ containers:
     repository: ghcr.io/kahnwong/line-notify
     tag: 857a8cf
     args:
-      - "สั่งข้าวเที่ยง"
+      - "สั่งข้าวเที่ยง อย่าลืมปักหมุดเป็นที่บ้าน"
     envFrom:
       - secretRef:
           name: family-alerts
