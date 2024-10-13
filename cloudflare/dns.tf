@@ -20,12 +20,13 @@ locals {
     "music",
     "ntfy",
     "pdf",
-    "pmtiles",
     "plausible",
+    "pmtiles",
     "podgrab",
     "qa-api",
     "rustpad",
     "secrets",
+    "thai-tech-cal",
     "wakapi",
   ])
   selfhosted_non_proxied = setunion(toset([

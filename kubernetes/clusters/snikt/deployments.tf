@@ -7,7 +7,8 @@ locals {
     default = ["dashy", "linkding", "memos", "subsonic-widgets"]
     news = [
       "miniflux", "miniflux-postgres",
-      "wallabag", "wallabag-postgres", "wallabag-redis"
+      "wallabag", "wallabag-postgres", "wallabag-redis",
+      "thai-tech-cal",
     ]
     infrastructure = [
       "gitea", "gitea-postgres",

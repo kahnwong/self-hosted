@@ -110,3 +110,6 @@ pdf.karnwong.me {
 plausible.karnwong.me {
     reverse_proxy 192.168.1.36:30044
 }
+thai-tech-cal.karnwong.me {
+    reverse_proxy 192.168.1.51:30046
+}

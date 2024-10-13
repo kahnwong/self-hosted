@@ -1,0 +1,26 @@
+---
+kind: Deployment
+name: thai-tech-cal
+replicaCount: 1
+
+containers:
+  - name: thai-tech-cal
+    repository: ghcr.io/kahnwong/ical-to-rss
+    tag: dedefb5
+    port: 3000
+    env:
+      - name: ICAL_URL
+        value: "https://calendar.google.com/calendar/ical/tech.cal.th@gmail.com/public/basic.ics"
+      - name: FEED_TITLE
+        value: "รวม อัพเดท Tech event, Tech Meetup ในไทยไว้ในที่เดียว"
+      - name: FEED_DESCRIPTION
+        value: ""
+      - name: FEED_AUTHOR_NAME
+        value: "creatorsgarten"
+      - name: FEED_AUTHOR_EMAIL
+        value: ""
+      - name: MODE
+        value: "PRODUCTION"
+service:
+  port: 3000
+  nodePort: 30046
