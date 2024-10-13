@@ -6,7 +6,7 @@ replicaCount: 1
 containers:
   - name: go-playground
     repository: x1unix/go-playground
-    tag: 2.1.0
+    tag: 2.2.1
     port: 8000
     env:
       - name: APP_CLEAN_INTERVAL
