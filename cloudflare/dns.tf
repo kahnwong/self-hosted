@@ -32,6 +32,7 @@ locals {
   selfhosted_non_proxied = setunion(toset([
     "audiobookshelf",
     "books",
+    "chat-with-table",
     "git",
     "harbor",
     "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
