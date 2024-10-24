@@ -2,6 +2,9 @@
 
 ## Applications
 
+- [harbor](https://goharbor.io/docs/2.11.0/administration/configure-authentication/oidc-auth/)
+  - OIDC endpoint should be something like this: `https://authentik.xxx.xxx/application/o/harbor/`
+  - Needs `offline_access`: <https://github.com/goauthentik/authentik/issues/9836>
 - [memos](https://www.usememos.com/docs/advanced-settings/authentik)
 
 

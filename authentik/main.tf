@@ -1,5 +1,6 @@
 locals {
   application_oauth2 = tomap({
+    harbor : "https://harbor.karnwong.me/c/oidc/callback"
     memos : "https://memos.karnwong.me/auth/callback"
     }
   )
