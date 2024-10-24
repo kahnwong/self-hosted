@@ -1,5 +1,6 @@
 locals {
   applications = toset([
+    "dashy",
     "livegrep",
     "podgrab"
   ])
