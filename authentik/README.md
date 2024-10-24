@@ -14,13 +14,18 @@
 |------|---------|
 | authentik | 2024.8.4 |
 
+## Modules
+
+| Name | Source | Version |
+|------|--------|---------|
+| application | ./modules/authentik-application | n/a |
+
 ## Resources
 
 | Name | Type |
 |------|------|
-| [authentik_application.name](https://registry.terraform.io/providers/goauthentik/authentik/2024.8.4/docs/resources/application) | resource |
-| [authentik_provider_proxy.podgrab](https://registry.terraform.io/providers/goauthentik/authentik/2024.8.4/docs/resources/provider_proxy) | resource |
-| [authentik_flow.default-authorization-flow](https://registry.terraform.io/providers/goauthentik/authentik/2024.8.4/docs/data-sources/flow) | data source |
+| [authentik_outpost.proxy_outpost](https://registry.terraform.io/providers/goauthentik/authentik/2024.8.4/docs/resources/outpost) | resource |
+| [authentik_service_connection_kubernetes.local](https://registry.terraform.io/providers/goauthentik/authentik/2024.8.4/docs/resources/service_connection_kubernetes) | resource |
 
 ## Inputs
 
