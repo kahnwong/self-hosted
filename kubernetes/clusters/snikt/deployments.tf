@@ -90,10 +90,12 @@ resource "helm_release" "fringe_division" {
   ]
 }
 
+# ------ qa-discord-bot ------ #
 resource "kubernetes_manifest" "qa_discord_bot" {
   manifest = yamldecode(file("./helm/deployments/bots/qa-discord-bot.yaml"))
 }
 
+# ------ harbor ------ #
 resource "helm_release" "harbor" {
   name       = "harbor"
   namespace  = "harbor"
@@ -109,4 +111,20 @@ resource "helm_release" "harbor" {
     name  = "harborAdminPassword"
     value = var.registry_password
   }
+}
+
+# ------ authentik ------ #
+data "sops_file" "authentik" {
+  source_file = "./helm/deployments/authentik/values.sops.yaml"
+}
+resource "helm_release" "authentik" {
+  name       = "authentik"
+  namespace  = "authentik"
+  repository = "https://charts.goauthentik.io"
+  version    = "2024.8.3"
+  chart      = "authentik"
+
+  values = [
+    data.sops_file.authentik.raw
+  ]
 }
