@@ -1,5 +1,6 @@
 #!/bin/bash
 
+git pull
 cd /home/ubuntu/self-hosted/caddy/config || exit 1
 
 cat Caddyfile >all.Caddyfile
