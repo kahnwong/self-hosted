@@ -1,4 +1,4 @@
 provider "authentik" {
-  url   = "https://authentik.company"
-  token = "foo-bar"
+  url   = var.authentik_host
+  token = var.authentik_token
 }
