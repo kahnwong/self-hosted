@@ -26,6 +26,8 @@ containers:
         value: wakapi-postgres.tools.svc.cluster.local
       - name: WAKAPI_DB_PORT
         value: "5432"
+      - name: WAKAPI_MAIL_SMTP_TLS
+        value: "true"
     envFrom:
       - secretRef:
           name: wakapi
