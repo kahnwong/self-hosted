@@ -4,8 +4,8 @@ data "authentik_flow" "default-authorization-flow" {
 
 resource "authentik_provider_proxy" "podgrab" {
   name               = "podgrab"
-  internal_host      = "https://podgrab.karnwong.me"
   external_host      = "https://podgrab.karnwong.me"
+  mode               = "forward_single"
   authorization_flow = data.authentik_flow.default-authorization-flow.id
 }
 
