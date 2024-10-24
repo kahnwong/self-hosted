@@ -1,56 +1,50 @@
 audiobookshelf.karnwong.me {
-    reverse_proxy 192.168.1.51:30027
+    reverse_proxy 192.168.1.36:30027
 }
 harbor.karnwong.me {
     reverse_proxy 192.168.1.36:30500
 }
 immich.karnwong.me {
-    reverse_proxy 192.168.1.51:30030
+    reverse_proxy 192.168.1.36:30030
 }
 jellyfin.karnwong.me {
-    reverse_proxy 192.168.1.51:30003
+    reverse_proxy 192.168.1.36:30003
 }
 music.karnwong.me {
-    reverse_proxy 192.168.1.51:30006
+    reverse_proxy 192.168.1.36:30006
 }
 syncthing.karnwong.me {
     reverse_proxy 192.168.1.36:8384
 }
 git.karnwong.me {
-    reverse_proxy 192.168.1.51:30026
-}
-kanboard.karnwong.me {
-    reverse_proxy 192.168.1.51:30041
+    reverse_proxy 192.168.1.36:30026
 }
 linkding.karnwong.me {
-    reverse_proxy 192.168.1.51:30005
+    reverse_proxy 192.168.1.36:30005
 }
 memos.karnwong.me {
-    reverse_proxy 192.168.1.51:30031
+    reverse_proxy 192.168.1.36:30031
 }
 miniflux.karnwong.me {
-    reverse_proxy 192.168.1.51:30007
+    reverse_proxy 192.168.1.36:30007
 }
 minio.karnwong.me {
-    reverse_proxy 192.168.1.51:30020
+    reverse_proxy 192.168.1.36:30020
 }
 ntfy.karnwong.me {
-    reverse_proxy 192.168.1.51:30022
+    reverse_proxy 192.168.1.36:30022
 }
 rustpad.karnwong.me {
-    reverse_proxy 192.168.1.51:30019
+    reverse_proxy 192.168.1.36:30019
 }
 secrets.karnwong.me {
-    reverse_proxy 192.168.1.51:30025
+    reverse_proxy 192.168.1.36:30025
 }
 share.karnwong.me {
-    reverse_proxy 192.168.1.51:30017
-}
-shouldideploytoday.karnwong.me {
-    reverse_proxy 192.168.1.51:30040
+    reverse_proxy 192.168.1.36:30017
 }
 wallabag.karnwong.me {
-    reverse_proxy 192.168.1.51:30009 {
+    reverse_proxy 192.168.1.36:30009 {
         transport http {
             dial_timeout 5m
             response_header_timeout 5m
@@ -84,16 +78,16 @@ pmtiles.karnwong.me {
     import cors https://maps.karnwong.me
 }
 excalidraw.karnwong.me {
-    reverse_proxy 192.168.1.51:30034
+    reverse_proxy 192.168.1.36:30034
 }
 books.karnwong.me {
-    reverse_proxy 192.168.1.51:30032
+    reverse_proxy 192.168.1.36:30032
 }
 subsonic-widgets.karnwong.me {
-    reverse_proxy 192.168.1.51:30038
+    reverse_proxy 192.168.1.36:30038
 }
 gist.karnwong.me {
-    reverse_proxy 192.168.1.51:30039
+    reverse_proxy 192.168.1.36:30039
 }
 wakapi.karnwong.me {
     reverse_proxy 192.168.1.36:30041
@@ -102,7 +96,7 @@ go.karnwong.me {
     reverse_proxy 192.168.1.36:30042
 }
 qa-api.karnwong.me {
-    reverse_proxy 192.168.1.51:30043
+    reverse_proxy 192.168.1.36:30043
 }
 pdf.karnwong.me {
     reverse_proxy 192.168.1.36:30040
@@ -111,7 +105,7 @@ plausible.karnwong.me {
     reverse_proxy 192.168.1.36:30044
 }
 thai-tech-cal.karnwong.me {
-    reverse_proxy 192.168.1.51:30046
+    reverse_proxy 192.168.1.36:30046
 }
 authentik.karnwong.me {
     reverse_proxy 192.168.1.36:30047
@@ -126,7 +120,7 @@ livegrep.karnwong.me {
             trusted_proxies private_ranges
         }
 
-        reverse_proxy 192.168.1.51:30033
+        reverse_proxy 192.168.1.36:30033
     }
 }
 podgrab.karnwong.me {
@@ -139,7 +133,7 @@ podgrab.karnwong.me {
             trusted_proxies private_ranges
         }
 
-        reverse_proxy 192.168.1.51:30004
+        reverse_proxy 192.168.1.36:30004
     }
 }
 dashy.karnwong.me {
@@ -152,7 +146,7 @@ dashy.karnwong.me {
             trusted_proxies private_ranges
         }
 
-        reverse_proxy 192.168.1.51:30023
+        reverse_proxy 192.168.1.36:30023
     }
 }
 gatus.karnwong.me {
@@ -165,6 +159,6 @@ gatus.karnwong.me {
             trusted_proxies private_ranges
         }
 
-        reverse_proxy 192.168.1.51:30029
+        reverse_proxy 192.168.1.36:30029
     }
 }

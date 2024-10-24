@@ -1,4 +1,7 @@
 ---
+# `sudo chown -R root:root data/images`
+# `sudo chmod -R 0777 data/images` !!! has to be `0777`
+
 kind: Deployment
 name: wallabag
 replicaCount: 1

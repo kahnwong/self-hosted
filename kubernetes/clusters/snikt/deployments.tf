@@ -3,37 +3,53 @@
 
 locals {
   deployments = tomap({
-    bots    = ["qa-api", "qa-api-rs"]
-    default = ["dashy", "linkding", "memos", "subsonic-widgets"]
+    default = []
     news = [
-      "miniflux", "miniflux-postgres",
-      "wallabag", "wallabag-postgres", "wallabag-redis",
-      "thai-tech-cal",
     ]
     infrastructure = [
-      "gitea", "gitea-postgres",
-      "mlflow", "mlflow-postgres",
-      "gatus", "minio", "ntfy",
     ]
     tools = [
-      "livegrep-backend", "livegrep-frontend",
-      "supersecretmessage", "supersecretmessage-vault",
-      "excalidraw", "go-playground", "opengist", "picoshare", "rustpad", "sshx",
     ]
   })
   deployments_fringe_division = tomap({
+    bots = ["qa-api", "qa-api-rs"]
     default = [
-      "audiobookshelf", "podgrab",
-      "navidrome",
-      "jellyfin",
+      "audiobookshelf",
       "calibre-web",
+      "dashy",
+      "jellyfin",
+      "linkding",
+      "memos",
+      "navidrome",
+      "podgrab",
+      "subsonic-widgets",
       "foo", "baz"
     ]
     immich = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
+    infrastructure = [
+      "gatus",
+      "gitea", "gitea-postgres",
+      "minio",
+      "mlflow", "mlflow-postgres",
+      "ntfy",
+    ]
+    news = [
+      "miniflux", "miniflux-postgres",
+      "thai-tech-cal",
+      "wallabag", "wallabag-postgres", "wallabag-redis",
+    ]
     plausible = [
       "plausible", "plausible-clickhouse", "plausible-postgres",
     ]
     tools = [
+      "excalidraw",
+      "go-playground",
+      "livegrep-backend", "livegrep-frontend",
+      "opengist",
+      "picoshare",
+      "rustpad",
+      "sshx",
+      "supersecretmessage", "supersecretmessage-vault",
       "wakapi", "wakapi-postgres",
       #      "stirling-pdf",
     ]

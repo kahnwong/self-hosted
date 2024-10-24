@@ -1,13 +1,21 @@
 locals {
   jobs = tomap({
+    jobs = []
+  })
+
+  jobs_fringe_division = tomap({
     jobs = [
       "backup-gitea-data",
       "backup-gitea-db",
+      "backup-immich-db",
       "backup-linkding",
       "backup-memos",
       "backup-miniflux",
+      "backup-navidrome",
       "backup-ntfy",
       "backup-prune",
+      "backup-syncthing",
+      "backup-transmission",
       "backup-wakapi",
       "backup-wallabag-content",
       "backup-wallabag-db",
@@ -16,6 +24,7 @@ locals {
       "wallabag-cleanup",
       "water-cut-notify",
     ]
+
     jobs-family-alerts = [
       "00-0-morning-coffee",
       "01-1-lunch-ask",
@@ -24,15 +33,6 @@ locals {
       "02-1-dinner-ask-family",
       "02-2-dinner-update-granny",
       "02-3-coffee-or-tea",
-    ]
-  })
-
-  jobs_fringe_division = tomap({
-    jobs = [
-      "backup-immich-db",
-      "backup-navidrome",
-      "backup-syncthing",
-      "backup-transmission",
     ]
   })
 }
@@ -98,6 +98,7 @@ resource "helm_release" "livegrep_indexer" {
   chart      = "base-cronjob"
 
   values = [
-    data.sops_file.livegrep.raw
+    data.sops_file.livegrep.raw,
+    file("./resources/valuesTaintNodeSelector.yaml"),
   ]
 }
