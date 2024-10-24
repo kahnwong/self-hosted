@@ -14,4 +14,3 @@ resource "authentik_application" "this" {
   slug              = var.application_name
   protocol_provider = authentik_provider_proxy.this.id
 }
-

@@ -1,15 +1,15 @@
 locals {
-  applications = toset([
+  application_proxy = toset([
     "dashy",
     "livegrep",
     "podgrab"
   ])
 }
 
-module "application" {
-  for_each = local.applications
+module "application_proxy" {
+  for_each = local.application_proxy
 
-  source           = "./modules/authentik-application"
+  source           = "./modules/authentik-application-proxy"
   application_name = each.key
 }
 
@@ -30,7 +30,7 @@ resource "authentik_service_connection_kubernetes" "local" {
 # }
 resource "authentik_outpost" "proxy_outpost" {
   name               = "authentik Embedded Outpost"
-  protocol_providers = [for app in module.application : app.proxy_id]
+  protocol_providers = [for app in module.application_proxy : app.proxy_id]
   config = jsonencode({
     authentik_host                 = format(var.authentik_host)
     authentik_host_browser         = ""

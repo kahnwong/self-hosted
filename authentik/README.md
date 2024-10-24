@@ -18,7 +18,7 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| application | ./modules/authentik-application | n/a |
+| application\_proxy | ./modules/authentik-application-proxy | n/a |
 
 ## Resources
 

@@ -22,7 +22,7 @@ updates:
       prefix: "chore"
       include: "scope"
   - package-ecosystem: terraform
-    directory: "./terraform/kubernetes/nuc"
+    directory: "./kubernetes/clusters/snikt"
     schedule:
       interval: daily
       time: "00:00"
@@ -32,7 +32,7 @@ updates:
       prefix: "chore"
       include: "scope"
   - package-ecosystem: terraform
-    directory: "./terraform/kubernetes/snikt"
+    directory: "./authentik"
     schedule:
       interval: daily
       time: "00:00"
