@@ -1,5 +1,9 @@
 # Authentik
 
+## Applications
+
+- [memos](https://www.usememos.com/docs/advanced-settings/authentik)
+
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -18,6 +22,7 @@
 
 | Name | Source | Version |
 |------|--------|---------|
+| application\_oauth2 | ./modules/authentik-application-oauth2 | n/a |
 | application\_proxy | ./modules/authentik-application-proxy | n/a |
 
 ## Resources

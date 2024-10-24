@@ -1,9 +1,21 @@
 locals {
+  application_oauth2 = tomap({
+    memos : "https://memos.karnwong.me/auth/callback"
+    }
+  )
   application_proxy = toset([
     "dashy",
     "livegrep",
     "podgrab"
   ])
+}
+
+module "application_oauth2" {
+  for_each = local.application_oauth2
+
+  source           = "./modules/authentik-application-oauth2"
+  application_name = each.key
+  redirect_uri     = each.value
 }
 
 module "application_proxy" {
@@ -30,7 +42,7 @@ resource "authentik_service_connection_kubernetes" "local" {
 # }
 resource "authentik_outpost" "proxy_outpost" {
   name               = "authentik Embedded Outpost"
-  protocol_providers = [for app in module.application_proxy : app.proxy_id]
+  protocol_providers = [for app in module.application_proxy : app.provider_proxy_id]
   config = jsonencode({
     authentik_host                 = format(var.authentik_host)
     authentik_host_browser         = ""
