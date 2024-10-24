@@ -15,7 +15,7 @@ resource "cloudflare_record" "this" {
   proxied = true
   ttl     = 1
   type    = "CNAME"
-  value   = cloudflare_pages_project.this.subdomain
+  content = cloudflare_pages_project.this.subdomain
   zone_id = var.zone_id
 }
 

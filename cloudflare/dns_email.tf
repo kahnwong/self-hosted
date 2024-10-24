@@ -63,6 +63,6 @@ resource "cloudflare_record" "google_workspace_smtp" {
   proxied  = false
   ttl      = 1
   type     = "MX"
-  value    = "smtp.google.com"
+  content  = "smtp.google.com"
   zone_id  = var.cloudflare_zone_id
 }

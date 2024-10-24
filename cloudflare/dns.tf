@@ -8,14 +8,12 @@ locals {
     "shouldideploytoday",
   ])
   selfhosted_proxied = toset([
-    "authentik",
     "dagster",
     "excalidraw",
     "gist",
     "go",
     "immich",
     "linkding",
-    "livegrep",
     "memos",
     "miniflux",
     "mlflow",
@@ -24,7 +22,6 @@ locals {
     "pdf",
     "plausible",
     "pmtiles",
-    "podgrab",
     "qa-api",
     "rustpad",
     "secrets",
@@ -33,12 +30,15 @@ locals {
   ])
   selfhosted_non_proxied = setunion(toset([
     "audiobookshelf",
+    "authentik",
     "books",
     "chat-with-table",
     "git",
     "harbor",
     "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
+    "livegrep",
     "minio",
+    "podgrab",
     "share", # prevent request entity too large
     "subsonic-widgets",
     "syncthing",
@@ -57,7 +57,7 @@ resource "cloudflare_record" "github_pages_dns" {
   proxied  = true
   ttl      = 1
   type     = "CNAME"
-  value    = "kahnwong.github.io"
+  content  = "kahnwong.github.io"
   zone_id  = var.cloudflare_zone_id
 }
 
@@ -67,7 +67,7 @@ resource "cloudflare_record" "vercel_dns" {
   proxied  = true
   ttl      = 1
   type     = "CNAME"
-  value    = "cname.vercel-dns.com."
+  content  = "cname.vercel-dns.com."
   zone_id  = var.cloudflare_zone_id
 }
 
@@ -77,7 +77,7 @@ resource "cloudflare_record" "selfhosted_dns" {
   proxied  = each.value
   ttl      = 1
   type     = "CNAME"
-  value    = data.sops_file.secrets.data["DDNS_CNAME"]
+  content  = data.sops_file.secrets.data["DDNS_CNAME"]
   zone_id  = var.cloudflare_zone_id
 }
 
@@ -86,7 +86,7 @@ resource "cloudflare_record" "vaultwarden" {
   proxied = true
   ttl     = 1
   type    = "A"
-  value   = "35.212.236.89"
+  content = "35.212.236.89"
   zone_id = var.cloudflare_zone_id
 }
 
@@ -95,7 +95,7 @@ resource "cloudflare_record" "www_dummy" { # need for redirection
   proxied = true
   ttl     = 1
   type    = "A"
-  value   = "192.0.2.1"
+  content = "192.0.2.1"
   zone_id = var.cloudflare_zone_id
 }
 resource "cloudflare_page_rule" "redirect_www_to_root" {

@@ -4,7 +4,7 @@ resource "cloudflare_record" "pop_mx_send" {
   proxied  = false
   ttl      = 1
   type     = "MX"
-  value    = data.sops_file.secrets.data["POP_MX_SEND"]
+  content  = data.sops_file.secrets.data["POP_MX_SEND"]
   zone_id  = var.cloudflare_zone_id
 }
 
@@ -13,7 +13,7 @@ resource "cloudflare_record" "pop_txt_send" {
   proxied = false
   ttl     = 1
   type    = "TXT"
-  value   = data.sops_file.secrets.data["POP_TXT_SEND"]
+  content = data.sops_file.secrets.data["POP_TXT_SEND"]
   zone_id = var.cloudflare_zone_id
 }
 
@@ -22,6 +22,6 @@ resource "cloudflare_record" "pop_txt_key" {
   proxied = false
   ttl     = 1
   type    = "TXT"
-  value   = data.sops_file.secrets.data["POP_TXT_KEY"]
+  content = data.sops_file.secrets.data["POP_TXT_KEY"]
   zone_id = var.cloudflare_zone_id
 }
