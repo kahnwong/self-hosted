@@ -6,6 +6,7 @@ locals {
   application_proxy = toset([
     "dashy",
     "livegrep",
+    "gatus",
     "podgrab"
   ])
 }
