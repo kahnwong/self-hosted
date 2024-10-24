@@ -15,6 +15,7 @@ locals {
     "go",
     "immich",
     "linkding",
+    "livegrep",
     "memos",
     "miniflux",
     "mlflow",
