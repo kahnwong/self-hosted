@@ -22,7 +22,7 @@ containers:
             name: authentik-postgres
             key: POSTGRES_PASSWORD
       - name: POSTGRES_HOSTNAME
-        value: authentik-postgresql.authentik.svc.cluster.local
+        value: authentik-postgres.authentik.svc.cluster.local
     envFrom:
       - secretRef:
           name: backup
