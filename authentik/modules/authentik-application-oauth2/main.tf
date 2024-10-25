@@ -3,10 +3,6 @@ resource "random_string" "random" {
   special = false
 }
 
-data "authentik_flow" "default-authorization-flow" {
-  slug = "default-provider-authorization-implicit-consent"
-}
-
 ## for obtaining `property_mappings`
 # import {
 #   id = "19"
@@ -15,7 +11,7 @@ data "authentik_flow" "default-authorization-flow" {
 resource "authentik_provider_oauth2" "this" {
   name               = "Provider for ${var.application_name}"
   client_id          = random_string.random.result
-  authorization_flow = data.authentik_flow.default-authorization-flow.id
+  authorization_flow = var.authentik_flow_id
   redirect_uris      = [var.redirect_uri]
   property_mappings = [
     "3ccc549e-2d36-4c94-a69f-1d56ba28af89",

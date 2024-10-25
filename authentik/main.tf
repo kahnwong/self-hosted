@@ -12,19 +12,25 @@ locals {
   ])
 }
 
+data "authentik_flow" "default-authorization-flow" {
+  slug = "default-provider-authorization-implicit-consent"
+}
+
 module "application_oauth2" {
   for_each = local.application_oauth2
 
-  source           = "./modules/authentik-application-oauth2"
-  application_name = each.key
-  redirect_uri     = each.value
+  source            = "./modules/authentik-application-oauth2"
+  authentik_flow_id = data.authentik_flow.default-authorization-flow.id
+  application_name  = each.key
+  redirect_uri      = each.value
 }
 
 module "application_proxy" {
   for_each = local.application_proxy
 
-  source           = "./modules/authentik-application-proxy"
-  application_name = each.key
+  source            = "./modules/authentik-application-proxy"
+  authentik_flow_id = data.authentik_flow.default-authorization-flow.id
+  application_name  = each.key
 }
 
 ## obtain from browser inspector
