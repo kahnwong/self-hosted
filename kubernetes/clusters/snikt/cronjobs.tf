@@ -83,7 +83,7 @@ resource "helm_release" "jobs_fringe_division" {
 
   values = [
     file("./helm/jobs/${each.value}/${each.key}.yaml"),
-    file("./resources/valuesTaintNodeSelector.yaml"),
+    # file("./resources/valuesTaintNodeSelector.yaml"),
   ]
 }
 
@@ -100,6 +100,6 @@ resource "helm_release" "livegrep_indexer" {
 
   values = [
     data.sops_file.livegrep.raw,
-    file("./resources/valuesTaintNodeSelector.yaml"),
+    # file("./resources/valuesTaintNodeSelector.yaml"),
   ]
 }

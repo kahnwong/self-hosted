@@ -5,13 +5,13 @@ global:
   envFrom:
     - secretRef:
         name: authentik-env
-  tolerations:
-    - key: storage-required
-      operator: Equal
-      value: "true"
-      effect: NoSchedule
-  nodeSelector:
-    kubernetes.io/hostname: fringe-division
+#  tolerations:
+#    - key: storage-required
+#      operator: Equal
+#      value: "true"
+#      effect: NoSchedule
+#  nodeSelector:
+#    kubernetes.io/hostname: fringe-division
 authentik:
   error_reporting:
     enabled: true

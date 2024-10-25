@@ -103,7 +103,7 @@ resource "helm_release" "fringe_division" {
 
   values = [
     file("./helm/deployments/${each.value}/${each.key}.yaml"),
-    file("./resources/valuesTaintNodeSelector.yaml"),
+    # file("./resources/valuesTaintNodeSelector.yaml"),
   ]
 }
 

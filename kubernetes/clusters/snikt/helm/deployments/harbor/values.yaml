@@ -16,78 +16,78 @@ expose:
 
 externalURL: https://harbor.karnwong.me
 
-nginx:
-  tolerations:
-    - key: "storage-required"
-      operator: "Equal"
-      value: "true"
-      effect: "NoSchedule"
-  nodeSelector:
-    kubernetes.io/hostname: "fringe-division"
-portal:
-  tolerations:
-    - key: "storage-required"
-      operator: "Equal"
-      value: "true"
-      effect: "NoSchedule"
-  nodeSelector:
-    kubernetes.io/hostname: "fringe-division"
-core:
-  tolerations:
-    - key: "storage-required"
-      operator: "Equal"
-      value: "true"
-      effect: "NoSchedule"
-  nodeSelector:
-    kubernetes.io/hostname: "fringe-division"
-jobservice:
-  tolerations:
-    - key: "storage-required"
-      operator: "Equal"
-      value: "true"
-      effect: "NoSchedule"
-  nodeSelector:
-    kubernetes.io/hostname: "fringe-division"
-registry:
-  tolerations:
-    - key: "storage-required"
-      operator: "Equal"
-      value: "true"
-      effect: "NoSchedule"
-  nodeSelector:
-    kubernetes.io/hostname: "fringe-division"
-trivy:
-  tolerations:
-    - key: "storage-required"
-      operator: "Equal"
-      value: "true"
-      effect: "NoSchedule"
-  nodeSelector:
-    kubernetes.io/hostname: "fringe-division"
-database:
-  internal:
-    tolerations:
-      - key: "storage-required"
-        operator: "Equal"
-        value: "true"
-        effect: "NoSchedule"
-    nodeSelector:
-      kubernetes.io/hostname: "fringe-division"
-redis:
-  type: internal
-  internal:
-    tolerations:
-      - key: "storage-required"
-        operator: "Equal"
-        value: "true"
-        effect: "NoSchedule"
-    nodeSelector:
-      kubernetes.io/hostname: "fringe-division"
-exporter:
-  tolerations:
-    - key: "storage-required"
-      operator: "Equal"
-      value: "true"
-      effect: "NoSchedule"
-  nodeSelector:
-    kubernetes.io/hostname: "fringe-division"
+#nginx:
+#  tolerations:
+#    - key: "storage-required"
+#      operator: "Equal"
+#      value: "true"
+#      effect: "NoSchedule"
+#  nodeSelector:
+#    kubernetes.io/hostname: "fringe-division"
+#portal:
+#  tolerations:
+#    - key: "storage-required"
+#      operator: "Equal"
+#      value: "true"
+#      effect: "NoSchedule"
+#  nodeSelector:
+#    kubernetes.io/hostname: "fringe-division"
+#core:
+#  tolerations:
+#    - key: "storage-required"
+#      operator: "Equal"
+#      value: "true"
+#      effect: "NoSchedule"
+#  nodeSelector:
+#    kubernetes.io/hostname: "fringe-division"
+#jobservice:
+#  tolerations:
+#    - key: "storage-required"
+#      operator: "Equal"
+#      value: "true"
+#      effect: "NoSchedule"
+#  nodeSelector:
+#    kubernetes.io/hostname: "fringe-division"
+#registry:
+#  tolerations:
+#    - key: "storage-required"
+#      operator: "Equal"
+#      value: "true"
+#      effect: "NoSchedule"
+#  nodeSelector:
+#    kubernetes.io/hostname: "fringe-division"
+#trivy:
+#  tolerations:
+#    - key: "storage-required"
+#      operator: "Equal"
+#      value: "true"
+#      effect: "NoSchedule"
+#  nodeSelector:
+#    kubernetes.io/hostname: "fringe-division"
+#database:
+#  internal:
+#    tolerations:
+#      - key: "storage-required"
+#        operator: "Equal"
+#        value: "true"
+#        effect: "NoSchedule"
+#    nodeSelector:
+#      kubernetes.io/hostname: "fringe-division"
+#redis:
+#  type: internal
+#  internal:
+#    tolerations:
+#      - key: "storage-required"
+#        operator: "Equal"
+#        value: "true"
+#        effect: "NoSchedule"
+#    nodeSelector:
+#      kubernetes.io/hostname: "fringe-division"
+#exporter:
+#  tolerations:
+#    - key: "storage-required"
+#      operator: "Equal"
+#      value: "true"
+#      effect: "NoSchedule"
+#  nodeSelector:
+#    kubernetes.io/hostname: "fringe-division"
