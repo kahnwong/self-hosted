@@ -12,7 +12,8 @@ locals {
     ]
   })
   deployments_fringe_division = tomap({
-    bots = ["qa-api", "qa-api-rs"]
+    authentik = ["authentik-postgres", "authentik-valkey"]
+    bots      = ["qa-api", "qa-api-rs"]
     default = [
       "audiobookshelf",
       "calibre-web",

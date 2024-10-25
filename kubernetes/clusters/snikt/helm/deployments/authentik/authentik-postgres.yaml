@@ -1,0 +1,23 @@
+---
+kind: StatefulSet
+name: authentik-postgres
+replicaCount: 1
+
+containers:
+  - name: postgres
+    repository: postgres
+    tag: 16.4-alpine
+    port: 5432
+    livenessProbeScheme: tcp
+    envFrom:
+      - secretRef:
+          name: authentik-postgres
+    volumeMounts:
+      - name: authentik-db
+        mountPath: /var/lib/postgresql/data
+volumes:
+  - name: authentik-db
+    hostPath:
+      path: /opt/authentik/db
+service:
+  port: 5432
