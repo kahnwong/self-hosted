@@ -8,6 +8,7 @@
 - [immich](https://immich.app/docs/administration/oauth/)
 - [memos](https://www.usememos.com/docs/advanced-settings/authentik)
 - [miniflux](https://miniflux.app/docs/howto.html)
+- [minio](https://docs.goauthentik.io/integrations/services/minio/)
 
 ## Useful values
 

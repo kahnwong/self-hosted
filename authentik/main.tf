@@ -8,6 +8,7 @@ locals {
     ]
     memos : ["https://memos.karnwong.me/auth/callback"]
     miniflux : ["https://miniflux.karnwong.me/oauth2/oidc/callback"]
+    minio : ["https://console.minio.karnwong.me/oauth_callback"]
     }
   )
   application_proxy = toset([
