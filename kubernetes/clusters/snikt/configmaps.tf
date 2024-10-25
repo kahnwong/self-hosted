@@ -11,10 +11,7 @@ locals {
         deployment = "gatus"
         filename   = "config.yaml"
       },
-      {
-        deployment = "ntfy"
-        filename   = "server.yaml"
-    }]
+    ]
   })
 }
 

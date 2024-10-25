@@ -13,14 +13,31 @@ containers:
     env:
       - name: TZ
         value: UTC
+      - name: NTFY_BASE_URL
+        value: https://ntfy.karnwong.me
+      - name: NTFY_CACHE_FILE
+        value: /var/cache/ntfy/cache.db
+      - name: NTFY_CACHE_FILE
+        value: /var/cache/ntfy/cache.db
+      - name: NTFY_BEHIND_PROXY
+        value: "true"
+      - name: NTFY_ATTACHMENT_CACHE_DIR
+        value: /var/cache/ntfy/attachments
+      - name: NTFY_AUTH_FILE
+        value: /opt/ntfy/user.db
+      - name: NTFY_ENABLE_LOGIN
+        value: "true"
+      - name: NTFY_VISITOR_SUBSCRIPTION_LIMIT
+        value: "3"
+      - name: NTFY_VISITOR_REQUEST_LIMIT_BURST
+        value: "5"
+      - name: NTFY_UPSTREAM_BASE_URL
+        value: https://ntfy.sh
     volumeMounts:
       - name: ntfy-cache
         mountPath: /var/cache/ntfy
       - name: ntfy-data
         mountPath: /opt/ntfy
-      - name: ntfy-config
-        mountPath: /etc/ntfy
-        readOnly: true
 volumes:
   - name: ntfy-cache
     hostPath:
@@ -28,9 +45,6 @@ volumes:
   - name: ntfy-data
     hostPath:
       path: /opt/ntfy/data
-  - name: ntfy-config
-    configMap:
-      name: ntfy
 service:
   port: 80
   nodePort: 30022
