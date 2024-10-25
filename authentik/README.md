@@ -7,7 +7,13 @@
   - Needs `offline_access`: <https://github.com/goauthentik/authentik/issues/9836>
 - [immich](https://immich.app/docs/administration/oauth/)
 - [memos](https://www.usememos.com/docs/advanced-settings/authentik)
+- [miniflux](https://miniflux.app/docs/howto.html)
 
+## Useful values
+
+```txt
+OpenID Configuration Issuer:  https://authentik.karnwong.me/application/o/$APP/
+```
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements

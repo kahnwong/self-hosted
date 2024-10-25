@@ -7,6 +7,7 @@ locals {
       "https://immich.karnwong.me/user-settings",
     ]
     memos : ["https://memos.karnwong.me/auth/callback"]
+    miniflux : ["https://miniflux.karnwong.me/oauth2/oidc/callback"]
     }
   )
   application_proxy = toset([
