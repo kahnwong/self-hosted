@@ -1,5 +1,6 @@
 locals {
   secrets = tomap({
+    authentik      = ["authentik-postgres"]
     bots           = ["qa-api", "qa-discord-bot"]
     default        = ["subsonic-widgets"]
     immich         = ["immich", "immich-machine-learning", "immich-postgres"]
@@ -11,6 +12,7 @@ locals {
     plausible = ["plausible", "plausible-postgres"]
     jobs = [
       "backup", "ddns", "water-cut-notify",
+      "authentik-postgres",
       "gitea-postgres",
       "immich-postgres",
       "miniflux-postgres",
