@@ -131,9 +131,6 @@ resource "helm_release" "harbor" {
 }
 
 # ------ authentik ------ #
-data "sops_file" "authentik" {
-  source_file = "./helm/deployments/authentik/values.sops.yaml"
-}
 resource "helm_release" "authentik" {
   name       = "authentik"
   namespace  = "authentik"
@@ -142,6 +139,6 @@ resource "helm_release" "authentik" {
   chart      = "authentik"
 
   values = [
-    data.sops_file.authentik.raw
+    file("./helm/deployments/authentik/values.yaml"),
   ]
 }

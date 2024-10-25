@@ -1,0 +1,21 @@
+---
+global:
+  image:
+    tag: "2024.8"
+  envFrom:
+    - secretRef:
+        name: authentik-env
+  tolerations:
+    - key: storage-required
+      operator: Equal
+      value: "true"
+      effect: NoSchedule
+  nodeSelector:
+    kubernetes.io/hostname: fringe-division
+authentik:
+  error_reporting:
+    enabled: true
+server:
+  service:
+    type: NodePort
+    nodePortHttp: 30047
