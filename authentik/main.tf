@@ -1,7 +1,7 @@
 locals {
   application_oauth2 = tomap({
-    harbor : "https://harbor.karnwong.me/c/oidc/callback"
-    memos : "https://memos.karnwong.me/auth/callback"
+    harbor : ["https://harbor.karnwong.me/c/oidc/callback"]
+    memos : ["https://memos.karnwong.me/auth/callback"]
     }
   )
   application_proxy = toset([
@@ -22,7 +22,7 @@ module "application_oauth2" {
   source            = "./modules/authentik-application-oauth2"
   authentik_flow_id = data.authentik_flow.default-authorization-flow.id
   application_name  = each.key
-  redirect_uri      = each.value
+  redirect_uris      = each.value
 }
 
 module "application_proxy" {
