@@ -7,6 +7,9 @@ pages:
 sections:
     - name: ENC[AES256_GCM,data:AUBE2aY=,iv:9nLFw2TNGr+MmgIMkzLf1V11FNYwc2+qnySQoidLbD4=,tag:Xhf+h3yE+55D05Rqec49AA==,type:str]
       items:
+        - title: ENC[AES256_GCM,data:8CXyKM1ir8QB,iv:9WNQSpNdi8Z/vRVTOa2IRX6dseW4JLzfIMS6ujRZ8rY=,tag:2QmEZwpkDF7VcJYvofC+Yw==,type:str]
+          icon: ENC[AES256_GCM,data:9l6OO6y1BNu1UyR8,iv:eQQnPMHzztzTYF9xcfph3cBSjH0OpkXQqQ3vClK34y0=,tag:u8r8fb41o64uSeFTq1Q1uQ==,type:str]
+          url: ENC[AES256_GCM,data:y/No3ZVxxFILTK6YYoxLwx/zS25zClTsgPOCwUQ=,iv:UxNAefikn5WujAAq0I8Y/3oU8uR0dFLc8MmUcgfsplA=,tag:41q7yKzfe120LA0Lcf/QyA==,type:str]
         - title: ENC[AES256_GCM,data:BoA0WtA=,iv:gmyLDpt/xOuqX4qX0bnvt4iuD3RzQM7KncoZRI1at5w=,tag:WmvX/5igoSskJQQ6T0+rzA==,type:str]
           icon: ENC[AES256_GCM,data:zmKktXlJTSw=,iv:b9NdIUqml89NML6PA1N0lZsnZcVqJPUhd8+kpvaeNpI=,tag:j/0MiS2hpT825KRJU+202A==,type:str]
           url: ENC[AES256_GCM,data:ZR72eAhadJFNbg4HLAZd/SIcsfFhGRVnLw==,iv:9QcXWUGYpXZZRJTvCLbK98niQt2xisT3ntRFMQjQ5TQ=,tag:btrV2E5fbfFI/xOw5Tf48w==,type:str]
@@ -171,8 +174,8 @@ sops:
             YUs3cXA2TnB4c21FQzg0bnFyTkRDejgKzf7PO4qiPs7dWhWadFXEwXmawv1p2xwZ
             Vjnq6Nqhj2Cvt+fCAh0wMHi1kI8XIjDoOMcwweKgjFMkv86gBkgtLg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-10-25T12:12:33Z"
-    mac: ENC[AES256_GCM,data:QdNye16tE26y0d6YuRA8SFL2mpJeRb8ZX90oMAeaf6rvw785abwgZ8M2Cjc23HjZft3LSFdESfURTw0Lg/Mi07Nf00GJH4Bos6HXEvepu7vq6MI1EljM0tKG+0ERVXcGFfv0sMSDPRB4wpXlt5TKgV2fs7uFj9LDvKOtnKsb3Sw=,iv:XA7ksPmewv2hmnQlkvxWjNfeGsoWDtUtHgWOkq+qZJc=,tag:DSGWgS4oxpbrCyM5RRK3Xg==,type:str]
+    lastmodified: "2024-10-26T16:12:19Z"
+    mac: ENC[AES256_GCM,data:3Y4XcqQgNV2JHaT6L+ZES9Z1leSZBTDuHcmgl1uLd9dzfZgCmBI3cU/tubgIomY6OYyaVaDal4O8bCZkpNZxhjuw1h6UZXL8XKadreYxIGXkxPFDhXuYBaZex0BMEdlIwXU0daCbt8wyRrelL3fHPTbTiPyG74kpNi3t8nMCS1A=,iv:emhJHWNVnn8kNBuvmkXb6OEBWxX/c3PQYgy/LjnHbU4=,tag:vURk2krT1Sdun43IIZdufg==,type:str]
     pgp: []
     unencrypted_suffix: _unencrypted
     version: 3.9.0
