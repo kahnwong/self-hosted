@@ -5,6 +5,7 @@ provider "registry.terraform.io/goauthentik/authentik" {
   version     = "2024.8.4"
   constraints = "2024.8.4"
   hashes = [
+    "h1:U3sDctMTEHA2HFpzYhfFyDycKoB4Rk7n9RQZ1RdS+UU=",
     "h1:bZS9RwjEc1FlLFMidiCzyUrFTC7VONufHBDgGjAtSWs=",
     "zh:13040879209e226ba73dd3492849301f5d6233098decf4789dde4e75a7db00a3",
     "zh:21e5b1403749e4577c85efe1e1ffbc7f70f910c9b025a66ee36d6d9e7a26834d",
@@ -28,6 +29,7 @@ provider "registry.terraform.io/hashicorp/random" {
   constraints = "3.6.3"
   hashes = [
     "h1:Fnaec9vA8sZ8BXVlN3Xn9Jz3zghSETIKg7ch8oXhxno=",
+    "h1:zG9uFP8l9u+yGZZvi5Te7PV62j50azpgwPunq2vTm1E=",
     "zh:04ceb65210251339f07cd4611885d242cd4d0c7306e86dda9785396807c00451",
     "zh:448f56199f3e99ff75d5c0afacae867ee795e4dfda6cb5f8e3b2a72ec3583dd8",
     "zh:4b4c11ccfba7319e901df2dac836b1ae8f12185e37249e8d870ee10bb87a13fe",

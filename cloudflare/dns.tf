@@ -16,7 +16,6 @@ locals {
     "linkding",
     "memos",
     "miniflux",
-    "mlflow",
     "music",
     "ntfy",
     "pdf",
@@ -34,6 +33,7 @@ locals {
     "books",
     "chat-with-table",
     "console.minio",
+    "console.mlflow",
     "dashy",
     "gatus",
     "git",
@@ -41,6 +41,7 @@ locals {
     "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
     "livegrep",
     "minio",
+    "mlflow",
     "podgrab",
     "proxmox",
     "share", # prevent request entity too large

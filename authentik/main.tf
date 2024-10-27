@@ -16,10 +16,9 @@ locals {
   )
   application_proxy = toset([
     "dashy",
+    "gatus",
     "linkding",
     "livegrep",
-    "gatus",
-    "mlflow",
     "podgrab"
   ])
 }
@@ -43,4 +42,18 @@ module "application_proxy" {
   source            = "./modules/authentik-application-proxy"
   authentik_flow_id = data.authentik_flow.default-authorization-flow.id
   application_name  = each.key
+}
+
+# ----- mlflow ----- #
+resource "authentik_provider_proxy" "mlflow" {
+  name               = "Provider for mlflow"
+  external_host      = "https://console.mlflow.karnwong.me"
+  mode               = "forward_single"
+  authorization_flow = data.authentik_flow.default-authorization-flow.id
+}
+
+resource "authentik_application" "mlflow" {
+  name              = "mlflow"
+  slug              = "mlflow"
+  protocol_provider = authentik_provider_proxy.mlflow.id
 }
