@@ -10,6 +10,15 @@ containers:
     repository: sissbruecker/linkding
     tag: 1.36.0
     port: 9090
+    env:
+      - name: PGID
+        value: "1000"
+      - name: LD_ENABLE_AUTH_PROXY
+        value: "True"
+      - name: LD_AUTH_PROXY_USERNAME_HEADER
+        value: "HTTP_X_AUTHENTIK_USERNAME"
+      - name: LD_AUTH_PROXY_LOGOUT_URL
+        value: "Authentik-URL/outpost.goauthentik.io/sign_out"
     volumeMounts:
       - name: linkding-data
         mountPath: /etc/linkding/data

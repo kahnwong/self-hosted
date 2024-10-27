@@ -7,6 +7,7 @@
   - OIDC endpoint should be something like this: `https://authentik.xxx.xxx/application/o/harbor/`
   - Needs `offline_access`: <https://github.com/goauthentik/authentik/issues/9836>
 - [immich](https://immich.app/docs/administration/oauth/)
+- [linkding](https://github.com/sissbruecker/linkding/issues/486#issuecomment-1621104061)
 - [memos](https://www.usememos.com/docs/advanced-settings/authentik)
 - [miniflux](https://miniflux.app/docs/howto.html)
 - [minio](https://docs.goauthentik.io/integrations/services/minio/)
