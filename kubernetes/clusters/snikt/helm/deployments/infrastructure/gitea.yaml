@@ -7,7 +7,7 @@ replicaCount: 1
 containers:
   - name: gitea
     repository: gitea/gitea
-    tag: 1.22.2
+    tag: 1.22.3
     ports:
       - name: web
         containerPort: 3000

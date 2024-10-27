@@ -6,7 +6,7 @@ replicaCount: 1
 containers:
   - name: plausible
     repository: ghcr.io/plausible/community-edition
-    tag: v2.1.1
+    tag: v2.1.4
     port: 8000
     envFrom:
       - secretRef:

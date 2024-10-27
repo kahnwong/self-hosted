@@ -8,7 +8,7 @@ containers:
   # docker exec -it linkding python manage.py createsuperuser --username=joe --email=joe@example.com
   - name: linkding
     repository: sissbruecker/linkding
-    tag: 1.35.0
+    tag: 1.36.0
     port: 9090
     volumeMounts:
       - name: linkding-data

@@ -6,7 +6,7 @@ replicaCount: 1
 containers:
   - name: miniflux
     repository: miniflux/miniflux
-    tag: 2.2.0
+    tag: 2.2.1
     port: 8080
     env:
       - name: RUN_MIGRATIONS

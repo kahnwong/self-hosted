@@ -6,7 +6,7 @@ replicaCount: 1
 containers:
   - name: gatus
     repository: twinproduction/gatus
-    tag: v5.12.1
+    tag: v5.13.0
     port: 8080
     volumeMounts:
       - name: gatus-config
