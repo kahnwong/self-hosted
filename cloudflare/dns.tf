@@ -42,6 +42,7 @@ locals {
     "livegrep",
     "minio",
     "podgrab",
+    "proxmox",
     "share", # prevent request entity too large
     "subsonic-widgets",
     "syncthing",
