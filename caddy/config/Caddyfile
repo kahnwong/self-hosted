@@ -1,6 +1,27 @@
 audiobookshelf.karnwong.me {
     reverse_proxy 192.168.1.36:30027
 }
+authentik.karnwong.me {
+    reverse_proxy 192.168.1.36:30047
+}
+books.karnwong.me {
+    reverse_proxy 192.168.1.36:30032
+}
+console.minio.karnwong.me {
+    reverse_proxy 192.168.1.36:30021
+}
+excalidraw.karnwong.me {
+    reverse_proxy 192.168.1.36:30034
+}
+gist.karnwong.me {
+    reverse_proxy 192.168.1.36:30039
+}
+git.karnwong.me {
+    reverse_proxy 192.168.1.36:30026
+}
+go.karnwong.me {
+    reverse_proxy 192.168.1.36:30042
+}
 harbor.karnwong.me {
     reverse_proxy 192.168.1.36:30500
 }
@@ -9,31 +30,6 @@ immich.karnwong.me {
 }
 jellyfin.karnwong.me {
     reverse_proxy 192.168.1.36:30003
-}
-music.karnwong.me {
-    reverse_proxy 192.168.1.36:30006
-}
-syncthing.karnwong.me {
-    reverse_proxy 192.168.1.36:8384
-}
-git.karnwong.me {
-    reverse_proxy 192.168.1.36:30026
-}
-#linkding.karnwong.me {
-#    reverse_proxy 192.168.1.36:30005
-#}
-linkding.karnwong.me {
-    route {
-        reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
-
-        forward_auth http://192.168.1.36:30047 {
-            uri /outpost.goauthentik.io/auth/caddy
-            copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
-            trusted_proxies private_ranges
-        }
-
-        reverse_proxy 192.168.1.36:30005
-    }
 }
 memos.karnwong.me {
     reverse_proxy 192.168.1.36:30031
@@ -44,11 +40,20 @@ miniflux.karnwong.me {
 minio.karnwong.me {
     reverse_proxy 192.168.1.36:30020
 }
-console.minio.karnwong.me {
-    reverse_proxy 192.168.1.36:30021
+music.karnwong.me {
+    reverse_proxy 192.168.1.36:30006
 }
 ntfy.karnwong.me {
     reverse_proxy 192.168.1.36:30022
+}
+pdf.karnwong.me {
+    reverse_proxy 192.168.1.36:30040
+}
+plausible.karnwong.me {
+    reverse_proxy 192.168.1.36:30044
+}
+qa-api.karnwong.me {
+    reverse_proxy 192.168.1.36:30043
 }
 rustpad.karnwong.me {
     reverse_proxy 192.168.1.36:30019
@@ -59,74 +64,19 @@ secrets.karnwong.me {
 share.karnwong.me {
     reverse_proxy 192.168.1.36:30017
 }
-wallabag.karnwong.me {
-    reverse_proxy 192.168.1.36:30009 {
-        transport http {
-            dial_timeout 5m
-            response_header_timeout 5m
-            read_timeout 5m
-            write_timeout 5m
-        }
-    }
-}
-
-(cors) {
-  @cors_preflight method OPTIONS
-  @cors header Origin {args.0}
-
-  handle @cors_preflight {
-    header Access-Control-Allow-Origin "{args.0}"
-    header Access-Control-Allow-Methods "GET, POST, PUT, PATCH, DELETE, HEAD"
-    header Access-Control-Allow-Headers "Range,If-Match"
-    header Access-Control-Max-Age "3600"
-    respond "" 204
-  }
-
-  handle @cors {
-    header Access-Control-Allow-Origin "{args.0}"
-    header Access-Control-Expose-Headers "ETag"
-  }
-}
-pmtiles.karnwong.me {
-    root * /opt/pmtiles
-    file_server
-
-    import cors https://maps.karnwong.me
-}
-excalidraw.karnwong.me {
-    reverse_proxy 192.168.1.36:30034
-}
-books.karnwong.me {
-    reverse_proxy 192.168.1.36:30032
-}
 subsonic-widgets.karnwong.me {
     reverse_proxy 192.168.1.36:30038
 }
-gist.karnwong.me {
-    reverse_proxy 192.168.1.36:30039
-}
-wakapi.karnwong.me {
-    reverse_proxy 192.168.1.36:30041
-}
-go.karnwong.me {
-    reverse_proxy 192.168.1.36:30042
-}
-qa-api.karnwong.me {
-    reverse_proxy 192.168.1.36:30043
-}
-pdf.karnwong.me {
-    reverse_proxy 192.168.1.36:30040
-}
-plausible.karnwong.me {
-    reverse_proxy 192.168.1.36:30044
+syncthing.karnwong.me {
+    reverse_proxy 192.168.1.36:8384
 }
 thai-tech-cal.karnwong.me {
     reverse_proxy 192.168.1.36:30046
 }
-authentik.karnwong.me {
-    reverse_proxy 192.168.1.36:30047
+wakapi.karnwong.me {
+    reverse_proxy 192.168.1.36:30041
 }
-livegrep.karnwong.me {
+console.mlflow.karnwong.me {
     route {
         reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
 
@@ -136,20 +86,7 @@ livegrep.karnwong.me {
             trusted_proxies private_ranges
         }
 
-        reverse_proxy 192.168.1.36:30033
-    }
-}
-podgrab.karnwong.me {
-    route {
-        reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
-
-        forward_auth http://192.168.1.36:30047 {
-            uri /outpost.goauthentik.io/auth/caddy
-            copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
-            trusted_proxies private_ranges
-        }
-
-        reverse_proxy 192.168.1.36:30004
+        reverse_proxy 192.168.1.36:30037
     }
 }
 dashy.karnwong.me {
@@ -178,14 +115,7 @@ gatus.karnwong.me {
         reverse_proxy 192.168.1.36:30029
     }
 }
-proxmox.karnwong.me {
-    reverse_proxy 192.168.1.70:8006 {
-        transport http {
-           tls_insecure_skip_verify
-        }
-    }
-}
-console.mlflow.karnwong.me {
+linkding.karnwong.me {
     route {
         reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
 
@@ -195,6 +125,32 @@ console.mlflow.karnwong.me {
             trusted_proxies private_ranges
         }
 
-        reverse_proxy 192.168.1.36:30037
+        reverse_proxy 192.168.1.36:30005
+    }
+}
+livegrep.karnwong.me {
+    route {
+        reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
+
+        forward_auth http://192.168.1.36:30047 {
+            uri /outpost.goauthentik.io/auth/caddy
+            copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
+            trusted_proxies private_ranges
+        }
+
+        reverse_proxy 192.168.1.36:30033
+    }
+}
+podgrab.karnwong.me {
+    route {
+        reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
+
+        forward_auth http://192.168.1.36:30047 {
+            uri /outpost.goauthentik.io/auth/caddy
+            copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
+            trusted_proxies private_ranges
+        }
+
+        reverse_proxy 192.168.1.36:30004
     }
 }
