@@ -20,7 +20,7 @@ locals {
       "wallabag",
     ]
     jobs-family-alerts = ["family-alerts"]
-    tools              = ["picoshare", "supersecretmessage-vault", "wakapi", "wakapi-postgres"]
+    tools              = ["opengist", "picoshare", "supersecretmessage-vault", "wakapi", "wakapi-postgres"]
   })
 }
 

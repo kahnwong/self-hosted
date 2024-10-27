@@ -10,6 +10,7 @@
 - [memos](https://www.usememos.com/docs/advanced-settings/authentik)
 - [miniflux](https://miniflux.app/docs/howto.html)
 - [minio](https://docs.goauthentik.io/integrations/services/minio/)
+- [opengist](https://opengist.io/docs/configuration/oauth-providers.html)
 - [proxmox](https://docs.goauthentik.io/integrations/services/proxmox-ve/)
 
 ## Useful values

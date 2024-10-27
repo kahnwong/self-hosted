@@ -13,6 +13,9 @@ containers:
     env:
       - name: OG_EXTERNAL_URL
         value: https://gist.karnwong.me
+    envFrom:
+      - secretRef:
+          name: opengist
     volumeMounts:
       - name: data
         mountPath: /opengist
