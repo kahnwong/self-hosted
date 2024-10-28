@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: qa-discord-bot
-          image: ghcr.io/kahnwong/qa-discord-bot:422d78a
+          image: ghcr.io/kahnwong/qa-discord-bot:5e67a32
           envFrom:
             - secretRef:
                 name: qa-discord-bot
