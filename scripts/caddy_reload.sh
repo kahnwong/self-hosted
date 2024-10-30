@@ -1,6 +1,7 @@
 #!/bin/bash
 
-git pull
+git fetch
+git reset origin/master --hard
 cd /home/ubuntu/self-hosted/caddy/config || exit 1
 
 cat Caddyfile >all.Caddyfile

@@ -33,7 +33,6 @@ locals {
     "books",
     "chat-with-table",
     "console.minio",
-    "console.mlflow",
     "dashy",
     "gatus",
     "git",

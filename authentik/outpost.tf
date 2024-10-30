@@ -15,7 +15,7 @@ resource "authentik_service_connection_kubernetes" "local" {
 # }
 resource "authentik_outpost" "proxy_outpost" {
   name               = "authentik Embedded Outpost"
-  protocol_providers = concat([for app in module.application_proxy : app.provider_proxy_id], [authentik_provider_proxy.mlflow.id])
+  protocol_providers = concat([for app in module.application_proxy : app.provider_proxy_id], [])
   config = jsonencode({
     authentik_host                 = format(var.authentik_host)
     authentik_host_browser         = ""
