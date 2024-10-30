@@ -38,3 +38,7 @@ proxmox.karnwong.me {
         }
     }
 }
+files.karnwong.me {
+    root * /opt/files
+    file_server browse
+}
