@@ -1,6 +1,4 @@
 ---
-# See https://pre-commit.com for more information
-# See https://pre-commit.com/hooks.html for more hooks
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.0.1
@@ -12,11 +10,7 @@ repos:
       - id: check-case-conflict
       - id: check-executables-have-shebangs
       - id: check-json
-          # - id: check-shebang-scripts-are-executable
-          # - id: pretty-format-json
-          # - id: check-merge-conflict
       - id: check-toml
-          # - id: detect-aws-credentials
       - id: detect-private-key
       - id: fix-byte-order-marker
       - id: mixed-line-ending
@@ -26,16 +20,11 @@ repos:
       - id: yamlfmt
         args: [--mapping, "2", --sequence, "4", --offset, "2", --width, "150", --preserve-quotes]
         exclude: (sops\.yaml)$
-  - repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.81.0
+  - repo: https://github.com/kahnwong/pre-commit
+    rev: "28a9e61"
     hooks:
-      - id: terraform_fmt
-      - id: terraform_validate
-      - id: terraform_docs
-        args:
-          - --args=--config=.terraform-docs.yaml
-  - repo: https://github.com/jumanjihouse/pre-commit-hooks
-    rev: 3.0.0
-    hooks:
+      - id: terraform-fmt
+      - id: terraform-validate
+      - id: terraform-docs
       - id: shellcheck
       - id: shfmt

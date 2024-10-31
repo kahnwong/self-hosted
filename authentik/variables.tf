@@ -5,4 +5,3 @@ variable "authentik_host" {
 variable "authentik_token" {
   type = string
 }
-
