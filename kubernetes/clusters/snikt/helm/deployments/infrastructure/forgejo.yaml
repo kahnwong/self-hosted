@@ -28,7 +28,7 @@ containers:
       - name: FORGEJO__server__SSH_DOMAIN
         value: git.karnwong.me
       - name: FORGEJO__server__SSH_PORT
-        value: "32000"
+        value: "22"
       - name: FORGEJO__server__SSH_LISTEN_PORT
         value: "22"
       - name: FORGEJO__repository__DEFAULT_BRANCH
