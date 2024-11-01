@@ -21,7 +21,7 @@ repos:
         args: [--mapping, "2", --sequence, "4", --offset, "2", --width, "150", --preserve-quotes]
         exclude: (sops\.yaml)$
   - repo: https://github.com/kahnwong/pre-commit
-    rev: "28a9e61"
+    rev: "24f2010"
     hooks:
       - id: terraform-fmt
       - id: terraform-validate
