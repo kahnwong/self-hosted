@@ -6,8 +6,8 @@ replicaCount: 1
 containers:
   - name: immich-server
     repository: ghcr.io/immich-app/immich-server
-    tag: v1.117.0
-    port: 3001
+    tag: v1.118.0
+    port: 2283
     envFrom:
       - secretRef:
           name: immich
@@ -19,5 +19,5 @@ volumes:
     hostPath:
       path: /opt/immich/upload
 service:
-  port: 3001
+  port: 2283
   nodePort: 30030
