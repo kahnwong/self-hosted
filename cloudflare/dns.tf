@@ -32,6 +32,7 @@ locals {
     "authentik",
     "books",
     "chat-with-table",
+    "ci",
     "console.minio",
     "dashy",
     "files",

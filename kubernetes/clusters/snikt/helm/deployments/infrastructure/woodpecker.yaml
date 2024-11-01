@@ -1,0 +1,11 @@
+agent:
+  extraSecretNamesForEnvFrom:
+    - woodpecker
+server:
+  env:
+    WOODPECKER_HOST: 'https://ci.karnwong.me'
+  extraSecretNamesForEnvFrom:
+    - woodpecker
+  service:
+    type: NodePort
+    port: &servicePort 80

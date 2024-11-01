@@ -11,6 +11,7 @@ locals {
     "news",
     "plausible",
     "tools",
+    "woodpecker",
   ])
 }
 

@@ -11,6 +11,7 @@ func main() {
 		"audiobookshelf":   30027,
 		"authentik":        30047,
 		"books":            30032,
+		"ci":               31990,
 		"console.minio":    30021,
 		"excalidraw":       30034,
 		"gist":             30039,

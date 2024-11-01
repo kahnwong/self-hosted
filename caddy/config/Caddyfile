@@ -7,6 +7,9 @@ authentik.karnwong.me {
 books.karnwong.me {
     reverse_proxy 192.168.1.36:30032
 }
+ci.karnwong.me {
+    reverse_proxy 192.168.1.36:31990
+}
 console.minio.karnwong.me {
     reverse_proxy 192.168.1.36:30021
 }
