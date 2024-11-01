@@ -1,6 +1,8 @@
 agent:
   extraSecretNamesForEnvFrom:
     - woodpecker
+  env:
+    WOODPECKER_BACKEND_K8S_STORAGE_RWX: false
 server:
   env:
     WOODPECKER_HOST: 'https://ci.karnwong.me'
