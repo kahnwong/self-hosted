@@ -1,12 +1,10 @@
----
 kind: Deployment
 name: thai-tech-cal
 replicaCount: 1
-
 containers:
   - name: thai-tech-cal
     repository: ghcr.io/kahnwong/ical-to-rss
-    tag: 5a45645
+    tag: d7b724f
     port: 3000
     env:
       - name: ICAL_URL
