@@ -13,8 +13,8 @@ sections:
         - title: ENC[AES256_GCM,data:BoA0WtA=,iv:gmyLDpt/xOuqX4qX0bnvt4iuD3RzQM7KncoZRI1at5w=,tag:WmvX/5igoSskJQQ6T0+rzA==,type:str]
           icon: ENC[AES256_GCM,data:zmKktXlJTSw=,iv:b9NdIUqml89NML6PA1N0lZsnZcVqJPUhd8+kpvaeNpI=,tag:j/0MiS2hpT825KRJU+202A==,type:str]
           url: ENC[AES256_GCM,data:ZR72eAhadJFNbg4HLAZd/SIcsfFhGRVnLw==,iv:9QcXWUGYpXZZRJTvCLbK98niQt2xisT3ntRFMQjQ5TQ=,tag:btrV2E5fbfFI/xOw5Tf48w==,type:str]
-        - title: ENC[AES256_GCM,data:eYZmS9s=,iv:+c19H+3CHDgCa3zYQAytC0r44e45aC1M6EGJlrZAaqo=,tag:VnpAgyyNAnRV+M5RUits8A==,type:str]
-          icon: ENC[AES256_GCM,data:hQvP3+keaB4=,iv:Kn8VlmHiSoWQUdryNGqp0iTij0zng9rRe92sHWifbiA=,tag:PJW5GkAY5vR73a5lgsY8Fg==,type:str]
+        - title: ENC[AES256_GCM,data:dSPzS7ucGQ==,iv:Z80EoyLxgvGC0iBXEXtzqZpEj74aj30cc96R8v0NOk8=,tag:/RCdZsq2psyhbuSjZS6HwQ==,type:str]
+          icon: ENC[AES256_GCM,data:9u3HCwXhG4W38w==,iv:AEjNq4MW3fnSZqfWXsbA2YY4+6mG6DXQof3RRRjeCMM=,tag:jfshuLx+TVTKEC3g+ZOTOw==,type:str]
           url: ENC[AES256_GCM,data:NkXtuEo6qY3jPE+8kSOywkBe5lMbvEI=,iv:LP8JEM47OZwn4CIChb7ipzTcTZ0kwU0rFlXw7nmVWzY=,tag:1EkKkJFjKxpuE35DC7uT8Q==,type:str]
         - title: ENC[AES256_GCM,data:bvOoOZCF,iv:FSUxR8oVv33sUtEfnPYbKvlVS6f1sMC0mj9H7elGsBg=,tag:RXh9+71zs1+O9pgFVtgjeQ==,type:str]
           icon: ENC[AES256_GCM,data:0AEf5bTC6giC,iv:pimK5k2/UXIyeqWpWxcxXLf5KGQcH/ggIMtHEJBdJAs=,tag:zBcO/+HXqaghq6CDLQMXXQ==,type:str]
@@ -177,8 +177,8 @@ sops:
             YUs3cXA2TnB4c21FQzg0bnFyTkRDejgKzf7PO4qiPs7dWhWadFXEwXmawv1p2xwZ
             Vjnq6Nqhj2Cvt+fCAh0wMHi1kI8XIjDoOMcwweKgjFMkv86gBkgtLg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-10-30T04:42:21Z"
-    mac: ENC[AES256_GCM,data:p+SsPlVTHlwg/qBLTbI6Ddyf2yh2V8CbUacHTfZ3tovL2QPsk8FZ5RsbqAFx7c/d5yx5GWoyFt2ruk6I6veB7QAQoEOq3Q6zLmc4T4cWPmWFhrNhV6wECCj2Ml8TOcm6olHc43NL283sdCZTS3HIEbIINe2HwrVw+aGb2vx5gpQ=,iv:2PtWtHA9lx8GUGx7jJaw1/gCUhU9uIohCtHEDcf6UGI=,tag:o0sIFy95+j35sFUReG0U+w==,type:str]
+    lastmodified: "2024-11-01T04:58:00Z"
+    mac: ENC[AES256_GCM,data:QrCvnofhVUYFOtzD1/XhGoO+Bfq5K1Q2VZ77y8kQkfE6STFOT6fwX5MoSBqb/7+O/X7OrcljNUM4BBdcNMsTESeL0d96Y9QSOU4J6Uq0iPgOGMBxjMKoE/2NMSf34AADnMfv+3lnFzgyYBaBXV40Py7ExpDYTCfHx9xPA3KLXus=,iv:etc1rOqwsjQcbA4IVp3n1Sb3u6XpHkCgtH47iBVClwQ=,tag:/1u0WV/mZbNN1XoyImEQvQ==,type:str]
     pgp: []
     unencrypted_suffix: _unencrypted
     version: 3.9.1
