@@ -4,7 +4,7 @@ locals {
     bots           = ["qa-api", "qa-discord-bot"]
     default        = ["subsonic-widgets"]
     immich         = ["immich", "immich-machine-learning", "immich-postgres"]
-    infrastructure = ["gitea", "gitea-postgres", "minio", "mlflow", "mlflow-postgres"]
+    infrastructure = ["forgejo", "forgejo-postgres", "minio", "mlflow", "mlflow-postgres"]
     news = [
       "miniflux", "miniflux-postgres",
       "wallabag", "wallabag-postgres", "wallabag-redis"
@@ -13,7 +13,7 @@ locals {
     jobs = [
       "backup", "ddns", "water-cut-notify",
       "authentik-postgres",
-      "gitea-postgres",
+      "forgejo-postgres",
       "immich-postgres",
       "miniflux-postgres",
       "wakapi-postgres",

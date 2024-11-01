@@ -6,8 +6,8 @@ locals {
   jobs_fringe_division = tomap({
     jobs = [
       "backup-authentik",
-      "backup-gitea-data",
-      "backup-gitea-db",
+      "backup-forgejo-data",
+      "backup-forgejo-db",
       "backup-immich-db",
       "backup-linkding",
       "backup-memos",

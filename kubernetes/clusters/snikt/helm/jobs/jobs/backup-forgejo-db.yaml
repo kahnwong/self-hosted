@@ -1,28 +1,28 @@
 ---
-name: backup-gitea-db
+name: backup-forgejo-db
 schedule: "2 0 * * *"
 
 containers:
-  - name: backup-gitea
+  - name: backup-forgejo
     repository: ghcr.io/kahnwong/docker-aws-backup
     tag: 6b34640
     env:
       - name: MODE
         value: DB_POSTGRES
       - name: SERVICE_NAME
-        value: gitea-db
+        value: forgejo-db
       - name: POSTGRES_USERNAME
         valueFrom:
           secretKeyRef:
-            name: gitea-postgres
+            name: forgejo-postgres
             key: POSTGRES_USER
       - name: POSTGRES_PASSWORD
         valueFrom:
           secretKeyRef:
-            name: gitea-postgres
+            name: forgejo-postgres
             key: POSTGRES_PASSWORD
       - name: POSTGRES_HOSTNAME
-        value: gitea-postgres.infrastructure.svc.cluster.local
+        value: forgejo-postgres.infrastructure.svc.cluster.local
     envFrom:
       - secretRef:
           name: backup

@@ -1,13 +1,13 @@
 ---
 # don't forget to forward port `32000` on your router
 kind: Deployment
-name: gitea
+name: forgejo
 replicaCount: 1
 
 containers:
-  - name: gitea
-    repository: gitea/gitea
-    tag: 1.22.3
+  - name: forgejo
+    repository: codeberg.org/forgejo/forgejo
+    tag: 9.0.1
     ports:
       - name: web
         containerPort: 3000
@@ -19,36 +19,36 @@ containers:
         value: "1000"
       - name: USER_GID
         value: "1000"
-      - name: GITEA__database__DB_TYPE
+      - name: FORGEJO__database__DB_TYPE
         value: postgres
-      - name: GITEA__service__DISABLE_REGISTRATION
+      - name: FORGEJO__service__DISABLE_REGISTRATION
         value: "true"
-      - name: GITEA__server__ROOT_URL
+      - name: FORGEJO__server__ROOT_URL
         value: https://git.karnwong.me
-      - name: GITEA__server__SSH_DOMAIN
+      - name: FORGEJO__server__SSH_DOMAIN
         value: git.karnwong.me
-      - name: GITEA__server__SSH_PORT
+      - name: FORGEJO__server__SSH_PORT
         value: "32000"
-      - name: GITEA__server__SSH_LISTEN_PORT
+      - name: FORGEJO__server__SSH_LISTEN_PORT
         value: "22"
-      - name: GITEA__repository__DEFAULT_BRANCH
+      - name: FORGEJO__repository__DEFAULT_BRANCH
         value: master
-      - name: GITEA__security__INSTALL_LOCK
+      - name: FORGEJO__security__INSTALL_LOCK
         value: "true"
-      - name: GITEA__picture__DISABLE_GRAVATAR
+      - name: FORGEJO__picture__DISABLE_GRAVATAR
         value: "false"
-      - name: GITEA__actions__ENABLED
+      - name: FORGEJO__actions__ENABLED
         value: "false"
     envFrom:
       - secretRef:
-          name: gitea
+          name: forgejo
     volumeMounts:
       - name: data
         mountPath: /data
 volumes:
   - name: data
     hostPath:
-      path: /opt/gitea/data
+      path: /opt/forgejo/data
 service:
   ports:
     - name: web

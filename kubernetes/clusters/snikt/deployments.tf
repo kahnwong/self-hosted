@@ -29,7 +29,7 @@ locals {
     immich = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
     infrastructure = [
       "gatus",
-      "gitea", "gitea-postgres",
+      "forgejo", "forgejo-postgres",
       "minio",
       "mlflow", "mlflow-postgres",
       "ntfy",

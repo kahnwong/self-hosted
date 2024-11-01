@@ -1,6 +1,6 @@
 ---
 kind: StatefulSet
-name: gitea-postgres
+name: forgejo-postgres
 replicaCount: 1
 
 containers:
@@ -11,13 +11,13 @@ containers:
     livenessProbeScheme: tcp
     envFrom:
       - secretRef:
-          name: gitea-postgres
+          name: forgejo-postgres
     volumeMounts:
       - name: db
         mountPath: /var/lib/postgresql/data
 volumes:
   - name: db
     hostPath:
-      path: /opt/gitea/db
+      path: /opt/forgejo/db
 service:
   port: 5432
