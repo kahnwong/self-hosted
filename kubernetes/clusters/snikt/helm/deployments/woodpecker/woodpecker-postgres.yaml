@@ -1,0 +1,21 @@
+kind: StatefulSet
+name: woodpecker-postgres
+replicaCount: 1
+containers:
+  - name: postgres
+    repository: postgres
+    tag: 16.4-alpine
+    port: 5432
+    livenessProbeScheme: tcp
+    envFrom:
+      - secretRef:
+          name: woodpecker-postgres
+    volumeMounts:
+      - name: woodpecker-db
+        mountPath: /var/lib/postgresql/data
+volumes:
+  - name: woodpecker-db
+    hostPath:
+      path: /opt/woodpecker/db
+service:
+  port: 5432

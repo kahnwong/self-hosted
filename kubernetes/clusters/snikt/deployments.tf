@@ -54,6 +54,7 @@ locals {
       "wakapi", "wakapi-postgres",
       #      "stirling-pdf",
     ]
+    woodpecker = ["woodpecker-postgres"]
   })
 }
 
@@ -156,6 +157,6 @@ resource "helm_release" "woodpecker" {
   timeout = 90
 
   values = [
-    file("./helm/deployments/infrastructure/woodpecker.yaml"),
+    file("./helm/deployments/woodpecker/woodpecker.yaml"),
   ]
 }

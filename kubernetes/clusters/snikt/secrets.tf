@@ -21,7 +21,7 @@ locals {
     ]
     jobs-family-alerts = ["family-alerts"]
     tools              = ["opengist", "picoshare", "supersecretmessage-vault", "wakapi", "wakapi-postgres"]
-    woodpecker         = ["woodpecker"]
+    woodpecker         = ["woodpecker", "woodpecker-postgres"]
   })
 }
 
