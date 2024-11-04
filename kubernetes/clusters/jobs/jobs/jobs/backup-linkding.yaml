@@ -1,0 +1,25 @@
+name: backup-linkding
+schedule: "1 0 * * *"
+containers:
+  - name: backup-linkding
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 6b34640
+    env:
+      - name: MODE
+        value: ARCHIVE
+      - name: SERVICE_NAME
+        value: linkding
+      - name: BACKUP_PATH
+        value: /opt/linkding
+    envFrom:
+      - secretRef:
+          name: backup
+    volumeMounts:
+      - name: linkding
+        mountPath: /opt/linkding
+volumes:
+  - name: linkding
+    hostPath:
+      path: /opt/linkding
+
+#helm template backup-linkding2  ../../charts/base/chart-cronjob --values jobs/jobs/backup-firefly-db.yaml

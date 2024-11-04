@@ -38,8 +38,8 @@
 ```bash
 terraform state mv \
     -state=terraform.tfstate \
-    -state-out=../secrets/terraform.tfstate \
-    kubernetes_secret.secrets \
-    kubernetes_secret.secrets
+    -state-out=../jobs/terraform.tfstate \
+    helm_release.livegrep_indexer \
+    helm_release.livegrep_indexer
 #terraform state push dev.tfstate
 ```

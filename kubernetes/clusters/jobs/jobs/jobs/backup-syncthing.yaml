@@ -1,0 +1,23 @@
+name: backup-syncthing
+schedule: "5 0 * * *"
+containers:
+  - name: backup-syncthing
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 6b34640
+    env:
+      - name: MODE
+        value: ARCHIVE
+      - name: SERVICE_NAME
+        value: syncthing
+      - name: BACKUP_PATH
+        value: /opt/syncthing/config
+    envFrom:
+      - secretRef:
+          name: backup
+    volumeMounts:
+      - name: syncthing-config
+        mountPath: /opt/syncthing/config
+volumes:
+  - name: syncthing-config
+    hostPath:
+      path: /opt/syncthing/config

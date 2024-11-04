@@ -1,0 +1,26 @@
+name: backup-immich-db
+schedule: "30 0 * * *"
+containers:
+  - name: backup-immich-db
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 6b34640
+    env:
+      - name: MODE
+        value: DB_POSTGRES
+      - name: SERVICE_NAME
+        value: immich-db
+      - name: POSTGRES_USERNAME
+        valueFrom:
+          secretKeyRef:
+            name: immich-postgres
+            key: POSTGRES_USER
+      - name: POSTGRES_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: immich-postgres
+            key: POSTGRES_PASSWORD
+      - name: POSTGRES_HOSTNAME
+        value: immich-postgres.immich.svc.cluster.local
+    envFrom:
+      - secretRef:
+          name: backup

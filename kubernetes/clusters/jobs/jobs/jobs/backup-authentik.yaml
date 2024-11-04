@@ -1,0 +1,26 @@
+name: backup-authentik
+schedule: "2 0 * * *"
+containers:
+  - name: backup-authentik
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 6b34640
+    env:
+      - name: MODE
+        value: DB_POSTGRES
+      - name: SERVICE_NAME
+        value: authentik
+      - name: POSTGRES_USERNAME
+        valueFrom:
+          secretKeyRef:
+            name: authentik-postgres
+            key: POSTGRES_USER
+      - name: POSTGRES_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: authentik-postgres
+            key: POSTGRES_PASSWORD
+      - name: POSTGRES_HOSTNAME
+        value: authentik-postgres.authentik.svc.cluster.local
+    envFrom:
+      - secretRef:
+          name: backup

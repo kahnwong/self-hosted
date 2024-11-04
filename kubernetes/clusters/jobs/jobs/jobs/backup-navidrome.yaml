@@ -1,0 +1,25 @@
+name: backup-navidrome
+schedule: "1 0 * * *"
+containers:
+  - name: backup-navidrome
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 6b34640
+    env:
+      - name: MODE
+        value: ARCHIVE
+      - name: SERVICE_NAME
+        value: navidrome
+      - name: BACKUP_PATH
+        value: /opt/navidrome/config
+      - name: BACKUP_PATH_EXCLUDE
+        value: /opt/navidrome/config/cache
+    envFrom:
+      - secretRef:
+          name: backup
+    volumeMounts:
+      - name: navidrome
+        mountPath: /opt/navidrome
+volumes:
+  - name: navidrome
+    hostPath:
+      path: /opt/navidrome

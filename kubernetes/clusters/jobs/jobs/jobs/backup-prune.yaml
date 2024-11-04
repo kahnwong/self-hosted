@@ -1,0 +1,19 @@
+name: backup-prune
+schedule: "5 0 * * *"
+containers:
+  - name: backup-prune
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 4783b2e
+    command: ["sh", "-c"]
+    args:
+      - |
+        current_date=$(date +%Y-%m-%d)
+        remove_backup_before_date=$(date +%Y-%m-%d -d "3 day ago")
+        aws s3api list-objects-v2 \
+          --endpoint-url "$S3_ENDPOINT" \
+          --bucket "backup" \
+          --output text \
+          --query "Contents[?LastModified<= '$remove_backup_before_date'].[Key]" | xargs printf -- "s3://backup/%s\n" | xargs -L 1 aws s3 rm --endpoint-url "$S3_ENDPOINT"
+    envFrom:
+      - secretRef:
+          name: backup

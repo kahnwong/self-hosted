@@ -1,0 +1,11 @@
+name: 02-1-dinner-ask-family
+schedule: "0 9 * * *" # 4:00 PM Asia/Bangkok
+containers:
+  - name: 02-1-dinner-ask-family
+    repository: ghcr.io/kahnwong/line-notify
+    tag: 857a8cf
+    args:
+      - "เช็คว่ามีใครไม่กินข้าวบ้านบ้าง"
+    envFrom:
+      - secretRef:
+          name: family-alerts

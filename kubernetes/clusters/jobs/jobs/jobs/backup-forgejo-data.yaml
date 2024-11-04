@@ -1,0 +1,23 @@
+name: backup-forgejo-data
+schedule: "2 0 * * *"
+containers:
+  - name: backup-forgejo
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 6b34640
+    env:
+      - name: MODE
+        value: ARCHIVE
+      - name: SERVICE_NAME
+        value: forgejo-data
+      - name: BACKUP_PATH
+        value: /opt/forgejo/data
+    envFrom:
+      - secretRef:
+          name: backup
+    volumeMounts:
+      - name: forgejo
+        mountPath: /opt/forgejo/data
+volumes:
+  - name: forgejo
+    hostPath:
+      path: /opt/forgejo/data

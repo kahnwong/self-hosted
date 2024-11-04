@@ -51,6 +51,16 @@ updates:
       prefix: "chore"
       include: "scope"
   - package-ecosystem: terraform
+    directory: "./kubernetes/clusters/jobs"
+    schedule:
+      interval: daily
+      time: "00:00"
+      timezone: Asia/Bangkok
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+  - package-ecosystem: terraform
     directory: "./authentik"
     schedule:
       interval: daily

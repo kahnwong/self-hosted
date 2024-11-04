@@ -1,0 +1,26 @@
+name: backup-wallabag-db
+schedule: "2 0 * * *"
+containers:
+  - name: backup-wallabag-db
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 6b34640
+    env:
+      - name: MODE
+        value: DB_POSTGRES
+      - name: SERVICE_NAME
+        value: wallabag
+      - name: POSTGRES_USERNAME
+        valueFrom:
+          secretKeyRef:
+            name: wallabag
+            key: SYMFONY__ENV__DATABASE_USER
+      - name: POSTGRES_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: wallabag
+            key: SYMFONY__ENV__DATABASE_PASSWORD
+      - name: POSTGRES_HOSTNAME
+        value: wallabag-postgres.news.svc.cluster.local
+    envFrom:
+      - secretRef:
+          name: backup
