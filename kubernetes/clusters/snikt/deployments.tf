@@ -54,7 +54,6 @@ locals {
       "wakapi", "wakapi-postgres",
       #      "stirling-pdf",
     ]
-    woodpecker = ["woodpecker-postgres"]
   })
 }
 
@@ -144,19 +143,19 @@ resource "helm_release" "authentik" {
   ]
 }
 
-# ------ woodpecker ------ #
-resource "helm_release" "woodpecker" {
-  # oauth redirect url: `https://ci.karnwong.me/authorize`
-  # add users via <https://woodpecker-ci.org/docs/administration/server-config#user-registration>
-  name       = "woodpecker"
-  namespace  = "woodpecker"
-  repository = "https://woodpecker-ci.org"
-  version    = "1.6.0"
-  chart      = "woodpecker"
-
-  timeout = 90
-
-  values = [
-    file("./helm/deployments/woodpecker/woodpecker.yaml"),
-  ]
-}
+# # ------ woodpecker ------ #
+# resource "helm_release" "woodpecker" {
+#   # oauth redirect url: `https://ci.karnwong.me/authorize`
+#   # add users via <https://woodpecker-ci.org/docs/administration/server-config#user-registration>
+#   name       = "woodpecker"
+#   namespace  = "woodpecker"
+#   repository = "https://woodpecker-ci.org"
+#   version    = "1.6.0"
+#   chart      = "woodpecker"
+#
+#   timeout = 90
+#
+#   values = [
+#     file("./helm/deployments/woodpecker/woodpecker.yaml"),
+#   ]
+# }

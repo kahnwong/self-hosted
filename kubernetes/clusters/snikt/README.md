@@ -35,7 +35,6 @@ kubectl taint nodes fringe-division storage-required=true:NoSchedule
 | [helm_release.jobs_fringe_division](https://registry.terraform.io/providers/hashicorp/helm/2.16.1/docs/resources/release) | resource |
 | [helm_release.livegrep_indexer](https://registry.terraform.io/providers/hashicorp/helm/2.16.1/docs/resources/release) | resource |
 | [helm_release.this](https://registry.terraform.io/providers/hashicorp/helm/2.16.1/docs/resources/release) | resource |
-| [helm_release.woodpecker](https://registry.terraform.io/providers/hashicorp/helm/2.16.1/docs/resources/release) | resource |
 | [kubernetes_cluster_role.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/cluster_role) | resource |
 | [kubernetes_cluster_role.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/cluster_role) | resource |
 | [kubernetes_cluster_role_binding.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/cluster_role_binding) | resource |
