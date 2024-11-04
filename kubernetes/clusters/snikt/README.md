@@ -39,10 +39,6 @@ kubectl taint nodes fringe-division storage-required=true:NoSchedule
 | [kubernetes_cluster_role.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/cluster_role) | resource |
 | [kubernetes_cluster_role_binding.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/cluster_role_binding) | resource |
 | [kubernetes_cluster_role_binding.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/cluster_role_binding) | resource |
-| [kubernetes_config_map.configmaps](https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/config_map) | resource |
-| [kubernetes_config_map.livegrep-ignorelist](https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/config_map) | resource |
-| [kubernetes_config_map.plausible_clickhouse_config](https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/config_map) | resource |
-| [kubernetes_config_map.plausible_clickhouse_user_config](https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/config_map) | resource |
 | [kubernetes_manifest.qa_discord_bot](https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/manifest) | resource |
 | [kubernetes_namespace.this](https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/namespace) | resource |
 | [kubernetes_secret.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/secret) | resource |
@@ -50,9 +46,7 @@ kubectl taint nodes fringe-division storage-required=true:NoSchedule
 | [kubernetes_secret.secrets](https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/secret) | resource |
 | [kubernetes_service_account.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/service_account) | resource |
 | [kubernetes_service_account.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/2.33.0/docs/resources/service_account) | resource |
-| [sops_file.configmaps](https://registry.terraform.io/providers/carlpett/sops/1.1.1/docs/data-sources/file) | data source |
 | [sops_file.livegrep](https://registry.terraform.io/providers/carlpett/sops/1.1.1/docs/data-sources/file) | data source |
-| [sops_file.livegrep-ignorelist](https://registry.terraform.io/providers/carlpett/sops/1.1.1/docs/data-sources/file) | data source |
 | [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.1.1/docs/data-sources/file) | data source |
 
 ## Inputs
