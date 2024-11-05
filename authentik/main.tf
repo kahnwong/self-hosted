@@ -19,6 +19,7 @@ locals {
     "gatus",
     "linkding",
     "livegrep",
+    "obsidian",
     "mlflow",
     "podgrab"
   ])

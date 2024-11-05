@@ -46,6 +46,7 @@ locals {
       "excalidraw",
       "go-playground",
       "livegrep-backend", "livegrep-frontend",
+      "obsidian",
       "opengist",
       "picoshare",
       "rustpad",

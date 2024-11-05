@@ -41,6 +41,7 @@ func main() {
 		"gatus":    30029,
 		"linkding": 30005,
 		"livegrep": 30033,
+		"obsidian": 30048,
 		"podgrab":  30004,
 	}
 
