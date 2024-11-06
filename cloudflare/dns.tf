@@ -41,15 +41,17 @@ locals {
     "gitlab",
     "harbor",
     "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
+    "k.console.notes",
     "livegrep",
-    "obsidian",
     "minio",
     "mlflow",
+    "obsidian",
     "podgrab",
     "proxmox",
     "share", # prevent request entity too large
     "subsonic-widgets",
     "syncthing",
+    "t.console.notes",
     "wallabag",
   ]), var.private_dns)
 }

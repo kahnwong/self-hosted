@@ -7,6 +7,6 @@ resource "authentik_provider_proxy" "this" {
 
 resource "authentik_application" "this" {
   name              = var.application_name
-  slug              = var.application_name
+  slug              = replace(var.application_name, ".", "-")
   protocol_provider = authentik_provider_proxy.this.id
 }

@@ -17,11 +17,13 @@ locals {
   application_proxy = toset([
     "dashy",
     "gatus",
+    "k.console.notes",
     "linkding",
     "livegrep",
-    "obsidian",
     "mlflow",
-    "podgrab"
+    "obsidian",
+    "podgrab",
+    "t.console.notes",
   ])
 }
 

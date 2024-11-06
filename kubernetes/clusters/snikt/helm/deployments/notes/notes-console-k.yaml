@@ -1,0 +1,32 @@
+kind: Deployment
+name: notes-console-k
+replicaCount: 1
+containers:
+  - name: notes-console-k
+    repository: lscr.io/linuxserver/code-server
+    tag: latest
+    port: 8443
+    env:
+      - name: PUID
+        value: "1000"
+      - name: PGID
+        value: "1000"
+      - name: TZ
+        value: Asia/Bangkok
+      - name: DEFAULT_WORKSPACE
+        value: /config/notes
+    volumeMounts:
+      - name: notes
+        mountPath: /config/notes
+      - name: config
+        mountPath: /config
+volumes:
+  - name: notes
+    hostPath:
+      path: /opt/syncthing/cloud/Apps/notes/notes-work
+  - name: config
+    hostPath:
+      path: /opt/notes-console/k/config
+service:
+  port: 8443
+  nodePort: 30050

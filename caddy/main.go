@@ -37,12 +37,14 @@ func main() {
 		"wakapi":           30041,
 	}
 	servicesForwardAuth := map[string]int{
-		"dashy":    30023,
-		"gatus":    30029,
-		"linkding": 30005,
-		"livegrep": 30033,
-		"obsidian": 30048,
-		"podgrab":  30004,
+		"dashy":           30023,
+		"gatus":           30029,
+		"linkding":        30005,
+		"livegrep":        30033,
+		"obsidian":        30048,
+		"podgrab":         30004,
+		"k.console.notes": 30050,
+		"t.console.notes": 30051,
 	}
 
 	// generate config

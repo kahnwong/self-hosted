@@ -39,6 +39,10 @@ locals {
       "thai-tech-cal",
       "wallabag", "wallabag-postgres", "wallabag-redis",
     ]
+    notes = [
+      "notes-console-k",
+      "notes-console-t",
+    ]
     plausible = [
       "plausible", "plausible-clickhouse", "plausible-postgres",
     ]

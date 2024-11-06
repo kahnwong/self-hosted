@@ -9,6 +9,7 @@ locals {
     "jobs",
     "jobs-family-alerts",
     "news",
+    "notes",
     "plausible",
     "tools",
   ])
