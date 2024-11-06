@@ -17,7 +17,7 @@ containers:
         value: /notes
     volumeMounts:
       - name: notes
-        mountPath: /notes
+        mountPath: /config/notes
       - name: config
         mountPath: /config
 volumes:

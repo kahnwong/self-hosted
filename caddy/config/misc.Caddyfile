@@ -42,3 +42,10 @@ files.karnwong.me {
     root * /opt/files
     file_server browse
 }
+gitlab.karnwong.me {
+    reverse_proxy 192.168.1.73:80 {
+        transport http {
+           tls_insecure_skip_verify
+        }
+    }
+}
