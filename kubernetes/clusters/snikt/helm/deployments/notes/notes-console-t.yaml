@@ -15,6 +15,8 @@ containers:
         value: Asia/Bangkok
       - name: DEFAULT_WORKSPACE
         value: /config/notes
+      - name: SUDO_PASSWORD
+        value: "12345678"
     volumeMounts:
       - name: notes
         mountPath: /config/notes
