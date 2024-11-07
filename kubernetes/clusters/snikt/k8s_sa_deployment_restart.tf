@@ -26,7 +26,7 @@ resource "kubernetes_cluster_role" "deployment_restart" {
   rule {
     api_groups     = ["apps", "extensions"]
     resources      = ["deployments"]
-    resource_names = ["livegrep-backend"]
+    resource_names = ["livegrep-backend", "notes"]
     verbs          = ["get", "patch", "list", "watch"]
   }
 }

@@ -1,0 +1,11 @@
+name: restart-notes
+schedule: "0 * * * *"
+serviceAccountName: sa-deployment-restart
+containers:
+  - name: kubectl
+    repository: bitnami/kubectl
+    tag: 1.30.3
+    command: ["sh", "-c"]
+    args:
+      - |
+        kubectl rollout restart deploy notes --namespace notes
