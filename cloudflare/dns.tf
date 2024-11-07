@@ -45,6 +45,7 @@ locals {
     "livegrep",
     "minio",
     "mlflow",
+    "notes",
     "obsidian",
     "podgrab",
     "proxmox",

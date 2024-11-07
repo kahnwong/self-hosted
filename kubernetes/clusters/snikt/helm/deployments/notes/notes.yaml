@@ -1,0 +1,18 @@
+kind: Deployment
+name: notes
+replicaCount: 1
+containers:
+  - name: notes
+    repository: ghcr.io/kahnwong/docker-vitepress
+    tag: '4daefb9'
+    port: 5173
+    volumeMounts:
+      - name: notes
+        mountPath: /opt/app
+volumes:
+  - name: notes
+    hostPath:
+      path: /opt/syncthing/cloud/Apps/notes/notes-work
+service:
+  port: 5173
+  nodePort: 30052

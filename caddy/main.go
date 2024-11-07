@@ -41,6 +41,7 @@ func main() {
 		"gatus":           30029,
 		"linkding":        30005,
 		"livegrep":        30033,
+		"notes":           30052,
 		"obsidian":        30048,
 		"podgrab":         30004,
 		"k.console.notes": 30050,

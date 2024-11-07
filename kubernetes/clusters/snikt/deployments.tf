@@ -40,6 +40,7 @@ locals {
       "wallabag", "wallabag-postgres", "wallabag-redis",
     ]
     notes = [
+      # "notes",
       "notes-console-k",
       "notes-console-t",
     ]

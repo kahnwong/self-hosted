@@ -21,6 +21,7 @@ locals {
     "linkding",
     "livegrep",
     "mlflow",
+    "notes",
     "obsidian",
     "podgrab",
     "t.console.notes",
