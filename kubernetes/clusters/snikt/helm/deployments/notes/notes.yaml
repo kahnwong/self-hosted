@@ -4,11 +4,11 @@ replicaCount: 1
 containers:
   - name: notes
     repository: ghcr.io/kahnwong/docker-vitepress
-    tag: '4daefb9'
+    tag: 'd61262f'
     port: 5173
     volumeMounts:
       - name: notes
-        mountPath: /opt/app
+        mountPath: /opt/app/notes
 volumes:
   - name: notes
     hostPath:
