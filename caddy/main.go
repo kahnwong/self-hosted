@@ -42,7 +42,6 @@ func main() {
 		"linkding":        30005,
 		"livegrep":        30033,
 		"notes":           30052,
-		"obsidian":        30048,
 		"podgrab":         30004,
 		"k.console.notes": 30050,
 		"t.console.notes": 30051,

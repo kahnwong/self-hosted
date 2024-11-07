@@ -41,6 +41,7 @@ locals {
     ]
     notes = [
       # "notes",
+      # "obsidian",
       "notes-console-k",
       "notes-console-t",
     ]
@@ -51,7 +52,6 @@ locals {
       "excalidraw",
       "go-playground",
       "livegrep-backend", "livegrep-frontend",
-      "obsidian",
       "opengist",
       "picoshare",
       "rustpad",

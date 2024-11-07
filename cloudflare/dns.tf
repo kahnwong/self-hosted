@@ -46,7 +46,6 @@ locals {
     "minio",
     "mlflow",
     "notes",
-    "obsidian",
     "podgrab",
     "proxmox",
     "share", # prevent request entity too large

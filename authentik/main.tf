@@ -22,7 +22,6 @@ locals {
     "livegrep",
     "mlflow",
     "notes",
-    "obsidian",
     "podgrab",
     "t.console.notes",
   ])
