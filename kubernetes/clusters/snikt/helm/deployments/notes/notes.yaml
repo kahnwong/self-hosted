@@ -3,16 +3,16 @@ name: notes
 replicaCount: 1
 containers:
   - name: notes
-    repository: ghcr.io/kahnwong/docker-vitepress
-    tag: 'd61262f'
-    port: 5173
+    repository: caddy
+    tag: latest
+    port: 80
     volumeMounts:
       - name: notes
-        mountPath: /opt/app/notes
+        mountPath: /usr/share/caddy
 volumes:
   - name: notes
     hostPath:
-      path: /opt/syncthing/cloud/Apps/notes/notes-work
+      path: /opt/notes-sync/head/.vitepress/dist
 service:
-  port: 5173
+  port: 80
   nodePort: 30052

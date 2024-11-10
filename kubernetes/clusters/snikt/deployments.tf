@@ -118,6 +118,11 @@ resource "kubernetes_manifest" "qa_discord_bot" {
   manifest = yamldecode(file("./helm/deployments/bots/qa-discord-bot.yaml"))
 }
 
+# ------ notes-sync ------ #
+resource "kubernetes_manifest" "notes_sync" {
+  manifest = yamldecode(file("./helm/deployments/notes/notes-sync.yaml"))
+}
+
 # ------ harbor ------ #
 resource "helm_release" "harbor" {
   name       = "harbor"

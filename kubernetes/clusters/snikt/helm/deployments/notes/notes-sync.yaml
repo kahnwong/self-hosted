@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notes-sync
+  namespace: notes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notes-sync
+  template:
+    metadata:
+      labels:
+        app: notes-sync
+    spec:
+      volumes:
+        - name: notes-sync
+          hostPath:
+            path: /opt/notes-sync
+      containers:
+        - name: git-sync
+          image: registry.k8s.io/git-sync/git-sync:v4.0.0
+          args:
+            - --repo=https://github.com/kahnwong/notes-work.git
+            - --depth=1
+            - --root=/git
+            - --period=60s
+            - --link=head
+            - --ref=dist
+          securityContext:
+            runAsUser: 0
+          volumeMounts:
+            - name: notes-sync
+              mountPath: /git
+          envFrom:
+            - secretRef:
+                name: notes-sync
