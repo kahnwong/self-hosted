@@ -14,6 +14,10 @@
 |------|---------|
 | authentik | 2024.8.4 |
 
+## Modules
+
+No modules.
+
 ## Resources
 
 | Name | Type |

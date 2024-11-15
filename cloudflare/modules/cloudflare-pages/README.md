@@ -5,7 +5,7 @@
 
 | Name | Version |
 |------|---------|
-| cloudflare | 4.45.0 |
+| cloudflare | 4.46.0 |
 
 ## Providers
 
@@ -13,13 +13,17 @@
 |------|---------|
 | cloudflare | 4.44.0 |
 
+## Modules
+
+No modules.
+
 ## Resources
 
 | Name | Type |
 |------|------|
-| [cloudflare_pages_domain.this](https://registry.terraform.io/providers/cloudflare/cloudflare/4.45.0/docs/resources/pages_domain) | resource |
-| [cloudflare_pages_project.this](https://registry.terraform.io/providers/cloudflare/cloudflare/4.45.0/docs/resources/pages_project) | resource |
-| [cloudflare_record.this](https://registry.terraform.io/providers/cloudflare/cloudflare/4.45.0/docs/resources/record) | resource |
+| [cloudflare_pages_domain.this](https://registry.terraform.io/providers/cloudflare/cloudflare/4.46.0/docs/resources/pages_domain) | resource |
+| [cloudflare_pages_project.this](https://registry.terraform.io/providers/cloudflare/cloudflare/4.46.0/docs/resources/pages_project) | resource |
+| [cloudflare_record.this](https://registry.terraform.io/providers/cloudflare/cloudflare/4.46.0/docs/resources/record) | resource |
 
 ## Inputs
 
@@ -31,4 +35,8 @@
 | project\_name | n/a | `string` | n/a | yes |
 | subdomain | n/a | `string` | n/a | yes |
 | zone\_id | n/a | `string` | n/a | yes |
+
+## Outputs
+
+No outputs.
 <!-- END_TF_DOCS -->

@@ -16,6 +16,10 @@
 | github | 6.3.1 |
 | sops | 1.1.1 |
 
+## Modules
+
+No modules.
+
 ## Resources
 
 | Name | Type |
@@ -31,4 +35,8 @@
 |------|-------------|------|---------|:--------:|
 | github\_token | need for github auth | `string` | n/a | yes |
 | private\_cloudflare\_pages\_repos | n/a | `set(string)` | n/a | yes |
+
+## Outputs
+
+No outputs.
 <!-- END_TF_DOCS -->

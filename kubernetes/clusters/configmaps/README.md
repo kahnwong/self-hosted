@@ -17,6 +17,10 @@
 | kubernetes | 2.33.0 |
 | sops | 1.1.1 |
 
+## Modules
+
+No modules.
+
 ## Resources
 
 | Name | Type |
@@ -36,4 +40,8 @@
 | client\_key | n/a | `string` | n/a | yes |
 | cluster\_ca\_certificate | n/a | `string` | n/a | yes |
 | host | n/a | `string` | n/a | yes |
+
+## Outputs
+
+No outputs.
 <!-- END_TF_DOCS -->

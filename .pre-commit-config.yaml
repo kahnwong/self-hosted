@@ -14,7 +14,7 @@ repos:
       - id: fix-byte-order-marker
       - id: mixed-line-ending
   - repo: https://github.com/kahnwong/pre-commit
-    rev: "bc632ac"
+    rev: "791fd68"
     hooks:
       - id: terraform-fmt
       - id: terraform-validate
