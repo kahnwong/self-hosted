@@ -27,7 +27,7 @@ func main() {
 		"ntfy":             30022,
 		"pdf":              30040,
 		"plausible":        30044,
-		"qa-api":           30045,
+		"qa-api":           30043,
 		"rustpad":          30019,
 		"secrets":          30025,
 		"share":            30017,

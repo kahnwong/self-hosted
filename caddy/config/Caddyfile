@@ -56,7 +56,7 @@ plausible.karnwong.me {
     reverse_proxy 192.168.1.36:30044
 }
 qa-api.karnwong.me {
-    reverse_proxy 192.168.1.36:30045
+    reverse_proxy 192.168.1.36:30043
 }
 rustpad.karnwong.me {
     reverse_proxy 192.168.1.36:30019

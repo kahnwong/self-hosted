@@ -1,8 +1,6 @@
----
 kind: Deployment
 name: qa-api
 replicaCount: 1
-
 containers:
   - name: qa-api
     repository: ghcr.io/kahnwong/qa-api
