@@ -1,6 +1,6 @@
 locals {
   configmaps = tomap({
-    default = [
+    tools = [
       {
         deployment = "dashy"
         filename   = "conf.yml"

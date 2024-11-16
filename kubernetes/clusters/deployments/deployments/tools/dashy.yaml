@@ -1,8 +1,4 @@
----
-kind: Deployment
 name: dashy
-replicaCount: 1
-
 containers:
   - name: dashy
     repository: lissy93/dashy
@@ -20,6 +16,3 @@ volumes:
   - name: dashy-data
     configMap:
       name: dashy
-service:
-  port: 80
-  nodePort: 30023

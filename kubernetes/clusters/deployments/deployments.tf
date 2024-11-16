@@ -17,7 +17,6 @@ locals {
     default = [
       "audiobookshelf",
       "calibre-web",
-      "dashy",
       "jellyfin",
       "linkding",
       "memos",
@@ -63,6 +62,9 @@ locals {
   deployments_knative = tomap({
     news = [
       "thai-tech-cal",
+    ]
+    tools = [
+      "dashy",
     ]
   })
 }
