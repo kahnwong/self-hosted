@@ -63,7 +63,9 @@ qa-api.karnwong.me {
     reverse_proxy 192.168.1.36:30043
 }
 rustpad.karnwong.me {
-    reverse_proxy 192.168.1.36:30019
+    reverse_proxy 192.168.1.36:31080 {
+        header_up Host rustpad.tools.example.com
+    }
 }
 secrets.karnwong.me {
     reverse_proxy 192.168.1.36:30025

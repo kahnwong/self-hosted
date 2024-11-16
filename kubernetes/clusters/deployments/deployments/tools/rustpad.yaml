@@ -1,8 +1,4 @@
----
-kind: Deployment
 name: rustpad
-replicaCount: 1
-
 containers:
   - name: rustpad
     repository: ghcr.io/kahnwong/rustpad

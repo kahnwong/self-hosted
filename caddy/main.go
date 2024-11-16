@@ -29,7 +29,7 @@ func main() {
 		"pdf":              "30040",
 		"plausible":        "30044",
 		"qa-api":           "30043",
-		"rustpad":          "30019",
+		"rustpad":          "rustpad.tools",
 		"secrets":          "30025",
 		"share":            "30017",
 		"subsonic-widgets": "30038",
