@@ -95,7 +95,7 @@ resource "helm_release" "this" {
   chart      = "base"
 
   values = [
-    file("./helm/deployments/${each.value}/${each.key}.yaml")
+    file("./deployments/${each.value}/${each.key}.yaml")
   ]
 }
 
@@ -108,19 +108,19 @@ resource "helm_release" "fringe_division" {
   chart      = "base"
 
   values = [
-    file("./helm/deployments/${each.value}/${each.key}.yaml"),
+    file("./deployments/${each.value}/${each.key}.yaml"),
     # file("./resources/valuesTaintNodeSelector.yaml"),
   ]
 }
 
 # ------ qa-discord-bot ------ #
 resource "kubernetes_manifest" "qa_discord_bot" {
-  manifest = yamldecode(file("./helm/deployments/bots/qa-discord-bot.yaml"))
+  manifest = yamldecode(file("./deployments/bots/qa-discord-bot.yaml"))
 }
 
 # ------ notes-sync ------ #
 resource "kubernetes_manifest" "notes_sync" {
-  manifest = yamldecode(file("./helm/deployments/notes/notes-sync.yaml"))
+  manifest = yamldecode(file("./deployments/notes/notes-sync.yaml"))
 }
 
 # ------ harbor ------ #
@@ -132,7 +132,7 @@ resource "helm_release" "harbor" {
   chart      = "harbor"
 
   values = [
-    file("./helm/deployments/harbor/values.yaml")
+    file("./deployments/harbor/values.yaml")
   ]
 
   set {
@@ -150,7 +150,7 @@ resource "helm_release" "authentik" {
   chart      = "authentik"
 
   values = [
-    file("./helm/deployments/authentik/values.yaml"),
+    file("./deployments/authentik/values.yaml"),
   ]
 }
 
@@ -167,6 +167,6 @@ resource "helm_release" "authentik" {
 #   timeout = 90
 #
 #   values = [
-#     file("./helm/deployments/woodpecker/woodpecker.yaml"),
+#     file("./deployments/woodpecker/woodpecker.yaml"),
 #   ]
 # }
