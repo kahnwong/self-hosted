@@ -46,7 +46,6 @@ locals {
       "plausible", "plausible-clickhouse", "plausible-postgres",
     ]
     tools = [
-      "excalidraw",
       "livegrep-backend", "livegrep-frontend",
       "opengist",
       "picoshare",
@@ -66,6 +65,7 @@ locals {
     ]
     tools = [
       "dashy",
+      "excalidraw",
     ]
   })
 }

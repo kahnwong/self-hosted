@@ -14,7 +14,7 @@ func main() {
 		"books":            "30032",
 		"ci":               "32442",
 		"console.minio":    "30021",
-		"excalidraw":       "30034",
+		"excalidraw":       "excalidraw.tools",
 		"gist":             "30039",
 		"git":              "30026",
 		"go":               "go-playground.playground",

@@ -1,25 +1,21 @@
----
-kind: Deployment
 name: excalidraw
-replicaCount: 1
-
 containers:
   - name: excalidraw
     repository: ghcr.io/kahnwong/docker-excalidraw
     tag: latest
     port: 3002
-    env:
-      - name: STORAGE_TYPE
-        value: filesystem
-      - name: LOCAL_STORAGE_PATH
-        value: /tmp/excalidraw
-    volumeMounts:
-      - name: excalidraw-data
-        mountPath: /tmp/excalidraw
-volumes:
-  - name: excalidraw-data
-    hostPath:
-      path: /opt/excalidraw/data
-service:
-  port: 3002
-  nodePort: 30034
+#    env:
+#      - name: STORAGE_TYPE
+#        value: filesystem
+#      - name: LOCAL_STORAGE_PATH
+#        value: /tmp/excalidraw
+#    volumeMounts:
+#      - name: excalidraw-data
+#        mountPath: /tmp/excalidraw
+#volumes:
+#  - name: excalidraw-data
+#    hostPath:
+#      path: /opt/excalidraw/data
+#service:
+#  port: 3002
+#  nodePort: 30034
