@@ -1,0 +1,58 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: {{ template "name" . }}
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+spec:
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/component: {{ template "name" . }}
+        app.kubernetes.io/instance: {{ template "name" . }}
+        app.kubernetes.io/name: {{ template "name" . }}
+    spec:
+      {{ if .Values.initContainers }}
+      initContainers: {{ toYaml .Values.initContainers | default list | nindent 8 }}
+      {{ end }}
+      containers:
+        {{ range .Values.containers }}
+          - name:  {{ .name }}
+            image: "{{ .repository }}:{{ .tag }}"
+            {{ if .command }}
+            command: {{ .command }}
+            {{ end }}
+            {{ if .port }}
+            ports:
+              - containerPort: {{ .port }}
+            {{ end }}
+            {{ if .ports }}
+            ports: {{ .ports | default list | toYaml | nindent 14 }}
+            {{ end }}
+            livenessProbe:
+              {{ if not (eq .livenessProbeScheme "tcp")}}
+              httpGet:
+                path: {{ .livenessProbePath | default "/" }}
+                {{ if .healthcheckPort }}
+                port: {{ .healthcheckPort }}
+                {{ else }}
+                port: {{ .port }}
+                {{ end }}
+                scheme: HTTP
+              {{ else }}
+              tcpSocket:
+                port: {{ .port }}
+              {{ end }}
+            securityContext: {{ toYaml .securityContext | default list | nindent 14 }}
+            args: {{ .args | default list | toYaml | nindent 14 }}
+            env: {{ .env | default list | toYaml | nindent 14 }}
+            envFrom: {{ .envFrom | default list | toYaml | nindent 14 }}
+            resources: {{ toYaml .resources | default list | nindent 14 }}
+            volumeMounts: {{ toYaml .volumeMounts | default list | nindent 14 }}
+        {{ end }}
+      imagePullSecrets: {{ toYaml .Values.imagePullSecrets | default list | nindent 8 }}
+      volumes: {{ toYaml .Values.volumes | default list | nindent 8 }}
+      tolerations: {{ toYaml .Values.tolerations | default list | nindent 8 }}
+      {{ if .Values.nodeSelector }}
+      nodeSelector: {{ toYaml .Values.nodeSelector | nindent 8 }}
+      {{ end }}

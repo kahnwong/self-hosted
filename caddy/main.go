@@ -33,8 +33,10 @@ func main() {
 		"share":            30017,
 		"subsonic-widgets": 30038,
 		"syncthing":        8384,
-		"thai-tech-cal":    30046,
 		"wakapi":           30041,
+	}
+	servicesKnative := map[string]string{
+		"thai-tech-cal": "thai-tech-cal.news",
 	}
 	servicesForwardAuth := map[string]int{
 		"dashy":           30023,
@@ -49,9 +51,10 @@ func main() {
 
 	// generate config
 	config := generateConfig(services)
+	configKnative := generateConfigKnative(servicesKnative)
 	configForwardAuth := generateConfigForwardAuth(servicesForwardAuth)
 
-	configAll := config + configForwardAuth
+	configAll := config + configKnative + configForwardAuth
 	fmt.Println(configAll)
 
 	// write to file
@@ -75,6 +78,28 @@ func generateConfig(services map[string]int) string {
 	for _, k := range keys {
 		config += fmt.Sprintf(`%s.karnwong.me {
     reverse_proxy 192.168.1.36:%v
+}
+`, k, services[k])
+	}
+
+	return config
+}
+
+func generateConfigKnative(services map[string]string) string {
+	config := ""
+
+	keys := make([]string, 0, len(services))
+
+	for k := range services {
+		keys = append(keys, k)
+	}
+	sort.Strings(keys)
+
+	for _, k := range keys {
+		config += fmt.Sprintf(`%s.karnwong.me {
+    reverse_proxy 192.168.1.36:31080 {
+        header_up Host %s.example.com
+    }
 }
 `, k, services[k])
 	}

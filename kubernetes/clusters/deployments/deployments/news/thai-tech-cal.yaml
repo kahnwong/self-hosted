@@ -1,6 +1,4 @@
-kind: Deployment
 name: thai-tech-cal
-replicaCount: 1
 containers:
   - name: thai-tech-cal
     repository: ghcr.io/kahnwong/ical-to-rss
@@ -19,6 +17,3 @@ containers:
         value: ""
       - name: MODE
         value: "PRODUCTION"
-service:
-  port: 3000
-  nodePort: 30046

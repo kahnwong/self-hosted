@@ -73,11 +73,13 @@ subsonic-widgets.karnwong.me {
 syncthing.karnwong.me {
     reverse_proxy 192.168.1.36:8384
 }
-thai-tech-cal.karnwong.me {
-    reverse_proxy 192.168.1.36:30046
-}
 wakapi.karnwong.me {
     reverse_proxy 192.168.1.36:30041
+}
+thai-tech-cal.karnwong.me {
+    reverse_proxy 192.168.1.36:31080 {
+        header_up Host thai-tech-cal.news.example.com
+    }
 }
 dashy.karnwong.me {
     route {

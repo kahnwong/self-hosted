@@ -36,7 +36,6 @@ locals {
     ]
     news = [
       "miniflux", "miniflux-postgres",
-      "thai-tech-cal",
       "wallabag", "wallabag-postgres", "wallabag-redis",
     ]
     notes = [
@@ -61,6 +60,11 @@ locals {
       #      "stirling-pdf",
     ]
   })
+  deployments_knative = tomap({
+    news = [
+      "thai-tech-cal",
+    ]
+  })
 }
 
 locals {
@@ -83,6 +87,16 @@ locals {
     ]
   ])
   deployments_fringe_division_map = { for index, v in local.deployments_fringe_division_map_raw : v.deployment => v.namespace }
+
+  deployments_knative_map_raw = flatten([
+    for namespace, deployments in local.deployments_knative : [
+      for deployment in deployments : {
+        namespace  = namespace
+        deployment = deployment
+      }
+    ]
+  ])
+  deployments_knative_map = { for index, v in local.deployments_knative_map_raw : v.deployment => v.namespace }
 }
 
 
@@ -106,6 +120,20 @@ resource "helm_release" "fringe_division" {
   repository = "oci://ghcr.io/kahnwong/charts"
   version    = "0.2.0"
   chart      = "base"
+
+  values = [
+    file("./deployments/${each.value}/${each.key}.yaml"),
+    # file("./resources/valuesTaintNodeSelector.yaml"),
+  ]
+}
+
+resource "helm_release" "knative" {
+  for_each   = local.deployments_knative_map
+  name       = each.key
+  namespace  = each.value
+  repository = "oci://ghcr.io/kahnwong/charts"
+  version    = "0.2.0"
+  chart      = "base-knative"
 
   values = [
     file("./deployments/${each.value}/${each.key}.yaml"),
