@@ -39,7 +39,6 @@ locals {
     ]
     notes = [
       "notes",
-      # "obsidian",
       "notes-console-k",
       "notes-console-t",
     ]

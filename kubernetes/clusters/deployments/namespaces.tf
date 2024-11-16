@@ -8,6 +8,7 @@ locals {
     "infrastructure",
     "jobs",
     "jobs-family-alerts",
+    "media",
     "news",
     "notes",
     "plausible",
