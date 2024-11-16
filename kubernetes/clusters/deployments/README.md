@@ -24,7 +24,14 @@ kubectl patch configmap/config-network \
   --type merge \
   --patch '{"data":{"ingress-class":"kourier.ingress.networking.knative.dev"}}'
 
+# patch DNS - !!!!! use node IP !!!!!
+kubectl patch configmap/config-domain \
+  --namespace knative-serving \
+  --type merge \
+  --patch '{"data":{"192.168.1.36.sslip.io":""}}'
+
 # validate
+kubectl describe configmap/config-domain --namespace knative-serving
 kubectl --namespace kourier-system get service kourier
 kubectl get pods -n knative-serving
 
@@ -45,7 +52,7 @@ spec:
               value: "Hello Knative Serving is up and running with Kourier!!"
 EOF
 
-kubectl apply --filename service.yaml
+kubectl apply --filename service.yaml  # access via <http://helloworld-go.default.192.168.1.36.sslip.io:31080>, port is from Kourier HTTP NodePort
 ```
 
 <!-- BEGIN_TF_DOCS -->
