@@ -1,8 +1,4 @@
----
-kind: Deployment
 name: go-playground
-replicaCount: 1
-
 containers:
   - name: go-playground
     repository: x1unix/go-playground
@@ -11,6 +7,3 @@ containers:
     env:
       - name: APP_CLEAN_INTERVAL
         value: '30m'
-service:
-  port: 8000
-  nodePort: 30042

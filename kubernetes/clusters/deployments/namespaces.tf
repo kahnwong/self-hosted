@@ -11,6 +11,7 @@ locals {
     "news",
     "notes",
     "plausible",
+    "playground",
     "tools",
   ])
 }

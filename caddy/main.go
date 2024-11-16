@@ -17,7 +17,7 @@ func main() {
 		"excalidraw":       "30034",
 		"gist":             "30039",
 		"git":              "30026",
-		"go":               "30042",
+		"go":               "go-playground.playground",
 		"harbor":           "30500",
 		"immich":           "30030",
 		"jellyfin":         "30003",

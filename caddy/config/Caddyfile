@@ -23,7 +23,9 @@ git.karnwong.me {
     reverse_proxy 192.168.1.36:30026
 }
 go.karnwong.me {
-    reverse_proxy 192.168.1.36:30042
+    reverse_proxy 192.168.1.36:31080 {
+        header_up Host go-playground.playground.example.com
+    }
 }
 harbor.karnwong.me {
     reverse_proxy 192.168.1.36:30500

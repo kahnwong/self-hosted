@@ -48,7 +48,6 @@ locals {
     ]
     tools = [
       "excalidraw",
-      "go-playground",
       "livegrep-backend", "livegrep-frontend",
       "opengist",
       "picoshare",
@@ -62,6 +61,9 @@ locals {
   deployments_knative = tomap({
     news = [
       "thai-tech-cal",
+    ]
+    playground = [
+      "go-playground",
     ]
     tools = [
       "dashy",
