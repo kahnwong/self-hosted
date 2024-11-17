@@ -18,7 +18,6 @@ locals {
       "audiobookshelf",
       "calibre-web",
       "jellyfin",
-      "linkding",
       "memos",
       "navidrome",
       "podgrab",
@@ -65,6 +64,7 @@ locals {
     tools = [
       "dashy",
       "excalidraw",
+      "linkding",
       "rustpad",
     ]
   })

@@ -1,15 +1,11 @@
----
-kind: Deployment
 name: linkding
-replicaCount: 1
-
 containers:
   ## admin user setup
   # docker exec -it linkding python manage.py createsuperuser --username=joe --email=joe@example.com
   - name: linkding
     repository: sissbruecker/linkding
     tag: 1.36.0
-    port: 9090
+    port: 5000
     env:
       - name: PGID
         value: "1000"
@@ -19,13 +15,14 @@ containers:
         value: "HTTP_X_AUTHENTIK_USERNAME"
       - name: LD_AUTH_PROXY_LOGOUT_URL
         value: "Authentik-URL/outpost.goauthentik.io/sign_out"
+      - name: LD_SERVER_PORT
+        value: "5000"
+      - name: LD_CSRF_TRUSTED_ORIGINS
+        value: "https://linkding.karnwong.me"
     volumeMounts:
       - name: linkding-data
         mountPath: /etc/linkding/data
 volumes:
   - name: linkding-data
-    hostPath:
-      path: /opt/linkding/data
-service:
-  port: 9090
-  nodePort: 30005
+    persistentVolumeClaim:
+      claimName: linkding-pvc

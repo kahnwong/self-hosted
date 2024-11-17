@@ -13,7 +13,9 @@
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| helm | 2.16.1 |
 
 ## Modules
 
@@ -21,7 +23,9 @@ No modules.
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [helm_release.this](https://registry.terraform.io/providers/hashicorp/helm/2.16.1/docs/resources/release) | resource |
 
 ## Inputs
 
