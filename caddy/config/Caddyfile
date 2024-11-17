@@ -39,9 +39,7 @@ harbor.karnwong.me {
     reverse_proxy 192.168.1.36:30500
 }
 immich.karnwong.me {
-    reverse_proxy 192.168.1.36:31080 {
-        header_up Host immich.immich.example.com
-    }
+    reverse_proxy 192.168.1.36:30030
 }
 jellyfin.karnwong.me {
     reverse_proxy 192.168.1.36:31080 {

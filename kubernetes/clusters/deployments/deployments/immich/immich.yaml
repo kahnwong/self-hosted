@@ -1,4 +1,8 @@
+---
+kind: Deployment
 name: immich
+replicaCount: 1
+
 containers:
   - name: immich-server
     repository: ghcr.io/immich-app/immich-server
@@ -12,5 +16,8 @@ containers:
         mountPath: /usr/src/app/upload
 volumes:
   - name: immich-upload
-    persistentVolumeClaim:
-      claimName: immich-pvc
+    hostPath:
+      path: /opt/immich/upload
+service:
+  port: 2283
+  nodePort: 30030
