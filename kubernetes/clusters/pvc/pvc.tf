@@ -1,5 +1,20 @@
 locals {
   pvcs = tomap({
+    media = [
+      # audiobookshelf
+      {
+        deployment = "audiobookshelf-config"
+        path       = "/opt/audiobookshelf/config"
+      },
+      {
+        deployment = "audiobookshelf-metadata"
+        path       = "/opt/audiobookshelf/metadata"
+      },
+      {
+        deployment = "audiobookshelf-data"
+        path       = "/opt/syncthing/audiobooks"
+      },
+    ]
     tools = [
       {
         deployment = "linkding"

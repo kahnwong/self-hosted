@@ -15,7 +15,6 @@ locals {
     authentik = ["authentik-postgres", "authentik-valkey"]
     bots      = ["qa-api"]
     default = [
-      "audiobookshelf",
       "calibre-web",
       "jellyfin",
       "memos",
@@ -53,6 +52,9 @@ locals {
     ]
   })
   deployments_knative = tomap({
+    media = [
+      "audiobookshelf",
+    ]
     news = [
       "thai-tech-cal",
     ]

@@ -9,7 +9,7 @@ import (
 
 func main() {
 	services := map[string]string{
-		"audiobookshelf":   "30027",
+		"audiobookshelf":   "audiobookshelf.media",
 		"authentik":        "30047",
 		"books":            "30032",
 		"ci":               "32442",

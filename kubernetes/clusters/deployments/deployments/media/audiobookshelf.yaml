@@ -1,8 +1,4 @@
----
-kind: Deployment
 name: audiobookshelf
-replicaCount: 1
-
 containers:
   - name: audiobookshelf
     repository: ghcr.io/advplyr/audiobookshelf
@@ -17,14 +13,11 @@ containers:
         mountPath: /audiobooks
 volumes:
   - name: audiobookshelf-config
-    hostPath:
-      path: /opt/audiobookshelf/config
+    persistentVolumeClaim:
+      claimName: audiobookshelf-config-pvc
   - name: audiobookshelf-metadata
-    hostPath:
-      path: /opt/audiobookshelf/metadata
+    persistentVolumeClaim:
+      claimName: audiobookshelf-metadata-pvc
   - name: audiobooks
-    hostPath:
-      path: /opt/syncthing/audiobooks
-service:
-  port: 80
-  nodePort: 30027
+    persistentVolumeClaim:
+      claimName: audiobookshelf-data-pvc
