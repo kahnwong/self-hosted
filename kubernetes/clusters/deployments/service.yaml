@@ -1,0 +1,50 @@
+apiVersion: serving.knative.dev/v1 # Current version of Knative
+kind: Service
+metadata:
+  name: helloworld-go # The name of the app
+  namespace: test # The namespace the app will use
+spec:
+  template:
+    spec:
+      volumes:
+      - name: store-volume          
+        persistentVolumeClaim:
+          claimName: store-persistent-volume-claim
+      containers:
+        - image: ghcr.io/knative/helloworld-go:latest # The URL to the image of the app
+          env:
+            - name: TARGET # The environment variable printed out by the sample app
+              value: "Hello Knative Serving is up and running with Kourier"
+          volumeMounts:
+          - name: store-volume
+            mountPath: /data
+---
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: store-persistent-volume
+  namespace: test
+spec:
+  storageClassName: hostpath
+  capacity:
+    storage: 2Gi
+  accessModes:
+  - ReadWriteOnce
+  hostPath:
+    path: "/tmp/knative-test"
+
+---
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: store-persistent-volume-claim
+  namespace: test
+spec:
+  storageClassName: hostpath
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
