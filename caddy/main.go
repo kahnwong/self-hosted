@@ -11,7 +11,7 @@ func main() {
 	services := map[string]string{
 		"audiobookshelf":   "audiobookshelf.media",
 		"authentik":        "30047",
-		"books":            "30032",
+		"books":            "calibre-web.media",
 		"ci":               "32442",
 		"console.minio":    "30021",
 		"excalidraw":       "excalidraw.tools",

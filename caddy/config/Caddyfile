@@ -7,7 +7,9 @@ authentik.karnwong.me {
     reverse_proxy 192.168.1.36:30047
 }
 books.karnwong.me {
-    reverse_proxy 192.168.1.36:30032
+    reverse_proxy 192.168.1.36:31080 {
+        header_up Host calibre-web.media.example.com
+    }
 }
 ci.karnwong.me {
     reverse_proxy 192.168.1.36:32442

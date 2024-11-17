@@ -14,6 +14,15 @@ locals {
         deployment = "audiobookshelf-data"
         path       = "/opt/syncthing/audiobooks"
       },
+      # calibre-web
+      {
+        deployment = "calibre-web-config"
+        path       = "/opt/calibre-web/config"
+      },
+      {
+        deployment = "calibre-web-data"
+        path       = "/opt/syncthing/books/Library"
+      },
     ]
     tools = [
       {

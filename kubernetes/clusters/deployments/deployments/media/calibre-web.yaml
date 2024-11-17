@@ -1,10 +1,6 @@
----
 # disable redirect-to-login-page with reverse-proxy
 # 'Admin' > 'Edit Basic Configuration' > 'Security Settings' > 'Session Protection'
-kind: Deployment
 name: calibre-web
-replicaCount: 1
-
 containers:
   - name: calibre-web
     repository: lscr.io/linuxserver/calibre-web
@@ -18,11 +14,8 @@ containers:
         mountPath: /config
 volumes:
   - name: books
-    hostPath:
-      path: /opt/syncthing/books/Library
+    persistentVolumeClaim:
+      claimName: calibre-web-data-pvc
   - name: config
-    hostPath:
-      path: /opt/calibre-web/config
-service:
-  port: 8083
-  nodePort: 30032
+    persistentVolumeClaim:
+      claimName: calibre-web-config-pvc
