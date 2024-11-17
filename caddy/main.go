@@ -19,7 +19,7 @@ func main() {
 		"git":              "30026",
 		"go":               "go-playground.playground",
 		"harbor":           "30500",
-		"immich":           "30030",
+		"immich":           "immich.immich",
 		"jellyfin":         "jellyfin.media",
 		"memos":            "30031",
 		"miniflux":         "30007",

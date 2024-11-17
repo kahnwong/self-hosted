@@ -1,5 +1,11 @@
 locals {
   pvcs = tomap({
+    immich = [
+      {
+        deployment = "immich"
+        path       = "/opt/immich/upload"
+      }
+    ]
     media = [
       # audiobookshelf
       {
