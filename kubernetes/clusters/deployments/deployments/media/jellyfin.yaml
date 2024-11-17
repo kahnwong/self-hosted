@@ -1,8 +1,4 @@
----
-kind: Deployment
 name: jellyfin
-replicaCount: 1
-
 containers:
   - name: jellyfin
     repository: linuxserver/jellyfin
@@ -30,17 +26,14 @@ containers:
         memory: 2G
 volumes:
   - name: jellyfin-media
-    hostPath:
-      path: /opt/jellyfin/media
+    persistentVolumeClaim:
+      claimName: jellyfin-media-pvc
   - name: jellyfin-data
-    hostPath:
-      path: /opt/jellyfin/config
+    persistentVolumeClaim:
+      claimName: jellyfin-config-pvc
   - name: audiobooks
-    hostPath:
-      path: /opt/syncthing/audiobooks
+    persistentVolumeClaim:
+      claimName: audiobookshelf-data-pvc
   - name: sink
-    hostPath:
-      path: /opt/transmission/downloads/complete
-service:
-  port: 8096
-  nodePort: 30003
+    persistentVolumeClaim:
+      claimName: jellyfin-sink-pvc

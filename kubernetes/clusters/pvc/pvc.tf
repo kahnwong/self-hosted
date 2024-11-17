@@ -23,6 +23,19 @@ locals {
         deployment = "calibre-web-data"
         path       = "/opt/syncthing/books/Library"
       },
+      # jellyfin
+      {
+        deployment = "jellyfin-media"
+        path       = "/opt/jellyfin/media"
+      },
+      {
+        deployment = "jellyfin-config"
+        path       = "/opt/jellyfin/config"
+      },
+      {
+        deployment = "jellyfin-sink"
+        path       = "/opt/transmission/downloads/complete"
+      },
     ]
     tools = [
       {

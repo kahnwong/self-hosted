@@ -20,7 +20,7 @@ func main() {
 		"go":               "go-playground.playground",
 		"harbor":           "30500",
 		"immich":           "30030",
-		"jellyfin":         "30003",
+		"jellyfin":         "jellyfin.media",
 		"memos":            "30031",
 		"miniflux":         "30007",
 		"minio":            "30020",

@@ -15,7 +15,6 @@ locals {
     authentik = ["authentik-postgres", "authentik-valkey"]
     bots      = ["qa-api"]
     default = [
-      "jellyfin",
       "memos",
       "navidrome",
       "podgrab",
@@ -54,6 +53,7 @@ locals {
     media = [
       "audiobookshelf",
       "calibre-web",
+      "jellyfin",
     ]
     news = [
       "thai-tech-cal",

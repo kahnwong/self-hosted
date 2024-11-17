@@ -42,7 +42,9 @@ immich.karnwong.me {
     reverse_proxy 192.168.1.36:30030
 }
 jellyfin.karnwong.me {
-    reverse_proxy 192.168.1.36:30003
+    reverse_proxy 192.168.1.36:31080 {
+        header_up Host jellyfin.media.example.com
+    }
 }
 memos.karnwong.me {
     reverse_proxy 192.168.1.36:30031
