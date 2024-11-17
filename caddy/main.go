@@ -15,7 +15,7 @@ func main() {
 		"ci":               "32442",
 		"console.minio":    "30021",
 		"excalidraw":       "excalidraw.tools",
-		"gist":             "30039",
+		"gist":             "opengist.tools",
 		"git":              "30026",
 		"go":               "go-playground.playground",
 		"harbor":           "30500",

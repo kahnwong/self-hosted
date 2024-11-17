@@ -6,6 +6,10 @@ locals {
         path       = "/opt/linkding/data"
       },
       {
+        deployment = "opengist"
+        path       = "/opt/opengist/data"
+      },
+      {
         deployment = "picoshare",
         path       = "/opt/picoshare/data"
       }
