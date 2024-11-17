@@ -71,7 +71,9 @@ secrets.karnwong.me {
     reverse_proxy 192.168.1.36:30025
 }
 share.karnwong.me {
-    reverse_proxy 192.168.1.36:30017
+    reverse_proxy 192.168.1.36:31080 {
+        header_up Host picoshare.tools.example.com
+    }
 }
 subsonic-widgets.karnwong.me {
     reverse_proxy 192.168.1.36:30038

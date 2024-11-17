@@ -31,7 +31,7 @@ func main() {
 		"qa-api":           "30043",
 		"rustpad":          "rustpad.tools",
 		"secrets":          "30025",
-		"share":            "30017",
+		"share":            "picoshare.tools",
 		"subsonic-widgets": "30038",
 		"syncthing":        "8384",
 		"thai-tech-cal":    "thai-tech-cal.news",

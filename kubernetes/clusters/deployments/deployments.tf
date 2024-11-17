@@ -47,7 +47,6 @@ locals {
     tools = [
       "livegrep-backend", "livegrep-frontend",
       "opengist",
-      "picoshare",
       "sshx",
       "supersecretmessage", "supersecretmessage-vault",
       "wakapi", "wakapi-postgres",
@@ -65,6 +64,7 @@ locals {
       "dashy",
       "excalidraw",
       "linkding",
+      "picoshare",
       "rustpad",
     ]
   })

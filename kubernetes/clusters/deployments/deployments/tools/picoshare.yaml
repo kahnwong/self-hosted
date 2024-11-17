@@ -1,8 +1,4 @@
----
-kind: Deployment
 name: picoshare
-replicaCount: 1
-
 containers:
   - name: picoshare
     repository: mtlynch/picoshare
@@ -16,11 +12,8 @@ containers:
         mountPath: /data
 volumes:
   - name: picoshare-data
-    hostPath:
-      path: /opt/picoshare/data
-service:
-  port: 4001
-  nodePort: 30017
+    persistentVolumeClaim:
+      claimName: picoshare-pvc
 
 # vacuum with
 # sqlite3 data/store.db "VACUUM"
