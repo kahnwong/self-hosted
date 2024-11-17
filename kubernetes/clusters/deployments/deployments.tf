@@ -36,8 +36,6 @@ locals {
     ]
     notes = [
       "notes",
-      "notes-console-k",
-      "notes-console-t",
     ]
     plausible = [
       "plausible", "plausible-clickhouse", "plausible-postgres",
@@ -59,6 +57,10 @@ locals {
     ]
     news = [
       "thai-tech-cal",
+    ]
+    notes = [
+      "notes-console-k",
+      "notes-console-t",
     ]
     playground = [
       "go-playground",

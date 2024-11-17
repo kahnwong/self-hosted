@@ -1,6 +1,4 @@
-kind: Deployment
 name: notes-console-t
-replicaCount: 1
 containers:
   - name: notes-console-t
     repository: lscr.io/linuxserver/code-server
@@ -24,11 +22,9 @@ containers:
         mountPath: /config
 volumes:
   - name: notes
-    hostPath:
-      path: /opt/syncthing/cloud/Apps/notes/notes-work
+    persistentVolumeClaim:
+      claimName: notes-work-pvc
   - name: config
-    hostPath:
-      path: /opt/notes-console/t/config
-service:
-  port: 8443
-  nodePort: 30051
+    persistentVolumeClaim:
+      claimName: notes-console-t-config-pvc
+

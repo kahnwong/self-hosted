@@ -44,8 +44,8 @@ func main() {
 		"livegrep":        "30033",
 		"notes":           "30052",
 		"podgrab":         "30004",
-		"k.console.notes": "30050",
-		"t.console.notes": "30051",
+		"k.console.notes": "notes-console-k.notes",
+		"t.console.notes": "notes-console-t.notes",
 	}
 
 	// generate config
