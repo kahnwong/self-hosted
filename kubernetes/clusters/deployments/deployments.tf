@@ -15,9 +15,6 @@ locals {
     authentik = ["authentik-postgres", "authentik-valkey"]
     bots      = ["qa-api"]
     default = [
-      "memos",
-      "navidrome",
-      "podgrab",
       "subsonic-widgets",
       "foo", "baz"
     ]
@@ -28,6 +25,10 @@ locals {
       "minio",
       "mlflow", "mlflow-postgres",
       "ntfy",
+    ]
+    media = [
+      "navidrome",
+      "podgrab",
     ]
     news = [
       "miniflux", "miniflux-postgres",
@@ -43,6 +44,7 @@ locals {
     ]
     tools = [
       "livegrep-backend", "livegrep-frontend",
+      "memos",
       "sshx",
       "supersecretmessage", "supersecretmessage-vault",
       "wakapi", "wakapi-postgres",

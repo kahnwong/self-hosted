@@ -1,8 +1,6 @@
----
 kind: Deployment
 name: navidrome
 replicaCount: 1
-
 containers:
   - name: navidrome
     repository: deluan/navidrome
