@@ -1,15 +1,12 @@
----
 # `sudo chown -R root:root data/images`
 # `sudo chmod -R 0777 data/images` !!! has to be `0777`
-
 kind: Deployment
 name: wallabag
 replicaCount: 1
-
 containers:
   - name: wallabag
     repository: wallabag/wallabag
-    tag: 2.6.9
+    tag: 2.6.10
     port: 80
     env:
       - name: SYMFONY__ENV__DATABASE_DRIVER
