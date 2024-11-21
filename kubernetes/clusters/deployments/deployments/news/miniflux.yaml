@@ -1,12 +1,10 @@
----
 kind: Deployment
 name: miniflux
 replicaCount: 1
-
 containers:
   - name: miniflux
     repository: miniflux/miniflux
-    tag: 2.2.1
+    tag: 2.2.3
     port: 8080
     env:
       - name: RUN_MIGRATIONS
