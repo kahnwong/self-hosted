@@ -38,7 +38,6 @@ func main() {
 		"wakapi":           "30041",
 	}
 	servicesForwardAuth := map[string]string{
-		"dashy":           "dashy.tools",
 		"gatus":           "30029",
 		"homer":           "30053",
 		"linkding":        "linkding.tools",

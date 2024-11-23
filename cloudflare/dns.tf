@@ -34,7 +34,6 @@ locals {
     "chat-with-table",
     "ci",
     "console.minio",
-    "dashy",
     "files",
     "gatus",
     "git",

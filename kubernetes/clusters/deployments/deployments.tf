@@ -67,7 +67,6 @@ locals {
       "go-playground",
     ]
     tools = [
-      "dashy",
       "excalidraw",
       "linkding",
       "opengist",

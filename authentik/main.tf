@@ -15,7 +15,6 @@ locals {
     }
   )
   application_proxy = toset([
-    "dashy",
     "gatus",
     "homer",
     "k.console.notes",
