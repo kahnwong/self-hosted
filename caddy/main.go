@@ -40,6 +40,7 @@ func main() {
 	servicesForwardAuth := map[string]string{
 		"dashy":           "dashy.tools",
 		"gatus":           "30029",
+		"homer":           "30053",
 		"linkding":        "linkding.tools",
 		"livegrep":        "30033",
 		"notes":           "30052",

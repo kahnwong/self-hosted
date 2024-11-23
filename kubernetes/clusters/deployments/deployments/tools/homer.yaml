@@ -1,0 +1,29 @@
+# need to chown hostPath dir with non-root user
+# init with `git clone git@github.com:kahnwong/homer.git`
+kind: Deployment
+name: homer
+replicaCount: 1
+containers:
+  - name: homer
+    repository: b4bz/homer
+    tag: "latest"
+    port: 8080
+    env:
+      - name: PUID
+        value: "1000"
+      - name: PGID
+        value: "1000"
+    volumeMounts:
+      - name: data
+        mountPath: /www/assets
+    securityContext:
+      runAsUser: 1000
+      runAsNonRoot: true
+      runAsGroup: 1000
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/homer/data
+service:
+  port: 8080
+  nodePort: 30053

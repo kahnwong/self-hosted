@@ -41,6 +41,7 @@ locals {
       "plausible", "plausible-clickhouse", "plausible-postgres",
     ]
     tools = [
+      "homer",
       "livegrep-backend", "livegrep-frontend",
       "memos",
       "sshx",
