@@ -3,8 +3,9 @@ schedule: "30 9 * * *" # 4:30 PM Asia/Bangkok
 containers:
   - name: 02-2-dinner-order
     repository: ghcr.io/kahnwong/line-notify
-    tag: 857a8cf
+    tag: 0a8612b
     args:
+      - "notify"
       - "สั่งข้าวเย็น อย่าลืมปักหมุดเป็นที่บ้าน"
     envFrom:
       - secretRef:
