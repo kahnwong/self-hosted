@@ -22,7 +22,6 @@ locals {
       "backup-wallabag-db",
       "ddns",
       "restart-livegrep",
-      "restart-notes",
       "wallabag-cleanup",
       "water-cut-notify",
     ]
