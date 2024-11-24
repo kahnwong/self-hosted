@@ -42,6 +42,7 @@ locals {
     ]
     tools = [
       "homer",
+      "linkding",
       "livegrep-backend", "livegrep-frontend",
       "memos",
       "sshx",
@@ -68,7 +69,6 @@ locals {
     ]
     tools = [
       "excalidraw",
-      "linkding",
       "opengist",
       "picoshare",
       "rustpad",

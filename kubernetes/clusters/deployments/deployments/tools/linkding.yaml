@@ -1,4 +1,6 @@
+kind: Deployment
 name: linkding
+replicaCount: 1
 containers:
   ## admin user setup
   # docker exec -it linkding python manage.py createsuperuser --username=joe --email=joe@example.com
@@ -24,5 +26,8 @@ containers:
         mountPath: /etc/linkding/data
 volumes:
   - name: linkding-data
-    persistentVolumeClaim:
-      claimName: linkding-pvc
+    hostPath:
+      path: /opt/linkding/data
+service:
+  port: 5000
+  nodePort: 30005

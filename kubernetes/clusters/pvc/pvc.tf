@@ -53,10 +53,6 @@ locals {
     ]
     tools = [
       {
-        deployment = "linkding"
-        path       = "/opt/linkding/data"
-      },
-      {
         deployment = "opengist"
         path       = "/opt/opengist/data"
       },
