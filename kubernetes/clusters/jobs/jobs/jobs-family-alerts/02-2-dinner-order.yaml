@@ -1,0 +1,11 @@
+name: 02-2-dinner-order
+schedule: "30 9 * * *" # 4:30 PM Asia/Bangkok
+containers:
+  - name: 02-2-dinner-order
+    repository: ghcr.io/kahnwong/line-notify
+    tag: 857a8cf
+    args:
+      - "สั่งข้าวเย็น อย่าลืมปักหมุดเป็นที่บ้าน"
+    envFrom:
+      - secretRef:
+          name: family-alerts
