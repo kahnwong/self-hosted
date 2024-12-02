@@ -1,12 +1,10 @@
----
 kind: Deployment
 name: immich
 replicaCount: 1
-
 containers:
   - name: immich-server
     repository: ghcr.io/immich-app/immich-server
-    tag: v1.119.1
+    tag: v1.120.2
     port: 2283
     envFrom:
       - secretRef:
