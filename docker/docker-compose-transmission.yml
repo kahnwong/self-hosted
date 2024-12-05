@@ -3,7 +3,7 @@ version: '3.7'
 
 services:
   transmission:
-    image: linuxserver/transmission:4.0.4
+    image: linuxserver/transmission:4.0.6
     container_name: transmission
     environment:
       PUID: 1000
