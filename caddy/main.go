@@ -19,6 +19,7 @@ func main() {
 		"git":              "30026",
 		"go":               "go-playground.playground",
 		"harbor":           "30500",
+		"hoarder":          "30054",
 		"immich":           "30030",
 		"jellyfin":         "jellyfin.media",
 		"memos":            "30031",

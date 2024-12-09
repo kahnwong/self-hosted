@@ -12,6 +12,7 @@ locals {
     "excalidraw",
     "gist",
     "go",
+    "hoarder",
     "immich",
     "linkding",
     "memos",
