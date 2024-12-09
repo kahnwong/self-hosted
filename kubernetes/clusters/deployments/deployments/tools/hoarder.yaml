@@ -1,3 +1,4 @@
+# gemini ref: <https://github.com/hoarder-app/hoarder/discussions/453#discussioncomment-11359377>
 kind: Deployment
 name: hoarder
 replicaCount: 1
