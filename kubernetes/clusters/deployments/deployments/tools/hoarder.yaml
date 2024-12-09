@@ -13,6 +13,12 @@ containers:
         value: "http://hoarder-chrome.tools.svc.cluster.local:9222"
       - name: DATA_DIR
         value: "/data"
+      - name: DISABLE_SIGNUPS
+        value: "true"
+      - name: DISABLE_PASSWORD_AUTH
+        value: "true"
+      - name: OAUTH_ALLOW_DANGEROUS_EMAIL_ACCOUNT_LINKING
+        value: "true"
     envFrom:
       - secretRef:
           name: hoarder
