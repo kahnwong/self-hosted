@@ -13,14 +13,14 @@ All users - API Tokens:Edit
 
 | Name | Version |
 |------|---------|
-| cloudflare | ~> 4.47.0 |
+| cloudflare | ~> 4.48.0 |
 | sops | 1.1.1 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| cloudflare | 4.47.0 |
+| cloudflare | 4.48.0 |
 | sops | 1.1.1 |
 
 ## Modules
