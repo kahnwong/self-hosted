@@ -25,13 +25,13 @@ OpenID Configuration Issuer:  https://authentik.karnwong.me/application/o/$APP/
 
 | Name | Version |
 |------|---------|
-| authentik | 2024.8.4 |
+| authentik | 2024.12.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| authentik | 2024.8.4 |
+| authentik | 2024.12.0 |
 
 ## Modules
 
@@ -44,9 +44,10 @@ OpenID Configuration Issuer:  https://authentik.karnwong.me/application/o/$APP/
 
 | Name | Type |
 |------|------|
-| [authentik_outpost.proxy_outpost](https://registry.terraform.io/providers/goauthentik/authentik/2024.8.4/docs/resources/outpost) | resource |
-| [authentik_service_connection_kubernetes.local](https://registry.terraform.io/providers/goauthentik/authentik/2024.8.4/docs/resources/service_connection_kubernetes) | resource |
-| [authentik_flow.default-authorization-flow](https://registry.terraform.io/providers/goauthentik/authentik/2024.8.4/docs/data-sources/flow) | data source |
+| [authentik_outpost.proxy_outpost](https://registry.terraform.io/providers/goauthentik/authentik/2024.12.0/docs/resources/outpost) | resource |
+| [authentik_service_connection_kubernetes.local](https://registry.terraform.io/providers/goauthentik/authentik/2024.12.0/docs/resources/service_connection_kubernetes) | resource |
+| [authentik_flow.default-authorization-flow](https://registry.terraform.io/providers/goauthentik/authentik/2024.12.0/docs/data-sources/flow) | data source |
+| [authentik_flow.default-invalidation-flow](https://registry.terraform.io/providers/goauthentik/authentik/2024.12.0/docs/data-sources/flow) | data source |
 
 ## Inputs
 
