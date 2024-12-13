@@ -22,6 +22,7 @@ locals {
       "backup-wallabag-db",
       "ddns",
       "maintenance-backup-prune",
+      "maintenance-backup-wallabag-prune",
       "maintenance-wallabag-cleanup",
       "restart-livegrep",
       "water-cut-notify",
