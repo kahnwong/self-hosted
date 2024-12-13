@@ -15,15 +15,15 @@ locals {
       "backup-miniflux",
       "backup-navidrome",
       "backup-ntfy",
-      "backup-prune",
       "backup-syncthing",
       "backup-transmission",
       "backup-wakapi",
       "backup-wallabag-content",
       "backup-wallabag-db",
       "ddns",
+      "maintenance-backup-prune",
+      "maintenance-wallabag-cleanup",
       "restart-livegrep",
-      "wallabag-cleanup",
       "water-cut-notify",
     ]
 
