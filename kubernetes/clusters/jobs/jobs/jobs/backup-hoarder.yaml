@@ -1,0 +1,23 @@
+name: backup-hoarder
+schedule: "1 0 * * *"
+containers:
+  - name: backup-hoarder
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 6b34640
+    env:
+      - name: MODE
+        value: ARCHIVE
+      - name: SERVICE_NAME
+        value: hoarder
+      - name: BACKUP_PATH
+        value: /opt/hoarder
+    envFrom:
+      - secretRef:
+          name: backup
+    volumeMounts:
+      - name: hoarder
+        mountPath: /opt/hoarder
+volumes:
+  - name: hoarder
+    hostPath:
+      path: /opt/hoarder
