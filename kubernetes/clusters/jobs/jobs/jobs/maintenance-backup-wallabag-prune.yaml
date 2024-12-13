@@ -1,7 +1,7 @@
-name: backup-prune
+name: maintenance-backup-wallabag-prune
 schedule: "5 0 * * *"
 containers:
-  - name: backup-prune
+  - name: maintenance-backup-wallabag-prune
     repository: ghcr.io/kahnwong/docker-aws-backup
     tag: 4783b2e
     command: ["sh", "-c"]

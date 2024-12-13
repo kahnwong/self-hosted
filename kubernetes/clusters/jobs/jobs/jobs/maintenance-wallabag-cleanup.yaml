@@ -1,4 +1,4 @@
-name: wallabag-cleanup
+name: maintenance-wallabag-cleanup
 schedule: "3 0 * * *"
 serviceAccountName: sa-pod-exec
 containers:
