@@ -28,3 +28,13 @@ output "cloudflare_api_token_r2_ro" {
     }
   )
 }
+
+output "cloudflare_api_token_r2_send_rw" {
+  sensitive = true
+
+  value = tomap({
+    "access_key_id" : cloudflare_api_token.r2_send_rw.id,
+    "secret_access_key" : sha256(cloudflare_api_token.r2_send_rw.value),
+    }
+  )
+}

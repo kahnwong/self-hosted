@@ -38,6 +38,7 @@ All users - API Tokens:Edit
 | [cloudflare_api_token.deploy_cloudflare_pages](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/api_token) | resource |
 | [cloudflare_api_token.r2_backup](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/api_token) | resource |
 | [cloudflare_api_token.r2_ro](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/api_token) | resource |
+| [cloudflare_api_token.r2_send_rw](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/api_token) | resource |
 | [cloudflare_page_rule.redirect_www_to_root](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/page_rule) | resource |
 | [cloudflare_r2_bucket.this](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/r2_bucket) | resource |
 | [cloudflare_record.github_pages_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record) | resource |
@@ -69,4 +70,5 @@ All users - API Tokens:Edit
 | cloudflare\_api\_token\_deploy\_cloudflare\_pages | n/a |
 | cloudflare\_api\_token\_r2\_backup | n/a |
 | cloudflare\_api\_token\_r2\_ro | n/a |
+| cloudflare\_api\_token\_r2\_send\_rw | n/a |
 <!-- END_TF_DOCS -->

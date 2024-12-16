@@ -26,6 +26,7 @@ locals {
     "qa-api",
     "rustpad",
     "secrets",
+    "send",
     "slash",
     "thai-tech-cal",
     "wakapi",

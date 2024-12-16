@@ -24,6 +24,7 @@ locals {
     "mlflow",
     "notes",
     "podgrab",
+    "send",
     "t.console.notes",
   ])
 }

@@ -1,7 +1,7 @@
 data "cloudflare_api_token_permission_groups" "all" {}
 
 resource "cloudflare_api_token" "deploy_cloudflare_pages" {
-  name = "deploy_cloudflare_pages"
+  name = "deploy-cloudflare-pages"
 
   policy {
     permission_groups = [
@@ -14,7 +14,7 @@ resource "cloudflare_api_token" "deploy_cloudflare_pages" {
 }
 
 resource "cloudflare_api_token" "ddns_updater" {
-  name = "ddns_updater"
+  name = "ddns-updater"
 
   policy {
     permission_groups = [
@@ -27,7 +27,7 @@ resource "cloudflare_api_token" "ddns_updater" {
 }
 
 resource "cloudflare_api_token" "r2_backup" {
-  name = "r2_backup"
+  name = "r2-backup"
 
   policy {
     permission_groups = [
@@ -40,7 +40,7 @@ resource "cloudflare_api_token" "r2_backup" {
 }
 
 resource "cloudflare_api_token" "r2_ro" {
-  name = "r2_ro"
+  name = "r2-ro"
 
   policy {
     permission_groups = [
@@ -48,6 +48,19 @@ resource "cloudflare_api_token" "r2_ro" {
     ]
     resources = {
       "com.cloudflare.api.account.*" = "*"
+    }
+  }
+}
+
+resource "cloudflare_api_token" "r2_send_rw" {
+  name = "r2-send-rw"
+
+  policy {
+    permission_groups = [
+      data.cloudflare_api_token_permission_groups.all.r2["Workers R2 Storage Bucket Item Write"],
+    ]
+    resources = {
+      "com.cloudflare.edge.r2.bucket.${var.cloudflare_account_id}_default_send" = "*"
     }
   }
 }
