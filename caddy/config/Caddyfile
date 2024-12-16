@@ -86,6 +86,9 @@ share.karnwong.me {
         header_up Host picoshare.tools.example.com
     }
 }
+slash.karnwong.me {
+    reverse_proxy 192.168.1.36:30055
+}
 subsonic-widgets.karnwong.me {
     reverse_proxy 192.168.1.36:30038
 }

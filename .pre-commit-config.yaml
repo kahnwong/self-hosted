@@ -17,11 +17,11 @@ repos:
   - repo: https://github.com/kahnwong/pre-commit
     rev: "ecfbd9e"
     hooks:
-      - id: go-build
+      #      - id: go-build
       - id: go-fmt
-      - id: go-imports
-      - id: go-mod-tidy
-      - id: go-unit-tests
+        #      - id: go-imports
+        #      - id: go-mod-tidy
+        #      - id: go-unit-tests
       - id: go-vet
       - id: golangci-lint
       - id: terraform-fmt

@@ -33,6 +33,7 @@ func main() {
 		"rustpad":          "rustpad.tools",
 		"secrets":          "30025",
 		"share":            "picoshare.tools",
+		"slash":            "30055",
 		"subsonic-widgets": "30038",
 		"syncthing":        "8384",
 		"thai-tech-cal":    "thai-tech-cal.news",
