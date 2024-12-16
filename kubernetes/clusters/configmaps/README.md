@@ -7,14 +7,14 @@
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.6 |
-| kubernetes | 2.34.0 |
+| kubernetes | 2.35.0 |
 | sops | 1.1.1 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| kubernetes | 2.34.0 |
+| kubernetes | 2.35.0 |
 | sops | 1.1.1 |
 
 ## Modules
@@ -25,10 +25,10 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [kubernetes_config_map.configmaps](https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/config_map) | resource |
-| [kubernetes_config_map.livegrep-ignorelist](https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/config_map) | resource |
-| [kubernetes_config_map.plausible_clickhouse_config](https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/config_map) | resource |
-| [kubernetes_config_map.plausible_clickhouse_user_config](https://registry.terraform.io/providers/hashicorp/kubernetes/2.34.0/docs/resources/config_map) | resource |
+| [kubernetes_config_map.configmaps](https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/config_map) | resource |
+| [kubernetes_config_map.livegrep-ignorelist](https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/config_map) | resource |
+| [kubernetes_config_map.plausible_clickhouse_config](https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/config_map) | resource |
+| [kubernetes_config_map.plausible_clickhouse_user_config](https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/config_map) | resource |
 | [sops_file.configmaps](https://registry.terraform.io/providers/carlpett/sops/1.1.1/docs/data-sources/file) | data source |
 | [sops_file.livegrep-ignorelist](https://registry.terraform.io/providers/carlpett/sops/1.1.1/docs/data-sources/file) | data source |
 

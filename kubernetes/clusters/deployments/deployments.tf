@@ -46,6 +46,7 @@ locals {
       "linkding",
       "livegrep-backend", "livegrep-frontend",
       "memos",
+      "slash",
       "sshx",
       "supersecretmessage", "supersecretmessage-vault",
       "wakapi", "wakapi-postgres",
