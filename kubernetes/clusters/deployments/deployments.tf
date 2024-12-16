@@ -47,6 +47,7 @@ locals {
       "linkding",
       "livegrep-backend", "livegrep-frontend",
       "memos",
+      "send", "send-valkey",
       "slash",
       "sshx",
       "supersecretmessage", "supersecretmessage-vault",

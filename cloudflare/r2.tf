@@ -2,6 +2,7 @@ locals {
   r2_buckets = toset([
     "backup",
     "public",
+    "send",
     "wallabag",
   ])
 }
