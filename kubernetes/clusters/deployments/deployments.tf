@@ -41,6 +41,7 @@ locals {
       "plausible", "plausible-clickhouse", "plausible-postgres",
     ]
     tools = [
+      "beaverhabits",
       "hoarder", "hoarder-chrome", "hoarder-meilisearch",
       "homer",
       "linkding",
