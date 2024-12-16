@@ -35,6 +35,9 @@ go.karnwong.me {
         header_up Host go-playground.playground.example.com
     }
 }
+habits.karnwong.me {
+    reverse_proxy 192.168.1.36:30056
+}
 harbor.karnwong.me {
     reverse_proxy 192.168.1.36:30500
 }

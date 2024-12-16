@@ -18,6 +18,7 @@ func main() {
 		"gist":             "opengist.tools",
 		"git":              "30026",
 		"go":               "go-playground.playground",
+		"habits":           "30056",
 		"harbor":           "30500",
 		"hoarder":          "30054",
 		"immich":           "30030",
