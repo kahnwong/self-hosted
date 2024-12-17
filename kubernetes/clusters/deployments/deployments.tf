@@ -51,7 +51,7 @@ locals {
       "slash",
       "sshx",
       "supersecretmessage", "supersecretmessage-vault",
-      "teslamate-grafana", "teslamate-mosquitto", "teslamate-postgres",
+      "teslamate", "teslamate-grafana", "teslamate-mosquitto", "teslamate-postgres",
       "wakapi", "wakapi-postgres",
       #      "stirling-pdf",
     ]
