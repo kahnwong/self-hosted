@@ -41,14 +41,16 @@ func main() {
 		"wakapi":           "30041",
 	}
 	servicesForwardAuth := map[string]string{
-		"gatus":           "30029",
-		"homer":           "30053",
-		"linkding":        "30005",
-		"livegrep":        "30033",
-		"notes":           "30052",
-		"podgrab":         "30004",
-		"k.console.notes": "notes-console-k.notes",
-		"t.console.notes": "notes-console-t.notes",
+		"gatus":             "30029",
+		"grafana.teslamate": "30058",
+		"homer":             "30053",
+		"k.console.notes":   "notes-console-k.notes",
+		"linkding":          "30005",
+		"livegrep":          "30033",
+		"notes":             "30052",
+		"podgrab":           "30004",
+		"t.console.notes":   "notes-console-t.notes",
+		"teslamate":         "30059",
 	}
 
 	// generate config

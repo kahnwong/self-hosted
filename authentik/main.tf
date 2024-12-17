@@ -17,6 +17,7 @@ locals {
   )
   application_proxy = toset([
     "gatus",
+    "grafana.teslamate",
     "homer",
     "k.console.notes",
     "linkding",
@@ -26,6 +27,7 @@ locals {
     "podgrab",
     "send",
     "t.console.notes",
+    "teslamate",
   ])
 }
 

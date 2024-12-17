@@ -43,6 +43,7 @@ locals {
     "gatus",
     "git",
     "gitlab",
+    "grafana.teslamate",
     "harbor",
     "homer",
     "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
@@ -57,6 +58,7 @@ locals {
     "subsonic-widgets",
     "syncthing",
     "t.console.notes",
+    "teslamate",
     "wallabag",
   ]), var.private_dns)
 }
