@@ -37,6 +37,7 @@ locals {
     "books",
     "chat-with-table",
     "ci",
+    "cli.send",
     "console.minio",
     "files",
     "gatus",
