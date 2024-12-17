@@ -16,6 +16,7 @@ locals {
     }
   )
   application_proxy = toset([
+    "evcc",
     "gatus",
     "grafana.teslamate",
     "homer",

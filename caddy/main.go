@@ -41,6 +41,7 @@ func main() {
 		"wakapi":           "30041",
 	}
 	servicesForwardAuth := map[string]string{
+		"evcc":              "30060",
 		"gatus":             "30029",
 		"grafana.teslamate": "30058",
 		"homer":             "30053",

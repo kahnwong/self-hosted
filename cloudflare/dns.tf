@@ -10,6 +10,7 @@ locals {
   ])
   selfhosted_proxied = toset([
     "dagster",
+    "evcc",
     "excalidraw",
     "gist",
     "go",
