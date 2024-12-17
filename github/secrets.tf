@@ -19,6 +19,7 @@ locals {
   ])
 
   vercel_repos = toset([
+    "gitreceipt",
     "transform",
     "shouldideploy",
   ])

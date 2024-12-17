@@ -1,3 +1,13 @@
+resource "vercel_project" "gitreceipt" {
+  name = "gitreceipt"
+
+  framework = "nextjs"
+}
+resource "vercel_project_domain" "gitreceipt" {
+  project_id = vercel_project.gitreceipt.id
+  domain     = "gitreceipt.karnwong.me"
+}
+
 resource "vercel_project" "shouldideploytoday" {
   name = "shouldideploytoday"
 
