@@ -42,6 +42,7 @@ locals {
     ]
     tools = [
       "beaverhabits",
+      "evcc",
       "hoarder", "hoarder-chrome", "hoarder-meilisearch",
       "homer",
       "linkding",

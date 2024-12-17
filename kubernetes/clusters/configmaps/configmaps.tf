@@ -83,3 +83,20 @@ resource "kubernetes_config_map" "livegrep-ignorelist" {
 
   depends_on = [data.sops_file.livegrep-ignorelist]
 }
+
+# evcc
+data "sops_file" "evcc" {
+  source_file = "${path.module}/configmaps/evcc.sops.yaml"
+}
+resource "kubernetes_config_map" "evcc" {
+  metadata {
+    name      = "evcc"
+    namespace = "tools"
+  }
+
+  data = {
+    "evcc.yaml" = data.sops_file.evcc.raw
+  }
+
+  depends_on = [data.sops_file.evcc]
+}

@@ -1,0 +1,30 @@
+# ref: <https://docs.evcc.io/en/docs/installation/docker>
+kind: Deployment
+name: evcc
+replicaCount: 1
+containers:
+  - name: evcc
+    repository: evcc/evcc
+    tag: "latest"
+    port: 7070
+    volumeMounts:
+      - name: data
+        mountPath: /root/.evcc
+      - name: config
+        mountPath: /etc/evcc.yaml
+        readOnly: true
+        subPath: evcc.yaml
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/evcc/data
+  - name: config
+    configMap:
+      name: evcc
+      defaultMode: 420
+      items:
+        - key: evcc.yaml
+          path: evcc.yaml
+service:
+  port: 7070
+  nodePort: 30060
