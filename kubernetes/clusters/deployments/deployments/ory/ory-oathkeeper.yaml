@@ -1,11 +1,50 @@
+# ref: <https://github.com/ory/oathkeeper/blob/master/docker-compose.yml>
+# ref: <https://www.ory.sh/docs/oathkeeper/configure-deploy#cryptographic-keys>
 kind: Deployment
 name: ory-oathkeeper
 replicaCount: 1
 containers:
   - name: ory-oathkeeper
-    repository: ghcr.io/kahnwong/docker-excalidraw
+    repository: oryd/oathkeeper
     tag: latest
-    port: 3002
+    ports:
+      - name: proxy
+        containerPort: 4455
+      - name: api
+        containerPort: 4456
+    livenessProbeScheme: tcp
+    healthcheckPort: 4456
+    args: ["serve", "--config=/etc/config/oathkeeper/config.yaml"]
+    volumeMounts:
+      - name: rules
+        mountPath: /etc/config/oathkeeper/rules.json
+        readOnly: true
+        subPath: rules.json
+      - name: jwks
+        mountPath: /etc/config/oathkeeper/jwks.json
+        readOnly: true
+        subPath: jwks.json
+      - name: config
+        mountPath: /etc/config/oathkeeper/config.yaml
+        readOnly: true
+        subPath: config.yaml
+volumes:
+  - name: rules
+    configMap:
+      name: ory-oathkeeper-rules
+  - name: jwks
+    configMap:
+      name: ory-oathkeeper-jwks
+  - name: config
+    configMap:
+      name: ory-oathkeeper-config
 service:
-  port: 3002
-#  nodePort: 30038
+  ports:
+    - name: proxy
+      port: 4455
+      targetPort: 4455
+      nodePort: 30070
+    - name: api
+      port: 4456
+      targetPort: 4456
+      nodePort: 30071

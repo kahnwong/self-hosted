@@ -100,3 +100,42 @@ resource "kubernetes_config_map" "evcc" {
 
   depends_on = [data.sops_file.evcc]
 }
+
+# ory
+resource "kubernetes_config_map" "ory_oathkeeper_rules" {
+  metadata {
+    name      = "ory-oathkeeper-rules"
+    namespace = "ory"
+  }
+
+  data = {
+    "rules.json" = file("${path.module}/configmaps/ory.oathkeeper.rules.json")
+  }
+}
+
+data "sops_file" "ory_oathkeeper_jwks" {
+  source_file = "${path.module}/configmaps/ory.oathkeeper.jwks.sops.json"
+}
+resource "kubernetes_config_map" "ory_oathkeeper_jwks" {
+  metadata {
+    name      = "ory-oathkeeper-jwks"
+    namespace = "ory"
+  }
+
+  data = {
+    "jwks.json" = data.sops_file.ory_oathkeeper_jwks.raw
+  }
+
+  depends_on = [data.sops_file.ory_oathkeeper_jwks]
+}
+
+resource "kubernetes_config_map" "ory_oathkeeper_config" {
+  metadata {
+    name      = "ory-oathkeeper-config"
+    namespace = "ory"
+  }
+
+  data = {
+    "config.yaml" = file("${path.module}/configmaps/ory.oathkeeper.config.yaml")
+  }
+}

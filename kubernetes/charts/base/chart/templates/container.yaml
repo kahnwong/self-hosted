@@ -47,7 +47,7 @@ spec:
                 scheme: HTTP
               {{ else }}
               tcpSocket:
-                port: {{ .port }}
+                port: {{ .port | or .healthcheckPort }}
               {{ end }}
             securityContext: {{ toYaml .securityContext | default list | nindent 14 }}
             args: {{ .args | default list | toYaml | nindent 14 }}
