@@ -2,7 +2,7 @@ name: go-playground
 containers:
   - name: go-playground
     repository: x1unix/go-playground
-    tag: 2.2.1
+    tag: 2.4.0
     port: 8000
     env:
       - name: APP_CLEAN_INTERVAL
