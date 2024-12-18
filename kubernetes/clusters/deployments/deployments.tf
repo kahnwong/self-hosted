@@ -48,6 +48,7 @@ locals {
       "linkding",
       "livegrep-backend", "livegrep-frontend",
       "memos",
+      "microbin",
       "send", "send-valkey",
       "slash",
       "sshx",

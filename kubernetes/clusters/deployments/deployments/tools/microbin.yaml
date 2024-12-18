@@ -1,0 +1,37 @@
+kind: Deployment
+name: microbin
+replicaCount: 1
+containers:
+  - name: microbin
+    repository: danielszabo99/microbin
+    tag: latest
+    port: 8080
+    env:
+      - name: MICROBIN_PORT
+        value: "8080"
+      - name: MICROBIN_EDITABLE
+        value: "false"
+      - name: MICROBIN_HIGHLIGHTSYNTAX
+        value: "true"
+      - name: MICROBIN_PUBLIC_PATH
+        value: "https://microbin.karnwong.me"
+      - name: MICROBIN_SHOW_READ_STATS
+        value: "true"
+      - name: MICROBIN_ENABLE_BURN_AFTER
+        value: "true"
+      - name: MICROBIN_QR
+        value: "true"
+      - name: MICROBIN_ENCRYPTION_CLIENT_SIDE
+        value: "true"
+      - name: MICROBIN_ENCRYPTION_SERVER_SIDE
+        value: "true"
+    volumeMounts:
+      - name: data
+        mountPath: /app/microbin_data
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/microbin/data
+service:
+  port: 8080
+  nodePort: 30061
