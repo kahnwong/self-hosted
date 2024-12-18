@@ -11,6 +11,7 @@ locals {
     "media",
     "news",
     "notes",
+    "ory",
     "plausible",
     "playground",
     "tools",

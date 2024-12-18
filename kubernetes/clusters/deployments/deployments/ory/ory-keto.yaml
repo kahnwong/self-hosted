@@ -1,0 +1,11 @@
+kind: Deployment
+name: ory-keto
+replicaCount: 1
+containers:
+  - name: ory-keto
+    repository: ghcr.io/kahnwong/docker-excalidraw
+    tag: latest
+    port: 3002
+service:
+  port: 3002
+#  nodePort: 30038

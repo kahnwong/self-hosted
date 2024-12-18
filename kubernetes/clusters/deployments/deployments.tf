@@ -37,6 +37,9 @@ locals {
     notes = [
       "notes",
     ]
+    ory = [
+      "ory-keto", "ory-kratos", "ory-hydra", "ory-oathkeeper",
+    ]
     plausible = [
       "plausible", "plausible-clickhouse", "plausible-postgres",
     ]
