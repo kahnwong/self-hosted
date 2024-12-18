@@ -23,6 +23,7 @@ locals {
     "k.console.notes",
     "linkding",
     "livegrep",
+    "microbin",
     "mlflow",
     "notes",
     "podgrab",

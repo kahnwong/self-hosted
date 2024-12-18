@@ -19,6 +19,7 @@ locals {
     "immich",
     "linkding",
     "memos",
+    "microbin",
     "miniflux",
     "music",
     "ntfy",
