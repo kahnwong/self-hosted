@@ -3,7 +3,7 @@ schedule: "*/5 * * * *"
 containers:
   - name: ddns
     repository: favonia/cloudflare-ddns
-    tag: 1.14.2
+    tag: 1.15.1
     env:
       - name: UPDATE_CRON
         value: "@once"
