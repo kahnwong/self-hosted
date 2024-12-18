@@ -48,7 +48,6 @@ func main() {
 		"k.console.notes":   "notes-console-k.notes",
 		"linkding":          "30005",
 		"livegrep":          "30033",
-		"microbin":          "30061",
 		"notes":             "30052",
 		"podgrab":           "30004",
 		"t.console.notes":   "notes-console-t.notes",
