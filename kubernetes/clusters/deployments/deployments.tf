@@ -42,6 +42,7 @@ locals {
     ]
     tools = [
       "beaverhabits",
+      "excalidraw",
       "evcc",
       "hoarder", "hoarder-chrome", "hoarder-meilisearch",
       "homer",
@@ -75,7 +76,6 @@ locals {
       "go-playground",
     ]
     tools = [
-      "excalidraw",
       "opengist",
       "picoshare",
       "rustpad",
