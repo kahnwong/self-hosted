@@ -50,6 +50,7 @@ locals {
       "livegrep-backend", "livegrep-frontend",
       "memos",
       "microbin",
+      "picoshare",
       "send", "send-valkey",
       "slash",
       "sshx",
@@ -77,7 +78,6 @@ locals {
     ]
     tools = [
       "opengist",
-      "picoshare",
       "rustpad",
     ]
   })
