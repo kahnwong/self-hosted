@@ -74,6 +74,9 @@ plausible.karnwong.me {
 qa-api.karnwong.me {
     reverse_proxy 192.168.1.36:30043
 }
+rally.karnwong.me {
+    reverse_proxy 192.168.1.36:30035
+}
 rustpad.karnwong.me {
     reverse_proxy 192.168.1.36:31080 {
         header_up Host rustpad.tools.example.com

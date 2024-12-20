@@ -27,6 +27,7 @@ locals {
     "plausible",
     "pmtiles",
     "qa-api",
+    "rally",
     "rustpad",
     "secrets",
     "send",

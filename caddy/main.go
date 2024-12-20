@@ -31,6 +31,7 @@ func main() {
 		"pdf":              "30040",
 		"plausible":        "30044",
 		"qa-api":           "30043",
+		"rally":            "30035",
 		"rustpad":          "rustpad.tools",
 		"secrets":          "30025",
 		"share":            "30032",
