@@ -1,11 +1,10 @@
-# This file is maintained automatically by "terraform init".
+# This file is maintained automatically by "tofu init".
 # Manual edits may be lost in future updates.
 
-provider "registry.terraform.io/carlpett/sops" {
+provider "registry.opentofu.org/carlpett/sops" {
   version     = "1.1.1"
   constraints = "1.1.1"
   hashes = [
-    "h1:0lv+4VCaIRTkBAMXmCxSJC1dsYPuoyBAvnrLsofcseA=",
     "h1:hqyownSt8teS7g0+XDOxmAtuAHB5kDNQkW1voBhLmZU=",
     "zh:175ec198e1b4d1cad1ae559ebe8cdf574617805010c22dfb8af93a2057ba8332",
     "zh:2b550b2372f71408e7b47b099f314d981bbb82b263cb55248a36a9af8afd44a1",
@@ -17,24 +16,11 @@ provider "registry.terraform.io/carlpett/sops" {
   ]
 }
 
-provider "registry.terraform.io/cloudflare/cloudflare" {
+provider "registry.opentofu.org/cloudflare/cloudflare" {
   version     = "4.48.0"
-  constraints = "4.47.0, ~> 4.48.0"
+  constraints = "4.48.0, ~> 4.48.0"
   hashes = [
-    "h1:0IKUOR32xEI1suS5QCOjfxjQ2mRd058btXk8hVnaOJ4=",
-    "h1:3YG6vu/bFPcYOeLdSUZhiAWiWKaFlOAR34z2o8cbE9k=",
-    "h1:FvGy06/i9AMtVkSIUnCrXNv5xF6jqBqMH8oPVLyeeAg=",
-    "h1:GXH7nIF0ocMqebbA41+fSGIYfM+VAM/PvTe7fJr8UrQ=",
-    "h1:H0ll0ph4404vFE868W3qJ3zhOyy4jbXrOMtdkViEZsU=",
-    "h1:SX42e3k73IcFcrQlZ2e/Veqt2tvCMy6fwlo5yNUktCE=",
-    "h1:Uu/gjBc99GefdPdSrlBwU75DWU0ZcwGcrd3ZFyTeL0s=",
-    "h1:VZw0uN41PWRmNlhg7Ze0Eh7cdoklX1oZbfNAXNYnU1I=",
-    "h1:cMdV7ql6PsFa4qtb0EoZSctvTaTqV7yplBSDwcLRCLc=",
     "h1:ePGvSurmlqOCkD761vkhRmz7bsK36/EnIvx2Xy8TdXo=",
-    "h1:fOYufF+1bzw2N3aHLpkLB6E8VbZ4ysXDODYQOlwhwd4=",
-    "h1:qe8RbnWq0T4xhqjn9QcbO6YW5YDx47P+eJ0NUMIfwCc=",
-    "h1:tRD2av6PafHDP/b9jDQsG5/aX+lHeKxpbIEHYYLBVUc=",
-    "h1:zyl6Gvx/CFpwYW8pFFDesfO8Lxv+a6CopyAsIMhp54s=",
     "zh:04c0a49c2b23140b2f21cfd0d52f9798d70d3bdae3831613e156aabe519bbc6c",
     "zh:185f21b4834ba63e8df1f84aa34639d8a7e126429a4007bb5f9ad82f2602a997",
     "zh:234724f52cb4c0c3f7313d3b2697caef26d921d134f26ae14801e7afac522f7b",
