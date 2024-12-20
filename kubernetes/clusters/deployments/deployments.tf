@@ -51,6 +51,7 @@ locals {
       "memos",
       "microbin",
       "picoshare",
+      "rally", "rally-postgres",
       "send", "send-valkey",
       "slash",
       "sshx",

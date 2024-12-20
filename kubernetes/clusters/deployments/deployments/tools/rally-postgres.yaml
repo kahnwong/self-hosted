@@ -1,0 +1,21 @@
+kind: StatefulSet
+name: rally-postgres
+replicaCount: 1
+containers:
+  - name: postgres
+    repository: postgres
+    tag: 14.2
+    port: 5432
+    livenessProbeScheme: tcp
+    envFrom:
+      - secretRef:
+          name: rally-postgres
+    volumeMounts:
+      - name: data
+        mountPath: /var/lib/postgresql/data
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/rally/db
+service:
+  port: 5432
