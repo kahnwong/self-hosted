@@ -1,0 +1,23 @@
+name: backup-beaverhabits
+schedule: "1 0 * * *"
+containers:
+  - name: backup-beaverhabits
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 6b34640
+    env:
+      - name: MODE
+        value: ARCHIVE
+      - name: SERVICE_NAME
+        value: beaverhabits
+      - name: BACKUP_PATH
+        value: /opt/beaverhabits
+    envFrom:
+      - secretRef:
+          name: backup
+    volumeMounts:
+      - name: beaverhabits
+        mountPath: /opt/beaverhabits
+volumes:
+  - name: beaverhabits
+    hostPath:
+      path: /opt/beaverhabits
