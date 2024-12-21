@@ -17,6 +17,7 @@ locals {
       "forgejo-postgres",
       "immich-postgres",
       "miniflux-postgres",
+      "rally-postgres",
       "wakapi-postgres",
       "wallabag",
     ]

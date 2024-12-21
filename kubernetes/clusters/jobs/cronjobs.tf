@@ -17,6 +17,7 @@ locals {
       "backup-miniflux",
       "backup-navidrome",
       "backup-ntfy",
+      "backup-rally",
       "backup-slash",
       "backup-syncthing",
       "backup-transmission",
