@@ -1,0 +1,23 @@
+name: backup-slash
+schedule: "1 0 * * *"
+containers:
+  - name: backup-slash
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 6b34640
+    env:
+      - name: MODE
+        value: ARCHIVE
+      - name: SERVICE_NAME
+        value: slash
+      - name: BACKUP_PATH
+        value: /opt/slash
+    envFrom:
+      - secretRef:
+          name: backup
+    volumeMounts:
+      - name: slash
+        mountPath: /opt/slash
+volumes:
+  - name: slash
+    hostPath:
+      path: /opt/slash
