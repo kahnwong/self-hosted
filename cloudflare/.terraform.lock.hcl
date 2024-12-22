@@ -5,6 +5,7 @@ provider "registry.opentofu.org/carlpett/sops" {
   version     = "1.1.1"
   constraints = "1.1.1"
   hashes = [
+    "h1:0lv+4VCaIRTkBAMXmCxSJC1dsYPuoyBAvnrLsofcseA=",
     "h1:hqyownSt8teS7g0+XDOxmAtuAHB5kDNQkW1voBhLmZU=",
     "zh:175ec198e1b4d1cad1ae559ebe8cdf574617805010c22dfb8af93a2057ba8332",
     "zh:2b550b2372f71408e7b47b099f314d981bbb82b263cb55248a36a9af8afd44a1",
@@ -20,6 +21,7 @@ provider "registry.opentofu.org/cloudflare/cloudflare" {
   version     = "4.48.0"
   constraints = "4.48.0, ~> 4.48.0"
   hashes = [
+    "h1:SX42e3k73IcFcrQlZ2e/Veqt2tvCMy6fwlo5yNUktCE=",
     "h1:ePGvSurmlqOCkD761vkhRmz7bsK36/EnIvx2Xy8TdXo=",
     "zh:04c0a49c2b23140b2f21cfd0d52f9798d70d3bdae3831613e156aabe519bbc6c",
     "zh:185f21b4834ba63e8df1f84aa34639d8a7e126429a4007bb5f9ad82f2602a997",

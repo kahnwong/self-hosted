@@ -9,6 +9,7 @@ locals {
     "shouldideploytoday",
   ])
   selfhosted_proxied = toset([
+    "*",
     "dagster",
     "evcc",
     "excalidraw",
