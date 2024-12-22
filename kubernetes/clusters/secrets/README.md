@@ -7,14 +7,14 @@
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.6 |
-| kubernetes | 2.35.0 |
+| kubernetes | 2.35.1 |
 | sops | 1.1.1 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| kubernetes | 2.35.0 |
+| kubernetes | 2.35.1 |
 | sops | 1.1.1 |
 
 ## Modules
@@ -25,7 +25,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [kubernetes_secret.secrets](https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.0/docs/resources/secret) | resource |
+| [kubernetes_secret.secrets](https://registry.terraform.io/providers/hashicorp/kubernetes/2.35.1/docs/resources/secret) | resource |
 | [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.1.1/docs/data-sources/file) | data source |
 
 ## Inputs

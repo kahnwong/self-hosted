@@ -7,15 +7,15 @@
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.6 |
-| helm | 2.16.1 |
-| kubernetes | 2.35.0 |
+| helm | 2.17.0 |
+| kubernetes | 2.35.1 |
 | sops | 1.1.1 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| helm | 2.16.1 |
+| helm | 2.17.0 |
 
 ## Modules
 
@@ -25,7 +25,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [helm_release.this](https://registry.terraform.io/providers/hashicorp/helm/2.16.1/docs/resources/release) | resource |
+| [helm_release.this](https://registry.terraform.io/providers/hashicorp/helm/2.17.0/docs/resources/release) | resource |
 
 ## Inputs
 
