@@ -50,5 +50,7 @@ gitlab.karnwong.me {
     }
 }
 *.karnwong.me {
-    reverse_proxy http://192.168.1.36:30039/404.html
+    reverse_proxy http://192.168.1.36:30039 {
+        header_up X-Code 404
+    }
 }
