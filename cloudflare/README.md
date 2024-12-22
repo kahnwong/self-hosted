@@ -34,6 +34,7 @@ All users - API Tokens:Edit
 
 | Name | Type |
 |------|------|
+| [cloudflare_api_token.caddy_wildcard_tls](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/api_token) | resource |
 | [cloudflare_api_token.ddns_updater](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/api_token) | resource |
 | [cloudflare_api_token.deploy_cloudflare_pages](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/api_token) | resource |
 | [cloudflare_api_token.r2_backup](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/api_token) | resource |
@@ -67,6 +68,7 @@ All users - API Tokens:Edit
 
 | Name | Description |
 |------|-------------|
+| cloudflare\_api\_token\_caddy\_wildcard\_tls | n/a |
 | cloudflare\_api\_token\_ddns\_updater | n/a |
 | cloudflare\_api\_token\_deploy\_cloudflare\_pages | n/a |
 | cloudflare\_api\_token\_r2\_backup | n/a |

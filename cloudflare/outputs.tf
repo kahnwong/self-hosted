@@ -38,3 +38,8 @@ output "cloudflare_api_token_r2_send_rw" {
     }
   )
 }
+
+output "cloudflare_api_token_caddy_wildcard_tls" {
+  sensitive = true
+  value     = cloudflare_api_token.caddy_wildcard_tls.value
+}

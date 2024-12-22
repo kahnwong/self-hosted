@@ -64,3 +64,17 @@ resource "cloudflare_api_token" "r2_send_rw" {
     }
   }
 }
+
+resource "cloudflare_api_token" "caddy_wildcard_tls" {
+  name = "caddy-wildcard-tls"
+
+  policy {
+    permission_groups = [
+      data.cloudflare_api_token_permission_groups.all.zone["Zone Read"],
+      data.cloudflare_api_token_permission_groups.all.zone["DNS Write"],
+    ]
+    resources = {
+      "com.cloudflare.api.account.*" = "*"
+    }
+  }
+}
