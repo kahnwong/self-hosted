@@ -1,0 +1,14 @@
+kind: Deployment
+name: error-pages
+replicaCount: 1
+containers:
+  - name: error-pages
+    repository: tarampampam/error-pages
+    tag: latest
+    port: 8080
+    env:
+      - name: TEMPLATE_NAME
+        value: l7
+service:
+  port: 8080
+  nodePort: 30039
