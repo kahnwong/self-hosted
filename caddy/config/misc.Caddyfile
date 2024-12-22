@@ -8,36 +8,6 @@ wallabag.karnwong.me {
         }
     }
 }
-(cors) {
-  @cors_preflight method OPTIONS
-  @cors header Origin {args.0}
-
-  handle @cors_preflight {
-    header Access-Control-Allow-Origin "{args.0}"
-    header Access-Control-Allow-Methods "GET, POST, PUT, PATCH, DELETE, HEAD"
-    header Access-Control-Allow-Headers "Range,If-Match"
-    header Access-Control-Max-Age "3600"
-    respond "" 204
-  }
-
-  handle @cors {
-    header Access-Control-Allow-Origin "{args.0}"
-    header Access-Control-Expose-Headers "ETag"
-  }
-}
-pmtiles.karnwong.me {
-    root * /opt/pmtiles
-    file_server
-
-    import cors https://maps.karnwong.me
-}
-proxmox.karnwong.me {
-    reverse_proxy 192.168.1.70:8006 {
-        transport http {
-           tls_insecure_skip_verify
-        }
-    }
-}
 files.karnwong.me {
     root * /opt/files
     file_server browse
