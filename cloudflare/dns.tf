@@ -46,6 +46,7 @@ locals {
     "git",
     "grafana.teslamate",
     "harbor",
+    "headscale",
     "homer",
     "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
     "k.console.notes",
