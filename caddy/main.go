@@ -12,7 +12,6 @@ func main() {
 		"audiobookshelf":   "audiobookshelf.media",
 		"authentik":        "30047",
 		"books":            "calibre-web.media",
-		"ci":               "32442",
 		"console.minio":    "30021",
 		"excalidraw":       "30034",
 		"gist":             "opengist.tools",

@@ -10,7 +10,6 @@ locals {
   ])
   selfhosted_proxied = toset([
     "*",
-    "dagster",
     "evcc",
     "excalidraw",
     "gist",
@@ -40,14 +39,11 @@ locals {
     "audiobookshelf",
     "authentik",
     "books",
-    "chat-with-table",
-    "ci",
     "cli.send",
     "console.minio",
     "files",
     "gatus",
     "git",
-    "gitlab",
     "grafana.teslamate",
     "harbor",
     "homer",
@@ -58,7 +54,6 @@ locals {
     "mlflow",
     "notes",
     "podgrab",
-    "proxmox",
     "share", # prevent request entity too large
     "subsonic-widgets",
     "syncthing",
