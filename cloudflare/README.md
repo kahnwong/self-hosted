@@ -28,6 +28,7 @@ All users - API Tokens:Edit
 | Name | Source | Version |
 |------|--------|---------|
 | karnwong\_me | ./modules/cloudflare-pages | n/a |
+| karnwong\_me\_dev | ./modules/cloudflare-pages | n/a |
 | pages | ./modules/cloudflare-pages | n/a |
 
 ## Resources

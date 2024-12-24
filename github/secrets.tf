@@ -11,6 +11,7 @@ locals {
     "h3-viewer",
     "jupyterlite",
     "karnwong.me",
+    "karnwong-me-v3",
     "monkeytype",
     "python-playground",
     "retriever",
