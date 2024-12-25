@@ -1,5 +1,7 @@
 # Headscale
 
+Config is stored at `/etc/headscale/config.yaml`
+
 ## Usage
 
 ```bash
