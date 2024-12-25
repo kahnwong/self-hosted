@@ -1,5 +1,6 @@
 data "cloudflare_api_token_permission_groups" "all" {}
 
+# -------------------- Cloudflare Pages --------------------
 resource "cloudflare_api_token" "deploy_cloudflare_pages" {
   name = "deploy-cloudflare-pages"
 
@@ -13,6 +14,7 @@ resource "cloudflare_api_token" "deploy_cloudflare_pages" {
   }
 }
 
+# -------------------- DNS --------------------
 resource "cloudflare_api_token" "ddns_updater" {
   name = "ddns-updater"
 
@@ -26,6 +28,21 @@ resource "cloudflare_api_token" "ddns_updater" {
   }
 }
 
+resource "cloudflare_api_token" "caddy_wildcard_tls" {
+  name = "caddy-wildcard-tls"
+
+  policy {
+    permission_groups = [
+      data.cloudflare_api_token_permission_groups.all.zone["Zone Read"],
+      data.cloudflare_api_token_permission_groups.all.zone["DNS Write"],
+    ]
+    resources = {
+      "com.cloudflare.api.account.*" = "*"
+    }
+  }
+}
+
+# -------------------- R2 --------------------
 resource "cloudflare_api_token" "r2_backup" {
   name = "r2-backup"
 
@@ -61,20 +78,6 @@ resource "cloudflare_api_token" "r2_send_rw" {
     ]
     resources = {
       "com.cloudflare.edge.r2.bucket.${var.cloudflare_account_id}_default_send" = "*"
-    }
-  }
-}
-
-resource "cloudflare_api_token" "caddy_wildcard_tls" {
-  name = "caddy-wildcard-tls"
-
-  policy {
-    permission_groups = [
-      data.cloudflare_api_token_permission_groups.all.zone["Zone Read"],
-      data.cloudflare_api_token_permission_groups.all.zone["DNS Write"],
-    ]
-    resources = {
-      "com.cloudflare.api.account.*" = "*"
     }
   }
 }
