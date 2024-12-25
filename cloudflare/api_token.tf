@@ -81,3 +81,16 @@ resource "cloudflare_api_token" "r2_send_rw" {
     }
   }
 }
+
+resource "cloudflare_api_token" "r2_restic_rw" {
+  name = "r2-restic-rw"
+
+  policy {
+    permission_groups = [
+      data.cloudflare_api_token_permission_groups.all.r2["Workers R2 Storage Bucket Item Write"],
+    ]
+    resources = {
+      "com.cloudflare.edge.r2.bucket.${var.cloudflare_account_id}_default_restic" = "*"
+    }
+  }
+}

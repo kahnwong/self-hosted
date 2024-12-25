@@ -43,3 +43,13 @@ output "cloudflare_api_token_caddy_wildcard_tls" {
   sensitive = true
   value     = cloudflare_api_token.caddy_wildcard_tls.value
 }
+
+output "cloudflare_api_token_r2_restic_rw" {
+  sensitive = true
+
+  value = tomap({
+    "access_key_id" : cloudflare_api_token.r2_restic_rw.id,
+    "secret_access_key" : sha256(cloudflare_api_token.r2_restic_rw.value),
+    }
+  )
+}
