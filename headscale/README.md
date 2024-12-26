@@ -2,6 +2,10 @@
 
 Config is stored at `/etc/headscale/config.yaml`
 
+## Install
+
+<https://headscale.net/stable/setup/install/official/>
+
 ## Usage
 
 ```bash
