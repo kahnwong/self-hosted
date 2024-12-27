@@ -25,7 +25,7 @@ services:
     volumes:
       - /opt/authentik/redis:/data
   server:
-    image: ghcr.io/goauthentik/server:2024.10.5
+    image: ghcr.io/goauthentik/server:2024.12.1
     restart: unless-stopped
     command: server
     environment:
@@ -44,7 +44,7 @@ services:
       valkey:
         condition: service_healthy
   worker:
-    image: ghcr.io/goauthentik/server:2024.10.5
+    image: ghcr.io/goauthentik/server:2024.12.1
     restart: unless-stopped
     command: worker
     environment:
