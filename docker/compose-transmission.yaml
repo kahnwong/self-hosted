@@ -1,6 +1,4 @@
----
 version: '3.7'
-
 services:
   transmission:
     image: linuxserver/transmission:4.0.6
@@ -27,7 +25,6 @@ services:
           memory: 2G
     networks:
       - transmission
-
 networks:
   transmission:
     driver: bridge
