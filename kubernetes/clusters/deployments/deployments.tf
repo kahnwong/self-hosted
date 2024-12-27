@@ -79,7 +79,7 @@ locals {
       "go-playground",
     ]
     tools = [
-      "opengist",
+      #       "opengist",
       "rustpad",
     ]
   })
