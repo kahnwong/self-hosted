@@ -9,26 +9,12 @@ foo.yaml
 bar.yaml
 baz.yaml
 
-# python
-**/.ipynb_checkpoints/
-**/__pycache__
-
-
-# env
-.env
-.transmission.env
-
-.duckdns.env
-
 *.plaintext.yaml
 **/*-exporter/values.yaml
 **/grafana*/**/configmap.yaml
 **/grafana-agent-operator/values.yaml
 all.Caddyfile
 private.Caddyfile
-
-# files
-*.html
 
 # terraform
 **/.terraform

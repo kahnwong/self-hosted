@@ -18,7 +18,8 @@ services:
       - 51413:51413
       - 51413:51413/udp
     restart: always
-    env_file: .transmission.env
+    env_file:
+      - .transmission.env
     deploy:
       resources:
         limits:
