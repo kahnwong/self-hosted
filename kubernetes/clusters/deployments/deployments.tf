@@ -16,7 +16,6 @@ locals {
     bots      = ["qa-api"]
     default = [
       "subsonic-widgets",
-      "foo", "baz"
     ]
     immich = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
     infrastructure = [
@@ -86,6 +85,10 @@ locals {
       "rustpad",
     ]
   })
+  deployments_misc = toset([
+    "foo",
+    # "bar", "baz"
+  ])
 }
 
 locals {
@@ -219,3 +222,21 @@ resource "helm_release" "authentik" {
 #     file("./deployments/woodpecker/woodpecker.yaml"),
 #   ]
 # }
+
+# ------ misc ------ #
+data "sops_file" "misc" {
+  for_each    = local.deployments_misc
+  source_file = "${path.module}/deployments/default/${each.key}.sops.yaml"
+}
+resource "helm_release" "misc" {
+  for_each   = local.deployments_misc
+  name       = each.key
+  namespace  = "default"
+  repository = "oci://ghcr.io/kahnwong/charts"
+  version    = "0.2.0"
+  chart      = "base"
+
+  values = [
+    data.sops_file.misc[each.key].raw
+  ]
+}
