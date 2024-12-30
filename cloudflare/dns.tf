@@ -33,6 +33,7 @@ locals {
     "send",
     "slash",
     "thai-tech-cal",
+    "umami",
     "wakapi",
   ])
   selfhosted_non_proxied = setunion(toset([

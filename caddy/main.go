@@ -35,6 +35,7 @@ func main() {
 		"secrets":          "30025",
 		"share":            "30032",
 		"slash":            "30055",
+		"umami":            "30062",
 		"subsonic-widgets": "30038",
 		"syncthing":        "8384",
 		"thai-tech-cal":    "thai-tech-cal.news",
