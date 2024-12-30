@@ -6,7 +6,7 @@ replicaCount: 1
 containers:
   - name: homer
     repository: b4bz/homer
-    tag: "latest"
+    tag: v24.12.1
     port: 8080
     env:
       - name: PUID

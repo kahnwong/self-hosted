@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: microbin
     repository: danielszabo99/microbin
-    tag: latest
+    tag: 2.0.4
     port: 8080
     env:
       - name: MICROBIN_PORT
