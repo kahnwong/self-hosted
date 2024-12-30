@@ -1,0 +1,14 @@
+kind: Deployment
+name: umami
+replicaCount: 1
+containers:
+  - name: umami
+    repository: ghcr.io/umami-software/umami
+    tag: postgresql-latest
+    port: 3000
+    envFrom:
+      - secretRef:
+          name: umami
+service:
+  port: 3000
+  nodePort: 30062

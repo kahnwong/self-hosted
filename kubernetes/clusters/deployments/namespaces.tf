@@ -14,6 +14,7 @@ locals {
     "plausible",
     "playground",
     "tools",
+    "umami",
   ])
 }
 

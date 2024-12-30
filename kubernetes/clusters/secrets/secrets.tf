@@ -11,6 +11,7 @@ locals {
     ]
     notes     = ["notes-sync"]
     plausible = ["plausible", "plausible-postgres"]
+    umami     = ["umami", "umami-postgres"],
     jobs = [
       "backup", "ddns", "water-cut-notify",
       "authentik-postgres",
@@ -18,6 +19,7 @@ locals {
       "immich-postgres",
       "miniflux-postgres",
       "rally-postgres",
+      "umami-postgres",
       "wakapi-postgres",
       "wallabag",
     ]

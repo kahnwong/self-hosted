@@ -1,0 +1,21 @@
+kind: StatefulSet
+name: umami-postgres
+replicaCount: 1
+containers:
+  - name: postgres
+    repository: postgres
+    tag: 17.2-alpine
+    port: 5432
+    livenessProbeScheme: tcp
+    envFrom:
+      - secretRef:
+          name: umami-postgres
+    volumeMounts:
+      - name: db
+        mountPath: /var/lib/postgresql/data
+volumes:
+  - name: db
+    hostPath:
+      path: /opt/umami/db
+service:
+  port: 5432

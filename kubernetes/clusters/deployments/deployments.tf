@@ -41,6 +41,9 @@ locals {
     plausible = [
       "plausible", "plausible-clickhouse", "plausible-postgres",
     ]
+    umami = [
+      # "umami-postgres",
+    ]
     tools = [
       "beaverhabits",
       "excalidraw",
