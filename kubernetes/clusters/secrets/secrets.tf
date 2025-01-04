@@ -9,9 +9,8 @@ locals {
       "miniflux", "miniflux-postgres",
       "wallabag", "wallabag-postgres", "wallabag-redis"
     ]
-    notes     = ["notes-sync"]
-    plausible = ["plausible", "plausible-postgres"]
-    umami     = ["umami", "umami-postgres"],
+    notes = ["notes-sync"]
+    umami = ["umami", "umami-postgres"],
     jobs = [
       "backup", "ddns", "water-cut-notify",
       "authentik-postgres",

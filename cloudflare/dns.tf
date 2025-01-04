@@ -24,7 +24,6 @@ locals {
     "music",
     "ntfy",
     "pdf",
-    "plausible",
     "pmtiles",
     "qa-api",
     "rally",

@@ -65,9 +65,6 @@ ntfy.karnwong.me {
 pdf.karnwong.me {
     reverse_proxy 192.168.1.36:30040
 }
-plausible.karnwong.me {
-    reverse_proxy 192.168.1.36:30044
-}
 qa-api.karnwong.me {
     reverse_proxy 192.168.1.36:30043
 }

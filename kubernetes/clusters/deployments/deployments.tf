@@ -37,9 +37,6 @@ locals {
     notes = [
       "notes",
     ]
-    plausible = [
-      "plausible", "plausible-clickhouse", "plausible-postgres",
-    ]
     umami = [
       # "umami-postgres",
     ]

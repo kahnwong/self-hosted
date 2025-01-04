@@ -11,7 +11,6 @@ locals {
     "media",
     "news",
     "notes",
-    "plausible",
     "playground",
     "tools",
     "umami",

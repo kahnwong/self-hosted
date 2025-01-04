@@ -28,7 +28,6 @@ func main() {
 		"music":            "30006",
 		"ntfy":             "30022",
 		"pdf":              "30040",
-		"plausible":        "30044",
 		"qa-api":           "30043",
 		"rally":            "30035",
 		"rustpad":          "rustpad.tools",

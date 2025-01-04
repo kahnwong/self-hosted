@@ -1,8 +1,6 @@
----
 kind: Deployment
 name: plausible
 replicaCount: 1
-
 containers:
   - name: plausible
     repository: ghcr.io/plausible/community-edition
