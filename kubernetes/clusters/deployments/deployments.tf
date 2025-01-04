@@ -38,7 +38,7 @@ locals {
       "notes",
     ]
     umami = [
-      # "umami-postgres",
+      "umami", "umami-postgres",
     ]
     tools = [
       "beaverhabits",
