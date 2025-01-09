@@ -5,13 +5,13 @@
 
 | Name | Version |
 |------|---------|
-| cloudflare | 4.49.1 |
+| cloudflare | 4.50.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| cloudflare | 4.49.1 |
+| cloudflare | 4.50.0 |
 
 ## Modules
 
@@ -21,9 +21,9 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [cloudflare_pages_domain.this](https://registry.terraform.io/providers/cloudflare/cloudflare/4.49.1/docs/resources/pages_domain) | resource |
-| [cloudflare_pages_project.this](https://registry.terraform.io/providers/cloudflare/cloudflare/4.49.1/docs/resources/pages_project) | resource |
-| [cloudflare_record.this](https://registry.terraform.io/providers/cloudflare/cloudflare/4.49.1/docs/resources/record) | resource |
+| [cloudflare_pages_domain.this](https://registry.terraform.io/providers/cloudflare/cloudflare/4.50.0/docs/resources/pages_domain) | resource |
+| [cloudflare_pages_project.this](https://registry.terraform.io/providers/cloudflare/cloudflare/4.50.0/docs/resources/pages_project) | resource |
+| [cloudflare_record.this](https://registry.terraform.io/providers/cloudflare/cloudflare/4.50.0/docs/resources/record) | resource |
 
 ## Inputs
 
