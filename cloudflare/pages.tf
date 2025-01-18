@@ -2,6 +2,7 @@ locals {
   pages = toset([
     "calculator",
     "docs",
+    "excalidraw",
     "food-picker",
     "h3-viewer",
     "jupyterlite",
