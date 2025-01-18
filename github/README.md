@@ -13,7 +13,7 @@
 
 | Name | Version |
 |------|---------|
-| github | 6.4.0 |
+| github | 6.5.0 |
 | sops | 1.1.1 |
 
 ## Modules

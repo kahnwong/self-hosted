@@ -16,6 +16,7 @@ locals {
     "python-playground",
     "retriever",
     "slc",
+    "tldraw",
     "whattheduck",
   ])
 

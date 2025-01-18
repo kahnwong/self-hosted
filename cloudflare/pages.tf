@@ -10,6 +10,7 @@ locals {
     "python",
     "retriever",
     "slc",
+    "tldraw",
     "whattheduck",
   ])
 }
