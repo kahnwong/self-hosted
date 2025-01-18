@@ -2,7 +2,7 @@ name: rustpad
 containers:
   - name: rustpad
     repository: ghcr.io/kahnwong/rustpad
-    tag: 6d82a68
+    tag: 414e832
     port: 3030
 service:
   port: 3030
