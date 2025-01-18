@@ -26,6 +26,7 @@ locals {
       "backup-wallabag-content",
       "backup-wallabag-db",
       "ddns",
+      "maintenance-backup-forgejo-prune",
       "maintenance-backup-prune",
       "maintenance-backup-wallabag-prune",
       "maintenance-wallabag-cleanup",
