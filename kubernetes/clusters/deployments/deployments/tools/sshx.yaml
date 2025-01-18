@@ -1,12 +1,10 @@
----
 kind: Deployment
 name: sshx
 replicaCount: 1
-
 containers:
   - name: sshx
     repository: ghcr.io/kahnwong/sshx
-    tag: 80b076d
+    tag: e1b5ab9
     port: 8051
 service:
   port: 8051
