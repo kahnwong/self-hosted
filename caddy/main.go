@@ -13,7 +13,6 @@ func main() {
 		"authentik":        "30047",
 		"books":            "calibre-web.media",
 		"console.minio":    "30021",
-		"excalidraw":       "30034",
 		"gist":             "opengist.tools",
 		"git":              "30026",
 		"go":               "go-playground.playground",

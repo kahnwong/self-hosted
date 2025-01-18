@@ -14,9 +14,6 @@ books.karnwong.me {
 console.minio.karnwong.me {
     reverse_proxy 192.168.1.36:30021
 }
-excalidraw.karnwong.me {
-    reverse_proxy 192.168.1.36:30034
-}
 gist.karnwong.me {
     reverse_proxy 192.168.1.36:31080 {
         header_up Host opengist.tools.example.com
