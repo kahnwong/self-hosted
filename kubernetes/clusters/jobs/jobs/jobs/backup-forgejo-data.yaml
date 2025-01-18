@@ -1,7 +1,7 @@
 name: backup-forgejo-data
 schedule: "0 22 1 * *"
 containers:
-  - name: backup-forgejo
+  - name: backup-forgejo-data
     repository: ghcr.io/kahnwong/docker-aws-backup
     tag: 7a5b35c
     env:
@@ -12,7 +12,7 @@ containers:
       - name: BACKUP_PATH
         value: /opt/forgejo/data
       - name: BUCKET_NAME
-        value: forgejo
+        value: backup-monthly
     envFrom:
       - secretRef:
           name: backup

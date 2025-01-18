@@ -1,7 +1,7 @@
-name: maintenance-backup-forgejo-prune
+name: maintenance-backup-monthly-prune
 schedule: "5 0 * * *"
 containers:
-  - name: maintenance-backup-forgejo-prune
+  - name: maintenance-backup-monthly-prune
     repository: ghcr.io/kahnwong/docker-aws-backup
     tag: 4783b2e
     command: ["sh", "-c"]
@@ -11,9 +11,9 @@ containers:
         remove_backup_before_date=$(date +%Y-%m-%d -d "1 month ago")
         aws s3api list-objects-v2 \
           --endpoint-url "$S3_ENDPOINT" \
-          --bucket "forgejo" \
+          --bucket "backup-monthly" \
           --output text \
-          --query "Contents[?LastModified<= '$remove_backup_before_date'].[Key]" | xargs printf -- "s3://forgejo/%s\n" | xargs -L 1 aws s3 rm --endpoint-url "$S3_ENDPOINT"
+          --query "Contents[?LastModified<= '$remove_backup_before_date'].[Key]" | xargs printf -- "s3://backup-monthly/%s\n" | xargs -L 1 aws s3 rm --endpoint-url "$S3_ENDPOINT"
     envFrom:
       - secretRef:
           name: backup

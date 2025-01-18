@@ -1,11 +1,10 @@
 locals {
   r2_buckets = toset([
     "backup",
-    "forgejo",
+    "backup-monthly",
     "public",
     "restic",
     "send",
-    "wallabag",
   ])
 }
 

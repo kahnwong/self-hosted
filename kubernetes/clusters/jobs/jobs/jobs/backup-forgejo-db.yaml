@@ -1,7 +1,7 @@
 name: backup-forgejo-db
 schedule: "2 0 * * *"
 containers:
-  - name: backup-forgejo
+  - name: backup-forgejo-db
     repository: ghcr.io/kahnwong/docker-aws-backup
     tag: 7a5b35c
     env:
