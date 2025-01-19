@@ -19,7 +19,7 @@ locals {
       "backup-ntfy",
       "backup-rally",
       "backup-slash",
-      "backup-syncthing",
+      # "backup-syncthing",
       "backup-transmission",
       "backup-umami",
       "backup-wakapi",
