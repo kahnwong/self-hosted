@@ -1,8 +1,7 @@
----
+# maintenance: run `TRUNCATE TABLE sessions;`
 kind: StatefulSet
 name: miniflux-postgres
 replicaCount: 1
-
 containers:
   ## init
   # docker-compose up db
