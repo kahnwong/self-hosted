@@ -16,6 +16,7 @@ locals {
     "habits",
     "hoarder",
     "immich",
+    "jupyterhub",
     "linkding",
     "memos",
     "microbin",
