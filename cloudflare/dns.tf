@@ -30,6 +30,7 @@ locals {
     "rustpad",
     "secrets",
     "send",
+    "signoz",
     "slash",
     "split",
     "thai-tech-cal",

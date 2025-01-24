@@ -79,6 +79,9 @@ secrets.karnwong.me {
 share.karnwong.me {
     reverse_proxy 192.168.1.36:30032
 }
+signoz.karnwong.me {
+    reverse_proxy 192.168.1.36:30996
+}
 slash.karnwong.me {
     reverse_proxy 192.168.1.36:30055
 }

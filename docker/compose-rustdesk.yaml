@@ -1,3 +1,4 @@
+# <https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/docker/>
 services:
   hbbs:
     container_name: rustdesk-hbbs
