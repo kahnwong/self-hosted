@@ -31,6 +31,7 @@ locals {
     "secrets",
     "send",
     "slash",
+    "split",
     "thai-tech-cal",
     "umami",
     "wakapi",

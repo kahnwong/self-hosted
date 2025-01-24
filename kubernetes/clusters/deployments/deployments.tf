@@ -53,6 +53,7 @@ locals {
       "rally", "rally-postgres",
       "send", "send-valkey",
       "slash",
+      "spliit", "spliit-postgres",
       "sshx",
       "supersecretmessage", "supersecretmessage-vault",
       "teslamate", "teslamate-grafana", "teslamate-mosquitto", "teslamate-postgres",

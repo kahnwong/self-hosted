@@ -82,6 +82,9 @@ share.karnwong.me {
 slash.karnwong.me {
     reverse_proxy 192.168.1.36:30055
 }
+split.karnwong.me {
+    reverse_proxy 192.168.1.36:30063
+}
 subsonic-widgets.karnwong.me {
     reverse_proxy 192.168.1.36:30038
 }

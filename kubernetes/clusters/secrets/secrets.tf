@@ -18,6 +18,7 @@ locals {
       "immich-postgres",
       "miniflux-postgres",
       "rally-postgres",
+      "spliit-postgres",
       "umami-postgres",
       "wakapi-postgres",
       "wallabag",
@@ -29,6 +30,7 @@ locals {
       "picoshare",
       "rally", "rally-postgres",
       "send",
+      "spliit", "spliit-postgres",
       "supersecretmessage-vault",
       "teslamate", "teslamate-grafana", "teslamate-postgres",
       "wakapi", "wakapi-postgres"
