@@ -9,6 +9,7 @@ containers:
     envFrom:
       - secretRef:
           name: spliit
+    livenessProbeScheme: tcp # <https://github.com/spliit-app/spliit/issues/221>
 service:
   port: 3000
   nodePort: 30063
