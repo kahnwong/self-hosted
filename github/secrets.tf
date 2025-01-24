@@ -14,6 +14,7 @@ locals {
     "jupyterlite",
     "karnwong.me",
     "monkeytype",
+    "promptpay-qr-code",
     "python-playground",
     "retriever",
     "slc",

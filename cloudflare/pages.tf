@@ -8,6 +8,7 @@ locals {
     "jupyterlite",
     "maps",
     "monkeytype",
+    "promptpay",
     "python",
     "retriever",
     "slc",
