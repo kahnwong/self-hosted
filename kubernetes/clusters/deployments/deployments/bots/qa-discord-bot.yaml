@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -18,7 +17,7 @@ spec:
     spec:
       containers:
         - name: qa-discord-bot
-          image: ghcr.io/kahnwong/qa-discord-bot:5e67a32
+          image: ghcr.io/kahnwong/qa-discord-bot:c18232a
           envFrom:
             - secretRef:
                 name: qa-discord-bot
