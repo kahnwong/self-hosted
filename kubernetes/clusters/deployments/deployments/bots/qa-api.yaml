@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: qa-api
     repository: ghcr.io/kahnwong/qa-api-rs
-    tag: 8f06109
+    tag: 0f15c26
     port: 3000
     envFrom:
       - secretRef:
