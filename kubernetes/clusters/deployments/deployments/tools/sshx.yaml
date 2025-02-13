@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: sshx
     repository: ghcr.io/kahnwong/sshx
-    tag: e1b5ab9
+    tag: 15a75c7
     port: 8051
 service:
   port: 8051
