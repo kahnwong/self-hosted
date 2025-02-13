@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: mlflow
     repository: ghcr.io/kahnwong/docker-mlflow
-    tag: ab4bec6
+    tag: 3d49eef
     port: 8080
     envFrom:
       - secretRef:
