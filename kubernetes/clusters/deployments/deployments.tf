@@ -43,7 +43,7 @@ locals {
     tools = [
       "beaverhabits",
       "evcc",
-      "hoarder", "hoarder-chrome", "hoarder-meilisearch",
+      # "hoarder", "hoarder-chrome", "hoarder-meilisearch",
       "homer",
       "linkding",
       "livegrep-backend", "livegrep-frontend",

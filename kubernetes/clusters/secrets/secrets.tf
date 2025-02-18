@@ -25,7 +25,7 @@ locals {
     ]
     jobs-family-alerts = ["family-alerts"]
     tools = [
-      "hoarder",
+      # "hoarder",
       "opengist",
       "picoshare",
       "rally", "rally-postgres",

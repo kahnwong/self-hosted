@@ -6,6 +6,7 @@ provider "registry.opentofu.org/goauthentik/authentik" {
   constraints = "2024.8.4"
   hashes = [
     "h1:U3sDctMTEHA2HFpzYhfFyDycKoB4Rk7n9RQZ1RdS+UU=",
+    "h1:bZS9RwjEc1FlLFMidiCzyUrFTC7VONufHBDgGjAtSWs=",
     "zh:13040879209e226ba73dd3492849301f5d6233098decf4789dde4e75a7db00a3",
     "zh:21e5b1403749e4577c85efe1e1ffbc7f70f910c9b025a66ee36d6d9e7a26834d",
     "zh:3290e95ff74aa269031df2d9604526c977826d76c4c1c03b61c61d4767775f44",
@@ -28,6 +29,7 @@ provider "registry.opentofu.org/hashicorp/random" {
   constraints = "3.6.3"
   hashes = [
     "h1:32/UZofQoXk8zPj9vpIDiSEmERA3Mx2VPvk1lHTTHvw=",
+    "h1:Ry0Lr0zaoicslZlcUR4rAySPpl/a7QupfMfuAxhW3fw=",
     "zh:1bfd2e54b4eee8c761a40b6d99d45880b3a71abc18a9a7a5319204da9c8363b2",
     "zh:21a15ac74adb8ba499aab989a4248321b51946e5431219b56fc827e565776714",
     "zh:221acfac3f7a5bcd6cb49f79a1fca99da7679bde01017334bad1f951a12d85ba",

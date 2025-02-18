@@ -9,7 +9,7 @@ locals {
       "backup-beaverhabits",
       "backup-forgejo-data",
       "backup-forgejo-db",
-      "backup-hoarder",
+      # "backup-hoarder",
       "backup-immich-db",
       "backup-linkding",
       "backup-memos",

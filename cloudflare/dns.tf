@@ -14,7 +14,7 @@ locals {
     "gist",
     "go",
     "habits",
-    "hoarder",
+    # "hoarder",
     "immich",
     "jupyterhub",
     "linkding",
