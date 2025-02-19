@@ -34,7 +34,6 @@ locals {
     "slash",
     "split",
     "thai-tech-cal",
-    "umami",
     "wakapi",
   ])
   selfhosted_non_proxied = setunion(toset([
@@ -106,7 +105,16 @@ resource "cloudflare_record" "vaultwarden" {
   proxied = true
   ttl     = 1
   type    = "A"
-  content = "35.212.236.89"
+  content = data.sops_file.secrets.data["GCP_VM_IP"]
+  zone_id = var.cloudflare_zone_id
+}
+
+resource "cloudflare_record" "umami" {
+  name    = "umami"
+  proxied = true
+  ttl     = 1
+  type    = "A"
+  content = data.sops_file.secrets.data["GCP_VM_IP"]
   zone_id = var.cloudflare_zone_id
 }
 
