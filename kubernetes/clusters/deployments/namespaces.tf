@@ -13,7 +13,6 @@ locals {
     "notes",
     "playground",
     "tools",
-    "umami",
   ])
 }
 

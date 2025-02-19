@@ -10,7 +10,6 @@ locals {
       "wallabag", "wallabag-postgres", "wallabag-redis"
     ]
     notes = ["notes-sync"]
-    umami = ["umami", "umami-postgres"],
     jobs = [
       "backup", "ddns", "water-cut-notify",
       "authentik-postgres",
@@ -19,7 +18,6 @@ locals {
       "miniflux-postgres",
       "rally-postgres",
       "spliit-postgres",
-      "umami-postgres",
       "wakapi-postgres",
       "wallabag",
     ]

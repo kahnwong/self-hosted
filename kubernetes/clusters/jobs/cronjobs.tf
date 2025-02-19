@@ -20,7 +20,6 @@ locals {
       "backup-slash",
       # "backup-syncthing",
       "backup-transmission",
-      "backup-umami",
       "backup-wakapi",
       "backup-wallabag-content",
       "backup-wallabag-db",

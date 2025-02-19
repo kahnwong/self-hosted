@@ -36,7 +36,6 @@ func main() {
 		"subsonic-widgets": "30038",
 		"syncthing":        "8384",
 		"thai-tech-cal":    "thai-tech-cal.news",
-		"umami":            "30062",
 		"signoz":           "30996",
 		"wakapi":           "30041",
 	}
