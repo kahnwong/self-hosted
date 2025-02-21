@@ -32,6 +32,7 @@ func main() {
 		"secrets":          "30025",
 		"share":            "30032",
 		"slash":            "30055",
+		"nocodb":           "30062",
 		"split":            "30063",
 		"subsonic-widgets": "30038",
 		"syncthing":        "8384",

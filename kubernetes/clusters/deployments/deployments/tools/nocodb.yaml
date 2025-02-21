@@ -1,0 +1,18 @@
+kind: Deployment
+name: nocodb
+replicaCount: 1
+containers:
+  - name: nocodb
+    repository: nocodb/nocodb
+    tag: 0.262.0
+    port: 8080
+    volumeMounts:
+      - name: data
+        mountPath: /usr/app/data/
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/nocodb/data
+service:
+  port: 8080
+  nodePort: 30062

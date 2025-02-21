@@ -21,6 +21,7 @@ locals {
     "microbin",
     "miniflux",
     "music",
+    "nocodb",
     "ntfy",
     "pdf",
     "pmtiles",

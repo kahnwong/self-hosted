@@ -45,6 +45,7 @@ locals {
       "livegrep-backend", "livegrep-frontend",
       "memos",
       "microbin",
+      "nocodb",
       "picoshare",
       "rally", "rally-postgres",
       "send", "send-valkey",
