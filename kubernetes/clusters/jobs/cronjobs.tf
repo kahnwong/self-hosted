@@ -15,6 +15,7 @@ locals {
       "backup-microbin",
       "backup-miniflux",
       "backup-navidrome",
+      "backup-nocodb",
       "backup-ntfy",
       "backup-rally",
       "backup-slash",

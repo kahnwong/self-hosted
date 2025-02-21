@@ -1,0 +1,23 @@
+name: backup-nocodb
+schedule: "1 0 * * *"
+containers:
+  - name: backup-nocodb
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 7a5b35c
+    env:
+      - name: MODE
+        value: ARCHIVE
+      - name: SERVICE_NAME
+        value: nocodb
+      - name: BACKUP_PATH
+        value: /opt/nocodb
+    envFrom:
+      - secretRef:
+          name: backup
+    volumeMounts:
+      - name: nocodb
+        mountPath: /opt/nocodb
+volumes:
+  - name: nocodb
+    hostPath:
+      path: /opt/nocodb
