@@ -16,6 +16,7 @@ locals {
     }
   )
   application_proxy = toset([
+    "dagster.cbp",
     "evcc",
     "gatus",
     "grafana.teslamate",

@@ -22,6 +22,7 @@ provider "registry.opentofu.org/cloudflare/cloudflare" {
   constraints = "4.51.0, ~> 4.51.0"
   hashes = [
     "h1:BSJjZbUQQpZHQKNHi09R/FVdhM27Lvu45rw2CNALBU4=",
+    "h1:q5CG9LQN6BkWtak+8yZGwsb32NTCHun7QEPxilgMtfc=",
     "zh:0b58993b11326a6fefa51896bcd54ac56fcfc44ad75b0cef4bfaddf4c75bedf6",
     "zh:0e80ad26ac8c72a58b8a55ca77249b34a1c62264f267700c0f284ca0ccd6eea6",
     "zh:12202eeda021cef6c353d58d763d4ff74950b4c81d3a39c5bd371558f490f4ac",
