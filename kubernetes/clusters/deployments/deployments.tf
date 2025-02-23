@@ -123,7 +123,7 @@ resource "helm_release" "this" {
   name       = each.key
   namespace  = each.value
   repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.2.0"
+  version    = "0.3.0"
   chart      = "base"
 
   values = [
@@ -136,7 +136,7 @@ resource "helm_release" "fringe_division" {
   name       = each.key
   namespace  = each.value
   repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.2.0"
+  version    = "0.3.0"
   chart      = "base"
 
   values = [
@@ -227,7 +227,7 @@ resource "helm_release" "misc" {
   name       = each.key
   namespace  = "default"
   repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.2.0"
+  version    = "0.3.0"
   chart      = "base"
 
   values = [
