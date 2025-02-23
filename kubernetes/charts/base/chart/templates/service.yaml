@@ -6,6 +6,8 @@ metadata:
 spec:
   {{ if (eq .Values.kind "Deployment")}}
   type: NodePort
+  {{ else }}
+  type: ClusterIP
   {{ end }}
   selector:
     app.kubernetes.io/name: {{ template "name" . }}
