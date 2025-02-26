@@ -31,6 +31,7 @@ locals {
     "send",
     "t.console.notes",
     "teslamate",
+    "todotxt",
   ])
 }
 

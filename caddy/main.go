@@ -52,6 +52,7 @@ func main() {
 		"podgrab":           "30004",
 		"t.console.notes":   "notes-console-t.notes",
 		"teslamate":         "30059",
+		"todotxt":           "30064",
 	}
 
 	// generate config

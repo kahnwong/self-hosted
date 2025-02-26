@@ -1,0 +1,23 @@
+kind: Deployment
+name: todotxt
+replicaCount: 1
+containers:
+  - name: todotxt
+    repository: ghcr.io/kahnwong/todotxt-frontend
+    tag: dd46cd2
+    port: 3000
+    env:
+      - name: LISTEN_ADDR
+        value: ":3000"
+      - name: TODO_PATH
+        value: "/opt/todotxt/todo.txt"
+    volumeMounts:
+      - name: data
+        mountPath: /opt/todotxt
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/syncthing/cloud/Apps/todotxt
+service:
+  port: 3000
+  nodePort: 30064
