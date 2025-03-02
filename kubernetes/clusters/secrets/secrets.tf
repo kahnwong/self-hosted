@@ -16,7 +16,7 @@ locals {
       "forgejo-postgres",
       "immich-postgres",
       "miniflux-postgres",
-      "rally-postgres",
+      "rallly-postgres",
       "spliit-postgres",
       "wakapi-postgres",
       "wallabag",
@@ -25,7 +25,7 @@ locals {
     tools = [
       "opengist",
       "picoshare",
-      "rally", "rally-postgres",
+      "rallly", "rallly-postgres",
       "send",
       "spliit", "spliit-postgres",
       "supersecretmessage-vault",

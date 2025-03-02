@@ -17,7 +17,7 @@ locals {
       "backup-navidrome",
       "backup-nocodb",
       "backup-ntfy",
-      "backup-rally",
+      "backup-rallly",
       "backup-slash",
       # "backup-syncthing",
       "backup-transmission",

@@ -1,26 +1,26 @@
-name: backup-rally
+name: backup-rallly
 schedule: "3 0 * * *"
 containers:
-  - name: backup-rally
+  - name: backup-rallly
     repository: ghcr.io/kahnwong/docker-aws-backup
     tag: 7a5b35c
     env:
       - name: MODE
         value: DB_POSTGRES
       - name: SERVICE_NAME
-        value: rally
+        value: rallly
       - name: POSTGRES_USERNAME
         valueFrom:
           secretKeyRef:
-            name: rally-postgres
+            name: rallly-postgres
             key: POSTGRES_USER
       - name: POSTGRES_PASSWORD
         valueFrom:
           secretKeyRef:
-            name: rally-postgres
+            name: rallly-postgres
             key: POSTGRES_PASSWORD
       - name: POSTGRES_HOSTNAME
-        value: rally-postgres.tools.svc.cluster.local
+        value: rallly-postgres.tools.svc.cluster.local
     envFrom:
       - secretRef:
           name: backup

@@ -47,7 +47,7 @@ locals {
       "microbin",
       "nocodb",
       "picoshare",
-      "rally", "rally-postgres",
+      "rallly", "rallly-postgres",
       "send", "send-valkey",
       "slash",
       "spliit", "spliit-postgres",

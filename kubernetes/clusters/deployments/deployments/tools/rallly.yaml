@@ -1,14 +1,14 @@
 kind: Deployment
-name: rally
+name: rallly
 replicaCount: 1
 containers:
-  - name: rally
+  - name: rallly
     repository: lukevella/rallly
     tag: 3.11.2
     port: 3000
     envFrom:
       - secretRef:
-          name: rally
+          name: rallly
 service:
   port: 3000
   nodePort: 30035

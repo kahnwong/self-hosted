@@ -1,5 +1,5 @@
 kind: StatefulSet
-name: rally-postgres
+name: rallly-postgres
 replicaCount: 1
 containers:
   - name: postgres
@@ -9,13 +9,13 @@ containers:
     livenessProbeScheme: tcp
     envFrom:
       - secretRef:
-          name: rally-postgres
+          name: rallly-postgres
     volumeMounts:
       - name: data
         mountPath: /var/lib/postgresql/data
 volumes:
   - name: data
     hostPath:
-      path: /opt/rally/db
+      path: /opt/rallly/db
 service:
   port: 5432
