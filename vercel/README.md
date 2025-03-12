@@ -7,14 +7,14 @@
 | Name | Version |
 |------|---------|
 | sops | 1.1.1 |
-| vercel | 2.9.1 |
+| vercel | 2.12.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | sops | 1.1.1 |
-| vercel | 2.9.1 |
+| vercel | 2.12.0 |
 
 ## Modules
 
@@ -24,12 +24,12 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [vercel_project.gitreceipt](https://registry.terraform.io/providers/vercel/vercel/2.9.1/docs/resources/project) | resource |
-| [vercel_project.shouldideploytoday](https://registry.terraform.io/providers/vercel/vercel/2.9.1/docs/resources/project) | resource |
-| [vercel_project.transform](https://registry.terraform.io/providers/vercel/vercel/2.9.1/docs/resources/project) | resource |
-| [vercel_project_domain.gitreceipt](https://registry.terraform.io/providers/vercel/vercel/2.9.1/docs/resources/project_domain) | resource |
-| [vercel_project_domain.shouldideploytoday](https://registry.terraform.io/providers/vercel/vercel/2.9.1/docs/resources/project_domain) | resource |
-| [vercel_project_domain.transform](https://registry.terraform.io/providers/vercel/vercel/2.9.1/docs/resources/project_domain) | resource |
+| [vercel_project.gitreceipt](https://registry.terraform.io/providers/vercel/vercel/2.12.0/docs/resources/project) | resource |
+| [vercel_project.shouldideploytoday](https://registry.terraform.io/providers/vercel/vercel/2.12.0/docs/resources/project) | resource |
+| [vercel_project.transform](https://registry.terraform.io/providers/vercel/vercel/2.12.0/docs/resources/project) | resource |
+| [vercel_project_domain.gitreceipt](https://registry.terraform.io/providers/vercel/vercel/2.12.0/docs/resources/project_domain) | resource |
+| [vercel_project_domain.shouldideploytoday](https://registry.terraform.io/providers/vercel/vercel/2.12.0/docs/resources/project_domain) | resource |
+| [vercel_project_domain.transform](https://registry.terraform.io/providers/vercel/vercel/2.12.0/docs/resources/project_domain) | resource |
 | [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.1.1/docs/data-sources/file) | data source |
 
 ## Inputs

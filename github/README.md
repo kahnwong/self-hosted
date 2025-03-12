@@ -6,14 +6,14 @@
 | Name | Version |
 |------|---------|
 | terraform | >= 1.2.7 |
-| github | 6.5.0 |
+| github | 6.6.0 |
 | sops | 1.1.1 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| github | 6.5.0 |
+| github | 6.6.0 |
 | sops | 1.1.1 |
 
 ## Modules
@@ -24,9 +24,9 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [github_actions_secret.cloudflare_pages](https://registry.terraform.io/providers/integrations/github/6.5.0/docs/resources/actions_secret) | resource |
-| [github_actions_secret.docs_algolia](https://registry.terraform.io/providers/integrations/github/6.5.0/docs/resources/actions_secret) | resource |
-| [github_actions_secret.vercel](https://registry.terraform.io/providers/integrations/github/6.5.0/docs/resources/actions_secret) | resource |
+| [github_actions_secret.cloudflare_pages](https://registry.terraform.io/providers/integrations/github/6.6.0/docs/resources/actions_secret) | resource |
+| [github_actions_secret.docs_algolia](https://registry.terraform.io/providers/integrations/github/6.6.0/docs/resources/actions_secret) | resource |
+| [github_actions_secret.vercel](https://registry.terraform.io/providers/integrations/github/6.6.0/docs/resources/actions_secret) | resource |
 | [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.1.1/docs/data-sources/file) | data source |
 
 ## Inputs
