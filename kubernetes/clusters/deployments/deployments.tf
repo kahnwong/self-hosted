@@ -56,7 +56,7 @@ locals {
       "teslamate", "teslamate-grafana", "teslamate-mosquitto", "teslamate-postgres",
       "todotxt",
       "wakapi", "wakapi-postgres",
-      #      "stirling-pdf",
+      "stirling-pdf",
     ]
   })
   deployments_knative = tomap({
