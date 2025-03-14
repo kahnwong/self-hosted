@@ -1,0 +1,21 @@
+kind: Deployment
+name: conduwuit
+replicaCount: 1
+containers:
+  - name: conduwuit
+    repository: girlbossceo/conduwuit
+    tag: v0.4.6-8f7ade4c22533a3177bfd8f175e178573ba6c1d4
+    port: 6167
+    envFrom:
+      - secretRef:
+          name: conduwuit
+    volumeMounts:
+      - name: data
+        mountPath: /var/lib/conduwuit
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/conduwuit/data
+service:
+  port: 6167
+  nodePort: 30065

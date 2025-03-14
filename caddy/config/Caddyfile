@@ -41,6 +41,9 @@ jellyfin.karnwong.me {
         header_up Host jellyfin.media.example.com
     }
 }
+matrix.karnwong.me {
+    reverse_proxy 192.168.1.36:30065
+}
 memos.karnwong.me {
     reverse_proxy 192.168.1.36:30031
 }

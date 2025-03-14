@@ -4,7 +4,7 @@ locals {
     bots           = ["qa-api", "qa-discord-bot"]
     default        = ["subsonic-widgets"]
     immich         = ["immich", "immich-machine-learning", "immich-postgres"]
-    infrastructure = ["forgejo", "forgejo-postgres", "minio", "mlflow", "mlflow-postgres"]
+    infrastructure = ["conduwuit", "forgejo", "forgejo-postgres", "minio", "mlflow", "mlflow-postgres"]
     news = [
       "miniflux", "miniflux-postgres",
       "wallabag", "wallabag-postgres", "wallabag-redis"
