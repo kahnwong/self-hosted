@@ -53,7 +53,7 @@ locals {
       "spliit", "spliit-postgres",
       "sshx",
       "supersecretmessage", "supersecretmessage-vault",
-      "teslamate", "teslamate-grafana", "teslamate-mosquitto", "teslamate-postgres",
+      # "teslamate", "teslamate-grafana", "teslamate-mosquitto", "teslamate-postgres",
       "todotxt",
       "wakapi", "wakapi-postgres",
       "stirling-pdf",
