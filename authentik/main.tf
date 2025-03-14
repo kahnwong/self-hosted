@@ -27,6 +27,7 @@ locals {
     "microbin",
     "mlflow",
     "notes",
+    "pdf",
     "podgrab",
     "send",
     "t.console.notes",
