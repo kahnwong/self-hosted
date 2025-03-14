@@ -39,7 +39,7 @@ locals {
     ]
     tools = [
       "beaverhabits",
-      "evcc",
+      # "evcc",
       "homer",
       "linkding",
       "livegrep-backend", "livegrep-frontend",
