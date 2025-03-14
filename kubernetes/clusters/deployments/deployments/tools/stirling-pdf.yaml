@@ -1,12 +1,10 @@
----
 kind: Deployment
 name: stirling-pdf
 replicaCount: 1
-
 containers:
   - name: stirling-pdf
-    repository: frooodle/s-pdf
-    tag: 0.26.1-ultra-lite
+    repository: docker.stirlingpdf.com/stirlingtools/stirling-pdf
+    tag: 0.44.1-ultra-lite
     port: 8080
     env:
       - name: LANGS
