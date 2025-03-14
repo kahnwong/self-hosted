@@ -49,7 +49,7 @@ locals {
       "picoshare",
       "rallly", "rallly-postgres",
       "send", "send-valkey",
-      "slash",
+      # "slash",
       "spliit", "spliit-postgres",
       "sshx",
       "supersecretmessage", "supersecretmessage-vault",
