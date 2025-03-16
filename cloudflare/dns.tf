@@ -64,6 +64,7 @@ locals {
     "t.console.notes",
     "teslamate",
     "wallabag",
+    "wg",
   ]), var.private_dns)
 }
 locals {
