@@ -120,6 +120,16 @@ resource "cloudflare_record" "umami" {
   zone_id = var.cloudflare_zone_id
 }
 
+resource "cloudflare_record" "matrix" {
+  name    = "matrix"
+  proxied = true
+  ttl     = 1
+  type    = "A"
+  content = data.sops_file.secrets.data["ORACLE_VM_IP"]
+  zone_id = var.cloudflare_zone_id
+}
+
+
 resource "cloudflare_record" "www_dummy" { # need for redirection
   name    = "www"
   proxied = true
