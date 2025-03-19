@@ -17,7 +17,6 @@ locals {
     "immich",
     "jupyterhub",
     "linkding",
-    "matrix",
     "memos",
     "microbin",
     "miniflux",

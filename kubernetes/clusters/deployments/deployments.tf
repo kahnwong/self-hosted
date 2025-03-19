@@ -19,7 +19,6 @@ locals {
     ]
     immich = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
     infrastructure = [
-      "conduwuit",
       "error-pages",
       "gatus",
       "forgejo", "forgejo-postgres",
