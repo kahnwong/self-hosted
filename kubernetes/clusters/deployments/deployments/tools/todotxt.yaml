@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: todotxt
     repository: ghcr.io/kahnwong/todotxt-frontend
-    tag: f27416a
+    tag: 485fa59
     port: 3000
     env:
       - name: LISTEN_ADDR
