@@ -46,6 +46,7 @@ OpenID Configuration Issuer:  https://authentik.karnwong.me/application/o/$APP/
 |------|------|
 | [authentik_outpost.proxy_outpost](https://registry.terraform.io/providers/goauthentik/authentik/2024.8.4/docs/resources/outpost) | resource |
 | [authentik_service_connection_kubernetes.local](https://registry.terraform.io/providers/goauthentik/authentik/2024.8.4/docs/resources/service_connection_kubernetes) | resource |
+| [authentik_stage_identification.default-authentication-identification](https://registry.terraform.io/providers/goauthentik/authentik/2024.8.4/docs/resources/stage_identification) | resource |
 | [authentik_flow.default-authorization-flow](https://registry.terraform.io/providers/goauthentik/authentik/2024.8.4/docs/data-sources/flow) | data source |
 
 ## Inputs
