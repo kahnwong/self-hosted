@@ -129,8 +129,17 @@ resource "cloudflare_record" "matrix" {
   zone_id = var.cloudflare_zone_id
 }
 
+resource "cloudflare_record" "pairdrop" {
+  name    = "pairdrop"
+  proxied = true
+  ttl     = 1
+  type    = "A"
+  content = data.sops_file.secrets.data["ORACLE_VM_IP"]
+  zone_id = var.cloudflare_zone_id
+}
 
-resource "cloudflare_record" "www_dummy" { # need for redirection
+# need for redirection
+resource "cloudflare_record" "www_dummy" {
   name    = "www"
   proxied = true
   ttl     = 1
