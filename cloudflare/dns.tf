@@ -10,6 +10,7 @@ locals {
   ])
   selfhosted_proxied = toset([
     "*",
+    "digger",
     "evcc",
     "gist",
     "go",
