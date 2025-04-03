@@ -53,3 +53,13 @@ output "cloudflare_api_token_r2_restic_rw" {
     }
   )
 }
+
+output "cloudflare_api_token_r2_terraform_state_rw" {
+  sensitive = true
+
+  value = tomap({
+    "access_key_id" : cloudflare_api_token.r2_terraform_state_rw.id,
+    "secret_access_key" : sha256(cloudflare_api_token.r2_terraform_state_rw.value),
+    }
+  )
+}

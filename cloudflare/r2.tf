@@ -5,6 +5,7 @@ locals {
     "public",
     "restic",
     "send",
+    "terraform-state",
   ])
 }
 

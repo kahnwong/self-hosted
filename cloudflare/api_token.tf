@@ -94,3 +94,16 @@ resource "cloudflare_api_token" "r2_restic_rw" {
     }
   }
 }
+
+resource "cloudflare_api_token" "r2_terraform_state_rw" {
+  name = "r2-terraform-state-rw"
+
+  policy {
+    permission_groups = [
+      data.cloudflare_api_token_permission_groups.all.r2["Workers R2 Storage Bucket Item Write"],
+    ]
+    resources = {
+      "com.cloudflare.edge.r2.bucket.${var.cloudflare_account_id}_default_terraform-state" = "*"
+    }
+  }
+}
