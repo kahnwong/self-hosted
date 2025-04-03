@@ -1,0 +1,21 @@
+kind: StatefulSet
+name: digger-postgres
+replicaCount: 1
+containers:
+  - name: postgres
+    repository: postgres
+    tag: 17.2-alpine
+    port: 5432
+    livenessProbeScheme: tcp
+    envFrom:
+      - secretRef:
+          name: digger-postgres
+    volumeMounts:
+      - name: data
+        mountPath: /var/lib/postgresql/data
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/digger/db
+service:
+  port: 5432
