@@ -11,6 +11,7 @@ services:
       - /lib/modules:/lib/modules:ro
     ports:
       - "51820:51820/udp" # wireguard
+      - "60000:51820/udp" # wireguard
       - "51821:51821/tcp" # web console
     restart: unless-stopped
     cap_add:
