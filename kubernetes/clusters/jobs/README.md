@@ -9,14 +9,14 @@
 | terraform | >= 1.3.6 |
 | helm | 2.17.0 |
 | kubernetes | 2.36.0 |
-| sops | 1.1.1 |
+| sops | 1.2.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | helm | 2.17.0 |
-| sops | 1.1.1 |
+| sops | 1.2.0 |
 
 ## Modules
 
@@ -29,7 +29,7 @@ No modules.
 | [helm_release.jobs](https://registry.terraform.io/providers/hashicorp/helm/2.17.0/docs/resources/release) | resource |
 | [helm_release.jobs_fringe_division](https://registry.terraform.io/providers/hashicorp/helm/2.17.0/docs/resources/release) | resource |
 | [helm_release.livegrep_indexer](https://registry.terraform.io/providers/hashicorp/helm/2.17.0/docs/resources/release) | resource |
-| [sops_file.livegrep](https://registry.terraform.io/providers/carlpett/sops/1.1.1/docs/data-sources/file) | data source |
+| [sops_file.livegrep](https://registry.terraform.io/providers/carlpett/sops/1.2.0/docs/data-sources/file) | data source |
 
 ## Inputs
 
