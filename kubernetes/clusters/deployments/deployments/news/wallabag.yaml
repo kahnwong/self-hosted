@@ -6,7 +6,7 @@ replicaCount: 1
 containers:
   - name: wallabag
     repository: wallabag/wallabag
-    tag: 2.6.10
+    tag: 2.6.11
     port: 80
     env:
       - name: SYMFONY__ENV__DATABASE_DRIVER
