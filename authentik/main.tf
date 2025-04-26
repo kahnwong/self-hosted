@@ -30,6 +30,7 @@ locals {
     "pdf",
     "podgrab",
     "send",
+    "sourcebot",
     "t.console.notes",
     "teslamate",
     "todotxt",

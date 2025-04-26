@@ -51,6 +51,7 @@ func main() {
 		"notes":             "30052",
 		"pdf":               "30040",
 		"podgrab":           "30004",
+		"sourcebot":         "30065",
 		"t.console.notes":   "notes-console-t.notes",
 		"teslamate":         "30059",
 		"todotxt":           "30064",

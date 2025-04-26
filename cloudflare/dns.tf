@@ -59,6 +59,7 @@ locals {
     "notes",
     "podgrab",
     "share", # prevent request entity too large
+    "sourcebot",
     "subsonic-widgets",
     "syncthing",
     "t.console.notes",
