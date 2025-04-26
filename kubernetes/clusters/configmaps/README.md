@@ -14,7 +14,7 @@
 
 | Name | Version |
 |------|---------|
-| kubernetes | 2.35.1 |
+| kubernetes | 2.36.0 |
 | sops | 1.2.0 |
 
 ## Modules
@@ -28,9 +28,11 @@ No modules.
 | [kubernetes_config_map.configmaps](https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/config_map) | resource |
 | [kubernetes_config_map.evcc](https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/config_map) | resource |
 | [kubernetes_config_map.livegrep-ignorelist](https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/config_map) | resource |
+| [kubernetes_config_map.sourcebot_config](https://registry.terraform.io/providers/hashicorp/kubernetes/2.36.0/docs/resources/config_map) | resource |
 | [sops_file.configmaps](https://registry.terraform.io/providers/carlpett/sops/1.2.0/docs/data-sources/file) | data source |
 | [sops_file.evcc](https://registry.terraform.io/providers/carlpett/sops/1.2.0/docs/data-sources/file) | data source |
 | [sops_file.livegrep-ignorelist](https://registry.terraform.io/providers/carlpett/sops/1.2.0/docs/data-sources/file) | data source |
+| [sops_file.sourcebot_config](https://registry.terraform.io/providers/carlpett/sops/1.2.0/docs/data-sources/file) | data source |
 
 ## Inputs
 

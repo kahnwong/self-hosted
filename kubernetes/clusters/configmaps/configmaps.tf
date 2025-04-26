@@ -100,3 +100,20 @@ resource "kubernetes_config_map" "evcc" {
 
   depends_on = [data.sops_file.evcc]
 }
+
+# sourcebot
+data "sops_file" "sourcebot_config" {
+  source_file = "${path.module}/configmaps/sourcebot.config.sops.json"
+}
+resource "kubernetes_config_map" "sourcebot_config" {
+  metadata {
+    name      = "sourcebot-config"
+    namespace = "tools"
+  }
+
+  data = {
+    "config.json" = data.sops_file.sourcebot_config.raw
+  }
+
+  depends_on = [data.sops_file.sourcebot_config]
+}

@@ -50,6 +50,7 @@ locals {
       "rallly", "rallly-postgres",
       "send", "send-valkey",
       # "slash",
+      "sourcebot",
       "spliit", "spliit-postgres",
       "sshx",
       "supersecretmessage", "supersecretmessage-vault",
