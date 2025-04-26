@@ -7,7 +7,14 @@ containers:
     tag: 853379ed3f
     port: 8910
     command: ["/livegrep/bin/livegrep"]
-    args: ["-docroot=/livegrep/web", "-listen=0.0.0.0:8910", "--connect=livegrep-backend.tools.svc.cluster.local:9999"]
+    args: ["-docroot=/livegrep/web", "-listen=0.0.0.0:8910", "--connect=livegrep-backend.tools.svc.cluster.local:9999", "-index-config", "/data/livegrep.json"]
+    volumeMounts:
+      - name: data
+        mountPath: /data
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/livegrep
 service:
   port: 8910
   nodePort: 30033
