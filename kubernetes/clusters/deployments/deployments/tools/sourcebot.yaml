@@ -9,6 +9,8 @@ containers:
     env:
       - name: CONFIG_PATH
         value: "/data/config.json"
+      - name: SOURCEBOT_TELEMETRY_DISABLED
+        value: "true"
     envFrom:
       - secretRef:
           name: sourcebot
