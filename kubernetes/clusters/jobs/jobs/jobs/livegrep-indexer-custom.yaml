@@ -1,0 +1,19 @@
+name: livegrep-indexer-custom
+schedule: 30 1 * * *
+containers:
+  - name: livegrep-indexer-custom
+    repository: ghcr.io/livegrep/livegrep/indexer
+    tag: 853379ed3f
+    command:
+      - sh
+      - -c
+    args:
+      - |
+        /livegrep/bin/codesearch -index_only -dump_index /data/livegrep.idx /data/livegrep.json
+    volumeMounts:
+      - name: livegrep
+        mountPath: /data
+volumes:
+  - name: livegrep
+    hostPath:
+      path: /opt/livegrep

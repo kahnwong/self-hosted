@@ -1,33 +1,31 @@
 name: livegrep-clone
-schedule: 30 1 * * *
+schedule: 25 1 * * *
 containers:
-    - name: livegrep-clone
-      repository: ghcr.io/kahnwong/livegrep-utils
-      tag: 5c058cd
-      command:
-        - sh
-        - -c
-      args:
-        - |
-          cd /data && /livegrep-utils
-      envFrom:
-        - secretRef:
-           name: livegrep-clone-custom
-      volumeMounts:
-        - name: livegrep
-          mountPath: /data
-        - name: config
-          mountPath: /data/repos.yaml
-          readOnly: true
-          subPath: repos.yaml
-
+  - name: livegrep-clone
+    repository: ghcr.io/kahnwong/livegrep-utils
+    tag: 5c058cd
+    command:
+      - sh
+      - -c
+    args:
+      - |
+        cd /data && /livegrep-utils
+    envFrom:
+      - secretRef:
+          name: livegrep-clone-custom
+    volumeMounts:
+      - name: livegrep
+        mountPath: /data
+      - name: config
+        mountPath: /data/repos.yaml
+        readOnly: true
+        subPath: repos.yaml
 volumes:
-    - name: livegrep
-      hostPath:
-        path: /opt/livegrep
-    - name: config
-      configMap:
-        name: livegrep-clone-config
-
+  - name: livegrep
+    hostPath:
+      path: /opt/livegrep
+  - name: config
+    configMap:
+      name: livegrep-clone-config
 imagePullSecrets:
   - name: ghcr-cfg

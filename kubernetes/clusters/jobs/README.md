@@ -16,7 +16,6 @@
 | Name | Version |
 |------|---------|
 | helm | 2.17.0 |
-| sops | 1.2.0 |
 
 ## Modules
 
@@ -28,8 +27,7 @@ No modules.
 |------|------|
 | [helm_release.jobs](https://registry.terraform.io/providers/hashicorp/helm/2.17.0/docs/resources/release) | resource |
 | [helm_release.jobs_fringe_division](https://registry.terraform.io/providers/hashicorp/helm/2.17.0/docs/resources/release) | resource |
-| [helm_release.livegrep_indexer](https://registry.terraform.io/providers/hashicorp/helm/2.17.0/docs/resources/release) | resource |
-| [sops_file.livegrep](https://registry.terraform.io/providers/carlpett/sops/1.2.0/docs/data-sources/file) | data source |
+| [helm_release.jobs_livegrep](https://registry.terraform.io/providers/hashicorp/helm/2.17.0/docs/resources/release) | resource |
 
 ## Inputs
 

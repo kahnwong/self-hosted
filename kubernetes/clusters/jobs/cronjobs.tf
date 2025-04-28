@@ -3,6 +3,11 @@ locals {
     jobs = []
   })
 
+  jobs-livegrep = [
+    "livegrep-clone",
+    "livegrep-indexer-custom",
+  ]
+
   jobs_fringe_division = tomap({
     jobs = [
       "backup-authentik",
@@ -31,6 +36,8 @@ locals {
       "restart-livegrep",
       "water-cut-notify",
     ]
+
+
 
     jobs-family-alerts = [
       "01-1-lunch-ask",
@@ -77,6 +84,19 @@ resource "helm_release" "jobs" {
   ]
 }
 
+resource "helm_release" "jobs_livegrep" {
+  for_each   = toset(local.jobs-livegrep)
+  name       = each.key
+  namespace  = "tools"
+  repository = "oci://ghcr.io/kahnwong/charts"
+  version    = "0.1.0"
+  chart      = "base-cronjob"
+
+  values = [
+    file("./jobs/jobs/${each.key}.yaml"),
+  ]
+}
+
 resource "helm_release" "jobs_fringe_division" {
   for_each   = local.jobs_fringe_division_map
   name       = each.key
@@ -91,19 +111,19 @@ resource "helm_release" "jobs_fringe_division" {
   ]
 }
 
-# livegrep
-data "sops_file" "livegrep" {
-  source_file = "./jobs/jobs/livegrep-indexer.sops.yaml"
-}
-resource "helm_release" "livegrep_indexer" {
-  name       = "livegrep-indexer"
-  namespace  = "tools"
-  repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.1.0"
-  chart      = "base-cronjob"
-
-  values = [
-    data.sops_file.livegrep.raw,
-    # file("./resources/valuesTaintNodeSelector.yaml"),
-  ]
-}
+# # livegrep
+# data "sops_file" "livegrep" {
+#   source_file = "./jobs/jobs/livegrep-indexer.sops.yaml"
+# }
+# resource "helm_release" "livegrep_indexer" {
+#   name       = "livegrep-indexer"
+#   namespace  = "tools"
+#   repository = "oci://ghcr.io/kahnwong/charts"
+#   version    = "0.1.0"
+#   chart      = "base-cronjob"
+#
+#   values = [
+#     data.sops_file.livegrep.raw,
+#     # file("./resources/valuesTaintNodeSelector.yaml"),
+#   ]
+# }
