@@ -26,6 +26,7 @@ spec:
           restartPolicy: Never
           volumes: {{ toYaml .Values.volumes | default list | nindent 12 }}
           tolerations: {{ toYaml .Values.tolerations | default list | nindent 12 }}
+          imagePullSecrets: {{ toYaml .Values.imagePullSecrets | default list | nindent 12 }}
           {{ if .Values.nodeSelector }}
           nodeSelector: {{ toYaml .Values.nodeSelector | nindent 12 }}
           {{ end }}

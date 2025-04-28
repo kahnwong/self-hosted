@@ -23,6 +23,7 @@ locals {
     ]
     jobs-family-alerts = ["family-alerts"]
     tools = [
+      "livegrep-clone-custom",
       "opengist",
       "picoshare",
       "rallly", "rallly-postgres",
@@ -86,3 +87,25 @@ resource "kubernetes_secret" "secrets" {
 #     })
 #   }
 # }
+
+
+resource "kubernetes_secret" "ghcr_config" {
+  metadata {
+    name      = "ghcr-cfg"
+    namespace = "tools"
+  }
+
+  type = "kubernetes.io/dockerconfigjson"
+
+  data = {
+    ".dockerconfigjson" = jsonencode({
+      auths = {
+        ("ghcr.io") = {
+          "username" = var.ghcr_username
+          "password" = var.ghcr_token
+          "auth"     = base64encode("${var.ghcr_username}:${var.ghcr_token}")
+        }
+      }
+    })
+  }
+}

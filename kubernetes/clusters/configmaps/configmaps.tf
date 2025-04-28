@@ -84,6 +84,22 @@ resource "kubernetes_config_map" "livegrep-ignorelist" {
   depends_on = [data.sops_file.livegrep-ignorelist]
 }
 
+data "sops_file" "livegrep-config" {
+  source_file = "${path.module}/configmaps/livegrep.config.sops.yaml"
+}
+resource "kubernetes_config_map" "livegrep-config" {
+  metadata {
+    name      = "livegrep-clone-config"
+    namespace = "tools"
+  }
+
+  data = {
+    "repos.yaml" = data.sops_file.livegrep-config.raw
+  }
+
+  depends_on = [data.sops_file.livegrep-config]
+}
+
 # evcc
 data "sops_file" "evcc" {
   source_file = "${path.module}/configmaps/evcc.sops.yaml"
