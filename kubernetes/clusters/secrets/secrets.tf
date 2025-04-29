@@ -28,7 +28,7 @@ locals {
       "picoshare",
       "rallly", "rallly-postgres",
       "send",
-      "sourcebot",
+      # "sourcebot",
       "spliit", "spliit-postgres",
       "supersecretmessage-vault",
       "teslamate", "teslamate-grafana", "teslamate-postgres",
