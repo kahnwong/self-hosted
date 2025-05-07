@@ -1,0 +1,11 @@
+services:
+  glance:
+    container_name: glance
+    image: glanceapp/glance
+    restart: unless-stopped
+    env_file:
+      - .glance.env
+    volumes:
+      - ./glance:/app/config
+    ports:
+      - 8080:8080
