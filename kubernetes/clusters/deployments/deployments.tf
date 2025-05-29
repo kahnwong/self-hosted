@@ -174,7 +174,7 @@ resource "helm_release" "harbor" {
   name       = "harbor"
   namespace  = "harbor"
   repository = "https://helm.goharbor.io"
-  version    = "1.17.0"
+  version    = "1.17.1"
   chart      = "harbor"
 
   values = [
