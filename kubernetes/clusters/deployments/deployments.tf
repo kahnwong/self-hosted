@@ -40,6 +40,7 @@ locals {
     tools = [
       "beaverhabits",
       # "evcc",
+      "ghostfolio", "ghostfolio-postgres", "ghostfolio-valkey",
       "homer",
       "linkding",
       "livegrep-backend", "livegrep-frontend",

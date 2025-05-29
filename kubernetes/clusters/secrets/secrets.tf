@@ -23,6 +23,7 @@ locals {
     ]
     jobs-family-alerts = ["family-alerts"]
     tools = [
+      "ghostfolio", "ghostfolio-postgres",
       "livegrep-clone-custom",
       "opengist",
       "picoshare",
