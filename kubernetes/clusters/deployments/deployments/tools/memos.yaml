@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: memos
     repository: neosmemo/memos
-    tag: "0.24.2"
+    tag: "0.24.3"
     port: 5230
     env:
       # https://github.com/usememos/memos/issues/1782
