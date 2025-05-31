@@ -1,12 +1,10 @@
----
 kind: StatefulSet
 name: immich-postgres
 replicaCount: 1
-
 containers:
   - name: postgres
-    repository: tensorchord/pgvecto-rs
-    tag: pg14-v0.2.0
+    repository: ghcr.io/immich-app/postgres
+    tag: 14-vectorchord0.3.0-pgvectors0.2.0
     port: 5432
     livenessProbeScheme: tcp
     envFrom:
