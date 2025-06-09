@@ -1,109 +1,166 @@
-data "cloudflare_api_token_permission_groups" "all" {}
-
 # -------------------- Cloudflare Pages --------------------
 resource "cloudflare_api_token" "deploy_cloudflare_pages" {
-  name = "deploy-cloudflare-pages"
+  name   = "deploy-cloudflare-pages"
+  status = "active"
 
-  policy {
-    permission_groups = [
-      data.cloudflare_api_token_permission_groups.all.account["Pages Write"],
-    ]
-    resources = {
-      "com.cloudflare.api.account.*" = "*"
+  policies = [
+    {
+      effect = "allow"
+      permission_groups = [
+        {
+          # data.cloudflare_api_token_permission_groups.all.account["Pages Write"]
+          id = "8d28297797f24fb8a0c332fe0866ec89"
+        }
+      ]
+      resources = {
+        "com.cloudflare.api.account.*" = "*"
+      }
     }
-  }
+  ]
 }
 
 # -------------------- DNS --------------------
 resource "cloudflare_api_token" "ddns_updater" {
-  name = "ddns-updater"
+  name   = "ddns-updater"
+  status = "active"
 
-  policy {
-    permission_groups = [
-      data.cloudflare_api_token_permission_groups.all.zone["DNS Write"],
-    ]
-    resources = {
-      "com.cloudflare.api.account.*" = "*"
+  policies = [
+    {
+      effect = "allow"
+      permission_groups = [
+        {
+          # data.cloudflare_api_token_permission_groups.all.zone["DNS Write"]
+          id = "4755a26eedb94da69e1066d98aa820be"
+        }
+      ]
+      resources = {
+        "com.cloudflare.api.account.*" = "*"
+      }
     }
-  }
+  ]
 }
 
 resource "cloudflare_api_token" "caddy_wildcard_tls" {
-  name = "caddy-wildcard-tls"
+  name   = "caddy-wildcard-tls"
+  status = "active"
 
-  policy {
-    permission_groups = [
-      data.cloudflare_api_token_permission_groups.all.zone["Zone Read"],
-      data.cloudflare_api_token_permission_groups.all.zone["DNS Write"],
-    ]
-    resources = {
-      "com.cloudflare.api.account.*" = "*"
+  policies = [
+    {
+      effect = "allow"
+      permission_groups = [
+        {
+          # data.cloudflare_api_token_permission_groups.all.zone["Zone Read"]
+          id = "c8fed203ed3043cba015a93ad1616f1f"
+        },
+        {
+          #  data.cloudflare_api_token_permission_groups.all.zone["DNS Write"]
+          id = "4755a26eedb94da69e1066d98aa820be"
+        }
+      ]
+      resources = {
+        "com.cloudflare.api.account.*" = "*"
+      }
     }
-  }
+  ]
 }
 
 # -------------------- R2 --------------------
 resource "cloudflare_api_token" "r2_backup" {
-  name = "r2-backup"
+  name   = "r2-backup"
+  status = "active"
 
-  policy {
-    permission_groups = [
-      data.cloudflare_api_token_permission_groups.all.account["Workers R2 Storage Write"],
-    ]
-    resources = {
-      "com.cloudflare.api.account.*" = "*"
+  policies = [
+    {
+      effect = "allow"
+      permission_groups = [
+        {
+          # data.cloudflare_api_token_permission_groups.all.account["Workers R2 Storage Write"],
+          id = "bf7481a1826f439697cb59a20b22293e"
+        }
+      ]
+      resources = {
+        "com.cloudflare.api.account.*" = "*"
+      }
     }
-  }
+  ]
 }
 
 resource "cloudflare_api_token" "r2_ro" {
-  name = "r2-ro"
+  name   = "r2-ro"
+  status = "active"
 
-  policy {
-    permission_groups = [
-      data.cloudflare_api_token_permission_groups.all.account["Workers R2 Storage Read"],
-    ]
-    resources = {
-      "com.cloudflare.api.account.*" = "*"
+  policies = [
+    {
+      effect = "allow"
+      permission_groups = [
+        {
+          # data.cloudflare_api_token_permission_groups.all.account["Workers R2 Storage Read"]
+          id = "b4992e1108244f5d8bfbd5744320c2e1"
+        }
+      ]
+      resources = {
+        "com.cloudflare.api.account.*" = "*"
+      }
     }
-  }
+  ]
 }
 
 resource "cloudflare_api_token" "r2_send_rw" {
-  name = "r2-send-rw"
+  name   = "r2-send-rw"
+  status = "active"
 
-  policy {
-    permission_groups = [
-      data.cloudflare_api_token_permission_groups.all.r2["Workers R2 Storage Bucket Item Write"],
-    ]
-    resources = {
-      "com.cloudflare.edge.r2.bucket.${var.cloudflare_account_id}_default_send" = "*"
+  policies = [
+    {
+      effect = "allow"
+      permission_groups = [
+        {
+          # data.cloudflare_api_token_permission_groups.all.r2["Workers R2 Storage Bucket Item Write"],
+          id = "2efd5506f9c8494dacb1fa10a3e7d5b6"
+        }
+      ]
+      resources = {
+        "com.cloudflare.edge.r2.bucket.${var.cloudflare_account_id}_default_send" = "*"
+      }
     }
-  }
+  ]
 }
 
 resource "cloudflare_api_token" "r2_restic_rw" {
-  name = "r2-restic-rw"
+  name   = "r2-restic-rw"
+  status = "active"
 
-  policy {
-    permission_groups = [
-      data.cloudflare_api_token_permission_groups.all.r2["Workers R2 Storage Bucket Item Write"],
-    ]
-    resources = {
-      "com.cloudflare.edge.r2.bucket.${var.cloudflare_account_id}_default_restic" = "*"
+  policies = [
+    {
+      effect = "allow"
+      permission_groups = [
+        {
+          # data.cloudflare_api_token_permission_groups.all.r2["Workers R2 Storage Bucket Item Write"]
+          id = "2efd5506f9c8494dacb1fa10a3e7d5b6"
+        }
+      ]
+      resources = {
+        "com.cloudflare.edge.r2.bucket.${var.cloudflare_account_id}_default_restic" = "*"
+      }
     }
-  }
+  ]
 }
 
 resource "cloudflare_api_token" "r2_terraform_state_rw" {
-  name = "r2-terraform-state-rw"
+  name   = "r2-terraform-state-rw"
+  status = "active"
 
-  policy {
-    permission_groups = [
-      data.cloudflare_api_token_permission_groups.all.r2["Workers R2 Storage Bucket Item Write"],
-    ]
-    resources = {
-      "com.cloudflare.edge.r2.bucket.${var.cloudflare_account_id}_default_terraform-state" = "*"
+  policies = [
+    {
+      effect = "allow"
+      permission_groups = [
+        {
+          # data.cloudflare_api_token_permission_groups.all.r2["Workers R2 Storage Bucket Item Write"],
+          id = "2efd5506f9c8494dacb1fa10a3e7d5b6"
+        }
+      ]
+      resources = {
+        "com.cloudflare.edge.r2.bucket.${var.cloudflare_account_id}_default_terraform-state" = "*"
+      }
     }
-  }
+  ]
 }

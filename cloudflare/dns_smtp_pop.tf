@@ -1,5 +1,5 @@
-resource "cloudflare_record" "pop_mx_send" {
-  name     = "send"
+resource "cloudflare_dns_record" "pop_mx_send" {
+  name     = "send.karnwong.me"
   priority = 10
   proxied  = false
   ttl      = 1
@@ -8,8 +8,8 @@ resource "cloudflare_record" "pop_mx_send" {
   zone_id  = var.cloudflare_zone_id
 }
 
-resource "cloudflare_record" "pop_txt_send" {
-  name    = "send"
+resource "cloudflare_dns_record" "pop_txt_send" {
+  name    = "send.karnwong.me"
   proxied = false
   ttl     = 1
   type    = "TXT"
@@ -17,8 +17,8 @@ resource "cloudflare_record" "pop_txt_send" {
   zone_id = var.cloudflare_zone_id
 }
 
-resource "cloudflare_record" "pop_txt_key" {
-  name    = "resend._domainkey"
+resource "cloudflare_dns_record" "pop_txt_key" {
+  name    = "resend._domainkey.karnwong.me"
   proxied = false
   ttl     = 1
   type    = "TXT"

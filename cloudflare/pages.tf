@@ -26,7 +26,7 @@ module "pages" {
   zone_id    = var.cloudflare_zone_id
 
   project_name = each.key
-  subdomain    = each.key
+  subdomain    = "${each.key}.karnwong.me"
   domain_name  = "${each.key}.karnwong.me"
 }
 
@@ -38,7 +38,7 @@ module "karnwong_me" {
   zone_id    = var.cloudflare_zone_id
 
   project_name = "karnwong-me"
-  subdomain    = "@"
+  subdomain    = "karnwong.me"
   domain_name  = "karnwong.me"
 }
 module "karnwong_me_dev" {
@@ -48,6 +48,6 @@ module "karnwong_me_dev" {
   zone_id    = var.cloudflare_zone_id
 
   project_name = "karnwong-me-dev"
-  subdomain    = "dev"
+  subdomain    = "dev.karnwong.me"
   domain_name  = "dev.karnwong.me"
 }

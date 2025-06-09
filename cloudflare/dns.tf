@@ -59,7 +59,6 @@ locals {
     "notes",
     "podgrab",
     "share", # prevent request entity too large
-    # "sourcebot",
     "subsonic-widgets",
     "syncthing",
     "t.console.notes",
@@ -74,9 +73,9 @@ locals {
   selfhosted_dns   = merge(local.proxied_dict, local.non_proxied_dict)
 }
 
-resource "cloudflare_record" "github_pages_dns" {
+resource "cloudflare_dns_record" "github_pages_dns" {
   for_each = local.github_pages
-  name     = each.key
+  name     = "${each.key}.karnwong.me"
   proxied  = true
   ttl      = 1
   type     = "CNAME"
@@ -84,28 +83,28 @@ resource "cloudflare_record" "github_pages_dns" {
   zone_id  = var.cloudflare_zone_id
 }
 
-resource "cloudflare_record" "vercel_dns" {
+resource "cloudflare_dns_record" "vercel_dns" {
   for_each = local.vercel
-  name     = each.key
+  name     = "${each.key}.karnwong.me"
   proxied  = true
   ttl      = 1
   type     = "CNAME"
-  content  = "cname.vercel-dns.com."
+  content  = "cname.vercel-dns.com"
   zone_id  = var.cloudflare_zone_id
 }
 
-resource "cloudflare_record" "selfhosted_dns" {
+resource "cloudflare_dns_record" "selfhosted_dns" {
   for_each = local.selfhosted_dns
-  name     = each.key
+  name     = "${each.key}.karnwong.me"
   proxied  = each.value
   ttl      = 1
   type     = "CNAME"
-  content  = data.sops_file.secrets.data["DDNS_CNAME"]
+  content  = nonsensitive(data.sops_file.secrets.data["DDNS_CNAME"])
   zone_id  = var.cloudflare_zone_id
 }
 
-resource "cloudflare_record" "vaultwarden" {
-  name    = "vaultwarden"
+resource "cloudflare_dns_record" "vaultwarden" {
+  name    = "vaultwarden.karnwong.me"
   proxied = true
   ttl     = 1
   type    = "A"
@@ -113,8 +112,8 @@ resource "cloudflare_record" "vaultwarden" {
   zone_id = var.cloudflare_zone_id
 }
 
-resource "cloudflare_record" "umami" {
-  name    = "umami"
+resource "cloudflare_dns_record" "umami" {
+  name    = "umami.karnwong.me"
   proxied = true
   ttl     = 1
   type    = "A"
@@ -122,8 +121,8 @@ resource "cloudflare_record" "umami" {
   zone_id = var.cloudflare_zone_id
 }
 
-resource "cloudflare_record" "matrix" {
-  name    = "matrix"
+resource "cloudflare_dns_record" "matrix" {
+  name    = "matrix.karnwong.me"
   proxied = true
   ttl     = 1
   type    = "A"
@@ -131,8 +130,8 @@ resource "cloudflare_record" "matrix" {
   zone_id = var.cloudflare_zone_id
 }
 
-resource "cloudflare_record" "pairdrop" {
-  name    = "pairdrop"
+resource "cloudflare_dns_record" "pairdrop" {
+  name    = "pairdrop.karnwong.me"
   proxied = true
   ttl     = 1
   type    = "A"
@@ -140,8 +139,8 @@ resource "cloudflare_record" "pairdrop" {
   zone_id = var.cloudflare_zone_id
 }
 
-resource "cloudflare_record" "kutt" {
-  name    = "kutt"
+resource "cloudflare_dns_record" "kutt" {
+  name    = "kutt.karnwong.me"
   proxied = true
   ttl     = 1
   type    = "A"
@@ -150,8 +149,8 @@ resource "cloudflare_record" "kutt" {
 }
 
 # need for redirection
-resource "cloudflare_record" "www_dummy" {
-  name    = "www"
+resource "cloudflare_dns_record" "www_dummy" {
+  name    = "www.karnwong.me"
   proxied = true
   ttl     = 1
   type    = "A"
@@ -159,12 +158,14 @@ resource "cloudflare_record" "www_dummy" {
   zone_id = var.cloudflare_zone_id
 }
 resource "cloudflare_page_rule" "redirect_www_to_root" {
+  status = "active"
+
   zone_id  = var.cloudflare_zone_id
   target   = "www.karnwong.me/*"
   priority = 1
 
-  actions {
-    forwarding_url {
+  actions = {
+    forwarding_url = {
       url         = "https://karnwong.me/$1"
       status_code = 301
     }

@@ -5,7 +5,7 @@
 
 | Name | Version |
 |------|---------|
-| cloudflare | 4.52.0 |
+| cloudflare | 5.5.0 |
 
 ## Providers
 
@@ -21,9 +21,9 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [cloudflare_pages_domain.this](https://registry.terraform.io/providers/cloudflare/cloudflare/4.52.0/docs/resources/pages_domain) | resource |
-| [cloudflare_pages_project.this](https://registry.terraform.io/providers/cloudflare/cloudflare/4.52.0/docs/resources/pages_project) | resource |
-| [cloudflare_record.this](https://registry.terraform.io/providers/cloudflare/cloudflare/4.52.0/docs/resources/record) | resource |
+| [cloudflare_dns_record.this](https://registry.terraform.io/providers/cloudflare/cloudflare/5.5.0/docs/resources/dns_record) | resource |
+| [cloudflare_pages_domain.this](https://registry.terraform.io/providers/cloudflare/cloudflare/5.5.0/docs/resources/pages_domain) | resource |
+| [cloudflare_pages_project.this](https://registry.terraform.io/providers/cloudflare/cloudflare/5.5.0/docs/resources/pages_project) | resource |
 
 ## Inputs
 

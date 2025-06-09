@@ -4,11 +4,11 @@ resource "cloudflare_pages_project" "this" {
   production_branch = var.production_branch
 
   lifecycle {
-    ignore_changes = [deployment_configs, source]
+    ignore_changes = [deployment_configs, source, build_config]
   }
 }
 
-resource "cloudflare_record" "this" {
+resource "cloudflare_dns_record" "this" {
   depends_on = [cloudflare_pages_project.this]
 
   name    = var.subdomain
@@ -20,9 +20,9 @@ resource "cloudflare_record" "this" {
 }
 
 resource "cloudflare_pages_domain" "this" {
-  depends_on = [cloudflare_record.this]
+  depends_on = [cloudflare_dns_record.this]
 
   account_id   = var.account_id
   project_name = var.project_name
-  domain       = var.domain_name
+  name         = var.domain_name
 }

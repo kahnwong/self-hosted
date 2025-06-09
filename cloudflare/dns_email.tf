@@ -1,5 +1,5 @@
 ## email alias (already verified)
-#resource "cloudflare_record" "google_workspace_alias" {
+#resource "cloudflare_dns_record" "google_workspace_alias" {
 #  name    = "@"
 #  proxied = false
 #  ttl     = 1
@@ -8,8 +8,8 @@
 #  zone_id = local.cloudflare_zone_id
 #}
 
-resource "cloudflare_record" "google_workspace_smtp" {
-  name     = "@"
+resource "cloudflare_dns_record" "google_workspace_smtp" {
+  name     = "karnwong.me"
   priority = 1
   proxied  = false
   ttl      = 1

@@ -1,5 +1,5 @@
-resource "cloudflare_record" "bluesky_txt" {
-  name    = "_atproto"
+resource "cloudflare_dns_record" "bluesky_txt" {
+  name    = "_atproto.karnwong.me"
   proxied = false
   ttl     = 1
   type    = "TXT"
