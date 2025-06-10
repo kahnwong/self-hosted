@@ -5,7 +5,7 @@ replicaCount: 1
 containers:
   - name: beaverhabits
     repository: daya0576/beaverhabits
-    tag: 0.5.1
+    tag: 0.6.0
     port: 8080
     env:
       - name: MAX_USER_COUNT
