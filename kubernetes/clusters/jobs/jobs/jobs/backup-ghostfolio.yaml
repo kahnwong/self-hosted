@@ -1,0 +1,26 @@
+name: backup-ghostfolio
+schedule: "2 0 * * *"
+containers:
+  - name: backup-ghostfolio
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 7a5b35c
+    env:
+      - name: MODE
+        value: DB_POSTGRES
+      - name: SERVICE_NAME
+        value: ghostfolio
+      - name: POSTGRES_USERNAME
+        valueFrom:
+          secretKeyRef:
+            name: ghostfolio-postgres
+            key: POSTGRES_USER
+      - name: POSTGRES_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: ghostfolio-postgres
+            key: POSTGRES_PASSWORD
+      - name: POSTGRES_HOSTNAME
+        value: ghostfolio-postgres.tools.svc.cluster.local
+    envFrom:
+      - secretRef:
+          name: backup
