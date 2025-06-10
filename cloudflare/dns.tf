@@ -11,6 +11,7 @@ locals {
   selfhosted_proxied = toset([
     "*",
     "evcc",
+    "ghostfolio",
     "go",
     "habits",
     "immich",

@@ -14,6 +14,9 @@ books.karnwong.me {
 console.minio.karnwong.me {
     reverse_proxy 192.168.1.36:30021
 }
+ghostfolio.karnwong.me {
+    reverse_proxy 192.168.1.36:30066
+}
 git.karnwong.me {
     reverse_proxy 192.168.1.36:30026
 }

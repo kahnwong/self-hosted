@@ -13,6 +13,7 @@ func main() {
 		"authentik":        "30047",
 		"books":            "calibre-web.media",
 		"console.minio":    "30021",
+		"ghostfolio":       "30066",
 		"git":              "30026",
 		"go":               "go-playground.playground",
 		"habits":           "30056",
