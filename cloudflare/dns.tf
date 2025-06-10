@@ -10,9 +10,7 @@ locals {
   ])
   selfhosted_proxied = toset([
     "*",
-    "digger",
     "evcc",
-    "gist",
     "go",
     "habits",
     "immich",
@@ -32,7 +30,6 @@ locals {
     "secrets",
     "send",
     "signoz",
-    "slash",
     "split",
     "thai-tech-cal",
     "todotxt",
@@ -57,14 +54,12 @@ locals {
     "minio",
     "mlflow",
     "notes",
-    "podgrab",
     "share", # prevent request entity too large
     "subsonic-widgets",
     "syncthing",
     "t.console.notes",
     "teslamate",
     "wallabag",
-    "wg",
   ]), var.private_dns)
 }
 locals {

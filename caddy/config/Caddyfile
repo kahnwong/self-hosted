@@ -14,14 +14,6 @@ books.karnwong.me {
 console.minio.karnwong.me {
     reverse_proxy 192.168.1.36:30021
 }
-digger.karnwong.me {
-    reverse_proxy 192.168.1.36:31978
-}
-gist.karnwong.me {
-    reverse_proxy 192.168.1.36:31080 {
-        header_up Host opengist.tools.example.com
-    }
-}
 git.karnwong.me {
     reverse_proxy 192.168.1.36:30026
 }
@@ -81,9 +73,6 @@ share.karnwong.me {
 }
 signoz.karnwong.me {
     reverse_proxy 192.168.1.36:30996
-}
-slash.karnwong.me {
-    reverse_proxy 192.168.1.36:30055
 }
 split.karnwong.me {
     reverse_proxy 192.168.1.36:30063
@@ -219,19 +208,6 @@ pdf.karnwong.me {
         }
 
         reverse_proxy 192.168.1.36:30040
-    }
-}
-podgrab.karnwong.me {
-    route {
-        reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
-
-        forward_auth http://192.168.1.36:30047 {
-            uri /outpost.goauthentik.io/auth/caddy
-            copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
-            trusted_proxies private_ranges
-        }
-
-        reverse_proxy 192.168.1.36:30004
     }
 }
 t.console.notes.karnwong.me {

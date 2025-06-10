@@ -28,7 +28,6 @@ locals {
     ]
     media = [
       "navidrome",
-      "podgrab",
     ]
     news = [
       "miniflux", "miniflux-postgres",
