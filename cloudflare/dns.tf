@@ -4,7 +4,6 @@ locals {
     "postgres",
   ])
   vercel = toset([
-    "gitreceipt",
     "transform",
     "shouldideploytoday",
   ])
