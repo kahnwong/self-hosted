@@ -78,7 +78,7 @@ kubectl get ksvc
 | Name | Version |
 |------|---------|
 | helm | 2.17.0 |
-| kubernetes | 2.36.0 |
+| kubernetes | 2.37.1 |
 | sops | 1.2.0 |
 
 ## Modules
