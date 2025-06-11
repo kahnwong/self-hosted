@@ -48,7 +48,7 @@ locals {
       "nocodb",
       "picoshare",
       "rallly", "rallly-postgres",
-      "send", "send-valkey",
+      # "send", "send-valkey",  # disable due to memory leaks
       "spliit", "spliit-postgres",
       "sshx",
       "supersecretmessage", "supersecretmessage-vault",
