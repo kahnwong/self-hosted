@@ -116,15 +116,6 @@ resource "cloudflare_dns_record" "umami" {
   zone_id = var.cloudflare_zone_id
 }
 
-resource "cloudflare_dns_record" "matrix" {
-  name    = "matrix.karnwong.me"
-  proxied = true
-  ttl     = 1
-  type    = "A"
-  content = data.sops_file.secrets.data["ORACLE_VM_IP"]
-  zone_id = var.cloudflare_zone_id
-}
-
 resource "cloudflare_dns_record" "pairdrop" {
   name    = "pairdrop.karnwong.me"
   proxied = true
