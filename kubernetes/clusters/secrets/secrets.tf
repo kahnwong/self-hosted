@@ -26,7 +26,7 @@ locals {
     tools = [
       "ghostfolio", "ghostfolio-postgres",
       "livegrep-clone-custom",
-      "picoshare",
+      # "picoshare",
       "rallly", "rallly-postgres",
       "send",
       "spliit", "spliit-postgres",

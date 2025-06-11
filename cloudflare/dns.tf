@@ -54,7 +54,7 @@ locals {
     "minio",
     "mlflow",
     "notes",
-    "share", # prevent request entity too large
+    # "share", # prevent request entity too large; migrated to oracle
     "subsonic-widgets",
     "syncthing",
     "t.console.notes",
@@ -133,6 +133,16 @@ resource "cloudflare_dns_record" "kutt" {
   content = data.sops_file.secrets.data["ORACLE_VM_IP"]
   zone_id = var.cloudflare_zone_id
 }
+
+resource "cloudflare_dns_record" "picoshare" {
+  name    = "share.karnwong.me"
+  proxied = true
+  ttl     = 1
+  type    = "A"
+  content = data.sops_file.secrets.data["ORACLE_VM_IP"]
+  zone_id = var.cloudflare_zone_id
+}
+
 
 # need for redirection
 resource "cloudflare_dns_record" "www_dummy" {

@@ -46,7 +46,7 @@ locals {
       "memos",
       "microbin",
       "nocodb",
-      "picoshare",
+      # "picoshare",
       "rallly", "rallly-postgres",
       # "send", "send-valkey",  # disable due to memory leaks
       "spliit", "spliit-postgres",

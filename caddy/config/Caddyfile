@@ -71,9 +71,6 @@ rustpad.karnwong.me {
 secrets.karnwong.me {
     reverse_proxy 192.168.1.36:30025
 }
-share.karnwong.me {
-    reverse_proxy 192.168.1.36:30032
-}
 signoz.karnwong.me {
     reverse_proxy 192.168.1.36:30996
 }
