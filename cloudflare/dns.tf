@@ -54,12 +54,13 @@ locals {
     "minio",
     "mlflow",
     "notes",
-    # "share", # prevent request entity too large; migrated to oracle
     "subsonic-widgets",
     "syncthing",
     "t.console.notes",
     "teslamate",
     "wallabag",
+    "warpgate",
+    # "share", # prevent request entity too large; migrated to oracle
   ]), var.private_dns)
 }
 locals {
