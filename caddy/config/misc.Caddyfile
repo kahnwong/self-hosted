@@ -20,8 +20,8 @@ wg.karnwong.me {
 }
 warpgate.karnwong.me {
     reverse_proxy 192.168.1.65:8888 {
-        header_up Host {http.request.host}
-        header_up X-Forwarded-Proto {http.request.scheme}
+        header_up Host warpgate.karnwong.me
+        header_up X-Forwarded-Proto https
 
         transport http {
             tls_insecure_skip_verify
