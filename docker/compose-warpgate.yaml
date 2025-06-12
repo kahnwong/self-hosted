@@ -1,6 +1,6 @@
 services:
   warpgate:
-    image: ghcr.io/warp-tech/warpgate:0.14gs
+    image: ghcr.io/warp-tech/warpgate:0.14
     ports:
       - 2222:2222 # ssh
       - 8888:8888 # http
