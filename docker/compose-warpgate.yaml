@@ -1,0 +1,12 @@
+services:
+  warpgate:
+    image: ghcr.io/warp-tech/warpgate:0.14
+    ports:
+      - 2222:2222 # ssh
+      - 8888:8888 # http
+      - 33306:33306 # mysql
+      - 55432:55432 # postgres
+    volumes:
+      - /opt/warpgate/data:/data
+    stdin_open: true
+    tty: true
