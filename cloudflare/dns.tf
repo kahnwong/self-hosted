@@ -42,6 +42,7 @@ locals {
     "cli.send",
     "console.minio",
     "files",
+    "garage",
     "gatus",
     "git",
     "grafana.teslamate",

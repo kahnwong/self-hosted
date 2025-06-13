@@ -4,14 +4,23 @@
 #garage layout assign -z dc1 -c 20G $NODE_ID
 #garage layout apply --version 1
 #
+#garage key create garage
+#garage key allow --create-bucket garage
+#
 #garage bucket create dvc
 #garage key create dvc-rw
 #garage bucket allow \
-#
+#  --read \
 #  --write \
 #  --owner \
 #  dvc \
 #  --key dvc-rw
+#garage bucket allow \
+#  --read \
+#  --write \
+#  --owner \
+#  dvc \
+#  --key garage
 #garage bucket info dvc
 # --------------------------
 kind: Deployment
