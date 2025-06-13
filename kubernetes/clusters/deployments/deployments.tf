@@ -22,6 +22,7 @@ locals {
       "error-pages",
       "gatus",
       "forgejo", "forgejo-postgres",
+      "garage",
       "minio",
       "mlflow", "mlflow-postgres",
       "ntfy",

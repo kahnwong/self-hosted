@@ -1,0 +1,20 @@
+{
+	"data": "ENC[AES256_GCM,data:qg/iyHgknFZcTWiiUI2zqvam/wAb1Y/NrGkQ2OV4W12OclkdNsfy1lM+sS4R3K0lP0z/DnM2NUmPPhmWS78Vd9jTj3kLGNr1CDgzWfqUgeEy70lJl7sPGiYsBNVoJIQnLsC950GSXOqg6IJVMvY7dt4gTtmDYxd35vN7LmALPpjF9qSCaM3eoOYM2lyI4KG/ERF9yw7HPsf+f2M36vRYe2CQEFIp1Wtl/2jI8lL1t67Fno3WODAd/jG5C4nbUjQxU/gNokA4ZOAnHc7bD3S30ZjyLpZWCHdTEX0nEGkkthraZjHDB6R/Ys9S70JkMkcJj8KUXkWsJu7sKSzXjn6uJbJHJKyOrXsow91QqV7bpe6Fu9oymsLKZV6Ai6JYm4/oWmgUZ1BJEmUd8E+F9htfMkNz2ixtg5olyA94QVvS8AVPECPpU7nwqBV2nTBtHngR80apT3LRtDmLWk3IS5h/bOcQlMhquBr8rUvuTyrtsFqzy33IeJs5d1AKRxXxgBLI+oIwdg2cqt8Sl2KQn7DSWv8pfHendRxpYwkYaPnvMLuOfvfKy5lEap33i6xlDbg7Zd/6uYtqaXHCDlxjDTm+r9mjkuFrgpd32jUruz8oCcArjY2IfE4E5Xn4eqXoFNj5/7/mgpv815Hgj9LCgrrxNi+8X5MLpfZr7jdNxKvx02R8dOVP970QML4WHxfaM0ceiOq6mq9UpprjMs5Xhs1x6HWtK75gsc34Jo2DKhyQ23SxSH3aq1nbucg3vRYjTS8R2MJmauUb/4jIjb4g7ru17lIpfVRvuM58AnA31EtMtiWamRH0QsKisOdNy1lM/frlDnMDpFpJ0sfn6CXz2KGcoC4pXGuk6e6fYuLGfnSBiXAAVg10Yq+fp4GQfNnn2Fmg5muon2nhHOjqDEbCao8oL9ab,iv:SVow1yiw5M+DWNodDbxlHlQoCZcCjZI0lj7wWJ2GiTg=,tag:iY9yqrLqqt/odUZrlNJEXw==,type:str]",
+	"sops": {
+		"kms": null,
+		"gcp_kms": null,
+		"azure_kv": null,
+		"hc_vault": null,
+		"age": [
+			{
+				"recipient": "age14ke6m4zzfpgpu2herm8cu22wshyalyfkvjp2hjedm34h7wg0ypjss9e3ct",
+				"enc": "-----BEGIN AGE ENCRYPTED FILE-----\nYWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBqSzdqckVZbnBYc21BdGUv\nUDVNWVFGejJheWRNODFCUGwya3cxZEJrRHpnClNVN1RwbDhEU1h5K0pET1Zwei9U\nTWR0WWJDbloza1V3ZWZlZktjdHNGMlEKLS0tICt6UDJld1NXaGZRVkRJdmJIMito\nVnBtaGJ4c21XdUhtM3ZhekhVQ0ZPeVUKz0udJlrIaHONcs44ppca6QgE4e8grOGT\nKtNsLeExYfrZBQndgTiZIaxmZX9zsfor81pgqQLJ8l5hKHpHpZsGzg==\n-----END AGE ENCRYPTED FILE-----\n"
+			}
+		],
+		"lastmodified": "2025-06-13T11:37:28Z",
+		"mac": "ENC[AES256_GCM,data:wnkqdYaL/RpRL0V7QWaVCC4is/M0kYCPgK2QlDNOJyyNh/as1uYqhTzIYSXByP5+S8r9iBZi9OK12icsz+bubEWlsTlIvtPrpUgom3LowLDGXmY3Sn/w0CACTeu9zZtm/6qIRyIkeeEpie7aR2kVscA8GCwROOKhLH4bL5skWvI=,iv:gykomW/IjxlrT3X9dE8/g+fXaXCI0OwMml/C3GBwpQY=,tag:jpoQnt+l3Zgj8cjYZi91rw==,type:str]",
+		"pgp": null,
+		"unencrypted_suffix": "_unencrypted",
+		"version": "3.9.4"
+	}
+}
