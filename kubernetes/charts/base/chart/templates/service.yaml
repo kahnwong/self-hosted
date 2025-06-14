@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: {{ template "name" . }}
 spec:
-  {{ if (eq .Values.kind "Deployment")}}
+  {{ if .Values.service.nodePort }}
   type: NodePort
   {{ end }}
   selector:

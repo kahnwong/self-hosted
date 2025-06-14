@@ -23,7 +23,7 @@
 #  --key garage
 #garage bucket info dvc
 # --------------------------
-kind: Deployment
+kind: StatefulSet
 name: garage
 replicaCount: 1
 containers:
@@ -63,11 +63,13 @@ volumes:
     hostPath:
       path: /opt/garage/meta
 service:
-  ports:
-    - name: s3
-      port: 3900
-      targetPort: 3900
-      nodePort: 30070
+  port: 3900
+  nodePort: 30070
+#  ports:
+#    - name: s3
+#      port: 3900
+#      targetPort: 3900
+#      nodePort: 30070
 #    - name: rpc
 #      port: 3901
 #      targetPort: 3901
