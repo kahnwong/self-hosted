@@ -10,3 +10,4 @@ services:
       - /opt/warpgate/data:/data
     stdin_open: true
     tty: true
+    restart: always
