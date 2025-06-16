@@ -1,0 +1,25 @@
+kind: Deployment
+name: garage-ui
+replicaCount: 1
+containers:
+  - name: garage-ui
+    repository: khairul169/garage-webui
+    tag: latest
+    port: 3909
+    env:
+      - name: API_BASE_URL
+        value: "http://garage.infrastructure.svc.cluster.local:3903"
+      - name: S3_ENDPOINT_URL
+        value: "http://garage.infrastructure.svc.cluster.local:3900"
+    volumeMounts:
+      - name: config
+        mountPath: /etc/garage.toml
+        readOnly: true
+        subPath: garage.toml
+volumes:
+  - name: config
+    configMap:
+      name: garage
+service:
+  port: 3909
+  nodePort: 30074
