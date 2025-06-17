@@ -3,7 +3,7 @@ schedule: 25 1 * * *
 containers:
   - name: livegrep-clone
     repository: ghcr.io/kahnwong/livegrep-utils
-    tag: 49bd694
+    tag: 1c7442d
     command:
       - sh
       - -c
