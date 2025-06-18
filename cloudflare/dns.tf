@@ -145,6 +145,16 @@ resource "cloudflare_dns_record" "picoshare" {
   zone_id = var.cloudflare_zone_id
 }
 
+resource "cloudflare_dns_record" "croc" {
+  name    = "croc.karnwong.me"
+  proxied = false
+  ttl     = 1
+  type    = "A"
+  content = data.sops_file.secrets.data["ORACLE_VM_IP"]
+  zone_id = var.cloudflare_zone_id
+}
+
+
 
 # need for redirection
 resource "cloudflare_dns_record" "www_dummy" {
