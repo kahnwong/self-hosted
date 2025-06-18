@@ -23,7 +23,7 @@ locals {
       "gatus",
       "forgejo", "forgejo-postgres",
       "garage",
-      "minio",
+      # "minio",
       "mlflow", "mlflow-postgres",
       "ntfy",
     ]
