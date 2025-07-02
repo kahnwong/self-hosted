@@ -1,0 +1,9 @@
+name: weather-notify
+schedule: "0,30 * * * *"
+containers:
+  - name: weather-notify
+    repository: ghcr.io/kahnwong/weather-notify
+    tag: 4dd634e
+    envFrom:
+      - secretRef:
+          name: weather-notify

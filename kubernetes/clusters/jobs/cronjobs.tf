@@ -35,6 +35,7 @@ locals {
       "maintenance-wallabag-cleanup",
       "restart-livegrep",
       "water-cut-notify",
+      "weather-notify",
     ]
 
 
