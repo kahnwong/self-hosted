@@ -28,3 +28,6 @@ warpgate.karnwong.me {
         }
     }
 }
+garage.karnwong.me {
+    reverse_proxy 192.168.1.70:30070
+}

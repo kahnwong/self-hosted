@@ -27,11 +27,9 @@ No modules.
 |------|------|
 | [kubernetes_config_map.configmaps](https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/config_map) | resource |
 | [kubernetes_config_map.evcc](https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/config_map) | resource |
-| [kubernetes_config_map.garage](https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/config_map) | resource |
 | [kubernetes_config_map.livegrep-config](https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/config_map) | resource |
 | [sops_file.configmaps](https://registry.terraform.io/providers/carlpett/sops/1.2.0/docs/data-sources/file) | data source |
 | [sops_file.evcc](https://registry.terraform.io/providers/carlpett/sops/1.2.0/docs/data-sources/file) | data source |
-| [sops_file.garage](https://registry.terraform.io/providers/carlpett/sops/1.2.0/docs/data-sources/file) | data source |
 | [sops_file.livegrep-config](https://registry.terraform.io/providers/carlpett/sops/1.2.0/docs/data-sources/file) | data source |
 
 ## Inputs

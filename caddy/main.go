@@ -15,7 +15,6 @@ func main() {
 		"console.minio":    "30021",
 		"ghostfolio":       "30066",
 		"git":              "30026",
-		"garage":           "30070",
 		"go":               "go-playground.playground",
 		"habits":           "30056",
 		"harbor":           "30500",
