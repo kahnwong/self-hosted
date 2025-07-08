@@ -19,7 +19,7 @@ wg.karnwong.me {
     reverse_proxy 192.168.1.65:51821
 }
 warpgate.karnwong.me {
-    reverse_proxy 192.168.1.65:8888 {
+    reverse_proxy 192.168.1.58:8888 {
         header_up Host warpgate.karnwong.me
         header_up X-Forwarded-Proto https
 
