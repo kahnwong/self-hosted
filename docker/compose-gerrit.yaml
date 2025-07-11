@@ -1,0 +1,10 @@
+services:
+  gerrit:
+    image: docker.io/gerritcodereview/gerrit
+    volumes:
+      - /opt/gerrit/git:/var/gerrit/git
+      - /opt/gerrit/index:/var/gerrit/index
+      - /opt/gerrit/cache:/var/gerrit/cache
+    ports:
+      - "29418:29418" # sshd
+      - "8080:8080" # http
