@@ -71,7 +71,7 @@ kubectl get ksvc
 | helm | 2.17.0 |
 | kubectl | ~> 2.0 |
 | kubernetes | 2.37.1 |
-| sops | 1.2.0 |
+| sops | 1.2.1 |
 
 ## Providers
 
@@ -106,7 +106,7 @@ No modules.
 | [kubernetes_secret.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/secret) | resource |
 | [kubernetes_service_account.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/service_account) | resource |
 | [kubernetes_service_account.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/service_account) | resource |
-| [sops_file.misc](https://registry.terraform.io/providers/carlpett/sops/1.2.0/docs/data-sources/file) | data source |
+| [sops_file.misc](https://registry.terraform.io/providers/carlpett/sops/1.2.1/docs/data-sources/file) | data source |
 
 ## Inputs
 

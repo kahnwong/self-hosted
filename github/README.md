@@ -7,7 +7,7 @@
 |------|---------|
 | terraform | >= 1.2.7 |
 | github | 6.6.0 |
-| sops | 1.2.0 |
+| sops | 1.2.1 |
 
 ## Providers
 
@@ -27,7 +27,7 @@ No modules.
 | [github_actions_secret.cloudflare_pages](https://registry.terraform.io/providers/integrations/github/6.6.0/docs/resources/actions_secret) | resource |
 | [github_actions_secret.docs_algolia](https://registry.terraform.io/providers/integrations/github/6.6.0/docs/resources/actions_secret) | resource |
 | [github_actions_secret.vercel](https://registry.terraform.io/providers/integrations/github/6.6.0/docs/resources/actions_secret) | resource |
-| [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.2.0/docs/data-sources/file) | data source |
+| [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.2.1/docs/data-sources/file) | data source |
 
 ## Inputs
 
