@@ -127,6 +127,15 @@ resource "cloudflare_dns_record" "pairdrop" {
   zone_id = var.cloudflare_zone_id
 }
 
+resource "cloudflare_dns_record" "anisette" {
+  name    = "anisette.karnwong.me"
+  proxied = true
+  ttl     = 1
+  type    = "A"
+  content = data.sops_file.secrets.data["ORACLE_VM_IP"]
+  zone_id = var.cloudflare_zone_id
+}
+
 resource "cloudflare_dns_record" "kutt" {
   name    = "kutt.karnwong.me"
   proxied = true

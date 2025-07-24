@@ -7,7 +7,7 @@
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.6 |
-| kubernetes | 2.37.1 |
+| kubernetes | 2.38.0 |
 | sops | 1.2.1 |
 
 ## Providers
@@ -25,8 +25,8 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [kubernetes_secret.ghcr_config](https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/secret) | resource |
-| [kubernetes_secret.secrets](https://registry.terraform.io/providers/hashicorp/kubernetes/2.37.1/docs/resources/secret) | resource |
+| [kubernetes_secret.ghcr_config](https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/secret) | resource |
+| [kubernetes_secret.secrets](https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/secret) | resource |
 | [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.2.1/docs/data-sources/file) | data source |
 
 ## Inputs
