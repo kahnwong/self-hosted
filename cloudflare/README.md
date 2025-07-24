@@ -21,7 +21,7 @@ All users - API Tokens:Edit
 | Name | Version |
 |------|---------|
 | cloudflare | 5.7.1 |
-| sops | 1.2.0 |
+| sops | 1.2.1 |
 
 ## Modules
 
@@ -43,6 +43,7 @@ All users - API Tokens:Edit
 | [cloudflare_api_token.r2_ro](https://registry.terraform.io/providers/cloudflare/cloudflare/5.7.1/docs/resources/api_token) | resource |
 | [cloudflare_api_token.r2_send_rw](https://registry.terraform.io/providers/cloudflare/cloudflare/5.7.1/docs/resources/api_token) | resource |
 | [cloudflare_api_token.r2_terraform_state_rw](https://registry.terraform.io/providers/cloudflare/cloudflare/5.7.1/docs/resources/api_token) | resource |
+| [cloudflare_dns_record.anisette](https://registry.terraform.io/providers/cloudflare/cloudflare/5.7.1/docs/resources/dns_record) | resource |
 | [cloudflare_dns_record.bluesky_txt](https://registry.terraform.io/providers/cloudflare/cloudflare/5.7.1/docs/resources/dns_record) | resource |
 | [cloudflare_dns_record.croc](https://registry.terraform.io/providers/cloudflare/cloudflare/5.7.1/docs/resources/dns_record) | resource |
 | [cloudflare_dns_record.github_pages_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/5.7.1/docs/resources/dns_record) | resource |
