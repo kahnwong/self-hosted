@@ -1,0 +1,18 @@
+kind: Deployment
+name: rss-bridge
+replicaCount: 1
+containers:
+  - name: rss-bridge
+    repository: rssbridge/rss-bridge
+    tag: "latest"
+    port: 80
+    volumeMounts:
+      - name: config
+        mountPath: /config
+volumes:
+  - name: config
+    hostPath:
+      path: /opt/rss-bridge/config
+service:
+  port: 80
+  nodePort: 30075

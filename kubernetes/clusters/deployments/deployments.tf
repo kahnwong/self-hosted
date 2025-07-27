@@ -49,6 +49,7 @@ locals {
       "nocodb",
       # "picoshare",
       "rallly", "rallly-postgres",
+      "rss-bridge",
       # "send", "send-valkey",  # disable due to memory leaks
       "spliit", "spliit-postgres",
       "sshx",
