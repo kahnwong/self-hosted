@@ -9,13 +9,14 @@ import (
 
 func main() {
 	services := map[string]string{
+		"api.todotxt":      "30076",
 		"audiobookshelf":   "audiobookshelf.media",
 		"authentik":        "30047",
 		"books":            "calibre-web.media",
 		"console.minio":    "30021",
+		"garage":           "30070",
 		"ghostfolio":       "30066",
 		"git":              "30026",
-		"garage":           "30070",
 		"go":               "go-playground.playground",
 		"habits":           "30056",
 		"harbor":           "30500",

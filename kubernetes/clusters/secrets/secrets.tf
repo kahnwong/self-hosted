@@ -32,6 +32,7 @@ locals {
       "spliit", "spliit-postgres",
       "supersecretmessage-vault",
       "teslamate", "teslamate-grafana", "teslamate-postgres",
+      "todotxt-api",
       "wakapi", "wakapi-postgres"
     ]
   })

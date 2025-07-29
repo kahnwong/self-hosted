@@ -14,7 +14,7 @@
 
 | Name | Version |
 |------|---------|
-| kubernetes | 2.37.1 |
+| kubernetes | 2.38.0 |
 | sops | 1.2.1 |
 
 ## Modules

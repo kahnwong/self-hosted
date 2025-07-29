@@ -36,6 +36,7 @@ locals {
     "wakapi",
   ])
   selfhosted_non_proxied = setunion(toset([
+    "api.todotxt",
     "audiobookshelf",
     "authentik",
     "books",

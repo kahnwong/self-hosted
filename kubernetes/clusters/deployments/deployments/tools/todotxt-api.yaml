@@ -1,23 +1,27 @@
 kind: Deployment
-name: todotxt
+name: todotxt-api
 replicaCount: 1
 containers:
   - name: todotxt
-    repository: ghcr.io/kahnwong/todotxt-frontend
-    tag: 485fa59
+    repository: ghcr.io/kahnwong/todotxt-api
+    tag: latest
     port: 3000
     env:
       - name: LISTEN_ADDR
         value: ":3000"
       - name: TODO_PATH
         value: "/opt/todotxt/todo.txt"
+    envFrom:
+      - secretRef:
+          name: todotxt-api
     volumeMounts:
       - name: data
         mountPath: /opt/todotxt
+    livenessProbeScheme: tcp
 volumes:
   - name: data
     hostPath:
       path: /opt/syncthing/apps/todotxt
 service:
   port: 3000
-  nodePort: 30064
+  nodePort: 30076
