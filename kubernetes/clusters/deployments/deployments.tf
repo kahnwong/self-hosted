@@ -38,7 +38,7 @@ locals {
       "notes",
     ]
     tools = [
-      "beaverhabits",
+      # "beaverhabits",
       # "evcc",
       "ghostfolio", "ghostfolio-postgres", "ghostfolio-valkey",
       "homer",
@@ -51,7 +51,7 @@ locals {
       "rallly", "rallly-postgres",
       "rss-bridge",
       # "send", "send-valkey",  # disable due to memory leaks
-      "spliit", "spliit-postgres",
+      # "spliit", "spliit-postgres",
       "sshx",
       "supersecretmessage", "supersecretmessage-vault",
       # "teslamate", "teslamate-grafana", "teslamate-mosquitto", "teslamate-postgres",
