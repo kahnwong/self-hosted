@@ -38,11 +38,9 @@ func main() {
 		"syncthing":        "8384",
 		"thai-tech-cal":    "thai-tech-cal.news",
 		"wakapi":           "30041",
-		//"share":            "30032",
 	}
 	servicesForwardAuth := map[string]string{
 		"evcc":              "30060",
-		"gatus":             "30029",
 		"grafana.teslamate": "30058",
 		"homer":             "30053",
 		"k.console.notes":   "notes-console-k.notes",
