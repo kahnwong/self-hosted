@@ -79,6 +79,7 @@ locals {
   ])
   oracle_non_proxied = toset([
     "croc",
+    "relay.iroh",
   ])
 }
 locals {
