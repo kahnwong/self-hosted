@@ -17,7 +17,6 @@ locals {
     "immich",
     "jupyterhub",
     "memos",
-    "microbin",
     "miniflux",
     "music",
     "nocodb",
@@ -79,6 +78,7 @@ locals {
   oracle_non_proxied = toset([
     "croc",
     "gatus",
+    "microbin",
     "relay.iroh",
   ])
 }

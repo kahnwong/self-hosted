@@ -45,7 +45,7 @@ locals {
       "linkding",
       "livegrep-backend", "livegrep-frontend",
       "memos",
-      "microbin",
+      #       "microbin",
       "nocodb",
       # "picoshare",
       "rallly", "rallly-postgres",

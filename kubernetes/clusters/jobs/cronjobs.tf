@@ -18,7 +18,7 @@ locals {
       "backup-immich-db",
       "backup-linkding",
       "backup-memos",
-      "backup-microbin",
+      #       "backup-microbin",
       "backup-miniflux",
       "backup-navidrome",
       "backup-nocodb",
