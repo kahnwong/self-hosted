@@ -31,13 +31,13 @@ func main() {
 		"qa-api":           "30043",
 		"rally":            "30035",
 		"rustpad":          "rustpad.tools",
-		"secrets":          "30025",
 		"signoz":           "30996",
 		"split":            "30063",
 		"subsonic-widgets": "30038",
 		"syncthing":        "8384",
 		"thai-tech-cal":    "thai-tech-cal.news",
 		"wakapi":           "30041",
+		//"secrets":          "30025",
 	}
 	servicesForwardAuth := map[string]string{
 		"evcc":              "30060",

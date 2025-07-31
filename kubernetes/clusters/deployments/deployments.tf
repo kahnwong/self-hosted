@@ -53,7 +53,7 @@ locals {
       # "send", "send-valkey",  # disable due to memory leaks
       # "spliit", "spliit-postgres",
       "sshx",
-      "supersecretmessage", "supersecretmessage-vault",
+      #       "supersecretmessage", "supersecretmessage-vault",
       # "teslamate", "teslamate-grafana", "teslamate-mosquitto", "teslamate-postgres",
       "todotxt", "todotxt-api",
       "wakapi", "wakapi-postgres",

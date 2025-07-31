@@ -26,7 +26,6 @@ locals {
     "qa-api",
     "rally",
     "rustpad",
-    "secrets",
     "subsonic-widgets",
     "thai-tech-cal",
     "todotxt",
@@ -74,6 +73,7 @@ locals {
     "anisette",
     "kutt",
     "pairdrop",
+    "secrets",
     "share",
   ])
   oracle_non_proxied = toset([

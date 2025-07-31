@@ -74,9 +74,6 @@ rustpad.karnwong.me {
         header_up Host rustpad.tools.example.com
     }
 }
-secrets.karnwong.me {
-    reverse_proxy 192.168.1.36:30025
-}
 signoz.karnwong.me {
     reverse_proxy 192.168.1.36:30996
 }
