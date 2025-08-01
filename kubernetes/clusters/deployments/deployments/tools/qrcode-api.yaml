@@ -1,0 +1,25 @@
+kind: Deployment
+name: qrcode-api
+replicaCount: 1
+containers:
+  - name: qrcode-api
+    repository: ghcr.io/kahnwong/qrcode-api
+    tag: 3bf480e
+    port: 3000
+    env:
+      - name: LISTEN_ADDR
+        value: ":3000"
+    envFrom:
+      - secretRef:
+          name: qrcode-api
+    volumeMounts:
+      - name: data
+        mountPath: /data
+    livenessProbeScheme: tcp
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/qrcode-api/data
+service:
+  port: 3000
+  nodePort: 30077

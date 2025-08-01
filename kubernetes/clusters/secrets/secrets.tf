@@ -28,6 +28,7 @@ locals {
       "livegrep-clone-custom",
       # "picoshare",
       "rallly", "rallly-postgres",
+      "qrcode-api",
       "send",
       "spliit", "spliit-postgres",
       "supersecretmessage-vault",

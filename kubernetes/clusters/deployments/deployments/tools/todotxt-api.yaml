@@ -2,7 +2,7 @@ kind: Deployment
 name: todotxt-api
 replicaCount: 1
 containers:
-  - name: todotxt
+  - name: todotxt-api
     repository: ghcr.io/kahnwong/todotxt-api
     tag: latest
     port: 3000

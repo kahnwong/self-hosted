@@ -9,7 +9,7 @@ import (
 
 func main() {
 	services := map[string]string{
-		"api.qrcode":       "3000",
+		"api.qrcode":       "30077",
 		"api.todotxt":      "30076",
 		"audiobookshelf":   "audiobookshelf.media",
 		"authentik":        "30047",
