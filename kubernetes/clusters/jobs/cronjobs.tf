@@ -35,10 +35,8 @@ locals {
       "maintenance-wallabag-cleanup",
       "restart-livegrep",
       "water-cut-notify",
-      "weather-notify",
+      #       "weather-notify",
     ]
-
-
 
     jobs-family-alerts = [
       "01-1-lunch-ask",
