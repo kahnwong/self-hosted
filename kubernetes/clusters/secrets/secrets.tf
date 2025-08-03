@@ -34,7 +34,8 @@ locals {
       "supersecretmessage-vault",
       "teslamate", "teslamate-grafana", "teslamate-postgres",
       "todotxt-api",
-      "wakapi", "wakapi-postgres"
+      "wakapi", "wakapi-postgres",
+      "weather-api",
     ]
   })
 }

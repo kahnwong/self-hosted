@@ -37,6 +37,7 @@ locals {
   selfhosted_non_proxied = setunion(toset([
     "api.todotxt",
     "api.qrcode",
+    "api.weather",
     "audiobookshelf",
     "authentik",
     "books",

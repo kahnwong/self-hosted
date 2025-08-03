@@ -1,0 +1,18 @@
+kind: Deployment
+name: weather-api
+replicaCount: 1
+containers:
+  - name: weather-api
+    repository: ghcr.io/kahnwong/weather-api
+    tag: 5b22ed8
+    port: 3000
+    env:
+      - name: LISTEN_ADDR
+        value: ":3000"
+    envFrom:
+      - secretRef:
+          name: weather-api
+    livenessProbeScheme: tcp
+service:
+  port: 3000
+  nodePort: 30078

@@ -38,26 +38,28 @@ locals {
       "notes",
     ]
     tools = [
-      # "beaverhabits",
-      # "evcc",
       "ghostfolio", "ghostfolio-postgres", "ghostfolio-valkey",
       "homer",
       "linkding",
       "livegrep-backend", "livegrep-frontend",
       "memos",
-      #       "microbin",
       "nocodb",
-      # "picoshare",
+      "qrcode-api",
       "rallly", "rallly-postgres",
       "rss-bridge",
-      # "send", "send-valkey",  # disable due to memory leaks
-      # "spliit", "spliit-postgres",
       "sshx",
-      #       "supersecretmessage", "supersecretmessage-vault",
-      # "teslamate", "teslamate-grafana", "teslamate-mosquitto", "teslamate-postgres",
+      "stirling-pdf",
       "todotxt", "todotxt-api",
       "wakapi", "wakapi-postgres",
-      "stirling-pdf",
+      "weather-api",
+      # "beaverhabits",
+      # "evcc",
+      # "microbin",
+      # "picoshare",
+      # "send", "send-valkey",  # disable due to memory leaks
+      # "spliit", "spliit-postgres",
+      # "supersecretmessage", "supersecretmessage-vault",
+      # "teslamate", "teslamate-grafana", "teslamate-mosquitto", "teslamate-postgres",
     ]
   })
   deployments_knative = tomap({
