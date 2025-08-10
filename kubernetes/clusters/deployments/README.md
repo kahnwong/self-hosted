@@ -68,7 +68,7 @@ kubectl get ksvc
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.6 |
-| helm | 2.17.0 |
+| helm | 3.0.2 |
 | kubectl | ~> 2.0 |
 | kubernetes | 2.38.0 |
 | sops | 1.2.1 |
@@ -77,7 +77,7 @@ kubectl get ksvc
 
 | Name | Version |
 |------|---------|
-| helm | 2.17.0 |
+| helm | 3.0.2 |
 | kubernetes | 2.38.0 |
 | sops | 1.2.1 |
 
@@ -89,12 +89,12 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [helm_release.authentik](https://registry.terraform.io/providers/hashicorp/helm/2.17.0/docs/resources/release) | resource |
-| [helm_release.fringe_division](https://registry.terraform.io/providers/hashicorp/helm/2.17.0/docs/resources/release) | resource |
-| [helm_release.harbor](https://registry.terraform.io/providers/hashicorp/helm/2.17.0/docs/resources/release) | resource |
-| [helm_release.knative](https://registry.terraform.io/providers/hashicorp/helm/2.17.0/docs/resources/release) | resource |
-| [helm_release.misc](https://registry.terraform.io/providers/hashicorp/helm/2.17.0/docs/resources/release) | resource |
-| [helm_release.this](https://registry.terraform.io/providers/hashicorp/helm/2.17.0/docs/resources/release) | resource |
+| [helm_release.authentik](https://registry.terraform.io/providers/hashicorp/helm/3.0.2/docs/resources/release) | resource |
+| [helm_release.fringe_division](https://registry.terraform.io/providers/hashicorp/helm/3.0.2/docs/resources/release) | resource |
+| [helm_release.harbor](https://registry.terraform.io/providers/hashicorp/helm/3.0.2/docs/resources/release) | resource |
+| [helm_release.knative](https://registry.terraform.io/providers/hashicorp/helm/3.0.2/docs/resources/release) | resource |
+| [helm_release.misc](https://registry.terraform.io/providers/hashicorp/helm/3.0.2/docs/resources/release) | resource |
+| [helm_release.this](https://registry.terraform.io/providers/hashicorp/helm/3.0.2/docs/resources/release) | resource |
 | [kubernetes_cluster_role.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/cluster_role) | resource |
 | [kubernetes_cluster_role.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/cluster_role) | resource |
 | [kubernetes_cluster_role_binding.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/cluster_role_binding) | resource |
