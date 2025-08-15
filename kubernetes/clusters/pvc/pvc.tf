@@ -86,12 +86,13 @@ resource "helm_release" "this" {
   version    = "0.2.0"
   chart      = "base-pvc"
 
-  set {
-    name  = "name"
-    value = each.key
-  }
-  set {
-    name  = "path"
-    value = each.value.path
-  }
+  set = [
+    {
+      name  = "name"
+      value = each.key
+    },
+    { name  = "path"
+      value = each.value.path
+    }
+  ]
 }

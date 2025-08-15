@@ -184,10 +184,10 @@ resource "helm_release" "harbor" {
     file("./deployments/harbor/values.yaml")
   ]
 
-  set {
+  set = [{
     name  = "harborAdminPassword"
     value = var.registry_password
-  }
+  }]
 }
 
 # ------ authentik ------ #
