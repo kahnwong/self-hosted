@@ -7,19 +7,18 @@ spec:
   template:
     spec:
       volumes:
-      - name: store-volume          
-        persistentVolumeClaim:
-          claimName: store-persistent-volume-claim
+        - name: store-volume
+          persistentVolumeClaim:
+            claimName: store-persistent-volume-claim
       containers:
         - image: ghcr.io/knative/helloworld-go:latest # The URL to the image of the app
           env:
             - name: TARGET # The environment variable printed out by the sample app
               value: "Hello Knative Serving is up and running with Kourier"
           volumeMounts:
-          - name: store-volume
-            mountPath: /data
+            - name: store-volume
+              mountPath: /data
 ---
-
 kind: PersistentVolume
 apiVersion: v1
 metadata:
@@ -30,12 +29,10 @@ spec:
   capacity:
     storage: 2Gi
   accessModes:
-  - ReadWriteOnce
+    - ReadWriteOnce
   hostPath:
     path: "/tmp/knative-test"
-
 ---
-
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
@@ -44,7 +41,7 @@ metadata:
 spec:
   storageClassName: hostpath
   accessModes:
-  - ReadWriteOnce
+    - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi

@@ -1,7 +1,5 @@
----
 name: fava
 replicaCount: 1
-
 containers:
   - name: fava
     repository: ghcr.io/kahnwong/docker-fava
@@ -21,12 +19,10 @@ containers:
     volumeMounts:
       - name: fava-data
         mountPath: /opt/fava
-
 volumes:
   - name: fava-data
     hostPath:
       path: /opt/syncthing/cloud/Apps/fava
-
 service:
   port: 5000
   nodePort: 30001

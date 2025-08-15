@@ -27,4 +27,3 @@ volumes:
   - name: config
     persistentVolumeClaim:
       claimName: notes-console-t-config-pvc
-

@@ -1,8 +1,6 @@
----
 kind: Deployment
 name: caddy
 replicaCount: 1
-
 containers:
   - name: caddy
     repository: caddy

@@ -1,7 +1,5 @@
----
 name: tileserver
 replicaCount: 1
-
 deployments:
   containers:
     - name: tileserver
