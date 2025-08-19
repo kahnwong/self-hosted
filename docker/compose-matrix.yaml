@@ -15,6 +15,12 @@ services:
     restart: always
     volumes:
       - /opt/matrix/mautrix-whatsapp:/data:z
+  mautrix-meta: # connet to `metabot`
+    image: dock.mau.dev/mautrix/meta:v0.5.3
+    container_name: mautrix-meta
+    restart: always
+    volumes:
+      - /opt/matrix/mautrix-meta:/data:z
   mautrix-discord:
     image: dock.mau.dev/mautrix/discord:v0.7.5
     container_name: mautrix-discord
