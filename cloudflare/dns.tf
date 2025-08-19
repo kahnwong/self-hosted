@@ -73,6 +73,7 @@ locals {
   oracle_proxied = toset([
     "anisette",
     "kutt",
+    "matrix",
     "pairdrop",
     "secrets",
     "share",

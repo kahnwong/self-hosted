@@ -6,6 +6,7 @@ provider "registry.opentofu.org/carlpett/sops" {
   constraints = "1.2.1"
   hashes = [
     "h1:MRTir9C2SjaCxTP30gy3C+9DXvbsARglCUMEfaDNAUk=",
+    "h1:c/KxiJtTPvHgsiFVGCTC4qRRyY7WjlDtHLjB+R5coFY=",
     "zh:0d8d77073b46f92231dca5fa96bda3ccfefe7a92f976ee79abf4ca63430a83bf",
     "zh:4d618d46b83354e37679219f6181a86789e89d7900f39fa582d59a9a233c5c37",
     "zh:4ee8ef5241be752ae7ab3096f772a0714ce905572439e2381d5302c9818c4e3d",
