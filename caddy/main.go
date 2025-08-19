@@ -24,6 +24,7 @@ func main() {
 		"harbor":           "30500",
 		"immich":           "30030",
 		"jellyfin":         "jellyfin.media",
+		"matrix":           "6167",
 		"memos":            "30031",
 		"miniflux":         "30007",
 		"minio":            "30020",

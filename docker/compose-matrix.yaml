@@ -1,0 +1,23 @@
+services:
+  tuwunel:
+    image: jevolk/tuwunel:v1.3.0
+    container_name: tuwunel
+    restart: always
+    ports:
+      - 6167:6167
+    env_file:
+      - .env.app.tuwunel
+    volumes:
+      - /opt/tuwunel/data:/var/lib/tuwunel/
+  mautrix-whatsapp:
+    image: dock.mau.dev/mautrix/whatsapp:v0.12.4
+    container_name: mautrix-whatsapp
+    restart: always
+    volumes:
+      - /opt/matrix/mautrix-whatsapp:/data:z
+  mautrix-discord:
+    image: dock.mau.dev/mautrix/discord:v0.7.5
+    container_name: mautrix-discord
+    restart: always
+    volumes:
+      - /opt/matrix/mautrix-discord:/data:z
