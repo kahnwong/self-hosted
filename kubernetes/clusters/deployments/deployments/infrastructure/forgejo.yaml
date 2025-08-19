@@ -1,9 +1,7 @@
----
 # don't forget to forward port `32000` on your router
 kind: Deployment
 name: forgejo
 replicaCount: 1
-
 containers:
   - name: forgejo
     repository: codeberg.org/forgejo/forgejo
@@ -50,6 +48,10 @@ volumes:
     hostPath:
       path: /opt/forgejo/data
 service:
+  # -- these stay here because i'm too lazy to fix helm chart
+  port: 3000
+  nodePort: 30026
+  # -----------------
   ports:
     - name: web
       port: 3000
