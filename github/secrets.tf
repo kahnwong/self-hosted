@@ -13,6 +13,7 @@ locals {
     "h3-viewer",
     "jupyterlite",
     "karnwong.me",
+    "marimo-wasm",
     "monkeytype",
     "promptpay-qr-code",
     "python-playground",

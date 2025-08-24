@@ -14,7 +14,7 @@
 | Name | Version |
 |------|---------|
 | github | 6.6.0 |
-| sops | 1.2.0 |
+| sops | 1.2.1 |
 
 ## Modules
 

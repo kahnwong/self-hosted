@@ -7,6 +7,7 @@ locals {
     "h3-viewer",
     "jupyterlite",
     "maps",
+    "marimo",
     "monkeytype",
     "promptpay",
     "python",
