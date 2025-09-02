@@ -9,6 +9,10 @@ containers:
     env:
       - name: PAPERLESS_REDIS
         value: "redis://paperless-ngx-valkey.tools.svc.cluster.local:6379"
+      - name: PAPERLESS_URL
+        value: "https://paperless.karnwong.me"
+      - name: PAPERLESS_DISABLE_REGULAR_LOGIN
+        value: "true"
     volumeMounts:
       - name: data
         mountPath: /usr/src/paperless/data
@@ -18,6 +22,9 @@ containers:
         mountPath: /usr/src/paperless/export
       - name: consume
         mountPath: /usr/src/paperless/consume
+      - name: config
+        mountPath: /usr/local/etc
+        readOnly: true
 volumes:
   - name: data
     hostPath:
@@ -31,6 +38,9 @@ volumes:
   - name: consume
     hostPath:
       path: /opt/paperless-ngx/consume
+  - name: config
+    configMap:
+      name: paperless
 service:
   port: 8000
   nodePort: 30079

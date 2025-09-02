@@ -152,3 +152,22 @@ resource "kubernetes_config_map" "garage" {
 
   depends_on = [data.sops_file.garage]
 }
+
+
+# paperless
+data "sops_file" "paperless" {
+  source_file = "${path.module}/configmaps/paperless.sops.conf"
+  input_type  = "raw"
+}
+resource "kubernetes_config_map" "paperless" {
+  metadata {
+    name      = "paperless"
+    namespace = "tools"
+  }
+
+  data = {
+    "paperless.conf" = data.sops_file.paperless.raw
+  }
+
+  depends_on = [data.sops_file.paperless]
+}
