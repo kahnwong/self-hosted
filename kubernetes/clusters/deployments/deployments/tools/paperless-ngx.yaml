@@ -1,0 +1,36 @@
+kind: Deployment
+name: paperless-ngx
+replicaCount: 1
+containers:
+  - name: paperless-ngx
+    repository: ghcr.io/paperless-ngx/paperless-ngx
+    tag: 2.18.3
+    port: 8000
+    env:
+      - name: PAPERLESS_REDIS
+        value: "redis://paperless-ngx-valkey.tools.svc.cluster.local:6379"
+    volumeMounts:
+      - name: data
+        mountPath: /usr/src/paperless/data
+      - name: media
+        mountPath: /usr/src/paperless/media
+      - name: export
+        mountPath: /usr/src/paperless/export
+      - name: consume
+        mountPath: /usr/src/paperless/consume
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/paperless-ngx/data
+  - name: media
+    hostPath:
+      path: /opt/paperless-ngx/media
+  - name: export
+    hostPath:
+      path: /opt/paperless-ngx/media
+  - name: consume
+    hostPath:
+      path: /opt/paperless-ngx/consume
+service:
+  port: 8000
+  nodePort: 30079
