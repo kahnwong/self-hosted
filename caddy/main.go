@@ -31,6 +31,7 @@ func main() {
 		"music":            "30006",
 		"nocodb":           "30062",
 		"ntfy":             "30022",
+		"paperless":        "30079",
 		"qa-api":           "30043",
 		"rally":            "30035",
 		"rustpad":          "rustpad.tools",

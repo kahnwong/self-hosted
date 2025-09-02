@@ -35,8 +35,8 @@ locals {
     #     "split",
   ])
   selfhosted_non_proxied = setunion(toset([
-    "api.todotxt",
     "api.qrcode",
+    "api.todotxt",
     "api.weather",
     "audiobookshelf",
     "authentik",
@@ -56,6 +56,7 @@ locals {
     "minio",
     "mlflow",
     "notes",
+    "paperless",
     "pdf",
     "syncthing",
     "t.console.notes",

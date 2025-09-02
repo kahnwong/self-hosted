@@ -72,6 +72,9 @@ nocodb.karnwong.me {
 ntfy.karnwong.me {
     reverse_proxy 192.168.1.36:30022
 }
+paperless.karnwong.me {
+    reverse_proxy 192.168.1.36:30079
+}
 qa-api.karnwong.me {
     reverse_proxy 192.168.1.36:30043
 }
