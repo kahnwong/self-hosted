@@ -7,10 +7,10 @@ containers:
     tag: v0.6.26
     port: 8080
     env:
-      #      - name: WEBUI_URL
-      #        value: https://chat.karnwong.me
-      #      - name: ENABLE_SIGNUP
-      #        value: "false"
+      - name: WEBUI_URL
+        value: https://chat.karnwong.me
+      - name: ENABLE_SIGNUP
+        value: "false"
       - name: OLLAMA_BASE_URL
         value: http://192.168.1.36:11434
     volumeMounts:
