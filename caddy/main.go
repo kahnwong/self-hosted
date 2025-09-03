@@ -9,6 +9,7 @@ import (
 
 func main() {
 	services := map[string]string{
+		"api.cpubench":     "30080",
 		"api.qrcode":       "30077",
 		"api.todotxt":      "30076",
 		"api.weather":      "30078",

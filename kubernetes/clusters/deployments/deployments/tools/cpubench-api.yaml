@@ -3,7 +3,7 @@ name: cpubench-api
 replicaCount: 1
 containers:
   - name: cpubench-api
-    repository: ghcr.io/kahnwong/cpubench
+    repository: ghcr.io/kahnwong/cpu-bench
     tag: 38c3146
     port: 3000
     env:
@@ -23,3 +23,5 @@ volumes:
 service:
   port: 3000
   nodePort: 30080
+imagePullSecrets:
+  - name: ghcr-cfg
