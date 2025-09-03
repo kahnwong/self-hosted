@@ -6,6 +6,9 @@ containers:
     repository: ghcr.io/open-webui/open-webui
     tag: v0.6.26
     port: 8080
+    envFrom:
+      - secretRef:
+          name: open-webui
     env:
       - name: WEBUI_URL
         value: https://chat.karnwong.me
@@ -13,6 +16,10 @@ containers:
         value: "false"
       - name: OLLAMA_BASE_URL
         value: http://192.168.1.36:11434
+      - name: ENABLE_LOGIN_FORM
+        value: "false"
+      - name: ENABLE_OAUTH_SIGNUP
+        value: "true"
     volumeMounts:
       - name: data
         mountPath: /app/backend/data
