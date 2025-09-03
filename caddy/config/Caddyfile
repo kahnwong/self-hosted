@@ -23,6 +23,9 @@ books.karnwong.me {
         header_up Host calibre-web.media.example.com
     }
 }
+chat.karnwong.me {
+    reverse_proxy 192.168.1.36:30081
+}
 console.minio.karnwong.me {
     reverse_proxy 192.168.1.36:30021
 }

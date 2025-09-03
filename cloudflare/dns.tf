@@ -42,6 +42,7 @@ locals {
     "audiobookshelf",
     "authentik",
     "books",
+    "chat",
     "cli.send",
     "console.minio",
     "evcc",

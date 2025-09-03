@@ -16,6 +16,7 @@ func main() {
 		"audiobookshelf":   "audiobookshelf.media",
 		"authentik":        "30047",
 		"books":            "calibre-web.media",
+		"chat":             "30081",
 		"console.minio":    "30021",
 		"garage":           "30070",
 		"ghostfolio":       "30066",
