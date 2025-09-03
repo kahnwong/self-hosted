@@ -1,0 +1,25 @@
+kind: Deployment
+name: open-webui
+replicaCount: 1
+containers:
+  - name: open-webui
+    repository: ghcr.io/open-webui/open-webui
+    tag: v0.6.26
+    port: 8080
+    env:
+      #      - name: WEBUI_URL
+      #        value: https://chat.karnwong.me
+      #      - name: ENABLE_SIGNUP
+      #        value: "false"
+      - name: OLLAMA_BASE_URL
+        value: http://192.168.1.36:11434
+    volumeMounts:
+      - name: data
+        mountPath: /app/backend/data
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/open-webui/data
+service:
+  port: 8080
+  nodePort: 30081

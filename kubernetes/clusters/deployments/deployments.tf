@@ -45,6 +45,7 @@ locals {
       "livegrep-backend", "livegrep-frontend",
       "memos",
       "nocodb",
+      "open-webui",
       "paperless-ngx", "paperless-ngx-valkey",
       "qrcode-api",
       "rallly", "rallly-postgres",
