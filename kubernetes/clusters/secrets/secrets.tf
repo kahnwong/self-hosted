@@ -24,6 +24,7 @@ locals {
     ]
     jobs-family-alerts = ["family-alerts"]
     tools = [
+      "cpubench-api",
       "ghostfolio", "ghostfolio-postgres",
       "livegrep-clone-custom",
       # "picoshare",

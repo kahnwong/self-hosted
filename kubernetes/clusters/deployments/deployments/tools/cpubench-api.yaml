@@ -1,0 +1,25 @@
+kind: Deployment
+name: cpubench-api
+replicaCount: 1
+containers:
+  - name: cpubench-api
+    repository: ghcr.io/kahnwong/cpubench
+    tag: 38c3146
+    port: 3000
+    env:
+      - name: LISTEN_ADDR
+        value: ":3000"
+    envFrom:
+      - secretRef:
+          name: cpubench-api
+    volumeMounts:
+      - name: data
+        mountPath: /data
+    livenessProbeScheme: tcp
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/cpubench-api/data
+service:
+  port: 3000
+  nodePort: 30080
