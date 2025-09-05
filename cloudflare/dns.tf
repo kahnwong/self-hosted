@@ -35,7 +35,6 @@ locals {
     #     "split",
   ])
   selfhosted_non_proxied = setunion(toset([
-    "api.cpubench",
     "api.qrcode",
     "api.todotxt",
     "api.weather",
@@ -45,6 +44,7 @@ locals {
     "chat",
     "cli.send",
     "console.minio",
+    "cpubench",
     "evcc",
     "garage",
     "git",

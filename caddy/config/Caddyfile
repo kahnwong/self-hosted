@@ -1,6 +1,3 @@
-api.cpubench.karnwong.me {
-    reverse_proxy 192.168.1.36:30080
-}
 api.qrcode.karnwong.me {
     reverse_proxy 192.168.1.36:30077
 }
@@ -28,6 +25,9 @@ chat.karnwong.me {
 }
 console.minio.karnwong.me {
     reverse_proxy 192.168.1.36:30021
+}
+cpubench.karnwong.me {
+    reverse_proxy 192.168.1.36:30080
 }
 garage.karnwong.me {
     reverse_proxy 192.168.1.36:30070

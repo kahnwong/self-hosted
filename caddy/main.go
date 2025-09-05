@@ -9,7 +9,6 @@ import (
 
 func main() {
 	services := map[string]string{
-		"api.cpubench":     "30080",
 		"api.qrcode":       "30077",
 		"api.todotxt":      "30076",
 		"api.weather":      "30078",
@@ -18,6 +17,7 @@ func main() {
 		"books":            "calibre-web.media",
 		"chat":             "30081",
 		"console.minio":    "30021",
+		"cpubench":         "30080",
 		"garage":           "30070",
 		"ghostfolio":       "30066",
 		"git":              "30026",

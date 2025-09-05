@@ -38,7 +38,7 @@ locals {
       "notes",
     ]
     tools = [
-      "cpubench-api",
+      "cpubench",
       "ghostfolio", "ghostfolio-postgres", "ghostfolio-valkey",
       "homer",
       "linkding",
