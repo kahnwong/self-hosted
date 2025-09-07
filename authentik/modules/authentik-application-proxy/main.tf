@@ -2,7 +2,8 @@ resource "authentik_provider_proxy" "this" {
   name               = "Provider for ${var.application_name}"
   external_host      = "https://${var.application_name}.karnwong.me"
   mode               = "forward_single"
-  authorization_flow = var.authentik_flow_id
+  authorization_flow = var.authorization_flow_id
+  invalidation_flow  = var.invalidation_flow_id
 }
 
 resource "authentik_application" "this" {

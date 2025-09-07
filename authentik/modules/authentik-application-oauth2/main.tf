@@ -9,10 +9,19 @@ resource "random_string" "random" {
 #   to = authentik_provider_oauth2.this
 # }
 resource "authentik_provider_oauth2" "this" {
-  name               = "Provider for ${var.application_name}"
-  client_id          = random_string.random.result
-  authorization_flow = var.authentik_flow_id
-  redirect_uris      = var.redirect_uris
+  name      = "Provider for ${var.application_name}"
+  client_id = random_string.random.result
+
+  authorization_flow = var.authorization_flow_id
+  invalidation_flow  = var.invalidation_flow_id
+
+  allowed_redirect_uris = [
+    for uri in var.redirect_uris : {
+      matching_mode = "strict"
+      url           = uri
+    }
+  ]
+
   property_mappings = [
     "3ccc549e-2d36-4c94-a69f-1d56ba28af89",
     "7098b9ee-bd9f-40fe-852b-c6fb9ec262c3",

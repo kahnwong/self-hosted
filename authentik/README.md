@@ -25,13 +25,13 @@ OpenID Configuration Issuer:  https://authentik.karnwong.me/application/o/$APP/
 
 | Name | Version |
 |------|---------|
-| authentik | 2024.8.4 |
+| authentik | 2025.8.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| authentik | 2024.8.4 |
+| authentik | 2025.8.0 |
 
 ## Modules
 
@@ -44,10 +44,45 @@ OpenID Configuration Issuer:  https://authentik.karnwong.me/application/o/$APP/
 
 | Name | Type |
 |------|------|
-| [authentik_outpost.proxy_outpost](https://registry.terraform.io/providers/goauthentik/authentik/2024.8.4/docs/resources/outpost) | resource |
-| [authentik_service_connection_kubernetes.local](https://registry.terraform.io/providers/goauthentik/authentik/2024.8.4/docs/resources/service_connection_kubernetes) | resource |
-| [authentik_stage_identification.default-authentication-identification](https://registry.terraform.io/providers/goauthentik/authentik/2024.8.4/docs/resources/stage_identification) | resource |
-| [authentik_flow.default-authorization-flow](https://registry.terraform.io/providers/goauthentik/authentik/2024.8.4/docs/data-sources/flow) | data source |
+| [authentik_outpost.proxy_outpost](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/resources/outpost) | resource |
+| [authentik_service_connection_kubernetes.local](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/resources/service_connection_kubernetes) | resource |
+| [authentik_stage_identification.default-authentication-identification](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/resources/stage_identification) | resource |
+| [authentik_flow.default-authorization-flow](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/data-sources/flow) | data source |
+| [authentik_flow.default-invalidation-flow](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/data-sources/flow) | data source |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| authentik\_host | n/a | `string` | n/a | yes |
+| authentik\_token | n/a | `string` | n/a | yes |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| oauth2\_credentials | n/a |
+<!-- END_TF_DOCS -->etes.local](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/resources/service_connection_kubernetes) | resource |
+| [authentik_stage_identification.default-authentication-identification](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/resources/stage_identification) | resource |
+| [authentik_flow.default-authorization-flow](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/data-sources/flow) | data source |
+| [authentik_flow.default-invalidation-flow](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/data-sources/flow) | data source |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| authentik\_host | n/a | `string` | n/a | yes |
+| authentik\_token | n/a | `string` | n/a | yes |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| oauth2\_credentials | n/a |
+<!-- END_TF_DOCS -->etes.local](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/resources/service_connection_kubernetes) | resource |
+| [authentik_stage_identification.default-authentication-identification](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/resources/stage_identification) | resource |
+| [authentik_flow.default-authorization-flow](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/data-sources/flow) | data source |
+| [authentik_flow.default-invalidation-flow](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/data-sources/flow) | data source |
 
 ## Inputs
 

@@ -1,4 +1,7 @@
-variable "authentik_flow_id" {
+variable "authorization_flow_id" {
+  type = string
+}
+variable "invalidation_flow_id" {
   type = string
 }
 
