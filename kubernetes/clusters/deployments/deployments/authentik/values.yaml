@@ -1,6 +1,4 @@
 global:
-  image:
-    tag: "2024.8"
   envFrom:
     - secretRef:
         name: authentik-env
