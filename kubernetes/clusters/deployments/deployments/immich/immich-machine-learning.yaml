@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: immich-machine-learning
     repository: ghcr.io/immich-app/immich-machine-learning
-    tag: v1.138.1
+    tag: v1.141.1
     port: 3003 # https://github.com/immich-app/immich/blob/main/machine-learning/app/config.py#L28C17-L28C21
     envFrom:
       - secretRef:
