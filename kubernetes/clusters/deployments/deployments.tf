@@ -12,7 +12,7 @@ locals {
     ]
   })
   deployments_fringe_division = tomap({
-    analytics = ["metabase", "metabase-postgres"]
+    # analytics = ["metabase", "metabase-postgres"]
     authentik = ["authentik-postgres", "authentik-valkey"]
     bots      = ["qa-api"]
     default = [
