@@ -15,6 +15,15 @@ containers:
         value: "metabase-postgres.analytics.svc.cluster.local"
       - name: MB_ANON_TRACKING_ENABLED
         value: "false"
+        # MB_CUSTOM_GEOJSON
+        # MB_DEFAULT_MAPS_ENABLED
+        # MB_EMAIL_SMTP_HOST
+        # MB_EMAIL_SMTP_PASSWORD
+        # MB_EMAIL_SMTP_PORT
+        # MB_EMAIL_SMTP_SECURITY
+        # MB_EMAIL_SMTP_USERNAME
+        # MB_ENABLE_PASSWORD_LOGIN
+        # MB_SITE_URL
     envFrom:
       - secretRef:
           name: metabase
