@@ -1,0 +1,23 @@
+kind: Deployment
+name: metabase
+replicaCount: 1
+containers:
+  - name: metabase
+    repository: metabase/metabase
+    tag: v0.55.15.6
+    port: 3000
+    env:
+      - name: MB_DB_TYPE
+        value: "postgres"
+      - name: MB_DB_PORT
+        value: "5432"
+      - name: MB_DB_HOST
+        value: "metabase-postgres.analytics.svc.cluster.local"
+      - name: MB_ANON_TRACKING_ENABLED
+        value: "false"
+    envFrom:
+      - secretRef:
+          name: metabase
+service:
+  port: 3000
+  nodePort: 30082

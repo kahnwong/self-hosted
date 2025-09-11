@@ -1,0 +1,21 @@
+kind: StatefulSet
+name: metabase-postgres
+replicaCount: 1
+containers:
+  - name: postgres
+    repository: postgres
+    tag: 17.2-alpine
+    port: 5432
+    livenessProbeScheme: tcp
+    envFrom:
+      - secretRef:
+          name: metabase-postgres
+    volumeMounts:
+      - name: data
+        mountPath: /var/lib/postgresql/data
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/metabase/db
+service:
+  port: 5432
