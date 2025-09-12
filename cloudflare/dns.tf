@@ -14,6 +14,7 @@ locals {
     "go",
     "habits",
     "harbor",
+    "homebox",
     "immich",
     "jupyterhub",
     "memos",

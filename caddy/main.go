@@ -24,6 +24,7 @@ func main() {
 		"go":               "go-playground.playground",
 		"habits":           "30056",
 		"harbor":           "30500",
+		"homebox":          "30083",
 		"immich":           "30030",
 		"jellyfin":         "jellyfin.media",
 		"matrix":           "6167",
