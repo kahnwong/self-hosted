@@ -41,6 +41,7 @@ locals {
     tools = [
       "cpubench",
       "ghostfolio", "ghostfolio-postgres", "ghostfolio-valkey",
+      "homebox",
       "homer",
       "linkding",
       "livegrep-backend", "livegrep-frontend",

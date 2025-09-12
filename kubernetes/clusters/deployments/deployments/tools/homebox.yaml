@@ -1,0 +1,29 @@
+kind: Deployment
+name: homebox
+replicaCount: 1
+containers:
+  - name: homebox
+    repository: ghcr.io/sysadminsmedia/homebox
+    tag: "0.21.0"
+    port: 7745
+    env:
+      - name: HBOX_LOG_LEVEL
+        value: "info"
+      - name: HBOX_LOG_FORMAT
+        value: "text"
+      - name: HBOX_WEB_MAX_FILE_UPLOAD
+        value: "10"
+      - name: HBOX_OPTIONS_ALLOW_ANALYTICS
+        value: "false"
+      - name: HBOX_OPTIONS_ALLOW_REGISTRATION
+        value: "false"
+    volumeMounts:
+      - name: data
+        mountPath: /data
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/homebox/data
+service:
+  port: 7745
+  nodePort: 30083
