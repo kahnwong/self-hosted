@@ -15,6 +15,7 @@ locals {
       "backup-forgejo-data",
       "backup-forgejo-db",
       "backup-ghostfolio",
+      "backup-homebox",
       "backup-immich-db",
       "backup-linkding",
       "backup-memos",
