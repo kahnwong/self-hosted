@@ -28,7 +28,7 @@ services:
     volumes:
       - /opt/matrix/mautrix-discord:/data:z
   mautrix-signal:
-    image: dock.mau.dev/mautrix/signal:v0.8.6
+    image: dock.mau.dev/mautrix/signal:v0.8.7
     container_name: mautrix-signal
     restart: always
     volumes:
