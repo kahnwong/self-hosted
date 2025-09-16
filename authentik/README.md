@@ -25,13 +25,13 @@ OpenID Configuration Issuer:  https://authentik.karnwong.me/application/o/$APP/
 
 | Name | Version |
 |------|---------|
-| authentik | 2025.8.0 |
+| authentik | 2025.8.1 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| authentik | 2025.8.0 |
+| authentik | 2025.8.1 |
 
 ## Modules
 
@@ -44,11 +44,11 @@ OpenID Configuration Issuer:  https://authentik.karnwong.me/application/o/$APP/
 
 | Name | Type |
 |------|------|
-| [authentik_outpost.proxy_outpost](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/resources/outpost) | resource |
-| [authentik_service_connection_kubernetes.local](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/resources/service_connection_kubernetes) | resource |
-| [authentik_stage_identification.default-authentication-identification](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/resources/stage_identification) | resource |
-| [authentik_flow.default-authorization-flow](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/data-sources/flow) | data source |
-| [authentik_flow.default-invalidation-flow](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/data-sources/flow) | data source |
+| [authentik_outpost.proxy_outpost](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.1/docs/resources/outpost) | resource |
+| [authentik_service_connection_kubernetes.local](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.1/docs/resources/service_connection_kubernetes) | resource |
+| [authentik_stage_identification.default-authentication-identification](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.1/docs/resources/stage_identification) | resource |
+| [authentik_flow.default-authorization-flow](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.1/docs/data-sources/flow) | data source |
+| [authentik_flow.default-invalidation-flow](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.1/docs/data-sources/flow) | data source |
 
 ## Inputs
 
