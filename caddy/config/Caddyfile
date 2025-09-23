@@ -29,6 +29,9 @@ console.minio.karnwong.me {
 cpubench.karnwong.me {
     reverse_proxy 192.168.1.36:30080
 }
+gallery.karnwong.me {
+    reverse_proxy 192.168.1.36:30084
+}
 garage.karnwong.me {
     reverse_proxy 192.168.1.36:30070
 }
