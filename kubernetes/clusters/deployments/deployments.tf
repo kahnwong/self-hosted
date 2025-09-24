@@ -30,7 +30,6 @@ locals {
     ]
     media = [
       "navidrome",
-      "pigallery2",
     ]
     news = [
       "miniflux", "miniflux-postgres",
