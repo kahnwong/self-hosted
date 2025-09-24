@@ -47,7 +47,6 @@ locals {
     "console.minio",
     "cpubench",
     "evcc",
-    "gallery",
     "garage",
     "git",
     "grafana.teslamate",

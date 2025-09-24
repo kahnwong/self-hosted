@@ -18,7 +18,6 @@ func main() {
 		"chat":             "30081",
 		"console.minio":    "30021",
 		"cpubench":         "30080",
-		"gallery":          "30084",
 		"garage":           "30070",
 		"ghostfolio":       "30066",
 		"git":              "30026",
