@@ -10,6 +10,7 @@ locals {
     "docs",
     "excalidraw",
     "food-picker",
+    "gallery.karnwong.me",
     "h3-viewer",
     "jupyterlite",
     "karnwong.me",

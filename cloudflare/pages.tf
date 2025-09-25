@@ -4,6 +4,7 @@ locals {
     "docs",
     "excalidraw",
     "food-picker",
+    "gallery",
     "h3-viewer",
     "jupyterlite",
     "maps",
