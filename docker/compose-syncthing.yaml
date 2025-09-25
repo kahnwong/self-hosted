@@ -8,6 +8,7 @@ services:
       TZ: Asia/Bangkok
       UMASK_SET: <022>
     volumes:
+      - /home/ubuntu/Apps:/data/Apps
       - /opt/syncthing/config:/config
       - /opt/syncthing/:/data
       - /opt/immich/upload:/data/immich/upload
