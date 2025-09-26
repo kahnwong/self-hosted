@@ -1,25 +1,24 @@
 locals {
   secrets = tomap({
-    analytics      = ["metabase", "metabase-postgres"]
+    analytics      = []
     authentik      = ["authentik-env", "authentik-postgres"] # `authentic-env` is to prevent name collision with secrets provided by helm chart
     bots           = ["qa-api", "qa-discord-bot"]
     default        = ["subsonic-widgets"]
     immich         = ["immich", "immich-machine-learning", "immich-postgres"]
-    infrastructure = ["forgejo", "forgejo-postgres", "minio", "mlflow", "mlflow-postgres"]
+    infrastructure = ["forgejo", "forgejo-postgres", "mlflow", "mlflow-postgres"]
     news = [
       "miniflux", "miniflux-postgres",
       "wallabag", "wallabag-postgres", "wallabag-redis"
     ]
     notes = ["notes-sync"]
     jobs = [
-      "backup", "ddns", "water-cut-notify", "weather-notify",
+      "backup", "ddns", "water-cut-notify",
       "authentik-postgres",
       "forgejo-postgres",
       "ghostfolio-postgres",
       "immich-postgres",
       "miniflux-postgres",
       "rallly-postgres",
-      "spliit-postgres",
       "wakapi-postgres",
       "wallabag",
     ]
@@ -29,13 +28,8 @@ locals {
       "ghostfolio", "ghostfolio-postgres",
       "livegrep-clone-custom",
       "open-webui",
-      # "picoshare",
       "rallly", "rallly-postgres",
       "qrcode-api",
-      "send",
-      "spliit", "spliit-postgres",
-      "supersecretmessage-vault",
-      "teslamate", "teslamate-grafana", "teslamate-postgres",
       "todotxt-api",
       "wakapi", "wakapi-postgres",
       "weather-api",

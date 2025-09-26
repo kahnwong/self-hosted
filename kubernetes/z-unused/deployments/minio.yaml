@@ -1,8 +1,6 @@
----
 kind: Deployment
 name: minio
 replicaCount: 1
-
 initContainers:
   - name: volume-permissions
     image: busybox

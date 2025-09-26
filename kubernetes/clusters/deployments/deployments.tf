@@ -12,7 +12,7 @@ locals {
     ]
   })
   deployments_fringe_division = tomap({
-    # analytics = ["metabase", "metabase-postgres"]
+    analytics = []
     authentik = ["authentik-postgres", "authentik-valkey"]
     bots      = ["qa-api"]
     default = [
@@ -21,10 +21,8 @@ locals {
     immich = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
     infrastructure = [
       "error-pages",
-      #       "gatus",
       "forgejo", "forgejo-postgres",
       "garage",
-      # "minio",
       "mlflow", "mlflow-postgres",
       "ntfy",
     ]
@@ -57,14 +55,6 @@ locals {
       "todotxt", "todotxt-api",
       "wakapi", "wakapi-postgres",
       "weather-api",
-      # "beaverhabits",
-      # "evcc",
-      # "microbin",
-      # "picoshare",
-      # "send", "send-valkey",  # disable due to memory leaks
-      # "spliit", "spliit-postgres",
-      # "supersecretmessage", "supersecretmessage-vault",
-      # "teslamate", "teslamate-grafana", "teslamate-mosquitto", "teslamate-postgres",
     ]
   })
   deployments_knative = tomap({

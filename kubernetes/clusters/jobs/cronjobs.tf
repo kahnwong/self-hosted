@@ -11,7 +11,6 @@ locals {
   jobs_fringe_division = tomap({
     jobs = [
       "backup-authentik",
-      # "backup-beaverhabits",
       "backup-forgejo-data",
       "backup-forgejo-db",
       "backup-ghostfolio",
@@ -19,13 +18,11 @@ locals {
       "backup-immich-db",
       "backup-linkding",
       "backup-memos",
-      #       "backup-microbin",
       "backup-miniflux",
       "backup-navidrome",
       "backup-nocodb",
       "backup-ntfy",
       "backup-rallly",
-      # "backup-syncthing",
       "backup-transmission",
       "backup-wakapi",
       "backup-wallabag-content",
@@ -36,7 +33,6 @@ locals {
       "maintenance-wallabag-cleanup",
       "restart-livegrep",
       "water-cut-notify",
-      #       "weather-notify",
     ]
 
     jobs-family-alerts = [

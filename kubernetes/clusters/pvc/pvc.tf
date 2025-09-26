@@ -52,14 +52,14 @@ locals {
       }
     ]
     tools = [
-      {
-        deployment = "opengist"
-        path       = "/opt/opengist/data"
-      },
-      {
-        deployment = "picoshare",
-        path       = "/opt/picoshare/data"
-      }
+      # {
+      #   deployment = "opengist"
+      #   path       = "/opt/opengist/data"
+      # },
+      # {
+      #   deployment = "picoshare",
+      #   path       = "/opt/picoshare/data"
+      # }
     ]
   })
 }
