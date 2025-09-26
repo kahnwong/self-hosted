@@ -218,7 +218,9 @@ pdf.karnwong.me {
             trusted_proxies private_ranges
         }
 
-        reverse_proxy 192.168.1.36:30040
+        reverse_proxy 192.168.1.36:31080 {
+            header_up Host stirling-pdf.tools.example.com
+        }
     }
 }
 t.console.notes.karnwong.me {

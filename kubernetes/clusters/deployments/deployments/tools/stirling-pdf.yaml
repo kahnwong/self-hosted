@@ -1,6 +1,4 @@
-kind: Deployment
 name: stirling-pdf
-replicaCount: 1
 containers:
   - name: stirling-pdf
     repository: docker.stirlingpdf.com/stirlingtools/stirling-pdf

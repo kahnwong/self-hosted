@@ -51,7 +51,6 @@ locals {
       "rallly", "rallly-postgres",
       "rss-bridge",
       "sshx",
-      "stirling-pdf",
       "todotxt", "todotxt-api",
       "wakapi", "wakapi-postgres",
       "weather-api",
@@ -75,6 +74,7 @@ locals {
     ]
     tools = [
       "rustpad",
+      "stirling-pdf",
     ]
   })
   deployments_misc = toset([
