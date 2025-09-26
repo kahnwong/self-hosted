@@ -88,8 +88,7 @@ locals {
     ]
   })
   deployments_misc = toset([
-    # "foo",
-    # "bar", "baz"
+    # "baz"
   ])
 }
 
