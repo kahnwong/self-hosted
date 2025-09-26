@@ -1,0 +1,6 @@
+vaultwarden.karnwong.me {
+    reverse_proxy vaultwarden:80
+}
+umami.karnwong.me {
+    reverse_proxy umami:3000
+}
