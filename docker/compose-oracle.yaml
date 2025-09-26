@@ -1,0 +1,85 @@
+services:
+  picoshare:
+    image: "mtlynch/picoshare:1.5.1"
+    container_name: picoshare
+    restart: always
+    env_file:
+      - .env.app.picoshare
+    volumes:
+      - /opt/picoshare/data:/data
+      # ports:
+      #  - "4001:4001"
+  pairdrop:
+    image: "lscr.io/linuxserver/pairdrop:1.11.2"
+    container_name: pairdrop
+    restart: always
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - WS_FALLBACK=false
+      - RATE_LIMIT=true
+      - RTC_CONFIG=false
+      - DEBUG_MODE=false
+      - TZ=Etc/UTC
+      # ports:
+      #  - "3000:3000"
+  anisette:
+    container_name: anisette
+    restart: always
+    # ports:
+    #  - 6969:6969
+    image: dadoum/anisette-v3-server
+    volumes: # `sudo chown -R 1000:1000 /opt/anisette`
+      - /opt/anisette/data:/home/Alcoholic/.config/anisette-v3/lib
+    user: "1000:1000"
+  iroh-relay:
+    container_name: iroh-relay
+    restart: always
+    # ports:
+    #  - 81:80
+    image: n0computer/iroh-relay:v0.92.0
+    environment:
+      - RUST_LOG=info
+    command: ["-c", "/config/relay.toml"]
+    volumes:
+      - ./config/iroh-relay.toml:/config/iroh-relay.toml:ro
+  gatus:
+    container_name: gatus
+    restart: always
+    # ports:
+    #  - 8080:8080
+    image: twinproduction/gatus:v5.24.0
+    volumes:
+      - ./config/gatus.yaml:/config/config.yaml:ro
+      - /opt/gatus/data:/data
+  supersecretmessage-vault:
+    container_name: supersecretmessage-vault
+    restart: always
+    # ports:
+    #  - 8200:8200
+    image: hashicorp/vault:1.20.3
+    env_file:
+      - .env.app.supersecretmessage-vault
+    cap_add:
+      - IPC_LOCK
+  supersecretmessage:
+    container_name: supersecretmessage
+    restart: always
+    # ports:
+    #  - 8082:8082
+    image: ghcr.io/kahnwong/sup3rs3cretmes5age:c0449be
+    env_file:
+      - .env.app.supersecretmessage-vault
+    environment:
+      - SUPERSECRETMESSAGE_HTTP_BINDING_ADDRESS=:8082
+      - VAULT_ADDR=http://supersecretmessage-vault:8200
+  # ---- caddy ----
+  caddy:
+    image: caddy:2
+    container_name: caddy
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile.oracle:/etc/caddy/Caddyfile:ro

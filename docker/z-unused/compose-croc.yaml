@@ -1,0 +1,10 @@
+services:
+  croc:
+    image: schollz/croc
+    container_name: croc
+    restart: always
+    ports:
+      - 9009:9009
+      - 9010:9010
+    env_file:
+      - .env.app.croc

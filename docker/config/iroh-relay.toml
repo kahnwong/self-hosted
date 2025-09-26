@@ -1,0 +1,7 @@
+http_bind_addr = "0.0.0.0:80"
+enable_relay = true
+enable_metrics = false
+
+[limits]
+accept_conn_limit = 200
+accept_conn_burst = 40

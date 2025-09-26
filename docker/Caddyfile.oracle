@@ -1,0 +1,18 @@
+pairdrop.karnwong.me {
+    reverse_proxy pairdrop:3000
+}
+share.karnwong.me {
+    reverse_proxy picoshare:4001
+}
+anisette.karnwong.me {
+    reverse_proxy anisette:6969
+}
+relay.iroh.karnwong.me {
+    reverse_proxy iroh-relay:80
+}
+gatus.karnwong.me {
+    reverse_proxy gatus:8080
+}
+secrets.karnwong.me {
+    reverse_proxy supersecretmessage:8082
+}

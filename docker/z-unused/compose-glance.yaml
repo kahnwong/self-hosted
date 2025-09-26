@@ -6,6 +6,6 @@ services:
     env_file:
       - .glance.env
     volumes:
-      - ./glance:/app/config
+      - ./config:/app/config
     ports:
       - 8080:8080
