@@ -12,7 +12,6 @@ locals {
     "files",
     "ghostfolio",
     "go",
-    "habits",
     "harbor",
     "homebox",
     "immich",
@@ -22,7 +21,7 @@ locals {
     "music",
     "nocodb",
     "ntfy",
-    "pmtiles",
+    "pmtiles", # if use docker-caddy, it needs to be a separate instance because it uses `file_server` directive
     "qa-api",
     "rally",
     "rustpad",
@@ -31,9 +30,6 @@ locals {
     "todotxt",
     "wakapi",
     "wallabag",
-    #     "send",
-    #     "signoz",
-    #     "split",
   ])
   selfhosted_non_proxied = setunion(toset([
     "api.qrcode",
@@ -43,29 +39,22 @@ locals {
     "authentik",
     "books",
     "chat",
-    "cli.send",
-    "console.minio",
     "cpubench",
-    "evcc",
     "garage",
     "git",
-    "grafana.teslamate",
     "headscale",
     "homer",
     "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
     "k.console.notes",
     "linkding",
     "livegrep",
-    "minio",
     "mlflow",
     "notes",
     "paperless",
     "pdf",
     "syncthing",
     "t.console.notes",
-    "teslamate",
     "warpgate",
-    # "share", # prevent request entity too large; migrated to oracle
   ]), var.private_dns)
 
   gcp_proxied = toset([
@@ -76,16 +65,14 @@ locals {
 
   oracle_proxied = toset([
     "anisette",
+    "gatus",
     "kutt",
     "pairdrop",
     "secrets",
-    "share",
   ])
   oracle_non_proxied = toset([
-    "croc",
-    "gatus",
-    "microbin",
     "relay.iroh",
+    "share", # prevent request entity too large
   ])
 }
 locals {
