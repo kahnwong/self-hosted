@@ -18,10 +18,39 @@ kubectl taint nodes fringe-division storage-required=true:NoSchedule
 - <https://knative.dev/blog/articles/set-up-a-local-knative-environment-with-kind/>
 
 ```bash
-kubectl apply -f https://github.com/knative/serving/releases/download/knative-v1.16.0/serving-crds.yaml
-kubectl apply -f https://github.com/knative/serving/releases/download/knative-v1.16.0/serving-core.yaml
-kubectl apply -f https://github.com/knative/net-kourier/releases/download/knative-v1.16.0/kourier.yaml
+kubectl apply -f https://github.com/knative/serving/releases/download/knative-v1.19.6/serving-crds.yaml
+kubectl apply -f https://github.com/knative/serving/releases/download/knative-v1.19.6/serving-core.yaml
+```
 
+Modify kourier to use nodePort
+
+```bash
+wget https://github.com/knative/net-kourier/releases/download/knative-v1.19.5/kourier.yaml
+```
+
+```yaml
+spec:
+  ports:
+    - name: http2
+      port: 80
+      protocol: TCP
+      targetPort: 8080
+      nodePort: 31080
+    - name: https
+      port: 443
+      protocol: TCP
+      targetPort: 8443
+      nodePort: 31443
+  selector:
+    app: 3scale-kourier-gateway
+  type: NodePort
+```
+
+```bash
+kubectl apply -f kourier.yaml
+```
+
+```bash
 # set Kourier as default networking layer
 kubectl patch configmap/config-network \
   --namespace knative-serving \
@@ -60,6 +89,14 @@ kubectl apply --filename service.yaml  # access via <http://helloworld-go.defaul
 
 # validate
 kubectl get ksvc
+```
+
+Enable persistent volume claim
+
+```bash
+kubectl patch --namespace knative-serving configmap/config-features \
+ --type merge \
+ --patch '{"data":{"kubernetes.podspec-persistent-volume-claim": "enabled", "kubernetes.podspec-persistent-volume-write": "enabled"}}'
 ```
 
 <!-- BEGIN_TF_DOCS -->

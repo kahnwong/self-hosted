@@ -48,7 +48,7 @@ locals {
       },
       {
         deployment = "notes-work"
-        path       = "/opt/syncthing/cloud/Apps/notes/notes-work"
+        path       = "/opt/syncthing/apps/notes/notes-work"
       }
     ]
     tools = [

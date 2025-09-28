@@ -16,8 +16,6 @@ containers:
         mountPath: /data/media
       - name: jellyfin-data
         mountPath: /config
-      - name: audiobooks
-        mountPath: /data/audiobooks
       - name: sink
         mountPath: /data/sink
     resources:
@@ -31,9 +29,6 @@ volumes:
   - name: jellyfin-data
     persistentVolumeClaim:
       claimName: jellyfin-config-pvc
-  - name: audiobooks
-    persistentVolumeClaim:
-      claimName: audiobookshelf-data-pvc
   - name: sink
     persistentVolumeClaim:
       claimName: jellyfin-sink-pvc
