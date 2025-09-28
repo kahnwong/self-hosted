@@ -26,8 +26,6 @@ services:
       PUID: 1000
       PGID: 1000
       TZ: Asia/Bangkok
-      USER: transmission #optional
-      PASS: ${TRANSMISSION_PASSWORD} #optional
     volumes:
       - /opt/transmission/config:/config
       - /opt/transmission/downloads:/downloads
