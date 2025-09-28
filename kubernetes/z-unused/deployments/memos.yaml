@@ -1,3 +1,5 @@
+# prune archived notes
+# `DELETE FROM memo WHERE row_status = 'ARCHIVED';`
 kind: Deployment
 name: memos
 replicaCount: 1

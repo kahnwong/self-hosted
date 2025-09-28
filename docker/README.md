@@ -7,6 +7,12 @@
 5 0 * * * /usr/bin/docker run --network=host --env-file /home/$USER/self-hosted/docker/.env.backup.umami ghcr.io/kahnwong/docker-aws-backup:7a5b35c
 ```
 
+## Oracle Backup
+
+```bash
+1 0 * * * /usr/bin/docker run --env-file /home/ubuntu/self-hosted/docker/.env.backup.memos -v /opt/memos:/opt/memos ghcr.io/kahnwong/docker-aws-backup:7a5b35c
+```
+
 ## pmtiles
 
 ```bash

@@ -16,7 +16,6 @@ locals {
     "homebox",
     "immich",
     "jupyterhub",
-    "memos",
     "miniflux",
     "music",
     "nocodb",
@@ -71,6 +70,7 @@ locals {
     "secrets",
   ])
   oracle_non_proxied = toset([
+    "memos",
     "relay.iroh",
     "share", # prevent request entity too large
   ])

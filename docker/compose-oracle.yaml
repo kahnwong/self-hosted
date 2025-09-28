@@ -73,6 +73,14 @@ services:
     environment:
       - SUPERSECRETMESSAGE_HTTP_BINDING_ADDRESS=:8082
       - VAULT_ADDR=http://supersecretmessage-vault:8200
+  memos:
+    container_name: memos
+    restart: always
+    # ports:
+    #  - 5230:5230
+    image: neosmemo/memos:0.25.0
+    volumes:
+      - /opt/memos/data:/var/opt/memos
   # ---- caddy ----
   caddy:
     image: caddy:2
@@ -83,3 +91,4 @@ services:
       - "443:443"
     volumes:
       - ./Caddyfile.oracle:/etc/caddy/Caddyfile:ro
+      - /opt/caddy/data:/data

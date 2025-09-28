@@ -17,7 +17,6 @@ locals {
       "backup-homebox",
       "backup-immich-db",
       "backup-linkding",
-      "backup-memos",
       "backup-miniflux",
       "backup-navidrome",
       "backup-nocodb",

@@ -43,7 +43,6 @@ locals {
       "homer",
       "linkding",
       "livegrep-backend", "livegrep-frontend",
-      "memos",
       "nocodb",
       "open-webui",
       "paperless-ngx", "paperless-ngx-valkey",

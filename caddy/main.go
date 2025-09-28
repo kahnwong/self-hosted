@@ -28,7 +28,6 @@ func main() {
 		"immich":           "30030",
 		"jellyfin":         "jellyfin.media",
 		"matrix":           "6167",
-		"memos":            "30031",
 		"miniflux":         "30007",
 		"minio":            "30020",
 		"music":            "30006",
