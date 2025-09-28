@@ -13,7 +13,7 @@ files.karnwong.me {
     file_server browse
 }
 jupyterhub.karnwong.me {
-    reverse_proxy 192.168.1.70:80
+    reverse_proxy 192.168.1.48:80
 }
 warpgate.karnwong.me {
     reverse_proxy 192.168.1.58:8888 {
