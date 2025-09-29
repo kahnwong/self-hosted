@@ -13,6 +13,20 @@ expose:
         nodePort: 30501
     annotations: {}
 externalURL: https://harbor.karnwong.me
+database:
+  type: external
+  external:
+    host: "harbor-postgres.harbor.svc.cluster.local"
+    port: "5432"
+    username: "harbor"
+    coreDatabase: "registry"
+    existingSecret: "harbor"
+    sslmode: "disable"
+persistence:
+  persistentVolumeClaim:
+    registry:
+      existingClaim: "harbor-registry-pvc"
+      storageClass: ""
 
 #nginx:
 #  tolerations:

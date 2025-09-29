@@ -1,5 +1,11 @@
 locals {
   pvcs = tomap({
+    harbor = [ # need to run `sudo chown -R 10000:10000 /opt/harbor/registry`
+      {
+        deployment = "harbor-registry"
+        path       = "/opt/harbor/registry"
+      },
+    ]
     media = [
       # audiobookshelf
       {

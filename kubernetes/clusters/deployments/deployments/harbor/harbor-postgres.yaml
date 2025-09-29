@@ -1,0 +1,21 @@
+kind: StatefulSet
+name: harbor-postgres
+replicaCount: 1
+containers:
+  - name: postgres
+    repository: postgres
+    tag: 17.2
+    port: 5432
+    livenessProbeScheme: tcp
+    envFrom:
+      - secretRef:
+          name: harbor-postgres
+    volumeMounts:
+      - name: data
+        mountPath: /var/lib/postgresql/data
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/harbor/db
+service:
+  port: 5432

@@ -85,7 +85,7 @@ spec:
               value: "Hello Knative Serving is up and running with Kourier!!"
 EOF
 
-kubectl apply --filename service.yaml  # access via <http://helloworld-go.default.192.168.1.36.sslip.io:31080>, port is from Kourier HTTP NodePort
+kubectl apply --filename tests/service.yaml  # access via <http://helloworld-go.default.192.168.1.36.sslip.io:31080>, port is from Kourier HTTP NodePort
 
 # validate
 kubectl get ksvc

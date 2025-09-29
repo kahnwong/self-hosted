@@ -18,6 +18,7 @@ locals {
     default = [
       "subsonic-widgets",
     ]
+    harbor = ["harbor-postgres"]
     immich = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
     infrastructure = [
       "error-pages",
