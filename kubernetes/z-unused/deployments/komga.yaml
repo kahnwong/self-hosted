@@ -1,7 +1,5 @@
----
 name: komga
 replicaCount: 1
-
 containers:
   - name: komga
     repository: gotson/komga
@@ -23,7 +21,6 @@ containers:
         readOnly: true
       - name: komga-data
         mountPath: /config
-
 volumes:
   - name: books-magazines
     hostPath:
@@ -34,7 +31,6 @@ volumes:
   - name: komga-data
     hostPath:
       path: /opt/komga/config
-
 service:
   port: 8080
   nodePort: 30002

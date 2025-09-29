@@ -1,8 +1,6 @@
----
 kind: StatefulSet
 name: wallabag-redis
 replicaCount: 1
-
 containers:
   - name: redis
     repository: redis

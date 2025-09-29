@@ -1,4 +1,3 @@
----
 tolerations:
   - key: "storage-required"
     operator: "Equal"

@@ -1,7 +1,5 @@
----
 name: qgis-server
 replicaCount: 1
-
 containers:
   - name: postgres
     repository: postgis/postgis
@@ -34,8 +32,8 @@ containers:
         value: postgresql://postgres:postgresspassword@localhost:5432?sslmode=disable&dbname=postgres&schema=public&project=baania
       - name: QGIS_CATCH_SEGV
         value: "1"
-      # - name: QGIS_SERVER_LOG_LEVEL
-      #   value: "0"
+        # - name: QGIS_SERVER_LOG_LEVEL
+        #   value: "0"
     healthcheck: false
     resources:
       limits:
@@ -44,16 +42,16 @@ containers:
       requests:
         cpu: "2"
         memory: 1G
-    # volumeMounts:
-    #   - name: qgis-server-data
-    #     mountPath: /etc/qgisserver
+        # volumeMounts:
+        #   - name: qgis-server-data
+        #     mountPath: /etc/qgisserver
 volumes:
   - name: qgis-database
     hostPath:
       path: /opt/qgis-server/data/pgdata
-  # - name: qgis-server-data
-  #   hostPath:
-  #     path: /opt/qgis-server/data
+# - name: qgis-server-data
+#   hostPath:
+#     path: /opt/qgis-server/data
 
 service:
   port: 80

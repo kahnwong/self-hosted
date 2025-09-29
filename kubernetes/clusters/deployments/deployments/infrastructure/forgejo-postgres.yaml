@@ -1,8 +1,6 @@
----
 kind: StatefulSet
 name: forgejo-postgres
 replicaCount: 1
-
 containers:
   - name: postgres
     repository: postgres
