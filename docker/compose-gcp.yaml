@@ -11,7 +11,7 @@ services:
       - /opt/vaultwarden/data:/data
   # ---- umami ----
   umami-postgres:
-    image: postgres:17.2-alpine
+    image: postgres:17.6-alpine
     container_name: umami-postgres
     restart: always
     env_file:
