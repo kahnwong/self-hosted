@@ -1,0 +1,14 @@
+services:
+  postgres:
+    # image: postgres:18
+    # image: pgvector/pgvector:pg16
+    image: postgis/postgis:18-3.6-alpine
+    container_name: postgis
+    ports:
+      - 5432:5432
+    volumes:
+      - /opt/db/postgis:/var/lib/postgresql
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgrespassword
+      - POSTGRES_DB=postgres
