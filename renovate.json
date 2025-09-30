@@ -2,5 +2,38 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "kubernetes": {
+    "fileMatch": [
+      "kubernetes/.+\\.ya?ml$"
+    ]
+  },
+  "helm-values": {
+    "fileMatch": [
+      "kubernetes/.+\\.ya?ml$"
+    ]
+  },
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "kubernetes/.+\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "repository:\\s+['\"]?(?<depName>[^'\"\\s]+)['\"]?\\s+tag:\\s+['\"]?(?<currentValue>[^'\"\\s]+)['\"]?"
+      ],
+      "datasourceTemplate": "docker"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchFileNames": [
+        "kubernetes/**"
+      ],
+      "groupName": null,
+      "separateMinorPatch": true,
+      "commitMessageTopic": "{{{depName}}}",
+      "commitMessagePrefix": "chore(deps):",
+      "commitMessageExtra": "to {{{newValue}}}"
+    }
   ]
 }
