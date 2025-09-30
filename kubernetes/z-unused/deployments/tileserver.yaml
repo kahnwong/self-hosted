@@ -4,7 +4,7 @@ deployments:
   containers:
     - name: tileserver
       repository: maptiler/tileserver-gl
-      tag: v4.5.0
+      tag: v5.4.0
       port: 8080
       volumeMounts:
         - name: tileserver-data
