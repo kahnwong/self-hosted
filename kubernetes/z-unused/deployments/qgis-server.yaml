@@ -23,7 +23,7 @@ containers:
         mountPath: /var/lib/postgresql/data
   - name: qgis-server
     repository: camptocamp/qgis-server
-    tag: "3.30"
+    tag: "3.44"
     port: 80
     env:
       # - name: QGIS_SERVER_LANDING_PAGE_PROJECTS_DIRECTORIES
