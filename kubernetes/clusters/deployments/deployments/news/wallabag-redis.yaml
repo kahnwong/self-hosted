@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: redis
     repository: redis
-    tag: 6.0.9-alpine
+    tag: 6.2.19-alpine
     port: 6379
     livenessProbeScheme: tcp
     envFrom:

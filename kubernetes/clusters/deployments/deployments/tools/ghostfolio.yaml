@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: ghostfolio
     repository: ghostfolio/ghostfolio
-    tag: 2.164.0
+    tag: 2.203.0
     port: 3333
     envFrom:
       - secretRef:

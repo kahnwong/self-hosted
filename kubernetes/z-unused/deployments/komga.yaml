@@ -3,7 +3,7 @@ replicaCount: 1
 containers:
   - name: komga
     repository: gotson/komga
-    tag: 0.161.0
+    tag: 0.165.0
     port: 8080
     resources:
       limits:

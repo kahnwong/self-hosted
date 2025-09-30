@@ -120,7 +120,7 @@ resource "helm_release" "this" {
   name       = each.key
   namespace  = each.value
   repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.2.0"
+  version    = "0.3.0"
   chart      = "base"
 
   values = [
@@ -133,7 +133,7 @@ resource "helm_release" "fringe_division" {
   name       = each.key
   namespace  = each.value
   repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.2.0"
+  version    = "0.3.0"
   chart      = "base"
 
   values = [
@@ -189,7 +189,7 @@ resource "helm_release" "authentik" {
   name       = "authentik"
   namespace  = "authentik"
   repository = "https://charts.goauthentik.io"
-  version    = "2025.8.3"
+  version    = "2025.8.4"
   chart      = "authentik"
 
   values = [
@@ -224,7 +224,7 @@ resource "helm_release" "misc" {
   name       = each.key
   namespace  = "default"
   repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.2.0"
+  version    = "0.3.0"
   chart      = "base"
 
   values = [
