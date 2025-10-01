@@ -44,7 +44,6 @@ locals {
       "linkding",
       "livegrep-backend", "livegrep-frontend",
       "nocodb",
-      "open-webui",
       "paperless-ngx", "paperless-ngx-valkey",
       "qrcode-api",
       "rallly", "rallly-postgres",
