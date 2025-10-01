@@ -34,6 +34,18 @@
       "commitMessageTopic": "{{{depName}}}",
       "commitMessagePrefix": "chore(deps):",
       "commitMessageExtra": "to {{{newValue}}}"
+    },
+    {
+      "matchFileNames": [
+        "**/z-unused/**"
+      ],
+      "matchManagers": [
+        "dockerfile",
+        "docker-compose",
+        "kubernetes",
+        "helm-values"
+      ],
+      "enabled": false
     }
   ]
 }
