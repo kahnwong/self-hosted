@@ -21,7 +21,6 @@ locals {
     harbor = ["harbor-postgres"]
     immich = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
     infrastructure = [
-      "error-pages",
       "forgejo", "forgejo-postgres",
       "garage",
       "mlflow", "mlflow-postgres",
