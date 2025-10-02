@@ -27,16 +27,6 @@
   "packageRules": [
     {
       "matchFileNames": [
-        "kubernetes/**"
-      ],
-      "groupName": null,
-      "separateMinorPatch": true,
-      "commitMessageTopic": "{{{depName}}}",
-      "commitMessagePrefix": "chore(deps):",
-      "commitMessageExtra": "to {{{newValue}}}"
-    },
-    {
-      "matchFileNames": [
         "**/z-unused/**"
       ],
       "matchManagers": [
@@ -46,6 +36,16 @@
         "helm-values"
       ],
       "enabled": false
+    },
+    {
+      "matchFileNames": [
+        "kubernetes/**"
+      ],
+      "groupName": null,
+      "separateMinorPatch": true,
+      "commitMessageTopic": "{{{depName}}}",
+      "commitMessagePrefix": "chore(deps):",
+      "commitMessageExtra": "to {{{newValue}}}"
     }
   ]
 }
