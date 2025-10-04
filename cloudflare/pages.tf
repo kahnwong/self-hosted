@@ -15,6 +15,7 @@ locals {
     "retriever",
     "slc",
     "tldraw",
+    "vendor-status",
     "whattheduck",
   ])
 }

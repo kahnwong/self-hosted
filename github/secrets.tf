@@ -21,6 +21,7 @@ locals {
     "retriever",
     "slc",
     "tldraw",
+    "vendor-status.karnwong.me",
     "whattheduck",
   ])
 
