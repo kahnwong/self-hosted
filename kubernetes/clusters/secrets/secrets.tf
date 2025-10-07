@@ -28,7 +28,6 @@ locals {
       "cpubench",
       "ghostfolio", "ghostfolio-postgres",
       "livegrep-clone-custom",
-      "open-webui",
       "rallly", "rallly-postgres",
       "qrcode-api",
       "todotxt-api",
