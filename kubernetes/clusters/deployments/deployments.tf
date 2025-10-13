@@ -35,6 +35,7 @@ locals {
     ]
     notes = [
       "notes",
+      "notes-personal",
     ]
     tools = [
       "cpubench",
@@ -162,6 +163,10 @@ resource "kubernetes_manifest" "qa_discord_bot" {
 # ------ notes-sync ------ #
 resource "kubernetes_manifest" "notes_sync" {
   manifest = yamldecode(file("./deployments/notes/notes-sync.yaml"))
+}
+
+resource "kubernetes_manifest" "notes_personal" {
+  manifest = yamldecode(file("./deployments/notes/notes-personal-sync.yaml"))
 }
 
 # ------ harbor ------ #

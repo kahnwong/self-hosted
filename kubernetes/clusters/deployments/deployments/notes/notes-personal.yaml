@@ -1,0 +1,18 @@
+kind: Deployment
+name: notes-personal
+replicaCount: 1
+containers:
+  - name: notes-personal
+    repository: caddy
+    tag: latest
+    port: 80
+    volumeMounts:
+      - name: notes-personal
+        mountPath: /usr/share/caddy
+volumes:
+  - name: notes-personal
+    hostPath:
+      path: /opt/notes-personal-sync/head/.vitepress/dist
+service:
+  port: 80
+  nodePort: 30084

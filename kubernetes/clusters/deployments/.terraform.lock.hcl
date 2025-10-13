@@ -51,6 +51,7 @@ provider "registry.opentofu.org/hashicorp/helm" {
     "h1:XUl51DbrTYqzzgQsih0VEjbowwVnCgixOm3zMi0qbnQ=",
     "h1:hwkdRrXAjIQKfA/yZllP1A/jrD34tTniHYbHf8HpTYQ=",
     "h1:johdUiah9Sxzqt8FSapadQ1Q9MXJA1AV85XQQTI7D6o=",
+    "h1:qU3CngOimwp/B0y0KtEqEIx+BvCiYUc6FlEF1jpOPp0=",
     "h1:tQVviOEzfps7Tv/VgYjOunJFsO9PgbcNjBX5jR40yYw=",
     "h1:tSrDs20hVNAT/wIiJHjWhB8IMIRIPWLZBggbP2JtJ5g=",
     "h1:ypaojUVrtK/ha5zAfhnxpbNMg1oqvRV5ogoPx5VEoN8=",

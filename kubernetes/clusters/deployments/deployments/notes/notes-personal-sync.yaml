@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notes-personal-sync
+  namespace: notes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notes-personal-sync
+  template:
+    metadata:
+      labels:
+        app: notes-personal-sync
+    spec:
+      volumes:
+        - name: notes-personal-sync
+          hostPath:
+            path: /opt/notes-personal-sync
+      containers:
+        - name: git-sync
+          image: registry.k8s.io/git-sync/git-sync:v4.5.0
+          args:
+            - --repo=https://github.com/kahnwong/notes-personal.git
+            - --depth=1
+            - --root=/git
+            - --period=60s
+            - --link=head
+            - --ref=dist
+          securityContext:
+            runAsUser: 0
+          volumeMounts:
+            - name: notes-personal-sync
+              mountPath: /git
+          envFrom:
+            - secretRef:
+                name: notes-sync
