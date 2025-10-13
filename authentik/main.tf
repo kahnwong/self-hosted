@@ -24,6 +24,7 @@ locals {
     "livegrep",
     "mlflow",
     "notes",
+    "np",
     "pdf",
     "t.console.notes",
     "todotxt",

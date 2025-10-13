@@ -48,6 +48,7 @@ locals {
     "livegrep",
     "mlflow",
     "notes",
+    "np",
     "paperless",
     "pdf",
     "syncthing",

@@ -44,6 +44,7 @@ func main() {
 		"linkding":        "30005",
 		"livegrep":        "30033",
 		"notes":           "30052",
+		"np":              "30084",
 		"pdf":             "stirling-pdf.tools",
 		"t.console.notes": "notes-console-t.notes",
 		"todotxt":         "30064",
