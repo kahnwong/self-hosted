@@ -3,6 +3,7 @@ locals {
     "calculator",
     "docs",
     "excalidraw",
+    "face-detection",
     "food-picker",
     "gallery",
     "h3-viewer",

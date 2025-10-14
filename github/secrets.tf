@@ -12,6 +12,7 @@ locals {
     "food-picker",
     "gallery.karnwong.me",
     "h3-viewer",
+    "in-browser-face-detection",
     "jupyterlite",
     "karnwong.me",
     "marimo-wasm",
