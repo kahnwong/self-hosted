@@ -18,6 +18,7 @@ locals {
     "jupyterhub",
     "miniflux",
     "music",
+    "n8n",
     "nocodb",
     "ntfy",
     "pmtiles", # if use docker-caddy, it needs to be a separate instance because it uses `file_server` directive

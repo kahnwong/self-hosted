@@ -60,6 +60,9 @@ miniflux.karnwong.me {
 music.karnwong.me {
     reverse_proxy 192.168.1.36:30006
 }
+n8n.karnwong.me {
+    reverse_proxy 192.168.1.36:5678
+}
 nocodb.karnwong.me {
     reverse_proxy 192.168.1.36:30062
 }

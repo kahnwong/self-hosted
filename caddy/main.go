@@ -27,6 +27,7 @@ func main() {
 		"matrix":           "6167",
 		"miniflux":         "30007",
 		"music":            "30006",
+		"n8n":              "5678",
 		"nocodb":           "30062",
 		"ntfy":             "30022",
 		"paperless":        "30079",

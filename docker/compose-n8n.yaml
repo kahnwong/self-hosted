@@ -1,6 +1,7 @@
 services:
   n8n:
-    image: docker.n8n.io/n8nio/n8n
+    image: docker.n8n.io/n8nio/n8n:1.115.2
+    container_name: n8n
     restart: always
     ports:
       - "5678:5678"
