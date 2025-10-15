@@ -4,6 +4,7 @@ services:
     # image: pgvector/pgvector:pg16
     image: postgis/postgis:18-3.6-alpine
     container_name: postgis
+    restart: always
     ports:
       - 5432:5432
     volumes:
