@@ -15,6 +15,7 @@ locals {
     "python",
     "retriever",
     "slc",
+    "swissknife",
     "tldraw",
     "vendor-status",
     "whattheduck",

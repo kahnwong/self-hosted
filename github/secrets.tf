@@ -21,6 +21,7 @@ locals {
     "python-playground",
     "retriever",
     "slc",
+    "swissknife",
     "tldraw",
     "vendor-status.karnwong.me",
     "whattheduck",
