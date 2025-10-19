@@ -31,7 +31,7 @@ locals {
       "maintenance-backup-prune",
       "maintenance-wallabag-cleanup",
       "restart-livegrep",
-      "water-cut-notify",
+      # "water-cut-notify",
     ]
 
     jobs-family-alerts = [
