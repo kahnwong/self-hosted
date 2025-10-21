@@ -79,14 +79,19 @@ func generateConfig(services map[string]string) string {
 	for _, k := range keys {
 		if !strings.Contains(services[k], ".") { // normal deployment
 			config += fmt.Sprintf(`%s.karnwong.me {
-    reverse_proxy 192.168.1.36:%s
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:%s
+	}
 }
 `, k, services[k])
 		} else { // knative
 			config += fmt.Sprintf(`%s.karnwong.me {
-    reverse_proxy 192.168.1.36:31080 {
-        header_up Host %s.example.com
-    }
+    route {
+		reverse_proxy 192.168.1.36:31080 {
+			header_up Host %s.example.com
+		}
+	}
 }
 `, k, services[k])
 		}
@@ -109,6 +114,7 @@ func generateConfigForwardAuth(services map[string]string) string {
 		if !strings.Contains(services[k], ".") { // normal deployment
 			config += fmt.Sprintf(`%s.karnwong.me {
     route {
+		crowdsec
         reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
 
         forward_auth http://192.168.1.36:30047 {
@@ -124,6 +130,7 @@ func generateConfigForwardAuth(services map[string]string) string {
 		} else { // knative
 			config += fmt.Sprintf(`%s.karnwong.me {
     route {
+		crowdsec
         reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
 
         forward_auth http://192.168.1.36:30047 {
