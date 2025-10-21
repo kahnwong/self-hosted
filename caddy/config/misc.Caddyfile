@@ -1,27 +1,40 @@
 wallabag.karnwong.me {
-    reverse_proxy 192.168.1.36:30009 {
-        transport http {
-            dial_timeout 5m
-            response_header_timeout 5m
-            read_timeout 5m
-            write_timeout 5m
+    route {
+        crowdsec
+        reverse_proxy 192.168.1.36:30009 {
+            transport http {
+                dial_timeout 5m
+                response_header_timeout 5m
+                read_timeout 5m
+                write_timeout 5m
+            }
         }
     }
 }
 files.karnwong.me {
     root * /opt/files
-    file_server browse
+
+    route {
+        crowdsec
+        file_server browse
+    }
 }
 jupyterhub.karnwong.me {
-    reverse_proxy 192.168.1.48:80
+    route {
+        reverse_proxy 192.168.1.48:80
+    }
 }
 warpgate.karnwong.me {
-    reverse_proxy 192.168.1.51:8888 {
-        header_up Host warpgate.karnwong.me
-        header_up X-Forwarded-Proto https
+    route {
+        crowdsec
 
-        transport http {
-            tls_insecure_skip_verify
+        reverse_proxy 192.168.1.51:8888 {
+            header_up Host warpgate.karnwong.me
+            header_up X-Forwarded-Proto https
+
+            transport http {
+                tls_insecure_skip_verify
+            }
         }
     }
 }

@@ -1,104 +1,186 @@
 api.qrcode.karnwong.me {
-    reverse_proxy 192.168.1.36:30077
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:30077
+	}
 }
 api.todotxt.karnwong.me {
-    reverse_proxy 192.168.1.36:30076
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:30076
+	}
 }
 api.weather.karnwong.me {
-    reverse_proxy 192.168.1.36:30078
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:30078
+	}
 }
 audiobookshelf.karnwong.me {
-    reverse_proxy 192.168.1.36:31080 {
-        header_up Host audiobookshelf.media.example.com
-    }
+    route {
+		reverse_proxy 192.168.1.36:31080 {
+			header_up Host audiobookshelf.media.example.com
+		}
+	}
 }
 authentik.karnwong.me {
-    reverse_proxy 192.168.1.36:30047
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:30047
+	}
 }
 books.karnwong.me {
-    reverse_proxy 192.168.1.36:31080 {
-        header_up Host calibre-web.media.example.com
-    }
+    route {
+		reverse_proxy 192.168.1.36:31080 {
+			header_up Host calibre-web.media.example.com
+		}
+	}
 }
 cpubench.karnwong.me {
-    reverse_proxy 192.168.1.36:30080
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:30080
+	}
 }
 garage.karnwong.me {
-    reverse_proxy 192.168.1.36:30070
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:30070
+	}
 }
 ghostfolio.karnwong.me {
-    reverse_proxy 192.168.1.36:30066
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:30066
+	}
 }
 git.karnwong.me {
-    reverse_proxy 192.168.1.36:30026
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:30026
+	}
 }
 go.karnwong.me {
-    reverse_proxy 192.168.1.36:31080 {
-        header_up Host go-playground.playground.example.com
-    }
+    route {
+		reverse_proxy 192.168.1.36:31080 {
+			header_up Host go-playground.playground.example.com
+		}
+	}
 }
 harbor.karnwong.me {
-    reverse_proxy 192.168.1.36:30500
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:30500
+	}
 }
 homebox.karnwong.me {
-    reverse_proxy 192.168.1.36:30083
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:30083
+	}
 }
 immich.karnwong.me {
-    reverse_proxy 192.168.1.36:30030
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:30030
+	}
 }
 jellyfin.karnwong.me {
-    reverse_proxy 192.168.1.36:31080 {
-        header_up Host jellyfin.media.example.com
-    }
+    route {
+		reverse_proxy 192.168.1.36:31080 {
+			header_up Host jellyfin.media.example.com
+		}
+	}
 }
 matrix.karnwong.me {
-    reverse_proxy 192.168.1.36:6167
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:6167
+	}
 }
 miniflux.karnwong.me {
-    reverse_proxy 192.168.1.36:30007
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:30007
+	}
 }
 music.karnwong.me {
-    reverse_proxy 192.168.1.36:30006
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:30006
+	}
 }
 n8n.karnwong.me {
-    reverse_proxy 192.168.1.36:5678
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:5678
+	}
 }
 nocodb.karnwong.me {
-    reverse_proxy 192.168.1.36:30062
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:30062
+	}
 }
 ntfy.karnwong.me {
-    reverse_proxy 192.168.1.36:30022
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:30022
+	}
 }
 paperless.karnwong.me {
-    reverse_proxy 192.168.1.36:30079
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:30079
+	}
 }
 qa-api.karnwong.me {
-    reverse_proxy 192.168.1.36:30043
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:30043
+	}
 }
 rally.karnwong.me {
-    reverse_proxy 192.168.1.36:30035
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:30035
+	}
 }
 rustpad.karnwong.me {
-    reverse_proxy 192.168.1.36:31080 {
-        header_up Host rustpad.tools.example.com
-    }
+    route {
+		reverse_proxy 192.168.1.36:31080 {
+			header_up Host rustpad.tools.example.com
+		}
+	}
 }
 subsonic-widgets.karnwong.me {
-    reverse_proxy 192.168.1.36:30038
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:30038
+	}
 }
 syncthing.karnwong.me {
-    reverse_proxy 192.168.1.36:8384
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:8384
+	}
 }
 thai-tech-cal.karnwong.me {
-    reverse_proxy 192.168.1.36:31080 {
-        header_up Host thai-tech-cal.news.example.com
-    }
+    route {
+		reverse_proxy 192.168.1.36:31080 {
+			header_up Host thai-tech-cal.news.example.com
+		}
+	}
 }
 wakapi.karnwong.me {
-    reverse_proxy 192.168.1.36:30041
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:30041
+	}
 }
 homer.karnwong.me {
     route {
+		crowdsec
         reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
 
         forward_auth http://192.168.1.36:30047 {
@@ -112,6 +194,7 @@ homer.karnwong.me {
 }
 k.console.notes.karnwong.me {
     route {
+		crowdsec
         reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
 
         forward_auth http://192.168.1.36:30047 {
@@ -127,6 +210,7 @@ k.console.notes.karnwong.me {
 }
 linkding.karnwong.me {
     route {
+		crowdsec
         reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
 
         forward_auth http://192.168.1.36:30047 {
@@ -140,6 +224,7 @@ linkding.karnwong.me {
 }
 livegrep.karnwong.me {
     route {
+		crowdsec
         reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
 
         forward_auth http://192.168.1.36:30047 {
@@ -153,6 +238,7 @@ livegrep.karnwong.me {
 }
 notes.karnwong.me {
     route {
+		crowdsec
         reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
 
         forward_auth http://192.168.1.36:30047 {
@@ -166,6 +252,7 @@ notes.karnwong.me {
 }
 np.karnwong.me {
     route {
+		crowdsec
         reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
 
         forward_auth http://192.168.1.36:30047 {
@@ -179,6 +266,7 @@ np.karnwong.me {
 }
 pdf.karnwong.me {
     route {
+		crowdsec
         reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
 
         forward_auth http://192.168.1.36:30047 {
@@ -194,6 +282,7 @@ pdf.karnwong.me {
 }
 t.console.notes.karnwong.me {
     route {
+		crowdsec
         reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
 
         forward_auth http://192.168.1.36:30047 {
@@ -209,6 +298,7 @@ t.console.notes.karnwong.me {
 }
 todotxt.karnwong.me {
     route {
+		crowdsec
         reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
 
         forward_auth http://192.168.1.36:30047 {
