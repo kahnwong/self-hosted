@@ -10,7 +10,7 @@ cd /home/ubuntu/self-hosted/caddy/config || exit 1
 	cat misc.Caddyfile
 	echo -e "\n"
 	sops -d private.sops.Caddyfile
-} >>all.Caddyfile
+} >all.Caddyfile
 
 sudo cp /home/ubuntu/self-hosted/caddy/config/all.Caddyfile /etc/caddy/Caddyfile
 systemctl reload caddy
