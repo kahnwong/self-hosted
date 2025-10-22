@@ -26,6 +26,7 @@ baz.yaml
 **/grafana-agent-operator/values.yaml
 all.Caddyfile
 private.Caddyfile
+header.Caddyfile
 
 # files
 *.html
