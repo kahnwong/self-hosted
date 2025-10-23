@@ -17,14 +17,14 @@ services:
       - /opt/matrix/mautrix-whatsapp:/data:z
     depends_on:
       - tuwunel
-  mautrix-meta: # connet to `metabot`
-    image: dock.mau.dev/mautrix/meta:v0.2510.0
-    container_name: mautrix-meta
-    restart: always
-    volumes:
-      - /opt/matrix/mautrix-meta:/data:z
-    depends_on:
-      - tuwunel
+  # mautrix-meta: # connet to `metabot`
+  #   image: dock.mau.dev/mautrix/meta:v0.2510.0
+  #   container_name: mautrix-meta
+  #   restart: always
+  #   volumes:
+  #     - /opt/matrix/mautrix-meta:/data:z
+  #   depends_on:
+  #     - tuwunel
   mautrix-discord:
     image: dock.mau.dev/mautrix/discord:v0.7.5
     container_name: mautrix-discord
