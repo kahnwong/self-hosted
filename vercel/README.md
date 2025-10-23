@@ -6,14 +6,14 @@
 
 | Name | Version |
 |------|---------|
-| sops | 1.2.1 |
+| sops | 1.3.0 |
 | vercel | 3.15.2 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| sops | 1.2.0 |
+| sops | 1.3.0 |
 | vercel | 3.15.2 |
 
 ## Modules
@@ -28,7 +28,7 @@ No modules.
 | [vercel_project.transform](https://registry.terraform.io/providers/vercel/vercel/3.15.2/docs/resources/project) | resource |
 | [vercel_project_domain.shouldideploytoday](https://registry.terraform.io/providers/vercel/vercel/3.15.2/docs/resources/project_domain) | resource |
 | [vercel_project_domain.transform](https://registry.terraform.io/providers/vercel/vercel/3.15.2/docs/resources/project_domain) | resource |
-| [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.2.1/docs/data-sources/file) | data source |
+| [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.3.0/docs/data-sources/file) | data source |
 
 ## Inputs
 

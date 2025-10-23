@@ -14,14 +14,14 @@ All users - API Tokens:Edit
 | Name | Version |
 |------|---------|
 | cloudflare | 5.10.1 |
-| sops | 1.2.1 |
+| sops | 1.3.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | cloudflare | 5.10.1 |
-| sops | 1.2.1 |
+| sops | 1.3.0 |
 
 ## Modules
 
@@ -56,7 +56,7 @@ All users - API Tokens:Edit
 | [cloudflare_dns_record.www_dummy](https://registry.terraform.io/providers/cloudflare/cloudflare/5.10.1/docs/resources/dns_record) | resource |
 | [cloudflare_page_rule.redirect_www_to_root](https://registry.terraform.io/providers/cloudflare/cloudflare/5.10.1/docs/resources/page_rule) | resource |
 | [cloudflare_r2_bucket.this](https://registry.terraform.io/providers/cloudflare/cloudflare/5.10.1/docs/resources/r2_bucket) | resource |
-| [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.2.1/docs/data-sources/file) | data source |
+| [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.3.0/docs/data-sources/file) | data source |
 
 ## Inputs
 
