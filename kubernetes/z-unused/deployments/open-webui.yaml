@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: open-webui
     repository: ghcr.io/open-webui/open-webui
-    tag: 0.6.32
+    tag: 0.6.34
     port: 8080
     envFrom:
       - secretRef:
