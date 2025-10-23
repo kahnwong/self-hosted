@@ -9,7 +9,7 @@
 | terraform | >= 1.3.6 |
 | helm | 3.0.2 |
 | kubernetes | 2.38.0 |
-| sops | 1.2.1 |
+| sops | 1.3.0 |
 
 ## Providers
 

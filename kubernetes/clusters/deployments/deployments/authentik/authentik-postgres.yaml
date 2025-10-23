@@ -1,8 +1,6 @@
----
 kind: StatefulSet
 name: authentik-postgres
 replicaCount: 1
-
 containers:
   - name: postgres
     repository: postgres

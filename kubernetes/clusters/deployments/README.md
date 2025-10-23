@@ -108,7 +108,7 @@ kubectl patch --namespace knative-serving configmap/config-features \
 | helm | 3.0.2 |
 | kubectl | ~> 2.0 |
 | kubernetes | 2.38.0 |
-| sops | 1.2.1 |
+| sops | 1.3.0 |
 
 ## Providers
 
@@ -116,7 +116,7 @@ kubectl patch --namespace knative-serving configmap/config-features \
 |------|---------|
 | helm | 3.0.2 |
 | kubernetes | 2.38.0 |
-| sops | 1.2.1 |
+| sops | 1.3.0 |
 
 ## Modules
 
@@ -144,7 +144,7 @@ No modules.
 | [kubernetes_secret.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/secret) | resource |
 | [kubernetes_service_account.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/service_account) | resource |
 | [kubernetes_service_account.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/service_account) | resource |
-| [sops_file.misc](https://registry.terraform.io/providers/carlpett/sops/1.2.1/docs/data-sources/file) | data source |
+| [sops_file.misc](https://registry.terraform.io/providers/carlpett/sops/1.3.0/docs/data-sources/file) | data source |
 
 ## Inputs
 
