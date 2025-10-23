@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: postgres
     repository: postgres
-    tag: 16.4-alpine
+    tag: 18.0-alpine
     port: 5432
     livenessProbeScheme: tcp
     envFrom:
