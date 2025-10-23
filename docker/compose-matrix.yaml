@@ -18,7 +18,7 @@ services:
     depends_on:
       - tuwunel
   mautrix-meta: # connet to `metabot`
-    image: dock.mau.dev/mautrix/meta:v0.5.3
+    image: dock.mau.dev/mautrix/meta:v0.2510.0
     container_name: mautrix-meta
     restart: always
     volumes:
