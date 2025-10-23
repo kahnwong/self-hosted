@@ -10,7 +10,7 @@ services:
     volumes:
       - /opt/tuwunel/data:/var/lib/tuwunel/
   mautrix-whatsapp:
-    image: dock.mau.dev/mautrix/whatsapp:v0.12.5
+    image: dock.mau.dev/mautrix/whatsapp:v0.2510.0
     container_name: mautrix-whatsapp
     restart: always
     volumes:
