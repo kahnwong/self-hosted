@@ -34,7 +34,7 @@ services:
     depends_on:
       - tuwunel
   mautrix-signal:
-    image: dock.mau.dev/mautrix/signal:v0.8.7
+    image: dock.mau.dev/mautrix/signal:v0.2510.0
     container_name: mautrix-signal
     restart: always
     volumes:
