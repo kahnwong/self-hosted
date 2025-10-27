@@ -9,7 +9,6 @@ locals {
   ])
   selfhosted_proxied = toset([
     "*",
-    "console.wg",
     "files",
     "ghostfolio",
     "go",

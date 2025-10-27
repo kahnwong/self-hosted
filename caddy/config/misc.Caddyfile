@@ -21,7 +21,6 @@ files.karnwong.me {
 }
 jupyterhub.karnwong.me {
     route {
-        crowdsec
         reverse_proxy 192.168.1.48:80
     }
 }
@@ -37,11 +36,5 @@ warpgate.karnwong.me {
                 tls_insecure_skip_verify
             }
         }
-    }
-}
-console.wg.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.51:51821
     }
 }
