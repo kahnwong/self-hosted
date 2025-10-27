@@ -4,7 +4,7 @@ services:
     image: glanceapp/glance
     restart: unless-stopped
     env_file:
-      - .glance.env
+      - .env.app.glance
     volumes:
       - ./config:/app/config
     ports:
