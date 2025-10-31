@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: valkey
     repository: valkey/valkey
-    tag: 8.1.3
+    tag: 8.1.4
     port: 6379
     livenessProbeScheme: tcp
 service:
