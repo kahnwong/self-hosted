@@ -57,7 +57,7 @@ services:
     restart: always
     # ports:
     #  - 8200:8200
-    image: hashicorp/vault:1.20.4
+    image: hashicorp/vault:1.21.0
     env_file:
       - .env.app.supersecretmessage-vault
     cap_add:
