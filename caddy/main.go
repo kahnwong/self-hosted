@@ -88,6 +88,7 @@ func generateConfig(services map[string]string) string {
 		} else { // knative
 			config += fmt.Sprintf(`%s.karnwong.me {
     route {
+		crowdsec
 		reverse_proxy 192.168.1.36:31080 {
 			header_up Host %s.example.com
 		}
