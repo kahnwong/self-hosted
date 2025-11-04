@@ -39,7 +39,7 @@ locals {
     ]
     tools = [
       "cpubench",
-      "ghostfolio", "ghostfolio-postgres", "ghostfolio-valkey",
+      # "ghostfolio", "ghostfolio-postgres", "ghostfolio-valkey",
       "homebox",
       "homer",
       "linkding",
@@ -57,8 +57,8 @@ locals {
   })
   deployments_knative = tomap({
     media = [
-      "audiobookshelf",
-      "calibre-web",
+      # "audiobookshelf",
+      # "calibre-web",
       "jellyfin",
     ]
     news = [
