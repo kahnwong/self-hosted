@@ -1,6 +1,6 @@
 services:
   error-pages:
-    image: tarampampam/error-pages:3.7.0
+    image: tarampampam/error-pages:3.7.1
     container_name: error-pages
     environment:
       - TEMPLATE_NAME=l7
