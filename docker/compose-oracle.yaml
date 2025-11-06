@@ -37,7 +37,7 @@ services:
     restart: always
     # ports:
     #  - 81:80
-    image: n0computer/iroh-relay:v0.95.0
+    image: n0computer/iroh-relay:v0.95.1
     environment:
       - RUST_LOG=info
     command: ["-c", "/config/relay.toml"]
