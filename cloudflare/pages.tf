@@ -4,7 +4,6 @@ locals {
     "docs",
     "excalidraw",
     "face-detection",
-    "food-picker",
     "gallery",
     "h3-viewer",
     "jupyterlite",
@@ -12,13 +11,10 @@ locals {
     "marimo",
     "monkeytype",
     "promptpay",
-    "python",
-    "retriever",
     "slc",
     "swissknife",
     "tldraw",
     "vendor-status",
-    "whattheduck",
   ])
 }
 

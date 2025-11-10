@@ -9,7 +9,6 @@ locals {
     "calculator",
     "docs",
     "excalidraw",
-    "food-picker",
     "gallery.karnwong.me",
     "h3-viewer",
     "in-browser-face-detection",
@@ -18,13 +17,10 @@ locals {
     "marimo-wasm",
     "monkeytype",
     "promptpay-qr-code",
-    "python-playground",
-    "retriever",
     "slc",
     "swissknife",
     "tldraw",
     "vendor-status.karnwong.me",
-    "whattheduck",
   ])
 
   vercel_repos = toset([
