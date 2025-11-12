@@ -4,11 +4,14 @@ replicaCount: 1
 containers:
   - name: mlflow
     repository: ghcr.io/kahnwong/docker-mlflow
-    tag: 2a3e342
+    tag: daa1c4f
     port: 8080
     envFrom:
       - secretRef:
           name: mlflow
+    env:
+      - name: MLFLOW_SERVER_ALLOWED_HOSTS
+        value: "mlflow.karnwong.me,10.*"  # also allow internal pod IP
 service:
   port: 8080
   nodePort: 30037
