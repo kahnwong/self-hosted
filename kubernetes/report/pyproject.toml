@@ -1,0 +1,11 @@
+[project]
+name = "report"
+version = "0.1.0"
+readme = "README.md"
+authors = [
+    { name = "Karn Wong", email = "karn@karnwong.me" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "requests>=2.32.5",
+]
