@@ -1,3 +1,0 @@
-frontend:
-  service:
-    type: NodePort
