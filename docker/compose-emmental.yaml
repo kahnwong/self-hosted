@@ -6,6 +6,8 @@ services:
     pull_policy: always
     restart: unless-stopped
     image: ollama/ollama:latest
+    ports:
+      - 11434:11434
     networks:
       - genai
   open-webui:
