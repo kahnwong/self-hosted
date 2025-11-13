@@ -148,5 +148,5 @@ helm install opencost --repo https://opencost.github.io/opencost-helm-chart open
   --namespace opencost
 
 helm upgrade opencost --repo https://opencost.github.io/opencost-helm-chart opencost \
-  --namespace opencost --values opencost/values.yaml
+    --namespace opencost --values charts/base/monitoring-local/opencost/values.yaml
 ```

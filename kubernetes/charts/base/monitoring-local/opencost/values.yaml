@@ -1,4 +1,6 @@
 opencost:
+  mcp:
+    enabled: false
   customPricing:
     enabled: true
     costModel:
