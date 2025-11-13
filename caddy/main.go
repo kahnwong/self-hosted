@@ -42,6 +42,7 @@ func main() {
 		"livegrep":        "30033",
 		"notes":           "30052",
 		"np":              "30084",
+		"opencost":        "30054",
 		"pdf":             "stirling-pdf.tools",
 		"t.console.notes": "notes-console-t.notes",
 		"todotxt":         "30064",

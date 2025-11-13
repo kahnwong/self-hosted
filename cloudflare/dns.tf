@@ -45,6 +45,7 @@ locals {
     "mlflow",
     "notes",
     "np",
+    "opencost",
     "paperless",
     "pdf",
     "syncthing",

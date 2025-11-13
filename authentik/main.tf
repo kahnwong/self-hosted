@@ -25,6 +25,7 @@ locals {
     "mlflow",
     "notes",
     "np",
+    "opencost",
     "pdf",
     "t.console.notes",
     "todotxt",
