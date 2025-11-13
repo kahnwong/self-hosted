@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: metabase
     repository: metabase/metabase
-    tag: v0.55.19.4
+    tag: v0.57.2.2
     port: 3000
     env:
       - name: MB_DB_TYPE
