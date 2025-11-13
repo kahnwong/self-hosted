@@ -6,9 +6,12 @@ services:
     pull_policy: always
     restart: unless-stopped
     image: ollama/ollama:latest
+    networks:
+      - genai
   open-webui:
     image: ghcr.io/open-webui/open-webui:main
     container_name: open-webui
+    pull_policy: always
     volumes:
       - /opt/open-webui:/app/backend/data
     depends_on:
@@ -18,3 +21,8 @@ services:
     environment:
       - 'OLLAMA_BASE_URL=http://ollama:11434'
     restart: unless-stopped
+    networks:
+      - genai
+networks:
+  genai:
+    driver: bridge

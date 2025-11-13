@@ -8,7 +8,6 @@ services:
       TZ: Asia/Bangkok
       UMASK_SET: <022>
     volumes:
-      - /home/ubuntu/Apps:/data/Apps
       - /opt/syncthing/config:/config
       - /opt/syncthing/:/data
       - /opt/immich/upload:/data/immich/upload
@@ -42,8 +41,48 @@ services:
           memory: 2G
     networks:
       - transmission
+  postgres:
+    # image: postgres:18
+    # image: pgvector/pgvector:pg16
+    image: postgis/postgis:18-3.6-alpine
+    container_name: postgis
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - /opt/db/postgis:/var/lib/postgresql
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgrespassword
+      - POSTGRES_DB=postgres
+    networks:
+      - transmission
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:1.120.1
+    container_name: n8n
+    restart: always
+    ports:
+      - "5678:5678"
+    user: 1000:1000
+    env_file:
+      - .env.app.n8n
+    environment:
+      - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=https
+      - N8N_RUNNERS_ENABLED=true
+      - NODE_ENV=production
+    volumes: # `sudo chown -R 1000:1000 /opt/n8n/data`
+      - /opt/n8n/data:/home/node/.n8n
+      - /opt/n8n/files:/files
+    networks:
+      - n8n
 networks:
   syncthing:
     driver: bridge
   transmission:
+    driver: bridge
+  postgres:
+    driver: bridge
+  n8n:
     driver: bridge

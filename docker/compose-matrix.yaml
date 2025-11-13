@@ -9,6 +9,8 @@ services:
       - .env.app.tuwunel
     volumes:
       - /opt/tuwunel/data:/var/lib/tuwunel/
+    networks:
+      - matrix
   mautrix-whatsapp:
     image: dock.mau.dev/mautrix/whatsapp:v0.2510.0
     container_name: mautrix-whatsapp
@@ -17,6 +19,8 @@ services:
       - /opt/matrix/mautrix-whatsapp:/data:z
     depends_on:
       - tuwunel
+    networks:
+      - matrix
   mautrix-meta: # connet to `metabot`
     image: dock.mau.dev/mautrix/meta:v0.2510.0
     container_name: mautrix-meta
@@ -25,6 +29,8 @@ services:
       - /opt/matrix/mautrix-meta:/data:z
     depends_on:
       - tuwunel
+    networks:
+      - matrix
   mautrix-discord:
     image: dock.mau.dev/mautrix/discord:v0.7.5
     container_name: mautrix-discord
@@ -33,6 +39,8 @@ services:
       - /opt/matrix/mautrix-discord:/data:z
     depends_on:
       - tuwunel
+    networks:
+      - matrix
   mautrix-signal:
     image: dock.mau.dev/mautrix/signal:v0.2510.0
     container_name: mautrix-signal
@@ -41,17 +49,24 @@ services:
       - /opt/matrix/mautrix-signal:/data:z
     depends_on:
       - tuwunel
-  # # ----- for iMessage, see <https://docs.mau.fi/bridges/go/imessage/mac/setup.html> -----
-  # mautrix-wsproxy:
-  #   container_name: mautrix-wsproxy
-  #   image: dock.mau.dev/mautrix/wsproxy
-  #   restart: always
-  #   env_file:
-  #     - .env.app.mautrix-wsproxy
-  #   ports:
-  #     - 29331:29331
-  #   environment:
-  #     LISTEN_ADDRESS: ":29331"
-  #     APPSERVICE_ID: imessage
-  #  depends_on:
-  #    - tuwunel
+    networks:
+      - matrix
+      # # ----- for iMessage, see <https://docs.mau.fi/bridges/go/imessage/mac/setup.html> -----
+      # mautrix-wsproxy:
+      #   container_name: mautrix-wsproxy
+      #   image: dock.mau.dev/mautrix/wsproxy
+      #   restart: always
+      #   env_file:
+      #     - .env.app.mautrix-wsproxy
+      #   ports:
+      #     - 29331:29331
+      #   environment:
+      #     LISTEN_ADDRESS: ":29331"
+      #     APPSERVICE_ID: imessage
+      #  depends_on:
+      #    - tuwunel
+      #  networks:
+      #    - matrix
+networks:
+  matrix:
+    driver: bridge
