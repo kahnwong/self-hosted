@@ -13,8 +13,6 @@ locals {
       "backup-authentik",
       "backup-forgejo-data",
       "backup-forgejo-db",
-      "backup-ghostfolio",
-      "backup-homebox",
       "backup-immich-db",
       "backup-linkding",
       "backup-miniflux",

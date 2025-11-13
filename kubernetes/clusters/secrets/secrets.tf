@@ -16,7 +16,6 @@ locals {
       "backup", "ddns", "water-cut-notify",
       "authentik-postgres",
       "forgejo-postgres",
-      "ghostfolio-postgres",
       "immich-postgres",
       "miniflux-postgres",
       "rallly-postgres",
@@ -26,7 +25,6 @@ locals {
     jobs-family-alerts = ["family-alerts"]
     tools = [
       "cpubench",
-      "ghostfolio", "ghostfolio-postgres",
       "livegrep-clone-custom",
       "rallly", "rallly-postgres",
       "qrcode-api",

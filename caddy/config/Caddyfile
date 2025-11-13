@@ -16,26 +16,10 @@ api.weather.karnwong.me {
     	reverse_proxy 192.168.1.36:30078
 	}
 }
-audiobookshelf.karnwong.me {
-    route {
-		crowdsec
-		reverse_proxy 192.168.1.36:31080 {
-			header_up Host audiobookshelf.media.example.com
-		}
-	}
-}
 authentik.karnwong.me {
     route {
 		crowdsec
     	reverse_proxy 192.168.1.36:30047
-	}
-}
-books.karnwong.me {
-    route {
-		crowdsec
-		reverse_proxy 192.168.1.36:31080 {
-			header_up Host calibre-web.media.example.com
-		}
 	}
 }
 cpubench.karnwong.me {
@@ -48,12 +32,6 @@ garage.karnwong.me {
     route {
 		crowdsec
     	reverse_proxy 192.168.1.36:30070
-	}
-}
-ghostfolio.karnwong.me {
-    route {
-		crowdsec
-    	reverse_proxy 192.168.1.36:30066
 	}
 }
 git.karnwong.me {
@@ -74,12 +52,6 @@ harbor.karnwong.me {
     route {
 		crowdsec
     	reverse_proxy 192.168.1.36:30500
-	}
-}
-homebox.karnwong.me {
-    route {
-		crowdsec
-    	reverse_proxy 192.168.1.36:30083
 	}
 }
 immich.karnwong.me {
