@@ -36,6 +36,7 @@ locals {
     "audiobookshelf",
     "authentik",
     "books",
+    "chat",
     "cpubench",
     "garage",
     "git",

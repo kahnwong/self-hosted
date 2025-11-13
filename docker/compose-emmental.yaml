@@ -18,6 +18,8 @@ services:
       - ollama
     ports:
       - 3000:8080
+    env_file:
+      - .env.app.open-webui
     environment:
       - 'OLLAMA_BASE_URL=http://ollama:11434'
     restart: unless-stopped
