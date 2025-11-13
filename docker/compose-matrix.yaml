@@ -21,7 +21,7 @@ services:
       - tuwunel
     networks:
       - matrix
-  mautrix-meta: # connet to `metabot`
+  mautrix-meta: # connect to `metabot`
     image: dock.mau.dev/mautrix/meta:v0.2510.0
     container_name: mautrix-meta
     restart: always
