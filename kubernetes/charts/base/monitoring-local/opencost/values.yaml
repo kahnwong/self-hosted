@@ -7,6 +7,8 @@ opencost:
       description: Modified pricing configuration based on GCE n4-standard-8 us-central1.
       CPU: 0.032578
       RAM: 0.003702
+  carbonCost:
+    enabled: true
 service:
   type: NodePort
   nodePort: 30054
