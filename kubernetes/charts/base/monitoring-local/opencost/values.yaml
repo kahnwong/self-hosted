@@ -7,6 +7,7 @@ opencost:
       description: Modified pricing configuration based on GCE n4-standard-8 us-central1.
       CPU: 0.032578
       RAM: 0.003702
+      storage: 0.00005479452 # https://github.com/opencost/opencost/blob/develop/configs/gcp.json
       # carbonCost: # doesn't work for on-prem
       #   enabled: true
 service:
