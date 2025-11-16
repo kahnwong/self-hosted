@@ -10,7 +10,7 @@ services:
     networks:
       - error-pages
   warpgate:
-    image: ghcr.io/warp-tech/warpgate:0.17
+    image: ghcr.io/warp-tech/warpgate:0.16 # 0.17 borks on openssh v10
     container_name: warpgate
     ports:
       - 2222:2222 # ssh
