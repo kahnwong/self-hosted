@@ -10,7 +10,6 @@ import (
 func main() {
 	services := map[string]string{
 		"api.qrcode":       "30077",
-		"api.todotxt":      "30076",
 		"api.weather":      "30078",
 		"authentik":        "30047",
 		"cpubench":         "30080",
