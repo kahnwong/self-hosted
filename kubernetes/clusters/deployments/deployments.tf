@@ -48,7 +48,7 @@ locals {
       "rallly", "rallly-postgres",
       "rss-bridge",
       "sshx",
-      "todotxt", "todotxt-api",
+      "todotxt",
       "wakapi", "wakapi-postgres",
       "weather-api",
     ]
