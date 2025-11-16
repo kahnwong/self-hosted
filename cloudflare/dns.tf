@@ -47,6 +47,7 @@ locals {
     "np",
     "opencost",
     "paperless",
+    "rustdesk",
     "pdf",
     "syncthing",
     "t.console.notes",
