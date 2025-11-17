@@ -46,6 +46,7 @@ services:
   # ---- rustdesk ----
   # # <https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/docker/>
   # # need to open tcp/udp for 21114-21119
+  # # host network mode - I guess this is to make hbbs and hbbr easier to communicate
   hbbs:
     container_name: rustdesk-hbbs
     image: rustdesk/rustdesk-server:1.1.14
