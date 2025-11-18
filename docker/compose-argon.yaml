@@ -51,30 +51,38 @@ services:
     container_name: rustdesk-hbbs
     image: rustdesk/rustdesk-server:1.1.14
     command: hbbs
+    environment:
+      RELAY: hbbr:21117
     ports:
       - 21115:21115 # NAT test
       - 21116:21116 # connection service
+      - 21116:21116/udp # connection service
       - 21118:21118 # web client
     volumes:
       - /opt/rustdesk/data:/root
     depends_on:
       - hbbr
     restart: always
-    network_mode: "host"
+    networks:
+      - rustdesk
   hbbr:
     container_name: rustdesk-hbbr
     image: rustdesk/rustdesk-server:1.1.14
     command: hbbr
     ports:
       - 21117:21117 # relay
+      - 21119:21119 # web client
     volumes:
       - /opt/rustdesk/data:/root
     restart: always
-    network_mode: "host"
+    networks:
+      - rustdesk
 networks:
   error-pages:
     driver: bridge
   warpgate:
     driver: bridge
   syncthing:
+    driver: bridge
+  rustdesk:
     driver: bridge
