@@ -4,10 +4,12 @@ opencost:
   customPricing:
     enabled: true
     costModel:
-      description: Modified pricing configuration based on GCE n4-standard-8 us-central1.
-      CPU: 0.032578
-      RAM: 0.003702
-      storage: 0.00005479452 # https://github.com/opencost/opencost/blob/develop/configs/gcp.json
+      # https://github.com/opencost/opencost/blob/develop/configs/gcp.json
+      # price/month for this config with 1 TB SSD boot disk: 541.32 USD
+      description: Modified pricing configuration based on GCE n2-standard-8 asia-southeast-1.
+      CPU: 0.038999
+      RAM: 0.005226
+      storage: 0 # no dynamically-provisioned disk
       # carbonCost: # doesn't work for on-prem
       #   enabled: true
 service:
