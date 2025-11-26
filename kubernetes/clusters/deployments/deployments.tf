@@ -23,6 +23,7 @@ locals {
     infrastructure = [
       "forgejo", "forgejo-postgres",
       "garage",
+      "llm-honeypot",
       "mlflow", "mlflow-postgres",
       "ntfy",
     ]

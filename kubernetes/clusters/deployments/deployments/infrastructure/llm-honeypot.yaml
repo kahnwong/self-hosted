@@ -1,0 +1,17 @@
+kind: Deployment
+name: llm-honeypot
+replicaCount: 1
+containers:
+  - name: llm-context
+    repository: ghcr.io/kahnwong/llm-honeypot
+    tag: "459b48f"
+    port: 3000
+    envFrom:
+      - secretRef:
+          name: llm-honeypot
+    livenessProbeScheme: tcp
+service:
+  port: 3000
+  nodePort: 30055
+imagePullSecrets:
+  - name: ghcr-cfg

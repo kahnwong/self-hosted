@@ -62,6 +62,12 @@ jellyfin.karnwong.me {
 		}
 	}
 }
+llm-context.karnwong.me {
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:30055
+	}
+}
 matrix.karnwong.me {
     route {
 		crowdsec

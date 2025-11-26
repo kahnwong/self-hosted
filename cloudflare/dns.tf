@@ -12,6 +12,7 @@ locals {
     "harbor",
     "immich",
     "jupyterhub",
+    "llm-context",
     "miniflux",
     "music",
     "n8n",

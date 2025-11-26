@@ -6,7 +6,7 @@ locals {
     default        = ["subsonic-widgets"]
     harbor         = ["harbor", "harbor-postgres"]
     immich         = ["immich", "immich-machine-learning", "immich-postgres"]
-    infrastructure = ["forgejo", "forgejo-postgres", "mlflow", "mlflow-postgres"]
+    infrastructure = ["forgejo", "forgejo-postgres", "llm-honeypot", "mlflow", "mlflow-postgres"]
     news = [
       "miniflux", "miniflux-postgres",
       "wallabag", "wallabag-postgres", "wallabag-redis"
@@ -32,6 +32,8 @@ locals {
       "weather-api",
     ]
   })
+
+  ghcr_namespaces = toset(["infrastructure", "tools"])
 }
 
 locals {
@@ -87,9 +89,11 @@ resource "kubernetes_secret" "secrets" {
 
 
 resource "kubernetes_secret" "ghcr_config" {
+  for_each = local.ghcr_namespaces
+
   metadata {
     name      = "ghcr-cfg"
-    namespace = "tools"
+    namespace = each.key
   }
 
   type = "kubernetes.io/dockerconfigjson"
