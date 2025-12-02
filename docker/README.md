@@ -18,3 +18,9 @@
 ```bash
 pmtiles extract https://build.protomaps.com/$(date -d "yesterday" +%Y%m%d).pmtiles bangkok.pmtiles --bbox=100.327912387,13.493389571,100.938516257,13.955198179
 ```
+
+## DDNS
+
+```bash
+*/5 * * * * cd /home/ubuntu && /usr/bin/docker compose -f compose-ddns.yaml run ddns
+```
