@@ -25,11 +25,10 @@ locals {
       "backup-wallabag-content",
       "backup-wallabag-db",
       "ddns",
+      "livegrep-restart",
       "maintenance-backup-monthly-prune",
       "maintenance-backup-prune",
       "maintenance-wallabag-cleanup",
-      "restart-livegrep",
-      # "water-cut-notify",
     ]
 
     jobs-family-alerts = [

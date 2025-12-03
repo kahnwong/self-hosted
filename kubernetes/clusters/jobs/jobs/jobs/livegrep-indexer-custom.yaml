@@ -1,5 +1,5 @@
 name: livegrep-indexer-custom
-schedule: 30 1 * * *
+schedule: 15 7 * * 5 # every Friday at 7:15am
 containers:
   - name: livegrep-indexer-custom
     repository: ghcr.io/livegrep/livegrep/indexer

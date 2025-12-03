@@ -1,5 +1,5 @@
 name: livegrep-clone
-schedule: 25 1 * * *
+schedule: 0 7 * * 5 # every Friday at 7am
 containers:
   - name: livegrep-clone
     repository: ghcr.io/kahnwong/livegrep-utils

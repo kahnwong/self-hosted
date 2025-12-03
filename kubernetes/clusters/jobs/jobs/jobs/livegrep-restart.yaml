@@ -1,6 +1,6 @@
 # https://stackoverflow.com/a/58378834
-name: restart-livegrep
-schedule: "45 1 * * *"
+name: livegrep-restart
+schedule: "20 7 * * 5" # every Friday at 7:20am
 serviceAccountName: sa-deployment-restart
 containers:
   - name: kubectl
