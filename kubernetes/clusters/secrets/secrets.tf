@@ -24,6 +24,7 @@ locals {
     ]
     jobs-family-alerts = ["family-alerts"]
     tools = [
+      "atuin", "atuin-postgres",
       "cpubench",
       "livegrep-clone-custom",
       "rallly", "rallly-postgres",
