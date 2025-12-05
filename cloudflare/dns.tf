@@ -7,6 +7,7 @@ locals {
   ])
   selfhosted_proxied = toset([
     "*",
+    "atuin",
     "files",
     "go",
     "harbor",

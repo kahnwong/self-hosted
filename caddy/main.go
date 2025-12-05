@@ -11,6 +11,7 @@ func main() {
 	services := map[string]string{
 		"api.qrcode":       "30077",
 		"api.weather":      "30078",
+		"atuin":            "30085",
 		"authentik":        "30047",
 		"cpubench":         "30080",
 		"garage":           "30070",

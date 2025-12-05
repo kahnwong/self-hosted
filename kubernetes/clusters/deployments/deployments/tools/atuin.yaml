@@ -12,7 +12,7 @@ containers:
       - name: ATUIN_PORT
         value: "8888"
       - name: ATUIN_OPEN_REGISTRATION
-        value: "true"
+        value: "false"
     envFrom:
       - secretRef:
           name: atuin
