@@ -1,0 +1,10 @@
+ntfy.bird.karnwong.me {
+    route {
+    	reverse_proxy 192.168.1.122:30022
+	}
+}
+sshx.bird.karnwong.me {
+    route {
+    	reverse_proxy 192.168.1.122:30028
+	}
+}

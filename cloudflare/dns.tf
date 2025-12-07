@@ -74,6 +74,13 @@ locals {
     "relay.iroh",
     "share", # prevent request entity too large
   ])
+
+  bird_proxied = toset([
+    "ntfy",
+    "sshx",
+  ])
+  bird_non_proxied = toset([
+  ])
 }
 locals {
   # on-prem
@@ -90,6 +97,11 @@ locals {
   oracle_proxied_dict     = { for name in local.oracle_proxied : name => true }
   oracle_non_proxied_dict = { for name in local.oracle_non_proxied : name => false }
   oracle_dns              = merge(local.oracle_proxied_dict, local.oracle_non_proxied_dict)
+
+  # bird
+  bird_proxied_dict     = { for name in local.bird_proxied : name => true }
+  bird_non_proxied_dict = { for name in local.bird_non_proxied : name => false }
+  bird_dns              = merge(local.bird_proxied_dict, local.bird_non_proxied_dict)
 }
 
 resource "cloudflare_dns_record" "github_pages_dns" {
@@ -142,6 +154,15 @@ resource "cloudflare_dns_record" "oracle_dns" {
   zone_id  = var.cloudflare_zone_id
 }
 
+resource "cloudflare_dns_record" "bird_dns" {
+  for_each = local.bird_dns
+  name     = "${each.key}.bird.karnwong.me"
+  proxied  = each.value
+  ttl      = 1
+  type     = "A"
+  content  = data.sops_file.secrets.data["BIRD_DDNS_CNAME"]
+  zone_id  = var.cloudflare_zone_id
+}
 
 # need for redirection
 resource "cloudflare_dns_record" "www_dummy" {
