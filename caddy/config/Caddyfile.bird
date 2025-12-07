@@ -1,3 +1,8 @@
+garage.bird.karnwong.me {
+    route {
+    	reverse_proxy 192.168.1.122:30070
+	}
+}
 ntfy.bird.karnwong.me {
     route {
     	reverse_proxy 192.168.1.122:30022

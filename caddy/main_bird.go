@@ -9,8 +9,9 @@ import (
 
 func main() {
 	services := map[string]string{
-		"ntfy": "30022",
-		"sshx": "30028",
+		"garage": "30070",
+		"ntfy":   "30022",
+		"sshx":   "30028",
 	}
 
 	// generate config

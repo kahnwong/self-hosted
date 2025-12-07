@@ -1,4 +1,4 @@
-# Secrets
+# Configmaps
 
 
 <!-- BEGIN_TF_DOCS -->
@@ -25,8 +25,8 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [kubernetes_secret.secrets](https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/secret) | resource |
-| [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.3.0/docs/data-sources/file) | data source |
+| [kubernetes_config_map.garage](https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/config_map) | resource |
+| [sops_file.garage](https://registry.terraform.io/providers/carlpett/sops/1.3.0/docs/data-sources/file) | data source |
 
 ## Inputs
 
@@ -41,13 +41,3 @@ No modules.
 
 No outputs.
 <!-- END_TF_DOCS -->
-
-
-```bash
-terraform state mv \
-    -state=terraform.tfstate \
-    -state-out=../jobs/terraform.tfstate \
-    helm_release.livegrep_indexer \
-    helm_release.livegrep_indexer
-#terraform state push dev.tfstate
-```

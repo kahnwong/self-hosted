@@ -2,8 +2,8 @@ locals {
   deployments = tomap({
     default = []
     infrastructure = [
-      # "garage",
-      "mlflow", "mlflow-postgres",
+      "garage",
+      # "mlflow", "mlflow-postgres",
       "ntfy",
     ]
 

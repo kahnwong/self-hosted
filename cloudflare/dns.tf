@@ -80,6 +80,7 @@ locals {
     "sshx",
   ])
   bird_non_proxied = toset([
+    "garage",
   ])
 }
 locals {
