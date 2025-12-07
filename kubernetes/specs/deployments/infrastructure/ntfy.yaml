@@ -1,8 +1,6 @@
----
 kind: Deployment
 name: ntfy
 replicaCount: 1
-
 containers:
   # create admin user via `ntfy user add --role=admin $role`
   - name: ntfy

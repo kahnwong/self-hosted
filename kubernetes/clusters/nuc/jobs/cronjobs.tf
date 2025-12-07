@@ -72,7 +72,7 @@ resource "helm_release" "jobs" {
   chart      = "base-cronjob"
 
   values = [
-    file("./jobs/${each.value}/${each.key}.yaml"),
+    file("../../../specs/jobs/${each.value}/${each.key}.yaml"),
   ]
 }
 
@@ -85,7 +85,7 @@ resource "helm_release" "jobs_livegrep" {
   chart      = "base-cronjob"
 
   values = [
-    file("./jobs/jobs/${each.key}.yaml"),
+    file("../../../specs/jobs/jobs/${each.key}.yaml"),
   ]
 }
 
@@ -98,7 +98,7 @@ resource "helm_release" "jobs_fringe_division" {
   chart      = "base-cronjob"
 
   values = [
-    file("./jobs/${each.value}/${each.key}.yaml"),
+    file("../../../specs/jobs/${each.value}/${each.key}.yaml"),
     # file("./resources/valuesTaintNodeSelector.yaml"),
   ]
 }

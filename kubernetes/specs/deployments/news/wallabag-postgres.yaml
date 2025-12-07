@@ -1,8 +1,6 @@
----
 kind: StatefulSet
 name: wallabag-postgres
 replicaCount: 1
-
 # NOTES: can use same creds for POSTGRES_* AND SYMFONY__ENV__DATABASE_*
 # also need to set this to false: SYMFONY__ENV__FOSUSER_REGISTRATION
 # create user: /var/www/wallabag/bin/console --env=prod fos:user:create $USERNAME $EMAIL $PASSWORD --super-admin
@@ -10,7 +8,6 @@ replicaCount: 1
 # restore with (after initial deployment):
 ## pg_restore --user my-super-user --dbname wallabag $BACKUP_FILE
 # for `images` folder permission, set `777`: <https://github.com/wallabag/wallabag/issues/3687#issuecomment-448148527>
-
 containers:
   - name: postgres
     repository: postgres

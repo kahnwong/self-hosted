@@ -1,8 +1,6 @@
----
 kind: Deployment
 name: subsonic-widgets
 replicaCount: 1
-
 containers:
   - name: subsonic-widgets
     repository: ghcr.io/kahnwong/subsonic-widgets

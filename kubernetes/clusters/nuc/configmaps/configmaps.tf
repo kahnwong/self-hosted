@@ -23,7 +23,7 @@ locals {
 
 data "sops_file" "configmaps" {
   for_each    = local.configmaps_map
-  source_file = "${path.module}/configmaps/${each.key}.sops.yaml"
+  source_file = "${path.module}/../../../specs/configmaps/${each.key}.sops.yaml"
 }
 resource "kubernetes_config_map" "configmaps" {
   for_each = local.configmaps_map
@@ -42,7 +42,7 @@ resource "kubernetes_config_map" "configmaps" {
 
 
 data "sops_file" "livegrep-config" {
-  source_file = "${path.module}/configmaps/livegrep.config.sops.yaml"
+  source_file = "${path.module}/../../../specs/configmaps/livegrep.config.sops.yaml"
 }
 resource "kubernetes_config_map" "livegrep-config" {
   metadata {
@@ -60,7 +60,7 @@ resource "kubernetes_config_map" "livegrep-config" {
 
 # garage
 data "sops_file" "garage" {
-  source_file = "${path.module}/configmaps/garage.sops.toml"
+  source_file = "${path.module}/../../../specs/configmaps/garage.sops.toml"
   input_type  = "raw"
 }
 resource "kubernetes_config_map" "garage" {
@@ -78,7 +78,7 @@ resource "kubernetes_config_map" "garage" {
 
 # paperless
 data "sops_file" "paperless" {
-  source_file = "${path.module}/configmaps/paperless.sops.conf"
+  source_file = "${path.module}/../../../specs/configmaps/paperless.sops.conf"
   input_type  = "raw"
 }
 resource "kubernetes_config_map" "paperless" {

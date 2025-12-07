@@ -121,7 +121,7 @@ resource "helm_release" "this" {
   chart      = "base"
 
   values = [
-    file("./deployments/${each.value}/${each.key}.yaml")
+    file("../../../specs/deployments/${each.value}/${each.key}.yaml")
   ]
 }
 
@@ -134,7 +134,7 @@ resource "helm_release" "fringe_division" {
   chart      = "base"
 
   values = [
-    file("./deployments/${each.value}/${each.key}.yaml"),
+    file("../../../specs/deployments/${each.value}/${each.key}.yaml"),
     # file("./resources/valuesTaintNodeSelector.yaml"),
   ]
 }
@@ -148,23 +148,23 @@ resource "helm_release" "knative" {
   chart      = "base-knative"
 
   values = [
-    file("./deployments/${each.value}/${each.key}.yaml"),
+    file("../../../specs/deployments/${each.value}/${each.key}.yaml"),
     # file("./resources/valuesTaintNodeSelector.yaml"),
   ]
 }
 
 # ------ qa-discord-bot ------ #
 resource "kubernetes_manifest" "qa_discord_bot" {
-  manifest = yamldecode(file("./deployments/bots/qa-discord-bot.yaml"))
+  manifest = yamldecode(file("../../../specs/deployments/bots/qa-discord-bot.yaml"))
 }
 
 # ------ notes-sync ------ #
 resource "kubernetes_manifest" "notes_sync" {
-  manifest = yamldecode(file("./deployments/notes/notes-sync.yaml"))
+  manifest = yamldecode(file("../../../specs/deployments/notes/notes-sync.yaml"))
 }
 
 resource "kubernetes_manifest" "notes_personal" {
-  manifest = yamldecode(file("./deployments/notes/notes-personal-sync.yaml"))
+  manifest = yamldecode(file("../../../specs/deployments/notes/notes-personal-sync.yaml"))
 }
 
 # ------ harbor ------ #
@@ -176,7 +176,7 @@ resource "helm_release" "harbor" {
   chart      = "harbor"
 
   values = [
-    file("./deployments/harbor/values.yaml")
+    file("../../../specs/deployments/harbor/values.yaml")
   ]
 
   set = [{
@@ -194,7 +194,7 @@ resource "helm_release" "authentik" {
   chart      = "authentik"
 
   values = [
-    file("./deployments/authentik/values.yaml"),
+    file("../../../specs/deployments/authentik/values.yaml"),
   ]
 }
 
@@ -218,7 +218,7 @@ resource "helm_release" "authentik" {
 # ------ misc ------ #
 data "sops_file" "misc" {
   for_each    = local.deployments_misc
-  source_file = "${path.module}/deployments/default/${each.key}.sops.yaml"
+  source_file = "../../../specs/deployments/default/${each.key}.sops.yaml"
 }
 resource "helm_release" "misc" {
   for_each   = local.deployments_misc
