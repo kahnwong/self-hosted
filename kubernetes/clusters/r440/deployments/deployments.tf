@@ -3,7 +3,7 @@ locals {
     default = []
     infrastructure = [
       # "garage",
-      # "mlflow", "mlflow-postgres",
+      "mlflow", "mlflow-postgres",
       "ntfy",
     ]
 
