@@ -22,5 +22,5 @@ pmtiles extract https://build.protomaps.com/$(date -d "yesterday" +%Y%m%d).pmtil
 ## DDNS
 
 ```bash
-*/5 * * * * cd /home/ubuntu && /usr/bin/docker compose -f compose-ddns.yaml run ddns
+*/5 * * * * cd /home/ubuntu && /usr/bin/docker compose -f compose-bird.yaml run ddns
 ```
