@@ -160,7 +160,7 @@ resource "cloudflare_dns_record" "bird_dns" {
   name     = "${each.key}.bird.karnwong.me"
   proxied  = each.value
   ttl      = 1
-  type     = "A"
+  type     = "CNAME"
   content  = data.sops_file.secrets.data["BIRD_DDNS_CNAME"]
   zone_id  = var.cloudflare_zone_id
 }
