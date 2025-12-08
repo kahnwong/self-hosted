@@ -1,0 +1,7 @@
+services:
+  ddns:
+    image: favonia/cloudflare-ddns:1.15.1
+    environment:
+      - UPDATE_CRON=@once
+    env_file:
+      - .env.app.ddns
