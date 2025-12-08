@@ -1,0 +1,7 @@
+mlflow.bird.karnwong.me {
+	basicauth * {
+		ro $2a$14$Fikk1yCXy/W2qDv8PD1iceJ0bO1MwuFiMtxC421rdPH4Dwo7yvD9y
+	}
+
+ 	reverse_proxy 192.168.1.122:30037
+}
