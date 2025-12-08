@@ -5,3 +5,10 @@ mlflow.bird.karnwong.me {
 
  	reverse_proxy 192.168.1.122:30037
 }
+ollama.bird.karnwong.me {
+	basicauth * {
+		ro $2a$14$WwA8RLdNMNohAMBVzNJAhuWoNXvE1bUvZRzLDxH2uykasdybaMPDi
+	}
+
+ 	reverse_proxy 192.168.1.122:11434
+}

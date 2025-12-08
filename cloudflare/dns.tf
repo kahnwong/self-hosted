@@ -82,6 +82,7 @@ locals {
     "immich",
     "mlflow",
     "ntfy",
+    "ollama",
     "sshx",
   ])
 }
