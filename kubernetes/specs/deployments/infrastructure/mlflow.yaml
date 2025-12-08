@@ -9,9 +9,6 @@ containers:
     envFrom:
       - secretRef:
           name: mlflow
-    env:
-      - name: MLFLOW_SERVER_ALLOWED_HOSTS
-        value: "mlflow.karnwong.me,10.*" # also allow internal pod IP
 service:
   port: 8080
   nodePort: 30037
