@@ -1,12 +1,12 @@
 locals {
   deployments = tomap({
     default = []
+    immich  = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
     infrastructure = [
       "garage",
       "mlflow", "mlflow-postgres",
       "ntfy",
     ]
-
     tools = [
       "sshx",
     ]

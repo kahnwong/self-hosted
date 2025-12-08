@@ -1,6 +1,7 @@
 locals {
   namespaces = toset([
     # "default",
+    "immich",
     "infrastructure",
     "tools",
   ])
