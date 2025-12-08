@@ -6,7 +6,7 @@ locals {
     default        = ["subsonic-widgets"]
     harbor         = ["harbor", "harbor-postgres"]
     immich         = ["immich", "immich-machine-learning", "immich-postgres"]
-    infrastructure = ["forgejo", "forgejo-postgres", "llm-honeypot", "mlflow", "mlflow-postgres"]
+    infrastructure = ["forgejo", "forgejo-postgres", "llm-honeypot", "mlflow", "mlflow-postgres", "ntfy"]
     news = [
       "miniflux", "miniflux-postgres",
       "wallabag", "wallabag-postgres", "wallabag-redis"

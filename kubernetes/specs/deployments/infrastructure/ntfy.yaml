@@ -11,8 +11,6 @@ containers:
     env:
       - name: TZ
         value: UTC
-      - name: NTFY_BASE_URL
-        value: https://ntfy.karnwong.me
       - name: NTFY_CACHE_FILE
         value: /var/cache/ntfy/cache.db
       - name: NTFY_BEHIND_PROXY
@@ -31,6 +29,9 @@ containers:
         value: "5"
       - name: NTFY_UPSTREAM_BASE_URL
         value: https://ntfy.sh
+    envFrom:
+      - secretRef:
+          name: ntfy
     volumeMounts:
       - name: ntfy-cache
         mountPath: /var/cache/ntfy

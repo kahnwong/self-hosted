@@ -2,7 +2,7 @@ locals {
   secrets = tomap({
     analytics      = []
     default        = []
-    infrastructure = ["mlflow", "mlflow-postgres"]
+    infrastructure = ["mlflow", "mlflow-postgres", "ntfy"]
   })
 }
 
