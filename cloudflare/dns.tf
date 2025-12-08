@@ -76,11 +76,11 @@ locals {
   ])
 
   bird_proxied = toset([
-    "ntfy",
-    "sshx",
   ])
   bird_non_proxied = toset([
     "garage",
+    "ntfy",
+    "sshx",
   ])
 }
 locals {
