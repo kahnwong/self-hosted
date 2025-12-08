@@ -12,6 +12,7 @@ func main() {
 		"garage": "30070",
 		"ntfy":   "30022",
 		"sshx":   "30028",
+		"immich": "30030",
 	}
 
 	// generate config
@@ -19,7 +20,7 @@ func main() {
 	fmt.Println(config)
 
 	// write to file
-	err := os.WriteFile("./config/Caddyfile.bird", []byte(config), 0644)
+	err := os.WriteFile("./config/bird.Caddyfile", []byte(config), 0644)
 	if err != nil {
 		panic(err)
 	}

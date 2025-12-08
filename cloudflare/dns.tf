@@ -79,6 +79,7 @@ locals {
   ])
   bird_non_proxied = toset([
     "garage",
+    "immich",
     "mlflow",
     "ntfy",
     "sshx",
