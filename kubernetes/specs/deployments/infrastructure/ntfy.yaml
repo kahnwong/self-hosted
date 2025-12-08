@@ -15,8 +15,6 @@ containers:
         value: https://ntfy.karnwong.me
       - name: NTFY_CACHE_FILE
         value: /var/cache/ntfy/cache.db
-      - name: NTFY_CACHE_FILE
-        value: /var/cache/ntfy/cache.db
       - name: NTFY_BEHIND_PROXY
         value: "true"
       - name: NTFY_ATTACHMENT_CACHE_DIR
@@ -25,6 +23,8 @@ containers:
         value: /opt/ntfy/user.db
       - name: NTFY_ENABLE_LOGIN
         value: "true"
+      - name: NTFY_ENABLE_SIGNUP
+        value: "false"
       - name: NTFY_VISITOR_SUBSCRIPTION_LIMIT
         value: "3"
       - name: NTFY_VISITOR_REQUEST_LIMIT_BURST
