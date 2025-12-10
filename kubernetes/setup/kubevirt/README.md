@@ -17,6 +17,7 @@ kubectl get vmis  # running instances
 
 # access vm
 virtctl console testvm
+virtctl vnc testvm # for graphical access
 
 # teardown
 virtctl stop testvm
