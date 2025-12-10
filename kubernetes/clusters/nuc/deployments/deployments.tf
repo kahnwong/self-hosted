@@ -39,7 +39,6 @@ locals {
       "notes-personal",
     ]
     tools = [
-      "atuin", "atuin-postgres",
       "cpubench",
       "homer",
       "linkding",

@@ -10,12 +10,6 @@ api.weather.karnwong.me {
     	reverse_proxy 192.168.1.36:30078
 	}
 }
-atuin.karnwong.me {
-    route {
-		crowdsec
-    	reverse_proxy 192.168.1.36:30085
-	}
-}
 authentik.karnwong.me {
     route {
 		crowdsec
