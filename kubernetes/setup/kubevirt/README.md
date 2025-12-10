@@ -2,7 +2,7 @@
 
 ## Setup
 
-See `./deploy.sh`
+See `./setup.sh`
 
 ## Quickstart
 

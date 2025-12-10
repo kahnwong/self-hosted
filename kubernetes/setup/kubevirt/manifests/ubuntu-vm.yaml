@@ -1,4 +1,25 @@
 apiVersion: v1
+kind: Namespace
+metadata:
+  name: vms
+---
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  name: ubuntu-vm-disk
+  namespace: vms
+spec:
+  source:
+    registry:
+      url: "docker://quay.io/containerdisks/ubuntu:24.04"
+  pvc:
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 8Gi
+---
+apiVersion: v1
 kind: Service
 metadata:
   name: ubuntu-vm-ssh
@@ -46,8 +67,8 @@ spec:
           pod: {}
       volumes:
         - name: containerdisk
-          containerDisk:
-            image: quay.io/containerdisks/ubuntu:24.04
+          dataVolume:
+            name: ubuntu-vm-disk
         - name: cloudinitdisk
           cloudInitNoCloud:
             userData: |
