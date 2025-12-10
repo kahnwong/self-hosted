@@ -24,6 +24,10 @@ virtctl stop testvm
 kubectl delete vm testvm
 ```
 
+## Monitoring
+
+<https://github.com/kubevirt/monitoring>
+
 ## Refs
 - <https://kubevirt.io/quickstart_cloud/>
 - <https://kubevirt.io/labs/kubernetes/lab1>
