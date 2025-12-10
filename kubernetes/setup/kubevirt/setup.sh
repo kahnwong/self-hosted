@@ -20,3 +20,6 @@ kubectl create -f https://github.com/kubevirt/containerized-data-importer/releas
 # verify installation
 kubectl get kubevirt.kubevirt.io/kubevirt -n kubevirt -o=jsonpath="{.status.phase}"
 kubectl get all -n kubevirt
+
+# enable features
+kubectl apply -f enable-feature-gate.yaml
