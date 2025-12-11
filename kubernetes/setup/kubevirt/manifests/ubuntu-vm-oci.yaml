@@ -17,7 +17,7 @@ spec:
       - ReadWriteOnce
     resources:
       requests:
-        storage: 8Gi
+        storage: 32Gi
 ---
 apiVersion: v1
 kind: Service
@@ -80,12 +80,12 @@ spec:
                   shell: /bin/bash
                   ssh_authorized_keys:
                     - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC1TEQzkd4xrymH8/70RZHb3xyTASVjEJq9tz+Dp2B0o
-              ssh_pwauth: true
+              # ssh_pwauth: true
               disable_root: false
-              chpasswd:
-                list: |
-                  ubuntu:ubuntu
-                expire: false
+              # chpasswd:
+              #   list: |
+              #     ubuntu:ubuntu
+              #   expire: false
               package_update: true
               packages:
                 - qemu-guest-agent
