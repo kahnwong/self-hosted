@@ -3,22 +3,6 @@ kind: Namespace
 metadata:
   name: vms
 ---
-apiVersion: cdi.kubevirt.io/v1beta1
-kind: DataVolume
-metadata:
-  name: ubuntu-vm-disk
-  namespace: vms
-spec:
-  source:
-    registry:
-      url: "docker://quay.io/containerdisks/ubuntu:24.04"
-  pvc:
-    accessModes:
-      - ReadWriteOnce
-    resources:
-      requests:
-        storage: 32Gi
----
 apiVersion: v1
 kind: Service
 metadata:
@@ -49,7 +33,7 @@ spec:
       domain:
         devices:
           disks:
-            - name: containerdisk
+            - name: rootdisk
               disk:
                 bus: virtio
             - name: cloudinitdisk
@@ -66,9 +50,9 @@ spec:
         - name: default
           pod: {}
       volumes:
-        - name: containerdisk
+        - name: rootdisk
           dataVolume:
-            name: ubuntu-vm-disk
+            name: ubuntu-dv
         - name: cloudinitdisk
           cloudInitNoCloud:
             userData: |
@@ -80,15 +64,28 @@ spec:
                   shell: /bin/bash
                   ssh_authorized_keys:
                     - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC1TEQzkd4xrymH8/70RZHb3xyTASVjEJq9tz+Dp2B0o
-              # ssh_pwauth: true
+              ssh_pwauth: true
               disable_root: false
-              # chpasswd:
-              #   list: |
-              #     ubuntu:ubuntu
-              #   expire: false
+              chpasswd:
+                list: |
+                  ubuntu:ubuntu
+                expire: false
               package_update: true
               packages:
                 - qemu-guest-agent
               runcmd:
                 - systemctl enable ssh
                 - systemctl start ssh
+  dataVolumeTemplates:
+    - metadata:
+        name: ubuntu-dv
+      spec:
+        storage:
+          resources:
+            requests:
+              storage: 32Gi
+          accessModes:
+            - ReadWriteOnce
+        source:
+          registry:
+            url: "docker://quay.io/containerdisks/ubuntu:24.04"
