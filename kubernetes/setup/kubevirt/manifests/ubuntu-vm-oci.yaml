@@ -32,7 +32,7 @@ spec:
     - protocol: TCP
       port: 22
       targetPort: 22
-      nodePort: 30022
+      nodePort: 30080
 ---
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
