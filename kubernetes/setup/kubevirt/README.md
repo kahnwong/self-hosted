@@ -28,6 +28,15 @@ kubectl delete vm testvm
 
 <https://github.com/kubevirt/monitoring>
 
+## Using cloud-init image for data volume
+
+```yaml
+spec:
+  source:
+    http:
+      url: "https://cloud-images.ubuntu.com/releases/24.04/release/ubuntu-24.04-server-cloudimg-amd64.img"
+```
+
 ## Refs
 - <https://kubevirt.io/quickstart_cloud/>
 - <https://kubevirt.io/labs/kubernetes/lab1>

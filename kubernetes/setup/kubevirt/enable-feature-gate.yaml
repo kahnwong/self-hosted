@@ -8,3 +8,7 @@ spec:
     developerConfiguration:
       featureGates:
         - MultiArchitecture
+        - Root
+        - DataVolumes
+        - HostDisk
+        - PersistentReservation
