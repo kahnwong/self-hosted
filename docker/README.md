@@ -3,7 +3,6 @@
 ## GCP Backup
 
 ```bash
-1 0 * * * /usr/bin/docker run --rm --env-file /home/$USER/self-hosted/docker/.env.backup.vaultwarden -v /opt/vaultwarden:/opt/vaultwarden ghcr.io/kahnwong/docker-aws-backup:7a5b35c
 5 0 * * * /usr/bin/docker run --rm --network=host --env-file /home/$USER/self-hosted/docker/.env.backup.umami ghcr.io/kahnwong/docker-aws-backup:7a5b35c
 ```
 
@@ -11,6 +10,7 @@
 
 ```bash
 1 0 * * * /usr/bin/docker run --rm --env-file /home/ubuntu/self-hosted/docker/.env.backup.memos -v /opt/memos:/opt/memos ghcr.io/kahnwong/docker-aws-backup:7a5b35c
+1 0 * * * /usr/bin/docker run --rm --env-file /home/ubuntu/self-hosted/docker/.env.backup.vaultwarden -v /opt/vaultwarden:/opt/vaultwarden ghcr.io/kahnwong/docker-aws-backup:7a5b35c
 ```
 
 ## pmtiles

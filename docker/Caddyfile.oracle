@@ -19,3 +19,6 @@ secrets.karnwong.me {
 memos.karnwong.me {
     reverse_proxy memos:5230
 }
+vaultwarden.karnwong.me {
+    reverse_proxy vaultwarden:80
+}
