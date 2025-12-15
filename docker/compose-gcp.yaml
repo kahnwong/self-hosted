@@ -12,7 +12,7 @@ services:
     volumes:
       - /opt/umami/db:/var/lib/postgresql/data
   umami:
-    image: ghcr.io/umami-software/umami:3.0.2
+    image: ghcr.io/umami-software/umami:3.0.3
     container_name: umami
     restart: always
     env_file:
