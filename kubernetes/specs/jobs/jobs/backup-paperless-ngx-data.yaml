@@ -1,0 +1,25 @@
+name: backup-paperless-ngx-data
+schedule: "0 22 1 * *"
+containers:
+  - name: backup-paperless-ngx-data
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 7a5b35c
+    env:
+      - name: MODE
+        value: ARCHIVE
+      - name: SERVICE_NAME
+        value: paperless-ngx-data
+      - name: BACKUP_PATH
+        value: /opt/paperless-ngx
+      - name: BUCKET_NAME
+        value: backup-monthly
+    envFrom:
+      - secretRef:
+          name: backup
+    volumeMounts:
+      - name: paperless-ngx
+        mountPath: /opt/paperless-ngx
+volumes:
+  - name: paperless-ngx
+    hostPath:
+      path: /opt/paperless-ngx
