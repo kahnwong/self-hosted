@@ -1,6 +1,6 @@
-pairdrop.karnwong.me {
-    reverse_proxy pairdrop:3000
-}
+#pairdrop.karnwong.me {
+#    reverse_proxy pairdrop:3000
+#}
 share.karnwong.me {
     reverse_proxy picoshare:4001
 }
