@@ -13,9 +13,6 @@ relay.iroh.karnwong.me {
 gatus.karnwong.me {
     reverse_proxy gatus:8080
 }
-secrets.karnwong.me {
-    reverse_proxy supersecretmessage:8082
-}
 memos.karnwong.me {
     reverse_proxy memos:5230
 }

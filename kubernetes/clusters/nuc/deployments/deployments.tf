@@ -49,6 +49,7 @@ locals {
       "rallly", "rallly-postgres",
       "rss-bridge",
       "sshx",
+      "supersecretmessage", "supersecretmessage-vault",
       "todotxt",
       "wakapi", "wakapi-postgres",
       "weather-api",

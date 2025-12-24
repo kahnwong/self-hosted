@@ -30,6 +30,7 @@ func main() {
 		"qa-api":           "30043",
 		"rally":            "30035",
 		"rustpad":          "rustpad.tools",
+		"secrets":          "30025",
 		"subsonic-widgets": "30038",
 		"syncthing":        "8384",
 		"thai-tech-cal":    "thai-tech-cal.news",

@@ -28,6 +28,7 @@ locals {
       "livegrep-clone-custom",
       "rallly", "rallly-postgres",
       "qrcode-api",
+      "supersecretmessage-vault",
       "wakapi", "wakapi-postgres",
       "weather-api",
     ]
