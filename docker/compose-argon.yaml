@@ -24,29 +24,9 @@ services:
     restart: always
     networks:
       - warpgate
-  syncthing:
-    image: linuxserver/syncthing:2.0.11
-    container_name: syncthing
-    environment:
-      PUID: 0
-      PGID: 0
-      TZ: Asia/Bangkok
-      UMASK_SET: <022>
-    volumes:
-      - /home/ubuntu/Apps:/data/Apps
-      - /opt/syncthing/config:/config
-      - /opt/syncthing/:/data
-    ports:
-      - 8384:8384
-      - 22000:22000
-      - 21027:21027/udp
-    restart: always
-    networks:
-      - syncthing
   # ---- rustdesk ----
   # # <https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/docker/>
   # # need to open tcp/udp for 21114-21119
-  # # host network mode - I guess this is to make hbbs and hbbr easier to communicate
   hbbs:
     container_name: rustdesk-hbbs
     image: rustdesk/rustdesk-server:1.1.14
@@ -81,8 +61,6 @@ networks:
   error-pages:
     driver: bridge
   warpgate:
-    driver: bridge
-  syncthing:
     driver: bridge
   rustdesk:
     driver: bridge
