@@ -19,7 +19,7 @@ locals {
       "backup-navidrome",
       "backup-nocodb",
       "backup-ntfy",
-      "backup-paperless-ngx-data",
+      "backup-paperless-ngx",
       "backup-rallly",
       "backup-transmission",
       "backup-wakapi",
