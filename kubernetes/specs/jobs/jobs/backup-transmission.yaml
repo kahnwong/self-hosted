@@ -3,7 +3,7 @@ schedule: "1 0 * * *"
 containers:
   - name: backup-transmission
     repository: ghcr.io/kahnwong/docker-aws-backup
-    tag: 7a5b35c
+    tag: b46d44d
     env:
       - name: MODE
         value: ARCHIVE

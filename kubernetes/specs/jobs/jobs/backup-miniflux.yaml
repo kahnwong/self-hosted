@@ -3,7 +3,7 @@ schedule: "2 0 * * *"
 containers:
   - name: backup-miniflux
     repository: ghcr.io/kahnwong/docker-aws-backup
-    tag: 7a5b35c
+    tag: b46d44d
     env:
       - name: MODE
         value: DB_POSTGRES

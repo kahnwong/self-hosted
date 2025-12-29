@@ -3,7 +3,7 @@ schedule: "0 22 1 * *"
 containers:
   - name: backup-forgejo-data
     repository: ghcr.io/kahnwong/docker-aws-backup
-    tag: 7a5b35c
+    tag: b46d44d
     env:
       - name: MODE
         value: ARCHIVE

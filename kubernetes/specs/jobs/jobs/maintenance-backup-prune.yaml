@@ -3,7 +3,7 @@ schedule: "5 0 * * *"
 containers:
   - name: maintenance-backup-prune
     repository: ghcr.io/kahnwong/docker-aws-backup
-    tag: 4783b2e
+    tag: b46d44d
     command: ["sh", "-c"]
     args:
       - |
