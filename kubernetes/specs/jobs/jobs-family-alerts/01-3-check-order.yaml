@@ -3,7 +3,7 @@ schedule: "10 4 * * *" # 11:10 AM Asia/Bangkok
 containers:
   - name: 01-3-check-order
     repository: ghcr.io/kahnwong/line-notify
-    tag: 0a8612b
+    tag: 9c70e69
     args:
       - "notify"
       - "เช็คสถานะ order ว่ามีคนส่งไหม"
