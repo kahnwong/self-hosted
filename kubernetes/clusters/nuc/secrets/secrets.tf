@@ -33,7 +33,7 @@ locals {
     ]
   })
 
-  ghcr_namespaces = toset(["infrastructure", "tools"])
+  ghcr_namespaces = toset(["infrastructure", "tools", "jobs"])
 }
 
 locals {
