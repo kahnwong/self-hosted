@@ -2,7 +2,6 @@ locals {
   secrets = tomap({
     analytics      = []
     authentik      = ["authentik-env", "authentik-postgres"] # `authentic-env` is to prevent name collision with secrets provided by helm chart
-    bots           = ["qa-api", "qa-discord-bot"]
     default        = ["subsonic-widgets"]
     harbor         = ["harbor", "harbor-postgres"]
     immich         = ["immich", "immich-machine-learning", "immich-postgres"]

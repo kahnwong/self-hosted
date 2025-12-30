@@ -14,7 +14,6 @@ locals {
   deployments_fringe_division = tomap({
     analytics = []
     authentik = ["authentik-postgres", "authentik-valkey"]
-    bots      = ["qa-api"]
     default = [
       "subsonic-widgets",
     ]
@@ -151,11 +150,6 @@ resource "helm_release" "knative" {
     file("../../../specs/deployments/${each.value}/${each.key}.yaml"),
     # file("./resources/valuesTaintNodeSelector.yaml"),
   ]
-}
-
-# ------ qa-discord-bot ------ #
-resource "kubernetes_manifest" "qa_discord_bot" {
-  manifest = yamldecode(file("../../../specs/deployments/bots/qa-discord-bot.yaml"))
 }
 
 # ------ notes-sync ------ #

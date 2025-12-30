@@ -2,7 +2,6 @@ locals {
   namespaces = toset([
     "analytics",
     "authentik",
-    "bots",
     "default",
     "harbor",
     "immich",
