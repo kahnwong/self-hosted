@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: qrcode-api
     repository: ghcr.io/kahnwong/qrcode-api
-    tag: 0bdc6a0
+    tag: "0dd6b9f"
     port: 3000
     env:
       - name: LISTEN_ADDR
