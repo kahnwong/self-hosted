@@ -27,6 +27,7 @@ baz.yaml
 all.Caddyfile
 private.Caddyfile
 header.Caddyfile
+bird.misc.Caddyfile
 
 # files
 *.html

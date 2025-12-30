@@ -41,13 +41,15 @@ func generateConfig(services map[string]string) string {
 		if !strings.Contains(services[k], ".") { // normal deployment
 			config += fmt.Sprintf(`%s.bird.karnwong.me {
     route {
-    	reverse_proxy 192.168.1.122:%s
+		crowdsec
+		reverse_proxy 192.168.1.122:%s
 	}
 }
 `, k, services[k])
 		} else { // knative
 			config += fmt.Sprintf(`%s.bird.karnwong.me {
     route {
+		crowdsec
 		reverse_proxy 192.168.1.122:31080 {
 			header_up Host %s.example.com
 		}

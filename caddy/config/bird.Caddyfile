@@ -1,20 +1,24 @@
 garage.bird.karnwong.me {
     route {
-    	reverse_proxy 192.168.1.122:30070
+		crowdsec
+		reverse_proxy 192.168.1.122:30070
 	}
 }
 immich.bird.karnwong.me {
     route {
-    	reverse_proxy 192.168.1.122:30030
+		crowdsec
+		reverse_proxy 192.168.1.122:30030
 	}
 }
 ntfy.bird.karnwong.me {
     route {
-    	reverse_proxy 192.168.1.122:30022
+		crowdsec
+		reverse_proxy 192.168.1.122:30022
 	}
 }
 sshx.bird.karnwong.me {
     route {
-    	reverse_proxy 192.168.1.122:30028
+		crowdsec
+		reverse_proxy 192.168.1.122:30028
 	}
 }

@@ -83,6 +83,7 @@ locals {
     "ntfy",
     "ollama",
     "sshx",
+    "tts",
   ])
 }
 locals {

@@ -5,11 +5,11 @@ git reset origin/master --hard
 cd /home/ubuntu/self-hosted/caddy/config || exit 1
 
 {
-	sops -d header.sops.Caddyfile
-	cat Caddyfile
-	cat misc.Caddyfile
+	sops -d fd.header.sops.Caddyfile
+	cat fd.Caddyfile
+	cat fd.misc.Caddyfile
 	echo -e "\n"
-	sops -d private.sops.Caddyfile
+	sops -d fd.private.sops.Caddyfile
 } >all.Caddyfile
 
 sudo cp /home/ubuntu/self-hosted/caddy/config/all.Caddyfile /etc/caddy/Caddyfile

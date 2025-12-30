@@ -1,14 +1,11 @@
 #!/bin/bash
 
-git fetch
-git reset origin/master --hard
-cd /home/ubuntu/self-hosted/caddy/config || exit 1
+cd caddy/config || exit 1
 
 rm all.Caddyfile
 {
+	sops -d bird.header.sops.Caddyfile
 	cat bird.Caddyfile
-	cat bird.misc.Caddyfile
+	echo -e "\n"
+	sops -d bird.misc.sops.Caddyfile
 } >all.Caddyfile
-
-sudo cp /home/ubuntu/self-hosted/caddy/config/all.Caddyfile /etc/caddy/Caddyfile
-systemctl reload caddy
