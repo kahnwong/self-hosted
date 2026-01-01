@@ -3,7 +3,7 @@ schedule: "3 0 * * *"
 containers:
   - name: backup-wakapi
     repository: ghcr.io/kahnwong/docker-aws-backup
-    tag: b46d44d
+    tag: 07ea217
     env:
       - name: MODE
         value: DB_POSTGRES
