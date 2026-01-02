@@ -1,10 +1,6 @@
 terraform {
-  cloud {
-    organization = "fringe-division"
-    hostname     = "app.terraform.io"
-
-    workspaces {
-      tags = ["github"]
-    }
+  backend "gcs" {
+    bucket = "kahnwong-tfstate"
+    prefix = "terraform/github"
   }
 }
