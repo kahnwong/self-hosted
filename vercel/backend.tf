@@ -1,10 +1,6 @@
 terraform {
-  cloud {
-    organization = "fringe-division"
-    hostname     = "app.terraform.io"
-
-    workspaces {
-      tags = ["vercel"]
-    }
+  backend "gcs" {
+    bucket = "kahnwong-tfstate"
+    prefix = "terraform/vercel"
   }
 }
