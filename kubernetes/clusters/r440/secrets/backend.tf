@@ -1,10 +1,6 @@
 terraform {
-  cloud {
-    organization = "fringe-division"
-    hostname     = "app.terraform.io"
-
-    workspaces {
-      tags = ["k8s-r440-secrets"]
-    }
+  backend "gcs" {
+    bucket = "kahnwong-tfstate"
+    prefix = "terraform/kubernetes/r440/secrets"
   }
 }
