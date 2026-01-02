@@ -1,10 +1,6 @@
 terraform {
-  cloud {
-    organization = "fringe-division"
-    hostname     = "app.terraform.io"
-
-    workspaces {
-      tags = ["kubernetes-configmaps"]
-    }
+  backend "gcs" {
+    bucket = "kahnwong-tfstate"
+    prefix = "terraform/kubernetes/nuc/configmaps"
   }
 }
