@@ -3,7 +3,7 @@ schedule: "1 0 * * *"
 containers:
   - name: backup-nocodb
     repository: ghcr.io/kahnwong/docker-aws-backup
-    tag: 07ea217
+    tag: b686665
     env:
       - name: MODE
         value: ARCHIVE
