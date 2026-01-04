@@ -6,7 +6,7 @@
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.6 |
-| helm | 3.0.2 |
+| helm | 3.1.1 |
 | kubectl | ~> 2.0 |
 | kubernetes | 2.38.0 |
 
@@ -14,7 +14,7 @@
 
 | Name | Version |
 |------|---------|
-| helm | 3.0.2 |
+| helm | 3.1.1 |
 | kubernetes | 2.38.0 |
 
 ## Modules
@@ -25,7 +25,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [helm_release.this](https://registry.terraform.io/providers/hashicorp/helm/3.0.2/docs/resources/release) | resource |
+| [helm_release.this](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
 | [kubernetes_namespace.this](https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/namespace) | resource |
 
 ## Inputs
