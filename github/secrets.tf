@@ -16,6 +16,7 @@ locals {
     "karnwong.me",
     "marimo-wasm",
     "monkeytype",
+    "portip",
     "promptpay-qr-code",
     "slc",
     "swissknife",

@@ -10,6 +10,7 @@ locals {
     "maps",
     "marimo",
     "monkeytype",
+    "portip",
     "promptpay",
     "slc",
     "swissknife",
