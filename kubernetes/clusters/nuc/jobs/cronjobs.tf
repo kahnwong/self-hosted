@@ -32,15 +32,15 @@ locals {
       "maintenance-wallabag-cleanup",
       "water-cut-notify",
     ]
-
-    jobs-family-alerts = [
-      "01-1-lunch-ask",
-      "01-2-lunch-order",
-      # "01-3-check-order",
-      "02-1-dinner-ask-family",
-      # "02-2-dinner-order",
-    ]
   })
+
+  jobs_family_alerts = [
+    "01-1-lunch-ask",
+    "01-2-lunch-order",
+    # "01-3-check-order",
+    "02-1-dinner-ask-family",
+    # "02-2-dinner-order",
+  ]
 }
 
 locals {
@@ -102,6 +102,23 @@ resource "helm_release" "jobs_fringe_division" {
   values = [
     file("../../../specs/jobs/${each.value}/${each.key}.yaml"),
     # file("./resources/valuesTaintNodeSelector.yaml"),
+  ]
+}
+
+data "sops_file" "jobs_family" {
+  for_each    = toset(local.jobs_family_alerts)
+  source_file = "../../../specs/jobs/jobs-family-alerts/${each.key}.sops.yaml"
+}
+resource "helm_release" "jobs_family" {
+  for_each   = toset(local.jobs_family_alerts)
+  name       = each.key
+  namespace  = "jobs-family-alerts"
+  repository = "oci://ghcr.io/kahnwong/charts"
+  version    = "0.1.0"
+  chart      = "base-cronjob"
+
+  values = [
+    data.sops_file.jobs_family[each.key].raw
   ]
 }
 
