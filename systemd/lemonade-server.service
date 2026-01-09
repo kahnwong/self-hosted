@@ -1,0 +1,12 @@
+[Unit]
+Description=Lemonade Server
+After=network.target network-online.target
+Requires=network-online.target
+
+[Service]
+User=ro
+Group=ro
+ExecStart=/bin/bash -c "lemonade-server serve --host 0.0.0.0"
+
+[Install]
+WantedBy=multi-user.target
