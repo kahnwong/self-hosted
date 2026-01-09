@@ -1,0 +1,12 @@
+[Unit]
+Description=Wallabag TTS
+After=network.target network-online.target
+Requires=network-online.target
+
+[Service]
+User=ro
+Group=ro
+ExecStart=/bin/bash -c "cd /home/ro/workspace/wallabag-tts && source .env && /home/ro/.local/bin/uv run streamlit run src/wallabag_tts/frontend.py --server.port 8501 --server.address=0.0.0.0"
+
+[Install]
+WantedBy=multi-user.target
