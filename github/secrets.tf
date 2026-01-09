@@ -20,6 +20,7 @@ locals {
     "promptpay-qr-code",
     "slc",
     "swissknife",
+    "textarea",
     "tldraw",
     "vendor-status.karnwong.me",
   ])

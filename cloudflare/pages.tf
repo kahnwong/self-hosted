@@ -14,6 +14,7 @@ locals {
     "promptpay",
     "slc",
     "swissknife",
+    "textarea",
     "tldraw",
     "vendor-status",
   ])
