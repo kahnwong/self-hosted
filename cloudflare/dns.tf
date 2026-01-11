@@ -78,6 +78,7 @@ locals {
   ])
   bird_non_proxied = toset([
     "api.chat",
+    "chat",
     "garage",
     "immich",
     "mlflow",

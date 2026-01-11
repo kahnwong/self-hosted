@@ -1,29 +1,14 @@
 services:
-  ollama:
-    volumes:
-      - /opt/ollama:/root/.ollama
-    container_name: ollama
-    pull_policy: always
-    restart: unless-stopped
-    image: ollama/ollama:latest
-    ports:
-      - 11434:11434
-    networks:
-      - genai
   open-webui:
     image: ghcr.io/open-webui/open-webui:main
     container_name: open-webui
     pull_policy: always
     volumes:
       - /opt/open-webui:/app/backend/data
-    depends_on:
-      - ollama
     ports:
       - 3000:8080
     env_file:
       - .env.app.open-webui
-    environment:
-      - 'OLLAMA_BASE_URL=http://ollama:11434'
     restart: unless-stopped
     networks:
       - genai

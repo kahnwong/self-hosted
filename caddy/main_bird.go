@@ -9,10 +9,11 @@ import (
 
 func main() {
 	services := map[string]string{
+		"chat":   "3000",
 		"garage": "30070",
+		"immich": "30030",
 		"ntfy":   "30022",
 		"sshx":   "30028",
-		"immich": "30030",
 	}
 
 	// generate config

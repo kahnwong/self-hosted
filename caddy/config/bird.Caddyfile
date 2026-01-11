@@ -1,3 +1,9 @@
+chat.bird.karnwong.me {
+    route {
+		crowdsec
+		reverse_proxy 192.168.1.122:3000
+	}
+}
 garage.bird.karnwong.me {
     route {
 		crowdsec
