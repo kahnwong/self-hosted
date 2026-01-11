@@ -51,22 +51,22 @@ services:
       - tuwunel
     networks:
       - matrix
-      # # ----- for iMessage, see <https://docs.mau.fi/bridges/go/imessage/mac/setup.html> -----
-      # mautrix-wsproxy:
-      #   container_name: mautrix-wsproxy
-      #   image: dock.mau.dev/mautrix/wsproxy
-      #   restart: always
-      #   env_file:
-      #     - .env.app.mautrix-wsproxy
-      #   ports:
-      #     - 29331:29331
-      #   environment:
-      #     LISTEN_ADDRESS: ":29331"
-      #     APPSERVICE_ID: imessage
-      #  depends_on:
-      #    - tuwunel
-      #  networks:
-      #    - matrix
+  # # ----- for iMessage, see <https://docs.mau.fi/bridges/go/imessage/mac/setup.html> -----
+  # mautrix-wsproxy:
+  #  container_name: mautrix-wsproxy
+  #  image: dock.mau.dev/mautrix/wsproxy
+  #  restart: always
+  #  env_file:
+  #    - .env.app.mautrix-wsproxy
+  #  ports:
+  #    - 29331:29331
+  #  environment:
+  #    LISTEN_ADDRESS: ":29331"
+  #    APPSERVICE_ID: imessage
+  #  depends_on:
+  #   - tuwunel
+  #  networks:
+  #   - matrix
 networks:
   matrix:
     driver: bridge

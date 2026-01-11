@@ -9,20 +9,6 @@ services:
       - /opt/picoshare/data:/data
       # ports:
       #  - "4001:4001"
-  # pairdrop:
-  #   image: "lscr.io/linuxserver/pairdrop:1.11.2"
-  #   container_name: pairdrop
-  #   restart: always
-  #   environment:
-  #     - PUID=1000
-  #     - PGID=1000
-  #     - WS_FALLBACK=false
-  #     - RATE_LIMIT=true
-  #     - RTC_CONFIG=false
-  #     - DEBUG_MODE=false
-  #     - TZ=Etc/UTC
-  #     # ports:
-  #     #  - "3000:3000"
   anisette:
     container_name: anisette
     restart: always
@@ -52,27 +38,6 @@ services:
     volumes:
       - ./config/gatus.yaml:/config/config.yaml:ro
       - /opt/gatus/data:/data
-  # supersecretmessage-vault:
-  #   container_name: supersecretmessage-vault
-  #   restart: always
-  #   # ports:
-  #   #  - 8200:8200
-  #   image: hashicorp/vault:1.21.1
-  #   env_file:
-  #     - .env.app.supersecretmessage-vault
-  #   cap_add:
-  #     - IPC_LOCK
-  # supersecretmessage:
-  #   container_name: supersecretmessage
-  #   restart: always
-  #   # ports:
-  #   #  - 8082:8082
-  #   image: ghcr.io/kahnwong/sup3rs3cretmes5age:c0449be
-  #   env_file:
-  #     - .env.app.supersecretmessage-vault
-  #   environment:
-  #     - SUPERSECRETMESSAGE_HTTP_BINDING_ADDRESS=:8082
-  #     - VAULT_ADDR=http://supersecretmessage-vault:8200
   memos:
     container_name: memos
     restart: always
