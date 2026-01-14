@@ -5,14 +5,14 @@
 
 | Name | Version |
 |------|---------|
-| authentik | 2025.10.0 |
+| authentik | 2025.12.0 |
 | random | 3.7.2 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| authentik | 2025.10.0 |
+| authentik | 2025.12.0 |
 | random | 3.7.2 |
 
 ## Modules
@@ -23,8 +23,8 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [authentik_application.memos](https://registry.terraform.io/providers/goauthentik/authentik/2025.10.0/docs/resources/application) | resource |
-| [authentik_provider_oauth2.this](https://registry.terraform.io/providers/goauthentik/authentik/2025.10.0/docs/resources/provider_oauth2) | resource |
+| [authentik_application.memos](https://registry.terraform.io/providers/goauthentik/authentik/2025.12.0/docs/resources/application) | resource |
+| [authentik_provider_oauth2.this](https://registry.terraform.io/providers/goauthentik/authentik/2025.12.0/docs/resources/provider_oauth2) | resource |
 | [random_string.random](https://registry.terraform.io/providers/hashicorp/random/3.7.2/docs/resources/string) | resource |
 
 ## Inputs
