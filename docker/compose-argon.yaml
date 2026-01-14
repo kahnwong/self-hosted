@@ -29,7 +29,7 @@ services:
   # # need to open tcp/udp for 21114-21119
   hbbs:
     container_name: rustdesk-hbbs
-    image: rustdesk/rustdesk-server:1.1.14
+    image: rustdesk/rustdesk-server:1.1.15
     command: hbbs
     environment:
       RELAY: hbbr:21117
@@ -47,7 +47,7 @@ services:
       - rustdesk
   hbbr:
     container_name: rustdesk-hbbr
-    image: rustdesk/rustdesk-server:1.1.14
+    image: rustdesk/rustdesk-server:1.1.15
     command: hbbr
     ports:
       - 21117:21117 # relay
