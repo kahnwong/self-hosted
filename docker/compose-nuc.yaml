@@ -56,7 +56,7 @@ services:
       - POSTGRES_PASSWORD=postgrespassword
       - POSTGRES_DB=postgres
     networks:
-      - transmission
+      - postgres
   n8n:
     image: docker.n8n.io/n8nio/n8n:1.123.13
     container_name: n8n
