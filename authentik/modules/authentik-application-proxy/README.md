@@ -37,5 +37,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| application\_uuid | n/a |
 | provider\_proxy\_id | n/a |
 <!-- END_TF_DOCS -->

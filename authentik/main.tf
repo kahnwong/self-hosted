@@ -16,17 +16,19 @@ locals {
     warpgate : ["https://warpgate.karnwong.me/@warpgate/api/sso/return"]
     }
   )
+  application_proxy_admin_only = toset([
+    "livegrep",
+    "np",
+    "todotxt",
+  ])
   application_proxy = toset([
     "homer",
     "k.console.notes",
     "linkding",
-    "livegrep",
     "mlflow",
     "notes",
-    "np",
     "pdf",
     "t.console.notes",
-    "todotxt",
   ])
 }
 
@@ -48,10 +50,21 @@ module "application_oauth2" {
 }
 
 module "application_proxy" {
-  for_each = local.application_proxy
+  for_each = setunion(local.application_proxy_admin_only, local.application_proxy)
 
   source                = "./modules/authentik-application-proxy"
   authorization_flow_id = data.authentik_flow.default-authorization-flow.id
   invalidation_flow_id  = data.authentik_flow.default-invalidation-flow.id
   application_name      = each.key
+}
+
+
+data "authentik_group" "admins" {
+  name = "authentik Admins"
+}
+resource "authentik_policy_binding" "app_access" { # deny non-admin users
+  for_each = local.application_proxy_admin_only
+  target   = module.application_proxy[each.key].application_uuid
+  group    = data.authentik_group.admins.id
+  order    = 0
 }

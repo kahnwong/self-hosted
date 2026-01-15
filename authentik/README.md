@@ -49,12 +49,14 @@ OpenID Configuration Issuer:  https://authentik.karnwong.me/application/o/$APP/
 | [authentik_flow_stage_binding.passwordless_login](https://registry.terraform.io/providers/goauthentik/authentik/2025.12.0/docs/resources/flow_stage_binding) | resource |
 | [authentik_flow_stage_binding.passwordless_webauthn_validation](https://registry.terraform.io/providers/goauthentik/authentik/2025.12.0/docs/resources/flow_stage_binding) | resource |
 | [authentik_outpost.proxy_outpost](https://registry.terraform.io/providers/goauthentik/authentik/2025.12.0/docs/resources/outpost) | resource |
+| [authentik_policy_binding.app_access](https://registry.terraform.io/providers/goauthentik/authentik/2025.12.0/docs/resources/policy_binding) | resource |
 | [authentik_service_connection_kubernetes.local](https://registry.terraform.io/providers/goauthentik/authentik/2025.12.0/docs/resources/service_connection_kubernetes) | resource |
 | [authentik_stage_authenticator_validate.webauthn_validation](https://registry.terraform.io/providers/goauthentik/authentik/2025.12.0/docs/resources/stage_authenticator_validate) | resource |
 | [authentik_stage_identification.default_authentication_identification](https://registry.terraform.io/providers/goauthentik/authentik/2025.12.0/docs/resources/stage_identification) | resource |
 | [authentik_stage_user_login.default_authentication_login](https://registry.terraform.io/providers/goauthentik/authentik/2025.12.0/docs/resources/stage_user_login) | resource |
 | [authentik_flow.default-authorization-flow](https://registry.terraform.io/providers/goauthentik/authentik/2025.12.0/docs/data-sources/flow) | data source |
 | [authentik_flow.default-invalidation-flow](https://registry.terraform.io/providers/goauthentik/authentik/2025.12.0/docs/data-sources/flow) | data source |
+| [authentik_group.admins](https://registry.terraform.io/providers/goauthentik/authentik/2025.12.0/docs/data-sources/group) | data source |
 
 ## Inputs
 
