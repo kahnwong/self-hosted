@@ -19,7 +19,6 @@ locals {
     "nocodb",
     "ntfy",
     "pmtiles", # if use docker-caddy, it needs to be a separate instance because it uses `file_server` directive
-    "qa-api",
     "rally",
     "rustpad",
     "subsonic-widgets",
@@ -34,11 +33,9 @@ locals {
     "api.todotxt",
     "api.weather",
     "authentik",
-    "chat",
     "cpubench",
     "garage",
     "git",
-    "headscale",
     "homer",
     "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
     "k.console.notes",
@@ -47,7 +44,6 @@ locals {
     "mlflow",
     "notes",
     "np",
-    "opencost",
     "paperless",
     "rustdesk",
     "pdf",
@@ -64,8 +60,6 @@ locals {
   oracle_proxied = toset([
     "anisette",
     "gatus",
-    "kutt",
-    "pairdrop",
     "vaultwarden",
   ])
   oracle_non_proxied = toset([
