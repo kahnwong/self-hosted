@@ -23,25 +23,25 @@ provider "registry.opentofu.org/carlpett/sops" {
 }
 
 provider "registry.opentofu.org/cloudflare/cloudflare" {
-  version     = "5.12.0"
-  constraints = "5.12.0"
+  version     = "5.15.0"
+  constraints = "5.15.0"
   hashes = [
-    "h1:Eo6pSEPqJQ+j/lbQp7fsoiEnJ5OWNoiCixsTmfXokZE=",
-    "h1:F3+tCZyoldPT0xPPuZxLCvVKo3VlHFXnT1S9v7qNXms=",
-    "h1:IvMPMJrmyw6x+8GZklY7qb8VXrjr00zwsN+TFlxkCTM=",
-    "h1:Uv+BuJvfFb8Wv0RT15N3yMZe4xz30WWXw9/Kb1N0lX8=",
-    "h1:bgKFK8OhAQ32McGDsP2CGqXIlThXj4GPe/aC4Y/siKw=",
-    "h1:iTrWuV8S1Kau9qU8SX2vZKpK1/V1AEE4YFVipDxqtFg=",
-    "h1:vrbI9qWFMZPA47W+OLnqcBT7+3gk24vfqj5kzoOAyMU=",
-    "h1:xJHZg5hgx0CT/jdJWiKfQGxP9xAdtCW5GdC1SI9DH2w=",
-    "zh:06166a72e69eb712ad2c8b49c1ed060223b0d57bb95ce5f6c8440ce19253913e",
-    "zh:484c32dc4fbe1f7baaf00f8d0d1774d259e1a602aebf60b8dea8c6dd122c1d27",
-    "zh:914b4796a5f2c5914cb94864a7541ce132c0e287bf49a5328706d50152117bc4",
-    "zh:bbcf3effe11ad44988c2aa4482c3fd0089ca86527463a9a873cecda1a4a022bc",
-    "zh:c2a59f29b4b4c0344dbb9ab3d78ebcc1d32153f1fd7e919eba7edf7d825119c2",
-    "zh:d6900b39b9c58743e6b1f05b2db7c39276c94f74d501f23bebb88d413266c57c",
-    "zh:f000d33075c30e616df8e58e341614e958eed4a51f3427d2e1a18ea1b7e0c6c6",
+    "h1:BIyO+gxARWsAJ4EV8Q5x1N+lAoeXNk/Hh6cCZp6nP6o=",
+    "h1:EY8mWQO1NTqXuxnZxwVppF7AiLRdx7vRLYk6O7yzgPs=",
+    "h1:LZytTwtRYkXKX5kJ43GKqkP1NSqJMTrPET/A9s2Vd9s=",
+    "h1:ZpfZzvKX16IgFRhutTTy/pCqw1Yo4ms5XJB+EFAjGvA=",
+    "h1:kQILtdI9nMz2AYSgbp49LE1XrMfcF1/iuM76KrwJRqQ=",
+    "h1:prHyv+irfadmobKZm1LKEBgJKSpcdWQtjUhyJdC9R1E=",
+    "h1:t18NBiA0W2loZgd5MHGTtkNMBR6HAFe+o8FVeyhwLsw=",
+    "h1:zpZPqC4kr7WOyDLdbIb2FhlYLLc1ZU53KC+i1D+gKRg=",
+    "zh:20a72bdbb28435f11d165b367732369e8f8163100a214e89ad720dae03fafa0c",
+    "zh:2eabd7a51fd7aafcab9861631d85c895914857e4fcd6fe2dd80bac22e74a1f47",
+    "zh:62828afbc1ba0e0a64bbb7d5d42ae3c2fbbaabb793010b07eba770ba91bae94f",
+    "zh:6693f1021e52c34a629300fbcd91f8bd4ca386fda3b45aec746b9c200c28a42c",
+    "zh:6873a15454b289e5baecc1d36ce8997266438761386a320753c63f13407f4a6b",
+    "zh:afbf4e56b3a5e5950b35b02b553313e4a2008415920b23f536682269c64ca549",
+    "zh:db367612900bc2e5a01c6a325e4cff9b1b04960ce9de3dd41671dda5a627ca1d",
+    "zh:eb7365eafc6160c3b304a9ce6a598e5400a2e779e9e2bd27976df244f79f774f",
     "zh:f809ab383cca0a5f83072981c64208cbd7fa67e986a86ee02dd2c82333221e32",
-    "zh:ff4fd5b3b0327f8f41fc65d909839288fb98ecfe32a9aff11d2e2638f2109302",
   ]
 }
