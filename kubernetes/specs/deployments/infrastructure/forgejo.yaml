@@ -5,7 +5,7 @@ replicaCount: 1
 containers:
   - name: forgejo
     repository: codeberg.org/forgejo/forgejo
-    tag: 13.0.4
+    tag: 13.0.5
     ports:
       - name: web
         containerPort: 3000
