@@ -6,7 +6,7 @@
 | Name | Version |
 |------|---------|
 | authentik | 2025.12.0 |
-| random | 3.7.2 |
+| random | 3.8.0 |
 
 ## Providers
 
