@@ -22,7 +22,7 @@ services:
     networks:
       - matrix
   mautrix-meta: # connect to `metabot`
-    image: dock.mau.dev/mautrix/meta:v0.2510.0
+    image: dock.mau.dev/mautrix/meta:v0.2512.0
     container_name: mautrix-meta
     restart: always
     volumes:
