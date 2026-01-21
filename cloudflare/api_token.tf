@@ -12,9 +12,9 @@ resource "cloudflare_api_token" "deploy_cloudflare_pages" {
           id = "8d28297797f24fb8a0c332fe0866ec89"
         }
       ]
-      resources = {
-        "com.cloudflare.api.account.*" = "*"
-      }
+      resources = jsonencode({
+        "com.cloudflare.api.account.${var.cloudflare_account_id}" = "*"
+      })
     }
   ]
 }
@@ -33,9 +33,9 @@ resource "cloudflare_api_token" "ddns_updater" {
           id = "4755a26eedb94da69e1066d98aa820be"
         }
       ]
-      resources = {
-        "com.cloudflare.api.account.*" = "*"
-      }
+      resources = jsonencode({
+        "com.cloudflare.api.account.${var.cloudflare_account_id}" = "*"
+      })
     }
   ]
 }
@@ -57,9 +57,9 @@ resource "cloudflare_api_token" "caddy_wildcard_tls" {
           id = "4755a26eedb94da69e1066d98aa820be"
         }
       ]
-      resources = {
-        "com.cloudflare.api.account.*" = "*"
-      }
+      resources = jsonencode({
+        "com.cloudflare.api.account.${var.cloudflare_account_id}" = "*"
+      })
     }
   ]
 }
@@ -78,9 +78,9 @@ resource "cloudflare_api_token" "r2_backup" {
           id = "bf7481a1826f439697cb59a20b22293e"
         }
       ]
-      resources = {
-        "com.cloudflare.api.account.*" = "*"
-      }
+      resources = jsonencode({
+        "com.cloudflare.api.account.${var.cloudflare_account_id}" = "*"
+      })
     }
   ]
 }
@@ -98,9 +98,9 @@ resource "cloudflare_api_token" "r2_ro" {
           id = "b4992e1108244f5d8bfbd5744320c2e1"
         }
       ]
-      resources = {
-        "com.cloudflare.api.account.*" = "*"
-      }
+      resources = jsonencode({
+        "com.cloudflare.api.account.${var.cloudflare_account_id}" = "*"
+      })
     }
   ]
 }
@@ -118,9 +118,9 @@ resource "cloudflare_api_token" "r2_send_rw" {
           id = "2efd5506f9c8494dacb1fa10a3e7d5b6"
         }
       ]
-      resources = {
+      resources = jsonencode({
         "com.cloudflare.edge.r2.bucket.${var.cloudflare_account_id}_default_send" = "*"
-      }
+      })
     }
   ]
 }
@@ -138,9 +138,9 @@ resource "cloudflare_api_token" "r2_restic_rw" {
           id = "2efd5506f9c8494dacb1fa10a3e7d5b6"
         }
       ]
-      resources = {
+      resources = jsonencode({
         "com.cloudflare.edge.r2.bucket.${var.cloudflare_account_id}_default_restic" = "*"
-      }
+      })
     }
   ]
 }
@@ -158,9 +158,9 @@ resource "cloudflare_api_token" "r2_terraform_state_rw" {
           id = "2efd5506f9c8494dacb1fa10a3e7d5b6"
         }
       ]
-      resources = {
+      resources = jsonencode({
         "com.cloudflare.edge.r2.bucket.${var.cloudflare_account_id}_default_terraform-state" = "*"
-      }
+      })
     }
   ]
 }

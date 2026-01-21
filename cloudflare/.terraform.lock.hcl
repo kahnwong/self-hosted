@@ -23,25 +23,25 @@ provider "registry.opentofu.org/carlpett/sops" {
 }
 
 provider "registry.opentofu.org/cloudflare/cloudflare" {
-  version     = "5.12.0"
-  constraints = "5.12.0"
+  version     = "5.16.0"
+  constraints = "5.16.0"
   hashes = [
-    "h1:Eo6pSEPqJQ+j/lbQp7fsoiEnJ5OWNoiCixsTmfXokZE=",
-    "h1:F3+tCZyoldPT0xPPuZxLCvVKo3VlHFXnT1S9v7qNXms=",
-    "h1:IvMPMJrmyw6x+8GZklY7qb8VXrjr00zwsN+TFlxkCTM=",
-    "h1:Uv+BuJvfFb8Wv0RT15N3yMZe4xz30WWXw9/Kb1N0lX8=",
-    "h1:bgKFK8OhAQ32McGDsP2CGqXIlThXj4GPe/aC4Y/siKw=",
-    "h1:iTrWuV8S1Kau9qU8SX2vZKpK1/V1AEE4YFVipDxqtFg=",
-    "h1:vrbI9qWFMZPA47W+OLnqcBT7+3gk24vfqj5kzoOAyMU=",
-    "h1:xJHZg5hgx0CT/jdJWiKfQGxP9xAdtCW5GdC1SI9DH2w=",
-    "zh:06166a72e69eb712ad2c8b49c1ed060223b0d57bb95ce5f6c8440ce19253913e",
-    "zh:484c32dc4fbe1f7baaf00f8d0d1774d259e1a602aebf60b8dea8c6dd122c1d27",
-    "zh:914b4796a5f2c5914cb94864a7541ce132c0e287bf49a5328706d50152117bc4",
-    "zh:bbcf3effe11ad44988c2aa4482c3fd0089ca86527463a9a873cecda1a4a022bc",
-    "zh:c2a59f29b4b4c0344dbb9ab3d78ebcc1d32153f1fd7e919eba7edf7d825119c2",
-    "zh:d6900b39b9c58743e6b1f05b2db7c39276c94f74d501f23bebb88d413266c57c",
-    "zh:f000d33075c30e616df8e58e341614e958eed4a51f3427d2e1a18ea1b7e0c6c6",
+    "h1:Aj3MnBvyKkz2hXhK851Kr4SQfp864BS/fsjcT1IHkpQ=",
+    "h1:E6q6NhXcAEbyZjfuTuHv+dumzeNbsPkWOebTJ4v3cg4=",
+    "h1:F1VwtsDmYrBEKe0XfgENBunyJVtLHRQODqFYCU5pkwc=",
+    "h1:HEaSG6tzNK9A2tQUPWgN9UxQ2Ayfw+H8v+YT8qoEm6U=",
+    "h1:UQvmPpaoNQTASvBnFz7rwT5xt/REMJrqPDjHkQiBVwQ=",
+    "h1:c7Ys/nrTbSbjzSoICdSU0lJCBLV12Gn9De7BhfUaL2o=",
+    "h1:iyIjUQIxl6vMTH4zuhMhmmE6RjRNVbBTA/m2LbmF+1U=",
+    "h1:tqP1AbDcg49BDrdVBAtvbiMD9ChOodVtKoXcneOlm00=",
+    "zh:0e21bfc6d4698b7e7d7b39b1635c5e1dac49b9e39e205b38d9d879e31aa63002",
+    "zh:269c80bdf54e34a80e01e742ab2705c56c360cece256348301a69b316e735dca",
+    "zh:32420d3ebf3a18f5d4d259390e4c98f0b31e4d6f703572a0dafaf1af8361bd14",
+    "zh:45c73f16b19161ed2ae2ec6c50041045df23b0a124701973ed7f0297c16bacbe",
+    "zh:5ca4e4dafb12d78afa0ca9150236b0a2e64a3d65045f7347efc9253edef5276d",
+    "zh:636d1456d8d604bace12ebcf4d3b188a971bb98b1891368ae87c86ac6d561c26",
+    "zh:d26e340801292ad44a4fe493a2b254147c48e01303e81630678edf9ef8c06bbb",
+    "zh:ed564f43bd296bf0d8f13aee4bdd5c0e0c3376683911f2b64e1e42891232334f",
     "zh:f809ab383cca0a5f83072981c64208cbd7fa67e986a86ee02dd2c82333221e32",
-    "zh:ff4fd5b3b0327f8f41fc65d909839288fb98ecfe32a9aff11d2e2638f2109302",
   ]
 }
