@@ -2,7 +2,7 @@ name: jellyfin
 containers:
   - name: jellyfin
     repository: linuxserver/jellyfin
-    tag: 10.11.5
+    tag: 10.11.6
     port: 8096
     env:
       - name: PGID
