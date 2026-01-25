@@ -29,7 +29,7 @@ replicaCount: 1
 containers:
   - name: garage
     repository: dxflrs/garage
-    tag: v2.1.0
+    tag: v2.2.0
     ports:
       - name: s3
         containerPort: 3900
