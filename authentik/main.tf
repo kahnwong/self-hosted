@@ -6,6 +6,8 @@ locals {
       "app.immich:///oauth-callback",
       "https://immich.karnwong.me/auth/login",
       "https://immich.karnwong.me/user-settings",
+      "http://localhost:8000/auth/login",
+      "http://localhost:8000/user-settings",
     ]
     memos : ["https://memos.karnwong.me/auth/callback"]
     miniflux : ["https://miniflux.karnwong.me/oauth2/oidc/callback"]
