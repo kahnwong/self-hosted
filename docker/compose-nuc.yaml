@@ -58,7 +58,7 @@ services:
     networks:
       - postgres
   n8n:
-    image: docker.n8n.io/n8nio/n8n:1.123.16
+    image: docker.n8n.io/n8nio/n8n:2.6.1
     container_name: n8n
     restart: always
     ports:
