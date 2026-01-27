@@ -9,8 +9,6 @@ locals {
     "*",
     "files",
     "go",
-    "harbor",
-    "immich",
     "jupyterhub",
     "llm-context",
     "miniflux",
@@ -25,7 +23,6 @@ locals {
     "thai-tech-cal",
     "todotxt",
     "wakapi",
-    "wallabag",
   ])
   selfhosted_non_proxied = setunion(toset([
     "api.qrcode",
@@ -35,7 +32,9 @@ locals {
     "cpubench",
     "garage",
     "git",
+    "harbor",
     "homer",
+    "immich",
     "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
     "k.console.notes",
     "linkding",
@@ -45,10 +44,11 @@ locals {
     "notes",
     "np",
     "paperless",
-    "rustdesk",
     "pdf",
+    "rustdesk",
     "syncthing",
     "t.console.notes",
+    "wallabag",
     "warpgate",
   ]), var.private_dns)
 
