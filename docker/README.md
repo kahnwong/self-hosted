@@ -24,3 +24,14 @@ pmtiles extract https://build.protomaps.com/$(date -d "yesterday" +%Y%m%d).pmtil
 ```bash
 */5 * * * * cd /home/ubuntu && /usr/bin/docker compose -f compose-bird-cron.yaml run --rm ddns
 ```
+
+## Syncthing
+
+Set global ignore patterns
+
+```text
+**/node_modules/**
+**/dist/**
+node_modules
+dist
+```
