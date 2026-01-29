@@ -1,0 +1,12 @@
+[Unit]
+Description=AI Gateway
+After=network.target network-online.target
+Requires=network-online.target
+
+[Service]
+User=kahnwong
+Group=kahnwong
+ExecStart=/bin/bash -c "cd /home/kahnwong/Git/ai-gateway && /home/kahnwong/.local/bin/uv run main.py"
+
+[Install]
+WantedBy=multi-user.target

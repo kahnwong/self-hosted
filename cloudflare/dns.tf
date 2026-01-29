@@ -7,6 +7,7 @@ locals {
   ])
   selfhosted_proxied = toset([
     "*",
+    "ai-gateway",
     "files",
     "go",
     "jupyterhub",

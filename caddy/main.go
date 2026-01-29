@@ -57,7 +57,7 @@ func main() {
 	fmt.Println(configAll)
 
 	// write to file
-	err := os.WriteFile("./config/Caddyfile", []byte(configAll), 0644)
+	err := os.WriteFile("./config/fd.Caddyfile", []byte(configAll), 0644)
 	if err != nil {
 		panic(err)
 	}
