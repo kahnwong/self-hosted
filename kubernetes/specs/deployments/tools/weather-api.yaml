@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: weather-api
     repository: ghcr.io/kahnwong/weather-api
-    tag: "cf13010"
+    tag: "d01a5a1"
     port: 3000
     env:
       - name: LISTEN_ADDR
