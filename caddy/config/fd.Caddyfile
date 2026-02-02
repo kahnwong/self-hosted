@@ -98,12 +98,6 @@ nocodb.karnwong.me {
     	reverse_proxy 192.168.1.36:30062
 	}
 }
-ntfy.karnwong.me {
-    route {
-		crowdsec
-    	reverse_proxy 192.168.1.36:30022
-	}
-}
 paperless.karnwong.me {
     route {
 		crowdsec
