@@ -30,6 +30,7 @@ locals {
     "api.weather",
     "authentik",
     "cpubench",
+    "evcc",
     "garage",
     "git",
     "harbor",

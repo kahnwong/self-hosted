@@ -36,6 +36,7 @@ func main() {
 		"wakapi":           "30041",
 	}
 	servicesForwardAuth := map[string]string{
+		"evcc":            "30060",
 		"homer":           "30053",
 		"k.console.notes": "notes-console-k.notes",
 		"linkding":        "30005",

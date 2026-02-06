@@ -39,6 +39,7 @@ locals {
     ]
     tools = [
       "cpubench",
+      "evcc",
       "homer",
       "linkding",
       "livegrep-backend", "livegrep-frontend",

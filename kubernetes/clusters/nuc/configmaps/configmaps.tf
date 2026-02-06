@@ -1,6 +1,9 @@
 locals {
   configmaps = tomap({
     tools = [
+      # { deployment : "evcc",
+      #   filename : "evcc.yaml"
+      # }
     ]
     infrastructure = [
     ]

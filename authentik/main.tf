@@ -25,6 +25,7 @@ locals {
     "todotxt",
   ])
   application_proxy = toset([
+    "evcc",
     "homer",
     "k.console.notes",
     "linkding",

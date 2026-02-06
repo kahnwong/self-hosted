@@ -1,0 +1,36 @@
+# ref: <https://docs.evcc.io/en/docs/installation/docker>
+kind: Deployment
+name: evcc
+replicaCount: 1
+containers:
+  - name: evcc
+    repository: evcc/evcc
+    tag: 0.300.8
+    port: 7070
+    volumeMounts:
+      - name: data
+        mountPath: /root/.evcc
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/evcc/data
+service:
+  port: 7070
+  nodePort: 30060
+
+## tariffs config
+#tariffs:
+#  currency: THB
+#  grid:
+#    type: fixed
+#    # THB/kWh
+#    price: 2.3488
+#  feedin:
+#    type: fixed
+#    # THB/kWh
+#    price: 0.00341
+#  co2:
+#    type: template
+#    template: electricitymaps-free
+#    token: null
+#    zone: TH
