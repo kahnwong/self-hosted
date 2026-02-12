@@ -1,5 +1,5 @@
 # ------------------------ service account ------------------------ #
-resource "kubernetes_secret" "deployment_restart" {
+resource "kubernetes_secret_v1" "deployment_restart" {
   metadata {
     annotations = {
       "kubernetes.io/service-account.name" = kubernetes_service_account.deployment_restart.metadata.0.name

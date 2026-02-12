@@ -7,14 +7,14 @@
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.6 |
-| kubernetes | 2.38.0 |
+| kubernetes | 3.0.1 |
 | sops | 1.3.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| kubernetes | 2.38.0 |
+| kubernetes | 3.0.1 |
 | sops | 1.3.0 |
 
 ## Modules
@@ -25,10 +25,10 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [kubernetes_config_map.configmaps](https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/config_map) | resource |
-| [kubernetes_config_map.garage](https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/config_map) | resource |
-| [kubernetes_config_map.livegrep-config](https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/config_map) | resource |
-| [kubernetes_config_map.paperless](https://registry.terraform.io/providers/hashicorp/kubernetes/2.38.0/docs/resources/config_map) | resource |
+| [kubernetes_config_map_v1.configmaps](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/config_map_v1) | resource |
+| [kubernetes_config_map_v1.garage](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/config_map_v1) | resource |
+| [kubernetes_config_map_v1.livegrep-config](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/config_map_v1) | resource |
+| [kubernetes_config_map_v1.paperless](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/config_map_v1) | resource |
 | [sops_file.configmaps](https://registry.terraform.io/providers/carlpett/sops/1.3.0/docs/data-sources/file) | data source |
 | [sops_file.garage](https://registry.terraform.io/providers/carlpett/sops/1.3.0/docs/data-sources/file) | data source |
 | [sops_file.livegrep-config](https://registry.terraform.io/providers/carlpett/sops/1.3.0/docs/data-sources/file) | data source |

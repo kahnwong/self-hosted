@@ -2,7 +2,7 @@
 # data "sops_file" "evcc" {
 #   source_file = "${path.module}/configmaps/evcc.sops.yaml"
 # }
-# resource "kubernetes_config_map" "evcc" {
+# resource "kubernetes_config_map_v1" "evcc" {
 #   metadata {
 #     name      = "evcc"
 #     namespace = "tools"
@@ -21,7 +21,7 @@
 #   source_file = "${path.module}/configmaps/livegrep.ignorelist.sops.txt"
 #   input_type  = "raw"
 # }
-# resource "kubernetes_config_map" "livegrep-ignorelist" {
+# resource "kubernetes_config_map_v1" "livegrep-ignorelist" {
 #   metadata {
 #     name      = "livegrep-ignorelist"
 #     namespace = "tools"

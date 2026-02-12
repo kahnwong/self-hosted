@@ -3,7 +3,7 @@ data "sops_file" "garage" {
   source_file = "${path.module}/configmaps/garage.sops.toml"
   input_type  = "raw"
 }
-resource "kubernetes_config_map" "garage" {
+resource "kubernetes_config_map_v1" "garage" {
   metadata {
     name      = "garage"
     namespace = "infrastructure"

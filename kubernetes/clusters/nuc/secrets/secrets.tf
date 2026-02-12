@@ -52,7 +52,7 @@ data "sops_file" "secrets" {
   for_each    = local.secrets_map
   source_file = "./secrets/${each.value.secret}.sops.yaml"
 }
-resource "kubernetes_secret" "secrets" {
+resource "kubernetes_secret_v1" "secrets" {
   for_each = local.secrets_map
 
   metadata {
@@ -64,7 +64,7 @@ resource "kubernetes_secret" "secrets" {
   depends_on = [data.sops_file.secrets]
 }
 
-# resource "kubernetes_secret" "harbor_config" {
+# resource "kubernetes_secret_v1" "harbor_config" {
 #   for_each = local.namespaces
 #
 #   metadata {
@@ -88,7 +88,7 @@ resource "kubernetes_secret" "secrets" {
 # }
 
 
-resource "kubernetes_secret" "ghcr_config" {
+resource "kubernetes_secret_v1" "ghcr_config" {
   for_each = local.ghcr_namespaces
 
   metadata {

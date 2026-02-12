@@ -28,7 +28,7 @@ data "sops_file" "configmaps" {
   for_each    = local.configmaps_map
   source_file = "${path.module}/configmaps/${each.key}.sops.yaml"
 }
-resource "kubernetes_config_map" "configmaps" {
+resource "kubernetes_config_map_v1" "configmaps" {
   for_each = local.configmaps_map
 
   metadata {
@@ -47,7 +47,7 @@ resource "kubernetes_config_map" "configmaps" {
 data "sops_file" "livegrep-config" {
   source_file = "${path.module}/configmaps/livegrep.config.sops.yaml"
 }
-resource "kubernetes_config_map" "livegrep-config" {
+resource "kubernetes_config_map_v1" "livegrep-config" {
   metadata {
     name      = "livegrep-clone-config"
     namespace = "tools"
@@ -66,7 +66,7 @@ data "sops_file" "garage" {
   source_file = "${path.module}/configmaps/garage.sops.toml"
   input_type  = "raw"
 }
-resource "kubernetes_config_map" "garage" {
+resource "kubernetes_config_map_v1" "garage" {
   metadata {
     name      = "garage"
     namespace = "infrastructure"
@@ -84,7 +84,7 @@ data "sops_file" "paperless" {
   source_file = "${path.module}/configmaps/paperless.sops.conf"
   input_type  = "raw"
 }
-resource "kubernetes_config_map" "paperless" {
+resource "kubernetes_config_map_v1" "paperless" {
   metadata {
     name      = "paperless"
     namespace = "tools"

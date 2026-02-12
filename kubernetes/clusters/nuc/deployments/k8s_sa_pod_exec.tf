@@ -1,5 +1,5 @@
 # ------------------------ service account ------------------------ #
-resource "kubernetes_secret" "pod_exec" {
+resource "kubernetes_secret_v1" "pod_exec" {
   metadata {
     annotations = {
       "kubernetes.io/service-account.name" = kubernetes_service_account.pod_exec.metadata.0.name
