@@ -5,7 +5,7 @@ containers:
   # create admin user via `ntfy user add --role=admin $role`
   - name: ntfy
     repository: binwiederhier/ntfy
-    tag: v2.16.0
+    tag: v2.17.0
     port: 80
     args: ["serve", "--cache-file", "/var/cache/ntfy/cache.db"]
     env:
