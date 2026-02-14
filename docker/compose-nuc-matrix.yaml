@@ -12,7 +12,7 @@ services:
     networks:
       - matrix
   mautrix-whatsapp:
-    image: dock.mau.dev/mautrix/whatsapp:v0.2510.0
+    image: dock.mau.dev/mautrix/whatsapp:v0.2601.0
     container_name: mautrix-whatsapp
     restart: always
     volumes:
