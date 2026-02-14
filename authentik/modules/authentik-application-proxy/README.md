@@ -5,14 +5,14 @@
 
 | Name | Version |
 |------|---------|
-| authentik | 2025.12.0 |
+| authentik | 2025.12.1 |
 | random | 3.8.1 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| authentik | 2025.12.0 |
+| authentik | 2025.12.1 |
 
 ## Modules
 
@@ -22,8 +22,8 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [authentik_application.this](https://registry.terraform.io/providers/goauthentik/authentik/2025.12.0/docs/resources/application) | resource |
-| [authentik_provider_proxy.this](https://registry.terraform.io/providers/goauthentik/authentik/2025.12.0/docs/resources/provider_proxy) | resource |
+| [authentik_application.this](https://registry.terraform.io/providers/goauthentik/authentik/2025.12.1/docs/resources/application) | resource |
+| [authentik_provider_proxy.this](https://registry.terraform.io/providers/goauthentik/authentik/2025.12.1/docs/resources/provider_proxy) | resource |
 
 ## Inputs
 
