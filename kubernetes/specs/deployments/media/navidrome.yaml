@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: navidrome
     repository: deluan/navidrome
-    tag: 0.59.0
+    tag: 0.60.3
     port: 4533
     env:
       - name: ND_SCANINTERVAL
