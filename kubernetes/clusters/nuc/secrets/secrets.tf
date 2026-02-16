@@ -12,7 +12,7 @@ locals {
     ]
     notes = ["notes-sync"]
     jobs = [
-      "backup", "ddns", "water-cut-notify",
+      "backup", "ddns", "aqi-notify", "water-cut-notify",
       "authentik-postgres",
       "forgejo-postgres",
       "immich-postgres",

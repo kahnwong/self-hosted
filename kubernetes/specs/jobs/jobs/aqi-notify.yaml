@@ -1,0 +1,9 @@
+name: aqi-notify
+schedule: "0 0 * * *" # 7AM Asia/Bangkok
+containers:
+  - name: aqi-notify
+    repository: ghcr.io/kahnwong/aqi-notify
+    tag: "e7c92d5"
+    envFrom:
+      - secretRef:
+          name: aqi-notify

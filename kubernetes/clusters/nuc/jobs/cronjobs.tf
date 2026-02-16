@@ -10,6 +10,7 @@ locals {
 
   jobs_fringe_division = tomap({
     jobs = [
+      "aqi-notify",
       "backup-authentik",
       "backup-forgejo-data",
       "backup-forgejo-db",
