@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: llm-context
     repository: ghcr.io/kahnwong/llm-honeypot
-    tag: "daa97ab"
+    tag: "a38680b"
     port: 3000
     envFrom:
       - secretRef:
