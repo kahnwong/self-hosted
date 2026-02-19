@@ -34,7 +34,6 @@ locals {
       "wallabag", "wallabag-postgres", "wallabag-redis",
     ]
     notes = [
-      "notes",
       "notes-personal",
     ]
     tools = [
@@ -63,8 +62,8 @@ locals {
       "thai-tech-cal",
     ]
     notes = [
-      "notes-console-k",
-      "notes-console-t",
+      # "notes-console-k",
+      # "notes-console-t",
     ]
     playground = [
       "go-playground",

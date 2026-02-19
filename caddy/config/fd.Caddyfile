@@ -184,22 +184,6 @@ homer.karnwong.me {
         reverse_proxy 192.168.1.36:30053
     }
 }
-k.console.notes.karnwong.me {
-    route {
-		crowdsec
-        reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
-
-        forward_auth http://192.168.1.36:30047 {
-            uri /outpost.goauthentik.io/auth/caddy
-            copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
-            trusted_proxies private_ranges
-        }
-
-        reverse_proxy 192.168.1.36:31080 {
-            header_up Host notes-console-k.notes.example.com
-        }
-    }
-}
 linkding.karnwong.me {
     route {
 		crowdsec
@@ -229,20 +213,6 @@ livegrep.karnwong.me {
     }
 }
 notes.karnwong.me {
-    route {
-		crowdsec
-        reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
-
-        forward_auth http://192.168.1.36:30047 {
-            uri /outpost.goauthentik.io/auth/caddy
-            copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
-            trusted_proxies private_ranges
-        }
-
-        reverse_proxy 192.168.1.36:30052
-    }
-}
-np.karnwong.me {
     route {
 		crowdsec
         reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
@@ -283,22 +253,6 @@ pdf.karnwong.me {
 
         reverse_proxy 192.168.1.36:31080 {
             header_up Host stirling-pdf.tools.example.com
-        }
-    }
-}
-t.console.notes.karnwong.me {
-    route {
-		crowdsec
-        reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
-
-        forward_auth http://192.168.1.36:30047 {
-            uri /outpost.goauthentik.io/auth/caddy
-            copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
-            trusted_proxies private_ranges
-        }
-
-        reverse_proxy 192.168.1.36:31080 {
-            header_up Host notes-console-t.notes.example.com
         }
     }
 }

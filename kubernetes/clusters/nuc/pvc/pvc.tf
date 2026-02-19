@@ -43,20 +43,20 @@ locals {
         path       = "/opt/transmission/downloads/complete"
       },
     ]
-    notes = [
-      {
-        deployment = "notes-console-k-config"
-        path       = "/opt/notes-console/k/config"
-      },
-      {
-        deployment = "notes-console-t-config"
-        path       = "/opt/notes-console/t/config"
-      },
-      {
-        deployment = "notes-work"
-        path       = "/opt/syncthing/apps/notes/notes-work"
-      }
-    ]
+    # notes = [
+    #   {
+    #     deployment = "notes-console-k-config"
+    #     path       = "/opt/notes-console/k/config"
+    #   },
+    #   {
+    #     deployment = "notes-console-t-config"
+    #     path       = "/opt/notes-console/t/config"
+    #   },
+    #   {
+    #     deployment = "notes-work"
+    #     path       = "/opt/syncthing/apps/notes/notes-work"
+    #   }
+    # ]
     tools = [
       # {
       #   deployment = "opengist"

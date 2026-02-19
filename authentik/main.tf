@@ -21,18 +21,15 @@ locals {
   )
   application_proxy_admin_only = toset([
     "livegrep",
-    "np",
+    "notes",
     "todotxt",
   ])
   application_proxy = toset([
     "evcc",
     "homer",
-    "k.console.notes",
     "linkding",
     "mlflow",
-    "notes",
     "pdf",
-    "t.console.notes",
   ])
 }
 

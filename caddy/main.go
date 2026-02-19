@@ -36,17 +36,14 @@ func main() {
 		"wakapi":           "30041",
 	}
 	servicesForwardAuth := map[string]string{
-		"evcc":            "30060",
-		"homer":           "30053",
-		"k.console.notes": "notes-console-k.notes",
-		"linkding":        "30005",
-		"livegrep":        "30033",
-		"notes":           "30052",
-		"np":              "30084",
-		"opencost":        "30054",
-		"pdf":             "stirling-pdf.tools",
-		"t.console.notes": "notes-console-t.notes",
-		"todotxt":         "30064",
+		"evcc":     "30060",
+		"homer":    "30053",
+		"linkding": "30005",
+		"livegrep": "30033",
+		"notes":    "30084",
+		"opencost": "30054",
+		"pdf":      "stirling-pdf.tools",
+		"todotxt":  "30064",
 	}
 
 	// generate config
