@@ -57,26 +57,26 @@ services:
       - POSTGRES_DB=postgres
     networks:
       - postgres
-  n8n:
-    image: docker.n8n.io/n8nio/n8n:1.123.16
-    container_name: n8n
-    restart: always
-    ports:
-      - "5678:5678"
-    user: 1000:1000
-    env_file:
-      - .env.app.n8n
-    environment:
-      - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
-      - N8N_PORT=5678
-      - N8N_PROTOCOL=https
-      - N8N_RUNNERS_ENABLED=true
-      - NODE_ENV=production
-    volumes: # `sudo chown -R 1000:1000 /opt/n8n/data`
-      - /opt/n8n/data:/home/node/.n8n
-      - /opt/n8n/files:/files
-    networks:
-      - n8n
+  # n8n:
+  #   image: docker.n8n.io/n8nio/n8n:1.123.16
+  #   container_name: n8n
+  #   restart: always
+  #   ports:
+  #     - "5678:5678"
+  #   user: 1000:1000
+  #   env_file:
+  #     - .env.app.n8n
+  #   environment:
+  #     - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
+  #     - N8N_PORT=5678
+  #     - N8N_PROTOCOL=https
+  #     - N8N_RUNNERS_ENABLED=true
+  #     - NODE_ENV=production
+  #   volumes: # `sudo chown -R 1000:1000 /opt/n8n/data`
+  #     - /opt/n8n/data:/home/node/.n8n
+  #     - /opt/n8n/files:/files
+  #   networks:
+  #     - n8n
 networks:
   syncthing:
     driver: bridge
@@ -84,5 +84,5 @@ networks:
     driver: bridge
   postgres:
     driver: bridge
-  n8n:
-    driver: bridge
+  # n8n:
+  #   driver: bridge
