@@ -34,7 +34,7 @@ services:
     restart: always
     # ports:
     #  - 8080:8080
-    image: twinproduction/gatus:v5.33.1
+    image: twinproduction/gatus:v5.35.0
     volumes:
       - ./config/gatus.yaml:/config/config.yaml:ro
       - /opt/gatus/data:/data
