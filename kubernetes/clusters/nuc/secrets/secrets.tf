@@ -2,7 +2,7 @@ locals {
   secrets = tomap({
     analytics      = []
     authentik      = ["authentik-env", "authentik-postgres"] # `authentic-env` is to prevent name collision with secrets provided by helm chart
-    default        = ["subsonic-widgets"]
+    default        = []
     harbor         = ["harbor", "harbor-postgres"]
     immich         = ["immich", "immich-machine-learning", "immich-postgres"]
     infrastructure = ["forgejo", "forgejo-postgres", "llm-honeypot", "mlflow", "mlflow-postgres", "ntfy"]
@@ -25,8 +25,9 @@ locals {
     tools = [
       "cpubench",
       "livegrep-clone-custom",
-      "rallly", "rallly-postgres",
       "qrcode-api",
+      "rallly", "rallly-postgres",
+      "subsonic-widgets",
       "supersecretmessage-vault",
       "wakapi", "wakapi-postgres",
       "weather-api",

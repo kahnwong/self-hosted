@@ -14,11 +14,9 @@ locals {
   deployments_fringe_division = tomap({
     analytics = []
     authentik = ["authentik-postgres", "authentik-valkey"]
-    default = [
-      "subsonic-widgets",
-    ]
-    harbor = ["harbor-postgres"]
-    immich = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
+    default   = []
+    harbor    = ["harbor-postgres"]
+    immich    = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
     infrastructure = [
       "forgejo", "forgejo-postgres",
       "garage",
@@ -48,6 +46,7 @@ locals {
       "rallly", "rallly-postgres",
       "rss-bridge",
       "sshx",
+      "subsonic-widgets",
       "supersecretmessage", "supersecretmessage-vault",
       "todotxt",
       "wakapi", "wakapi-postgres",
