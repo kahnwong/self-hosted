@@ -45,7 +45,7 @@ services:
     restart: always
     # ports:
     #  - 5230:5230
-    image: neosmemo/memos:0.26.1
+    image: neosmemo/memos:0.26.2
     volumes:
       - /opt/memos/data:/var/opt/memos
   vaultwarden:
