@@ -1,6 +1,6 @@
 services:
   tuwunel:
-    image: jevolk/tuwunel:v1.4.9
+    image: jevolk/tuwunel:v1.5.0
     container_name: tuwunel
     restart: always
     ports:
