@@ -153,10 +153,6 @@ resource "helm_release" "knative" {
 }
 
 # ------ notes-sync ------ #
-resource "kubernetes_manifest" "notes_sync" {
-  manifest = yamldecode(file("../../../specs/deployments/notes/notes-sync.yaml"))
-}
-
 resource "kubernetes_manifest" "notes_personal" {
   manifest = yamldecode(file("../../../specs/deployments/notes/notes-personal-sync.yaml"))
 }
