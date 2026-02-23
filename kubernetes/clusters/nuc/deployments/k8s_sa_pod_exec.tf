@@ -2,15 +2,15 @@
 resource "kubernetes_secret_v1" "pod_exec" {
   metadata {
     annotations = {
-      "kubernetes.io/service-account.name" = kubernetes_service_account.pod_exec.metadata.0.name
+      "kubernetes.io/service-account.name" = kubernetes_service_account_v1.pod_exec.metadata.0.name
     }
     namespace = "jobs"
-    name      = "${kubernetes_service_account.pod_exec.metadata.0.name}-token"
+    name      = "${kubernetes_service_account_v1.pod_exec.metadata.0.name}-token"
   }
   type                           = "kubernetes.io/service-account-token"
   wait_for_service_account_token = true
 }
-resource "kubernetes_service_account" "pod_exec" {
+resource "kubernetes_service_account_v1" "pod_exec" {
   metadata {
     name      = "sa-pod-exec"
     namespace = "jobs"
@@ -18,7 +18,7 @@ resource "kubernetes_service_account" "pod_exec" {
 }
 
 # ------------------------ cluster role ------------------------ #
-resource "kubernetes_cluster_role" "pod_exec" {
+resource "kubernetes_cluster_role_v1" "pod_exec" {
   metadata {
     name = "cr-pod-exec"
   }
@@ -36,18 +36,18 @@ resource "kubernetes_cluster_role" "pod_exec" {
 }
 
 # ------------------------ cluster role binding ------------------------ #
-resource "kubernetes_cluster_role_binding" "pod_exec" {
+resource "kubernetes_cluster_role_binding_v1" "pod_exec" {
   metadata {
     name = "crb-pod-exec"
   }
   role_ref {
     api_group = "rbac.authorization.k8s.io"
     kind      = "ClusterRole"
-    name      = kubernetes_cluster_role.pod_exec.metadata.0.name
+    name      = kubernetes_cluster_role_v1.pod_exec.metadata.0.name
   }
   subject {
     kind      = "ServiceAccount"
-    name      = kubernetes_service_account.pod_exec.metadata.0.name
+    name      = kubernetes_service_account_v1.pod_exec.metadata.0.name
     namespace = "jobs"
   }
 }

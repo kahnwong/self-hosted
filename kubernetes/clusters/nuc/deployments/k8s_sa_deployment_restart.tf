@@ -2,15 +2,15 @@
 resource "kubernetes_secret_v1" "deployment_restart" {
   metadata {
     annotations = {
-      "kubernetes.io/service-account.name" = kubernetes_service_account.deployment_restart.metadata.0.name
+      "kubernetes.io/service-account.name" = kubernetes_service_account_v1.deployment_restart.metadata.0.name
     }
     namespace = "jobs"
-    name      = "${kubernetes_service_account.deployment_restart.metadata.0.name}-token"
+    name      = "${kubernetes_service_account_v1.deployment_restart.metadata.0.name}-token"
   }
   type                           = "kubernetes.io/service-account-token"
   wait_for_service_account_token = true
 }
-resource "kubernetes_service_account" "deployment_restart" {
+resource "kubernetes_service_account_v1" "deployment_restart" {
   metadata {
     name      = "sa-deployment-restart"
     namespace = "jobs"
@@ -18,7 +18,7 @@ resource "kubernetes_service_account" "deployment_restart" {
 }
 
 # ------------------------ cluster role ------------------------ #
-resource "kubernetes_cluster_role" "deployment_restart" {
+resource "kubernetes_cluster_role_v1" "deployment_restart" {
   metadata {
     name = "cr-deployment-restart"
   }
@@ -32,18 +32,18 @@ resource "kubernetes_cluster_role" "deployment_restart" {
 }
 
 # ------------------------ cluster role binding ------------------------ #
-resource "kubernetes_cluster_role_binding" "deployment_restart" {
+resource "kubernetes_cluster_role_binding_v1" "deployment_restart" {
   metadata {
     name = "crb-deployment-restart"
   }
   role_ref {
     api_group = "rbac.authorization.k8s.io"
     kind      = "ClusterRole"
-    name      = kubernetes_cluster_role.deployment_restart.metadata.0.name
+    name      = kubernetes_cluster_role_v1.deployment_restart.metadata.0.name
   }
   subject {
     kind      = "ServiceAccount"
-    name      = kubernetes_service_account.deployment_restart.metadata.0.name
+    name      = kubernetes_service_account_v1.deployment_restart.metadata.0.name
     namespace = "jobs"
   }
 }
