@@ -2,7 +2,7 @@ name: stirling-pdf
 containers:
   - name: stirling-pdf
     repository: docker.stirlingpdf.com/stirlingtools/stirling-pdf
-    tag: 1.6.0-ultra-lite
+    tag: 2.5.2-ultra-lite
     port: 8080
     env:
       - name: LANGS
