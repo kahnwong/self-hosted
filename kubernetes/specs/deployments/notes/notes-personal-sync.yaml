@@ -19,7 +19,7 @@ spec:
             path: /opt/notes-personal-sync
       containers:
         - name: git-sync
-          image: registry.k8s.io/git-sync/git-sync:v4.5.1
+          image: registry.k8s.io/git-sync/git-sync:v4.6.0
           args:
             - --repo=https://github.com/kahnwong/notes-personal.git
             - --depth=1
