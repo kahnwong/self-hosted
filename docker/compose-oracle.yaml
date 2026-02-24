@@ -67,3 +67,6 @@ services:
     volumes:
       - ./Caddyfile.oracle:/etc/caddy/Caddyfile:ro
       - /opt/caddy/data:/data
+      - caddy_data:/data
+volumes:
+  caddy_data:
