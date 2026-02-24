@@ -2,29 +2,29 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: ubuntu-vm-ssh
+  name: apps-vm-ssh
   namespace: vms
 spec:
   type: NodePort
   selector:
-    kubevirt.io/vm: ubuntu-vm
+    kubevirt.io/vm: apps-vm
   ports:
     - protocol: TCP
       port: 22
       targetPort: 22
-      nodePort: 30080
+      nodePort: 30081
 ---
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
-  name: ubuntu-vm
+  name: apps-vm
   namespace: vms
 spec:
   runStrategy: Halted
   template:
     metadata:
       labels:
-        kubevirt.io/vm: ubuntu-vm
+        kubevirt.io/vm: apps-vm
     spec:
       domain:
         devices:
@@ -40,26 +40,26 @@ spec:
               masquerade: {}
         resources:
           requests:
-            memory: 4Gi
-            cpu: 4
+            memory: 2Gi
+            cpu: 2
       networks:
         - name: default
           pod: {}
       volumes:
         - name: rootdisk
           dataVolume:
-            name: ubuntu-dv
+            name: apps-dv
         - name: cloudinitdisk
           cloudInitNoCloud:
             userData: |
               #cloud-config
-              hostname: ubuntu-vm
+              hostname: apps-vm
               users:
                 - name: ubuntu
                   sudo: ALL=(ALL) NOPASSWD:ALL
                   shell: /bin/bash
                   ssh_authorized_keys:
-                    - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB1ItYazIZC/52E7kJy1NRZxGnqaoSacS1bl3YcoHj5B
+                    - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBj982HEBeVoQNBzx36aeHP4ERNH6UrvKX2ZyLPysYOu
               ssh_pwauth: true
               disable_root: false
               chpasswd:
@@ -74,12 +74,12 @@ spec:
                 - systemctl start ssh
   dataVolumeTemplates:
     - metadata:
-        name: ubuntu-dv
+        name: apps-dv
       spec:
         storage:
           resources:
             requests:
-              storage: 32Gi
+              storage: 8Gi
           accessModes:
             - ReadWriteOnce
         source:

@@ -4,6 +4,8 @@
 
 See `./setup.sh`
 
+Change default password: `passwd`
+
 ## Quickstart
 
 ```bash
