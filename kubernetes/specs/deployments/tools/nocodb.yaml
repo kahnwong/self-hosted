@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: nocodb
     repository: nocodb/nocodb
-    tag: 0.301.2
+    tag: 0.301.3
     port: 8080
     volumeMounts:
       - name: data
