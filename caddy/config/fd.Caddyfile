@@ -116,6 +116,12 @@ rally.karnwong.me {
     	reverse_proxy 192.168.1.36:30035
 	}
 }
+retrooo.karnwong.me {
+    route {
+		crowdsec
+    	reverse_proxy 192.168.1.36:30081
+	}
+}
 rustpad.karnwong.me {
     route {
 		crowdsec

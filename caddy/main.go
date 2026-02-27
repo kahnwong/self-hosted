@@ -28,6 +28,7 @@ func main() {
 		"paperless":        "30079",
 		"qa-api":           "30043",
 		"rally":            "30035",
+		"retrooo":          "30081",
 		"rustpad":          "rustpad.tools",
 		"secrets":          "30025",
 		"subsonic-widgets": "30038",

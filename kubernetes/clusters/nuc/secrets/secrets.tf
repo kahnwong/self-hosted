@@ -27,6 +27,7 @@ locals {
       "livegrep-clone-custom",
       "qrcode-api",
       "rallly", "rallly-postgres",
+      "retrooo",
       "subsonic-widgets",
       "supersecretmessage-vault",
       "wakapi", "wakapi-postgres",

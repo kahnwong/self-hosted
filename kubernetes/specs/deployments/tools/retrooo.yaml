@@ -1,0 +1,29 @@
+kind: Deployment
+name: retrooo
+replicaCount: 1
+containers:
+  - name: retrooo
+    repository: ghcr.io/kahnwong/retrooo
+    tag: "4c8e936"
+    port: 3000
+    env:
+      - name: LISTEN_ADDR
+        value: ":3000"
+      - name: MODE
+        value: "production"
+    envFrom:
+      - secretRef:
+          name: retrooo
+    volumeMounts:
+      - name: data
+        mountPath: /data
+    livenessProbeScheme: tcp
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/retrooo/data
+service:
+  port: 3000
+  nodePort: 30081
+imagePullSecrets:
+  - name: ghcr-cfg

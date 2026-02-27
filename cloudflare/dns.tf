@@ -17,9 +17,10 @@ locals {
     "nocodb",
     "pmtiles", # if use docker-caddy, it needs to be a separate instance because it uses `file_server` directive
     "rally",
+    "retrooo",
     "rustpad",
-    "subsonic-widgets",
     "secrets",
+    "subsonic-widgets",
     "thai-tech-cal",
     "todotxt",
     "wakapi",

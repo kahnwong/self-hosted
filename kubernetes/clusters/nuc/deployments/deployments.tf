@@ -44,6 +44,7 @@ locals {
       "paperless-ngx", "paperless-ngx-valkey",
       "qrcode-api",
       "rallly", "rallly-postgres",
+      "retrooo",
       "rss-bridge",
       "sshx",
       "subsonic-widgets",
