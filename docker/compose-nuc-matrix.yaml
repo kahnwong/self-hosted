@@ -32,7 +32,7 @@ services:
     networks:
       - matrix
   mautrix-discord:
-    image: dock.mau.dev/mautrix/discord:v0.7.5
+    image: dock.mau.dev/mautrix/discord:v0.7.6
     container_name: mautrix-discord
     restart: always
     volumes:
