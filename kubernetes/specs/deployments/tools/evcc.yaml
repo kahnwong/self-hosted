@@ -5,7 +5,7 @@ replicaCount: 1
 containers:
   - name: evcc
     repository: evcc/evcc
-    tag: 0.301.1
+    tag: 0.301.2
     port: 7070
     volumeMounts:
       - name: data
