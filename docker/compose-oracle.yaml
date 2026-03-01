@@ -49,7 +49,7 @@ services:
     volumes:
       - /opt/memos/data:/var/opt/memos
   vaultwarden:
-    image: vaultwarden/server:1.35.3
+    image: vaultwarden/server:1.35.4
     container_name: vaultwarden
     restart: always
     env_file:
