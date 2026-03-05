@@ -59,12 +59,12 @@ func main() {
 		},
 	}
 
-	generateConfig(fd, "192.168.1.36", "", "fd.Caddyfile")
-	generateConfig(bird, "192.168.1.122", "bird", "bird.Caddyfile")
+	generateConfig(fd, "", "fd.Caddyfile")
+	generateConfig(bird, "bird", "bird.Caddyfile")
 }
 
-func generateConfig(services map[string]map[string]string, serverIP string, tenant string, filename string) {
-	config := generateServices(services["services"], serverIP, tenant)
+func generateConfig(services map[string]map[string]string, tenant string, filename string) {
+	config := generateServices(services["services"], tenant)
 	configForwardAuth := generateForwathAuthServices(services["servicesForwardAuth"])
 
 	configAll := config + configForwardAuth
@@ -78,7 +78,7 @@ func generateConfig(services map[string]map[string]string, serverIP string, tena
 	fmt.Println("Caddyfile configured")
 }
 
-func generateServices(services map[string]string, serverIP string, tenant string) string {
+func generateServices(services map[string]string, tenant string) string {
 	config := ""
 
 	keys := make([]string, 0, len(services))
@@ -97,12 +97,9 @@ func generateServices(services map[string]string, serverIP string, tenant string
 	for _, k := range keys {
 		if !strings.Contains(services[k], ".") { // normal deployment
 			config += fmt.Sprintf(`%s.%s {
-    route {
-        crowdsec
-        reverse_proxy %s:%s
-    }
+    import base %s
 }
-`, k, baseDomain, serverIP, services[k])
+`, k, baseDomain, services[k])
 		} else { // knative
 			config += fmt.Sprintf(`%s.karnwong.me {
     import knative %s

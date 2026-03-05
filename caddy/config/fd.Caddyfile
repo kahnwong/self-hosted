@@ -1,146 +1,80 @@
 api.qrcode.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:30077
-    }
+    import base 30077
 }
 api.weather.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:30078
-    }
+    import base 30078
 }
 authentik.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:30047
-    }
+    import base 30047
 }
 cpubench.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:30080
-    }
+    import base 30080
 }
 garage.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:30070
-    }
+    import base 30070
 }
 git.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:30026
-    }
+    import base 30026
 }
 go.karnwong.me {
     import knative go-playground.playground
 }
 harbor.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:30500
-    }
+    import base 30500
 }
 immich.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:30030
-    }
+    import base 30030
 }
 jellyfin.karnwong.me {
     import knative jellyfin.media
 }
 llm-context.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:30055
-    }
+    import base 30055
 }
 matrix.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:6167
-    }
+    import base 6167
 }
 miniflux.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:30007
-    }
+    import base 30007
 }
 music.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:30006
-    }
+    import base 30006
 }
 n8n.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:5678
-    }
+    import base 5678
 }
 nocodb.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:30062
-    }
+    import base 30062
 }
 paperless.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:30079
-    }
+    import base 30079
 }
 qa-api.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:30043
-    }
+    import base 30043
 }
 rally.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:30035
-    }
+    import base 30035
 }
 retrooo.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:30081
-    }
+    import base 30081
 }
 rustpad.karnwong.me {
     import knative rustpad.tools
 }
 secrets.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:30025
-    }
+    import base 30025
 }
 subsonic-widgets.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:30038
-    }
+    import base 30038
 }
 syncthing.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:8384
-    }
+    import base 8384
 }
 thai-tech-cal.karnwong.me {
     import knative thai-tech-cal.news
 }
 wakapi.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:30041
-    }
+    import base 30041
 }
 evcc.karnwong.me {
     route {
