@@ -1,5 +1,7 @@
 name: ddns
-schedule: "*/5 * * * *"
+# will be run via cron, but this is kept here so it's easier to trigger and read logs
+# "*/5 * * * *" - every 5 minutes
+schedule: "0 0 * * 0" # every week
 containers:
   - name: ddns
     repository: favonia/cloudflare-ddns
