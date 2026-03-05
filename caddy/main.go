@@ -124,36 +124,12 @@ func generateForwathAuthServices(services map[string]string) string {
 	for _, k := range keys {
 		if !strings.Contains(services[k], ".") { // normal deployment
 			config += fmt.Sprintf(`%s.karnwong.me {
-    route {
-		crowdsec
-        reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
-
-        forward_auth http://192.168.1.36:30047 {
-            uri /outpost.goauthentik.io/auth/caddy
-            copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
-            trusted_proxies private_ranges
-        }
-
-        reverse_proxy 192.168.1.36:%v
-    }
+    import authentik_base %s
 }
 `, k, services[k])
 		} else { // knative
 			config += fmt.Sprintf(`%s.karnwong.me {
-    route {
-		crowdsec
-        reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
-
-        forward_auth http://192.168.1.36:30047 {
-            uri /outpost.goauthentik.io/auth/caddy
-            copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
-            trusted_proxies private_ranges
-        }
-
-        reverse_proxy 192.168.1.36:31080 {
-            header_up Host %s.example.com
-        }
-    }
+    import authentik_knative %s
 }
 `, k, services[k])
 		}

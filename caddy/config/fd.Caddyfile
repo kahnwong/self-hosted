@@ -77,116 +77,26 @@ wakapi.karnwong.me {
     import base 30041
 }
 evcc.karnwong.me {
-    route {
-		crowdsec
-        reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
-
-        forward_auth http://192.168.1.36:30047 {
-            uri /outpost.goauthentik.io/auth/caddy
-            copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
-            trusted_proxies private_ranges
-        }
-
-        reverse_proxy 192.168.1.36:30060
-    }
+    import authentik_base 30060
 }
 homer.karnwong.me {
-    route {
-		crowdsec
-        reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
-
-        forward_auth http://192.168.1.36:30047 {
-            uri /outpost.goauthentik.io/auth/caddy
-            copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
-            trusted_proxies private_ranges
-        }
-
-        reverse_proxy 192.168.1.36:30053
-    }
+    import authentik_base 30053
 }
 linkding.karnwong.me {
-    route {
-		crowdsec
-        reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
-
-        forward_auth http://192.168.1.36:30047 {
-            uri /outpost.goauthentik.io/auth/caddy
-            copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
-            trusted_proxies private_ranges
-        }
-
-        reverse_proxy 192.168.1.36:30005
-    }
+    import authentik_base 30005
 }
 livegrep.karnwong.me {
-    route {
-		crowdsec
-        reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
-
-        forward_auth http://192.168.1.36:30047 {
-            uri /outpost.goauthentik.io/auth/caddy
-            copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
-            trusted_proxies private_ranges
-        }
-
-        reverse_proxy 192.168.1.36:30033
-    }
+    import authentik_base 30033
 }
 notes.karnwong.me {
-    route {
-		crowdsec
-        reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
-
-        forward_auth http://192.168.1.36:30047 {
-            uri /outpost.goauthentik.io/auth/caddy
-            copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
-            trusted_proxies private_ranges
-        }
-
-        reverse_proxy 192.168.1.36:30084
-    }
+    import authentik_base 30084
 }
 opencost.karnwong.me {
-    route {
-		crowdsec
-        reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
-
-        forward_auth http://192.168.1.36:30047 {
-            uri /outpost.goauthentik.io/auth/caddy
-            copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
-            trusted_proxies private_ranges
-        }
-
-        reverse_proxy 192.168.1.36:30054
-    }
+    import authentik_base 30054
 }
 pdf.karnwong.me {
-    route {
-		crowdsec
-        reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
-
-        forward_auth http://192.168.1.36:30047 {
-            uri /outpost.goauthentik.io/auth/caddy
-            copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
-            trusted_proxies private_ranges
-        }
-
-        reverse_proxy 192.168.1.36:31080 {
-            header_up Host stirling-pdf.tools.example.com
-        }
-    }
+    import authentik_knative stirling-pdf.tools
 }
 todotxt.karnwong.me {
-    route {
-		crowdsec
-        reverse_proxy /outpost.goauthentik.io/* http://192.168.1.36:30047
-
-        forward_auth http://192.168.1.36:30047 {
-            uri /outpost.goauthentik.io/auth/caddy
-            copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
-            trusted_proxies private_ranges
-        }
-
-        reverse_proxy 192.168.1.36:30064
-    }
+    import authentik_base 30064
 }
