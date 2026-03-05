@@ -8,61 +8,77 @@ import (
 )
 
 func main() {
-	services := map[string]string{
-		"api.qrcode":       "30077",
-		"api.weather":      "30078",
-		"authentik":        "30047",
-		"cpubench":         "30080",
-		"garage":           "30070",
-		"git":              "30026",
-		"go":               "go-playground.playground",
-		"harbor":           "30500",
-		"immich":           "30030",
-		"jellyfin":         "jellyfin.media",
-		"llm-context":      "30055",
-		"matrix":           "6167",
-		"miniflux":         "30007",
-		"music":            "30006",
-		"n8n":              "5678",
-		"nocodb":           "30062",
-		"paperless":        "30079",
-		"qa-api":           "30043",
-		"rally":            "30035",
-		"retrooo":          "30081",
-		"rustpad":          "rustpad.tools",
-		"secrets":          "30025",
-		"subsonic-widgets": "30038",
-		"syncthing":        "8384",
-		"thai-tech-cal":    "thai-tech-cal.news",
-		"wakapi":           "30041",
-	}
-	servicesForwardAuth := map[string]string{
-		"evcc":     "30060",
-		"homer":    "30053",
-		"linkding": "30005",
-		"livegrep": "30033",
-		"notes":    "30084",
-		"opencost": "30054",
-		"pdf":      "stirling-pdf.tools",
-		"todotxt":  "30064",
+	fd := map[string]map[string]string{
+		"services": {
+			"api.qrcode":       "30077",
+			"api.weather":      "30078",
+			"authentik":        "30047",
+			"cpubench":         "30080",
+			"garage":           "30070",
+			"git":              "30026",
+			"go":               "go-playground.playground",
+			"harbor":           "30500",
+			"immich":           "30030",
+			"jellyfin":         "jellyfin.media",
+			"llm-context":      "30055",
+			"matrix":           "6167",
+			"miniflux":         "30007",
+			"music":            "30006",
+			"n8n":              "5678",
+			"nocodb":           "30062",
+			"paperless":        "30079",
+			"qa-api":           "30043",
+			"rally":            "30035",
+			"retrooo":          "30081",
+			"rustpad":          "rustpad.tools",
+			"secrets":          "30025",
+			"subsonic-widgets": "30038",
+			"syncthing":        "8384",
+			"thai-tech-cal":    "thai-tech-cal.news",
+			"wakapi":           "30041",
+		},
+		"servicesForwardAuth": {
+			"evcc":     "30060",
+			"homer":    "30053",
+			"linkding": "30005",
+			"livegrep": "30033",
+			"notes":    "30084",
+			"opencost": "30054",
+			"pdf":      "stirling-pdf.tools",
+			"todotxt":  "30064",
+		},
 	}
 
-	// generate config
-	config := generateConfig(services)
-	configForwardAuth := generateConfigForwardAuth(servicesForwardAuth)
+	bird := map[string]map[string]string{
+		"services": {
+			"chat":   "3000",
+			"garage": "30070",
+			"immich": "30030",
+			"ntfy":   "30022",
+			"sshx":   "30028",
+		},
+	}
+
+	generateConfig(fd, "192.168.1.36", "", "fd.Caddyfile")
+	generateConfig(bird, "192.168.1.122", "bird", "bird.Caddyfile")
+}
+
+func generateConfig(services map[string]map[string]string, serverIP string, tenant string, filename string) {
+	config := generateServices(services["services"], serverIP, tenant)
+	configForwardAuth := generateForwathAuthServices(services["servicesForwardAuth"])
 
 	configAll := config + configForwardAuth
 	fmt.Println(configAll)
 
 	// write to file
-	err := os.WriteFile("./config/fd.Caddyfile", []byte(configAll), 0644)
+	err := os.WriteFile(fmt.Sprintf("./config/%s", filename), []byte(configAll), 0644)
 	if err != nil {
 		panic(err)
 	}
 	fmt.Println("Caddyfile configured")
 }
 
-func generateConfig(services map[string]string) string {
+func generateServices(services map[string]string, serverIP string, tenant string) string {
 	config := ""
 
 	keys := make([]string, 0, len(services))
@@ -72,15 +88,21 @@ func generateConfig(services map[string]string) string {
 	}
 	sort.Strings(keys)
 
+	// create slug
+	baseDomain := "karnwong.me"
+	if tenant != "" {
+		baseDomain = fmt.Sprintf("%s.%s", tenant, baseDomain)
+	}
+
 	for _, k := range keys {
 		if !strings.Contains(services[k], ".") { // normal deployment
-			config += fmt.Sprintf(`%s.karnwong.me {
+			config += fmt.Sprintf(`%s.%s {
     route {
-		crowdsec
-    	reverse_proxy 192.168.1.36:%s
-	}
+        crowdsec
+        reverse_proxy %s:%s
+    }
 }
-`, k, services[k])
+`, k, baseDomain, serverIP, services[k])
 		} else { // knative
 			config += fmt.Sprintf(`%s.karnwong.me {
     import knative %s
@@ -92,7 +114,7 @@ func generateConfig(services map[string]string) string {
 	return config
 }
 
-func generateConfigForwardAuth(services map[string]string) string {
+func generateForwathAuthServices(services map[string]string) string {
 	config := ""
 
 	keys := make([]string, 0, len(services))
