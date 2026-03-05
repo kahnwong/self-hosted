@@ -35,12 +35,7 @@ git.karnwong.me {
 	}
 }
 go.karnwong.me {
-    route {
-		crowdsec
-		reverse_proxy 192.168.1.36:31080 {
-			header_up Host go-playground.playground.example.com
-		}
-	}
+    import knative go-playground.playground
 }
 harbor.karnwong.me {
     route {
@@ -55,12 +50,7 @@ immich.karnwong.me {
 	}
 }
 jellyfin.karnwong.me {
-    route {
-		crowdsec
-		reverse_proxy 192.168.1.36:31080 {
-			header_up Host jellyfin.media.example.com
-		}
-	}
+    import knative jellyfin.media
 }
 llm-context.karnwong.me {
     route {
@@ -123,12 +113,7 @@ retrooo.karnwong.me {
 	}
 }
 rustpad.karnwong.me {
-    route {
-		crowdsec
-		reverse_proxy 192.168.1.36:31080 {
-			header_up Host rustpad.tools.example.com
-		}
-	}
+    import knative rustpad.tools
 }
 secrets.karnwong.me {
     route {
@@ -149,12 +134,7 @@ syncthing.karnwong.me {
 	}
 }
 thai-tech-cal.karnwong.me {
-    route {
-		crowdsec
-		reverse_proxy 192.168.1.36:31080 {
-			header_up Host thai-tech-cal.news.example.com
-		}
-	}
+    import knative thai-tech-cal.news
 }
 wakapi.karnwong.me {
     route {
