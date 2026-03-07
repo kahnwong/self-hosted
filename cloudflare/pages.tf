@@ -44,3 +44,15 @@ module "karnwong_me" {
   subdomain    = "karnwong.me"
   domain_name  = "karnwong.me"
 }
+
+# escape `.` in project name
+module "swissknife_git" {
+  source = "./modules/cloudflare-pages"
+
+  account_id = var.cloudflare_account_id
+  zone_id    = var.cloudflare_zone_id
+
+  project_name = "swissknife-git"
+  subdomain    = "swissknife.git"
+  domain_name  = "swissknife.git.karnwong.me"
+}

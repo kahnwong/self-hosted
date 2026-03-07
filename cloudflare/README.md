@@ -29,6 +29,7 @@ All users - API Tokens:Edit
 |------|--------|---------|
 | karnwong\_me | ./modules/cloudflare-pages | n/a |
 | pages | ./modules/cloudflare-pages | n/a |
+| swissknife\_git | ./modules/cloudflare-pages | n/a |
 
 ## Resources
 
