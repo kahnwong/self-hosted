@@ -56,6 +56,18 @@ services:
       - .env.app.vaultwarden
     volumes:
       - /opt/vaultwarden/data:/data
+  ontime:
+    container_name: ontime
+    image: getontime/ontime:v4
+    ports:
+      - "4001:4001/tcp" # web & api
+      - "8888:8888/udp" # OSC input
+      - "9999:9999/udp" # OSC output
+    volumes:
+      - /opt/ontime/data:/data
+    environment:
+      - TZ=Asia/Bangkok
+    restart: always
   # ---- caddy ----
   caddy:
     image: caddy:2

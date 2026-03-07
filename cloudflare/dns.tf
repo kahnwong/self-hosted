@@ -60,6 +60,7 @@ locals {
   oracle_proxied = toset([
     "anisette",
     "gatus",
+    "ontime",
     "vaultwarden",
   ])
   oracle_non_proxied = toset([

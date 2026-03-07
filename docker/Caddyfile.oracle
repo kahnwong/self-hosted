@@ -1,6 +1,3 @@
-#pairdrop.karnwong.me {
-#    reverse_proxy pairdrop:3000
-#}
 share.karnwong.me {
     reverse_proxy picoshare:4001
 }
@@ -18,4 +15,7 @@ memos.karnwong.me {
 }
 vaultwarden.karnwong.me {
     reverse_proxy vaultwarden:80
+}
+ontime.karnwong.me {
+    reverse_proxy ontime:4001
 }
