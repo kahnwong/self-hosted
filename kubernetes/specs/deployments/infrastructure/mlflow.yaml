@@ -4,11 +4,14 @@ replicaCount: 1
 containers:
   - name: mlflow
     repository: ghcr.io/kahnwong/docker-mlflow
-    tag: daa1c4f
+    tag: ba62336
     port: 8080
     envFrom:
       - secretRef:
           name: mlflow
+    env:
+      - name: MLFLOW_DISABLE_TELEMETRY
+        value: "true"
 service:
   port: 8080
   nodePort: 30037
