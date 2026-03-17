@@ -1,5 +1,5 @@
 kind: StatefulSet
-name: wallabag-redis
+name: wallabag-redis # valkey does not support setting password via ENV. this is not critical, so here it stays.
 replicaCount: 1
 containers:
   - name: redis
