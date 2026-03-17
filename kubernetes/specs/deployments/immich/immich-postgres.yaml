@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: postgres
     repository: ghcr.io/immich-app/postgres
-    tag: 14-vectorchord0.3.0-pgvectors0.2.0
+    tag: 18-vectorchord0.5.3-pgvector0.8.1
     port: 5432
     livenessProbeScheme: tcp
     envFrom:
@@ -12,7 +12,7 @@ containers:
           name: immich-postgres
     volumeMounts:
       - name: immich-data
-        mountPath: /var/lib/postgresql/data
+        mountPath: /var/lib/postgresql
 volumes:
   - name: immich-data
     hostPath:
