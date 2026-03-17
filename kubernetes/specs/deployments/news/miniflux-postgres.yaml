@@ -12,7 +12,7 @@ containers:
   ## pg_restore --user miniflux --dbname miniflux $BACKUP_FILE
   - name: postgres
     repository: postgres
-    tag: 16.2-alpine
+    tag: 16.13-alpine
     port: 5432
     livenessProbeScheme: tcp
     envFrom:
