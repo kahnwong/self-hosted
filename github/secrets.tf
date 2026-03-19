@@ -5,6 +5,7 @@ data "sops_file" "secrets" {
 # sites
 locals {
   cloudflare_pages_repos = toset([
+    "azurephant",
     "basemaps",
     "calculator",
     "docs",

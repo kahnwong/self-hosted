@@ -1,5 +1,6 @@
 locals {
   pages = toset([
+    "azurephant",
     "calculator",
     "docs",
     "excalidraw",
