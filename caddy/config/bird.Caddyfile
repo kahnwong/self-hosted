@@ -1,3 +1,6 @@
+authentik.bird.karnwong.me {
+    import base 30047
+}
 chat.bird.karnwong.me {
     import base 3000
 }
