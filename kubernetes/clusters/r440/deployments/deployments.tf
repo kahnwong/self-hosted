@@ -1,7 +1,11 @@
 locals {
   deployments = tomap({
     default = []
-    immich  = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
+    authentik = [
+      "authentik-postgres",
+      "authentik-valkey"
+    ]
+    immich = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
     infrastructure = [
       "garage",
       "mlflow", "mlflow-postgres",
@@ -35,5 +39,18 @@ resource "helm_release" "this" {
 
   values = [
     file("../../../specs/deployments/${each.value}/${each.key}.yaml"),
+  ]
+}
+
+# ------ authentik ------ #
+resource "helm_release" "authentik" {
+  name       = "authentik"
+  namespace  = "authentik"
+  repository = "https://charts.goauthentik.io"
+  version    = "2026.2.1"
+  chart      = "authentik"
+
+  values = [
+    file("../../../specs/deployments/authentik/values.yaml"),
   ]
 }

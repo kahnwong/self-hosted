@@ -1,5 +1,12 @@
 # r440-deployments
 
+## Symlinks
+
+```bash
+sudo mkdir -p /data/kubernetes/$service
+sudo ln -s /data/kubernetes/$service $service
+```
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
@@ -25,6 +32,7 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [helm_release.authentik](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
 | [helm_release.this](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
 | [kubernetes_namespace_v1.this](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/namespace_v1) | resource |
 
