@@ -1,25 +1,6 @@
-# Authentik (nuc)
+# Authentik (r440)
 
-## Applications
 
-- [gitea](https://docs.goauthentik.io/integrations/services/gitea/)
-- [harbor](https://goharbor.io/docs/2.11.0/administration/configure-authentication/oidc-auth/)
-  - OIDC endpoint should be something like this: `https://authentik.xxx.xxx/application/o/harbor/`
-  - Needs `offline_access`: <https://github.com/goauthentik/authentik/issues/9836>
-  - oidc scope: `openid,profile,email,offline_access`
-- [immich](https://immich.app/docs/administration/oauth/)
-- [linkding](https://github.com/sissbruecker/linkding/issues/486#issuecomment-1621104061)
-- [memos](https://www.usememos.com/docs/advanced-settings/authentik)
-- [miniflux](https://miniflux.app/docs/howto.html)
-- [minio](https://docs.goauthentik.io/integrations/services/minio/)
-- [opengist](https://opengist.io/docs/configuration/oauth-providers.html)
-- [proxmox](https://docs.goauthentik.io/integrations/services/proxmox-ve/)
-
-## Useful values
-
-```txt
-OpenID Configuration Issuer:  https://authentik.karnwong.me/application/o/$APP/
-```
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
