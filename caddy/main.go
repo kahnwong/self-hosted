@@ -58,6 +58,7 @@ func main() {
 			"ntfy":      "30022",
 			"sshx":      "30028",
 		},
+		"servicesForwardAuth": {},
 	}
 
 	generateConfig(fd, "", "fd.Caddyfile")

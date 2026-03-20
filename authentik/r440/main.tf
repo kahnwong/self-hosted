@@ -5,6 +5,7 @@ locals {
   application_proxy_admin_only = toset([
   ])
   application_proxy = toset([
+    "tts.bird",
   ])
 }
 

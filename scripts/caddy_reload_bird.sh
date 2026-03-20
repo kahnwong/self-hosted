@@ -7,5 +7,5 @@ rm all.Caddyfile
 	sops -d bird.header.sops.Caddyfile
 	cat bird.Caddyfile
 	echo -e "\n"
-	sops -d bird.misc.sops.Caddyfile
+	sops -d bird.private.sops.Caddyfile
 } >all.Caddyfile
