@@ -21,7 +21,7 @@ kubectl taint nodes argon storage-required=true:NoSchedule
 | helm | 3.1.1 |
 | kubectl | 2.1.6 |
 | kubernetes | 3.0.1 |
-| sops | 1.3.0 |
+| sops | 1.4.1 |
 
 ## Providers
 
@@ -29,7 +29,7 @@ kubectl taint nodes argon storage-required=true:NoSchedule
 |------|---------|
 | helm | 3.1.1 |
 | kubernetes | 3.0.1 |
-| sops | 1.3.0 |
+| sops | 1.4.1 |
 
 ## Modules
 
@@ -55,7 +55,7 @@ No modules.
 | [kubernetes_secret_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/secret_v1) | resource |
 | [kubernetes_service_account_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/service_account_v1) | resource |
 | [kubernetes_service_account_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/service_account_v1) | resource |
-| [sops_file.misc](https://registry.terraform.io/providers/carlpett/sops/1.3.0/docs/data-sources/file) | data source |
+| [sops_file.misc](https://registry.terraform.io/providers/carlpett/sops/1.4.1/docs/data-sources/file) | data source |
 
 ## Inputs
 
