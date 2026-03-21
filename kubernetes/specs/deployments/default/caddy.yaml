@@ -1,0 +1,10 @@
+kind: Deployment
+name: caddy
+containers:
+  - name: caddy
+    repository: caddy
+    tag: latest
+    port: 80
+service:
+  port: 80
+  nodePort: 30049

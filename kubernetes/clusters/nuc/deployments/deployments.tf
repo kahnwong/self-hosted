@@ -11,6 +11,8 @@ locals {
     tools = [
     ]
   })
+
+  # nuc
   deployments_fringe_division = tomap({
     analytics = []
     authentik = ["authentik-postgres", "authentik-valkey"]
@@ -76,6 +78,11 @@ locals {
   deployments_misc = toset([
     # "baz"
   ])
+
+  # lab
+  deployments_lab = tomap({
+    default = ["caddy"]
+  })
 }
 
 locals {
@@ -108,8 +115,17 @@ locals {
     ]
   ])
   deployments_knative_map = { for index, v in local.deployments_knative_map_raw : v.deployment => v.namespace }
-}
 
+  deployments_lab_map_raw = flatten([
+    for namespace, deployments in local.deployments_lab : [
+      for deployment in deployments : {
+        namespace  = namespace
+        deployment = deployment
+      }
+    ]
+  ])
+  deployments_lab_map = { for index, v in local.deployments_lab_map_raw : v.deployment => v.namespace }
+}
 
 resource "helm_release" "this" {
   for_each   = local.deployments_map
@@ -134,7 +150,6 @@ resource "helm_release" "fringe_division" {
 
   values = [
     file("../../../specs/deployments/${each.value}/${each.key}.yaml"),
-    # file("./resources/valuesTaintNodeSelector.yaml"),
   ]
 }
 
@@ -149,6 +164,20 @@ resource "helm_release" "knative" {
   values = [
     file("../../../specs/deployments/${each.value}/${each.key}.yaml"),
     # file("./resources/valuesTaintNodeSelector.yaml"),
+  ]
+}
+
+resource "helm_release" "lab" {
+  for_each   = local.deployments_lab_map
+  name       = each.key
+  namespace  = each.value
+  repository = "oci://ghcr.io/kahnwong/charts"
+  version    = "0.2.0"
+  chart      = "base"
+
+  values = [
+    file("../../../specs/deployments/${each.value}/${each.key}.yaml"),
+    file("./resources/valuesTaintNodeSelector.yaml"),
   ]
 }
 

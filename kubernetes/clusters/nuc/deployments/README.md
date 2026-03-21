@@ -9,7 +9,7 @@ helm upgrade --install slash ../../charts/base/chart --values deployments/tools/
 ## Run this by hand
 
 ```bash
-kubectl taint nodes argon storage-required=true:NoSchedule
+kubectl taint nodes lab node-lab=true:NoSchedule
 ```
 
 <!-- BEGIN_TF_DOCS -->
@@ -43,6 +43,7 @@ No modules.
 | [helm_release.fringe_division](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
 | [helm_release.harbor](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
 | [helm_release.knative](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
+| [helm_release.lab](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
 | [helm_release.misc](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
 | [helm_release.this](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
 | [kubernetes_cluster_role_binding_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/cluster_role_binding_v1) | resource |
