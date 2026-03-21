@@ -1,0 +1,21 @@
+kind: Deployment
+name: picoshare
+replicaCount: 1
+containers:
+  - name: picoshare
+    repository: mtlynch/picoshare
+    tag: 1.5.1
+    port: 4001
+    envFrom:
+      - secretRef:
+          name: picoshare
+    volumeMounts:
+      - name: data
+        mountPath: /data
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/picoshare/data
+service:
+  port: 4001
+  nodePort: 30032

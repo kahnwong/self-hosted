@@ -25,6 +25,7 @@ locals {
     tools = [
       "cpubench",
       "livegrep-clone-custom",
+      "picoshare",
       "qrcode-api",
       "rallly", "rallly-postgres",
       "retrooo",

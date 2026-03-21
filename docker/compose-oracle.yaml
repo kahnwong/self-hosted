@@ -1,14 +1,4 @@
 services:
-  picoshare:
-    image: "mtlynch/picoshare:1.5.1"
-    container_name: picoshare
-    restart: always
-    env_file:
-      - .env.app.picoshare
-    volumes:
-      - /opt/picoshare/data:/data
-      # ports:
-      #  - "4001:4001"
   anisette:
     container_name: anisette
     restart: always

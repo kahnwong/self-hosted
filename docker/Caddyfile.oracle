@@ -1,5 +1,5 @@
 share.karnwong.me {
-    reverse_proxy picoshare:4001
+    reverse_proxy localhost:30032
 }
 anisette.karnwong.me {
     reverse_proxy anisette:6969

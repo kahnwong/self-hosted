@@ -81,7 +81,8 @@ locals {
 
   # lab
   deployments_lab = tomap({
-    default = ["caddy"]
+    default = []
+    tools   = ["picoshare"]
   })
 }
 
