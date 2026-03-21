@@ -82,7 +82,10 @@ locals {
   # lab
   deployments_lab = tomap({
     default = []
-    tools   = ["picoshare"]
+    tools = [
+      "memos",
+      "picoshare"
+    ]
   })
 }
 

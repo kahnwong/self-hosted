@@ -28,16 +28,6 @@ services:
     volumes:
       - ./config/gatus.yaml:/config/config.yaml:ro
       - /opt/gatus/data:/data
-  memos:
-    # prune archived notes
-    # `DELETE FROM memo WHERE row_status = 'ARCHIVED'; vacuum;`
-    container_name: memos
-    restart: always
-    # ports:
-    #  - 5230:5230
-    image: neosmemo/memos:0.26.2
-    volumes:
-      - /opt/memos/data:/var/opt/memos
   vaultwarden:
     image: vaultwarden/server:1.35.3
     container_name: vaultwarden
