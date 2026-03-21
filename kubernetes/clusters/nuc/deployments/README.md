@@ -9,7 +9,7 @@ helm upgrade --install slash ../../charts/base/chart --values deployments/tools/
 ## Run this by hand
 
 ```bash
-kubectl taint nodes fringe-division storage-required=true:NoSchedule
+kubectl taint nodes argon storage-required=true:NoSchedule
 ```
 
 <!-- BEGIN_TF_DOCS -->
