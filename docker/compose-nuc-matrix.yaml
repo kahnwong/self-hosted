@@ -42,7 +42,7 @@ services:
     networks:
       - matrix
   mautrix-signal:
-    image: dock.mau.dev/mautrix/signal:v0.2603.0
+    image: dock.mau.dev/mautrix/signal:v26.02.2
     container_name: mautrix-signal
     restart: always
     volumes:
