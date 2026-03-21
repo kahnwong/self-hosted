@@ -19,7 +19,7 @@ kubectl taint nodes fringe-division storage-required=true:NoSchedule
 |------|---------|
 | terraform | >= 1.3.6 |
 | helm | 3.1.1 |
-| kubectl | ~> 2.0 |
+| kubectl | 2.1.6 |
 | kubernetes | 3.0.1 |
 | sops | 1.3.0 |
 
