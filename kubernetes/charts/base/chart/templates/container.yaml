@@ -36,18 +36,9 @@ spec:
             ports: {{ .ports | default list | toYaml | nindent 14 }}
             {{ end }}
             livenessProbe:
-              {{ if eq .livenessProbeScheme "exec" }}
+              {{ if .livenessProbeExec }}
               exec:
-                command:
-                - /bin/sh
-                - -c
-                - |
-                  # Check if the file is older than 60 seconds
-                  last_update=$(stat -c %Y /tmp/heartbeat)
-                  now=$(date +%s)
-                  if [ $((now - last_update)) -gt 60 ]; then
-                    exit 1
-                  fi
+                command: {{ .livenessProbeExec | toYaml | nindent 18 }}
               initialDelaySeconds: 30
               periodSeconds: 60
               {{ else if eq .livenessProbeScheme "tcp" }}
