@@ -36,7 +36,24 @@ spec:
             ports: {{ .ports | default list | toYaml | nindent 14 }}
             {{ end }}
             livenessProbe:
-              {{ if not (eq .livenessProbeScheme "tcp")}}
+              {{ if eq .livenessProbeScheme "exec" }}
+              exec:
+                command:
+                - /bin/sh
+                - -c
+                - |
+                  # Check if the file is older than 60 seconds
+                  last_update=$(stat -c %Y /tmp/heartbeat)
+                  now=$(date +%s)
+                  if [ $((now - last_update)) -gt 60 ]; then
+                    exit 1
+                  fi
+              initialDelaySeconds: 30
+              periodSeconds: 60
+              {{ else if eq .livenessProbeScheme "tcp" }}
+              tcpSocket:
+                port: {{ .port }}
+              {{ else }}
               httpGet:
                 path: {{ .livenessProbePath | default "/" }}
                 {{ if .healthcheckPort }}
@@ -45,9 +62,6 @@ spec:
                 port: {{ .port }}
                 {{ end }}
                 scheme: HTTP
-              {{ else }}
-              tcpSocket:
-                port: {{ .port }}
               {{ end }}
             securityContext: {{ toYaml .securityContext | default list | nindent 14 }}
             args: {{ .args | default list | toYaml | nindent 14 }}
