@@ -1,0 +1,23 @@
+kubernetes/charts/base/chart/templates/container.yaml
+  2a9b5abc562378f8 39-56
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.19",
+  "base_commit_sha": "7d2b7487569ea22d4c17457626e412fda051e2e4",
+  "prompts": {
+    "2a9b5abc562378f8": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_2d5789fd5ffem6O2qpLaFGar77",
+        "model": "custom/claude-sonnet-4-5"
+      },
+      "human_author": "Karn Wong <karn@karnwong.me>",
+      "messages": [],
+      "total_additions": 18,
+      "total_deletions": 4,
+      "accepted_lines": 18,
+      "overriden_lines": 0
+    }
+  }
+}
