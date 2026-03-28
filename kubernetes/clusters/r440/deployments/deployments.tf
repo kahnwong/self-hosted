@@ -34,7 +34,7 @@ resource "helm_release" "this" {
   name       = each.key
   namespace  = each.value
   repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.2.0"
+  version    = "0.2.2"
   chart      = "base"
 
   values = [
