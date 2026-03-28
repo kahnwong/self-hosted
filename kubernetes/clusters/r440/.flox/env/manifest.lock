@@ -1,0 +1,15 @@
+{
+  "lockfile-version": 1,
+  "manifest": {
+    "schema-version": "1.10.0",
+    "hook": {},
+    "profile": {},
+    "options": {},
+    "services": {
+      "k8s-tunnel": {
+        "command": "ssh -N r440-k8s-tunnel"
+      }
+    }
+  },
+  "packages": []
+}
