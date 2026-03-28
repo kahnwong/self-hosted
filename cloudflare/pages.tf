@@ -1,6 +1,5 @@
 locals {
   pages = toset([
-    "azurephant",
     "calculator",
     "docs",
     "excalidraw",
@@ -14,6 +13,7 @@ locals {
     "portip",
     "promptpay",
     "slc",
+    "slonix",
     "swissknife",
     "textarea",
     "tldraw",
