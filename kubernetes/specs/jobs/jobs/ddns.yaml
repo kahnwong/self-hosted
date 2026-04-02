@@ -5,7 +5,7 @@ schedule: "0 0 * * 0" # every week
 containers:
   - name: ddns
     repository: favonia/cloudflare-ddns
-    tag: 1.15.1
+    tag: 1.16.2
     env:
       - name: UPDATE_CRON
         value: "@once"
