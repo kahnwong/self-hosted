@@ -6,8 +6,8 @@ brew install llama.cpp
 
 # install hugging face downloader
 curl --silent --location \
-  https://raw.githubusercontent.com/houseabsolute/ubi/master/bootstrap/bootstrap-ubi.sh |
-  sudo sh
+	https://raw.githubusercontent.com/houseabsolute/ubi/master/bootstrap/bootstrap-ubi.sh |
+	sudo sh
 sudo ubi --project bodaay/HuggingFaceModelDownloader --in /usr/local/bin/ --rename-exe hfdownloader
 
 # create model dirs
