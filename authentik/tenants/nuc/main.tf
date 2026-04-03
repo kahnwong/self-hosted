@@ -48,6 +48,8 @@ module "application_oauth2" {
   invalidation_flow_id  = data.authentik_flow.default-invalidation-flow.id
   application_name      = each.key
   redirect_uris         = each.value
+  property_mappings     = var.property_mappings
+  signing_key           = var.signing_key
 }
 
 module "application_proxy" {

@@ -12,3 +12,11 @@ variable "application_name" {
 variable "redirect_uris" {
   type = list(string)
 }
+
+variable "property_mappings" { # Oauth mapping: email, offline_access, openid, profile
+  type = list(string)
+}
+
+variable "signing_key" { # System > Certificates
+  type = string
+}

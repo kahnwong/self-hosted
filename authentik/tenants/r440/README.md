@@ -19,8 +19,8 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| application\_oauth2 | ./modules/authentik-application-oauth2 | n/a |
-| application\_proxy | ./modules/authentik-application-proxy | n/a |
+| application\_oauth2 | ../../modules/authentik-application-oauth2 | n/a |
+| application\_proxy | ../../modules/authentik-application-proxy | n/a |
 
 ## Resources
 
@@ -45,6 +45,8 @@
 |------|-------------|------|---------|:--------:|
 | authentik\_host | n/a | `string` | n/a | yes |
 | authentik\_token | n/a | `string` | n/a | yes |
+| property\_mappings | n/a | `list(string)` | ```[ "777fa2fb-e6e8-4790-8c6b-52e23d9514bf", "737fdadc-bc80-4dcc-9259-c94bdbe76101", "68004046-feac-4819-90b1-7ab0cee66dbf", "1f6f9ee0-9d07-48df-b85c-eafe6119c530" ]``` | no |
+| signing\_key | n/a | `string` | `"e8fd0a24-879c-4cca-8823-5afd04f75af2"` | no |
 
 ## Outputs
 

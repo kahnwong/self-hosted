@@ -38,8 +38,8 @@ OpenID Configuration Issuer:  https://authentik.karnwong.me/application/o/$APP/
 
 | Name | Source | Version |
 |------|--------|---------|
-| application\_oauth2 | ./modules/authentik-application-oauth2 | n/a |
-| application\_proxy | ./modules/authentik-application-proxy | n/a |
+| application\_oauth2 | ../../modules/authentik-application-oauth2 | n/a |
+| application\_proxy | ../../modules/authentik-application-proxy | n/a |
 
 ## Resources
 
@@ -64,6 +64,8 @@ OpenID Configuration Issuer:  https://authentik.karnwong.me/application/o/$APP/
 |------|-------------|------|---------|:--------:|
 | authentik\_host | n/a | `string` | n/a | yes |
 | authentik\_token | n/a | `string` | n/a | yes |
+| property\_mappings | n/a | `list(string)` | n/a | yes |
+| signing\_key | n/a | `string` | n/a | yes |
 
 ## Outputs
 

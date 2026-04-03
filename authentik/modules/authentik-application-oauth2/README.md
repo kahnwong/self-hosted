@@ -23,7 +23,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [authentik_application.memos](https://registry.terraform.io/providers/goauthentik/authentik/2025.12.1/docs/resources/application) | resource |
+| [authentik_application.this](https://registry.terraform.io/providers/goauthentik/authentik/2025.12.1/docs/resources/application) | resource |
 | [authentik_provider_oauth2.this](https://registry.terraform.io/providers/goauthentik/authentik/2025.12.1/docs/resources/provider_oauth2) | resource |
 | [random_string.random](https://registry.terraform.io/providers/hashicorp/random/3.8.1/docs/resources/string) | resource |
 
@@ -34,7 +34,9 @@ No modules.
 | application\_name | n/a | `string` | n/a | yes |
 | authorization\_flow\_id | n/a | `string` | n/a | yes |
 | invalidation\_flow\_id | n/a | `string` | n/a | yes |
+| property\_mappings | n/a | `list(string)` | n/a | yes |
 | redirect\_uris | n/a | `list(string)` | n/a | yes |
+| signing\_key | n/a | `string` | n/a | yes |
 
 ## Outputs
 
