@@ -11,15 +11,16 @@ curl --silent --location \
 sudo ubi --project bodaay/HuggingFaceModelDownloader --in /usr/local/bin/ --rename-exe hfdownloader
 
 # create model dirs
-sudo mkdir -p /opt/models
+sudo mkdir -p /opt/huggingface
 
 # download
-sudo hfdownloader download ggml-org/gemma-3-1b-it-GGUF:q4_k_m --cache-dir /opt/models
-sudo hfdownloader download unsloth/gemma-4-E2B-it-GGUF:q4_k_m --cache-dir /opt/models
+sudo hfdownloader download ggml-org/gemma-3-1b-it-GGUF:q4_k_m --cache-dir /opt/huggingface
+sudo hfdownloader download unsloth/gemma-4-26B-A4B-it-GGUF:q4_k_m --cache-dir /opt/huggingface
+sudo hfdownloader download unsloth/gemma-4-E2B-it-GGUF:q4_k_m --cache-dir /opt/huggingface
 
 # serve
 sudo mkdir -p /opt/llama-cpp
 sudo cp models.ini /opt/llama-cpp/
 
-# llama-server -m /opt/models/models/unsloth/gemma-4-E2B-it-GGUF/gemma-4-E2B-it-Q4_K_M.gguf --port 8080
+# llama-server -m /opt/huggingface/models/unsloth/gemma-4-E2B-it-GGUF/gemma-4-E2B-it-Q4_K_M.gguf --port 8080
 # llama-server --models-preset /opt/llama-cpp/models.ini --models-max 1 --host 0.0.0.0 --port 30050
