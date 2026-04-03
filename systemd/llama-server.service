@@ -1,0 +1,12 @@
+[Unit]
+Description=llama-server
+After=network.target network-online.target
+Requires=network-online.target
+
+[Service]
+User=ro
+Group=ro
+ExecStart=/home/linuxbrew/.linuxbrew/bin/llama-server --models-preset /opt/llama-cpp/models.ini --models-max 1 --host 0.0.0.0 --port 30050
+
+[Install]
+WantedBy=multi-user.target
