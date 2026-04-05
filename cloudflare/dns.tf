@@ -42,6 +42,7 @@ locals {
     "livegrep",
     "mlflow",
     "music",
+    "opentag",
     "notes",
     "ntfy",
     "paperless",

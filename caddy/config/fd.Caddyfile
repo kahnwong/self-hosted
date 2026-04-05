@@ -94,6 +94,9 @@ notes.karnwong.me {
 opencost.karnwong.me {
     import authentik_base 30054
 }
+opentag.karnwong.me {
+    import authentik_base 40000
+}
 pdf.karnwong.me {
     import authentik_knative stirling-pdf.tools
 }

@@ -22,6 +22,7 @@ locals {
   application_proxy_admin_only = toset([
     "livegrep",
     "notes",
+    "opentag",
     "todotxt",
   ])
   application_proxy = toset([

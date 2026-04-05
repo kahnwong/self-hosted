@@ -44,6 +44,7 @@ func main() {
 			"livegrep": "30033",
 			"notes":    "30084",
 			"opencost": "30054",
+			"opentag":  "40000",
 			"pdf":      "stirling-pdf.tools",
 			"todotxt":  "30064",
 		},

@@ -1,0 +1,12 @@
+[Unit]
+Description=Opentag
+After=network.target network-online.target
+Requires=network-online.target
+
+[Service]
+User=kahnwong
+Group=kahnwong
+ExecStart=/bin/bash -c "cd /opt/opentag-web && /home/kahnwong/.local/bin/uv run uvicorn opentag_web.server:app --port 40000 --host 0.0.0.0"
+
+[Install]
+WantedBy=multi-user.target
