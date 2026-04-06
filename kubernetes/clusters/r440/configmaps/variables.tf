@@ -13,3 +13,8 @@ variable "client_key" {
 variable "cluster_ca_certificate" {
   type = string
 }
+
+variable "cluster_name" {
+  type    = string
+  default = "r440"
+}

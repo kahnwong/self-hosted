@@ -74,4 +74,13 @@ All users - API Tokens:Edit
 |------|-------------|
 | cloudflare\_api\_token\_ddns\_updater | n/a |
 | cloudflare\_api\_token\_deploy\_cloudflare\_pages | n/a |
+<!-- END_TF_DOCS -->e\_zone\_id | n/a | `string` | n/a | yes |
+| private\_dns | n/a | `set(string)` | n/a | yes |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| cloudflare\_api\_token\_ddns\_updater | n/a |
+| cloudflare\_api\_token\_deploy\_cloudflare\_pages | n/a |
 <!-- END_TF_DOCS -->

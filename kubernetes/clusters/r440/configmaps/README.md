@@ -12,21 +12,17 @@
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| kubernetes | 3.0.1 |
-| sops | 1.4.1 |
+No providers.
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| configmaps | ../../../modules/configmaps | n/a |
 
 ## Resources
 
-| Name | Type |
-|------|------|
-| [kubernetes_config_map_v1.garage](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/config_map_v1) | resource |
-| [sops_file.garage](https://registry.terraform.io/providers/carlpett/sops/1.4.1/docs/data-sources/file) | data source |
+No resources.
 
 ## Inputs
 
@@ -35,6 +31,7 @@ No modules.
 | client\_certificate | n/a | `string` | n/a | yes |
 | client\_key | n/a | `string` | n/a | yes |
 | cluster\_ca\_certificate | n/a | `string` | n/a | yes |
+| cluster\_name | n/a | `string` | `"r440"` | no |
 | host | n/a | `string` | n/a | yes |
 
 ## Outputs

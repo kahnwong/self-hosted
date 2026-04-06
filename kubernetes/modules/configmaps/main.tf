@@ -1,30 +1,6 @@
 locals {
-  configmaps = tomap({
-    infrastructure = [
-      {
-        source : "garage.sops.toml",
-        filename : "garage.toml"
-        input_type : "raw"
-      },
-    ]
-    tools = [
-      {
-        source : "livegrep-clone-config.sops.yaml",
-        filename : "repos.yaml"
-      },
-      {
-        source : "paperless.sops.conf",
-        filename : "paperless.conf"
-        input_type : "raw"
-      }
-    ]
-
-  })
-}
-
-locals {
   configmaps_map_raw = flatten([
-    for namespace, configmaps in local.configmaps : [
+    for namespace, configmaps in var.configmaps : [
       for configmap in configmaps : {
         namespace  = namespace
         source     = configmap.source
@@ -39,7 +15,7 @@ locals {
 
 data "sops_file" "configmaps" {
   for_each    = local.configmaps_map
-  source_file = "${path.module}/configmaps/${each.key}"
+  source_file = "${path.module}/../../specs/configmaps/${var.cluster_name}/${each.key}"
   input_type  = each.value.input_type
 }
 resource "kubernetes_config_map_v1" "configmaps" {
