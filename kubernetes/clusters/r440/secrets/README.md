@@ -12,21 +12,17 @@
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| kubernetes | 3.0.1 |
-| sops | 1.4.1 |
+No providers.
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| secrets | ../../../modules/secrets | n/a |
 
 ## Resources
 
-| Name | Type |
-|------|------|
-| [kubernetes_secret_v1.secrets](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/secret_v1) | resource |
-| [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.4.1/docs/data-sources/file) | data source |
+No resources.
 
 ## Inputs
 
@@ -35,6 +31,9 @@ No modules.
 | client\_certificate | n/a | `string` | n/a | yes |
 | client\_key | n/a | `string` | n/a | yes |
 | cluster\_ca\_certificate | n/a | `string` | n/a | yes |
+| cluster\_name | n/a | `string` | `"r440"` | no |
+| ghcr\_token | n/a | `string` | n/a | yes |
+| ghcr\_username | n/a | `string` | n/a | yes |
 | host | n/a | `string` | n/a | yes |
 
 ## Outputs

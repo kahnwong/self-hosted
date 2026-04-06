@@ -14,6 +14,11 @@ variable "cluster_ca_certificate" {
   type = string
 }
 
+variable "cluster_name" {
+  type    = string
+  default = "nuc"
+}
+
 variable "ghcr_username" {
   type = string
 }

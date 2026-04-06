@@ -13,3 +13,15 @@ variable "client_key" {
 variable "cluster_ca_certificate" {
   type = string
 }
+
+variable "cluster_name" {
+  type    = string
+  default = "r440"
+}
+
+variable "ghcr_username" {
+  type = string
+}
+variable "ghcr_token" {
+  type = string
+}
