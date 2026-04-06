@@ -26,14 +26,15 @@ sudo ln -s /data/kubernetes/$service $service
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| base | ../../../modules/deployments | n/a |
 
 ## Resources
 
 | Name | Type |
 |------|------|
 | [helm_release.authentik](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
-| [helm_release.this](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
 | [kubernetes_namespace_v1.this](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/namespace_v1) | resource |
 
 ## Inputs

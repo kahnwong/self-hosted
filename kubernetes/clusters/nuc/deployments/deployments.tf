@@ -2,16 +2,7 @@
 # helm template ntfy  ../../charts/base/chart --values helm/deployments/default/ntfy.yaml
 
 locals {
-  deployments = tomap({
-    default = []
-    news = [
-    ]
-    infrastructure = [
-    ]
-    tools = [
-    ]
-  })
-  deployments_fringe_division = tomap({
+  deployments_base = tomap({
     analytics = []
     authentik = ["authentik-postgres", "authentik-valkey"]
     default   = []
@@ -73,82 +64,26 @@ locals {
       "stirling-pdf",
     ]
   })
-  deployments_misc = toset([
-    # "baz"
-  ])
 }
 
-locals {
-  deployments_map_raw = flatten([
-    for namespace, deployments in local.deployments : [
-      for deployment in deployments : {
-        deployment = deployment
-        namespace  = namespace
-      }
-    ]
-  ])
-  deployments_map = { for index, v in local.deployments_map_raw : v.deployment => v.namespace }
+module "base" {
+  source = "../../../modules/deployments"
 
-  deployments_fringe_division_map_raw = flatten([
-    for namespace, deployments in local.deployments_fringe_division : [
-      for deployment in deployments : {
-        namespace  = namespace
-        deployment = deployment
-      }
-    ]
-  ])
-  deployments_fringe_division_map = { for index, v in local.deployments_fringe_division_map_raw : v.deployment => v.namespace }
-
-  deployments_knative_map_raw = flatten([
-    for namespace, deployments in local.deployments_knative : [
-      for deployment in deployments : {
-        namespace  = namespace
-        deployment = deployment
-      }
-    ]
-  ])
-  deployments_knative_map = { for index, v in local.deployments_knative_map_raw : v.deployment => v.namespace }
+  deployments   = local.deployments_base
+  chart_name    = "base"
+  chart_version = "0.2.2"
+  values_extras = []
 }
 
 
-resource "helm_release" "this" {
-  for_each   = local.deployments_map
-  name       = each.key
-  namespace  = each.value
-  repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.2.2"
-  chart      = "base"
+module "knative" {
+  source = "../../../modules/deployments"
 
-  values = [
-    file("../../../specs/deployments/${each.value}/${each.key}.yaml")
-  ]
-}
-
-resource "helm_release" "fringe_division" {
-  for_each   = local.deployments_fringe_division_map
-  name       = each.key
-  namespace  = each.value
-  repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.2.2"
-  chart      = "base"
-
-  values = [
-    file("../../../specs/deployments/${each.value}/${each.key}.yaml"),
-    # file("./resources/valuesTaintNodeSelector.yaml"),
-  ]
-}
-
-resource "helm_release" "knative" {
-  for_each   = local.deployments_knative_map
-  name       = each.key
-  namespace  = each.value
-  repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.2.0"
-  chart      = "base-knative"
-
-  values = [
-    file("../../../specs/deployments/${each.value}/${each.key}.yaml"),
-    # file("./resources/valuesTaintNodeSelector.yaml"),
+  deployments   = local.deployments_knative
+  chart_name    = "base-knative"
+  chart_version = "0.2.0"
+  values_extras = [
+    # "./resources/valuesTaintNodeSelector.yaml",
   ]
 }
 
@@ -204,21 +139,3 @@ resource "helm_release" "authentik" {
 #     file("./deployments/woodpecker/woodpecker.yaml"),
 #   ]
 # }
-
-# ------ misc ------ #
-data "sops_file" "misc" {
-  for_each    = local.deployments_misc
-  source_file = "../../../specs/deployments/default/${each.key}.sops.yaml"
-}
-resource "helm_release" "misc" {
-  for_each   = local.deployments_misc
-  name       = each.key
-  namespace  = "default"
-  repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.2.2"
-  chart      = "base"
-
-  values = [
-    data.sops_file.misc[each.key].raw
-  ]
-}

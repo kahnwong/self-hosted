@@ -1,5 +1,5 @@
 locals {
-  deployments = tomap({
+  deployments_base = tomap({
     default = []
     authentik = [
       "authentik-postgres",
@@ -17,29 +17,13 @@ locals {
   })
 }
 
-locals {
-  deployments_map_raw = flatten([
-    for namespace, deployments in local.deployments : [
-      for deployment in deployments : {
-        namespace  = namespace
-        deployment = deployment
-      }
-    ]
-  ])
-  deployments_map = { for index, v in local.deployments_map_raw : v.deployment => v.namespace }
-}
+module "base" {
+  source = "../../../modules/deployments"
 
-resource "helm_release" "this" {
-  for_each   = local.deployments_map
-  name       = each.key
-  namespace  = each.value
-  repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.2.2"
-  chart      = "base"
-
-  values = [
-    file("../../../specs/deployments/${each.value}/${each.key}.yaml"),
-  ]
+  deployments   = local.deployments_base
+  chart_name    = "base"
+  chart_version = "0.2.2"
+  values_extras = []
 }
 
 # ------ authentik ------ #

@@ -29,22 +29,20 @@ kubectl taint nodes argon storage-required=true:NoSchedule
 |------|---------|
 | helm | 3.1.1 |
 | kubernetes | 3.0.1 |
-| sops | 1.4.1 |
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| base | ../../../modules/deployments | n/a |
+| knative | ../../../modules/deployments | n/a |
 
 ## Resources
 
 | Name | Type |
 |------|------|
 | [helm_release.authentik](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
-| [helm_release.fringe_division](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
 | [helm_release.harbor](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
-| [helm_release.knative](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
-| [helm_release.misc](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
-| [helm_release.this](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
 | [kubernetes_cluster_role_binding_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/cluster_role_binding_v1) | resource |
 | [kubernetes_cluster_role_binding_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/cluster_role_binding_v1) | resource |
 | [kubernetes_cluster_role_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/cluster_role_v1) | resource |
@@ -55,7 +53,6 @@ No modules.
 | [kubernetes_secret_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/secret_v1) | resource |
 | [kubernetes_service_account_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/service_account_v1) | resource |
 | [kubernetes_service_account_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/service_account_v1) | resource |
-| [sops_file.misc](https://registry.terraform.io/providers/carlpett/sops/1.4.1/docs/data-sources/file) | data source |
 
 ## Inputs
 
