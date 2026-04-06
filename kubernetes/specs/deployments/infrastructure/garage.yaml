@@ -55,7 +55,7 @@ containers:
 volumes:
   - name: config
     configMap:
-      name: garage
+      name: garage.sops.toml
   - name: data
     hostPath:
       path: /opt/garage/data

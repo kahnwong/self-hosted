@@ -26,6 +26,6 @@ volumes:
       path: /opt/livegrep
   - name: config
     configMap:
-      name: livegrep-clone-config
+      name: livegrep-clone-config.sops.yaml
 imagePullSecrets:
   - name: ghcr-cfg

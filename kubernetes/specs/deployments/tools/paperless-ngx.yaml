@@ -40,7 +40,7 @@ volumes:
       path: /opt/paperless-ngx/consume
   - name: config
     configMap:
-      name: paperless
+      name: paperless.sops.conf
 service:
   port: 8000
   nodePort: 30079
