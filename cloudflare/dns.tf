@@ -32,6 +32,7 @@ locals {
     "authentik",
     "cpubench",
     "evcc",
+    "fava",
     "garage",
     "git",
     "harbor",

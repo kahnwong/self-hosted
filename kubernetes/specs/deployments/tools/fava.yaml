@@ -1,0 +1,24 @@
+kind: Deployment
+name: fava
+replicaCount: 1
+containers:
+  - name: fava
+    repository: ghcr.io/kahnwong/docker-fava
+    tag: "aa17cdd"
+    port: 5000
+    env:
+      - name: FAVA_READ_ONLY
+        value: "true"
+    command: ["fava"]
+    args: ["--host", "0.0.0.0", "--port", "5000", "/opt/fava/beans.bean"]
+    volumeMounts:
+      - name: data
+        mountPath: /opt/fava
+    livenessProbeScheme: tcp
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/syncthing/apps/beancount
+service:
+  port: 5000
+  nodePort: 30065

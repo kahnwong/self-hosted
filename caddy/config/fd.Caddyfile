@@ -79,6 +79,9 @@ wakapi.karnwong.me {
 evcc.karnwong.me {
     import authentik_base 30060
 }
+fava.karnwong.me {
+    import authentik_base 30065
+}
 homer.karnwong.me {
     import authentik_base 30053
 }

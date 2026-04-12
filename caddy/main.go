@@ -39,6 +39,7 @@ func main() {
 		},
 		"servicesForwardAuth": {
 			"evcc":     "30060",
+			"fava":     "30065",
 			"homer":    "30053",
 			"linkding": "30005",
 			"livegrep": "30033",
