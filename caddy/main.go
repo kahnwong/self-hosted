@@ -33,6 +33,7 @@ func main() {
 			"rustpad":          "rustpad.tools",
 			"secrets":          "30025",
 			"subsonic-widgets": "30038",
+			"sync.koreader":    "30066",
 			"syncthing":        "8384",
 			"thai-tech-cal":    "thai-tech-cal.news",
 			"wakapi":           "30041",

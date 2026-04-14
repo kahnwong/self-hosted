@@ -1,0 +1,32 @@
+kind: Deployment
+name: koreader-sync-server
+replicaCount: 1
+containers:
+  - name: koreader-sync-server
+    repository: koreader/kosync
+    tag: "1.0.1.3"
+    port: 17200
+    livenessProbeScheme: tcp
+    env:
+      - name: ENABLE_USER_REGISTRATION
+        value: "false"
+    volumeMounts:
+      - name: data-redis
+        mountPath: /var/lib/redis
+      - name: logs-app
+        mountPath: /app/koreader-sync-server/logs
+      - name: logs-redis
+        mountPath: /var/log/redis
+volumes:
+  - name: data-redis
+    hostPath:
+      path: /opt/koreader-sync-server/data/redis
+  - name: logs-app
+    hostPath:
+      path: /opt/koreader-sync-server/logs/app
+  - name: logs-redis
+    hostPath:
+      path: /opt/koreader-sync-server/logs/redis
+service:
+  port: 17200
+  nodePort: 30066

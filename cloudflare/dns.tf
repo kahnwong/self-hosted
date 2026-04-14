@@ -24,6 +24,7 @@ locals {
     "thai-tech-cal",
     "todotxt",
     "wakapi",
+    "wallabag",
   ])
   selfhosted_non_proxied = setunion(toset([
     "api.qrcode",
@@ -43,14 +44,14 @@ locals {
     "livegrep",
     "mlflow",
     "music",
-    "opentag",
     "notes",
     "ntfy",
+    "opentag",
     "paperless",
     "pdf",
     "rustdesk",
+    "sync.koreader",
     "syncthing",
-    "wallabag",
     "warpgate",
   ]), var.private_dns)
 

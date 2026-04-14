@@ -67,6 +67,9 @@ secrets.karnwong.me {
 subsonic-widgets.karnwong.me {
     import base 30038
 }
+sync.koreader.karnwong.me {
+    import base 30066
+}
 syncthing.karnwong.me {
     import base 8384
 }
