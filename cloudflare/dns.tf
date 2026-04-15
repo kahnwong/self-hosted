@@ -16,7 +16,7 @@ locals {
     "n8n",
     "nocodb",
     "pmtiles", # if use docker-caddy, it needs to be a separate instance because it uses `file_server` directive
-    "rally",
+    "rallly",
     "retrooo",
     "rustpad",
     "secrets",

@@ -28,7 +28,7 @@ func main() {
 			"nocodb":           "30062",
 			"paperless":        "30079",
 			"qa-api":           "30043",
-			"rally":            "30035",
+			"rallly":           "rallly.tools",
 			"retrooo":          "30081",
 			"rustpad":          "rustpad.tools",
 			"secrets":          "30025",

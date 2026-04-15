@@ -1,6 +1,4 @@
-kind: Deployment
 name: rallly
-replicaCount: 1
 containers:
   - name: rallly
     repository: lukevella/rallly

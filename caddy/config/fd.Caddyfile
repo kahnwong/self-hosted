@@ -52,8 +52,8 @@ paperless.karnwong.me {
 qa-api.karnwong.me {
     import base 30043
 }
-rally.karnwong.me {
-    import base 30035
+rallly.karnwong.me {
+    import knative rallly.tools
 }
 retrooo.karnwong.me {
     import base 30081

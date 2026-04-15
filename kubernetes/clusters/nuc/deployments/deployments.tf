@@ -36,7 +36,7 @@ locals {
       "nocodb",
       "paperless-ngx", "paperless-ngx-valkey",
       "qrcode-api",
-      "rallly", "rallly-postgres",
+      "rallly-postgres",
       "retrooo",
       "rss-bridge",
       "sshx",
@@ -62,6 +62,7 @@ locals {
       "go-playground",
     ]
     tools = [
+      "rallly",
       "rustpad",
       "stirling-pdf",
     ]
