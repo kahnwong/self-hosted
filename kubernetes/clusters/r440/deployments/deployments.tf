@@ -22,7 +22,7 @@ module "base" {
 
   deployments   = local.deployments_base
   chart_name    = "base"
-  chart_version = "0.2.2"
+  chart_version = "0.4.0"
   values_extras = []
 }
 
