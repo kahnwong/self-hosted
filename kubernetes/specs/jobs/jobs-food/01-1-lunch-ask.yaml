@@ -1,0 +1,13 @@
+name: 01-1-lunch-ask
+# 10:30 AM Asia/Bangkok
+schedule: 30 3 * * *
+containers:
+  - name: 01-1-lunch-ask
+    repository: ghcr.io/kahnwong/line-notify
+    tag: 9c70e69
+    args:
+      - notify
+      - ถามข้าวเที่ยง
+    envFrom:
+      - secretRef:
+          name: family-alerts

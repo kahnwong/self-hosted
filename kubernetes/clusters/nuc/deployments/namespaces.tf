@@ -7,7 +7,7 @@ locals {
     "immich",
     "infrastructure",
     "jobs",
-    "jobs-family-alerts",
+    "jobs-food",
     "media",
     "news",
     "notes",
