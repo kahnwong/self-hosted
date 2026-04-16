@@ -1,0 +1,12 @@
+apiVersion: kube-green.com/v1alpha1
+kind: SleepInfo
+metadata:
+  name: selective-sleep
+spec:
+  weekdays: "0-6"
+  sleepAt: "2:00"
+  wakeUpAt: "9:00"
+  timeZone: "Asia/Bangkok"
+  includeRef:
+    - matchLabels:
+        kube-green.dev/include: "true"

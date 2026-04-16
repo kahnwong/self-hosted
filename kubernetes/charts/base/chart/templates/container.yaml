@@ -4,6 +4,9 @@ metadata:
   name: {{ template "name" . }}
   labels:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+    {{- if .Values.kubeGreen }}
+    kube-green.dev/include: {{ .Values.kubeGreen | quote }}
+    {{- end }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:

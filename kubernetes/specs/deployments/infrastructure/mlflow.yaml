@@ -1,6 +1,7 @@
 kind: Deployment
 name: mlflow
 replicaCount: 1
+kubeGreen: true
 containers:
   - name: mlflow
     repository: ghcr.io/kahnwong/docker-mlflow
