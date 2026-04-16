@@ -27,4 +27,4 @@ service:
 #ingress:
 #  host: foo.example.com
 
-#helm template caddy ../../charts/base/chart --values caddy.yaml
+# helm template caddy ../../charts/base/chart --values caddy.yaml

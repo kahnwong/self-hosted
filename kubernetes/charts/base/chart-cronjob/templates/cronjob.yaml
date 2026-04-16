@@ -12,7 +12,7 @@ spec:
     spec:
       template:
         spec:
-          serviceAccountName: {{ .Values.serviceAccountName }}
+          serviceAccountName: {{ .Values.serviceAccountName | default (printf "%s-sa" (include "name" .)) }}
           containers:
            {{ range .Values.containers }}
             - name: {{ .name }}

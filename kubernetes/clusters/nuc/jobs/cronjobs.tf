@@ -71,7 +71,7 @@ resource "helm_release" "jobs" {
   name       = each.key
   namespace  = each.value
   repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.1.0"
+  version    = "0.2.0"
   chart      = "base-cronjob"
 
   values = [
@@ -84,7 +84,7 @@ resource "helm_release" "jobs_livegrep" {
   name       = each.key
   namespace  = "tools"
   repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.1.0"
+  version    = "0.2.0"
   chart      = "base-cronjob"
 
   values = [
@@ -97,7 +97,7 @@ resource "helm_release" "jobs_fringe_division" {
   name       = each.key
   namespace  = each.value
   repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.1.0"
+  version    = "0.2.0"
   chart      = "base-cronjob"
 
   values = [
@@ -115,7 +115,7 @@ resource "helm_release" "jobs_family" {
   name       = each.key
   namespace  = "jobs-family-alerts"
   repository = "oci://ghcr.io/kahnwong/charts"
-  version    = "0.1.0"
+  version    = "0.2.0"
   chart      = "base-cronjob"
 
   values = [

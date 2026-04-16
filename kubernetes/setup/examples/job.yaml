@@ -1,0 +1,14 @@
+# https://stackoverflow.com/a/58378834
+name: livegrep-restart
+schedule: "20 7 * * 5" # every Friday at 7:20am
+serviceAccountName: sa-deployment-restart
+containers:
+  - name: kubectl
+    repository: bitnami/kubectl
+    tag: 1.30.3
+    command: ["sh", "-c"]
+    args:
+      - |
+        kubectl rollout restart deploy livegrep-backend --namespace tools
+
+# helm template caddy ../../charts/base/chart-cronjob --values job.yaml
