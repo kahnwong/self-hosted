@@ -1,6 +1,7 @@
 kind: Deployment
 name: immich-machine-learning
 replicaCount: 1
+kubeGreen: true
 containers:
   - name: immich-machine-learning
     repository: ghcr.io/immich-app/immich-machine-learning

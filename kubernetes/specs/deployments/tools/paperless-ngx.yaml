@@ -1,6 +1,7 @@
 kind: Deployment
 name: paperless-ngx
 replicaCount: 1
+kubeGreen: true
 containers:
   - name: paperless-ngx
     repository: ghcr.io/paperless-ngx/paperless-ngx

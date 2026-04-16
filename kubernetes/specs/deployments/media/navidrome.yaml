@@ -1,6 +1,7 @@
 kind: Deployment
 name: navidrome
 replicaCount: 1
+kubeGreen: true
 containers:
   - name: navidrome
     repository: deluan/navidrome

@@ -2,6 +2,7 @@
 kind: Deployment
 name: evcc
 replicaCount: 1
+kubeGreen: true
 containers:
   - name: evcc
     repository: evcc/evcc

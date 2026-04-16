@@ -1,6 +1,7 @@
 kind: Deployment
 name: fava
 replicaCount: 1
+kubeGreen: true
 containers:
   - name: fava
     repository: ghcr.io/kahnwong/docker-fava

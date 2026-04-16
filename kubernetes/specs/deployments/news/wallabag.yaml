@@ -6,6 +6,7 @@
 kind: Deployment
 name: wallabag
 replicaCount: 1
+kubeGreen: true
 containers:
   - name: wallabag
     repository: wallabag/wallabag

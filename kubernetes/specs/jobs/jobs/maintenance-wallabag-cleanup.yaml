@@ -1,5 +1,5 @@
 name: maintenance-wallabag-cleanup
-schedule: "3 0 * * *"
+schedule: "3 0 * * *" # doesn't conflict with kube-green
 serviceAccountName: sa-pod-exec
 containers:
   - name: kubectl

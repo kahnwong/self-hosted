@@ -1,6 +1,7 @@
 kind: Deployment
 name: koreader-sync-server
 replicaCount: 1
+kubeGreen: true
 containers:
   - name: koreader-sync-server
     repository: koreader/kosync

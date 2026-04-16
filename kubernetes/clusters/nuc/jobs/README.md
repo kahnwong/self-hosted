@@ -13,24 +13,17 @@
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| helm | 3.1.1 |
-| sops | 1.4.1 |
+No providers.
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| base | ../../../modules/jobs | n/a |
 
 ## Resources
 
-| Name | Type |
-|------|------|
-| [helm_release.jobs](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
-| [helm_release.jobs_family](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
-| [helm_release.jobs_fringe_division](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
-| [helm_release.jobs_livegrep](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
-| [sops_file.jobs_family](https://registry.terraform.io/providers/carlpett/sops/1.4.1/docs/data-sources/file) | data source |
+No resources.
 
 ## Inputs
 

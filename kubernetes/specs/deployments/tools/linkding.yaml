@@ -1,6 +1,7 @@
 kind: Deployment
 name: linkding
 replicaCount: 1
+kubeGreen: true
 containers:
   ## admin user setup
   # docker exec -it linkding python manage.py createsuperuser --username=joe --email=joe@example.com

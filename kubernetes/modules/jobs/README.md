@@ -30,7 +30,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | chart\_name | n/a | `string` | n/a | yes |
 | chart\_version | n/a | `string` | n/a | yes |
-| deployments | n/a | `map(list(string))` | n/a | yes |
+| jobs | n/a | `map(list(string))` | n/a | yes |
 | values\_extras | n/a | `list(string)` | n/a | yes |
 
 ## Outputs

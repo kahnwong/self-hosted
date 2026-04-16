@@ -3,6 +3,7 @@
 kind: Deployment
 name: homer
 replicaCount: 1
+kubeGreen: true
 containers:
   - name: homer
     repository: b4bz/homer

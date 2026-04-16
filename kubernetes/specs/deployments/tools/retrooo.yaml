@@ -1,6 +1,7 @@
 kind: Deployment
 name: retrooo
 replicaCount: 1
+kubeGreen: true
 containers:
   - name: retrooo
     repository: ghcr.io/kahnwong/retrooo
