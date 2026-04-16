@@ -84,7 +84,7 @@ module "knative" {
 
   deployments   = local.deployments_knative
   chart_name    = "base-knative"
-  chart_version = "0.2.0"
+  chart_version = "0.3.0"
   values_extras = [
     # "./resources/valuesTaintNodeSelector.yaml",
   ]
