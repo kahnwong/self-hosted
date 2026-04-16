@@ -4,8 +4,8 @@
 - <https://knative.dev/blog/articles/set-up-a-local-knative-environment-with-kind/>
 
 ```bash
-kubectl apply -f https://github.com/knative/serving/releases/download/knative-v1.19.6/serving-crds.yaml
-kubectl apply -f https://github.com/knative/serving/releases/download/knative-v1.19.6/serving-core.yaml
+kubectl apply -f https://github.com/knative/serving/releases/download/knative-v1.21.2/serving-crds.yaml
+kubectl apply -f https://github.com/knative/serving/releases/download/knative-v1.21.2/serving-core.yaml
 ```
 
 Modify kourier to use nodePort
