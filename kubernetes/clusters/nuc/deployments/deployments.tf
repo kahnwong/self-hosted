@@ -27,7 +27,7 @@ locals {
     ]
     tools = [
       "cpubench",
-      "evcc",
+      # "evcc",
       "fava",
       "homer",
       "koreader-sync-server",
