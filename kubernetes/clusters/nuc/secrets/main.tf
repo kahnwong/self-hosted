@@ -21,7 +21,7 @@ locals {
       "wakapi-postgres",
       "wallabag",
     ]
-    jobs-family-alerts = ["family-alerts"]
+    jobs-food = ["family-alerts"]
     tools = [
       "cpubench",
       "livegrep-clone-custom",
