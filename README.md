@@ -16,7 +16,7 @@ Place this file at `$HOME`.
 #!/bin/bash
 
 cd self-hosted
-./scripts/caddy_reload.sh
+./scripts/caddy_apply.sh # point to your node's script
 ```
 
 <!-- BEGIN_TF_DOCS -->
