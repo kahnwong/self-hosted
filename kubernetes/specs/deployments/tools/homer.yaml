@@ -7,7 +7,7 @@ kubeGreen: true
 containers:
   - name: homer
     repository: b4bz/homer
-    tag: v26.4.1
+    tag: v26.4.2
     port: 8080
     env:
       - name: PUID
