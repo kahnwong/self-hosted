@@ -1,0 +1,12 @@
+{
+  "lockfile-version": 1,
+  "manifest": {
+    "schema-version": "1.11.0",
+    "hook": {
+      "on-activate": "    kubectl config use-context fringe-division\n    kubectl config set-context --current --namespace=tools\n"
+    },
+    "profile": {},
+    "options": {}
+  },
+  "packages": []
+}
