@@ -6,7 +6,7 @@ StartLimitIntervalSec=60
 StartLimitBurst=4
 
 [Service]
-User=ubuntu
+User=debian
 Environment="STLOGFORMATTIMESTAMP="
 Environment="STLOGFORMATLEVELSTRING=false"
 Environment="STLOGFORMATLEVELSYSLOG=true"

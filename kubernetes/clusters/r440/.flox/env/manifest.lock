@@ -2,7 +2,9 @@
   "lockfile-version": 1,
   "manifest": {
     "schema-version": "1.10.0",
-    "hook": {},
+    "hook": {
+      "on-activate": "    kubectl config use-context r440\n    kubectl config set-context --current --namespace=vms\n"
+    },
     "profile": {},
     "options": {},
     "services": {

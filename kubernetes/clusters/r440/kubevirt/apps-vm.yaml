@@ -39,7 +39,7 @@ spec:
               masquerade: {}
         resources:
           requests:
-            memory: 2Gi
+            memory: 1Gi
             cpu: 2
       networks:
         - name: default
@@ -54,7 +54,7 @@ spec:
               #cloud-config
               hostname: apps-vm
               users:
-                - name: ubuntu
+                - name: debian
                   sudo: ALL=(ALL) NOPASSWD:ALL
                   shell: /bin/bash
                   ssh_authorized_keys:
@@ -63,7 +63,7 @@ spec:
               disable_root: false
               chpasswd:
                 list: |
-                  ubuntu:ubuntu
+                  debian:debian
                 expire: false
               package_update: true
               packages:
@@ -83,4 +83,4 @@ spec:
             - ReadWriteOnce
         source:
           registry:
-            url: "docker://quay.io/containerdisks/ubuntu:24.04"
+            url: "docker://quay.io/containerdisks/debian:13"

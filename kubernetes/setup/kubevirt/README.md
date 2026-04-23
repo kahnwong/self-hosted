@@ -14,12 +14,13 @@ kubectl apply -f https://kubevirt.io/labs/manifests/vm.yaml
 kubectl get vms
 
 # start vm
-virtctl start testvm  # it would show up as `pod`
-kubectl get vmis  # running instances
+virtctl start testvm # it would show up as `pod`
+kubectl get vmis # running instances
 
 # access vm
 virtctl console testvm
-virtctl vnc testvm # for graphical access
+virtctl ssh -i ~/.ssh/kubevirt-debian ubuntu@vmi/debian-vm -n vms # ssh
+virtctl vnc testvm # gui
 
 # teardown
 virtctl stop testvm

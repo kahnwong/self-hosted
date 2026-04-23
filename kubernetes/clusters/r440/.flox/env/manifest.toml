@@ -31,14 +31,10 @@ schema-version = "1.10.0"
 ##  ... run by _bash_ shell when you run 'flox activate'.
 ## -------------------------------------------------------------------
 [hook]
-# on-activate = '''
-#   # -> Set variables, create files and directories
-#   # -> Perform initialization steps, e.g. create a python venv
-#   # -> Useful environment variables:
-#   #      - FLOX_ENV_PROJECT=/home/user/example
-#   #      - FLOX_ENV=/home/user/example/.flox/run
-#   #      - FLOX_ENV_CACHE=/home/user/example/.flox/cache
-# '''
+on-activate = '''
+    kubectl config use-context r440
+    kubectl config set-context --current --namespace=vms
+'''
 
 
 ## Profile script ----------------------------------------------------
