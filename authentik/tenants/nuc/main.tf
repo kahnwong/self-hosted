@@ -28,9 +28,11 @@ locals {
   ])
   application_proxy = toset([
     "evcc",
+    "greenkube",
     "homer",
     "linkding",
     "mlflow",
+    "opencost",
     "pdf",
   ])
 }

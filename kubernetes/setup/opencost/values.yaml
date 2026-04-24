@@ -10,8 +10,8 @@ opencost:
       CPU: 0.038999
       RAM: 0.005226
       storage: 0 # no dynamically-provisioned disk
-      # carbonCost: # doesn't work for on-prem
-      #   enabled: true
+  carbonCost:
+    enabled: true
 service:
   type: NodePort
   nodePort: 30054

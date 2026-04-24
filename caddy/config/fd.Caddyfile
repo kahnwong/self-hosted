@@ -85,6 +85,9 @@ evcc.karnwong.me {
 fava.karnwong.me {
     import authentik_base 30065
 }
+greenkube.karnwong.me {
+    import authentik_base 30067
+}
 homer.karnwong.me {
     import authentik_base 30053
 }
