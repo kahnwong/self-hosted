@@ -6,8 +6,10 @@ locals {
     analytics = []
     authentik = ["authentik-postgres", "authentik-valkey"]
     default   = []
-    harbor    = ["harbor-postgres"]
-    immich    = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
+    harbor = [
+      # "harbor-postgres"
+    ]
+    immich = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
     infrastructure = [
       "forgejo", "forgejo-postgres",
       "garage",
@@ -95,23 +97,23 @@ resource "kubernetes_manifest" "notes_personal" {
   manifest = yamldecode(file("../../../specs/deployments/notes/notes-personal-sync.yaml"))
 }
 
-# ------ harbor ------ #
-resource "helm_release" "harbor" {
-  name       = "harbor"
-  namespace  = "harbor"
-  repository = "https://helm.goharbor.io"
-  version    = "1.18.3"
-  chart      = "harbor"
-
-  values = [
-    file("../../../specs/deployments/harbor/values.yaml")
-  ]
-
-  set = [{
-    name  = "harborAdminPassword"
-    value = var.registry_password
-  }]
-}
+# # ------ harbor ------ #
+# resource "helm_release" "harbor" {
+#   name       = "harbor"
+#   namespace  = "harbor"
+#   repository = "https://helm.goharbor.io"
+#   version    = "1.18.3"
+#   chart      = "harbor"
+#
+#   values = [
+#     file("../../../specs/deployments/harbor/values.yaml")
+#   ]
+#
+#   set = [{
+#     name  = "harborAdminPassword"
+#     value = var.registry_password
+#   }]
+# }
 
 # ------ authentik ------ #
 resource "helm_release" "authentik" {
