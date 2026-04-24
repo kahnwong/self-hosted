@@ -14,7 +14,7 @@ locals {
       "forgejo", "forgejo-postgres",
       "garage",
       "llm-honeypot",
-      "mlflow", "mlflow-postgres",
+      "mlflow-postgres",
       "ntfy",
     ]
     media = [
@@ -50,6 +50,9 @@ locals {
     ]
   })
   deployments_knative = tomap({
+    infrastructure = [
+      "mlflow",
+    ]
     media = [
       "jellyfin",
     ]

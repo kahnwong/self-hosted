@@ -42,7 +42,6 @@ kubectl taint nodes argon storage-required=true:NoSchedule
 | Name | Type |
 |------|------|
 | [helm_release.authentik](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
-| [helm_release.harbor](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
 | [kubernetes_cluster_role_binding_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/cluster_role_binding_v1) | resource |
 | [kubernetes_cluster_role_binding_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/cluster_role_binding_v1) | resource |
 | [kubernetes_cluster_role_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/cluster_role_v1) | resource |

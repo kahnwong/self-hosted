@@ -1,7 +1,4 @@
-kind: Deployment
 name: mlflow
-replicaCount: 1
-kubeGreen: true
 containers:
   - name: mlflow
     repository: ghcr.io/kahnwong/docker-mlflow
@@ -13,6 +10,3 @@ containers:
     env:
       - name: MLFLOW_DISABLE_TELEMETRY
         value: "true"
-service:
-  port: 8080
-  nodePort: 30037
