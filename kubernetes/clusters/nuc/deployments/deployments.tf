@@ -32,7 +32,7 @@ locals {
       # "evcc",
       "fava",
       "homer",
-      "koreader-sync-server",
+      # "koreader-sync-server",
       "linkding",
       "livegrep-backend", "livegrep-frontend",
       "nocodb",
@@ -40,7 +40,7 @@ locals {
       "qrcode-api",
       "rallly-postgres",
       "retrooo",
-      "rss-bridge",
+      # "rss-bridge",
       "sshx",
       "subsonic-widgets",
       "supersecretmessage", "supersecretmessage-vault",
@@ -61,7 +61,7 @@ locals {
       # "notes-console-t",
     ]
     playground = [
-      "go-playground",
+      # "go-playground",
     ]
     tools = [
       "rallly",
