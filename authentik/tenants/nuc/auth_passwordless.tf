@@ -35,7 +35,7 @@ resource "authentik_flow_stage_binding" "passwordless_webauthn_validation" {
 # }
 resource "authentik_stage_user_login" "default_authentication_login" {
   name               = "default-authentication-login"
-  session_duration   = "hours=12"
+  session_duration   = "hours=72" # default 12
   remember_me_offset = "seconds=0"
   geoip_binding      = "bind_continent_country_city"
   network_binding    = "bind_asn"
