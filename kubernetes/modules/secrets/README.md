@@ -6,14 +6,14 @@
 
 | Name | Version |
 | ---- | ------- |
-| kubernetes | 3.0.1 |
+| kubernetes | 3.1.0 |
 | sops | 1.4.1 |
 
 ## Providers
 
 | Name | Version |
 | ---- | ------- |
-| kubernetes | 3.0.1 |
+| kubernetes | 3.1.0 |
 | sops | 1.4.1 |
 
 ## Modules
@@ -24,9 +24,9 @@ No modules.
 
 | Name | Type |
 | ---- | ---- |
-| [kubernetes_secret_v1.ghcr_config](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/secret_v1) | resource |
-| [kubernetes_secret_v1.secrets](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/secret_v1) | resource |
-| [kubernetes_secret_v1.secrets_cloudnative_pg](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/secret_v1) | resource |
+| [kubernetes_secret_v1.ghcr_config](https://registry.terraform.io/providers/hashicorp/kubernetes/3.1.0/docs/resources/secret_v1) | resource |
+| [kubernetes_secret_v1.secrets](https://registry.terraform.io/providers/hashicorp/kubernetes/3.1.0/docs/resources/secret_v1) | resource |
+| [kubernetes_secret_v1.secrets_cloudnative_pg](https://registry.terraform.io/providers/hashicorp/kubernetes/3.1.0/docs/resources/secret_v1) | resource |
 | [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.4.1/docs/data-sources/file) | data source |
 | [sops_file.secrets_basic_auth](https://registry.terraform.io/providers/carlpett/sops/1.4.1/docs/data-sources/file) | data source |
 

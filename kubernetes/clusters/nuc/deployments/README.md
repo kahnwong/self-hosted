@@ -20,7 +20,7 @@ kubectl taint nodes argon storage-required=true:NoSchedule
 | terraform | >= 1.3.6 |
 | helm | 3.1.1 |
 | kubectl | 2.2.0 |
-| kubernetes | 3.0.1 |
+| kubernetes | 3.1.0 |
 | sops | 1.4.1 |
 
 ## Providers
@@ -28,7 +28,7 @@ kubectl taint nodes argon storage-required=true:NoSchedule
 | Name | Version |
 | ---- | ------- |
 | helm | 3.1.1 |
-| kubernetes | 3.0.1 |
+| kubernetes | 3.1.0 |
 
 ## Modules
 
@@ -43,16 +43,16 @@ kubectl taint nodes argon storage-required=true:NoSchedule
 | Name | Type |
 | ---- | ---- |
 | [helm_release.authentik](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
-| [kubernetes_cluster_role_binding_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/cluster_role_binding_v1) | resource |
-| [kubernetes_cluster_role_binding_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/cluster_role_binding_v1) | resource |
-| [kubernetes_cluster_role_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/cluster_role_v1) | resource |
-| [kubernetes_cluster_role_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/cluster_role_v1) | resource |
-| [kubernetes_manifest.notes_personal](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/manifest) | resource |
-| [kubernetes_namespace_v1.this](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/namespace_v1) | resource |
-| [kubernetes_secret_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/secret_v1) | resource |
-| [kubernetes_secret_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/secret_v1) | resource |
-| [kubernetes_service_account_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/service_account_v1) | resource |
-| [kubernetes_service_account_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/service_account_v1) | resource |
+| [kubernetes_cluster_role_binding_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.1.0/docs/resources/cluster_role_binding_v1) | resource |
+| [kubernetes_cluster_role_binding_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.1.0/docs/resources/cluster_role_binding_v1) | resource |
+| [kubernetes_cluster_role_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.1.0/docs/resources/cluster_role_v1) | resource |
+| [kubernetes_cluster_role_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.1.0/docs/resources/cluster_role_v1) | resource |
+| [kubernetes_manifest.notes_personal](https://registry.terraform.io/providers/hashicorp/kubernetes/3.1.0/docs/resources/manifest) | resource |
+| [kubernetes_namespace_v1.this](https://registry.terraform.io/providers/hashicorp/kubernetes/3.1.0/docs/resources/namespace_v1) | resource |
+| [kubernetes_secret_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.1.0/docs/resources/secret_v1) | resource |
+| [kubernetes_secret_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.1.0/docs/resources/secret_v1) | resource |
+| [kubernetes_service_account_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.1.0/docs/resources/service_account_v1) | resource |
+| [kubernetes_service_account_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.1.0/docs/resources/service_account_v1) | resource |
 
 ## Inputs
 
