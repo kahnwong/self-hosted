@@ -78,9 +78,9 @@ resource "github_actions_secret" "cloudflare_pages" {
     for i in local.cloudflare_secrets_mapping : "${i.repo}.${i.secret_key}" => i
   }
 
-  repository      = each.value.repo
-  secret_name     = each.value.secret_key
-  plaintext_value = each.value.secret_value
+  repository  = each.value.repo
+  secret_name = each.value.secret_key
+  value       = each.value.secret_value
 }
 
 resource "github_actions_secret" "vercel" {
@@ -88,15 +88,15 @@ resource "github_actions_secret" "vercel" {
     for i in local.vercel_secrets_mapping : "${i.repo}.${i.secret_key}" => i
   }
 
-  repository      = each.value.repo
-  secret_name     = each.value.secret_key
-  plaintext_value = each.value.secret_value
+  repository  = each.value.repo
+  secret_name = each.value.secret_key
+  value       = each.value.secret_value
 }
 
 resource "github_actions_secret" "docs_algolia" {
   for_each = local.docs_algolia_secrets
 
-  repository      = "docs"
-  secret_name     = each.key
-  plaintext_value = each.value
+  repository  = "docs"
+  secret_name = each.key
+  value       = each.value
 }
