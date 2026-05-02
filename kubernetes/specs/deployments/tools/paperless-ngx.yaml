@@ -5,7 +5,7 @@ kubeGreen: true
 containers:
   - name: paperless-ngx
     repository: ghcr.io/paperless-ngx/paperless-ngx
-    tag: 2.20.14
+    tag: 2.20.15
     port: 8000
     env:
       - name: PAPERLESS_REDIS
