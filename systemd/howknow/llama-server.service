@@ -1,6 +1,8 @@
 [Unit]
 Description=llama-server
 After=network.target
+StartLimitIntervalSec=60
+StartLimitBurst=4
 
 [Service]
 User=ro
