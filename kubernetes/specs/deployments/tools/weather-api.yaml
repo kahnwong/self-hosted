@@ -1,6 +1,7 @@
 kind: Deployment
 name: weather-api
 replicaCount: 1
+kubeGreen: true
 containers:
   - name: weather-api
     repository: ghcr.io/kahnwong/weather-api

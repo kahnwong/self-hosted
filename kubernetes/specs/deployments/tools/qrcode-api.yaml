@@ -1,6 +1,7 @@
 kind: Deployment
 name: qrcode-api
 replicaCount: 1
+kubeGreen: true
 containers:
   - name: qrcode-api
     repository: ghcr.io/kahnwong/qrcode-api

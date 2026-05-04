@@ -1,6 +1,7 @@
 kind: Deployment
 name: livegrep-backend
 replicaCount: 1
+kubeGreen: true
 containers:
   - name: backend
     repository: ghcr.io/livegrep/livegrep/base
