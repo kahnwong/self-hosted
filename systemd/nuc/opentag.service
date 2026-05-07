@@ -5,9 +5,9 @@ StartLimitIntervalSec=60
 StartLimitBurst=4
 
 [Service]
-User=kahnwong
-Group=kahnwong
-ExecStart=/bin/bash -c "cd /opt/opentag-web && /home/kahnwong/.local/bin/uv run uvicorn opentag_web.server:app --port 40000 --host 0.0.0.0"
+User=ubuntu
+Group=ubuntu
+ExecStart=/bin/bash -c "cd /opt/opentag-web && /home/ubuntu/.local/bin/uv run uvicorn opentag_web.server:app --port 40000 --host 0.0.0.0"
 
 [Install]
 WantedBy=multi-user.target

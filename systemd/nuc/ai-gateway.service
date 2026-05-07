@@ -5,9 +5,9 @@ StartLimitIntervalSec=60
 StartLimitBurst=4
 
 [Service]
-User=kahnwong
-Group=kahnwong
-ExecStart=/bin/bash -c "cd /home/kahnwong/Git/ai-gateway && /home/kahnwong/.local/bin/uv run main.py"
+User=ubuntu
+Group=ubuntu
+ExecStart=/bin/bash -c "cd /opt/ai-gateway && /home/ubuntu/.local/bin/uv run main.py"
 
 [Install]
 WantedBy=multi-user.target
