@@ -9,6 +9,16 @@ services:
     restart: always
     networks:
       - error-pages
+  vaultwarden:
+    image: vaultwarden/server:1.35.7
+    container_name: vaultwarden
+    restart: always
+    ports:
+      - 81:80
+    env_file:
+      - .env.app.vaultwarden
+    volumes:
+      - /opt/vaultwarden/data:/data
   warpgate:
     image: ghcr.io/warp-tech/warpgate:0.21
     container_name: warpgate

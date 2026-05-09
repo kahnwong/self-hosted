@@ -23,6 +23,7 @@ locals {
     "subsonic-widgets",
     "thai-tech-cal",
     "todotxt",
+    "vaultwarden",
     "wakapi",
     "wallabag",
   ])
@@ -67,7 +68,7 @@ locals {
     "anisette",
     "gatus",
     "ontime",
-    "vaultwarden",
+    # "vaultwarden",
   ])
   oracle_non_proxied = toset([
     "memos",

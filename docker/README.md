@@ -13,6 +13,13 @@
 1 0 * * * /usr/bin/docker run --rm --env-file /home/ubuntu/self-hosted/docker/.env.backup.vaultwarden -v /opt/vaultwarden:/opt/vaultwarden ghcr.io/kahnwong/docker-aws-backup:b46d44d
 ```
 
+## Argon Backup
+
+```bash
+1 0 * * * /opt/scripts/backup.sh
+1 0 * * * /usr/bin/docker run --rm --env-file /home/ubuntu/self-hosted/docker/.env.backup.vaultwarden -v /opt/vaultwarden:/opt/vaultwarden ghcr.io/kahnwong/docker-aws-backup:c9f3ec2
+```
+
 ## pmtiles
 
 ```bash
