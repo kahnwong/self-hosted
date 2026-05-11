@@ -5,9 +5,9 @@ StartLimitIntervalSec=60
 StartLimitBurst=4
 
 [Service]
-User=ro
-Group=ro
-ExecStart=/bin/bash -c "lemonade-server serve --host 0.0.0.0"
+User=ubuntu
+Group=ubuntu
+ExecStart=lemonade-server serve --host 0.0.0.0
 
 [Install]
 WantedBy=multi-user.target
