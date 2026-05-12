@@ -1,40 +1,9 @@
-# ide
-.idea
-
-# projects
-livegrep-indexer.yaml
-
-# deployments
-foo.yaml
-bar.yaml
-baz.yaml
-
 # python
 **/.ipynb_checkpoints/
 **/__pycache__
-
-
-# env
-.env
-.transmission.env
-
-.duckdns.env
-
-*.plaintext.yaml
-**/*-exporter/values.yaml
-**/grafana*/**/configmap.yaml
-**/grafana-agent-operator/values.yaml
-all.Caddyfile
-private.Caddyfile
-header.Caddyfile
-bird.misc.Caddyfile
-
-# files
-*.html
 
 # terraform
 **/.terraform
 **/terraform.tfstate*
 **/.infracost
 **/terraform.tfvars
-dns_private.tf
