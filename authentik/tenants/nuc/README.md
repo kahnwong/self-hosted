@@ -25,26 +25,26 @@ OpenID Configuration Issuer:  https://authentik.karnwong.me/application/o/$APP/
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | authentik | 2026.2.0 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | authentik | 2026.2.0 |
 
 ## Modules
 
 | Name | Source | Version |
-|------|--------|---------|
+| ---- | ------ | ------- |
 | application\_oauth2 | ../../modules/authentik-application-oauth2 | n/a |
 | application\_proxy | ../../modules/authentik-application-proxy | n/a |
 
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [authentik_flow.passwordless_authentication](https://registry.terraform.io/providers/goauthentik/authentik/2026.2.0/docs/resources/flow) | resource |
 | [authentik_flow_stage_binding.passwordless_login](https://registry.terraform.io/providers/goauthentik/authentik/2026.2.0/docs/resources/flow_stage_binding) | resource |
 | [authentik_flow_stage_binding.passwordless_webauthn_validation](https://registry.terraform.io/providers/goauthentik/authentik/2026.2.0/docs/resources/flow_stage_binding) | resource |
@@ -61,7 +61,7 @@ OpenID Configuration Issuer:  https://authentik.karnwong.me/application/o/$APP/
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | authentik\_host | n/a | `string` | n/a | yes |
 | authentik\_token | n/a | `string` | n/a | yes |
 | property\_mappings | n/a | `list(string)` | n/a | yes |
@@ -70,7 +70,7 @@ OpenID Configuration Issuer:  https://authentik.karnwong.me/application/o/$APP/
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | oauth2\_credentials | n/a |
 <!-- END_TF_DOCS -->etes.local](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/resources/service_connection_kubernetes) | resource |
 | [authentik_stage_identification.default-authentication-identification](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/resources/stage_identification) | resource |

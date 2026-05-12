@@ -6,26 +6,26 @@
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | authentik | 2026.2.0 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | authentik | 2026.2.0 |
 
 ## Modules
 
 | Name | Source | Version |
-|------|--------|---------|
+| ---- | ------ | ------- |
 | application\_oauth2 | ../../modules/authentik-application-oauth2 | n/a |
 | application\_proxy | ../../modules/authentik-application-proxy | n/a |
 
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [authentik_flow.passwordless_authentication](https://registry.terraform.io/providers/goauthentik/authentik/2026.2.0/docs/resources/flow) | resource |
 | [authentik_flow_stage_binding.passwordless_login](https://registry.terraform.io/providers/goauthentik/authentik/2026.2.0/docs/resources/flow_stage_binding) | resource |
 | [authentik_flow_stage_binding.passwordless_webauthn_validation](https://registry.terraform.io/providers/goauthentik/authentik/2026.2.0/docs/resources/flow_stage_binding) | resource |
@@ -42,7 +42,7 @@
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | authentik\_host | n/a | `string` | n/a | yes |
 | authentik\_token | n/a | `string` | n/a | yes |
 | property\_mappings | n/a | `list(string)` | ```[ "777fa2fb-e6e8-4790-8c6b-52e23d9514bf", "737fdadc-bc80-4dcc-9259-c94bdbe76101", "68004046-feac-4819-90b1-7ab0cee66dbf", "1f6f9ee0-9d07-48df-b85c-eafe6119c530" ]``` | no |
@@ -51,7 +51,7 @@
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | oauth2\_credentials | n/a |
 <!-- END_TF_DOCS -->etes.local](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/resources/service_connection_kubernetes) | resource |
 | [authentik_stage_identification.default-authentication-identification](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/resources/stage_identification) | resource |

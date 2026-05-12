@@ -8,12 +8,9 @@ locals {
   selfhosted_proxied = toset([
     "*",
     "ai-gateway",
-    "files",
     "go",
-    "jupyterhub",
     "llm-context",
     "miniflux",
-    "n8n",
     "nocodb",
     "pmtiles", # if use docker-caddy, it needs to be a separate instance because it uses `file_server` directive
     "rallly",
@@ -32,6 +29,7 @@ locals {
     "api.todotxt",
     "api.weather",
     "authentik",
+    "cloud",
     "cpubench",
     "evcc",
     "fava",
@@ -56,7 +54,6 @@ locals {
     "sshx",
     "sync.koreader",
     "syncthing",
-    "warpgate",
   ]), var.private_dns)
 
   gcp_proxied = toset([

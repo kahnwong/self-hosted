@@ -7,6 +7,13 @@ locals {
         input_type : "raw"
       },
     ]
+    media = [
+      {
+        source : "cloud.sops.caddyfile",
+        filename : "Caddyfile",
+        input_type : "raw"
+      }
+    ]
     tools = [
       {
         source : "livegrep-clone-config.sops.yaml",

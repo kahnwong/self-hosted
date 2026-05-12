@@ -1,0 +1,28 @@
+kind: Deployment
+name: cloud
+replicaCount: 1
+kubeGreen: true
+containers:
+  - name: cloud
+    repository: caddy
+    tag: 2
+    port: 80
+    livenessProbeScheme: tcp
+    volumeMounts:
+      - name: config
+        mountPath: /etc/caddy/Caddyfile
+        subPath: Caddyfile
+        readOnly: true
+      - name: data
+        mountPath: /srv
+        readOnly: true
+volumes:
+  - name: config
+    configMap:
+      name: cloud.sops.caddyfile
+  - name: data
+    hostPath:
+      path: /opt/syncthing/cloud
+service:
+  port: 80
+  nodePort: 30067

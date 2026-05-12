@@ -64,6 +64,9 @@ rustpad.karnwong.me {
 secrets.karnwong.me {
     import base 30025
 }
+sshx.karnwong.me {
+    import base 30028
+}
 subsonic-widgets.karnwong.me {
     import base 30038
 }

@@ -4,14 +4,14 @@
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | authentik | 2026.2.0 |
 | random | 3.8.1 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | authentik | 2026.2.0 |
 
 ## Modules
@@ -21,14 +21,14 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [authentik_application.this](https://registry.terraform.io/providers/goauthentik/authentik/2026.2.0/docs/resources/application) | resource |
 | [authentik_provider_proxy.this](https://registry.terraform.io/providers/goauthentik/authentik/2026.2.0/docs/resources/provider_proxy) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | application\_name | n/a | `string` | n/a | yes |
 | authorization\_flow\_id | n/a | `string` | n/a | yes |
 | invalidation\_flow\_id | n/a | `string` | n/a | yes |
@@ -36,7 +36,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | application\_uuid | n/a |
 | provider\_proxy\_id | n/a |
 <!-- END_TF_DOCS -->

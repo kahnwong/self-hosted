@@ -4,7 +4,7 @@
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | terraform | >= 1.2.7 |
 | github | 6.11.1 |
 | sops | 1.4.1 |
@@ -12,7 +12,7 @@
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | github | 6.11.1 |
 | sops | 1.4.1 |
 
@@ -23,7 +23,7 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [github_actions_secret.cloudflare_pages](https://registry.terraform.io/providers/integrations/github/6.11.1/docs/resources/actions_secret) | resource |
 | [github_actions_secret.docs_algolia](https://registry.terraform.io/providers/integrations/github/6.11.1/docs/resources/actions_secret) | resource |
 | [github_actions_secret.vercel](https://registry.terraform.io/providers/integrations/github/6.11.1/docs/resources/actions_secret) | resource |
@@ -32,7 +32,7 @@ No modules.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | github\_token | need for github auth | `string` | n/a | yes |
 | private\_cloudflare\_pages\_repos | n/a | `set(string)` | n/a | yes |
 

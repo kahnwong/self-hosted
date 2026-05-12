@@ -4,14 +4,14 @@
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | authentik | 2026.2.0 |
 | random | 3.8.1 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | authentik | 2026.2.0 |
 | random | 3.8.1 |
 
@@ -22,7 +22,7 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [authentik_application.this](https://registry.terraform.io/providers/goauthentik/authentik/2026.2.0/docs/resources/application) | resource |
 | [authentik_provider_oauth2.this](https://registry.terraform.io/providers/goauthentik/authentik/2026.2.0/docs/resources/provider_oauth2) | resource |
 | [random_string.random](https://registry.terraform.io/providers/hashicorp/random/3.8.1/docs/resources/string) | resource |
@@ -30,7 +30,7 @@ No modules.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | application\_name | n/a | `string` | n/a | yes |
 | authorization\_flow\_id | n/a | `string` | n/a | yes |
 | invalidation\_flow\_id | n/a | `string` | n/a | yes |
@@ -41,7 +41,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | oauth\_client\_id | n/a |
 | oauth\_client\_secret | n/a |
 | provider\_oauth2\_id | n/a |

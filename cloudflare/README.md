@@ -12,21 +12,21 @@ All users - API Tokens:Edit
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | cloudflare | 5.18.0 |
 | sops | 1.4.1 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | cloudflare | 5.18.0 |
 | sops | 1.4.1 |
 
 ## Modules
 
 | Name | Source | Version |
-|------|--------|---------|
+| ---- | ------ | ------- |
 | karnwong\_me | ./modules/cloudflare-pages | n/a |
 | pages | ./modules/cloudflare-pages | n/a |
 | swissknife\_git | ./modules/cloudflare-pages | n/a |
@@ -34,7 +34,7 @@ All users - API Tokens:Edit
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [cloudflare_api_token.caddy_wildcard_tls](https://registry.terraform.io/providers/cloudflare/cloudflare/5.18.0/docs/resources/api_token) | resource |
 | [cloudflare_api_token.ddns_updater](https://registry.terraform.io/providers/cloudflare/cloudflare/5.18.0/docs/resources/api_token) | resource |
 | [cloudflare_api_token.deploy_cloudflare_pages](https://registry.terraform.io/providers/cloudflare/cloudflare/5.18.0/docs/resources/api_token) | resource |
@@ -62,7 +62,7 @@ All users - API Tokens:Edit
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | cloudflare\_account\_id | n/a | `string` | n/a | yes |
 | cloudflare\_api\_token | n/a | `string` | n/a | yes |
 | cloudflare\_zone\_id | n/a | `string` | n/a | yes |
@@ -71,7 +71,7 @@ All users - API Tokens:Edit
 ## Outputs
 
 | Name | Description |
-|------|-------------|
+| ---- | ----------- |
 | cloudflare\_api\_token\_ddns\_updater | n/a |
 | cloudflare\_api\_token\_deploy\_cloudflare\_pages | n/a |
 <!-- END_TF_DOCS -->e\_zone\_id | n/a | `string` | n/a | yes |

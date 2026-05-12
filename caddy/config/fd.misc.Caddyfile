@@ -11,35 +11,6 @@ wallabag.karnwong.me {
         }
     }
 }
-files.karnwong.me {
-    root * /opt/files
-
-    route {
-        crowdsec
-        file_server browse
-    }
-}
-# jupyterhub.karnwong.me {
-#    route {
-#        crowdsec
-#        reverse_proxy 192.168.1.48:80
-#    }
-# }
-# warpgate.karnwong.me {
-#     route {
-#         crowdsec
-#
-#         reverse_proxy 192.168.1.51:8888 {
-#             header_up Host warpgate.karnwong.me
-#             header_up X-Forwarded-Proto https
-#
-#             transport http {
-#                 tls_insecure_skip_verify
-#             }
-#         }
-#     }
-# }
-
 ai-gateway.karnwong.me {
     route {
        crowdsec
@@ -47,7 +18,6 @@ ai-gateway.karnwong.me {
        reverse_proxy 192.168.1.36:8000
     }
 }
-
 ntfy.karnwong.me, http://ntfy.karnwong.me {
     route {
 		crowdsec

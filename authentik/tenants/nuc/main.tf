@@ -20,6 +20,7 @@ locals {
     }
   )
   application_proxy_admin_only = toset([
+    "cloud",
     "fava",
     "livegrep",
     "notes",

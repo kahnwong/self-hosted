@@ -18,6 +18,7 @@ locals {
       "ntfy",
     ]
     media = [
+      "cloud",
       "navidrome",
     ]
     news = [

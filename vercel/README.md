@@ -5,14 +5,14 @@
 ## Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | sops | 1.4.1 |
 | vercel | 4.6.1 |
 
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | sops | 1.4.1 |
 | vercel | 4.6.1 |
 
@@ -23,7 +23,7 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [vercel_project.shouldideploytoday](https://registry.terraform.io/providers/vercel/vercel/4.6.1/docs/resources/project) | resource |
 | [vercel_project.transform](https://registry.terraform.io/providers/vercel/vercel/4.6.1/docs/resources/project) | resource |
 | [vercel_project_domain.shouldideploytoday](https://registry.terraform.io/providers/vercel/vercel/4.6.1/docs/resources/project_domain) | resource |
@@ -33,7 +33,7 @@ No modules.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | vercel\_token | n/a | `string` | n/a | yes |
 
 ## Outputs
