@@ -73,6 +73,11 @@ locals {
       "stirling-pdf",
     ]
   })
+  deployments_cloudnative_pg = tomap({
+    default = [
+      "test-postgres"
+    ]
+  })
 }
 
 module "base" {
@@ -91,6 +96,17 @@ module "knative" {
   deployments   = local.deployments_knative
   chart_name    = "base-knative"
   chart_version = "0.3.0"
+  values_extras = [
+    # "./resources/valuesTaintNodeSelector.yaml",
+  ]
+}
+
+module "cloudnative_pg" {
+  source = "../../../modules/deployments"
+
+  deployments   = local.deployments_cloudnative_pg
+  chart_name    = "cloudnative-pg"
+  chart_version = "0.1.0"
   values_extras = [
     # "./resources/valuesTaintNodeSelector.yaml",
   ]

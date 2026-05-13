@@ -35,6 +35,7 @@ kubectl taint nodes argon storage-required=true:NoSchedule
 | Name | Source | Version |
 | ---- | ------ | ------- |
 | base | ../../../modules/deployments | n/a |
+| cloudnative\_pg | ../../../modules/deployments | n/a |
 | knative | ../../../modules/deployments | n/a |
 
 ## Resources
