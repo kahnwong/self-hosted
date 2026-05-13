@@ -6,6 +6,10 @@ variable "secrets" {
   type = map(list(string))
 }
 
+variable "secrets_basic_auth" {
+  type = map(list(string))
+}
+
 variable "ghcr_namespaces" {
   type = set(string)
 }

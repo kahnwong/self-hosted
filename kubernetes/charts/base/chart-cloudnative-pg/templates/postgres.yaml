@@ -1,0 +1,33 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: {{ template "name" . }}
+  labels:
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+spec:
+  imageName: {{ .Values.cnpg.image | quote }}
+  instances: {{ .Values.cnpg.instances | default 1 }}
+  bootstrap:
+    initdb:
+      database: {{ .Values.cnpg.database | quote }}
+      owner: {{ .Values.cnpg.owner | quote }}
+      secret:
+        name: {{ .Values.cnpg.secret | quote }}
+  managed:
+    services:
+      additional:
+        {{- if .Values.cnpg.nodePort }}
+        - selectorType: rw
+          serviceTemplate:
+            metadata:
+              name: {{ printf "%s-nodeport" (include "name" .) | quote }}
+            spec:
+              type: NodePort
+              ports:
+                - name: postgres
+                  port: 5432
+                  targetPort: 5432
+                  nodePort: {{ .Values.cnpg.nodePort }}
+        {{- end }}
+  storage:
+    size: {{ dig "storage" "size" "1Gi" .Values.cnpg | quote }}

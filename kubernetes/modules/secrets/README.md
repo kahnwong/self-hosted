@@ -26,7 +26,9 @@ No modules.
 | ---- | ---- |
 | [kubernetes_secret_v1.ghcr_config](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/secret_v1) | resource |
 | [kubernetes_secret_v1.secrets](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/secret_v1) | resource |
+| [kubernetes_secret_v1.secrets_cloudnative_pg](https://registry.terraform.io/providers/hashicorp/kubernetes/3.0.1/docs/resources/secret_v1) | resource |
 | [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.4.1/docs/data-sources/file) | data source |
+| [sops_file.secrets_basic_auth](https://registry.terraform.io/providers/carlpett/sops/1.4.1/docs/data-sources/file) | data source |
 
 ## Inputs
 
@@ -37,6 +39,7 @@ No modules.
 | ghcr\_token | n/a | `string` | n/a | yes |
 | ghcr\_username | n/a | `string` | n/a | yes |
 | secrets | n/a | `map(list(string))` | n/a | yes |
+| secrets\_basic\_auth | n/a | `map(list(string))` | n/a | yes |
 
 ## Outputs
 

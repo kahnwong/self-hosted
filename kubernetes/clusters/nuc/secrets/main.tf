@@ -35,15 +35,20 @@ locals {
     ]
   })
 
+  secrets_basic_auth = tomap({
+    default = ["test-postgres"]
+  })
+
   ghcr_namespaces = toset(["infrastructure", "tools", "jobs"])
 }
 
 module "secrets" {
   source = "../../../modules/secrets"
 
-  cluster_name    = var.cluster_name
-  secrets         = local.secrets
-  ghcr_namespaces = local.ghcr_namespaces
-  ghcr_username   = var.ghcr_username
-  ghcr_token      = var.ghcr_token
+  cluster_name       = var.cluster_name
+  secrets            = local.secrets
+  secrets_basic_auth = local.secrets_basic_auth
+  ghcr_namespaces    = local.ghcr_namespaces
+  ghcr_username      = var.ghcr_username
+  ghcr_token         = var.ghcr_token
 }
