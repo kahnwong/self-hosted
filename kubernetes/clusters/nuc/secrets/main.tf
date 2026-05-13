@@ -36,7 +36,8 @@ locals {
   })
 
   secrets_basic_auth = tomap({
-    default = ["test-postgres"]
+    default    = []
+    playground = ["postgres-playground"]
   })
 
   ghcr_namespaces = toset(["infrastructure", "tools", "jobs"])

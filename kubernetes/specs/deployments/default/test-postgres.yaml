@@ -1,7 +1,0 @@
-name: test-postgres
-cnpg:
-  image: ghcr.io/cloudnative-pg/postgresql:17.8-standard-bookworm
-  instances: 2
-  database: example
-  owner: test
-  secret: test-postgres

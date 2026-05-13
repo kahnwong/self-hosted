@@ -75,8 +75,8 @@ locals {
   })
   deployments_cloudnative_pg = tomap({
     default = [
-      "test-postgres"
     ]
+    playground = ["postgres-playground"]
   })
 }
 

@@ -1,0 +1,8 @@
+name: postgres-playground
+cnpg:
+  image: ghcr.io/cloudnative-pg/postgis:18.3-3.6.3-standard-trixie
+  instances: 1
+  database: playground
+  owner: pguser
+  secret: postgres-playground
+  nodePort: 30001
