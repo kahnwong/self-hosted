@@ -6,11 +6,18 @@
 kubectl create namespace monitoring
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 
-# login - admin:prom-operator
-helm install kube-prometheus-stack prometheus-community/kube-prometheus-stack \
-    --values values.yaml \
-    --set grafana.defaultDashboardsTimezone="Asia/Bangkok" \
-    --namespace monitoring
+# base
+helm install kube-prometheus-stack oci://ghcr.io/prometheus-community/charts/kube-prometheus-stack \
+    --values grafana/values.yaml \
+    --set grafana.defaultDashboardsTimezone="America/Los_Angeles" \
+    --namespace monitoring \
+    --values grafana/values.yaml
+```
+
+Grafana `username` is `admin`. Password is obtained via:
+
+```bash
+kubectl get secret --namespace monitoring kube-prometheus-stack-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 ```
 
 ### Blackbox exporter
