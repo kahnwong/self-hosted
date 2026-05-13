@@ -54,6 +54,7 @@ locals {
     "sshx",
     "sync.koreader",
     "syncthing",
+    "warpgate",
   ]), var.private_dns)
 
   gcp_proxied = toset([
