@@ -48,14 +48,6 @@ services:
     image: neosmemo/memos:0.28.0
     volumes:
       - /opt/memos/data:/var/opt/memos
-  vaultwarden:
-    image: vaultwarden/server:1.36.0
-    container_name: vaultwarden
-    restart: always
-    env_file:
-      - .env.app.vaultwarden
-    volumes:
-      - /opt/vaultwarden/data:/data
   ontime:
     container_name: ontime
     image: getontime/ontime:v4
