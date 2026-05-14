@@ -1,12 +1,10 @@
-# Authentik Application Proxy
-
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
 | ---- | ------- |
 | authentik | 2026.2.0 |
-| random | 3.8.1 |
+| random | 3.9.0 |
 
 ## Providers
 
