@@ -1,6 +1,6 @@
 services:
   syncthing:
-    image: linuxserver/syncthing:2.0.16
+    image: linuxserver/syncthing:2.1.0
     container_name: syncthing
     environment:
       PUID: 0
