@@ -5,19 +5,11 @@ ci instructions:
 - <https://forgejo.org/2023-02-27-forgejo-actions/>
 - <https://code.forgejo.org/forgejo/runner>
 
-## Forgejo
-
-```bash
-kubectl create namespace forgejo
-helm upgrade --install forgejo ../../base/chart --values forgejo.yaml --namespace forgejo
-```
-
 ## Runner
 
-Enable `actions` in a repo, then under site administration, `create new runner` then run following:
+Enable `actions` in repo, then under site administration, `create new runner` then run following:
 
 ```bash
-
 export FORGEJO_HOST=
 export TOKEN=
 
@@ -25,4 +17,28 @@ wget -O forgejo-runner https://code.forgejo.org/forgejo/runner/releases/download
 chmod +x forgejo-runner
 ./forgejo-runner register
 ./forgejo-runner daemon
+```
+
+## Add theme
+
+Add css files to `gitea/public/assets/css`:
+
+<https://codeberg.org/Codeberg-Infrastructure/forgejo/src/branch/codeberg-15/web_src/css/themes>
+
+```bash
+.
+├── codeberg
+│   ├── base-brand.css
+│   └── dark-variables.css
+├── theme-codeberg-auto.css
+├── theme-codeberg-dark.css
+└── theme-codeberg-light.css
+```
+
+Then add config to `gitea/conf/app.ini`:
+
+```text
+[ui]
+THEMES = forgejo-auto,forgejo-light,forgejo-dark,codeberg-auto,codeberg-light,codeberg-dark
+DEFAULT_THEME = codeberg-auto
 ```
