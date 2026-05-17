@@ -3,7 +3,7 @@ schedule: "0 22 1 * *"
 containers:
   - name: backup-paperless-ngx
     repository: ghcr.io/kahnwong/docker-aws-backup
-    tag: b686665
+    tag: f09a8ec
     env:
       - name: MODE
         value: ARCHIVE

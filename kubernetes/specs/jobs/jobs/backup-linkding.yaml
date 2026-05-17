@@ -3,7 +3,7 @@ schedule: "1 0 * * *"
 containers:
   - name: backup-linkding
     repository: ghcr.io/kahnwong/docker-aws-backup
-    tag: b686665
+    tag: f09a8ec
     env:
       - name: MODE
         value: ARCHIVE

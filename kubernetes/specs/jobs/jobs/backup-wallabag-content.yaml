@@ -3,7 +3,7 @@ schedule: "0 23 1 * *"
 containers:
   - name: backup-wallabag-content
     repository: ghcr.io/kahnwong/docker-aws-backup
-    tag: b686665
+    tag: f09a8ec
     env:
       - name: MODE
         value: ARCHIVE

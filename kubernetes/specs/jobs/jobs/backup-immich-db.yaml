@@ -3,7 +3,7 @@ schedule: "30 0 * * *"
 containers:
   - name: backup-immich-db
     repository: ghcr.io/kahnwong/docker-aws-backup
-    tag: b686665
+    tag: f09a8ec
     env:
       - name: MODE
         value: DB_POSTGRES
