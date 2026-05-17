@@ -1,5 +1,12 @@
 # tf-github
 
+## Tangled Mirror Secrets
+
+```bash
+base64 -w 0 ~/.ssh/tangled-github-ci | xargs echo -n | gh secret set TANGLED_SSH_KEY --repo kahnwong/nix
+base64 -w 0 ~/.ssh/tangled-github-ci | xargs echo -n | gh secret set TANGLED_SSH_KEY --repo kahnwong/self-hosted
+```
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
