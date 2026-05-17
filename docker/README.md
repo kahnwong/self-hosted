@@ -20,12 +20,6 @@
 1 0 * * * /usr/bin/docker run --rm --env-file /home/ubuntu/self-hosted/docker/.env.backup.vaultwarden -v /opt/vaultwarden:/opt/vaultwarden ghcr.io/kahnwong/docker-aws-backup:f09a8ec
 ```
 
-## pmtiles
-
-```bash
-pmtiles extract https://build.protomaps.com/$(date -d "yesterday" +%Y%m%d).pmtiles bangkok.pmtiles --bbox=100.327912387,13.493389571,100.938516257,13.955198179
-```
-
 ## DDNS
 
 ```bash
