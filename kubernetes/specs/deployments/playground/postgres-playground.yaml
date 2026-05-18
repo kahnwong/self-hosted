@@ -1,6 +1,6 @@
 name: postgres-playground
 cnpg:
-  image: ghcr.io/cloudnative-pg/postgis:18.3-3.6.3-standard-trixie
+  image: ghcr.io/cloudnative-pg/postgis:18.4-3.6.3-standard-trixie
   instances: 1
   database: playground
   owner: pguser
