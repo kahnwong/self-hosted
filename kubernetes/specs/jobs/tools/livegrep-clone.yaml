@@ -3,7 +3,7 @@ schedule: 0 7 * * 5 # every Friday at 7am
 containers:
   - name: livegrep-clone
     repository: ghcr.io/kahnwong/livegrep-utils
-    tag: "5efe66f"
+    tag: 6b382c3
     command:
       - sh
       - -c

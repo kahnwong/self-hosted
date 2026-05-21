@@ -5,7 +5,7 @@ kubeGreen: true
 containers:
   - name: fava
     repository: ghcr.io/kahnwong/docker-fava
-    tag: "aa17cdd"
+    tag: e6063e4
     port: 5000
     env:
       - name: FAVA_READ_ONLY

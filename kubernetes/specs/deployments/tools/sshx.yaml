@@ -5,7 +5,7 @@ kubeGreen: true
 containers:
   - name: sshx
     repository: ghcr.io/kahnwong/sshx
-    tag: 15a75c7
+    tag: eb78b46
     port: 8051
 service:
   port: 8051
