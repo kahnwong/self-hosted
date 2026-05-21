@@ -13,6 +13,7 @@ jobs:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
+          persist-credentials: false
       - name: Add Tangled Remote
         env:
           TANGLED_REPO_URL: git@tangled.org:karnwong.me/${{ github.event.repository.name }}
