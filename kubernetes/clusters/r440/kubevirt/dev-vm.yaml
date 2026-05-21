@@ -1,0 +1,86 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dev-vm-ssh
+  namespace: vms
+spec:
+  type: NodePort
+  selector:
+    kubevirt.io/vm: dev-vm
+  ports:
+    - protocol: TCP
+      port: 22
+      targetPort: 22
+      nodePort: 30082
+---
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: dev-vm
+  namespace: vms
+spec:
+  runStrategy: Halted
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vm: dev-vm
+    spec:
+      domain:
+        devices:
+          disks:
+            - name: rootdisk
+              disk:
+                bus: virtio
+            - name: cloudinitdisk
+              disk:
+                bus: virtio
+          interfaces:
+            - name: default
+              masquerade: {}
+        resources:
+          requests:
+            memory: 6Gi
+            cpu: 4
+      networks:
+        - name: default
+          pod: {}
+      volumes:
+        - name: rootdisk
+          dataVolume:
+            name: dev-ubuntu-dv
+        - name: cloudinitdisk
+          cloudInitNoCloud:
+            userData: |
+              #cloud-config
+              hostname: dev-vm
+              users:
+                - name: ubuntu
+                  sudo: ALL=(ALL) NOPASSWD:ALL
+                  shell: /bin/bash
+                  ssh_authorized_keys:
+                    - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB1ItYazIZC/52E7kJy1NRZxGnqaoSacS1bl3YcoHj5B
+              ssh_pwauth: true
+              disable_root: false
+              chpasswd:
+                list: |
+                  ubuntu:ubuntu
+                expire: false
+              package_update: true
+              packages:
+                - qemu-guest-agent
+              runcmd:
+                - systemctl enable ssh
+                - systemctl start ssh
+  dataVolumeTemplates:
+    - metadata:
+        name: dev-ubuntu-dv
+      spec:
+        storage:
+          resources:
+            requests:
+              storage: 32Gi
+          accessModes:
+            - ReadWriteOnce
+        source:
+          registry:
+            url: "docker://quay.io/containerdisks/ubuntu:24.04-2603240212"
