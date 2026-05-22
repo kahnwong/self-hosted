@@ -15,6 +15,7 @@ sudo mkdir -p /opt/huggingface
 
 # download
 sudo hfdownloader download prism-ml/Bonsai-1.7B-gguf:Q1_0 --cache-dir /opt/huggingface
+sudo hfdownloader download prism-ml/Bonsai-8B-gguf:Q1_0 --cache-dir /opt/huggingface
 sudo hfdownloader download prism-ml/Ternary-Bonsai-1.7B-gguf:Q2_0 --cache-dir /opt/huggingface
 sudo hfdownloader download unsloth/gemma-4-26B-A4B-it-GGUF:q4_k_m --cache-dir /opt/huggingface
 sudo hfdownloader download unsloth/gemma-4-E2B-it-GGUF:q4_k_m --cache-dir /opt/huggingface
