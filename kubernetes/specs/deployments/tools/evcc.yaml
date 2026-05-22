@@ -6,7 +6,7 @@ kubeGreen: true
 containers:
   - name: evcc
     repository: evcc/evcc
-    tag: 0.306.3
+    tag: 0.307.0
     port: 7070
     volumeMounts:
       - name: data
