@@ -1,7 +1,3 @@
-data "sops_file" "secrets" {
-  source_file = "secrets.sops.yaml"
-}
-
 # sites
 locals {
   cloudflare_pages_repos = toset([
@@ -29,6 +25,29 @@ locals {
   vercel_repos = toset([
     "transform",
     "shouldideploy",
+  ])
+
+  tangled_mirror_repos = toset([
+    "a2a-go-demo",
+    "calculator",
+    "config-init",
+    "dagster-demo",
+    "dataframe-frameworks-showdown",
+    "docker-aws-backup",
+    "docker-mlflow",
+    "garmin-qrcode",
+    "habit-tracker",
+    "music-lyrics-tagger",
+    "nix",
+    "pgconn",
+    "proxmox-vm-selector",
+    "pycon-2025-ml-model-serving-optimization-with-onnx",
+    "repo-switcher",
+    "scratchpad",
+    "self-hosted",
+    "swissknife",
+    "waka",
+    "workspace-init",
   ])
 }
 
@@ -73,6 +92,9 @@ locals {
 }
 
 # main
+data "sops_file" "secrets" {
+  source_file = "secrets.sops.yaml"
+}
 resource "github_actions_secret" "cloudflare_pages" {
   for_each = {
     for i in local.cloudflare_secrets_mapping : "${i.repo}.${i.secret_key}" => i
@@ -99,4 +121,12 @@ resource "github_actions_secret" "docs_algolia" {
   repository  = "docs"
   secret_name = each.key
   value       = each.value
+}
+
+resource "github_actions_secret" "tangled_mirrors" {
+  for_each = local.tangled_mirror_repos
+
+  repository  = each.key
+  secret_name = "TANGLED_SSH_KEY"
+  value       = filebase64("~/.ssh/tangled-github-ci")
 }
