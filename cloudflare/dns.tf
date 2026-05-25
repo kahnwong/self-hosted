@@ -82,9 +82,7 @@ locals {
     "chat",
     "garage",
     "immich",
-    "mlflow",
     "ntfy",
-    "sshx",
     "tts",
   ])
 }

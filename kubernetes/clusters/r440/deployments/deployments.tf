@@ -5,14 +5,14 @@ locals {
       "authentik-postgres",
       "authentik-valkey"
     ]
-    immich = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
+    immich = [
+      # "immich", "immich-machine-learning", "immich-postgres", "immich-valkey"
+    ]
     infrastructure = [
       "garage",
-      # "mlflow", "mlflow-postgres",
       "ntfy",
     ]
     tools = [
-      "sshx",
     ]
   })
 }

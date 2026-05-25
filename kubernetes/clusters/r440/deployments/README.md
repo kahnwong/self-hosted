@@ -14,7 +14,7 @@ sudo ln -s /data/kubernetes/$service $service
 | ---- | ------- |
 | terraform | >= 1.3.6 |
 | helm | 3.1.1 |
-| kubectl | 2.2.0 |
+| kubectl | 2.4.0 |
 | kubernetes | 3.1.0 |
 
 ## Providers
