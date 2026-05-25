@@ -19,6 +19,12 @@ cd self-hosted
 ./scripts/caddy_apply.sh # point to your node's script
 ```
 
+## Set inotify limit
+
+```bash
+sudo sysctl -w fs.inotify.max_user_watches=1024288
+```
+
 <!-- BEGIN_TF_DOCS -->
 
 <!-- END_TF_DOCS -->
