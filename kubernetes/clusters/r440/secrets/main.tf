@@ -7,7 +7,6 @@ locals {
       # "immich", "immich-machine-learning", "immich-postgres"
     ]
     infrastructure = [
-      # "mlflow", "mlflow-postgres",
       "ntfy"
     ]
   })
