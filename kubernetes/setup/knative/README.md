@@ -21,12 +21,12 @@ spec:
       port: 80
       protocol: TCP
       targetPort: 8080
-      nodePort: 31080
+      nodePort: 31080 # add this
     - name: https
       port: 443
       protocol: TCP
       targetPort: 8443
-      nodePort: 31443
+      nodePort: 31443 # add this
   selector:
     app: 3scale-kourier-gateway
   type: NodePort
