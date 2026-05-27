@@ -6,10 +6,7 @@ locals {
     analytics = []
     authentik = ["authentik-postgres", "authentik-valkey"]
     default   = []
-    harbor = [
-      # "harbor-postgres"
-    ]
-    immich = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
+    immich    = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
     infrastructure = [
       "forgejo", "forgejo-postgres",
       "garage",
@@ -76,6 +73,7 @@ locals {
   deployments_cloudnative_pg = tomap({
     default = [
     ]
+    # harbor = ["harbor-postgres"]
     playground = ["postgres-playground"]
   })
 }
@@ -122,7 +120,7 @@ resource "kubernetes_manifest" "notes_personal" {
 #   name       = "harbor"
 #   namespace  = "harbor"
 #   repository = "https://helm.goharbor.io"
-#   version    = "1.18.3"
+#   version    = "1.19.1"
 #   chart      = "harbor"
 #
 #   values = [

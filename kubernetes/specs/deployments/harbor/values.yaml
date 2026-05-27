@@ -16,7 +16,7 @@ externalURL: https://harbor.karnwong.me
 database:
   type: external
   external:
-    host: "harbor-postgres.harbor.svc.cluster.local"
+    host: "harbor-postgres-rw.harbor.svc.cluster.local"
     port: "5432"
     username: "harbor"
     coreDatabase: "registry"

@@ -1,21 +1,7 @@
-kind: StatefulSet
 name: harbor-postgres
-replicaCount: 1
-containers:
-  - name: postgres
-    repository: postgres
-    tag: 18.3
-    port: 5432
-    livenessProbeScheme: tcp
-    envFrom:
-      - secretRef:
-          name: harbor-postgres
-    volumeMounts:
-      - name: data
-        mountPath: /var/lib/postgresql
-volumes:
-  - name: data
-    hostPath:
-      path: /opt/harbor/db
-service:
-  port: 5432
+cnpg:
+  image: ghcr.io/cloudnative-pg/postgis:18.4-3.6.3-standard-trixie
+  instances: 1
+  database: registry
+  owner: harbor
+  secret: harbor-postgres
