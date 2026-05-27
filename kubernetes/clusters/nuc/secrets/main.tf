@@ -17,7 +17,6 @@ locals {
       "forgejo-postgres",
       "immich-postgres",
       "miniflux-postgres",
-      "rallly-postgres",
       "wakapi-postgres",
       "wallabag",
     ]
@@ -26,7 +25,6 @@ locals {
       "cpubench",
       "livegrep-clone-custom",
       "qrcode-api",
-      "rallly", "rallly-postgres",
       "retrooo",
       "subsonic-widgets",
       "supersecretmessage-vault",

@@ -12,7 +12,6 @@ locals {
       "backup-nocodb",
       "backup-ntfy",
       "backup-paperless-ngx",
-      "backup-rallly",
       "backup-transmission",
       "backup-wakapi",
       "backup-wallabag-content",
@@ -45,4 +44,3 @@ module "base" {
   chart_version = "0.2.0"
   values_extras = []
 }
-
