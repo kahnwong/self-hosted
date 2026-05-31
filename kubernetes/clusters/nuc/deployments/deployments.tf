@@ -11,7 +11,6 @@ locals {
       "forgejo", "forgejo-postgres",
       "garage",
       "llm-honeypot",
-      "mlflow-postgres",
       "ntfy",
     ]
     media = [
@@ -72,7 +71,8 @@ locals {
     default = [
     ]
     # harbor = ["harbor-postgres"]
-    playground = ["postgres-playground"]
+    infrastructure = ["mlflow-postgres"]
+    playground     = ["postgres-playground"]
   })
 }
 

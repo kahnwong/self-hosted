@@ -8,6 +8,8 @@ Scale deployments to `0` before running a database restore.
 
 If it hangs at `pg_restore: warning: errors ignored on restore: 2099`, you can ignore since the tty just hangs.
 
+If restoring to `cloudnative-pg` postgres, must use `postgres` for username when running `pg_restore`.
+
 ```bash
 # exec backup job, then
 export date="2026-03-17"
@@ -18,6 +20,7 @@ cat "$service-sqldump-$date.bin" | kubectl exec -i "$service-postgres-0" -- pg_r
 ```
 
 If you want to run a manual backup job:
+
 ```bash
 kubectl exec <pod-name> -- pg_dump -U <username> -d <db-name> -Fc > backup_file.bin
 ```

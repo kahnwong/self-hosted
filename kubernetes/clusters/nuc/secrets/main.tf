@@ -5,7 +5,7 @@ locals {
     default   = []
     # harbor         = ["harbor"]
     immich         = ["immich", "immich-machine-learning", "immich-postgres"]
-    infrastructure = ["forgejo", "forgejo-postgres", "llm-honeypot", "mlflow", "mlflow-postgres", "ntfy"]
+    infrastructure = ["forgejo", "forgejo-postgres", "llm-honeypot", "mlflow", "ntfy"]
     news = [
       "miniflux", "miniflux-postgres",
       "wallabag", "wallabag-postgres", "wallabag-redis"
@@ -36,7 +36,8 @@ locals {
   secrets_basic_auth = tomap({
     default = []
     # harbor = ["harbor-postgres"]
-    playground = ["postgres-playground"]
+    infrastructure = ["mlflow-postgres"]
+    playground     = ["postgres-playground"]
   })
 
   ghcr_namespaces = toset(["infrastructure", "tools", "jobs"])
