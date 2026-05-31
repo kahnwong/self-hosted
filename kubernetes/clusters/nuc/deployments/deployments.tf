@@ -30,7 +30,7 @@ locals {
       # "evcc",
       "fava",
       "homer",
-      # "koreader-sync-server",
+      "koreader-sync-server",
       "linkding",
       "livegrep-backend", "livegrep-frontend",
       "nocodb",
