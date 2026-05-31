@@ -8,7 +8,7 @@ locals {
     default   = []
     immich    = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
     infrastructure = [
-      "forgejo", "forgejo-postgres",
+      "forgejo",
       "garage",
       "llm-honeypot",
       "ntfy",
@@ -71,7 +71,7 @@ locals {
     default = [
     ]
     # harbor = ["harbor-postgres"]
-    infrastructure = ["mlflow-postgres"]
+    infrastructure = ["forgejo-postgres", "mlflow-postgres"]
     playground     = ["postgres-playground"]
   })
 }

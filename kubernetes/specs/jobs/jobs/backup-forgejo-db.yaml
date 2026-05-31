@@ -13,14 +13,14 @@ containers:
         valueFrom:
           secretKeyRef:
             name: forgejo-postgres
-            key: POSTGRES_USER
+            key: username
       - name: POSTGRES_PASSWORD
         valueFrom:
           secretKeyRef:
             name: forgejo-postgres
-            key: POSTGRES_PASSWORD
+            key: password
       - name: POSTGRES_HOSTNAME
-        value: forgejo-postgres.infrastructure.svc.cluster.local
+        value: forgejo-postgres-rw.infrastructure.svc.cluster.local
     envFrom:
       - secretRef:
           name: backup

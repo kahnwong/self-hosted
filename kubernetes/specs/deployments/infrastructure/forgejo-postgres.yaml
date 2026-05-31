@@ -1,21 +1,7 @@
-kind: StatefulSet
 name: forgejo-postgres
-replicaCount: 1
-containers:
-  - name: postgres
-    repository: postgres
-    tag: 18.3
-    port: 5432
-    livenessProbeScheme: tcp
-    envFrom:
-      - secretRef:
-          name: forgejo-postgres
-    volumeMounts:
-      - name: db
-        mountPath: /var/lib/postgresql
-volumes:
-  - name: db
-    hostPath:
-      path: /opt/forgejo/db
-service:
-  port: 5432
+cnpg:
+  image: ghcr.io/cloudnative-pg/postgis:18.4-3.6.3-standard-trixie
+  instances: 1
+  database: gitea
+  owner: gitea
+  secret: forgejo-postgres
