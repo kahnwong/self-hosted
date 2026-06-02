@@ -79,6 +79,7 @@ locals {
     "api.chat",
     "authentik",
     "chat",
+    "cloud",
     "garage",
     "immich",
     "ntfy",

@@ -13,6 +13,7 @@ locals {
       "ntfy",
     ]
     tools = [
+      "filebrowser",
     ]
   })
 }

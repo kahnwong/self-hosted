@@ -4,6 +4,9 @@ authentik.bird.karnwong.me {
 chat.bird.karnwong.me {
     import base 3000
 }
+cloud.bird.karnwong.me {
+    import base 30068
+}
 garage.bird.karnwong.me {
     import base 30070
 }

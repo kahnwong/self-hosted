@@ -1,0 +1,33 @@
+kind: Deployment
+name: filebrowser
+replicaCount: 1
+kubeGreen: true
+containers:
+  - name: filebrowser
+    repository: filebrowser/filebrowser
+    tag: latest
+    port: 80
+    volumeMounts:
+      - name: data
+        mountPath: /srv
+      - name: db
+        mountPath: /database
+      - name: config
+        mountPath: /config
+    securityContext:
+      runAsUser: 1000
+      runAsNonRoot: true
+      runAsGroup: 1000
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/filebrowser/data
+  - name: db
+    hostPath:
+      path: /opt/filebrowser/db
+  - name: config
+    hostPath:
+      path: /opt/filebrowser/config
+service:
+  port: 80
+  nodePort: 30068
