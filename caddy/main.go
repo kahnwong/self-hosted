@@ -58,6 +58,7 @@ func main() {
 			"authentik": "30047",
 			"chat":      "3000",
 			"garage":    "30070",
+			"immich":    "30030",
 			"ntfy":      "30022",
 		},
 		"servicesForwardAuth": {},

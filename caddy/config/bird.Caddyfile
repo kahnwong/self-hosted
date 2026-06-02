@@ -7,6 +7,9 @@ chat.bird.karnwong.me {
 garage.bird.karnwong.me {
     import base 30070
 }
+immich.bird.karnwong.me {
+    import base 30030
+}
 ntfy.bird.karnwong.me {
     import base 30022
 }

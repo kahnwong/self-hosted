@@ -6,7 +6,7 @@ locals {
       "authentik-valkey"
     ]
     immich = [
-      # "immich", "immich-machine-learning", "immich-postgres", "immich-valkey"
+      "immich", "immich-machine-learning", "immich-postgres", "immich-valkey"
     ]
     infrastructure = [
       "garage",
