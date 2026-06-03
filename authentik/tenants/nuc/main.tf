@@ -1,5 +1,6 @@
 locals {
   application_oauth2 = tomap({
+    beszel : ["https://beszel.karnwong.me/api/oauth2-redirect"]
     gitea : ["https://git.karnwong.me/user/oauth2/authentik/callback"]
     harbor : ["https://harbor.karnwong.me/c/oidc/callback"]
     immich : [
