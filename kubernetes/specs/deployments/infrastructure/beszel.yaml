@@ -1,0 +1,23 @@
+kind: Deployment
+name: beszel
+replicaCount: 1
+containers:
+  - name: beszel
+    repository: henrygd/beszel
+    tag: 0.18.7
+    port: 8090
+    volumeMounts:
+      - name: data
+        mountPath: /beszel_data
+      - name: socket
+        mountPath: /beszel_socket
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/beszel/data
+  - name: socket
+    hostPath:
+      path: /opt/beszel/socket
+service:
+  port: 8090
+  nodePort: 30069

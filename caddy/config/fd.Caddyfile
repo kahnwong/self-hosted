@@ -7,6 +7,9 @@ api.weather.karnwong.me {
 authentik.karnwong.me {
     import base 30047
 }
+beszel.karnwong.me {
+    import base 30069
+}
 cpubench.karnwong.me {
     import base 30080
 }

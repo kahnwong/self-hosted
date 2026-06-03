@@ -8,6 +8,7 @@ locals {
   selfhosted_proxied = toset([
     "*",
     "ai-gateway",
+    "beszel",
     "go",
     "llm-context",
     "miniflux",

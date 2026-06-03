@@ -8,6 +8,7 @@ locals {
     default   = []
     immich    = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
     infrastructure = [
+      "beszel",
       "forgejo",
       "garage",
       "llm-honeypot",
