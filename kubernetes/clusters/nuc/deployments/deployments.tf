@@ -42,6 +42,7 @@ locals {
       "subsonic-widgets",
       "supersecretmessage", "supersecretmessage-vault",
       "todotxt",
+      "trek",
       "wakapi", "wakapi-postgres",
       "weather-api",
     ]

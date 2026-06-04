@@ -37,6 +37,7 @@ func main() {
 			"sync.koreader":    "30066",
 			"syncthing":        "8384",
 			"thai-tech-cal":    "thai-tech-cal.news",
+			"trek":             "30074",
 			"wakapi":           "30041",
 		},
 		"servicesForwardAuth": {

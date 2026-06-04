@@ -28,6 +28,7 @@ locals {
       "retrooo",
       "subsonic-widgets",
       "supersecretmessage-vault",
+      "trek",
       "wakapi", "wakapi-postgres",
       "weather-api",
     ]

@@ -20,6 +20,7 @@ locals {
     "subsonic-widgets",
     "thai-tech-cal",
     "todotxt",
+    "trek",
     "vaultwarden",
     "wakapi",
     "wallabag",
