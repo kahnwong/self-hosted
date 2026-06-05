@@ -1,0 +1,37 @@
+kind: Deployment
+name: wabbajack
+replicaCount: 1
+initContainers:
+  - name: init
+    image: ghcr.io/kahnwong/wabbajack-init:471ca4f
+    command: ["sh"]
+    args: ["/scripts/download-tts-assets.sh"]
+    volumeMounts:
+      - name: models
+        mountPath: /models
+containers:
+  - name: wabbajack
+    repository: ghcr.io/kahnwong/wabbajack
+    tag: 471ca4f
+    port: 3000
+    volumeMounts:
+      # sudo chown -R 65532:65532 data
+      - name: data
+        mountPath: /data
+      - name: models
+        mountPath: /models
+    env:
+      - name: HOST
+        value: "0.0.0.0"
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/wabbajack/data
+  - name: models
+    hostPath:
+      path: /opt/wabbajack/models
+service:
+  port: 3000
+  nodePort: 30076
+imagePullSecrets:
+  - name: ghcr-cfg

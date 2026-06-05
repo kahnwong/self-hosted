@@ -22,6 +22,7 @@ locals {
     "todotxt",
     "trek",
     "vaultwarden",
+    "wabbajack",
     "wakapi",
     "wallabag",
   ])

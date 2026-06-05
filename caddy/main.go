@@ -38,6 +38,7 @@ func main() {
 			"syncthing":        "8384",
 			"thai-tech-cal":    "thai-tech-cal.news",
 			"trek":             "30074",
+			"wabbajack":        "30076",
 			"wakapi":           "30041",
 		},
 		"servicesForwardAuth": {

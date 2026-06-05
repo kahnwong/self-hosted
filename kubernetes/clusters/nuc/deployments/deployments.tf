@@ -43,6 +43,7 @@ locals {
       "supersecretmessage", "supersecretmessage-vault",
       "todotxt",
       # "trek",
+      "wabbajack",
       "wakapi", "wakapi-postgres",
       "weather-api",
     ]
