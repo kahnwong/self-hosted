@@ -30,6 +30,7 @@ var repos = map[string]string{
 	"kahnwong/subsonic-widgets":   "../deployments/tools/subsonic-widgets.yaml",
 	"kahnwong/sup3rs3cretmes5age": "../deployments/tools/supersecretmessage.yaml",
 	"kahnwong/todotxt":            "../deployments/tools/todotxt.yaml",
+	"kahnwong/wabbajack":          "../deployments/tools/wabbajack.yaml",
 	"kahnwong/water-cut-notify":   "../jobs/jobs/water-cut-notify.yaml",
 	"kahnwong/weather-api":        "../deployments/tools/weather-api.yaml",
 }
