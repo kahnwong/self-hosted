@@ -3,7 +3,7 @@ name: wabbajack
 replicaCount: 1
 initContainers:
   - name: init
-    image: ghcr.io/kahnwong/wabbajack-init:471ca4f
+    image: ghcr.io/kahnwong/wabbajack-init:b167f0f
     command: ["sh"]
     args: ["/scripts/download-tts-assets.sh"]
     volumeMounts:
@@ -12,7 +12,7 @@ initContainers:
 containers:
   - name: wabbajack
     repository: ghcr.io/kahnwong/wabbajack
-    tag: 471ca4f
+    tag: b167f0f
     port: 3000
     volumeMounts:
       # sudo chown -R 65532:65532 data
