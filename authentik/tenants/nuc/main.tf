@@ -36,6 +36,7 @@ locals {
     "mlflow",
     "opencost",
     "pdf",
+    "wabbajack",
   ])
 }
 

@@ -82,9 +82,6 @@ thai-tech-cal.karnwong.me {
 trek.karnwong.me {
     import base 30074
 }
-wabbajack.karnwong.me {
-    import base 30076
-}
 wakapi.karnwong.me {
     import base 30041
 }
@@ -120,4 +117,7 @@ pdf.karnwong.me {
 }
 todotxt.karnwong.me {
     import authentik_base 30064
+}
+wabbajack.karnwong.me {
+    import authentik_base 30076
 }

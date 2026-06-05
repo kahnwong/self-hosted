@@ -38,7 +38,6 @@ func main() {
 			"syncthing":        "8384",
 			"thai-tech-cal":    "thai-tech-cal.news",
 			"trek":             "30074",
-			"wabbajack":        "30076",
 			"wakapi":           "30041",
 		},
 		"servicesForwardAuth": {
@@ -53,6 +52,7 @@ func main() {
 			"opentag":   "40000",
 			"pdf":       "stirling-pdf.tools",
 			"todotxt":   "30064",
+			"wabbajack": "30076",
 		},
 	}
 
