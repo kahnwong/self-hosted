@@ -6,6 +6,9 @@ containers:
     repository: henrygd/beszel
     tag: 0.18.7
     port: 8090
+    env:
+      - name: APP_URL
+        value: https://beszel.karnwong.me
     volumeMounts:
       - name: data
         mountPath: /beszel_data
