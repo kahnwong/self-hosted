@@ -10,10 +10,10 @@ import (
 func main() {
 	fd := map[string]map[string]string{
 		"services": {
-			"api.qrcode":       "30077",
-			"api.weather":      "30078",
-			"authentik":        "30047",
-			"beszel":           "30069",
+			"api.qrcode":  "30077",
+			"api.weather": "30078",
+			"authentik":   "30047",
+			//"beszel":           "30069",
 			"cpubench":         "30080",
 			"garage":           "30070",
 			"git":              "30026",

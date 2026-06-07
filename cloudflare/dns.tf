@@ -8,7 +8,7 @@ locals {
   selfhosted_proxied = toset([
     "*",
     "ai-gateway",
-    "beszel",
+    # "beszel",
     "go",
     "llm-context",
     "miniflux",
@@ -76,6 +76,12 @@ locals {
     "share", # prevent request entity too large
   ])
 
+  oracle2_proxied = toset([
+    "beszel",
+  ])
+  oracle2_non_proxied = toset([
+  ])
+
   bird_proxied = toset([
   ])
   bird_non_proxied = toset([
@@ -104,6 +110,10 @@ locals {
   oracle_proxied_dict     = { for name in local.oracle_proxied : name => true }
   oracle_non_proxied_dict = { for name in local.oracle_non_proxied : name => false }
   oracle_dns              = merge(local.oracle_proxied_dict, local.oracle_non_proxied_dict)
+
+  oracle2_proxied_dict     = { for name in local.oracle2_proxied : name => true }
+  oracle2_non_proxied_dict = { for name in local.oracle2_non_proxied : name => false }
+  oracle2_dns              = merge(local.oracle2_proxied_dict, local.oracle2_non_proxied_dict)
 
   # bird
   bird_proxied_dict     = { for name in local.bird_proxied : name => true }
@@ -158,6 +168,16 @@ resource "cloudflare_dns_record" "oracle_dns" {
   ttl      = 1
   type     = "A"
   content  = data.sops_file.secrets.data["ORACLE_VM_IP"]
+  zone_id  = var.cloudflare_zone_id
+}
+
+resource "cloudflare_dns_record" "oracle2_dns" {
+  for_each = local.oracle2_dns
+  name     = "${each.key}.karnwong.me"
+  proxied  = each.value
+  ttl      = 1
+  type     = "A"
+  content  = data.sops_file.secrets.data["ORACLE2_VM_IP"]
   zone_id  = var.cloudflare_zone_id
 }
 

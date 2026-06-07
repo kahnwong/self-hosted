@@ -1,0 +1,3 @@
+beszel.karnwong.me {
+    reverse_proxy beszel:8090
+}
