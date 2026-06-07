@@ -21,7 +21,7 @@ locals {
       "maintenance-backup-monthly-prune",
       "maintenance-backup-prune",
       "maintenance-wallabag-cleanup",
-      "water-cut-notify",
+      # "water-cut-notify",
     ]
     jobs-food = [
       "01-1-lunch-ask",
