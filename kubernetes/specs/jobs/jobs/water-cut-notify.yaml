@@ -3,7 +3,7 @@ schedule: "0 */6 * * *"
 containers:
   - name: water-cut-notify
     repository: ghcr.io/kahnwong/water-cut-notify
-    tag: f2382ca
+    tag: a8a3093
     envFrom:
       - secretRef:
           name: water-cut-notify
