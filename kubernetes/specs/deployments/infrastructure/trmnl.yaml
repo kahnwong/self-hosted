@@ -4,8 +4,11 @@ replicaCount: 1
 containers:
   - name: trmnl
     repository: ghcr.io/kahnwong/trmnl-beszel
-    tag: 7e0a437
+    tag: 3d4c549
     port: 3000
+    env:
+      - name: LOG_LEVEL
+        value: error
     envFrom:
       - secretRef:
           name: trmnl
