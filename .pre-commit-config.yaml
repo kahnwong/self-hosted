@@ -15,7 +15,7 @@ repos:
       - id: fix-byte-order-marker
       - id: mixed-line-ending
   - repo: https://github.com/kahnwong/pre-commit
-    rev: "98ee5b1"
+    rev: "e4f4ade"
     hooks:
       #      - id: go-build
       - id: go-fmt
@@ -30,4 +30,5 @@ repos:
       - id: yamlfmt
       - id: shellcheck
       - id: shfmt
+      - id: oxfmt
       - id: kingfisher

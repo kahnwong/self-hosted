@@ -5,7 +5,7 @@ locals {
     default   = []
     # harbor         = ["harbor"]
     immich         = ["immich", "immich-machine-learning", "immich-postgres"]
-    infrastructure = ["forgejo", "llm-honeypot", "mlflow", "ntfy"]
+    infrastructure = ["forgejo", "llm-honeypot", "mlflow", "ntfy", "trmnl"]
     news = [
       "miniflux", "miniflux-postgres",
       "wallabag", "wallabag-postgres", "wallabag-redis"

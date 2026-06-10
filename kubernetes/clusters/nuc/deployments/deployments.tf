@@ -13,6 +13,7 @@ locals {
       "garage",
       "llm-honeypot",
       "ntfy",
+      "trmnl",
     ]
     media = [
       "cloud",

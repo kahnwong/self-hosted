@@ -79,6 +79,9 @@ thai-tech-cal.karnwong.me {
 trek.karnwong.me {
     import base 30074
 }
+trmnl.karnwong.me {
+    import base 30086
+}
 wakapi.karnwong.me {
     import base 30041
 }

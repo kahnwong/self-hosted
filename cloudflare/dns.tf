@@ -21,6 +21,7 @@ locals {
     "thai-tech-cal",
     "todotxt",
     "trek",
+    "trmnl",
     "vaultwarden",
     "wabbajack",
     "wakapi",
