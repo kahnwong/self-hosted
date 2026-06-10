@@ -20,7 +20,7 @@ services:
     volumes:
       - /opt/vaultwarden/data:/data
   warpgate:
-    image: ghcr.io/warp-tech/warpgate:0.24
+    image: ghcr.io/warp-tech/warpgate:0.25
     container_name: warpgate
     ports:
       - 2222:2222 # ssh
