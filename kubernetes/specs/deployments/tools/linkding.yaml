@@ -22,6 +22,8 @@ containers:
         value: "5000"
       - name: LD_CSRF_TRUSTED_ORIGINS
         value: "https://linkding.karnwong.me"
+      - name: LD_DISABLE_REQUEST_LOGS
+        value: "true"
     volumeMounts:
       - name: linkding-data
         mountPath: /etc/linkding/data
