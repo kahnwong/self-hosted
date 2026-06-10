@@ -94,6 +94,9 @@ greenkube.karnwong.me {
 homer.karnwong.me {
     import authentik_base 30053
 }
+ladder.karnwong.me {
+    import authentik_base 30085
+}
 linkding.karnwong.me {
     import authentik_base 30005
 }

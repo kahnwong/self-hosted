@@ -32,6 +32,7 @@ locals {
     "evcc",
     "greenkube",
     "homer",
+    "ladder",
     "linkding",
     "mlflow",
     "opencost",
