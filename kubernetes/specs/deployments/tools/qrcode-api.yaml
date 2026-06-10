@@ -5,11 +5,13 @@ kubeGreen: true
 containers:
   - name: qrcode-api
     repository: ghcr.io/kahnwong/qrcode-api
-    tag: 48c1571
+    tag: 2e303fb
     port: 3000
     env:
       - name: LISTEN_ADDR
         value: ":3000"
+      - name: LOG_LEVEL
+        value: error
     envFrom:
       - secretRef:
           name: qrcode-api
