@@ -5,13 +5,15 @@ kubeGreen: true
 containers:
   - name: todotxt
     repository: ghcr.io/kahnwong/todotxt
-    tag: cf0f887
+    tag: d032418
     port: 3000
     env:
       - name: LISTEN_ADDR
         value: ":3000"
       - name: TODO_PATH
         value: "/opt/todotxt/todo.txt"
+      - name: LOG_LEVEL
+        value: error
     volumeMounts:
       - name: data
         mountPath: /opt/todotxt
