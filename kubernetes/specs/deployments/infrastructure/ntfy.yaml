@@ -29,6 +29,8 @@ containers:
         value: "60"
       - name: NTFY_UPSTREAM_BASE_URL
         value: https://ntfy.sh
+      - name: NTFY_LOG_LEVEL
+        value: error
     envFrom:
       - secretRef:
           name: ntfy
