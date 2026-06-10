@@ -1,0 +1,15 @@
+kind: Deployment
+name: ladder
+replicaCount: 1
+kubeGreen: true
+containers:
+  - name: ladder
+    repository: ghcr.io/everywall/ladder
+    tag: v0.0.23
+    port: 8080
+    env:
+      - name: RULESET
+        value: "https://raw.githubusercontent.com/everywall/ladder-rules/main/ruleset.yaml"
+service:
+  port: 8080
+  nodePort: 30085

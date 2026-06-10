@@ -31,6 +31,7 @@ locals {
       "fava",
       "homer",
       "koreader-sync-server",
+      "ladder",
       "linkding",
       "livegrep-backend", "livegrep-frontend",
       "nocodb",

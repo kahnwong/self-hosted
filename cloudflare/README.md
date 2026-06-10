@@ -48,6 +48,7 @@ All users - API Tokens:Edit
 | [cloudflare_dns_record.gcp_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/dns_record) | resource |
 | [cloudflare_dns_record.github_pages_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/dns_record) | resource |
 | [cloudflare_dns_record.google_workspace_smtp](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/dns_record) | resource |
+| [cloudflare_dns_record.oracle2_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/dns_record) | resource |
 | [cloudflare_dns_record.oracle_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/dns_record) | resource |
 | [cloudflare_dns_record.pop_mx_send](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/dns_record) | resource |
 | [cloudflare_dns_record.pop_txt_key](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/dns_record) | resource |

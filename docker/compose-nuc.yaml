@@ -41,20 +41,8 @@ services:
           memory: 2G
     networks:
       - transmission
-  ladder:
-    image: ghcr.io/everywall/ladder:v0.0.23
-    container_name: ladder
-    environment:
-      RULESET: "https://raw.githubusercontent.com/everywall/ladder-rules/main/ruleset.yaml"
-    ports:
-      - 8080:8080
-    restart: always
-    networks:
-      - ladder
 networks:
   syncthing:
     driver: bridge
   transmission:
-    driver: bridge
-  ladder:
     driver: bridge
