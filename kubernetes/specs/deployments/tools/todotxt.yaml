@@ -5,7 +5,7 @@ kubeGreen: true
 containers:
   - name: todotxt
     repository: ghcr.io/kahnwong/todotxt
-    tag: "d032418"
+    tag: "0bed8ae"
     port: 3000
     env:
       - name: LISTEN_ADDR
