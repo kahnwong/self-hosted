@@ -5,7 +5,7 @@ kubeGreen: true
 containers:
   - name: navidrome
     repository: deluan/navidrome
-    tag: 0.61.2
+    tag: 0.62.0
     port: 4533
     env:
       - name: ND_SCANINTERVAL
