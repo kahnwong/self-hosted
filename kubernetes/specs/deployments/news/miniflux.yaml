@@ -23,6 +23,8 @@ containers:
         value: "5"
       - name: SCHEDULER_ENTRY_FREQUENCY_MAX_INTERVAL
         value: "1440" # 24*60
+      - name: LOG_LEVEL
+        value: error
     envFrom:
       - secretRef:
           name: miniflux
