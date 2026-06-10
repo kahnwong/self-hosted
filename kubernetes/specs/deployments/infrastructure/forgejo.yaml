@@ -37,6 +37,8 @@ containers:
         value: "false"
       - name: FORGEJO__actions__ENABLED
         value: "false"
+      - name: FORGEJO__log__LEVEL
+        value: error
     envFrom:
       - secretRef:
           name: forgejo
