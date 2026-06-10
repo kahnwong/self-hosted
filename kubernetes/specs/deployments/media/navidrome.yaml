@@ -11,7 +11,7 @@ containers:
       - name: ND_SCANINTERVAL
         value: 12h
       - name: ND_LOGLEVEL
-        value: info
+        value: error
       - name: ND_SESSIONTIMEOUT
         value: 24h
       - name: ND_BASEURL
