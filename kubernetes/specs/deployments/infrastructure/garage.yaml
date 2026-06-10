@@ -41,6 +41,9 @@ containers:
         containerPort: 3903
     # --- for tcp liveness probe
     port: 3900
+    env:
+      - name: RUST_LOG
+        value: garage=error
     livenessProbeScheme: tcp
     # --------------------------
     volumeMounts:
