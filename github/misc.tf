@@ -1,7 +1,7 @@
 locals {
   all_repos_raw = yamldecode(file("~/.config/workspace-init/config.yaml"))
   all_repos = flatten([
-    for item in local.all_repos_raw.category :
+    for item in local.all_repos_raw.orgs[0].categories :
     lookup(item, "repos", [])
   ])
 
