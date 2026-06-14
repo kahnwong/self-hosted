@@ -1,0 +1,41 @@
+clusterName: "CLUSTER NAME" # CHANGE ME
+globalConfig:
+  cluster_name: "CLUSTER NAME" # CHANGE ME
+  signing_key: "generate-a-secure-random-string-here"
+sinksConfig:
+  - discord_sink:
+      name: k8s_discord_alerts
+      url: "DISCORD_WEBHOOK_URL" # CHANGE ME
+customPlaybooks:
+  - triggers:
+      - on_pod_crash_loop:
+          restart_reason: "CrashLoopBackOff"
+    actions:
+      - report_crash_loop: {}
+  - triggers:
+      - on_pod_oom_killed:
+          rate_limit: 900
+          exclude:
+            - name: "oomkilled-pod"
+              namespace: "default"
+    actions:
+      - pod_graph_enricher:
+          resource_type: Memory
+          display_limits: true
+  - triggers:
+      - on_image_pull_backoff: {}
+    actions:
+      - image_pull_backoff_reporter: {}
+  - triggers:
+      - on_kubernetes_warning_event_create: {}
+    actions:
+      - create_finding:
+          title: "WarningEvent created: $name!"
+          aggregation_key: "warning_events_created"
+  - triggers:
+      - on_deployment_update: {}
+    actions:
+      - create_finding:
+          title: "Deployment $name in namespace $namespace was updated"
+          aggregation_key: "Deployment_updated"
+builtinPlaybooks:

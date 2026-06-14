@@ -3,21 +3,20 @@
   "kind": "Dashboard",
   "metadata": {
     "name": "NEzutrbMk",
-    "namespace": "stacks-35611",
-    "uid": "tEh68tzHKX2Ttnf05LPJxisKKwgVV98afX7LXH9madUX",
-    "resourceVersion": "1756479560006987",
-    "generation": 4,
-    "creationTimestamp": "2023-11-29T21:09:04Z",
+    "namespace": "default",
+    "uid": "a20cab9f-e192-483b-ab57-0d25f9977d38",
+    "resourceVersion": "1778651248173017",
+    "generation": 2,
+    "creationTimestamp": "2026-05-13T05:46:00Z",
     "labels": {
-      "grafana.app/deprecatedInternalID": "2513"
+      "grafana.app/deprecatedInternalID": "796556035694592"
     },
     "annotations": {
-      "grafana.app/createdBy": "provisioning:",
-      "grafana.app/folder": "e04a2013-1aef-4c39-87e4-4d6c1698820a",
-      "grafana.app/updatedBy": "user:eepfufvzrrshsc",
-      "grafana.app/updatedTimestamp": "2025-08-29T14:59:28Z",
-      "grafana.app/folderTitle": "Sandbox",
-      "grafana.app/folderUrl": "/dashboards/f/e04a2013-1aef-4c39-87e4-4d6c1698820a/sandbox"
+      "grafana.app/createdBy": "user:dflwrm9i3jfggf",
+      "grafana.app/folder": "",
+      "grafana.app/saved-from-ui": "Grafana v13.0.1 (a100054f)",
+      "grafana.app/updatedBy": "user:dflwrm9i3jfggf",
+      "grafana.app/updatedTimestamp": "2026-05-13T05:47:28Z"
     }
   },
   "spec": {
@@ -27,7 +26,7 @@
         "spec": {
           "query": {
             "kind": "DataQuery",
-            "group": "",
+            "group": "grafana",
             "version": "v0",
             "spec": {}
           },
@@ -35,10 +34,7 @@
           "hide": true,
           "iconColor": "rgba(0, 211, 255, 1)",
           "name": "Annotations & Alerts",
-          "builtIn": true,
-          "legacyOptions": {
-            "type": "dashboard"
-          }
+          "builtIn": true
         }
       }
     ],
@@ -65,7 +61,7 @@
                       "group": "prometheus",
                       "version": "v0",
                       "datasource": {
-                        "name": "grafanacloud-prom"
+                        "name": "prometheus"
                       },
                       "spec": {
                         "expr": "probe_success{job=~\"$job\", instance=~\"$instance\"}",
@@ -87,7 +83,7 @@
                       "group": "prometheus",
                       "version": "v0",
                       "datasource": {
-                        "name": "grafanacloud-prom"
+                        "name": "prometheus"
                       },
                       "spec": {
                         "expr": "probe_http_ssl{job=~\"$job\", instance=~\"$instance\"} > 0",
@@ -109,7 +105,7 @@
                       "group": "prometheus",
                       "version": "v0",
                       "datasource": {
-                        "name": "grafanacloud-prom"
+                        "name": "prometheus"
                       },
                       "spec": {
                         "expr": "(probe_ssl_earliest_cert_expiry{job=~\"$job\", instance=~\"$instance\"} - time()) / 3600 / 24",
@@ -131,7 +127,7 @@
                       "group": "prometheus",
                       "version": "v0",
                       "datasource": {
-                        "name": "grafanacloud-prom"
+                        "name": "prometheus"
                       },
                       "spec": {
                         "expr": "probe_http_status_code{job=~\"$job\", instance=~\"$instance\"} > 0",
@@ -153,7 +149,7 @@
                       "group": "prometheus",
                       "version": "v0",
                       "datasource": {
-                        "name": "grafanacloud-prom"
+                        "name": "prometheus"
                       },
                       "spec": {
                         "expr": "avg_over_time(probe_duration_seconds{job=~\"$job\", instance=~\"$instance\"}[1m])",
@@ -176,7 +172,7 @@
                       "group": "prometheus",
                       "version": "v0",
                       "datasource": {
-                        "name": "grafanacloud-prom"
+                        "name": "prometheus"
                       },
                       "spec": {
                         "expr": "probe_tls_version_info{job=~\"$job\", instance=~\"$instance\"}",
@@ -198,7 +194,7 @@
                       "group": "prometheus",
                       "version": "v0",
                       "datasource": {
-                        "name": "grafanacloud-prom"
+                        "name": "prometheus"
                       },
                       "spec": {
                         "expr": "avg_over_time(probe_dns_lookup_time_seconds{job=~\"$job\", instance=~\"$instance\"}[1m])",
@@ -330,18 +326,10 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "table",
-            "version": "12.2.0-17261372546",
+            "version": "13.0.1",
             "spec": {
               "options": {
                 "cellHeight": "sm",
-                "footer": {
-                  "countRows": false,
-                  "fields": "",
-                  "reducer": [
-                    "sum"
-                  ],
-                  "show": false
-                },
                 "showHeader": true,
                 "sortBy": [
                   {
@@ -371,6 +359,9 @@
                       "type": "auto"
                     },
                     "filterable": true,
+                    "footer": {
+                      "reducers": []
+                    },
                     "inspect": false
                   }
                 },
@@ -750,7 +741,7 @@
                       "group": "prometheus",
                       "version": "v0",
                       "datasource": {
-                        "name": "grafanacloud-prom"
+                        "name": "prometheus"
                       },
                       "spec": {
                         "expr": "sum(probe_http_duration_seconds{job=~\"$job\", instance=~\"$instance\"}) by (instance)",
@@ -772,16 +763,16 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "12.2.0-17261372546",
+            "version": "13.0.1",
             "spec": {
               "options": {
                 "alertThreshold": true,
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
                 "legend": {
-                  "calcs": [
-                    "mean",
-                    "max",
-                    "min"
-                  ],
+                  "calcs": ["mean", "max", "min"],
                   "displayMode": "table",
                   "placement": "right",
                   "showLegend": true
@@ -871,7 +862,7 @@
                       "group": "prometheus",
                       "version": "v0",
                       "datasource": {
-                        "name": "grafanacloud-prom"
+                        "name": "prometheus"
                       },
                       "spec": {
                         "expr": "probe_http_duration_seconds{job=~\"$job\", instance=~\"$instance\"}",
@@ -892,13 +883,79 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "7.3.5",
+            "version": "13.0.1",
             "spec": {
               "options": {
-                "alertThreshold": true
+                "alertThreshold": true,
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
               },
               "fieldConfig": {
-                "defaults": {},
+                "defaults": {
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "value": 0,
+                        "color": "green"
+                      },
+                      {
+                        "value": 80,
+                        "color": "red"
+                      }
+                    ]
+                  },
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  }
+                },
                 "overrides": []
               }
             }
@@ -955,7 +1012,7 @@
             "kind": "RowsLayoutRow",
             "spec": {
               "title": "$instance",
-              "collapse": true,
+              "collapse": false,
               "repeat": {
                 "mode": "variable",
                 "value": "instance"
@@ -968,7 +1025,7 @@
                       "kind": "GridLayoutItem",
                       "spec": {
                         "x": 0,
-                        "y": 8,
+                        "y": 0,
                         "width": 24,
                         "height": 7,
                         "element": {
@@ -988,26 +1045,13 @@
     "links": [],
     "liveNow": false,
     "preload": false,
-    "tags": [
-      "blackbox",
-      "prometheus"
-    ],
+    "tags": ["blackbox", "prometheus"],
     "timeSettings": {
+      "timezone": "browser",
       "from": "now-6h",
       "to": "now",
       "autoRefresh": "1m",
-      "autoRefreshIntervals": [
-        "5s",
-        "10s",
-        "30s",
-        "1m",
-        "5m",
-        "15m",
-        "30m",
-        "1h",
-        "2h",
-        "1d"
-      ],
+      "autoRefreshIntervals": ["5s", "10s", "30s", "1m", "5m", "15m", "30m", "1h", "2h", "1d"],
       "hideTimepicker": false,
       "fiscalYearStartMonth": 0
     },
@@ -1030,13 +1074,14 @@
             "group": "prometheus",
             "version": "v0",
             "datasource": {
-              "name": "grafanacloud-prom"
+              "name": "prometheus"
             },
             "spec": {
               "__legacyStringValue": "label_values(probe_success, job)"
             }
           },
           "regex": "",
+          "regexApplyTo": "value",
           "sort": "alphabeticalDesc",
           "definition": "label_values(probe_success, job)",
           "options": [],
@@ -1063,13 +1108,14 @@
             "group": "prometheus",
             "version": "v0",
             "datasource": {
-              "name": "grafanacloud-prom"
+              "name": "prometheus"
             },
             "spec": {
               "__legacyStringValue": "label_values(probe_success{job=~\"$job\"}, instance)"
             }
           },
           "regex": "",
+          "regexApplyTo": "value",
           "sort": "alphabeticalDesc",
           "definition": "label_values(probe_success{job=~\"$job\"}, instance)",
           "options": [],

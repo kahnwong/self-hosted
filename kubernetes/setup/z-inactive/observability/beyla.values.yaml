@@ -1,0 +1,20 @@
+preset: application
+service:
+  enabled: true
+serviceMonitor:
+  enabled: true
+  additionalLabels:
+    release: kube-prometheus-stack
+config:
+  data:
+    otel_traces_export:
+      endpoint: http://alloy.observability.svc.cluster.local:4318
+    otel_metrics_export:
+      endpoint: http://alloy.observability.svc.cluster.local:4318
+      features:
+        - application
+        - application_service_graph
+    sampler:
+      name: always_on
+      # name: traceidratio
+      # arg: "0.1" # 0.1 equals 10%

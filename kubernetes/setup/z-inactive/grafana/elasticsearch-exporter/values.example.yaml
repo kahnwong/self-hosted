@@ -1,5 +1,0 @@
-env:
-  ES_USERNAME:
-  ES_PASSWORD:
-es:
-  uri:

@@ -1,0 +1,27 @@
+tempo:
+  reportingEnabled: false
+  metricsGenerator:
+    enabled: true
+    remoteWrite:
+      - url: http://kube-prometheus-stack-prometheus.observability.svc.cluster.local:9090/api/v1/write
+    processor:
+      local_blocks:
+        flush_to_storage: true
+  queryFrontend:
+    metrics:
+      max_duration: 168h # 7 days
+  overrides:
+    defaults:
+      metrics_generator:
+        processors:
+          - local-blocks
+          - service-graphs
+serviceMonitor:
+  enabled: true
+  additionalLabels:
+    release: kube-prometheus-stack
+persistence:
+  enabled: true
+  accessModes:
+    - ReadWriteOnce
+  size: 10Gi
