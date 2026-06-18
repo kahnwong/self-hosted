@@ -4,14 +4,14 @@
 - <https://knative.dev/blog/articles/set-up-a-local-knative-environment-with-kind/>
 
 ```bash
-kubectl apply -f https://github.com/knative/serving/releases/download/knative-v1.21.2/serving-crds.yaml
-kubectl apply -f https://github.com/knative/serving/releases/download/knative-v1.21.2/serving-core.yaml
+kubectl apply -f https://github.com/knative/serving/releases/download/knative-v1.22.1/serving-crds.yaml
+kubectl apply -f https://github.com/knative/serving/releases/download/knative-v1.22.1/serving-core.yaml
 ```
 
 Modify kourier to use nodePort
 
 ```bash
-wget https://github.com/knative/net-kourier/releases/download/knative-v1.19.5/kourier.yaml
+wget https://github.com/knative/net-kourier/releases/download/knative-v1.22.1/kourier.yaml
 ```
 
 ```yaml
@@ -29,7 +29,7 @@ spec:
       nodePort: 31443 # add this
   selector:
     app: 3scale-kourier-gateway
-  type: NodePort
+  type: NodePort # change to this
 ```
 
 ```bash
