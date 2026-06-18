@@ -15,6 +15,7 @@ import (
 var repos = map[string]string{
 	"kahnwong/aqi-notify":    "../jobs/jobs/aqi-notify.yaml",
 	"kahnwong/cpubench":      "../deployments/tools/cpubench.yaml",
+	"kahnwong/dashboard":     "../deployments/tools/dashboard.yaml",
 	"kahnwong/docker-fava":   "../deployments/tools/fava.yaml",
 	"kahnwong/docker-mlflow": "../deployments/infrastructure/mlflow.yaml",
 	"kahnwong/ical-to-rss":   "../deployments/news/thai-tech-cal.yaml",
