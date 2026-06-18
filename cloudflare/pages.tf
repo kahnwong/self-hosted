@@ -17,7 +17,6 @@ locals {
     "swissknife",
     "textarea",
     "tldraw",
-    "vendor-status",
   ])
 }
 

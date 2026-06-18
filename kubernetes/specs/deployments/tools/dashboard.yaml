@@ -1,0 +1,14 @@
+kind: Deployment
+name: dashboard
+replicaCount: 1
+kubeGreen: true
+containers:
+  - name: dashboard
+    repository: ghcr.io/kahnwong/dashboard
+    tag: 69e4aae
+    port: 80
+service:
+  port: 80
+  nodePort: 30053
+imagePullSecrets:
+  - name: ghcr-cfg

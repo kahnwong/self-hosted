@@ -28,9 +28,9 @@ locals {
     ]
     tools = [
       "cpubench",
+      "dashboard",
       # "evcc",
       "fava",
-      "homer",
       "koreader-sync-server",
       "ladder",
       "linkding",

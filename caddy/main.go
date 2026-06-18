@@ -42,6 +42,7 @@ func main() {
 			"wakapi":           "30041",
 		},
 		"servicesForwardAuth": {
+			"dashboard": "30053",
 			"evcc":      "30060",
 			"fava":      "30065",
 			"greenkube": "30067",

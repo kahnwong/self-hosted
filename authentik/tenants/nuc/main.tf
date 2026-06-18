@@ -29,6 +29,7 @@ locals {
     "todotxt",
   ])
   application_proxy = toset([
+    "dashboard",
     "evcc",
     "greenkube",
     "homer",

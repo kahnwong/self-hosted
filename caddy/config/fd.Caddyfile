@@ -85,6 +85,9 @@ trmnl.karnwong.me {
 wakapi.karnwong.me {
     import base 30041
 }
+dashboard.karnwong.me {
+    import authentik_base 30053
+}
 evcc.karnwong.me {
     import authentik_base 30060
 }

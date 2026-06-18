@@ -34,6 +34,7 @@ locals {
     "authentik",
     "cloud",
     "cpubench",
+    "dashboard",
     "evcc",
     "fava",
     "garage",

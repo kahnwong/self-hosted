@@ -19,7 +19,6 @@ locals {
     "swissknife",
     "textarea",
     "tldraw",
-    "vendor-status.karnwong.me",
   ])
 
   vercel_repos = toset([
