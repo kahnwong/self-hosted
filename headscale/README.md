@@ -22,3 +22,16 @@ headscale users list
 # [server] list nodes
 headscale nodes list
 ```
+
+## Traffic passs-through for Mullvad
+
+```bash
+# apply
+sudo nft -f mullvad_tailscale.rules
+
+# remove
+sudo nft delete table inet mullvad_tailscale
+
+# tailscale up
+sudo tailscale up --accept-dns=false
+```
