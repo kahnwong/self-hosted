@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: subsonic-widgets
     repository: ghcr.io/kahnwong/subsonic-widgets
-    tag: "0536604"
+    tag: 9d1ba5f
     port: 3000
     env:
       - name: LOG_LEVEL
