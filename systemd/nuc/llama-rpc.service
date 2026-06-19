@@ -1,0 +1,13 @@
+[Unit]
+Description=llama-rpc
+After=network.target
+StartLimitIntervalSec=60
+StartLimitBurst=4
+
+[Service]
+User=ubuntu
+Group=ubuntu
+ExecStart=/home/ubuntu/llama.cpp/build/bin/rpc-server -H 0.0.0.0 -p 50052 -c
+
+[Install]
+WantedBy=multi-user.target
