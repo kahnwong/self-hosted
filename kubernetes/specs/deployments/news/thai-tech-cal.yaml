@@ -2,7 +2,7 @@ name: thai-tech-cal
 containers:
   - name: thai-tech-cal
     repository: ghcr.io/kahnwong/ical-to-rss
-    tag: 68e31c0
+    tag: 178773b
     port: 3000
     env:
       - name: ICAL_URL
