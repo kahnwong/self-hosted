@@ -32,8 +32,8 @@ services:
   gatus:
     container_name: gatus
     restart: always
-    # ports:
-    #  - 8080:8080
+    ports:
+      - "8080:8080"
     image: twinproduction/gatus:v5.36.0
     volumes:
       - ./config/gatus.yaml:/config/config.yaml:ro
