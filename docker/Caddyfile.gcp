@@ -1,6 +1,3 @@
-# umami.karnwong.me {
-#     reverse_proxy umami:3000
-# }
-k2xvh.karnwong.me {
-    reverse_proxy hitkeep:8080
+umami.karnwong.me {
+    reverse_proxy umami:3000
 }

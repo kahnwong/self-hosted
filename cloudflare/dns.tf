@@ -63,11 +63,9 @@ locals {
   ]), var.private_dns)
 
   gcp_proxied = toset([
-  ])
-  gcp_non_proxied = toset([
-    "k2xvh",
     "umami",
   ])
+  gcp_non_proxied = toset([])
 
   oracle_proxied = toset([
     "anisette",
