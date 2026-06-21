@@ -1,0 +1,13 @@
+[Unit]
+Description=npipe serve
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/npipe serve
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
