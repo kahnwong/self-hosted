@@ -8,7 +8,7 @@ locals {
     infrastructure = ["forgejo", "llm-honeypot", "mlflow", "ntfy", "trmnl"]
     news = [
       "miniflux", "miniflux-postgres",
-      "wallabag", "wallabag-postgres", "wallabag-redis"
+      "wallabag", "wallabag-postgres",
     ]
     notes = ["notes-sync"]
     jobs = [

@@ -7,8 +7,5 @@ containers:
     tag: 8.8.0-alpine
     port: 6379
     livenessProbeScheme: tcp
-    envFrom:
-      - secretRef:
-          name: wallabag-redis
 service:
   port: 6379

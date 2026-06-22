@@ -39,5 +39,7 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+| ---- | ----------- |
+| remaining\_repos | n/a |
 <!-- END_TF_DOCS -->
