@@ -4,6 +4,9 @@
     - name: Pull, recreate, and start compose target
       ansible.builtin.shell: |
         cd self-hosted/docker && \
+        git stash && \
+        git fetch && \
+        git reset --hard origin/master && \
         docker compose -f compose-{{ inventory_hostname }}.yaml pull && \
         docker compose -f compose-{{ inventory_hostname }}.yaml down && \
         docker compose -f compose-{{ inventory_hostname }}.yaml up -d
