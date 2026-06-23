@@ -8,7 +8,6 @@ locals {
   selfhosted_proxied = toset([
     "*",
     "ai-gateway",
-    # "beszel",
     "go",
     "llm-context",
     "miniflux",
@@ -64,6 +63,7 @@ locals {
 
   gcp_proxied = toset([
     "umami",
+    "vzdko",
   ])
   gcp_non_proxied = toset([])
 
