@@ -1,0 +1,8 @@
+all:
+  hosts:
+    nuc:
+      ansible_host: nuc
+    argon:
+      ansible_host: argon
+    oracle:
+      ansible_host: oracle-lab
