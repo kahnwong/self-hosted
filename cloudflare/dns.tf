@@ -88,14 +88,10 @@ locals {
   bird_proxied = toset([
   ])
   bird_non_proxied = toset([
-    "api.chat",
     "authentik",
-    "chat",
     "cloud",
     "garage",
-    "immich",
     "ntfy",
-    "tts",
   ])
 }
 locals {

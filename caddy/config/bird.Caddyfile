@@ -1,17 +1,11 @@
 authentik.bird.karnwong.me {
     import base 30047
 }
-chat.bird.karnwong.me {
-    import base 3000
-}
 cloud.bird.karnwong.me {
     import base 30068
 }
 garage.bird.karnwong.me {
     import base 30070
-}
-immich.bird.karnwong.me {
-    import base 30030
 }
 ntfy.bird.karnwong.me {
     import base 30022

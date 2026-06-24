@@ -5,9 +5,6 @@ locals {
       "authentik-postgres",
       "authentik-valkey"
     ]
-    immich = [
-      "immich", "immich-machine-learning", "immich-postgres", "immich-valkey"
-    ]
     infrastructure = [
       "garage",
       "ntfy",
@@ -23,7 +20,7 @@ module "base" {
 
   deployments   = local.deployments_base
   chart_name    = "base"
-  chart_version = "0.4.0"
+  chart_version = "0.4.1"
   values_extras = []
 }
 
