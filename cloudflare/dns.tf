@@ -190,6 +190,17 @@ resource "cloudflare_dns_record" "bird_dns" {
   zone_id  = var.cloudflare_zone_id
 }
 
+resource "cloudflare_dns_record" "bird_private_dns" {
+  for_each = var.private_bird_dns
+  name     = "${each.key}.karnwong.me"
+  proxied  = false
+  ttl      = 1
+  type     = "CNAME"
+  content  = data.sops_file.secrets.data["BIRD_DDNS_CNAME"]
+  zone_id  = var.cloudflare_zone_id
+}
+
+
 # need for redirection
 resource "cloudflare_dns_record" "www_dummy" {
   name    = "www.karnwong.me"
