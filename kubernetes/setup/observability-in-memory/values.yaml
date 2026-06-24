@@ -1,0 +1,10 @@
+prometheus:
+  prometheusSpec:
+    retention: 2h
+    storageSpec:
+      emptyDir:
+        medium: Memory
+alertmanager:
+  enabled: false
+grafana:
+  enabled: false
