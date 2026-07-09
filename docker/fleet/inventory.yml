@@ -6,3 +6,5 @@ all:
       ansible_host: argon
     oracle:
       ansible_host: oracle-lab
+    gcp-lab:
+      ansible_host: gcp-lab
