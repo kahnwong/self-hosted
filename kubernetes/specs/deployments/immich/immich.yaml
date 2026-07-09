@@ -5,7 +5,7 @@ kubeGreen: true
 containers:
   - name: immich-server
     repository: ghcr.io/immich-app/immich-server
-    tag: v3.0.1
+    tag: v3.0.2
     port: 2283
     env:
       - name: IMMICH_LOG_LEVEL
