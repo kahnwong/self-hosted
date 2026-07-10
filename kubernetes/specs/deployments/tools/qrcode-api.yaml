@@ -5,7 +5,7 @@ kubeGreen: true
 containers:
   - name: qrcode-api
     repository: ghcr.io/kahnwong/qrcode-api
-    tag: cc003e9
+    tag: 4fdc020
     port: 3000
     env:
       - name: LISTEN_ADDR
