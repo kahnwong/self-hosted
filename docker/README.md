@@ -10,7 +10,6 @@
 
 ```bash
 1 0 * * * /usr/bin/docker run --rm --env-file /home/ubuntu/self-hosted/docker/.env.backup.memos -v /opt/memos:/opt/memos ghcr.io/kahnwong/docker-aws-backup:b46d44d
-1 0 * * * /usr/bin/docker run --rm --env-file /home/ubuntu/self-hosted/docker/.env.backup.vaultwarden -v /opt/vaultwarden:/opt/vaultwarden ghcr.io/kahnwong/docker-aws-backup:b46d44d
 ```
 
 ## Argon Backup
