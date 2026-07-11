@@ -4,7 +4,7 @@ replicaCount: 1
 kubeGreen: true
 initContainers:
   - name: init
-    image: ghcr.io/kahnwong/wabbajack-init:e54a069
+    image: ghcr.io/kahnwong/wabbajack-init:e2e813f
     command: ["sh"]
     args: ["/scripts/download-tts-assets.sh"]
     volumeMounts:
@@ -13,7 +13,7 @@ initContainers:
 containers:
   - name: wabbajack
     repository: ghcr.io/kahnwong/wabbajack
-    tag: e54a069
+    tag: e2e813f
     port: 3000
     volumeMounts:
       # sudo chown -R 65532:65532 data
