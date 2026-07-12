@@ -1,19 +1,19 @@
 kind: Deployment
-name: notes-personal
+name: notes
 replicaCount: 1
 kubeGreen: true
 containers:
-  - name: notes-personal
+  - name: notes
     repository: caddy
     tag: latest
     port: 80
     volumeMounts:
-      - name: notes-personal
+      - name: notes
         mountPath: /usr/share/caddy
 volumes:
-  - name: notes-personal
+  - name: notes
     hostPath:
-      path: /opt/notes-personal-sync/head/.vitepress/dist
+      path: /opt/notes-sync/head/.vitepress/dist
 service:
   port: 80
   nodePort: 30084

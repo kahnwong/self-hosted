@@ -16,7 +16,6 @@ locals {
       "miniflux", "miniflux-postgres",
       "wallabag", "wallabag-postgres",
     ]
-    notes = ["notes-sync"]
     jobs = [
       "backup", "ddns", "aqi-notify", "water-cut-notify",
       "authentik-postgres",
@@ -32,6 +31,7 @@ locals {
     services = [
       "cpubench",
       "livegrep-clone-custom",
+      "notes-sync",
       "qrcode-api",
       "retrooo",
       "subsonic-widgets",
@@ -55,7 +55,7 @@ locals {
     ]
   })
 
-  ghcr_namespaces = toset(["infrastructure", "services", "tools", "jobs"])
+  ghcr_namespaces = toset(["infrastructure", "services", "jobs"])
 }
 
 module "secrets" {

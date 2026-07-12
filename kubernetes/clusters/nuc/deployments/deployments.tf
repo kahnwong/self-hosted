@@ -18,9 +18,6 @@ locals {
       "miniflux", "miniflux-postgres",
       "wallabag", "wallabag-postgres", "wallabag-redis",
     ]
-    notes = [
-      "notes-personal",
-    ]
     services = [
       # "evcc",
       "cloud",
@@ -32,6 +29,7 @@ locals {
       "linkding",
       "livegrep-backend", "livegrep-frontend",
       "navidrome",
+      "notes",
       "paperless-ngx", "paperless-ngx-valkey",
       "qrcode-api",
       "retrooo",
@@ -51,10 +49,10 @@ locals {
     news = [
       "thai-tech-cal",
     ]
-    notes = [
-      # "notes-console-k",
-      # "notes-console-t",
-    ]
+    # notes = [
+    #   # "notes-console-k",
+    #   # "notes-console-t",
+    # ]
     playground = [
     ]
     services = [
@@ -112,8 +110,8 @@ module "cloudnative_pg" {
 }
 
 # ------ notes-sync ------ #
-resource "kubernetes_manifest" "notes_personal" {
-  manifest = yamldecode(file("../../../specs/deployments/notes/notes-personal-sync.yaml"))
+resource "kubernetes_manifest" "notes" {
+  manifest = yamldecode(file("../../../specs/deployments/services/notes-sync.yaml"))
 }
 
 # # ------ harbor ------ #
