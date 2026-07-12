@@ -36,10 +36,8 @@ locals {
       "retrooo",
       "subsonic-widgets",
       "supersecretmessage-vault",
+      "wakapi",
       "weather-api",
-    ]
-    tools = [
-      "wakapi", "wakapi-postgres",
     ]
   })
 
@@ -52,6 +50,9 @@ locals {
       "mlflow-postgres"
     ]
     playground = ["postgres-playground"]
+    services = [
+      "wakapi-postgres",
+    ]
   })
 
   ghcr_namespaces = toset(["infrastructure", "services", "tools", "jobs"])

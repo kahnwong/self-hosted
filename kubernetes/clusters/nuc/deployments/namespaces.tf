@@ -10,7 +10,6 @@ locals {
     "notes",
     "playground",
     "services",
-    "tools",
   ])
 }
 

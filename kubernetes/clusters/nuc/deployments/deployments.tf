@@ -42,10 +42,8 @@ locals {
       "supersecretmessage", "supersecretmessage-vault",
       "todotxt",
       "wabbajack",
+      "wakapi",
       "weather-api",
-    ]
-    tools = [
-      "wakapi", "wakapi-postgres",
     ]
   })
   deployments_knative = tomap({
@@ -79,6 +77,9 @@ locals {
       "mlflow-postgres",
     ]
     playground = ["postgres-playground"]
+    services = [
+      "wakapi-postgres",
+    ]
   })
 }
 

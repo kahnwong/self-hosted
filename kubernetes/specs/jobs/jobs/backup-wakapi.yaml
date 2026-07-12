@@ -13,14 +13,14 @@ containers:
         valueFrom:
           secretKeyRef:
             name: wakapi-postgres
-            key: POSTGRES_USER
+            key: username
       - name: POSTGRES_PASSWORD
         valueFrom:
           secretKeyRef:
             name: wakapi-postgres
-            key: POSTGRES_PASSWORD
+            key: password
       - name: POSTGRES_HOSTNAME
-        value: wakapi-postgres.tools.svc.cluster.local
+        value: wakapi-postgres-rw.services.svc.cluster.local
     envFrom:
       - secretRef:
           name: backup
