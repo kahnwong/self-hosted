@@ -1,11 +1,17 @@
 locals {
   secrets = tomap({
     analytics = []
-    authentik = ["authentik-env"] # `authentic-env` is to prevent name collision with secrets provided by helm chart
     default   = []
     # harbor         = ["harbor"]
-    immich         = ["immich", "immich-machine-learning", "immich-postgres"]
-    infrastructure = ["forgejo", "llm-honeypot", "mlflow", "ntfy", "trmnl"]
+    immich = ["immich", "immich-machine-learning", "immich-postgres"]
+    infrastructure = [
+      "authentik-env", # `authentic-env` is to prevent name collision with secrets provided by helm chart
+      "forgejo",
+      "llm-honeypot",
+      "mlflow",
+      "ntfy",
+      "trmnl"
+    ]
     news = [
       "miniflux", "miniflux-postgres",
       "wallabag", "wallabag-postgres",
@@ -37,11 +43,14 @@ locals {
   })
 
   secrets_basic_auth = tomap({
-    default   = []
-    authentik = ["authentik-postgres"]
+    default = []
     # harbor = ["harbor-postgres"]
-    infrastructure = ["forgejo-postgres", "mlflow-postgres"]
-    playground     = ["postgres-playground"]
+    infrastructure = [
+      "authentik-postgres",
+      "forgejo-postgres",
+      "mlflow-postgres"
+    ]
+    playground = ["postgres-playground"]
   })
 
   ghcr_namespaces = toset(["infrastructure", "tools", "jobs"])

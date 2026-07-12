@@ -4,11 +4,10 @@
 locals {
   deployments_base = tomap({
     analytics = []
-    authentik = ["authentik-valkey"]
     default   = []
     immich    = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
     infrastructure = [
-      # "beszel",
+      "authentik-valkey",
       "forgejo",
       "garage",
       "llm-honeypot",
@@ -74,10 +73,13 @@ locals {
   deployments_cloudnative_pg = tomap({
     default = [
     ]
-    authentik = ["authentik-postgres"]
     # harbor = ["harbor-postgres"]
-    infrastructure = ["forgejo-postgres", "mlflow-postgres"]
-    playground     = ["postgres-playground"]
+    infrastructure = [
+      "authentik-postgres",
+      "forgejo-postgres",
+      "mlflow-postgres",
+    ]
+    playground = ["postgres-playground"]
   })
 }
 
@@ -139,13 +141,13 @@ resource "kubernetes_manifest" "notes_personal" {
 # ------ authentik ------ #
 resource "helm_release" "authentik" {
   name       = "authentik"
-  namespace  = "authentik"
+  namespace  = "infrastructure"
   repository = "https://charts.goauthentik.io"
   version    = "2026.5.4"
   chart      = "authentik"
 
   values = [
-    file("../../../specs/deployments/authentik/values.yaml"),
+    file("../../../specs/deployments/infrastructure/authentik.values.yaml"),
   ]
 }
 
