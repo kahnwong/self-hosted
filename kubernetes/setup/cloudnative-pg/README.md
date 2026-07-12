@@ -17,3 +17,10 @@ SELECT ST_Distance(
     ST_GeomFromText('POINT(3 4)')
 ) AS test_distance;
 ```
+
+## Vectorchord Setup
+
+```sql
+-- run on target database
+CREATE EXTENSION IF NOT EXISTS vchord CASCADE;
+```

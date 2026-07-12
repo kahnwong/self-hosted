@@ -7,12 +7,20 @@ metadata:
 spec:
   imageName: {{ .Values.cnpg.image | quote }}
   instances: {{ .Values.cnpg.instances | default 1 }}
+  {{- if .Values.cnpg.postgresql }}
+  postgresql:
+  {{- toYaml .Values.cnpg.postgresql | nindent 4 }}
+  {{- end }}
   bootstrap:
     initdb:
       database: {{ .Values.cnpg.database | quote }}
       owner: {{ .Values.cnpg.owner | quote }}
       secret:
         name: {{ .Values.cnpg.secret | quote }}
+      {{- if .Values.cnpg.init }}
+      postInitSQL:
+      {{- toYaml .Values.cnpg.init | nindent 8 }}
+      {{- end }}
   managed:
     services:
       additional:

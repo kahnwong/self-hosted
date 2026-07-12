@@ -2,7 +2,7 @@ locals {
   namespaces = toset([
     "default",
     # "harbor",
-    "immich",
+    "immich", # [TODO] remove
     "infrastructure",
     "jobs",
     "playground",

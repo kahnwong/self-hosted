@@ -3,7 +3,6 @@ locals {
     analytics = []
     default   = []
     # harbor         = ["harbor"]
-    immich = ["immich", "immich-machine-learning", "immich-postgres"]
     infrastructure = [
       "authentik-env", # `authentic-env` is to prevent name collision with secrets provided by helm chart
       "forgejo",
@@ -26,6 +25,7 @@ locals {
     ]
     services = [
       "cpubench",
+      "immich", "immich-machine-learning",
       "livegrep-clone-custom",
       "miniflux",
       "notes-sync",
@@ -49,6 +49,7 @@ locals {
     ]
     playground = ["postgres-playground"]
     services = [
+      "immich-postgres",
       "miniflux-postgres",
       "wakapi-postgres",
       "wallabag-postgres",

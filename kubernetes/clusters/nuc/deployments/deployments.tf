@@ -4,7 +4,6 @@
 locals {
   deployments_base = tomap({
     default = []
-    immich  = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
     infrastructure = [
       "authentik-valkey",
       "forgejo",
@@ -19,6 +18,9 @@ locals {
       "cpubench",
       "dashboard",
       "fava",
+      "immich",
+      "immich-machine-learning",
+      "immich-valkey",
       "koreader-sync-server",
       "ladder",
       "linkding",
@@ -63,6 +65,7 @@ locals {
     ]
     playground = ["postgres-playground"]
     services = [
+      "immich-postgres",
       "miniflux-postgres",
       "wakapi-postgres",
       "wallabag-postgres",
@@ -96,7 +99,7 @@ module "cloudnative_pg" {
 
   deployments   = local.deployments_cloudnative_pg
   chart_name    = "cloudnative-pg"
-  chart_version = "0.1.0"
+  chart_version = "0.2.1"
   values_extras = [
     # "./resources/valuesTaintNodeSelector.yaml",
   ]

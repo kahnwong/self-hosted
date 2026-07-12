@@ -1,0 +1,12 @@
+name: immich-postgres
+cnpg:
+  image: ghcr.io/tensorchord/cloudnative-vectorchord:18.4
+  instances: 1
+  database: immich
+  owner: immich
+  secret: immich-postgres
+  postgresql: # for existing database
+    shared_preload_libraries:
+      - "vchord.so"
+  init:
+    - CREATE EXTENSION IF NOT EXISTS vchord CASCADE;
