@@ -18,7 +18,6 @@ locals {
     "subsonic-widgets",
     "thai-tech-cal",
     "todotxt",
-    "trek",
     "trmnl",
     "vaultwarden",
     "wabbajack",

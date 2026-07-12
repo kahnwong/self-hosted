@@ -14,7 +14,7 @@ locals {
         input_type : "raw"
       }
     ]
-    tools = [
+    services = [
       {
         source : "livegrep-clone-config.sops.yaml",
         filename : "repos.yaml"

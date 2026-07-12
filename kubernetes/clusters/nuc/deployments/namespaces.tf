@@ -9,6 +9,7 @@ locals {
     "news",
     "notes",
     "playground",
+    "services",
     "tools",
   ])
 }

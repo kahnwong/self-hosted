@@ -29,16 +29,17 @@ locals {
       # food
       "family-alerts"
     ]
-    tools = [
+    services = [
       "cpubench",
-      "livegrep-clone-custom",
       "qrcode-api",
       "retrooo",
       "subsonic-widgets",
       "supersecretmessage-vault",
-      "trek",
-      "wakapi", "wakapi-postgres",
       "weather-api",
+    ]
+    tools = [
+      "livegrep-clone-custom",
+      "wakapi", "wakapi-postgres",
     ]
   })
 
@@ -53,7 +54,7 @@ locals {
     playground = ["postgres-playground"]
   })
 
-  ghcr_namespaces = toset(["infrastructure", "tools", "jobs"])
+  ghcr_namespaces = toset(["infrastructure", "services", "tools", "jobs"])
 }
 
 module "secrets" {

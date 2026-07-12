@@ -25,27 +25,27 @@ locals {
     notes = [
       "notes-personal",
     ]
-    tools = [
+    services = [
       "cpubench",
       "dashboard",
-      # "evcc",
       "fava",
       "koreader-sync-server",
       "ladder",
       "linkding",
-      "livegrep-backend", "livegrep-frontend",
       "paperless-ngx", "paperless-ngx-valkey",
       "qrcode-api",
       "retrooo",
-      # "rss-bridge",
       "sshx",
       "subsonic-widgets",
       "supersecretmessage", "supersecretmessage-vault",
       "todotxt",
-      # "trek",
       "wabbajack",
-      "wakapi", "wakapi-postgres",
       "weather-api",
+    ]
+    tools = [
+      # "evcc",
+      "livegrep-backend", "livegrep-frontend",
+      "wakapi", "wakapi-postgres",
     ]
   })
   deployments_knative = tomap({
@@ -64,7 +64,7 @@ locals {
     ]
     playground = [
     ]
-    tools = [
+    services = [
       "rustpad",
       "stirling-pdf",
     ]

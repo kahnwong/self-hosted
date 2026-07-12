@@ -50,7 +50,7 @@ retrooo.karnwong.me {
     import base 30081
 }
 rustpad.karnwong.me {
-    import knative rustpad.tools
+    import knative rustpad.services
 }
 secrets.karnwong.me {
     import base 30025
@@ -69,9 +69,6 @@ syncthing.karnwong.me {
 }
 thai-tech-cal.karnwong.me {
     import knative thai-tech-cal.news
-}
-trek.karnwong.me {
-    import base 30074
 }
 trmnl.karnwong.me {
     import base 30086
@@ -113,7 +110,7 @@ opentag.karnwong.me {
     import authentik_base 40000
 }
 pdf.karnwong.me {
-    import authentik_knative stirling-pdf.tools
+    import authentik_knative stirling-pdf.services
 }
 todotxt.karnwong.me {
     import authentik_base 30064
