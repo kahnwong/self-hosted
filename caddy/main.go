@@ -19,7 +19,7 @@ func main() {
 			"git":              "30026",
 			"harbor":           "30500",
 			"immich":           "30030",
-			"jellyfin":         "jellyfin.media",
+			"jellyfin":         "jellyfin.services",
 			"llm-context":      "30055",
 			"matrix":           "6167",
 			"miniflux":         "30007",

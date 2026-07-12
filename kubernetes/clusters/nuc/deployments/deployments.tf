@@ -14,10 +14,6 @@ locals {
       "ntfy",
       "trmnl",
     ]
-    media = [
-      "cloud",
-      "navidrome",
-    ]
     news = [
       "miniflux", "miniflux-postgres",
       "wallabag", "wallabag-postgres", "wallabag-redis",
@@ -27,6 +23,7 @@ locals {
     ]
     services = [
       # "evcc",
+      "cloud",
       "cpubench",
       "dashboard",
       "fava",
@@ -34,6 +31,7 @@ locals {
       "ladder",
       "linkding",
       "livegrep-backend", "livegrep-frontend",
+      "navidrome",
       "paperless-ngx", "paperless-ngx-valkey",
       "qrcode-api",
       "retrooo",
@@ -50,9 +48,6 @@ locals {
     infrastructure = [
       # "mlflow",  # disable until https://github.com/mlflow/mlflow/issues/24155 is fixed
     ]
-    media = [
-      "jellyfin",
-    ]
     news = [
       "thai-tech-cal",
     ]
@@ -63,6 +58,7 @@ locals {
     playground = [
     ]
     services = [
+      "jellyfin",
       "rustpad",
       "stirling-pdf",
     ]

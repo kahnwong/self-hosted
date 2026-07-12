@@ -23,7 +23,7 @@ immich.karnwong.me {
     import base 30030
 }
 jellyfin.karnwong.me {
-    import knative jellyfin.media
+    import knative jellyfin.services
 }
 llm-context.karnwong.me {
     import base 30055
