@@ -1,7 +1,7 @@
 locals {
   secrets = tomap({
     analytics = []
-    authentik = ["authentik-env", "authentik-postgres"] # `authentic-env` is to prevent name collision with secrets provided by helm chart
+    authentik = ["authentik-env"] # `authentic-env` is to prevent name collision with secrets provided by helm chart
     default   = []
     # harbor         = ["harbor"]
     immich         = ["immich", "immich-machine-learning", "immich-postgres"]
@@ -35,7 +35,8 @@ locals {
   })
 
   secrets_basic_auth = tomap({
-    default = []
+    default   = []
+    authentik = ["authentik-postgres"]
     # harbor = ["harbor-postgres"]
     infrastructure = ["forgejo-postgres", "mlflow-postgres"]
     playground     = ["postgres-playground"]

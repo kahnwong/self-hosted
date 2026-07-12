@@ -13,14 +13,14 @@ containers:
         valueFrom:
           secretKeyRef:
             name: authentik-postgres
-            key: POSTGRES_USER
+            key: username
       - name: POSTGRES_PASSWORD
         valueFrom:
           secretKeyRef:
             name: authentik-postgres
-            key: POSTGRES_PASSWORD
+            key: password
       - name: POSTGRES_HOSTNAME
-        value: authentik-postgres.authentik.svc.cluster.local
+        value: authentik-postgres-rw.authentik.svc.cluster.local
     envFrom:
       - secretRef:
           name: backup

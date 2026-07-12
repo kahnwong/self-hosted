@@ -4,7 +4,7 @@
 locals {
   deployments_base = tomap({
     analytics = []
-    authentik = ["authentik-postgres", "authentik-valkey"]
+    authentik = ["authentik-valkey"]
     default   = []
     immich    = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
     infrastructure = [
@@ -74,6 +74,7 @@ locals {
   deployments_cloudnative_pg = tomap({
     default = [
     ]
+    authentik = ["authentik-postgres"]
     # harbor = ["harbor-postgres"]
     infrastructure = ["forgejo-postgres", "mlflow-postgres"]
     playground     = ["postgres-playground"]
