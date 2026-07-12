@@ -9,4 +9,4 @@ containers:
     command: ["sh", "-c"]
     args:
       - |
-        kubectl rollout restart deploy livegrep-backend --namespace tools
+        kubectl rollout restart deploy livegrep-backend --namespace services

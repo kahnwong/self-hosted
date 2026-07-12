@@ -26,12 +26,14 @@ locals {
       "notes-personal",
     ]
     services = [
+      # "evcc",
       "cpubench",
       "dashboard",
       "fava",
       "koreader-sync-server",
       "ladder",
       "linkding",
+      "livegrep-backend", "livegrep-frontend",
       "paperless-ngx", "paperless-ngx-valkey",
       "qrcode-api",
       "retrooo",
@@ -43,8 +45,6 @@ locals {
       "weather-api",
     ]
     tools = [
-      # "evcc",
-      "livegrep-backend", "livegrep-frontend",
       "wakapi", "wakapi-postgres",
     ]
   })

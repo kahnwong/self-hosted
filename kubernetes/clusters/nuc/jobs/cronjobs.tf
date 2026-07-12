@@ -27,7 +27,7 @@ locals {
       "food-01-2-lunch-order",
       "food-02-1-dinner-ask",
     ]
-    tools = [
+    services = [
       "livegrep-clone",
       "livegrep-indexer-custom",
     ]

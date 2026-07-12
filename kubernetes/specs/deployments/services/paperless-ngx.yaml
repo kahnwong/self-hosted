@@ -9,7 +9,7 @@ containers:
     port: 8000
     env:
       - name: PAPERLESS_REDIS
-        value: "redis://paperless-ngx-valkey.tools.svc.cluster.local:6379"
+        value: "redis://paperless-ngx-valkey.services.svc.cluster.local:6379"
       - name: PAPERLESS_URL
         value: "https://paperless.karnwong.me"
       - name: PAPERLESS_DISABLE_REGULAR_LOGIN

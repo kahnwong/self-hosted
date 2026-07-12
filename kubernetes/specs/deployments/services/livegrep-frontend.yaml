@@ -8,7 +8,14 @@ containers:
     tag: 853379ed3f
     port: 8910
     command: ["/livegrep/bin/livegrep"]
-    args: ["-docroot=/livegrep/web", "-listen=0.0.0.0:8910", "--connect=livegrep-backend.tools.svc.cluster.local:9999", "-index-config", "/data/livegrep.json"]
+    args:
+      [
+        "-docroot=/livegrep/web",
+        "-listen=0.0.0.0:8910",
+        "--connect=livegrep-backend.services.svc.cluster.local:9999",
+        "-index-config",
+        "/data/livegrep.json",
+      ]
     volumeMounts:
       - name: data
         mountPath: /data

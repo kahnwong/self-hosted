@@ -31,6 +31,7 @@ locals {
     ]
     services = [
       "cpubench",
+      "livegrep-clone-custom",
       "qrcode-api",
       "retrooo",
       "subsonic-widgets",
@@ -38,7 +39,6 @@ locals {
       "weather-api",
     ]
     tools = [
-      "livegrep-clone-custom",
       "wakapi", "wakapi-postgres",
     ]
   })
