@@ -64,7 +64,6 @@ locals {
   gcp_non_proxied = toset([])
 
   oracle_proxied = toset([
-    "gatus",
   ])
   oracle_non_proxied = toset([
     "memos",
