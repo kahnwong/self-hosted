@@ -88,9 +88,6 @@ fava.karnwong.me {
 greenkube.karnwong.me {
     import authentik_base 30067
 }
-homer.karnwong.me {
-    import authentik_base 30053
-}
 ladder.karnwong.me {
     import authentik_base 30085
 }

@@ -38,7 +38,6 @@ locals {
     "git",
     "greenkube",
     "harbor",
-    "homer",
     "immich",
     "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
     "ladder",

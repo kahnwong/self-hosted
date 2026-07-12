@@ -43,7 +43,6 @@ func main() {
 			"evcc":      "30060",
 			"fava":      "30065",
 			"greenkube": "30067",
-			"homer":     "30053",
 			"ladder":    "30085",
 			"linkding":  "30005",
 			"livegrep":  "30033",
