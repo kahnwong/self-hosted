@@ -43,9 +43,6 @@ music.karnwong.me {
 n8n.karnwong.me {
     import base 5678
 }
-nocodb.karnwong.me {
-    import base 30062
-}
 paperless.karnwong.me {
     import base 30079
 }

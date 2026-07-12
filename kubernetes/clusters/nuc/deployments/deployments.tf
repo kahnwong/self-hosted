@@ -35,7 +35,6 @@ locals {
       "ladder",
       "linkding",
       "livegrep-backend", "livegrep-frontend",
-      "nocodb",
       "paperless-ngx", "paperless-ngx-valkey",
       "qrcode-api",
       "retrooo",

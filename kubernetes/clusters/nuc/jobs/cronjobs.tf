@@ -9,7 +9,6 @@ locals {
       "backup-linkding",
       "backup-miniflux",
       "backup-navidrome",
-      "backup-nocodb",
       "backup-ntfy",
       "backup-paperless-ngx",
       "backup-transmission",
