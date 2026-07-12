@@ -63,7 +63,6 @@ locals {
       # "notes-console-t",
     ]
     playground = [
-      # "go-playground",
     ]
     tools = [
       "rustpad",

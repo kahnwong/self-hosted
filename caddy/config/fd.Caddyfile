@@ -16,9 +16,6 @@ garage.karnwong.me {
 git.karnwong.me {
     import base 30026
 }
-go.karnwong.me {
-    import knative go-playground.playground
-}
 harbor.karnwong.me {
     import base 30500
 }

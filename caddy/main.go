@@ -17,7 +17,6 @@ func main() {
 			"cpubench":         "30080",
 			"garage":           "30070",
 			"git":              "30026",
-			"go":               "go-playground.playground",
 			"harbor":           "30500",
 			"immich":           "30030",
 			"jellyfin":         "jellyfin.media",
