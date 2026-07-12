@@ -8,7 +8,6 @@ locals {
   selfhosted_proxied = toset([
     "*",
     "ai-gateway",
-    "go",
     "llm-context",
     "miniflux",
     "pmtiles", # if use docker-caddy, it needs to be a separate instance because it uses `file_server` directive
@@ -65,10 +64,7 @@ locals {
   gcp_non_proxied = toset([])
 
   oracle_proxied = toset([
-    "anisette",
     "gatus",
-    "ontime",
-    # "vaultwarden",
   ])
   oracle_non_proxied = toset([
     "memos",

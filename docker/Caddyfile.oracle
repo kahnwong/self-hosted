@@ -1,9 +1,6 @@
 share.karnwong.me {
     reverse_proxy picoshare:4001
 }
-anisette.karnwong.me {
-    reverse_proxy anisette:6969
-}
 relay.iroh.karnwong.me {
     reverse_proxy iroh-relay:80
 }
@@ -12,10 +9,4 @@ gatus.karnwong.me {
 }
 memos.karnwong.me {
     reverse_proxy memos:5230
-}
-vaultwarden.karnwong.me {
-    reverse_proxy vaultwarden:80
-}
-ontime.karnwong.me {
-    reverse_proxy ontime:4001
 }
