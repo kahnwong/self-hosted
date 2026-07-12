@@ -6,3 +6,5 @@ cnpg:
   owner: pguser
   secret: postgres-playground
   nodePort: 30001
+  init:
+    - CREATE EXTENSION postgis;
