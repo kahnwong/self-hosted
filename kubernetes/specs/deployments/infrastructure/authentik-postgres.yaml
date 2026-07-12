@@ -1,6 +1,6 @@
 name: authentik-postgres
 cnpg:
-  image: ghcr.io/cloudnative-pg/postgis:18.4-3.6.3-standard-trixie
+  image: ghcr.io/cloudnative-pg/postgresql:18.4-standard-trixie
   instances: 1
   database: authentik
   owner: authentik
