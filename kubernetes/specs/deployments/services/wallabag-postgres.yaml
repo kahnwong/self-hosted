@@ -1,0 +1,7 @@
+name: wallabag-postgres
+cnpg:
+  image: ghcr.io/cloudnative-pg/postgis:18.4-3.6.3-standard-trixie
+  instances: 1
+  database: wallabag
+  owner: wallabag
+  secret: wallabag-postgres

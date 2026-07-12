@@ -68,7 +68,7 @@ syncthing.karnwong.me {
     import base 8384
 }
 thai-tech-cal.karnwong.me {
-    import knative thai-tech-cal.news
+    import knative thai-tech-cal.services
 }
 trmnl.karnwong.me {
     import base 30086

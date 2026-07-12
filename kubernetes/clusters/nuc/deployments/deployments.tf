@@ -3,9 +3,8 @@
 
 locals {
   deployments_base = tomap({
-    analytics = []
-    default   = []
-    immich    = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
+    default = []
+    immich  = ["immich", "immich-machine-learning", "immich-postgres", "immich-valkey"]
     infrastructure = [
       "authentik-valkey",
       "forgejo",
@@ -13,10 +12,6 @@ locals {
       "llm-honeypot",
       "ntfy",
       "trmnl",
-    ]
-    news = [
-      "miniflux", "miniflux-postgres",
-      "wallabag", "wallabag-postgres", "wallabag-redis",
     ]
     services = [
       # "evcc",
@@ -28,6 +23,7 @@ locals {
       "ladder",
       "linkding",
       "livegrep-backend", "livegrep-frontend",
+      "miniflux",
       "navidrome",
       "notes",
       "paperless-ngx", "paperless-ngx-valkey",
@@ -39,6 +35,7 @@ locals {
       "todotxt",
       "wabbajack",
       "wakapi",
+      "wallabag", "wallabag-redis",
       "weather-api",
     ]
   })
@@ -46,19 +43,13 @@ locals {
     infrastructure = [
       # "mlflow",  # disable until https://github.com/mlflow/mlflow/issues/24155 is fixed
     ]
-    news = [
-      "thai-tech-cal",
-    ]
-    # notes = [
-    #   # "notes-console-k",
-    #   # "notes-console-t",
-    # ]
     playground = [
     ]
     services = [
       "jellyfin",
       "rustpad",
       "stirling-pdf",
+      "thai-tech-cal",
     ]
   })
   deployments_cloudnative_pg = tomap({
@@ -72,7 +63,9 @@ locals {
     ]
     playground = ["postgres-playground"]
     services = [
+      "miniflux-postgres",
       "wakapi-postgres",
+      "wallabag-postgres",
     ]
   })
 }

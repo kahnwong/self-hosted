@@ -13,14 +13,14 @@ containers:
         valueFrom:
           secretKeyRef:
             name: miniflux-postgres
-            key: POSTGRES_USER
+            key: username
       - name: POSTGRES_PASSWORD
         valueFrom:
           secretKeyRef:
             name: miniflux-postgres
-            key: POSTGRES_PASSWORD
+            key: password
       - name: POSTGRES_HOSTNAME
-        value: miniflux-postgres.news.svc.cluster.local
+        value: miniflux-postgres-rw.services.svc.cluster.local
     envFrom:
       - secretRef:
           name: backup

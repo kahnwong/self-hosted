@@ -5,7 +5,6 @@ locals {
     "immich",
     "infrastructure",
     "jobs",
-    "news",
     "playground",
     "services",
   ])

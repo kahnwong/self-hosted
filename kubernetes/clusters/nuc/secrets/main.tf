@@ -12,10 +12,6 @@ locals {
       "ntfy",
       "trmnl"
     ]
-    news = [
-      "miniflux", "miniflux-postgres",
-      "wallabag", "wallabag-postgres",
-    ]
     jobs = [
       "backup", "ddns", "aqi-notify", "water-cut-notify",
       "authentik-postgres",
@@ -23,7 +19,7 @@ locals {
       "immich-postgres",
       "miniflux-postgres",
       "wakapi-postgres",
-      "wallabag",
+      "wallabag-postgres",
 
       # food
       "family-alerts"
@@ -31,12 +27,14 @@ locals {
     services = [
       "cpubench",
       "livegrep-clone-custom",
+      "miniflux",
       "notes-sync",
       "qrcode-api",
       "retrooo",
       "subsonic-widgets",
       "supersecretmessage-vault",
       "wakapi",
+      "wallabag",
       "weather-api",
     ]
   })
@@ -51,7 +49,9 @@ locals {
     ]
     playground = ["postgres-playground"]
     services = [
+      "miniflux-postgres",
       "wakapi-postgres",
+      "wallabag-postgres",
     ]
   })
 

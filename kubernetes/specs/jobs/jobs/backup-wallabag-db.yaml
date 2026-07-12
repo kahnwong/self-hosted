@@ -12,15 +12,15 @@ containers:
       - name: POSTGRES_USERNAME
         valueFrom:
           secretKeyRef:
-            name: wallabag
-            key: SYMFONY__ENV__DATABASE_USER
+            name: wallabag-postgres
+            key: username
       - name: POSTGRES_PASSWORD
         valueFrom:
           secretKeyRef:
-            name: wallabag
-            key: SYMFONY__ENV__DATABASE_PASSWORD
+            name: wallabag-postgres
+            key: password
       - name: POSTGRES_HOSTNAME
-        value: wallabag-postgres.news.svc.cluster.local
+        value: wallabag-postgres-rw.services.svc.cluster.local
     envFrom:
       - secretRef:
           name: backup

@@ -47,7 +47,7 @@ kubectl taint nodes argon storage-required=true:NoSchedule
 | [kubernetes_cluster_role_binding_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/cluster_role_binding_v1) | resource |
 | [kubernetes_cluster_role_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/cluster_role_v1) | resource |
 | [kubernetes_cluster_role_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/cluster_role_v1) | resource |
-| [kubernetes_manifest.notes_personal](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/manifest) | resource |
+| [kubernetes_manifest.notes](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/manifest) | resource |
 | [kubernetes_namespace_v1.this](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/namespace_v1) | resource |
 | [kubernetes_secret_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/secret_v1) | resource |
 | [kubernetes_secret_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/secret_v1) | resource |

@@ -34,7 +34,7 @@ func main() {
 			"subsonic-widgets": "30038",
 			"sync.koreader":    "30066",
 			"syncthing":        "8384",
-			"thai-tech-cal":    "thai-tech-cal.news",
+			"thai-tech-cal":    "thai-tech-cal.services",
 			"trmnl":            "30086",
 			"wakapi":           "30041",
 		},

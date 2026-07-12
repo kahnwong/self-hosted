@@ -1,0 +1,8 @@
+# maintenance: run `TRUNCATE TABLE sessions;`
+name: miniflux-postgres
+cnpg:
+  image: ghcr.io/cloudnative-pg/postgis:18.4-3.6.3-standard-trixie
+  instances: 1
+  database: miniflux
+  owner: miniflux
+  secret: miniflux-postgres
