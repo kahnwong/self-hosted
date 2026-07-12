@@ -7,29 +7,7 @@ locals {
     #   },
     # ]
     services = [
-      # # audiobookshelf
-      # {
-      #   deployment = "audiobookshelf-config"
-      #   path       = "/opt/audiobookshelf/config"
-      # },
-      # {
-      #   deployment = "audiobookshelf-metadata"
-      #   path       = "/opt/audiobookshelf/metadata"
-      # },
-      # {
-      #   deployment = "audiobookshelf-data"
-      #   path       = "/opt/syncthing/audiobooks"
-      # },
-      # # calibre-web
-      # {
-      #   deployment = "calibre-web-config"
-      #   path       = "/opt/calibre-web/config"
-      # },
-      # {
-      #   deployment = "calibre-web-data"
-      #   path       = "/opt/syncthing/books/Library"
-      # },
-      # jellyfin
+      # ---- jellyfin ----
       {
         deployment = "jellyfin-media"
         path       = "/opt/jellyfin/media"
@@ -42,30 +20,6 @@ locals {
         deployment = "jellyfin-sink"
         path       = "/opt/transmission/downloads/complete"
       },
-    ]
-    # notes = [
-    #   {
-    #     deployment = "notes-console-k-config"
-    #     path       = "/opt/notes-console/k/config"
-    #   },
-    #   {
-    #     deployment = "notes-console-t-config"
-    #     path       = "/opt/notes-console/t/config"
-    #   },
-    #   {
-    #     deployment = "notes-work"
-    #     path       = "/opt/syncthing/apps/notes/notes-work"
-    #   }
-    # ]
-    tools = [
-      # {
-      #   deployment = "opengist"
-      #   path       = "/opt/opengist/data"
-      # },
-      # {
-      #   deployment = "picoshare",
-      #   path       = "/opt/picoshare/data"
-      # }
     ]
   })
 }
