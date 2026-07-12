@@ -9,15 +9,6 @@ services:
       - /opt/picoshare/data:/data
       # ports:
       #  - "4001:4001"
-  anisette:
-    container_name: anisette
-    restart: always
-    # ports:
-    #  - 6969:6969
-    image: dadoum/anisette-v3-server
-    volumes: # `sudo chown -R 1000:1000 /opt/anisette`
-      - /opt/anisette/data:/home/Alcoholic/.config/anisette-v3/lib
-    user: "1000:1000"
   iroh-relay:
     container_name: iroh-relay
     restart: always
@@ -48,18 +39,6 @@ services:
     image: neosmemo/memos:0.29.1
     volumes:
       - /opt/memos/data:/var/opt/memos
-  ontime:
-    container_name: ontime
-    image: getontime/ontime:v4
-    ports:
-      - "4001:4001/tcp" # web & api
-      - "8888:8888/udp" # OSC input
-      - "9999:9999/udp" # OSC output
-    volumes:
-      - /opt/ontime/data:/data
-    environment:
-      - TZ=Asia/Bangkok
-    restart: always
   # ---- caddy ----
   caddy:
     image: caddy:2
