@@ -6,13 +6,13 @@
 
 | Name | Version |
 | ---- | ------- |
-| helm | 3.1.1 |
+| helm | 3.2.0 |
 
 ## Providers
 
 | Name | Version |
 | ---- | ------- |
-| helm | 3.1.1 |
+| helm | 3.2.0 |
 
 ## Modules
 
@@ -22,7 +22,7 @@ No modules.
 
 | Name | Type |
 | ---- | ---- |
-| [helm_release.this](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
+| [helm_release.this](https://registry.terraform.io/providers/hashicorp/helm/3.2.0/docs/resources/release) | resource |
 
 ## Inputs
 

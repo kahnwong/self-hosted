@@ -6,14 +6,14 @@
 | Name | Version |
 | ---- | ------- |
 | terraform | >= 1.2.7 |
-| github | 6.12.1 |
+| github | 6.13.0 |
 | sops | 1.4.1 |
 
 ## Providers
 
 | Name | Version |
 | ---- | ------- |
-| github | 6.12.1 |
+| github | 6.13.0 |
 | sops | 1.4.1 |
 
 ## Modules
@@ -24,10 +24,10 @@ No modules.
 
 | Name | Type |
 | ---- | ---- |
-| [github_actions_secret.cloudflare_pages](https://registry.terraform.io/providers/integrations/github/6.12.1/docs/resources/actions_secret) | resource |
-| [github_actions_secret.docs_algolia](https://registry.terraform.io/providers/integrations/github/6.12.1/docs/resources/actions_secret) | resource |
-| [github_actions_secret.tangled_mirrors](https://registry.terraform.io/providers/integrations/github/6.12.1/docs/resources/actions_secret) | resource |
-| [github_actions_secret.vercel](https://registry.terraform.io/providers/integrations/github/6.12.1/docs/resources/actions_secret) | resource |
+| [github_actions_secret.cloudflare_pages](https://registry.terraform.io/providers/integrations/github/6.13.0/docs/resources/actions_secret) | resource |
+| [github_actions_secret.docs_algolia](https://registry.terraform.io/providers/integrations/github/6.13.0/docs/resources/actions_secret) | resource |
+| [github_actions_secret.tangled_mirrors](https://registry.terraform.io/providers/integrations/github/6.13.0/docs/resources/actions_secret) | resource |
+| [github_actions_secret.vercel](https://registry.terraform.io/providers/integrations/github/6.13.0/docs/resources/actions_secret) | resource |
 | [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.4.1/docs/data-sources/file) | data source |
 
 ## Inputs

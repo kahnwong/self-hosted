@@ -13,14 +13,14 @@ All users - API Tokens:Edit
 
 | Name | Version |
 | ---- | ------- |
-| cloudflare | 5.19.1 |
+| cloudflare | 5.21.1 |
 | sops | 1.4.1 |
 
 ## Providers
 
 | Name | Version |
 | ---- | ------- |
-| cloudflare | 5.19.1 |
+| cloudflare | 5.21.1 |
 | sops | 1.4.1 |
 
 ## Modules
@@ -35,29 +35,30 @@ All users - API Tokens:Edit
 
 | Name | Type |
 | ---- | ---- |
-| [cloudflare_api_token.caddy_wildcard_tls](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/api_token) | resource |
-| [cloudflare_api_token.ddns_updater](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/api_token) | resource |
-| [cloudflare_api_token.deploy_cloudflare_pages](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/api_token) | resource |
-| [cloudflare_api_token.r2_backup](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/api_token) | resource |
-| [cloudflare_api_token.r2_restic_rw](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/api_token) | resource |
-| [cloudflare_api_token.r2_ro](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/api_token) | resource |
-| [cloudflare_api_token.r2_send_rw](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/api_token) | resource |
-| [cloudflare_api_token.r2_terraform_state_rw](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/api_token) | resource |
-| [cloudflare_dns_record.bird_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/dns_record) | resource |
-| [cloudflare_dns_record.bluesky_txt](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/dns_record) | resource |
-| [cloudflare_dns_record.gcp_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/dns_record) | resource |
-| [cloudflare_dns_record.github_pages_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/dns_record) | resource |
-| [cloudflare_dns_record.google_workspace_smtp](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/dns_record) | resource |
-| [cloudflare_dns_record.oracle2_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/dns_record) | resource |
-| [cloudflare_dns_record.oracle_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/dns_record) | resource |
-| [cloudflare_dns_record.pop_mx_send](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/dns_record) | resource |
-| [cloudflare_dns_record.pop_txt_key](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/dns_record) | resource |
-| [cloudflare_dns_record.pop_txt_send](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/dns_record) | resource |
-| [cloudflare_dns_record.selfhosted_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/dns_record) | resource |
-| [cloudflare_dns_record.vercel_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/dns_record) | resource |
-| [cloudflare_dns_record.www_dummy](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/dns_record) | resource |
-| [cloudflare_page_rule.redirect_www_to_root](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/page_rule) | resource |
-| [cloudflare_r2_bucket.this](https://registry.terraform.io/providers/cloudflare/cloudflare/5.19.1/docs/resources/r2_bucket) | resource |
+| [cloudflare_api_token.caddy_wildcard_tls](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/api_token) | resource |
+| [cloudflare_api_token.ddns_updater](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/api_token) | resource |
+| [cloudflare_api_token.deploy_cloudflare_pages](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/api_token) | resource |
+| [cloudflare_api_token.r2_backup](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/api_token) | resource |
+| [cloudflare_api_token.r2_restic_rw](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/api_token) | resource |
+| [cloudflare_api_token.r2_ro](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/api_token) | resource |
+| [cloudflare_api_token.r2_send_rw](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/api_token) | resource |
+| [cloudflare_api_token.r2_terraform_state_rw](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/api_token) | resource |
+| [cloudflare_dns_record.bird_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/dns_record) | resource |
+| [cloudflare_dns_record.bird_private_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/dns_record) | resource |
+| [cloudflare_dns_record.bluesky_txt](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/dns_record) | resource |
+| [cloudflare_dns_record.gcp_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/dns_record) | resource |
+| [cloudflare_dns_record.github_pages_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/dns_record) | resource |
+| [cloudflare_dns_record.google_workspace_smtp](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/dns_record) | resource |
+| [cloudflare_dns_record.oracle2_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/dns_record) | resource |
+| [cloudflare_dns_record.oracle_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/dns_record) | resource |
+| [cloudflare_dns_record.pop_mx_send](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/dns_record) | resource |
+| [cloudflare_dns_record.pop_txt_key](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/dns_record) | resource |
+| [cloudflare_dns_record.pop_txt_send](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/dns_record) | resource |
+| [cloudflare_dns_record.selfhosted_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/dns_record) | resource |
+| [cloudflare_dns_record.vercel_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/dns_record) | resource |
+| [cloudflare_dns_record.www_dummy](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/dns_record) | resource |
+| [cloudflare_page_rule.redirect_www_to_root](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/page_rule) | resource |
+| [cloudflare_r2_bucket.this](https://registry.terraform.io/providers/cloudflare/cloudflare/5.21.1/docs/resources/r2_bucket) | resource |
 | [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.4.1/docs/data-sources/file) | data source |
 
 ## Inputs
@@ -67,6 +68,7 @@ All users - API Tokens:Edit
 | cloudflare\_account\_id | n/a | `string` | n/a | yes |
 | cloudflare\_api\_token | n/a | `string` | n/a | yes |
 | cloudflare\_zone\_id | n/a | `string` | n/a | yes |
+| private\_bird\_dns | n/a | `set(string)` | n/a | yes |
 | private\_dns | n/a | `set(string)` | n/a | yes |
 
 ## Outputs

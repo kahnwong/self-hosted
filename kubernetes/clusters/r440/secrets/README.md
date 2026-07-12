@@ -7,7 +7,7 @@
 | Name | Version |
 | ---- | ------- |
 | terraform | >= 1.3.6 |
-| kubernetes | 3.1.0 |
+| kubernetes | 3.2.1 |
 | sops | 1.4.1 |
 
 ## Providers

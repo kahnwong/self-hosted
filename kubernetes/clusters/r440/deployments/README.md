@@ -13,16 +13,16 @@ sudo ln -s /data/kubernetes/$service $service
 | Name | Version |
 | ---- | ------- |
 | terraform | >= 1.3.6 |
-| helm | 3.1.1 |
-| kubectl | 2.4.0 |
-| kubernetes | 3.1.0 |
+| helm | 3.2.0 |
+| kubectl | 2.4.1 |
+| kubernetes | 3.2.1 |
 
 ## Providers
 
 | Name | Version |
 | ---- | ------- |
-| helm | 3.1.1 |
-| kubernetes | 3.1.0 |
+| helm | 3.2.0 |
+| kubernetes | 3.2.1 |
 
 ## Modules
 
@@ -34,8 +34,8 @@ sudo ln -s /data/kubernetes/$service $service
 
 | Name | Type |
 | ---- | ---- |
-| [helm_release.authentik](https://registry.terraform.io/providers/hashicorp/helm/3.1.1/docs/resources/release) | resource |
-| [kubernetes_namespace_v1.this](https://registry.terraform.io/providers/hashicorp/kubernetes/3.1.0/docs/resources/namespace_v1) | resource |
+| [helm_release.authentik](https://registry.terraform.io/providers/hashicorp/helm/3.2.0/docs/resources/release) | resource |
+| [kubernetes_namespace_v1.this](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/namespace_v1) | resource |
 
 ## Inputs
 

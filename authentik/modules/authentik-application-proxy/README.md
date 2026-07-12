@@ -3,14 +3,14 @@
 
 | Name | Version |
 | ---- | ------- |
-| authentik | 2026.2.0 |
+| authentik | 2026.5.0 |
 | random | 3.9.0 |
 
 ## Providers
 
 | Name | Version |
 | ---- | ------- |
-| authentik | 2026.2.0 |
+| authentik | 2026.5.0 |
 
 ## Modules
 
@@ -20,8 +20,8 @@ No modules.
 
 | Name | Type |
 | ---- | ---- |
-| [authentik_application.this](https://registry.terraform.io/providers/goauthentik/authentik/2026.2.0/docs/resources/application) | resource |
-| [authentik_provider_proxy.this](https://registry.terraform.io/providers/goauthentik/authentik/2026.2.0/docs/resources/provider_proxy) | resource |
+| [authentik_application.this](https://registry.terraform.io/providers/goauthentik/authentik/2026.5.0/docs/resources/application) | resource |
+| [authentik_provider_proxy.this](https://registry.terraform.io/providers/goauthentik/authentik/2026.5.0/docs/resources/provider_proxy) | resource |
 
 ## Inputs
 
