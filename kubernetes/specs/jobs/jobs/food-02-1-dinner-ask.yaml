@@ -1,8 +1,8 @@
-name: 02-1-dinner-ask-family
+name: food-02-1-dinner-ask-family
 # 4:00 PM Asia/Bangkok
 schedule: 0 9 * * *
 containers:
-  - name: 02-1-dinner-ask-family
+  - name: food-02-1-dinner-ask-family
     repository: ghcr.io/kahnwong/line-notify
     tag: e32b857
     args:

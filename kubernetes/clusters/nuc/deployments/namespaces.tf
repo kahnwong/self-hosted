@@ -1,13 +1,11 @@
 locals {
   namespaces = toset([
-    "analytics",
     "authentik",
     "default",
-    "harbor",
+    # "harbor",
     "immich",
     "infrastructure",
     "jobs",
-    "jobs-food",
     "media",
     "news",
     "notes",

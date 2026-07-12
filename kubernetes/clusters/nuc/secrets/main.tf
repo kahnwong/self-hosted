@@ -19,8 +19,10 @@ locals {
       "miniflux-postgres",
       "wakapi-postgres",
       "wallabag",
+
+      # food
+      "family-alerts"
     ]
-    jobs-food = ["family-alerts"]
     tools = [
       "cpubench",
       "livegrep-clone-custom",

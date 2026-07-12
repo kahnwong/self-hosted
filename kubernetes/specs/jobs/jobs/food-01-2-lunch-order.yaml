@@ -1,8 +1,8 @@
-name: 01-2-lunch-order
+name: food-01-2-lunch-order
 # 11:00 AM Asia/Bangkok
 schedule: 0 4 * * *
 containers:
-  - name: 01-2-lunch-order
+  - name: food-01-2-lunch-order
     repository: ghcr.io/kahnwong/line-notify
     tag: e32b857
     args:

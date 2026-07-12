@@ -21,11 +21,11 @@ locals {
       "maintenance-backup-prune",
       "maintenance-wallabag-cleanup",
       "water-cut-notify",
-    ]
-    jobs-food = [
-      "01-1-lunch-ask",
-      "01-2-lunch-order",
-      "02-1-dinner-ask",
+
+      # food
+      "food-01-1-lunch-ask",
+      "food-01-2-lunch-order",
+      "food-02-1-dinner-ask",
     ]
     tools = [
       "livegrep-clone",

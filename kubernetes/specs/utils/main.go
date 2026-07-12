@@ -13,15 +13,13 @@ import (
 )
 
 var repos = map[string]string{
-	"kahnwong/aqi-notify":    "../jobs/jobs/aqi-notify.yaml",
-	"kahnwong/cpubench":      "../deployments/tools/cpubench.yaml",
-	"kahnwong/dashboard":     "../deployments/tools/dashboard.yaml",
-	"kahnwong/docker-fava":   "../deployments/tools/fava.yaml",
-	"kahnwong/docker-mlflow": "../deployments/infrastructure/mlflow.yaml",
-	"kahnwong/ical-to-rss":   "../deployments/news/thai-tech-cal.yaml",
-	"kahnwong/line-notify":   "../jobs/jobs-food/01-1-lunch-ask.yaml",
-	//"kahnwong/line-notify": "../jobs/jobs-food/01-2-lunch-order.yaml",
-	//"kahnwong/line-notify": "../jobs/jobs-food/02-1-dinner-ask.yaml",
+	"kahnwong/aqi-notify":         "../jobs/jobs/aqi-notify.yaml",
+	"kahnwong/cpubench":           "../deployments/tools/cpubench.yaml",
+	"kahnwong/dashboard":          "../deployments/tools/dashboard.yaml",
+	"kahnwong/docker-fava":        "../deployments/tools/fava.yaml",
+	"kahnwong/docker-mlflow":      "../deployments/infrastructure/mlflow.yaml",
+	"kahnwong/ical-to-rss":        "../deployments/news/thai-tech-cal.yaml",
+	"kahnwong/line-notify":        "../jobs/jobs/food-01-1-lunch-ask.yaml",
 	"kahnwong/livegrep-utils":     "../jobs/tools/livegrep-clone.yaml",
 	"kahnwong/llm-honeypot":       "../deployments/infrastructure/llm-honeypot.yaml",
 	"kahnwong/qrcode-api":         "../deployments/tools/qrcode-api.yaml",
