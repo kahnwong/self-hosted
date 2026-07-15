@@ -13,14 +13,14 @@ containers:
         valueFrom:
           secretKeyRef:
             name: immich-postgres
-            key: POSTGRES_USER
+            key: username
       - name: POSTGRES_PASSWORD
         valueFrom:
           secretKeyRef:
             name: immich-postgres
-            key: POSTGRES_PASSWORD
+            key: password
       - name: POSTGRES_HOSTNAME
-        value: immich-postgres.immich.svc.cluster.local
+        value: immich-postgres-rw.services.svc.cluster.local
     envFrom:
       - secretRef:
           name: backup
