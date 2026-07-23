@@ -14,3 +14,14 @@ helm install -n coroot coroot coroot/coroot-ce \
 # port-forward
 kubectl port-forward -n coroot service/coroot-coroot 8080:8080
 ```
+
+## Add traces
+
+```bash
+helm repo add grafana https://grafana.github.io/helm-charts
+helm repo update
+
+helm upgrade --install beyla grafana/beyla \
+  --values beyla.values.yaml \
+  --namespace observability
+```

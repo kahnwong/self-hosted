@@ -1,0 +1,9 @@
+preset: application
+service:
+  enabled: false
+serviceMonitor:
+  enabled: false
+config:
+  data:
+    otel_traces_export:
+      endpoint: http://coroot-coroot.coroot.svc.cluster.local:8080
