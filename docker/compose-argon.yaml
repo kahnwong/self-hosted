@@ -11,7 +11,7 @@ services:
     networks:
       - error-pages
   vaultwarden:
-    image: vaultwarden/server:1.36.0
+    image: vaultwarden/server:1.37.0
     container_name: vaultwarden
     restart: always
     ports:
