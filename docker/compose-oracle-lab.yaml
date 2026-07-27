@@ -28,6 +28,8 @@ services:
     # ports:
     #  - 5230:5230
     image: neosmemo/memos:0.29.1
+    environment:
+      - MEMOS_INSTANCE_URL=https://memos.karnwong.me
     volumes:
       - /opt/memos/data:/var/opt/memos
   # ---- caddy ----
