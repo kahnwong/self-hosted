@@ -6,6 +6,7 @@ services:
     #   - "8090:8090"
     environment:
       - APP_URL=https://beszel.karnwong.me
+      - USER_CREATION=true
     volumes:
       - /opt/beszel/data:/beszel_data
       - /opt/beszel/socket:/beszel_socket

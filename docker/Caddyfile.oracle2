@@ -1,3 +1,10 @@
 beszel.karnwong.me {
-    reverse_proxy beszel:8090
+    request_body {
+        max_size 10MB
+    }
+    reverse_proxy beszel:8090 {
+        transport http {
+            read_timeout 360s
+        }
+    }
 }

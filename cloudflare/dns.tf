@@ -72,9 +72,9 @@ locals {
   ])
 
   oracle2_proxied = toset([
-    "beszel",
   ])
   oracle2_non_proxied = toset([
+    "beszel", # need non-proxied for sso
   ])
 
   bird_proxied = toset([
