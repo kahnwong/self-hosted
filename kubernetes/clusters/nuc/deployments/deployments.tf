@@ -42,7 +42,7 @@ locals {
   })
   deployments_knative = tomap({
     infrastructure = [
-      # "mlflow",  # disable until https://github.com/mlflow/mlflow/issues/24155 is fixed
+      # "mlflow",  # consumes 4GB RAM+
     ]
     playground = [
     ]
