@@ -11,10 +11,6 @@ locals {
     ]
     memos : ["https://memos.karnwong.me/auth/callback"]
     miniflux : ["https://miniflux.karnwong.me/oauth2/oidc/callback"]
-    # opengist : ["https://gist.karnwong.me/oauth/openid-connect/callback"]
-    # openwebui : ["https://chat.karnwong.me/oauth/oidc/callback"],
-    paperless : ["https://paperless.karnwong.me/accounts/oidc/authentik/login/callback/"] # needs trailing slash
-    # proxmox : ["https://proxmox.karnwong.me"]
     wakapi : ["https://wakapi.karnwong.me/oidc/authentik/callback"]
     warpgate : ["https://warpgate.karnwong.me/@warpgate/api/sso/return"]
     }

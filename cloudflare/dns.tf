@@ -48,7 +48,6 @@ locals {
     "ntfy",
     "opencost",
     "opentag",
-    "paperless",
     "pdf",
     "rustdesk",
     "sshx",

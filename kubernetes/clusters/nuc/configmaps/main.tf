@@ -17,11 +17,6 @@ locals {
         source : "livegrep-clone-config.sops.yaml",
         filename : "repos.yaml"
       },
-      {
-        source : "paperless.sops.conf",
-        filename : "paperless.conf"
-        input_type : "raw"
-      }
     ]
   })
 }

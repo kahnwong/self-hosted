@@ -28,7 +28,6 @@ locals {
       "miniflux",
       "navidrome",
       "notes",
-      "paperless-ngx", "paperless-ngx-valkey",
       "qrcode-api",
       "retrooo",
       "sshx",

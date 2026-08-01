@@ -40,9 +40,6 @@ music.karnwong.me {
 n8n.karnwong.me {
     import base 5678
 }
-paperless.karnwong.me {
-    import base 30079
-}
 qa-api.karnwong.me {
     import base 30043
 }

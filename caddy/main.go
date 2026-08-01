@@ -25,7 +25,6 @@ func main() {
 			"miniflux":         "30007",
 			"music":            "30006",
 			"n8n":              "5678",
-			"paperless":        "30079",
 			"qa-api":           "30043",
 			"retrooo":          "30081",
 			"rustpad":          "rustpad.services",

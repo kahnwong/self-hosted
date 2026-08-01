@@ -10,7 +10,6 @@ locals {
       "backup-miniflux",
       "backup-navidrome",
       "backup-ntfy",
-      "backup-paperless-ngx",
       "backup-transmission",
       "backup-wakapi",
       "backup-wallabag-content",
