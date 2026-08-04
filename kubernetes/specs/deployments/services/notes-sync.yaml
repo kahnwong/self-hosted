@@ -21,7 +21,7 @@ spec:
         - name: git-sync
           image: registry.k8s.io/git-sync/git-sync:v4.7.1
           args:
-            - --repo=https://github.com/kahnwong/notes-personal.git
+            - --repo=https://github.com/kahnwong/notes.git
             - --depth=1
             - --root=/git
             - --period=60s
