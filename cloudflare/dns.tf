@@ -34,6 +34,7 @@ locals {
     "evcc",
     "fava",
     "garage",
+    "gist",
     "git",
     "greenkube",
     "harbor",

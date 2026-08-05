@@ -13,6 +13,9 @@ cpubench.karnwong.me {
 garage.karnwong.me {
     import base 30070
 }
+gist.karnwong.me {
+    import knative opengist.services
+}
 git.karnwong.me {
     import base 30026
 }
@@ -36,9 +39,6 @@ miniflux.karnwong.me {
 }
 music.karnwong.me {
     import base 30006
-}
-n8n.karnwong.me {
-    import base 5678
 }
 qa-api.karnwong.me {
     import base 30043

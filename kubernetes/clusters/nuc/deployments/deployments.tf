@@ -48,6 +48,7 @@ locals {
     ]
     services = [
       "jellyfin",
+      "opengist",
       "rustpad",
       "stirling-pdf",
       "thai-tech-cal",

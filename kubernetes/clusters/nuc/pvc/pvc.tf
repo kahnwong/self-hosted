@@ -20,6 +20,11 @@ locals {
         deployment = "jellyfin-sink"
         path       = "/opt/transmission/downloads/complete"
       },
+      # ---- opengist ----
+      {
+        deployment = "opengist"
+        path       = "/opt/opengist/data"
+      },
     ]
   })
 }

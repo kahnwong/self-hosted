@@ -29,6 +29,7 @@ locals {
       "livegrep-clone-custom",
       "miniflux",
       "notes-sync",
+      "opengist",
       "qrcode-api",
       "retrooo",
       "subsonic-widgets",
