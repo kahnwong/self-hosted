@@ -21,7 +21,7 @@ resource "random_string" "random_beszel" {
 }
 
 resource "authentik_provider_oauth2" "beszel" {
-  name      = "Provider for Beszel"
+  name      = "Provider for beszel"
   client_id = random_string.random_beszel.result
 
   authorization_flow = data.authentik_flow.default-authorization-flow.id
@@ -40,10 +40,12 @@ resource "authentik_provider_oauth2" "beszel" {
   )
 
   signing_key = var.signing_key
+
+  grant_types = ["authorization_code", "refresh_token"]
 }
 
 resource "authentik_application" "beszel" {
-  name              = "Beszel"
+  name              = "beszel"
   slug              = "beszel"
   protocol_provider = authentik_provider_oauth2.beszel.id
 }

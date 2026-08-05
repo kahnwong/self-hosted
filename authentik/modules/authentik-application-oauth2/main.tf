@@ -19,6 +19,8 @@ resource "authentik_provider_oauth2" "this" {
 
   property_mappings = var.property_mappings
   signing_key       = var.signing_key
+
+  grant_types = ["authorization_code", "refresh_token"]
 }
 
 resource "authentik_application" "this" {
