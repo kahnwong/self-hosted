@@ -1,7 +1,6 @@
 # sites
 locals {
   cloudflare_pages_repos = toset([
-    "basemaps",
     "calculator",
     "docs",
     "excalidraw",
@@ -9,6 +8,7 @@ locals {
     "h3-viewer",
     "jupyterlite",
     "karnwong.me",
+    "maps",
     "marimo-wasm",
     "monkeytype",
     "promptpay-qr-code",

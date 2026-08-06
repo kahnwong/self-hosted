@@ -5,6 +5,6 @@ locals {
     lookup(item, "repos", [])
   ])
 
-  repos_to_subtract_list = local.tangled_mirror_repos
-  remaining_repos        = setsubtract(toset(local.all_repos), toset(local.repos_to_subtract_list))
+  repos_to_subtract_list         = local.tangled_mirror_repos
+  tangled_mirror_candidate_repos = setsubtract(toset(local.all_repos), toset(local.repos_to_subtract_list))
 }
