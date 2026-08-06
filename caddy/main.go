@@ -45,6 +45,7 @@ func main() {
 			"ladder":    "30085",
 			"linkding":  "30005",
 			"livegrep":  "30033",
+			"nomad":     "4646",
 			"notes":     "30084",
 			"opencost":  "30054",
 			"opentag":   "40000",

@@ -94,6 +94,9 @@ linkding.karnwong.me {
 livegrep.karnwong.me {
     import authentik_base 30033
 }
+nomad.karnwong.me {
+    import authentik_base 4646
+}
 notes.karnwong.me {
     import authentik_base 30084
 }
