@@ -1,6 +1,6 @@
 # self-hosted
 
-I had a self-hosting problem, in case you couldn't tell.
+I have a self-hosting problem, in case you couldn't tell.
 
 ## Set inotify limit
 
