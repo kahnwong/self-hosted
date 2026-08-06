@@ -4,7 +4,6 @@ locals {
     "docs",
     "excalidraw",
     "gallery",
-    "h3-viewer",
     "jupyterlite",
     "maps",
     "marimo",
