@@ -8,7 +8,7 @@ I have a self-hosting problem, in case you couldn't tell.
 sudo sysctl -w fs.inotify.max_user_watches=1024288
 ```
 
-## Set k3s to use in-memory storage
+## Set k3s to use in-memory storage for logs
 
 Add these to `fstab`:
 
