@@ -5,6 +5,7 @@ services:
     environment:
       - TEMPLATE_NAME=l7
       - HOMEPAGE_URL=https://karnwong.me
+      - LOG_LEVEL=error
     ports:
       - 8081:8080
     restart: always
