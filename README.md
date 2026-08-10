@@ -25,6 +25,7 @@ For migrating to in-memory storage:
 sudo systemctl stop k3s
 sudo rm -rf /var/log/pods/* /var/log/containers/*
 
+sudo systemctl daemon-reload
 sudo mount -a # check via `df -h -t tmpfs`
 sudo systemctl restart k3s
 ```
