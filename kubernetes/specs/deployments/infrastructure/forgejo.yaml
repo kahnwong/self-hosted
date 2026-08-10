@@ -36,7 +36,7 @@ containers:
       - name: FORGEJO__picture__DISABLE_GRAVATAR
         value: "false"
       - name: FORGEJO__actions__ENABLED
-        value: "false"
+        value: "true"
       - name: FORGEJO__log__LEVEL
         value: error
     envFrom:
