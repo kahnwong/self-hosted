@@ -57,10 +57,7 @@ func main() {
 
 	bird := map[string]map[string]string{
 		"services": {
-			"authentik": "30047",
-			"cloud":     "30068",
-			"garage":    "30070",
-			"ntfy":      "30022",
+			"ntfy": "30022",
 		},
 		"servicesForwardAuth": {},
 	}
