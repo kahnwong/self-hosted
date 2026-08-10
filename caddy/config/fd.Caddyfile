@@ -61,9 +61,6 @@ subsonic-widgets.karnwong.me {
 sync.koreader.karnwong.me {
     import base 30066
 }
-syncthing.karnwong.me {
-    import base 8384
-}
 thai-tech-cal.karnwong.me {
     import knative thai-tech-cal.services
 }
@@ -108,6 +105,9 @@ opentag.karnwong.me {
 }
 pdf.karnwong.me {
     import authentik_knative stirling-pdf.services
+}
+syncthing.karnwong.me {
+    import authentik_base 8384
 }
 todotxt.karnwong.me {
     import authentik_base 30064

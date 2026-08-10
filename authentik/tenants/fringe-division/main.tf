@@ -23,6 +23,7 @@ locals {
     "nomad",
     "notes",
     "opentag",
+    "syncthing",
     "todotxt",
   ])
   application_proxy = toset([
