@@ -1,12 +1,12 @@
 locals {
   configmaps = tomap({
-    infrastructure = [
-      {
-        source : "garage.sops.toml",
-        filename : "garage.toml"
-        input_type : "raw"
-      },
-    ]
+    # infrastructure = [
+    #   {
+    #     source : "garage.sops.toml",
+    #     filename : "garage.toml"
+    #     input_type : "raw"
+    #   },
+    # ]
   })
 }
 

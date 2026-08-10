@@ -1,7 +1,6 @@
 locals {
   secrets = tomap({
     analytics = []
-    authentik = ["authentik-env", "authentik-postgres"] # `authentic-env` is to prevent name collision with secrets provided by helm chart
     default   = []
     infrastructure = [
       "ntfy"

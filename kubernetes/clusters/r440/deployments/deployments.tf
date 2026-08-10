@@ -1,16 +1,12 @@
 locals {
   deployments_base = tomap({
     default = []
-    authentik = [
-      "authentik-postgres",
-      "authentik-valkey"
-    ]
     infrastructure = [
-      "garage",
+      # "garage",
       "ntfy",
     ]
-    tools = [
-      "filebrowser",
+    services = [
+      # "filebrowser",
     ]
   })
 }
@@ -24,15 +20,15 @@ module "base" {
   values_extras = []
 }
 
-# ------ authentik ------ #
-resource "helm_release" "authentik" {
-  name       = "authentik"
-  namespace  = "authentik"
-  repository = "https://charts.goauthentik.io"
-  version    = "2026.5.6"
-  chart      = "authentik"
+# # ------ authentik ------ #
+# resource "helm_release" "authentik" {
+#   name       = "authentik"
+#   namespace  = "authentik"
+#   repository = "https://charts.goauthentik.io"
+#   version    = "2026.5.6"
+#   chart      = "authentik"
 
-  values = [
-    file("../../../specs/deployments/authentik/values.yaml"),
-  ]
-}
+#   values = [
+#     file("../../../specs/deployments/authentik/values.yaml"),
+#   ]
+# }
