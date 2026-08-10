@@ -37,9 +37,16 @@ wget -O forgejo-runner.asc ${FORGEJO_URL}.asc || curl -o forgejo-runner.asc ${FO
 sudo cp forgejo-runner /usr/local/bin/forgejo-runner
 sudo useradd --create-home runner
 sudo usermod -aG docker runner
+```
 
+## Set runner config
+
+- <https://forgejo.org/docs/latest/admin/actions/registration/#interactive-registration> for connection config
+- Set `labels` config for `docker`. Set it to `node:24-bookworm`
+
+```bash
 sudo -i
-forgejo-runner generate-config > /home/runner/runner-config.yml # then edit it. follow <https://forgejo.org/docs/latest/admin/actions/registration/#interactive-registration>
+forgejo-runner generate-config > /home/runner/runner-config.yml
 ```
 
 Add systemd:
