@@ -37,7 +37,7 @@ resource "authentik_stage_user_login" "default_authentication_login" {
   name               = "default-authentication-login"
   session_duration   = "hours=72" # default 12
   remember_me_offset = "seconds=0"
-  geoip_binding      = "bind_continent_country_city"
+  geoip_binding      = "no_binding" # "bind_continent_country_city"
   network_binding    = "bind_asn"
 }
 resource "authentik_flow_stage_binding" "passwordless_login" {
