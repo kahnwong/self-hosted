@@ -29,8 +29,9 @@ resource "authentik_provider_oauth2" "beszel" {
 
   allowed_redirect_uris = [
     {
-      matching_mode = "strict"
-      url           = "https://beszel.karnwong.me/api/oauth2-redirect"
+      matching_mode     = "strict"
+      redirect_uri_type = "authorization"
+      url               = "https://beszel.karnwong.me/api/oauth2-redirect"
     }
   ]
 

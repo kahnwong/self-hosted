@@ -12,8 +12,9 @@ resource "authentik_provider_oauth2" "this" {
 
   allowed_redirect_uris = [
     for uri in var.redirect_uris : {
-      matching_mode = "strict"
-      url           = uri
+      matching_mode     = "strict"
+      redirect_uri_type = "authorization"
+      url               = uri
     }
   ]
 
