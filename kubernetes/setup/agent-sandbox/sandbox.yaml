@@ -1,0 +1,27 @@
+apiVersion: agents.x-k8s.io/v1beta1
+kind: Sandbox
+metadata:
+  name: python-agent-workspace
+  namespace: agent-sandboxes
+  labels:
+    app.kubernetes.io/part-of: ai-agent-orchestrator
+spec:
+  shutdownTime: "2026-08-14T12:00:00Z"
+  shutdownPolicy: Delete
+  podTemplate:
+    spec:
+      containers:
+        - name: interpreter
+          image: python:3.11-slim
+          command: [ "/bin/sh", "-c" ]
+          args: [ "echo 'Agent sandbox initialized' && sleep infinity" ]
+          ports:
+            - name: http-api
+              containerPort: 8888
+          resources:
+            requests:
+              cpu: "2"
+              memory: 2Gi
+            limits:
+              cpu: "4"
+              memory: 4Gi
