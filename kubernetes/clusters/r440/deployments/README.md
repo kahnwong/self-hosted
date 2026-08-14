@@ -8,43 +8,42 @@ sudo ln -s /data/kubernetes/$service $service
 ```
 
 <!-- BEGIN_TF_DOCS -->
+
 ## Requirements
 
-| Name | Version |
-| ---- | ------- |
-| terraform | >= 1.3.6 |
-| helm | 3.2.0 |
-| kubectl | 2.4.1 |
-| kubernetes | 3.2.1 |
+| Name       | Version  |
+| ---------- | -------- |
+| terraform  | >= 1.3.6 |
+| helm       | 3.2.0    |
+| kubectl    | 2.4.1    |
+| kubernetes | 3.2.1    |
 
 ## Providers
 
-| Name | Version |
-| ---- | ------- |
-| helm | 3.2.0 |
-| kubernetes | 3.2.1 |
+| Name       | Version |
+| ---------- | ------- |
+| kubernetes | 3.2.1   |
 
 ## Modules
 
-| Name | Source | Version |
-| ---- | ------ | ------- |
-| base | ../../../modules/deployments | n/a |
+| Name | Source                       | Version |
+| ---- | ---------------------------- | ------- |
+| base | ../../../modules/deployments | n/a     |
 
 ## Resources
 
-| Name | Type |
-| ---- | ---- |
-| [helm_release.authentik](https://registry.terraform.io/providers/hashicorp/helm/3.2.0/docs/resources/release) | resource |
+| Name                                                                                                                           | Type     |
+| ------------------------------------------------------------------------------------------------------------------------------ | -------- |
 | [kubernetes_namespace_v1.this](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/namespace_v1) | resource |
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-| ---- | ----------- | ---- | ------- | :------: |
-| client\_certificate | n/a | `string` | n/a | yes |
-| client\_key | n/a | `string` | n/a | yes |
-| cluster\_ca\_certificate | n/a | `string` | n/a | yes |
-| host | n/a | `string` | n/a | yes |
+| Name                     | Description | Type     | Default | Required |
+| ------------------------ | ----------- | -------- | ------- | :------: |
+| client\_certificate      | n/a         | `string` | n/a     |   yes    |
+| client\_key              | n/a         | `string` | n/a     |   yes    |
+| cluster\_ca\_certificate | n/a         | `string` | n/a     |   yes    |
+| host                     | n/a         | `string` | n/a     |   yes    |
 
 ## Outputs
 

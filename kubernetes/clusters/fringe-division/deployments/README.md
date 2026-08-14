@@ -13,58 +13,63 @@ kubectl taint nodes argon storage-required=true:NoSchedule
 ```
 
 <!-- BEGIN_TF_DOCS -->
+
 ## Requirements
 
-| Name | Version |
-| ---- | ------- |
-| terraform | >= 1.3.6 |
-| helm | 3.2.0 |
-| kubectl | 2.4.1 |
-| kubernetes | 3.2.1 |
-| sops | 1.4.1 |
+| Name       | Version  |
+| ---------- | -------- |
+| terraform  | >= 1.3.6 |
+| helm       | 3.2.0    |
+| kubectl    | 2.4.1    |
+| kubernetes | 3.2.1    |
+| sops       | 1.4.1    |
 
 ## Providers
 
-| Name | Version |
-| ---- | ------- |
-| helm | 3.2.0 |
-| kubernetes | 3.2.1 |
+| Name       | Version |
+| ---------- | ------- |
+| helm       | 3.2.0   |
+| kubernetes | 3.2.1   |
 
 ## Modules
 
-| Name | Source | Version |
-| ---- | ------ | ------- |
-| base | ../../../modules/deployments | n/a |
-| cloudnative\_pg | ../../../modules/deployments | n/a |
-| knative | ../../../modules/deployments | n/a |
+| Name            | Source                       | Version |
+| --------------- | ---------------------------- | ------- |
+| base            | ../../../modules/deployments | n/a     |
+| cloudnative\_pg | ../../../modules/deployments | n/a     |
+| knative         | ../../../modules/deployments | n/a     |
 
 ## Resources
 
-| Name | Type |
-| ---- | ---- |
-| [helm_release.authentik](https://registry.terraform.io/providers/hashicorp/helm/3.2.0/docs/resources/release) | resource |
+| Name                                                                                                                                                               | Type     |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |
+| [helm_release.authentik](https://registry.terraform.io/providers/hashicorp/helm/3.2.0/docs/resources/release)                                                      | resource |
 | [kubernetes_cluster_role_binding_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/cluster_role_binding_v1) | resource |
-| [kubernetes_cluster_role_binding_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/cluster_role_binding_v1) | resource |
-| [kubernetes_cluster_role_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/cluster_role_v1) | resource |
-| [kubernetes_cluster_role_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/cluster_role_v1) | resource |
-| [kubernetes_manifest.notes](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/manifest) | resource |
-| [kubernetes_namespace_v1.this](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/namespace_v1) | resource |
-| [kubernetes_secret_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/secret_v1) | resource |
-| [kubernetes_secret_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/secret_v1) | resource |
-| [kubernetes_service_account_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/service_account_v1) | resource |
-| [kubernetes_service_account_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/service_account_v1) | resource |
+| [kubernetes_cluster_role_binding_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/cluster_role_binding_v1)           | resource |
+| [kubernetes_cluster_role_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/cluster_role_v1)                 | resource |
+| [kubernetes_cluster_role_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/cluster_role_v1)                           | resource |
+| [kubernetes_manifest.notes](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/manifest)                                            | resource |
+| [kubernetes_namespace_v1.this](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/namespace_v1)                                     | resource |
+| [kubernetes_role_binding_v1.sandbox](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/role_binding_v1)                            | resource |
+| [kubernetes_role_v1.sandbox](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/role_v1)                                            | resource |
+| [kubernetes_secret_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/secret_v1)                             | resource |
+| [kubernetes_secret_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/secret_v1)                                       | resource |
+| [kubernetes_secret_v1.sandbox_token](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/secret_v1)                                  | resource |
+| [kubernetes_service_account_v1.deployment_restart](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/service_account_v1)           | resource |
+| [kubernetes_service_account_v1.pod_exec](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/service_account_v1)                     | resource |
+| [kubernetes_service_account_v1.sandbox](https://registry.terraform.io/providers/hashicorp/kubernetes/3.2.1/docs/resources/service_account_v1)                      | resource |
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-| ---- | ----------- | ---- | ------- | :------: |
-| client\_certificate | n/a | `string` | n/a | yes |
-| client\_key | n/a | `string` | n/a | yes |
-| cluster\_ca\_certificate | n/a | `string` | n/a | yes |
-| host | n/a | `string` | n/a | yes |
-| registry\_password | n/a | `string` | n/a | yes |
-| registry\_server | n/a | `string` | n/a | yes |
-| registry\_username | n/a | `string` | n/a | yes |
+| Name                     | Description | Type     | Default | Required |
+| ------------------------ | ----------- | -------- | ------- | :------: |
+| client\_certificate      | n/a         | `string` | n/a     |   yes    |
+| client\_key              | n/a         | `string` | n/a     |   yes    |
+| cluster\_ca\_certificate | n/a         | `string` | n/a     |   yes    |
+| host                     | n/a         | `string` | n/a     |   yes    |
+| registry\_password       | n/a         | `string` | n/a     |   yes    |
+| registry\_server         | n/a         | `string` | n/a     |   yes    |
+| registry\_username       | n/a         | `string` | n/a     |   yes    |
 
 ## Outputs
 
