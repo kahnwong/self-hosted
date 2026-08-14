@@ -1,5 +1,6 @@
 locals {
   namespaces = toset([
+    "agent-sandboxes",
     "jobs",
     "default",
     # "harbor",
