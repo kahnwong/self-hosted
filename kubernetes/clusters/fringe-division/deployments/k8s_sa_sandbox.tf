@@ -1,7 +1,7 @@
 # ------------------------ service account ------------------------ #
 resource "kubernetes_service_account_v1" "sandbox" {
   metadata {
-    name      = "sandbox"
+    name      = "sa-sandbox"
     namespace = "agent-sandboxes"
   }
 }
@@ -32,8 +32,8 @@ resource "kubernetes_role_v1" "sandbox" {
   }
 
   rule {
-    api_groups = ["x-k8s.io"]
-    resources  = ["agents", "agents/status"]
+    api_groups = ["agents.x-k8s.io"]
+    resources  = ["sandboxes", "sandboxes/status"]
     verbs      = ["get", "list", "watch", "create", "update", "patch", "delete"]
   }
 

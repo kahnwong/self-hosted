@@ -57,7 +57,7 @@ locals {
     ]
   })
 
-  ghcr_namespaces = toset(["infrastructure", "services", "jobs"])
+  ghcr_namespaces = toset(["agent-sandboxes", "infrastructure", "services", "jobs"])
 }
 
 module "secrets" {

@@ -140,3 +140,16 @@ resource "helm_release" "authentik" {
     file("../../../specs/deployments/infrastructure/authentik.values.yaml"),
   ]
 }
+
+# ------ agent-sandbox ------ #
+resource "helm_release" "sandbox" {
+  name       = "sandbox"
+  namespace  = "agent-sandboxes"
+  repository = "oci://ghcr.io/kahnwong/charts"
+  version    = "0.6.0"
+  chart      = "base"
+
+  values = [
+    file("../../../specs/deployments/agent-sandboxes/sandbox.yaml"),
+  ]
+}
