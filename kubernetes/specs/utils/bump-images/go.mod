@@ -1,6 +1,6 @@
 module image-updater
 
-go 1.26.3
+go 1.26.5
 
 require github.com/cli/go-gh/v2 v2.13.0
 

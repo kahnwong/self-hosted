@@ -25,6 +25,7 @@ var repos = map[string]string{
 	"kahnwong/qrcode-api":         "../../deployments/services/qrcode-api.yaml",
 	"kahnwong/retrooo":            "../../deployments/services/retrooo.yaml",
 	"kahnwong/rustpad":            "../../deployments/services/rustpad.yaml",
+	"kahnwong/sandbox":            "../../deployments/agent-sandboxes/sandbox.yaml",
 	"kahnwong/sshx":               "../../deployments/services/sshx.yaml",
 	"kahnwong/subsonic-widgets":   "../../deployments/services/subsonic-widgets.yaml",
 	"kahnwong/sup3rs3cretmes5age": "../../deployments/services/supersecretmessage.yaml",
