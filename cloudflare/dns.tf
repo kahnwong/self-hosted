@@ -52,6 +52,7 @@ locals {
     "opentag",
     "pdf",
     "rustdesk",
+    "sandbox",
     "sshx",
     "sync.koreader",
     "syncthing",

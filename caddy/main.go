@@ -49,6 +49,7 @@ func main() {
 			"opencost":  "30054",
 			"opentag":   "40000",
 			"pdf":       "stirling-pdf.services",
+			"sandbox":   "30087",
 			"syncthing": "8384",
 			"todotxt":   "30064",
 			"wabbajack": "30076",

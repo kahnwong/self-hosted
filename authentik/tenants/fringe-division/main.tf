@@ -23,6 +23,7 @@ locals {
     "nomad",
     "notes",
     "opentag",
+    "sandbox",
     "syncthing",
     "todotxt",
   ])
