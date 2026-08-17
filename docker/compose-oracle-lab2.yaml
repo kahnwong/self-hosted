@@ -1,7 +1,7 @@
 services:
   beszel:
     container_name: beszel
-    image: henrygd/beszel:0.18.7
+    image: henrygd/beszel:0.18.8
     # ports:
     #   - "8090:8090"
     environment:
