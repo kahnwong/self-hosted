@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: beszel
     repository: henrygd/beszel
-    tag: 0.18.7
+    tag: 0.18.8
     port: 8090
     env:
       - name: APP_URL
