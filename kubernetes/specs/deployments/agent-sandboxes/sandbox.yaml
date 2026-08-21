@@ -6,7 +6,7 @@ kubeGreen: true
 containers:
   - name: sandbox
     repository: ghcr.io/kahnwong/sandbox
-    tag: "7131221"
+    tag: "1ead6cd"
     port: 3000
     env:
       - name: SANDBOX_IMAGE
