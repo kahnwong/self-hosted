@@ -6,11 +6,13 @@ kubeGreen: true
 containers:
   - name: sandbox
     repository: ghcr.io/kahnwong/sandbox
-    tag: "1ead6cd"
+    tag: "5c62b90"
     port: 3000
     env:
       - name: SANDBOX_IMAGE
         value: "python:3.14-slim"
+      - name: LOG_LEVEL
+        value: "error"
 service:
   port: 3000
   nodePort: 30087
