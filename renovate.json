@@ -4,23 +4,20 @@
     "config:recommended"
   ],
   "kubernetes": {
-    "fileMatch": [
-      "kubernetes/.+\\.ya?ml$"
+    "managerFilePatterns": [
+      "/kubernetes/.+\\.ya?ml$/"
     ]
   },
   "helm-values": {
-    "fileMatch": [
-      "kubernetes/.+\\.ya?ml$"
+    "managerFilePatterns": [
+      "/kubernetes/.+\\.ya?ml$/"
     ]
   },
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": [
-        "kubernetes/.+\\.ya?ml$"
-      ],
-      "matchStrings": [
-        "repository:\\s+['\"]?(?<depName>[^'\"\\s]+)['\"]?\\s+tag:\\s+['\"]?(?<currentValue>[^'\"\\s]+)['\"]?"
-      ],
+      "customType": "regex",
+      "managerFilePatterns": ["/kubernetes/.+\\.ya?ml$/"],
+      "matchStrings": ["repository:\\s+['\"]?(?<depName>[^'\"\\s]+)['\"]?\\s+tag:\\s+['\"]?(?<currentValue>[^'\"\\s]+)['\"]?"],
       "datasourceTemplate": "docker"
     }
   ],
