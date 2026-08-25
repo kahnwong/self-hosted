@@ -1,14 +1,13 @@
 # Secrets
 
 <!-- BEGIN_TF_DOCS -->
-
 ## Requirements
 
-| Name       | Version  |
-| ---------- | -------- |
-| terraform  | >= 1.3.6 |
-| kubernetes | 3.2.1    |
-| sops       | 1.4.1    |
+| Name | Version |
+| ---- | ------- |
+| terraform | >= 1.3.6 |
+| kubernetes | 3.2.1 |
+| sops | 1.4.1 |
 
 ## Providers
 
@@ -16,9 +15,9 @@ No providers.
 
 ## Modules
 
-| Name    | Source                   | Version |
-| ------- | ------------------------ | ------- |
-| secrets | ../../../modules/secrets | n/a     |
+| Name | Source | Version |
+| ---- | ------ | ------- |
+| secrets | ../../../modules/secrets | n/a |
 
 ## Resources
 
@@ -26,15 +25,15 @@ No resources.
 
 ## Inputs
 
-| Name                     | Description | Type     | Default             | Required |
-| ------------------------ | ----------- | -------- | ------------------- | :------: |
-| client\_certificate      | n/a         | `string` | n/a                 |   yes    |
-| client\_key              | n/a         | `string` | n/a                 |   yes    |
-| cluster\_ca\_certificate | n/a         | `string` | n/a                 |   yes    |
-| cluster\_name            | n/a         | `string` | `"fringe-division"` |    no    |
-| ghcr\_token              | n/a         | `string` | n/a                 |   yes    |
-| ghcr\_username           | n/a         | `string` | n/a                 |   yes    |
-| host                     | n/a         | `string` | n/a                 |   yes    |
+| Name | Description | Type | Default | Required |
+| ---- | ----------- | ---- | ------- | :------: |
+| client\_certificate | n/a | `string` | n/a | yes |
+| client\_key | n/a | `string` | n/a | yes |
+| cluster\_ca\_certificate | n/a | `string` | n/a | yes |
+| cluster\_name | n/a | `string` | `"fringe-division"` | no |
+| ghcr\_token | n/a | `string` | n/a | yes |
+| ghcr\_username | n/a | `string` | n/a | yes |
+| host | n/a | `string` | n/a | yes |
 
 ## Outputs
 
