@@ -1,5 +1,13 @@
 # Authentik Application Oauth2
 
+Default grants:
+
+- hybrid
+- implicit
+- client_credentials
+- password
+- urn:ietf:params:oauth:grant-type:device_code
+
 <!-- BEGIN_TF_DOCS -->
 
 ## Requirements
