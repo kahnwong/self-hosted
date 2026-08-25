@@ -18,6 +18,10 @@ containers:
         value: ""
       - name: ND_ENABLESHARING
         value: "true"
+      - name: ND_REVERSEPROXYUSERHEADER
+        value: Remote-User
+      - name: ND_REVERSEPROXYWHITELIST
+        value: 0.0.0.0/0
     volumeMounts:
       - name: music
         mountPath: /music

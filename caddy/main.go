@@ -23,7 +23,6 @@ func main() {
 			"gist":             "opengist.services",
 			"matrix":           "6167",
 			"miniflux":         "30007",
-			"music":            "30006",
 			"qa-api":           "30043",
 			"retrooo":          "30081",
 			"rustpad":          "rustpad.services",

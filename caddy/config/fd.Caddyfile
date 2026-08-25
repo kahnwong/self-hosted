@@ -37,9 +37,6 @@ matrix.karnwong.me {
 miniflux.karnwong.me {
     import base 30007
 }
-music.karnwong.me {
-    import base 30006
-}
 qa-api.karnwong.me {
     import base 30043
 }

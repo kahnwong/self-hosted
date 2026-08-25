@@ -34,6 +34,7 @@ locals {
     "ladder",
     "linkding",
     "mlflow",
+    "music", # navidrome
     "opencost",
     "pdf",
     "wabbajack",
