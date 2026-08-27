@@ -11,3 +11,7 @@
 ```bash
 kubectl apply -f sandbox.yaml
 ```
+
+## Network Policies
+
+Requires CNI
