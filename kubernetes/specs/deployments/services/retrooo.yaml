@@ -5,11 +5,11 @@ kubeGreen: true
 containers:
   - name: retrooo
     repository: ghcr.io/kahnwong/retrooo
-    tag: d708f4e
+    tag: 65a46e6
     port: 3000
     env:
       - name: LISTEN_ADDR
-        value: ":3000"
+        value: "0.0.0.0:3000"
       - name: MODE
         value: "production"
     envFrom:
