@@ -19,7 +19,7 @@ locals {
 module "pages" {
   for_each = local.pages
 
-  source = "./modules/cloudflare-pages"
+  source = "../../modules/cloudflare-pages"
 
   account_id = var.cloudflare_account_id
   zone_id    = var.cloudflare_zone_id
@@ -31,7 +31,7 @@ module "pages" {
 
 # custom
 module "karnwong_me" {
-  source = "./modules/cloudflare-pages"
+  source = "../../modules/cloudflare-pages"
 
   account_id = var.cloudflare_account_id
   zone_id    = var.cloudflare_zone_id
@@ -43,7 +43,7 @@ module "karnwong_me" {
 
 # escape `.` in project name
 module "swissknife_git" {
-  source = "./modules/cloudflare-pages"
+  source = "../../modules/cloudflare-pages"
 
   account_id = var.cloudflare_account_id
   zone_id    = var.cloudflare_zone_id
