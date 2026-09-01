@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: cpubench
     repository: ghcr.io/kahnwong/cpubench
-    tag: 0df6fbb
+    tag: 2a4a40a
     port: 3000
     env:
       - name: LISTEN_ADDR
