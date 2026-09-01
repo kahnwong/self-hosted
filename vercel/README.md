@@ -6,14 +6,14 @@
 | Name | Version |
 | ---- | ------- |
 | sops | 1.4.1 |
-| vercel | 5.14.0 |
+| vercel | 5.15.0 |
 
 ## Providers
 
 | Name | Version |
 | ---- | ------- |
 | sops | 1.4.1 |
-| vercel | 5.14.0 |
+| vercel | 5.15.0 |
 
 ## Modules
 
@@ -23,10 +23,10 @@ No modules.
 
 | Name | Type |
 | ---- | ---- |
-| [vercel_project.shouldideploytoday](https://registry.terraform.io/providers/vercel/vercel/5.14.0/docs/resources/project) | resource |
-| [vercel_project.transform](https://registry.terraform.io/providers/vercel/vercel/5.14.0/docs/resources/project) | resource |
-| [vercel_project_domain.shouldideploytoday](https://registry.terraform.io/providers/vercel/vercel/5.14.0/docs/resources/project_domain) | resource |
-| [vercel_project_domain.transform](https://registry.terraform.io/providers/vercel/vercel/5.14.0/docs/resources/project_domain) | resource |
+| [vercel_project.shouldideploytoday](https://registry.terraform.io/providers/vercel/vercel/5.15.0/docs/resources/project) | resource |
+| [vercel_project.transform](https://registry.terraform.io/providers/vercel/vercel/5.15.0/docs/resources/project) | resource |
+| [vercel_project_domain.shouldideploytoday](https://registry.terraform.io/providers/vercel/vercel/5.15.0/docs/resources/project_domain) | resource |
+| [vercel_project_domain.transform](https://registry.terraform.io/providers/vercel/vercel/5.15.0/docs/resources/project_domain) | resource |
 | [sops_file.secrets](https://registry.terraform.io/providers/carlpett/sops/1.4.1/docs/data-sources/file) | data source |
 
 ## Inputs
