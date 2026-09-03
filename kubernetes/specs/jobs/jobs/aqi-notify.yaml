@@ -3,7 +3,7 @@ schedule: "0 0 * * *" # 7AM Asia/Bangkok
 containers:
   - name: aqi-notify
     repository: ghcr.io/kahnwong/aqi-notify
-    tag: cd377ca
+    tag: bf91737
     envFrom:
       - secretRef:
           name: aqi-notify
