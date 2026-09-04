@@ -14,6 +14,7 @@ locals {
     ]
     services = [
       # "evcc",
+      "freellmapi",
       "cloud",
       "cpubench",
       "dashboard",

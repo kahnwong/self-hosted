@@ -1,0 +1,27 @@
+kind: Deployment
+name: freellmapi
+replicaCount: 1
+containers:
+  - name: freellmapi
+    repository: ghcr.io/tashfeenahmed/freellmapi
+    tag: v0.9.5
+    port: 3001
+    livenessProbeScheme: tcp
+    envFrom:
+      - secretRef:
+          name: freellmapi
+    env:
+      - name: NODE_ENV
+        value: "production"
+      - name: PORT
+        value: "3001"
+    volumeMounts:
+      - name: data
+        mountPath: /app/server/data
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/freellmapi/data
+service:
+  port: 3001
+  nodePort: 30088
