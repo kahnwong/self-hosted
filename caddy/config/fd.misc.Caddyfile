@@ -11,13 +11,6 @@ wallabag.karnwong.me {
         }
     }
 }
-ai-gateway.karnwong.me {
-    route {
-       crowdsec
-       respond / "Access Denied" 403
-       reverse_proxy 192.168.1.36:8000
-    }
-}
 ntfy.karnwong.me, http://ntfy.karnwong.me {
     route {
 		crowdsec

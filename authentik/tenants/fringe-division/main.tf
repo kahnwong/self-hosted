@@ -28,6 +28,7 @@ locals {
     "todotxt",
   ])
   application_proxy = toset([
+    "ai-gateway", # freellmapi
     "dashboard",
     "evcc",
     "greenkube",
