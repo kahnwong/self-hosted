@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: freellmapi
     repository: ghcr.io/tashfeenahmed/freellmapi
-    tag: v0.9.5
+    tag: v0.9.7
     port: 3001
     livenessProbeScheme: tcp
     envFrom:
