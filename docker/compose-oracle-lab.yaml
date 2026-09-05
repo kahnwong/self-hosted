@@ -22,7 +22,9 @@ services:
       - ./config/iroh-relay.toml:/config/iroh-relay.toml:ro
   memos:
     # prune archived notes
-    # `DELETE FROM memo WHERE row_status = 'ARCHIVED'; vacuum;`
+    # `DELETE FROM memo WHERE row_status = 'ARCHIVED'; VACUUM;`
+    # prune assets
+    # `DELETE FROM attachment WHERE memo_id IS NOT NULL AND memo_id NOT IN (SELECT id FROM memo); VACUUM;`
     container_name: memos
     restart: always
     # ports:
