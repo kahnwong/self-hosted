@@ -154,3 +154,7 @@ resource "helm_release" "sandbox" {
     file("../../../specs/deployments/agent-sandboxes/sandbox.yaml"),
   ]
 }
+
+resource "kubernetes_manifest" "sandbox_network_policy" {
+  manifest = yamldecode(file("../../../specs/deployments/agent-sandboxes/network-policy.yaml"))
+}
