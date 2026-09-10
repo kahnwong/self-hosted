@@ -134,7 +134,7 @@ resource "helm_release" "authentik" {
   name       = "authentik"
   namespace  = "infrastructure"
   repository = "https://charts.goauthentik.io"
-  version    = "2026.8.1"
+  version    = "2026.8.2"
   chart      = "authentik"
 
   values = [
