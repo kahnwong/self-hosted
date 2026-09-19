@@ -29,7 +29,7 @@ services:
     restart: always
     # ports:
     #  - 5230:5230
-    image: neosmemo/memos:0.30.0
+    image: neosmemo/memos:0.31.0
     environment:
       - MEMOS_INSTANCE_URL=https://memos.karnwong.me
     volumes:
