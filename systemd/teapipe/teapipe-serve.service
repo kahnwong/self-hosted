@@ -1,11 +1,11 @@
 [Unit]
-Description=npipe serve
+Description=teapipe serve
 After=network-online.target
 Wants=network-online.target
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/npipe serve
+ExecStart=/usr/local/bin/teapipe serve
 Restart=always
 RestartSec=5s
 
