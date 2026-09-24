@@ -26,11 +26,11 @@ All users - API Tokens:Edit
 
 ## Modules
 
-| Name            | Source                     | Version |
-| --------------- | -------------------------- | ------- |
-| karnwong\_me    | ./modules/cloudflare-pages | n/a     |
-| pages           | ./modules/cloudflare-pages | n/a     |
-| swissknife\_git | ./modules/cloudflare-pages | n/a     |
+| Name            | Source                         | Version |
+| --------------- | ------------------------------ | ------- |
+| karnwong\_me    | ../../modules/cloudflare-pages | n/a     |
+| pages           | ../../modules/cloudflare-pages | n/a     |
+| swissknife\_git | ../../modules/cloudflare-pages | n/a     |
 
 ## Resources
 
