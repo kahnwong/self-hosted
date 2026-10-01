@@ -20,7 +20,6 @@ locals {
     "cloud",
     "fava",
     "livegrep",
-    "nomad",
     "notes",
     "opentag",
     "sandbox",

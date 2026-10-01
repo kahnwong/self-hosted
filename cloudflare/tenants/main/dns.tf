@@ -45,7 +45,6 @@ locals {
     "livegrep",
     "mlflow",
     "music",
-    "nomad",
     "notes",
     "ntfy",
     "opencost",
