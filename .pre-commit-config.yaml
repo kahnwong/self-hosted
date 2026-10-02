@@ -15,19 +15,17 @@ repos:
       - id: fix-byte-order-marker
       - id: mixed-line-ending
   - repo: https://github.com/kahnwong/pre-commit
-    rev: "e4f4ade"
+    rev: "b0accfb"
     hooks:
-      #      - id: go-build
+      - id: go-build
       - id: go-fmt
-        #      - id: go-imports
-        #      - id: go-mod-tidy
-        #      - id: go-unit-tests
+      - id: go-imports
+      - id: go-mod-tidy
       - id: go-vet
       - id: golangci-lint
       - id: tofu-fmt
       - id: tofu-validate
       - id: terraform-docs
-      - id: yamlfmt
       - id: shellcheck
       - id: shfmt
       - id: oxfmt

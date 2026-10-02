@@ -1,6 +1,6 @@
-module image-updater
+module bump-images
 
-go 1.26.5
+go 1.27.1
 
 require github.com/cli/go-gh/v2 v2.16.1
 
