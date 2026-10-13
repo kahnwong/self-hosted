@@ -32,6 +32,7 @@ locals {
       "notes-sync",
       "opengist",
       "qrcode-api",
+      "readeck",
       "retrooo",
       "subsonic-widgets",
       "supersecretmessage-vault",
