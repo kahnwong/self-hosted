@@ -1,0 +1,23 @@
+kind: Deployment
+name: readeck
+replicaCount: 1
+kubeGreen: true
+containers:
+  - name: readeck
+    # repository: codeberg.org/readeck/readeck
+    repository: ghcr.io/yunanwg/readeck
+    tag: 0.23.4
+    port: 8000
+    env:
+      - name: READECK_LOG_LEVEL
+        value: error
+    volumeMounts:
+      - name: data
+        mountPath: /readeck
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/readeck/data
+service:
+  port: 8000
+  nodePort: 30089

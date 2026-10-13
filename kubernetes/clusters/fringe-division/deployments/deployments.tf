@@ -30,6 +30,7 @@ locals {
       "navidrome",
       "notes",
       "qrcode-api",
+      "readeck",
       "retrooo",
       "sshx",
       "subsonic-widgets",

@@ -24,6 +24,7 @@ func main() {
 			"matrix":           "6167",
 			"miniflux":         "30007",
 			"qa-api":           "30043",
+			"readeck":          "30089",
 			"retrooo":          "30081",
 			"rustpad":          "rustpad.services",
 			"secrets":          "30025",

@@ -40,6 +40,9 @@ miniflux.karnwong.me {
 qa-api.karnwong.me {
     import base 30043
 }
+readeck.karnwong.me {
+    import base 30089
+}
 retrooo.karnwong.me {
     import base 30081
 }
