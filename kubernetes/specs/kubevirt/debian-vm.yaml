@@ -12,7 +12,7 @@ spec:
     - protocol: TCP
       port: 22
       targetPort: 22
-      nodePort: 30080
+      nodePort: 30200
 ---
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
@@ -40,8 +40,8 @@ spec:
               masquerade: {}
         resources:
           requests:
-            memory: 4Gi
-            cpu: 4
+            memory: 512Mi
+            cpu: 1
       networks:
         - name: default
           pod: {}
@@ -59,7 +59,7 @@ spec:
                   sudo: ALL=(ALL) NOPASSWD:ALL
                   shell: /bin/bash
                   ssh_authorized_keys:
-                    - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB1ItYazIZC/52E7kJy1NRZxGnqaoSacS1bl3YcoHj5B
+                    - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGxegedeKKWLetfIMjMe+fPFGIx1pIfanpAUVqrTydE9
               ssh_pwauth: true
               disable_root: false
               chpasswd:
@@ -84,4 +84,4 @@ spec:
             - ReadWriteOnce
         source:
           registry:
-            url: "docker://quay.io/containerdisks/debian:13"
+            url: "docker://quay.io/containerdisks/debian:latest"

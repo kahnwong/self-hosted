@@ -1,29 +1,30 @@
+---
 apiVersion: v1
 kind: Service
 metadata:
-  name: apps-vm-ssh
+  name: ubuntu-vm-ssh
   namespace: vms
 spec:
   type: NodePort
   selector:
-    kubevirt.io/vm: apps-vm
+    kubevirt.io/vm: ubuntu-vm
   ports:
     - protocol: TCP
       port: 22
       targetPort: 22
-      nodePort: 30081
+      nodePort: 30201
 ---
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
-  name: apps-vm
+  name: ubuntu-vm
   namespace: vms
 spec:
   runStrategy: Halted
   template:
     metadata:
       labels:
-        kubevirt.io/vm: apps-vm
+        kubevirt.io/vm: ubuntu-vm
     spec:
       domain:
         devices:
@@ -40,30 +41,30 @@ spec:
         resources:
           requests:
             memory: 512Mi
-            cpu: 2
+            cpu: 1
       networks:
         - name: default
           pod: {}
       volumes:
         - name: rootdisk
           dataVolume:
-            name: apps-dv
+            name: ubuntu-dv
         - name: cloudinitdisk
           cloudInitNoCloud:
             userData: |
               #cloud-config
-              hostname: apps-vm
+              hostname: ubuntu-vm
               users:
-                - name: debian
+                - name: ubuntu
                   sudo: ALL=(ALL) NOPASSWD:ALL
                   shell: /bin/bash
                   ssh_authorized_keys:
-                    - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBj982HEBeVoQNBzx36aeHP4ERNH6UrvKX2ZyLPysYOu
+                    - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGxegedeKKWLetfIMjMe+fPFGIx1pIfanpAUVqrTydE9
               ssh_pwauth: true
               disable_root: false
               chpasswd:
                 list: |
-                  debian:debian
+                  ubuntu:ubuntu
                 expire: false
               package_update: true
               packages:
@@ -73,14 +74,14 @@ spec:
                 - systemctl start ssh
   dataVolumeTemplates:
     - metadata:
-        name: apps-dv
+        name: ubuntu-dv
       spec:
         storage:
           resources:
             requests:
-              storage: 8Gi
+              storage: 32Gi
           accessModes:
             - ReadWriteOnce
         source:
           registry:
-            url: "docker://quay.io/containerdisks/debian:13"
+            url: "docker://quay.io/containerdisks/ubuntu:26.04"
