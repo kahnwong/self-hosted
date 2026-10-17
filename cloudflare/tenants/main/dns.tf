@@ -7,8 +7,8 @@ locals {
   ])
   selfhosted_proxied = toset([
     "*",
-    "ai-gateway",
     "bifrost",
+    "freellmapi",
     "llm-context",
     "miniflux",
     "pmtiles", # if use docker-caddy, it needs to be a separate instance because it uses `file_server` directive
