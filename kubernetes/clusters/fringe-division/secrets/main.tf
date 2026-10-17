@@ -5,6 +5,7 @@ locals {
     # harbor         = ["harbor"]
     infrastructure = [
       "authentik-env", # `authentic-env` is to prevent name collision with secrets provided by helm chart
+      "bifrost",
       "forgejo",
       "llm-honeypot",
       "mlflow",

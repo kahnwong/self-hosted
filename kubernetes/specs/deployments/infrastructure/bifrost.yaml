@@ -1,0 +1,23 @@
+kind: Deployment
+name: bifrost
+replicaCount: 1
+containers:
+  - name: bifrost
+    repository: maximhq/bifrost
+    tag: v2.3.0
+    port: 8080
+    livenessProbeScheme: tcp
+    envFrom:
+      - secretRef:
+          name: bifrost
+    volumeMounts:
+      # `sudo chown -R 1000:1000 data`
+      - name: data
+        mountPath: /app/data
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/bifrost/data
+service:
+  port: 8080
+  nodePort: 30093

@@ -6,6 +6,7 @@ locals {
     default = []
     infrastructure = [
       "authentik-valkey",
+      "bifrost",
       "forgejo",
       "garage",
       "llm-honeypot",
