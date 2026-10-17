@@ -29,6 +29,7 @@ locals {
   ])
   application_proxy = toset([
     "ai-gateway", # freellmapi
+    "bifrost",
     "dashboard",
     "evcc",
     "greenkube",

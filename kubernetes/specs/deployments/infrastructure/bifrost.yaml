@@ -10,6 +10,9 @@ containers:
     envFrom:
       - secretRef:
           name: bifrost
+    env:
+      - name: LOG_LEVEL
+        value: error
     volumeMounts:
       # `sudo chown -R 1000:1000 data`
       - name: data
