@@ -22,14 +22,15 @@ metadata:
 spec:
   runStrategy: Halted
   template:
+    spec:
     metadata:
       labels:
         kubevirt.io/vm: debian-vm
-    spec:
+      architecture: amd64
       domain:
         devices:
           disks:
-            - name: rootdisk
+            - name: debian-boot-volume
               disk:
                 bus: virtio
             - name: cloudinitdisk
@@ -42,24 +43,26 @@ spec:
           requests:
             memory: 512Mi
             cpu: 1
+        cpu:
+          cores: 2
       networks:
         - name: default
           pod: {}
       volumes:
-        - name: rootdisk
+        - name: debian-boot-volume
           dataVolume:
-            name: debian-dv
+            name: debian-boot-volume
         - name: cloudinitdisk
           cloudInitNoCloud:
             userData: |
               #cloud-config
               hostname: debian-vm
               users:
-                - name: debian
-                  sudo: ALL=(ALL) NOPASSWD:ALL
-                  shell: /bin/bash
-                  ssh_authorized_keys:
-                    - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGxegedeKKWLetfIMjMe+fPFGIx1pIfanpAUVqrTydE9
+              - name: debian
+                sudo: ALL=(ALL) NOPASSWD:ALL
+                shell: /bin/bash
+                ssh_authorized_keys:
+                - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGxegedeKKWLetfIMjMe+fPFGIx1pIfanpAUVqrTydE9
               ssh_pwauth: true
               disable_root: false
               chpasswd:
@@ -68,20 +71,33 @@ spec:
                 expire: false
               package_update: true
               packages:
-                - qemu-guest-agent
+              - qemu-guest-agent
               runcmd:
-                - systemctl enable ssh
-                - systemctl start ssh
+              - systemctl enable ssh
+              - systemctl start ssh
+            networkData: |-
+              network:
+                version: 2
+                ethernets:
+                  enp1s0:
+                    match:
+                      # macaddress: "xx:xx:xx:xx:xx:xx"
+                      name: e*  # add this line
+                    dhcp4: true
+                    dhcp6: true
+                    set-name: "enp1s0"
   dataVolumeTemplates:
     - metadata:
-        name: debian-dv
+        name: debian-boot-volume
       spec:
-        storage:
-          resources:
-            requests:
-              storage: 32Gi
-          accessModes:
-            - ReadWriteOnce
         source:
           registry:
             url: "docker://quay.io/containerdisks/debian:latest"
+            platform:
+              architecture: amd64
+        storage:
+          resources:
+            requests:
+              storage: 8Gi
+          accessModes:
+            - ReadWriteOnce

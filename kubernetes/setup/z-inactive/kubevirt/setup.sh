@@ -27,14 +27,14 @@ kubectl get all -n kubevirt
 # enable features
 kubectl apply -f enable-feature-gate.yaml
 
-# patch storageprofile
-kubectl patch storageprofile local-path --type=merge -p '{
-  "spec": {
-    "claimPropertySets": [
-      {
-        "accessModes": ["ReadWriteOnce"],
-        "volumeMode": "Filesystem"
-      }
-    ]
-  }
-}'
+## patch storageprofile - not required if you define access mode explicitly
+#kubectl patch storageprofile local-path --type=merge -p '{
+#  "spec": {
+#    "claimPropertySets": [
+#      {
+#        "accessModes": ["ReadWriteOnce"],
+#        "volumeMode": "Filesystem"
+#      }
+#    ]
+#  }
+#}'
