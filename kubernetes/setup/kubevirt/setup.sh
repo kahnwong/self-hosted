@@ -2,7 +2,7 @@
 
 # shellcheck disable=SC2155
 #export VERSION=$(curl -s https://storage.googleapis.com/kubevirt-prow/release/kubevirt/kubevirt/stable.txt)
-export VERSION="v1.8.1"
+export VERSION="v1.9.1"
 echo "$VERSION"
 
 # install components
@@ -14,7 +14,7 @@ kubectl create -f "https://github.com/kubevirt/kubevirt/releases/download/${VERS
 #export TAG=$(curl -s -w %{redirect_url} https://github.com/kubevirt/containerized-data-importer/releases/latest)
 # shellcheck disable=SC2116
 #export VERSION=$(echo "${TAG##*/}")
-export VERSION="v1.65.0"
+export VERSION="v1.66.1"
 
 # shellcheck disable=SC2086
 kubectl create -f https://github.com/kubevirt/containerized-data-importer/releases/download/$VERSION/cdi-operator.yaml
@@ -38,3 +38,5 @@ kubectl apply -f enable-feature-gate.yaml
 #    ]
 #  }
 #}'
+
+kubectl create namespace vms

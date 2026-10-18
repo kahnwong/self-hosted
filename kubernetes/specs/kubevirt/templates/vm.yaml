@@ -1,36 +1,37 @@
+# Go template rendered by main.go; do not apply this file directly.
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: debian-vm-ssh
+  name: {{ printf "%s-ssh" .Name | quote }}
   namespace: vms
 spec:
   type: NodePort
   selector:
-    kubevirt.io/vm: debian-vm
+    kubevirt.io/vm: {{ printf "%s" .Name | quote }}
   ports:
     - protocol: TCP
       port: 22
       targetPort: 22
-      nodePort: 30200
+      nodePort: {{ .NodePort }}
 ---
 apiVersion: kubevirt.io/v1
 kind: VirtualMachine
 metadata:
-  name: debian-vm
+  name: {{ printf "%s" .Name | quote }}
   namespace: vms
 spec:
   runStrategy: Halted
   template:
-    spec:
     metadata:
       labels:
-        kubevirt.io/vm: debian-vm
+        kubevirt.io/vm: {{ printf "%s" .Name | quote }}
+    spec:
       architecture: amd64
       domain:
         devices:
           disks:
-            - name: debian-boot-volume
+            - name: {{ printf "%s-boot-volume" .Name | quote }}
               disk:
                 bus: virtio
             - name: cloudinitdisk
@@ -41,58 +42,36 @@ spec:
               masquerade: {}
         resources:
           requests:
-            memory: 512Mi
-            cpu: 1
-        cpu:
-          cores: 2
+            memory: {{ .Memory | quote }}
+            cpu: {{ .CPU | quote }}
       networks:
         - name: default
           pod: {}
       volumes:
-        - name: debian-boot-volume
+        - name: {{ printf "%s-boot-volume" .Name | quote }}
           dataVolume:
-            name: debian-boot-volume
+            name: {{ printf "%s-boot-volume" .Name | quote }}
         - name: cloudinitdisk
           cloudInitNoCloud:
             userData: |
-              #cloud-config
-              hostname: debian-vm
-              users:
-              - name: debian
-                sudo: ALL=(ALL) NOPASSWD:ALL
-                shell: /bin/bash
-                ssh_authorized_keys:
-                - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGxegedeKKWLetfIMjMe+fPFGIx1pIfanpAUVqrTydE9
-              ssh_pwauth: true
-              disable_root: false
-              chpasswd:
-                list: |
-                  debian:debian
-                expire: false
-              package_update: true
-              packages:
-              - qemu-guest-agent
-              runcmd:
-              - systemctl enable ssh
-              - systemctl start ssh
+{{ .CloudInit | indent 14 }}
             networkData: |-
               network:
                 version: 2
                 ethernets:
                   enp1s0:
                     match:
-                      # macaddress: "xx:xx:xx:xx:xx:xx"
-                      name: e*  # add this line
+                      name: e*
                     dhcp4: true
                     dhcp6: true
                     set-name: "enp1s0"
   dataVolumeTemplates:
     - metadata:
-        name: debian-boot-volume
+        name: {{ printf "%s-boot-volume" .Name | quote }}
       spec:
         source:
           registry:
-            url: "docker://quay.io/containerdisks/debian:latest"
+            url: {{ .Image | quote }}
             platform:
               architecture: amd64
         storage:

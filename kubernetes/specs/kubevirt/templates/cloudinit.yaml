@@ -1,0 +1,28 @@
+#cloud-config
+hostname: {{ printf "%s" .Name | quote }}
+users:
+{{- if .Username }}
+  - name: {{ .Username | quote }}
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGxegedeKKWLetfIMjMe+fPFGIx1pIfanpAUVqrTydE9
+{{- else }}
+  - default
+ssh_authorized_keys:
+  - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGxegedeKKWLetfIMjMe+fPFGIx1pIfanpAUVqrTydE9
+{{- end }}
+{{- if and .Username .Password }}
+ssh_pwauth: true
+disable_root: false
+chpasswd:
+  list: {{ printf "%s:%s" .Username .Password | quote }}
+  expire: false
+{{- end }}
+package_update: true
+packages:
+  - htop
+  - qemu-guest-agent
+runcmd:
+  - systemctl enable ssh
+  - systemctl start ssh

@@ -1,5 +1,18 @@
 # KubeVirt
 
+## Usage
+
+```bash
+# list vms
+kubectl get vms
+
+# start vm
+virtctl start vm
+
+# stop vm
+virtctl stop vm
+```
+
 Access via
 
 ```bash
