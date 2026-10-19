@@ -3,7 +3,7 @@ schedule: "1 0 * * *"
 containers:
   - name: backup-navidrome
     repository: ghcr.io/kahnwong/docker-aws-backup
-    tag: f09a8ec
+    tag: 33ad35b
     env:
       - name: MODE
         value: ARCHIVE
@@ -12,7 +12,7 @@ containers:
       - name: BACKUP_PATH
         value: /opt/navidrome/config
       - name: BACKUP_PATH_EXCLUDE
-        value: /opt/navidrome/config/cache
+        value: /opt/navidrome/config/cache,/opt/navidrome/config/artwork
     envFrom:
       - secretRef:
           name: backup
