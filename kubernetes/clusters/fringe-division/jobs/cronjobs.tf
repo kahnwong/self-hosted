@@ -3,6 +3,7 @@ locals {
     jobs = [
       "aqi-notify",
       "backup-authentik",
+      "backup-bifrost",
       "backup-forgejo-data",
       "backup-forgejo-db",
       "backup-immich-db",

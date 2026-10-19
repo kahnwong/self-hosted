@@ -7,7 +7,7 @@
 | Name | Version |
 | ---- | ------- |
 | terraform | >= 1.3.6 |
-| helm | 3.2.0 |
+| helm | 3.3.0 |
 | kubernetes | 3.2.1 |
 | sops | 1.4.1 |
 

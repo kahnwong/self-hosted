@@ -1,0 +1,23 @@
+name: backup-bifrost
+schedule: "1 0 * * *"
+containers:
+  - name: backup-bifrost
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: f09a8ec
+    env:
+      - name: MODE
+        value: ARCHIVE
+      - name: SERVICE_NAME
+        value: bifrost
+      - name: BACKUP_PATH
+        value: /opt/bifrost
+    envFrom:
+      - secretRef:
+          name: backup
+    volumeMounts:
+      - name: bifrost
+        mountPath: /opt/bifrost
+volumes:
+  - name: bifrost
+    hostPath:
+      path: /opt/bifrost

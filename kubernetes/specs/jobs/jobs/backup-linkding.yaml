@@ -21,5 +21,3 @@ volumes:
   - name: linkding
     hostPath:
       path: /opt/linkding
-
-#helm template backup-linkding2  ../../charts/base/chart-cronjob --values jobs/jobs/backup-firefly-db.yaml
