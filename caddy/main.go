@@ -14,6 +14,7 @@ func main() {
 			"api.weather":      "30078",
 			"authentik":        "30047",
 			"cpubench":         "30080",
+			"fusion":           "30094",
 			"garage":           "30070",
 			"git":              "30026",
 			"harbor":           "30500",

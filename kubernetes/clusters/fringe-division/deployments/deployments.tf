@@ -15,11 +15,12 @@ locals {
     ]
     services = [
       # "evcc",
-      "freellmapi",
       "cloud",
       "cpubench",
       "dashboard",
       "fava",
+      "freellmapi",
+      "fusion",
       "immich",
       "immich-machine-learning",
       "immich-valkey",

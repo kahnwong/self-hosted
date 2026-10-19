@@ -27,6 +27,7 @@ locals {
     services = [
       "cpubench",
       "freellmapi",
+      "fusion",
       "immich", "immich-machine-learning",
       "livegrep-clone-custom",
       "miniflux",

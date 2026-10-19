@@ -1,0 +1,24 @@
+kind: Deployment
+name: fusion
+replicaCount: 1
+containers:
+  - name: fusion
+    repository: ghcr.io/0x2e/fusion
+    tag: 1.3.0
+    port: 8080
+    envFrom:
+      - secretRef:
+          name: fusion
+    env:
+      - name: FUSION_LOG_LEVEL
+        value: ERROR
+    volumeMounts:
+      - name: data
+        mountPath: /data
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/fusion/data
+service:
+  port: 8080
+  nodePort: 30094

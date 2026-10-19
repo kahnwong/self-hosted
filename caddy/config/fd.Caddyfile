@@ -10,6 +10,9 @@ authentik.karnwong.me {
 cpubench.karnwong.me {
     import base 30080
 }
+fusion.karnwong.me {
+    import base 30094
+}
 garage.karnwong.me {
     import base 30070
 }

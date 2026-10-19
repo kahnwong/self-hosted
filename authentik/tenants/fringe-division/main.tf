@@ -2,6 +2,7 @@ locals {
   application_oauth2 = tomap({
     gitea : ["https://git.karnwong.me/user/oauth2/authentik/callback"]
     harbor : ["https://harbor.karnwong.me/c/oidc/callback"]
+    fusion: ["https://fusion.karnwong.me/api/oidc/callback"]
     immich : [
       "app.immich:///oauth-callback",
       "https://immich.karnwong.me/auth/login",
