@@ -55,6 +55,9 @@ rustpad.karnwong.me {
 secrets.karnwong.me {
     import base 30025
 }
+slash.karnwong.me {
+    import base 30095
+}
 sshx.karnwong.me {
     import base 30028
 }

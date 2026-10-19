@@ -17,6 +17,7 @@ locals {
     "retrooo",
     "rustpad",
     "secrets",
+    "slash",
     "subsonic-widgets",
     "thai-tech-cal",
     "todotxt",

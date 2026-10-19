@@ -34,6 +34,7 @@ locals {
       "qrcode-api",
       "readeck",
       "retrooo",
+      "slash",
       "sshx",
       "subsonic-widgets",
       "supersecretmessage", "supersecretmessage-vault",
