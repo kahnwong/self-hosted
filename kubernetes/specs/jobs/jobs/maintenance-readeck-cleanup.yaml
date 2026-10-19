@@ -1,0 +1,28 @@
+name: maintenance-readeck-cleanup
+schedule: "3 0 * * *" # doesn't conflict with kube-green
+serviceAccountName: sa-pod-exec
+containers:
+  - name: kubectl
+    repository: alpine/k8s
+    tag: 1.34.12
+    envFrom:
+      - secretRef:
+          name: readeck-cleanup
+    command: ["sh", "-c"]
+    args:
+      - |
+        # Fetch archived (is_archived=true) and unstarred (is_marked=false) bookmarks
+        BOOKMARK_IDS=$(curl -s -H "Authorization: Bearer $READECK_API_TOKEN" \
+          "$READECK_URL/api/bookmarks?is_archived=true&is_marked=false" \
+          | jq -r '.[] | .id')
+
+        # Loop through and delete each matching entry
+        for ID in $BOOKMARK_IDS; do
+        echo "Deleting bookmark ID: $ID"
+        curl -s -X DELETE -H "Authorization: Bearer $READECK_API_TOKEN" \
+          "$READECK_URL/api/bookmarks/$ID"
+          done
+
+        READECK_POD_NAME="$(kubectl get pods -l=app.kubernetes.io/name=readeck --namespace=services | tail -1 | awk '{print $1}')"
+        echo "$READECK_POD_NAME"
+        kubectl exec --namespace=services "$READECK_POD_NAME" -c readeck -- readeck cleanup

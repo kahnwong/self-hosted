@@ -21,6 +21,9 @@ locals {
       "wakapi-postgres",
       "wallabag-postgres",
 
+      # maintenance
+      "readeck-cleanup",
+
       # food
       "family-alerts"
     ]

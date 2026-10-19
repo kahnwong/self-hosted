@@ -21,6 +21,7 @@ locals {
       "livegrep-restart",
       "maintenance-backup-monthly-prune",
       "maintenance-backup-prune",
+      "maintenance-readeck-cleanup",
       # "maintenance-wallabag-cleanup",
       "water-cut-notify",
 
