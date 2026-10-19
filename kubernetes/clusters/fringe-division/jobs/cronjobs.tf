@@ -11,6 +11,8 @@ locals {
       "backup-miniflux",
       "backup-navidrome",
       "backup-ntfy",
+      "backup-readeck-content",
+      "backup-readeck-db",
       "backup-transmission",
       "backup-wakapi",
       "backup-wallabag-content",

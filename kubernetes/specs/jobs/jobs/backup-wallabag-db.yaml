@@ -8,7 +8,7 @@ containers:
       - name: MODE
         value: DB_POSTGRES
       - name: SERVICE_NAME
-        value: wallabag
+        value: wallabag-db
       - name: POSTGRES_USERNAME
         valueFrom:
           secretKeyRef:

@@ -8,7 +8,7 @@ containers:
       - name: MODE
         value: ARCHIVE
       - name: SERVICE_NAME
-        value: wallabag
+        value: wallabag-content
       - name: BACKUP_PATH
         value: /opt/wallabag/images
       - name: BUCKET_NAME

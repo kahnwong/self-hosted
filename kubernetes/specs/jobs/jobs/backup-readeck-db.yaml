@@ -1,0 +1,25 @@
+name: backup-readeck-db
+schedule: "1 0 * * *"
+containers:
+  - name: backup-readeck-db
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 33ad35b
+    env:
+      - name: MODE
+        value: ARCHIVE
+      - name: SERVICE_NAME
+        value: readeck-db
+      - name: BACKUP_PATH
+        value: /opt/readeck
+      - name: BACKUP_PATH_EXCLUDE
+        value: /opt/readeck/data/data/bookmarks
+    envFrom:
+      - secretRef:
+          name: backup
+    volumeMounts:
+      - name: readeck
+        mountPath: /opt/readeck
+volumes:
+  - name: readeck
+    hostPath:
+      path: /opt/readeck
