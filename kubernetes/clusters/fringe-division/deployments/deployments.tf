@@ -41,7 +41,7 @@ locals {
       "todotxt",
       "wabbajack",
       "wakapi",
-      "wallabag", "wallabag-redis",
+      # "wallabag", "wallabag-redis",
       "weather-api",
     ]
   })
