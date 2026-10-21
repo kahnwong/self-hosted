@@ -16,9 +16,11 @@ containers:
       - name: POLLING_FREQUENCY
         value: "60"
       - name: BATCH_SIZE
-        value: "300"
+        value: "100"
+      - name: WORKER_POOL_SIZE
+        value: "8"
       - name: POLLING_SCHEDULER
-        value: entry_frequency
+        value: round_robin
       - name: SCHEDULER_ENTRY_FREQUENCY_MIN_INTERVAL
         value: "5"
       - name: SCHEDULER_ENTRY_FREQUENCY_MAX_INTERVAL
