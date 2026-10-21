@@ -1,16 +1,3 @@
-wallabag.karnwong.me {
-    route {
-        crowdsec
-        reverse_proxy 192.168.1.36:30009 {
-            transport http {
-                dial_timeout 5m
-                response_header_timeout 5m
-                read_timeout 5m
-                write_timeout 5m
-            }
-        }
-    }
-}
 ntfy.karnwong.me, http://ntfy.karnwong.me {
     route {
 		crowdsec

@@ -25,7 +25,6 @@ locals {
     "vaultwarden",
     "wabbajack",
     "wakapi",
-    "wallabag",
   ])
   selfhosted_non_proxied = setunion(toset([
     "api.qrcode",

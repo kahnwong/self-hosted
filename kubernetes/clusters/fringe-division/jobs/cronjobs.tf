@@ -15,14 +15,11 @@ locals {
       "backup-readeck-db",
       "backup-transmission",
       "backup-wakapi",
-      # "backup-wallabag-content",
-      # "backup-wallabag-db",
       "ddns",
       "livegrep-restart",
       "maintenance-backup-monthly-prune",
       "maintenance-backup-prune",
       "maintenance-readeck-cleanup",
-      # "maintenance-wallabag-cleanup",
       "water-cut-notify",
 
       # food

@@ -42,7 +42,6 @@ locals {
       "todotxt",
       "wabbajack",
       "wakapi",
-      # "wallabag", "wallabag-redis",
       "weather-api",
     ]
   })
@@ -74,7 +73,6 @@ locals {
       "immich-postgres",
       "miniflux-postgres",
       "wakapi-postgres",
-      "wallabag-postgres",
     ]
   })
 }

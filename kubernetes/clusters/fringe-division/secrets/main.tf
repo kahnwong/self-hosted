@@ -19,7 +19,6 @@ locals {
       "immich-postgres",
       "miniflux-postgres",
       "wakapi-postgres",
-      "wallabag-postgres",
 
       # maintenance
       "readeck-cleanup",
@@ -42,7 +41,6 @@ locals {
       "subsonic-widgets",
       "supersecretmessage-vault",
       "wakapi",
-      "wallabag",
       "weather-api",
     ]
   })
@@ -60,7 +58,6 @@ locals {
       "immich-postgres",
       "miniflux-postgres",
       "wakapi-postgres",
-      "wallabag-postgres",
     ]
   })
 
