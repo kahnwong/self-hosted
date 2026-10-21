@@ -19,9 +19,6 @@ garage.karnwong.me {
 gist.karnwong.me {
     import knative opengist.services
 }
-git.karnwong.me {
-    import base 30026
-}
 harbor.karnwong.me {
     import base 30500
 }
@@ -120,4 +117,7 @@ todotxt.karnwong.me {
 }
 wabbajack.karnwong.me {
     import authentik_base 30076
+}
+git.karnwong.me {
+    import anubis_base 30027
 }

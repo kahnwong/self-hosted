@@ -17,7 +17,6 @@ func main() {
 			"fusion":           "30094",
 			"garage":           "30070",
 			"gist":             "opengist.services",
-			"git":              "30026",
 			"harbor":           "30500",
 			"immich":           "30030",
 			"jellyfin":         "jellyfin.services",
@@ -36,6 +35,9 @@ func main() {
 			"thai-tech-cal":    "thai-tech-cal.services",
 			"trmnl":            "30086",
 			"wakapi":           "30041",
+		},
+		"servicesAnubis": {
+			"git": "30027",
 		},
 		"servicesForwardAuth": {
 			"dashboard": "30053",
@@ -70,8 +72,9 @@ func main() {
 func generateConfig(services map[string]map[string]string, tenant string, filename string) {
 	config := generateServices(services["services"], tenant)
 	configForwardAuth := generateForwathAuthServices(services["servicesForwardAuth"])
+	configAnubis := generateAnubisServices(services["servicesAnubis"])
 
-	configAll := config + configForwardAuth
+	configAll := config + configForwardAuth + configAnubis
 	fmt.Println(configAll)
 
 	// write to file
@@ -134,6 +137,33 @@ func generateForwathAuthServices(services map[string]string) string {
 		} else { // knative
 			config += fmt.Sprintf(`%s.karnwong.me {
     import authentik_knative %s
+}
+`, k, services[k])
+		}
+	}
+
+	return config
+}
+
+func generateAnubisServices(services map[string]string) string {
+	config := ""
+
+	keys := make([]string, 0, len(services))
+
+	for k := range services {
+		keys = append(keys, k)
+	}
+	sort.Strings(keys)
+
+	for _, k := range keys {
+		if !strings.Contains(services[k], ".") { // normal deployment
+			config += fmt.Sprintf(`%s.karnwong.me {
+    import anubis_base %s
+}
+`, k, services[k])
+		} else { // knative !! NOT YET IMPLEMENTED !!
+			config += fmt.Sprintf(`%s.karnwong.me {
+    import anubis_knative %s
 }
 `, k, services[k])
 		}

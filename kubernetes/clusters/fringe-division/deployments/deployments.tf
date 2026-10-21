@@ -8,6 +8,7 @@ locals {
       "authentik-valkey",
       "bifrost",
       "forgejo",
+      "forgejo-anubis",
       "garage",
       "llm-honeypot",
       "ntfy",

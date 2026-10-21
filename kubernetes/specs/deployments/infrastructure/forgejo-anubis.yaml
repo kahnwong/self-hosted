@@ -1,0 +1,19 @@
+kind: Deployment
+name: forgejo-anubis
+replicaCount: 1
+containers:
+  - name: forgejo-anubis
+    repository: ghcr.io/techarohq/anubis
+    tag: v1.28.1
+    port: 3000
+    livenessProbeScheme: tcp
+    env:
+      - name: BIND
+        value: ":3000"
+      - name: TARGET
+        value: "http://forgejo.infrastructure.svc.cluster.local:3000"
+      - name: COOKIE_DOMAIN
+        value: "git.karnwong.me"
+service:
+  port: 3000
+  nodePort: 30027
