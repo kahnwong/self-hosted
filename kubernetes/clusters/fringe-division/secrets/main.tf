@@ -20,7 +20,8 @@ locals {
       "miniflux-postgres",
       "wakapi-postgres",
 
-      # maintenance
+      # apps
+      "livegrep-clone-custom",
       "readeck-cleanup",
 
       # food
@@ -31,7 +32,6 @@ locals {
       "freellmapi",
       "fusion",
       "immich", "immich-machine-learning",
-      "livegrep-clone-custom",
       "miniflux",
       "notes-sync",
       "opengist",

@@ -13,6 +13,8 @@ locals {
         filename : "Caddyfile",
         input_type : "raw"
       },
+    ]
+    jobs = [
       {
         source : "livegrep-clone-config.sops.yaml",
         filename : "repos.yaml"

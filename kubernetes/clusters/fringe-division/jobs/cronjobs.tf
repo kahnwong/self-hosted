@@ -16,10 +16,12 @@ locals {
       "backup-transmission",
       "backup-wakapi",
       "ddns",
+      "livegrep-clone",
+      "livegrep-indexer-custom",
       "livegrep-restart",
       "maintenance-backup-monthly-prune",
       "maintenance-backup-prune",
-      "maintenance-readeck-cleanup",
+      "readeck-cleanup",
       "water-cut-notify",
 
       # food
@@ -28,8 +30,6 @@ locals {
       "food-02-1-dinner-ask",
     ]
     services = [
-      "livegrep-clone",
-      "livegrep-indexer-custom",
     ]
   })
 }

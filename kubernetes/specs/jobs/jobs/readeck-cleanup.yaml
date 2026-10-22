@@ -1,8 +1,8 @@
-name: maintenance-readeck-cleanup
+name: readeck-cleanup
 schedule: "3 0 * * *" # doesn't conflict with kube-green
 serviceAccountName: sa-pod-exec
 containers:
-  - name: kubectl
+  - name: readeck-cleanup
     repository: alpine/k8s
     tag: 1.34.12
     envFrom:
