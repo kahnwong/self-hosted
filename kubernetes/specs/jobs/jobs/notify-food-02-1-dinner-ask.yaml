@@ -1,0 +1,15 @@
+name: food-02-1-dinner-ask-family
+# 4:00 PM Asia/Bangkok
+schedule: 0 9 * * *
+containers:
+  - name: food-02-1-dinner-ask-family
+    repository: ghcr.io/kahnwong/notify
+    tag: f4bd3e6
+    envFrom:
+      - secretRef:
+          name: notify
+    args:
+      - food
+      - ถามข้าวเย็น ใครไม่กินข้าวบ้านแจ้งด้วย
+imagePullSecrets:
+  - name: ghcr-cfg

@@ -13,19 +13,22 @@ locals {
       "trmnl"
     ]
     jobs = [
-      "backup", "ddns", "aqi-notify", "water-cut-notify",
+      # backup
+      "backup",
       "authentik-postgres",
       "forgejo-postgres",
       "immich-postgres",
       "miniflux-postgres",
       "wakapi-postgres",
 
-      # apps
+      # the rest
+      "ddns",
       "livegrep-clone-custom",
+      "notify",
       "readeck-cleanup",
-
-      # food
-      "family-alerts"
+      # "aqi-notify",
+      # "family-alerts"
+      # "water-cut-notify",
     ]
     services = [
       "cpubench",

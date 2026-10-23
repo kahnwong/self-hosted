@@ -1,0 +1,13 @@
+name: notify-water-cut
+schedule: "0 */6 * * *"
+containers:
+  - name: notify-water-cut
+    repository: ghcr.io/kahnwong/notify
+    tag: f4bd3e6
+    envFrom:
+      - secretRef:
+          name: notify
+    args:
+      - water-cut
+imagePullSecrets:
+  - name: ghcr-cfg

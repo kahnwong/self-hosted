@@ -1,0 +1,15 @@
+name: food-01-2-lunch-order
+# 11:00 AM Asia/Bangkok
+schedule: 0 4 * * *
+containers:
+  - name: food-01-2-lunch-order
+    repository: ghcr.io/kahnwong/notify
+    tag: f4bd3e6
+    envFrom:
+      - secretRef:
+          name: notify
+    args:
+      - food
+      - สั่งข้าวเที่ยง อย่าลืมปักหมุดเป็นที่บ้าน
+imagePullSecrets:
+  - name: ghcr-cfg

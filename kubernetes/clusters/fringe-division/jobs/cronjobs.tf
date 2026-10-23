@@ -1,7 +1,6 @@
 locals {
   jobs = tomap({
     jobs = [
-      "aqi-notify",
       "backup-authentik",
       "backup-bifrost",
       "backup-forgejo-data",
@@ -22,12 +21,13 @@ locals {
       "maintenance-backup-monthly-prune",
       "maintenance-backup-prune",
       "readeck-cleanup",
-      "water-cut-notify",
 
-      # food
-      "food-01-1-lunch-ask",
-      "food-01-2-lunch-order",
-      "food-02-1-dinner-ask",
+      # notify
+      "notify-aqi",
+      "notify-food-01-1-lunch-ask",
+      "notify-food-01-2-lunch-order",
+      "notify-food-02-1-dinner-ask",
+      "notify-water-cut",
     ]
     services = [
     ]
