@@ -1,22 +1,7 @@
 version: "3"
 services:
   # ---- umami ----
-  umami-postgres:
-    image: postgres:17.2-alpine
-    container_name: umami-postgres
-    restart: always
-    env_file:
-      - .env.app.umami
-    ports:
-      - 5432:5432
-    volumes:
-      - /opt/umami/db:/var/lib/postgresql/data
-  umami:
-    image: ghcr.io/umami-software/umami:3.4.1
-    container_name: umami
-    restart: always
-    env_file:
-      - .env.app.umami
+
   # ---- caddy ----
   caddy:
     image: caddy:2

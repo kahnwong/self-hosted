@@ -3,7 +3,7 @@
 ## GCP Backup
 
 ```bash
-5 0 * * * /usr/bin/docker run --rm --network=host --env-file /home/$USER/self-hosted/docker/.env.backup.umami ghcr.io/kahnwong/docker-aws-backup:b46d44d
+
 ```
 
 ## Oracle Backup
@@ -15,8 +15,8 @@
 ## Argon Backup
 
 ```bash
-1 0 * * * /opt/scripts/backup.sh
 1 0 * * * /usr/bin/docker run --rm --env-file /home/ubuntu/self-hosted/docker/.env.backup.vaultwarden -v /opt/vaultwarden:/opt/vaultwarden ghcr.io/kahnwong/docker-aws-backup:f09a8ec
+5 0 * * * /usr/bin/docker run --rm --network=host --env-file /home/ubuntu/self-hosted/docker/.env.backup.umami ghcr.io/kahnwong/docker-aws-backup:f09a8ec
 ```
 
 ## DDNS
