@@ -22,7 +22,9 @@ locals {
     "thai-tech-cal",
     "todotxt",
     "trmnl",
+    "umami",
     "vaultwarden",
+    "vzdko",
     "wabbajack",
     "wakapi",
   ])
@@ -62,8 +64,6 @@ locals {
   ]), var.private_dns)
 
   gcp_proxied = toset([
-    "umami",
-    "vzdko",
   ])
   gcp_non_proxied = toset([])
 
