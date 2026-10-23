@@ -13,7 +13,7 @@ initContainers:
 containers:
   - name: wabbajack
     repository: ghcr.io/kahnwong/wabbajack
-    tag: c083a48
+    tag: "6e0b4f6"
     port: 3000
     volumeMounts:
       # sudo chown -R 65532:65532 data

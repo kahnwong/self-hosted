@@ -5,7 +5,7 @@ kubeGreen: true
 containers:
   - name: weather-api
     repository: ghcr.io/kahnwong/weather-api
-    tag: "23a8ff4"
+    tag: "b520bfa"
     port: 3000
     env:
       - name: LISTEN_ADDR

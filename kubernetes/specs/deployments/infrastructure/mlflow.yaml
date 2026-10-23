@@ -2,7 +2,7 @@ name: mlflow
 containers:
   - name: mlflow
     repository: ghcr.io/kahnwong/docker-mlflow
-    tag: c170705
+    tag: "11c7f28"
     port: 8080
     envFrom:
       - secretRef:

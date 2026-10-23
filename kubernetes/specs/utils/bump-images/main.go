@@ -13,14 +13,12 @@ import (
 )
 
 var repos = map[string]string{
-	"kahnwong/aqi-notify":         "../../jobs/jobs/aqi-notify.yaml",
 	"kahnwong/cpubench":           "../../deployments/services/cpubench.yaml",
 	"kahnwong/dashboard":          "../../deployments/services/dashboard.yaml",
 	"kahnwong/docker-fava":        "../../deployments/services/fava.yaml",
 	"kahnwong/docker-mlflow":      "../../deployments/infrastructure/mlflow.yaml",
 	"kahnwong/ical-to-rss":        "../../deployments/services/thai-tech-cal.yaml",
-	"kahnwong/line-notify":        "../../jobs/jobs/food-01-1-lunch-ask.yaml",
-	"kahnwong/livegrep-utils":     "../../jobs/services/livegrep-clone.yaml",
+	"kahnwong/livegrep-utils":     "../../jobs/jobs/livegrep-clone.yaml",
 	"kahnwong/llm-honeypot":       "../../deployments/infrastructure/llm-honeypot.yaml",
 	"kahnwong/qrcode-api":         "../../deployments/services/qrcode-api.yaml",
 	"kahnwong/retrooo":            "../../deployments/services/retrooo.yaml",
@@ -31,7 +29,6 @@ var repos = map[string]string{
 	"kahnwong/sup3rs3cretmes5age": "../../deployments/services/supersecretmessage.yaml",
 	"kahnwong/todotxt":            "../../deployments/services/todotxt.yaml",
 	"kahnwong/wabbajack":          "../../deployments/services/wabbajack.yaml",
-	"kahnwong/water-cut-notify":   "../../jobs/jobs/water-cut-notify.yaml",
 	"kahnwong/weather-api":        "../../deployments/services/weather-api.yaml",
 }
 
@@ -122,7 +119,7 @@ func updateImageTag(path, repository, tag string) error {
 				if strings.HasSuffix(current, "\n") {
 					newline = "\n"
 				}
-				lines[j] = currentIndent + "tag: " + tag + newline
+				lines[j] = currentIndent + fmt.Sprintf("tag: %q", tag) + newline
 				return os.WriteFile(path, []byte(strings.Join(lines, "")), 0644)
 			}
 		}

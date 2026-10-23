@@ -5,7 +5,7 @@ kubeGreen: true
 containers:
   - name: dashboard
     repository: ghcr.io/kahnwong/dashboard
-    tag: 030cab2
+    tag: "07a6e5e"
     port: 80
 service:
   port: 80
