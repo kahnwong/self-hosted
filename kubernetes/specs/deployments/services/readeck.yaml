@@ -6,7 +6,7 @@ containers:
   - name: readeck
     # repository: codeberg.org/readeck/readeck
     repository: ghcr.io/yunanwg/readeck
-    tag: 0.23.4
+    tag: 0.23.5
     port: 8000
     envFrom:
       - secretRef:
