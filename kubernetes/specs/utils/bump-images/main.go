@@ -17,6 +17,7 @@ var repos = map[string]string{
 	"kahnwong/dashboard":          "../../deployments/services/dashboard.yaml",
 	"kahnwong/docker-fava":        "../../deployments/services/fava.yaml",
 	"kahnwong/docker-mlflow":      "../../deployments/infrastructure/mlflow.yaml",
+	"kahnwong/golinks":            "../../deployments/services/golinks.yaml",
 	"kahnwong/ical-to-rss":        "../../deployments/services/thai-tech-cal.yaml",
 	"kahnwong/livegrep-utils":     "../../jobs/jobs/livegrep-clone.yaml",
 	"kahnwong/llm-honeypot":       "../../deployments/infrastructure/llm-honeypot.yaml",
