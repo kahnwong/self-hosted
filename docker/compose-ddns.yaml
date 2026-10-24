@@ -1,6 +1,6 @@
 services:
   ddns:
-    image: favonia/cloudflare-ddns:1.17.1
+    image: favonia/cloudflare-ddns:1.18.0
     environment:
       - UPDATE_CRON=@once
     env_file:
