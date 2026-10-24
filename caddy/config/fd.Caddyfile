@@ -19,6 +19,9 @@ garage.karnwong.me {
 gist.karnwong.me {
     import knative opengist.services
 }
+go.karnwong.me {
+    import base 30096
+}
 harbor.karnwong.me {
     import base 30500
 }

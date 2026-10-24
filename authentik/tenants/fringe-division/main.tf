@@ -2,13 +2,13 @@ locals {
   application_oauth2 = tomap({
     gitea : ["https://git.karnwong.me/user/oauth2/authentik/callback"]
     harbor : ["https://harbor.karnwong.me/c/oidc/callback"]
-    fusion: ["https://fusion.karnwong.me/api/oidc/callback"]
+    fusion : ["https://fusion.karnwong.me/api/oidc/callback"]
+    golinks : ["https://go.karnwong.me/.auth/callback"]
+    golinks_dev : ["http://localhost:3000/.auth/callback"]
     immich : [
       "app.immich:///oauth-callback",
       "https://immich.karnwong.me/auth/login",
       "https://immich.karnwong.me/user-settings",
-      "http://localhost:8000/auth/login",
-      "http://localhost:8000/user-settings",
     ]
     memos : ["https://memos.karnwong.me/auth/callback"]
     miniflux : ["https://miniflux.karnwong.me/oauth2/oidc/callback"]

@@ -10,6 +10,7 @@ locals {
     "bifrost",
     "freellmapi",
     "fusion",
+    "go",
     "llm-context",
     "miniflux",
     "pmtiles", # if use docker-caddy, it needs to be a separate instance because it uses `file_server` directive

@@ -1,0 +1,30 @@
+kind: Deployment
+name: golinks
+replicaCount: 1
+kubeGreen: true
+containers:
+  - name: golinks
+    repository: ghcr.io/kahnwong/golinks
+    tag: "557cd40"
+    port: 3000
+    env:
+      - name: MODE
+        value: "production"
+      - name: LOG_LEVEL
+        value: error
+    envFrom:
+      - secretRef:
+          name: golinks
+    volumeMounts:
+      - name: data
+        mountPath: /data
+    livenessProbeScheme: tcp
+volumes:
+  - name: data
+    hostPath:
+      path: /opt/golinks/data
+service:
+  port: 3000
+  nodePort: 30096
+imagePullSecrets:
+  - name: ghcr-cfg

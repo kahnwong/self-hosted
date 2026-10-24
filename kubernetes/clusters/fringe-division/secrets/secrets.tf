@@ -34,6 +34,7 @@ locals {
       "cpubench",
       "freellmapi",
       "fusion",
+      "golinks",
       "immich", "immich-machine-learning",
       "miniflux",
       "notes-sync",

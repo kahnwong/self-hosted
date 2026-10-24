@@ -22,6 +22,7 @@ locals {
       "fava",
       "freellmapi",
       "fusion",
+      "golinks",
       "immich",
       "immich-machine-learning",
       "immich-valkey",

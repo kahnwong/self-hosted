@@ -17,6 +17,7 @@ func main() {
 			"fusion":           "30094",
 			"garage":           "30070",
 			"gist":             "opengist.services",
+			"go":               "30096",
 			"harbor":           "30500",
 			"immich":           "30030",
 			"jellyfin":         "jellyfin.services",
