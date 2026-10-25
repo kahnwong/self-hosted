@@ -26,9 +26,6 @@ locals {
       "livegrep-clone-custom",
       "notify",
       "readeck-cleanup",
-      # "aqi-notify",
-      # "family-alerts"
-      # "water-cut-notify",
     ]
     services = [
       "cpubench",
