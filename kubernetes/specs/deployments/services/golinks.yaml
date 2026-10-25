@@ -5,7 +5,7 @@ kubeGreen: true
 containers:
   - name: golinks
     repository: ghcr.io/kahnwong/golinks
-    tag: "63d1b60"
+    tag: "cbca00d"
     port: 3000
     env:
       - name: MODE
