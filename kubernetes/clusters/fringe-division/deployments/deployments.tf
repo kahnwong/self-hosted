@@ -43,6 +43,7 @@ locals {
       "todotxt",
       "wabbajack",
       "wakapi",
+      "redlib",
       "weather-api",
     ]
   })

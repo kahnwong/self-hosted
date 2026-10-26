@@ -1,0 +1,14 @@
+kind: Deployment
+name: redlib
+replicaCount: 1
+kubeGreen: true
+containers:
+  - name: redlib
+    # repository: quay.io/redlib/redlib
+    repository: ghcr.io/polak14/redlib
+    tag: "latest"
+    port: 8080
+    livenessProbeScheme: tcp
+service:
+  port: 8080
+  nodePort: 30097
