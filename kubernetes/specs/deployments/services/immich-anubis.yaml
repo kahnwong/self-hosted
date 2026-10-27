@@ -1,0 +1,19 @@
+kind: Deployment
+name: immich-anubis
+replicaCount: 1
+containers:
+  - name: immich-anubis
+    repository: ghcr.io/techarohq/anubis
+    tag: v1.28.2
+    port: 3000
+    livenessProbeScheme: tcp
+    env:
+      - name: BIND
+        value: ":3000"
+      - name: TARGET
+        value: "http://immich.services.svc.cluster.local:2283"
+      - name: COOKIE_DOMAIN
+        value: "immich.karnwong.me"
+service:
+  port: 3000
+  nodePort: 30099

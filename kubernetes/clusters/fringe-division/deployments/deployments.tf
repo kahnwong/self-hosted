@@ -25,6 +25,7 @@ locals {
       "golinks",
       "golinks-anubis",
       "immich",
+      "immich-anubis",
       "immich-machine-learning",
       "immich-valkey",
       "koreader-sync-server",

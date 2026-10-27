@@ -22,9 +22,6 @@ gist.karnwong.me {
 harbor.karnwong.me {
     import base 30500
 }
-immich.karnwong.me {
-    import base 30030
-}
 jellyfin.karnwong.me {
     import knative jellyfin.services
 }
@@ -126,4 +123,7 @@ git.karnwong.me {
 }
 go.karnwong.me {
     import anubis_base 30098
+}
+immich.karnwong.me {
+    import anubis_base 30099
 }

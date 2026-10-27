@@ -18,7 +18,6 @@ func main() {
 			"garage":           "30070",
 			"gist":             "opengist.services",
 			"harbor":           "30500",
-			"immich":           "30030",
 			"jellyfin":         "jellyfin.services",
 			"llm-context":      "30055",
 			"matrix":           "6167",
@@ -37,8 +36,9 @@ func main() {
 			"wakapi":           "30041",
 		},
 		"servicesAnubis": {
-			"git": "30027",
-			"go":  "30098",
+			"git":    "30027",
+			"go":     "30098",
+			"immich": "30099",
 		},
 		"servicesForwardAuth": {
 			"dashboard": "30053",
