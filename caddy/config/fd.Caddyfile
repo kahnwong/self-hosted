@@ -109,6 +109,9 @@ opentag.karnwong.me {
 pdf.karnwong.me {
     import authentik_knative stirling-pdf.services
 }
+redlib.karnwong.me {
+    import authentik_base 30097
+}
 sandbox.karnwong.me {
     import authentik_base 30087
 }

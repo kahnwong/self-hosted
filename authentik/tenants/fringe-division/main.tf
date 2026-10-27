@@ -40,6 +40,7 @@ locals {
     "music", # navidrome
     "opencost",
     "pdf",
+    "redlib",
     "wabbajack",
   ])
 }
