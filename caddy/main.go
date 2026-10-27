@@ -17,7 +17,6 @@ func main() {
 			"fusion":           "30094",
 			"garage":           "30070",
 			"gist":             "opengist.services",
-			"go":               "30096",
 			"harbor":           "30500",
 			"immich":           "30030",
 			"jellyfin":         "jellyfin.services",
@@ -39,6 +38,7 @@ func main() {
 		},
 		"servicesAnubis": {
 			"git": "30027",
+			"go":  "30098",
 		},
 		"servicesForwardAuth": {
 			"dashboard": "30053",

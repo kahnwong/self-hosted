@@ -23,6 +23,7 @@ locals {
       "freellmapi",
       "fusion",
       "golinks",
+      "golinks-anubis",
       "immich",
       "immich-machine-learning",
       "immich-valkey",

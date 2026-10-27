@@ -1,0 +1,19 @@
+kind: Deployment
+name: golinks-anubis
+replicaCount: 1
+containers:
+  - name: golinks-anubis
+    repository: ghcr.io/techarohq/anubis
+    tag: v1.28.2
+    port: 3000
+    livenessProbeScheme: tcp
+    env:
+      - name: BIND
+        value: ":3000"
+      - name: TARGET
+        value: "http://golinks.services.svc.cluster.local:3000"
+      - name: COOKIE_DOMAIN
+        value: "go.karnwong.me"
+service:
+  port: 3000
+  nodePort: 30098
