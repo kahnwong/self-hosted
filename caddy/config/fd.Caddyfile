@@ -79,9 +79,6 @@ evcc.karnwong.me {
 fava.karnwong.me {
     import authentik_base 30065
 }
-greenkube.karnwong.me {
-    import authentik_base 30067
-}
 ladder.karnwong.me {
     import authentik_base 30085
 }
@@ -96,9 +93,6 @@ notes.karnwong.me {
 }
 opencost.karnwong.me {
     import authentik_base 30054
-}
-opentag.karnwong.me {
-    import authentik_base 40000
 }
 pdf.karnwong.me {
     import authentik_knative stirling-pdf.services

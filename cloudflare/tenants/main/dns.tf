@@ -43,7 +43,6 @@ locals {
     "gist",
     "git",
     "go",
-    "greenkube",
     "harbor",
     "immich",
     "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
@@ -54,8 +53,6 @@ locals {
     "music",
     "notes",
     "ntfy",
-    "opencost",
-    "opentag",
     "pdf",
     "rustdesk",
     "sandbox",
