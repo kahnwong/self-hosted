@@ -4,8 +4,8 @@ all:
       ansible_host: nuc
     argon:
       ansible_host: argon
-    gcp-lab:
-      ansible_host: gcp-lab
+    # gcp-lab:
+    #   ansible_host: gcp-lab
     oracle-lab:
       ansible_host: oracle-lab
     oracle-lab2:

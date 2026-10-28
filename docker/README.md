@@ -1,11 +1,5 @@
 # Docker
 
-## GCP Backup
-
-```bash
-
-```
-
 ## Oracle Backup
 
 ```bash
