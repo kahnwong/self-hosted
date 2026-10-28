@@ -60,7 +60,6 @@ locals {
     "sandbox",
     "sync.koreader",
     "syncthing",
-    "warpgate",
   ]), var.private_dns)
 
   gcp_proxied = toset([
@@ -196,6 +195,14 @@ resource "cloudflare_dns_record" "bird_private_dns" {
   zone_id  = var.cloudflare_zone_id
 }
 
+resource "cloudflare_dns_record" "warpgate" {
+  name    = "warpgate"
+  proxied = false
+  ttl     = 1
+  type    = "A"
+  content = "192.168.1.51"
+  zone_id = var.cloudflare_zone_id
+}
 
 # need for redirection
 resource "cloudflare_dns_record" "www_dummy" {

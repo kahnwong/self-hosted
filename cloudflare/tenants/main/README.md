@@ -56,6 +56,7 @@ All users - API Tokens:Edit
 | [cloudflare_dns_record.pop_txt_send](https://registry.terraform.io/providers/cloudflare/cloudflare/5.26.0/docs/resources/dns_record) | resource |
 | [cloudflare_dns_record.selfhosted_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/5.26.0/docs/resources/dns_record) | resource |
 | [cloudflare_dns_record.vercel_dns](https://registry.terraform.io/providers/cloudflare/cloudflare/5.26.0/docs/resources/dns_record) | resource |
+| [cloudflare_dns_record.warpgate](https://registry.terraform.io/providers/cloudflare/cloudflare/5.26.0/docs/resources/dns_record) | resource |
 | [cloudflare_dns_record.www_dummy](https://registry.terraform.io/providers/cloudflare/cloudflare/5.26.0/docs/resources/dns_record) | resource |
 | [cloudflare_page_rule.redirect_www_to_root](https://registry.terraform.io/providers/cloudflare/cloudflare/5.26.0/docs/resources/page_rule) | resource |
 | [cloudflare_r2_bucket.this](https://registry.terraform.io/providers/cloudflare/cloudflare/5.26.0/docs/resources/r2_bucket) | resource |
