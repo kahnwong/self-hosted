@@ -15,7 +15,6 @@ locals {
     opengist : ["https://gist.karnwong.me/oauth/openid-connect/callback"]
     readeck : ["https://readeck.karnwong.me/login/oidc"]
     wakapi : ["https://wakapi.karnwong.me/oidc/authentik/callback"]
-    warpgate : ["https://warpgate.karnwong.me/@warpgate/api/sso/return"]
     }
   )
   application_proxy_admin_only = toset([

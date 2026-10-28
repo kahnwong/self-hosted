@@ -12,3 +12,11 @@ output "oauth_credentials_beszel" {
   sensitive = true
 }
 
+output "oauth_credentials_warpgate" {
+  value = {
+    "client_id" : authentik_provider_oauth2.warpgate.client_id,
+    "client_secret" : authentik_provider_oauth2.warpgate.client_secret
+  }
+
+  sensitive = true
+}

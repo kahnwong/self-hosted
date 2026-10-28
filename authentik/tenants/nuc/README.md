@@ -47,6 +47,7 @@ OpenID Configuration Issuer:  https://authentik.karnwong.me/application/o/$APP/
 | Name | Type |
 | ---- | ---- |
 | [authentik_application.beszel](https://registry.terraform.io/providers/goauthentik/authentik/2026.8.0/docs/resources/application) | resource |
+| [authentik_application.warpgate](https://registry.terraform.io/providers/goauthentik/authentik/2026.8.0/docs/resources/application) | resource |
 | [authentik_flow.passwordless_authentication](https://registry.terraform.io/providers/goauthentik/authentik/2026.8.0/docs/resources/flow) | resource |
 | [authentik_flow_stage_binding.passwordless_login](https://registry.terraform.io/providers/goauthentik/authentik/2026.8.0/docs/resources/flow_stage_binding) | resource |
 | [authentik_flow_stage_binding.passwordless_webauthn_validation](https://registry.terraform.io/providers/goauthentik/authentik/2026.8.0/docs/resources/flow_stage_binding) | resource |
@@ -54,11 +55,13 @@ OpenID Configuration Issuer:  https://authentik.karnwong.me/application/o/$APP/
 | [authentik_policy_binding.app_access](https://registry.terraform.io/providers/goauthentik/authentik/2026.8.0/docs/resources/policy_binding) | resource |
 | [authentik_property_mapping_provider_scope.email_verified](https://registry.terraform.io/providers/goauthentik/authentik/2026.8.0/docs/resources/property_mapping_provider_scope) | resource |
 | [authentik_provider_oauth2.beszel](https://registry.terraform.io/providers/goauthentik/authentik/2026.8.0/docs/resources/provider_oauth2) | resource |
+| [authentik_provider_oauth2.warpgate](https://registry.terraform.io/providers/goauthentik/authentik/2026.8.0/docs/resources/provider_oauth2) | resource |
 | [authentik_service_connection_kubernetes.local](https://registry.terraform.io/providers/goauthentik/authentik/2026.8.0/docs/resources/service_connection_kubernetes) | resource |
 | [authentik_stage_authenticator_validate.webauthn_validation](https://registry.terraform.io/providers/goauthentik/authentik/2026.8.0/docs/resources/stage_authenticator_validate) | resource |
 | [authentik_stage_identification.default_authentication_identification](https://registry.terraform.io/providers/goauthentik/authentik/2026.8.0/docs/resources/stage_identification) | resource |
 | [authentik_stage_user_login.default_authentication_login](https://registry.terraform.io/providers/goauthentik/authentik/2026.8.0/docs/resources/stage_user_login) | resource |
 | [random_string.random_beszel](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
+| [random_string.random_warpgate](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 | [authentik_flow.default-authorization-flow](https://registry.terraform.io/providers/goauthentik/authentik/2026.8.0/docs/data-sources/flow) | data source |
 | [authentik_flow.default-invalidation-flow](https://registry.terraform.io/providers/goauthentik/authentik/2026.8.0/docs/data-sources/flow) | data source |
 | [authentik_group.admins](https://registry.terraform.io/providers/goauthentik/authentik/2026.8.0/docs/data-sources/group) | data source |
@@ -79,6 +82,7 @@ OpenID Configuration Issuer:  https://authentik.karnwong.me/application/o/$APP/
 | ---- | ----------- |
 | oauth2\_credentials | n/a |
 | oauth\_credentials\_beszel | n/a |
+| oauth\_credentials\_warpgate | n/a |
 <!-- END_TF_DOCS -->etes.local](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/resources/service_connection_kubernetes) | resource |
 
 | [authentik_stage_identification.default-authentication-identification](https://registry.terraform.io/providers/goauthentik/authentik/2025.8.0/docs/resources/stage_identification) | resource |
