@@ -35,7 +35,7 @@ persistence:
 #      value: "true"
 #      effect: "NoSchedule"
 #  nodeSelector:
-#    kubernetes.io/hostname: "fringe-division"
+#    kubernetes.io/hostname: "nuc"
 #portal:
 #  tolerations:
 #    - key: "storage-required"
@@ -43,7 +43,7 @@ persistence:
 #      value: "true"
 #      effect: "NoSchedule"
 #  nodeSelector:
-#    kubernetes.io/hostname: "fringe-division"
+#    kubernetes.io/hostname: "nuc"
 #core:
 #  tolerations:
 #    - key: "storage-required"
@@ -51,7 +51,7 @@ persistence:
 #      value: "true"
 #      effect: "NoSchedule"
 #  nodeSelector:
-#    kubernetes.io/hostname: "fringe-division"
+#    kubernetes.io/hostname: "nuc"
 #jobservice:
 #  tolerations:
 #    - key: "storage-required"
@@ -59,7 +59,7 @@ persistence:
 #      value: "true"
 #      effect: "NoSchedule"
 #  nodeSelector:
-#    kubernetes.io/hostname: "fringe-division"
+#    kubernetes.io/hostname: "nuc"
 #registry:
 #  tolerations:
 #    - key: "storage-required"
@@ -67,7 +67,7 @@ persistence:
 #      value: "true"
 #      effect: "NoSchedule"
 #  nodeSelector:
-#    kubernetes.io/hostname: "fringe-division"
+#    kubernetes.io/hostname: "nuc"
 #trivy:
 #  tolerations:
 #    - key: "storage-required"
@@ -75,7 +75,7 @@ persistence:
 #      value: "true"
 #      effect: "NoSchedule"
 #  nodeSelector:
-#    kubernetes.io/hostname: "fringe-division"
+#    kubernetes.io/hostname: "nuc"
 #database:
 #  internal:
 #    tolerations:
@@ -84,7 +84,7 @@ persistence:
 #        value: "true"
 #        effect: "NoSchedule"
 #    nodeSelector:
-#      kubernetes.io/hostname: "fringe-division"
+#      kubernetes.io/hostname: "nuc"
 #redis:
 #  type: internal
 #  internal:
@@ -94,7 +94,7 @@ persistence:
 #        value: "true"
 #        effect: "NoSchedule"
 #    nodeSelector:
-#      kubernetes.io/hostname: "fringe-division"
+#      kubernetes.io/hostname: "nuc"
 #exporter:
 #  tolerations:
 #    - key: "storage-required"
@@ -102,4 +102,4 @@ persistence:
 #      value: "true"
 #      effect: "NoSchedule"
 #  nodeSelector:
-#    kubernetes.io/hostname: "fringe-division"
+#    kubernetes.io/hostname: "nuc"

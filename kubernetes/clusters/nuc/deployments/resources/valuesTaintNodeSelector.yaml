@@ -4,4 +4,4 @@ tolerations:
     value: "true"
     effect: "NoSchedule"
 nodeSelector:
-  kubernetes.io/hostname: "fringe-division"
+  kubernetes.io/hostname: "nuc"

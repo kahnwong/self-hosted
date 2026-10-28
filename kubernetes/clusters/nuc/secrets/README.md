@@ -30,7 +30,7 @@ No resources.
 | client\_certificate | n/a | `string` | n/a | yes |
 | client\_key | n/a | `string` | n/a | yes |
 | cluster\_ca\_certificate | n/a | `string` | n/a | yes |
-| cluster\_name | n/a | `string` | `"fringe-division"` | no |
+| cluster\_name | n/a | `string` | `"nuc"` | no |
 | ghcr\_token | n/a | `string` | n/a | yes |
 | ghcr\_username | n/a | `string` | n/a | yes |
 | host | n/a | `string` | n/a | yes |

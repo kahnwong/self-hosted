@@ -8,7 +8,7 @@ global:
 #      value: "true"
 #      effect: NoSchedule
 #  nodeSelector:
-#    kubernetes.io/hostname: fringe-division
+#    kubernetes.io/hostname: nuc
 authentik:
   log_level: info
   error_reporting:

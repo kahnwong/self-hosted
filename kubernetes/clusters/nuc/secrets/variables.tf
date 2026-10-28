@@ -16,7 +16,7 @@ variable "cluster_ca_certificate" {
 
 variable "cluster_name" {
   type    = string
-  default = "fringe-division"
+  default = "nuc"
 }
 
 variable "ghcr_username" {
