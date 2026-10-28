@@ -60,11 +60,12 @@ locals {
     "sandbox",
     "sync.koreader",
     "syncthing",
+    "warpgate",
   ]), var.private_dns)
 
   selfhosted_internal = toset([
     "gatus",
-    "warpgate",
+    "console.warpgate",
   ])
 
   gcp_proxied = toset([

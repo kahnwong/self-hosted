@@ -14,7 +14,7 @@ resource "authentik_provider_oauth2" "warpgate" {
     {
       matching_mode     = "strict"
       redirect_uri_type = "authorization"
-      url               = "https://warpgate.karnwong.me/@warpgate/api/sso/return"
+      url               = "https://console.warpgate.karnwong.me/@warpgate/api/sso/return"
     }
   ]
 
