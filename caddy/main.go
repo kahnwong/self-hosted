@@ -44,6 +44,7 @@ func main() {
 			"dashboard": "30053",
 			"evcc":      "30060",
 			"fava":      "30065",
+			"invidious": "3000",
 			"ladder":    "30085",
 			"linkding":  "30005",
 			"livegrep":  "30033",

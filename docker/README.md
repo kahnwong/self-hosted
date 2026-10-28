@@ -29,3 +29,7 @@ Set global ignore patterns
 node_modules
 dist
 ```
+
+## Invidious
+
+See <https://docs.invidious.io/installation/#docker-compose-method-production>.
