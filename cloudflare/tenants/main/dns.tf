@@ -62,6 +62,11 @@ locals {
     "syncthing",
   ]), var.private_dns)
 
+  selfhosted_internal = toset([
+    "gatus",
+    "warpgate",
+  ])
+
   gcp_proxied = toset([
   ])
   gcp_non_proxied = toset([])
@@ -195,13 +200,14 @@ resource "cloudflare_dns_record" "bird_private_dns" {
   zone_id  = var.cloudflare_zone_id
 }
 
-resource "cloudflare_dns_record" "warpgate" {
-  name    = "warpgate"
-  proxied = false
-  ttl     = 1
-  type    = "A"
-  content = "192.168.1.51"
-  zone_id = var.cloudflare_zone_id
+resource "cloudflare_dns_record" "selfhosted_internal_dns" {
+  for_each = local.selfhosted_internal
+  name     = each.key
+  proxied  = false
+  ttl      = 1
+  type     = "A"
+  content  = nonsensitive(data.sops_file.secrets.data["INTERNAL_IP"])
+  zone_id  = var.cloudflare_zone_id
 }
 
 # need for redirection
