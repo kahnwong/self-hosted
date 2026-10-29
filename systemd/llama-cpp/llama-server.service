@@ -5,9 +5,9 @@ StartLimitIntervalSec=60
 StartLimitBurst=4
 
 [Service]
-User=ro
-Group=ro
-ExecStart=/home/linuxbrew/.linuxbrew/bin/llama-server --models-preset /opt/llama-cpp/models.ini --models-max 1 --host 0.0.0.0 --port 30050
+User=kahnwong
+Group=kahnwong
+ExecStart=/home/kahnwong/.local/bin/llama serve --models-preset /opt/llama-cpp/models.ini --models-max 1 --host 0.0.0.0 --port 30050
 
 [Install]
 WantedBy=multi-user.target
