@@ -14,3 +14,6 @@ sudo wget -P /opt/huggingface/models/unsloth/Qwen3-VL-4B-Instruct-GGUF https://h
 
 sudo hfdownloader download LiquidAI/LFM3-VL-2B-GGUF:q4_k_m --cache-dir /opt/huggingface
 sudo wget -P /opt/huggingface/models/LiquidAI/LFM3-VL-2B-GGUF https://huggingface.co/LiquidAI/LFM3-VL-2B-GGUF/resolve/main/mmproj-LFM3-VL-2B-BF16.gguf
+
+sudo hfdownloader download LiquidAI/LFM3-Omni-2B-GGUF:q4_k_m --cache-dir /opt/huggingface
+sudo wget -P /opt/huggingface/models/LiquidAI/LFM3-Omni-2B-GGUF https://huggingface.co/LiquidAI/LFM3-Omni-2B-GGUF/resolve/main/mmproj-LFM3-Omni-2B-BF16.gguf
