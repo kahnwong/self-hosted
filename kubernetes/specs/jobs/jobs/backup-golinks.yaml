@@ -1,0 +1,23 @@
+name: backup-golinks
+schedule: "1 0 * * *"
+containers:
+  - name: backup-golinks
+    repository: ghcr.io/kahnwong/docker-aws-backup
+    tag: 33ad35b
+    env:
+      - name: MODE
+        value: ARCHIVE
+      - name: SERVICE_NAME
+        value: golinks
+      - name: BACKUP_PATH
+        value: /opt/golinks
+    envFrom:
+      - secretRef:
+          name: backup
+    volumeMounts:
+      - name: golinks
+        mountPath: /opt/golinks
+volumes:
+  - name: golinks
+    hostPath:
+      path: /opt/golinks

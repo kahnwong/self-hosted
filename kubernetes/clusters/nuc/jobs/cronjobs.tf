@@ -5,6 +5,7 @@ locals {
       "backup-bifrost",
       "backup-forgejo-data",
       "backup-forgejo-db",
+      "backup-golinks",
       "backup-immich-db",
       "backup-linkding",
       "backup-miniflux",
