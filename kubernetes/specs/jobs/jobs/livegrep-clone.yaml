@@ -2,14 +2,14 @@ name: livegrep-clone
 schedule: 0 7 * * 5 # every Friday at 7am
 containers:
   - name: livegrep-clone
-    repository: ghcr.io/kahnwong/livegrep-utils
-    tag: "1383075"
+    repository: ghcr.io/kahnwong/livegrep-clone
+    tag: "2ec0595"
     command:
       - sh
       - -c
     args:
       - |
-        cd /data && /livegrep-utils
+        cd /data && /livegrep-clone
     envFrom:
       - secretRef:
           name: livegrep-clone-custom
