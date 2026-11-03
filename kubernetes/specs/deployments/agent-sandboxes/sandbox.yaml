@@ -6,7 +6,7 @@ kubeGreen: true
 containers:
   - name: sandbox
     repository: ghcr.io/kahnwong/sandbox
-    tag: "411ed90"
+    tag: "a20221a"
     port: 3000
     env:
       - name: LOG_LEVEL
