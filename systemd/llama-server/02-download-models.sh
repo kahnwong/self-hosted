@@ -9,9 +9,13 @@ sudo hfdownloader download prism-ml/Bonsai-8B-gguf:Q1_0 --cache-dir /opt/hugging
 sudo hfdownloader download unsloth/gemma-4-E2B-it-GGUF:q4_k_m --cache-dir /opt/huggingface
 sudo hfdownloader download LiquidAI/LFM3-1.7B-GGUF:q4_k_m --cache-dir /opt/huggingface
 
+## qwen
 sudo hfdownloader download unsloth/Qwen3-VL-4B-Instruct-GGUF:q4_k_m --cache-dir /opt/huggingface
 sudo wget -P /opt/huggingface/models/unsloth/Qwen3-VL-4B-Instruct-GGUF https://huggingface.co/unsloth/Qwen3-VL-4B-Instruct-GGUF/resolve/main/mmproj-BF16.gguf
 
+sudo hfdownloader download ggml-org/Qwen3-ASR-1.7B-GGUF:Q8_0 --cache-dir /opt/huggingface
+
+## lfm
 sudo hfdownloader download LiquidAI/LFM3-VL-2B-GGUF:q4_k_m --cache-dir /opt/huggingface
 sudo wget -P /opt/huggingface/models/LiquidAI/LFM3-VL-2B-GGUF https://huggingface.co/LiquidAI/LFM3-VL-2B-GGUF/resolve/main/mmproj-LFM3-VL-2B-BF16.gguf
 
