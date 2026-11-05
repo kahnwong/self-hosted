@@ -19,7 +19,7 @@ kubectl taint nodes argon storage-required=true:NoSchedule
 | ---- | ------- |
 | terraform | >= 1.3.6 |
 | helm | 3.3.0 |
-| kubectl | 2.4.1 |
+| kubectl | 3.0.1 |
 | kubernetes | 3.2.1 |
 | sops | 1.4.1 |
 
