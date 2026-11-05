@@ -76,6 +76,9 @@ evcc.karnwong.me {
 fava.karnwong.me {
     import authentik_base 30065
 }
+ha.karnwong.me {
+    import authentik_base 8123
+}
 invidious.karnwong.me {
     import authentik_base 3000
 }
