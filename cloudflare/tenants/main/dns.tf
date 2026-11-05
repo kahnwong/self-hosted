@@ -28,7 +28,6 @@ locals {
     "retrooo",
     "rustpad",
     "secrets",
-    "slash",
     "sshx",
     "subsonic-widgets",
     "thai-tech-cal",

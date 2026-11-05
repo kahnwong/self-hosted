@@ -27,7 +27,6 @@ func main() {
 			"retrooo":          "30081",
 			"rustpad":          "rustpad.services",
 			"secrets":          "30025",
-			"slash":            "30095",
 			"sshx":             "30028",
 			"subsonic-widgets": "30038",
 			"sync.koreader":    "30066",
