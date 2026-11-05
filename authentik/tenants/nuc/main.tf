@@ -31,6 +31,7 @@ locals {
     "dashboard",
     "evcc",
     "freellmapi",
+    "ha",
     "invidious",
     "ladder",
     "linkding",
