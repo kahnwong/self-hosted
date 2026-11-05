@@ -41,8 +41,30 @@ services:
           memory: 2G
     networks:
       - transmission
+  home_assistant:
+    container_name: home-assistant
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    volumes:
+      - /opt/home-assistant/config:/config
+      - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro
+    restart: always
+    environment:
+      TZ: Asia/Bangkok
+    ports:
+      # Web UI
+      - "8123:8123/tcp"
+      # Camera Live Streams & Discovery
+      - "554:554/tcp" # RTSP feed
+      - "1984:1984/tcp" # go2rtc Web UI / API
+      - "8555:8555/tcp" # WebRTC signaling
+      - "8555:8555/udp" # WebRTC media
+    networks:
+      - home_assistant
 networks:
   syncthing:
     driver: bridge
   transmission:
+    driver: bridge
+  home_assistant:
     driver: bridge
