@@ -8,7 +8,6 @@ locals {
       "bifrost",
       "forgejo",
       "llm-honeypot",
-      "mlflow",
       "ntfy",
       "trmnl"
     ]
@@ -52,7 +51,6 @@ locals {
     infrastructure = [
       "authentik-postgres",
       "forgejo-postgres",
-      "mlflow-postgres"
     ]
     playground = ["postgres-playground"]
     services = [

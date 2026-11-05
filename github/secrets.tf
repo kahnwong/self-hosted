@@ -29,7 +29,6 @@ locals {
     "dagster-demo",
     "dataframe-frameworks-showdown",
     "docker-aws-backup",
-    "docker-mlflow",
     "garmin-qrcode",
     "habit-tracker",
     "music-lyrics-tagger",

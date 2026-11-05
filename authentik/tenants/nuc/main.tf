@@ -34,7 +34,6 @@ locals {
     "invidious",
     "ladder",
     "linkding",
-    "mlflow",
     "music", # navidrome
     "pdf",
     "redlib",

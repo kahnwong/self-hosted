@@ -50,7 +50,6 @@ locals {
   })
   deployments_knative = tomap({
     infrastructure = [
-      # "mlflow",  # consumes 4GB RAM+
     ]
     playground = [
     ]
@@ -69,7 +68,6 @@ locals {
     infrastructure = [
       "authentik-postgres",
       "forgejo-postgres",
-      "mlflow-postgres",
     ]
     playground = ["postgres-playground"]
     services = [
