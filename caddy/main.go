@@ -20,7 +20,6 @@ func main() {
 			"harbor":           "30500",
 			"jellyfin":         "jellyfin.services",
 			"llm-context":      "30055",
-			"matrix":           "6167",
 			"miniflux":         "30007",
 			"qa-api":           "30043",
 			"readeck":          "30089",

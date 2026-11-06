@@ -28,9 +28,6 @@ jellyfin.karnwong.me {
 llm-context.karnwong.me {
     import base 30055
 }
-matrix.karnwong.me {
-    import base 6167
-}
 miniflux.karnwong.me {
     import base 30007
 }

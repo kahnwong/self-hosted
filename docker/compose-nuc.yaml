@@ -41,7 +41,7 @@ services:
           memory: 2G
     networks:
       - transmission
-  home_assistant:
+  home-assistant:
     container_name: home-assistant
     image: "ghcr.io/home-assistant/home-assistant:stable"
     volumes:
