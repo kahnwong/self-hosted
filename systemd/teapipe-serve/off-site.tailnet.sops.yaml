@@ -1,10 +1,10 @@
 iroh:
-    #ENC[AES256_GCM,data:eQUo/adX4ywMashaaTQ/lm7M3d9OIzWLQn4hTT7KLJb0LT7xluAhZYzDBQ==,iv:v8AyP9DAsu35kbbeLNuWbuHN80fokBaUeaRcbVUpOys=,tag:Gtxl/WRXSnGlY3AGyG22qA==,type:comment]
+    #ENC[AES256_GCM,data:a+gO0XlxmE7NmqPMfGZdUKwRyD7yvcA8Z7UH8Z7kHwrc4q+xCYM0I1d8KBRf,iv:mVFUrfLrnyvhfUt1wp5KjmsaohHkks+XLWjk+0+bwM8=,tag:/CRKD27YJa8z2ktr37oU1Q==,type:comment]
     relays:
         - ENC[AES256_GCM,data:H4MRvi1Np2OyaPfdOZd5tl9r1aSdZdCBzvkOO2l9,iv:4SH7ydHwDRNZai4b5ST0itTQNJp/oNTJhdRHQoPzG94=,tag:DBF/zHxbstvjR7mlHc4ujQ==,type:str]
 services:
-    gatus:
-        target: ENC[AES256_GCM,data:j/svCzOQ8MgFBmo17Uo=,iv:ELWlDfmYWDCcQ3eENVeBo6fuLfNfWxlxH9jvHFOdlfU=,tag:76S43cMpuj7ucr/e49JqJw==,type:str]
+    dashboard:
+        target: ENC[AES256_GCM,data:A/bz+UgpyhlkivOS,iv:DZD17zTDujhwY/UTnZ+so43FTy1/zNdNSlIC47r8Da4=,tag:9Cf2Abj6e1e5R8Uyqpt0DA==,type:str]
 sops:
     age:
         - enc: |
@@ -16,7 +16,7 @@ sops:
             7+Dc2g+baowIuATLWcf6VoMlrtDCpcHxYvCVM6KJXa/4QU7wpHNHYQ==
             -----END AGE ENCRYPTED FILE-----
           recipient: age14ke6m4zzfpgpu2herm8cu22wshyalyfkvjp2hjedm34h7wg0ypjss9e3ct
-    lastmodified: "2026-09-20T07:04:33Z"
-    mac: ENC[AES256_GCM,data:6n2yJzNbGp1fumKjPUpJusns5oUGgz5RmdrG8vlCrXGMffdlMEmm/RfBMEovtYcyAuAL1KZHCyTMobkUJzihbwsGHMs2NShGBwO4NZeTSajn8uRj2DAgJkpzIJ8VwbwqtXCN4b9ivpN+68bvKJ+rh4thfwPih+Fslqh8xaIM1TM=,iv:KV/OFAo9M0paSUXpiWpUILfOQGmDEiptXB2B4Diia8c=,tag:giiQT3uu5B8/i4NxrwoB5Q==,type:str]
+    lastmodified: "2026-11-07T09:02:21Z"
+    mac: ENC[AES256_GCM,data:0ibJ7/MdLgSyuDEWqzEYPvdYPqTwcz3FhC9iAYTILE53p21iE8LPE9sUTpp5hE8riX220CXsvLWwwmo3GcnmAQI05TRSh+g7RQnkufckGNhq8WsMAhOGFhyb+oqir+GGEvUrl2+CasfZ5nXjPbXV89YF3BIE1UcO0m7R/q1H1rU=,iv:Xe7H+pjqyXBH5mDTMAmA0M6dA9+DrqWMmVB5Ir5AKNg=,tag:ANlYEBwc+Ob54W7Vc6ty9Q==,type:str]
     unencrypted_suffix: _unencrypted
     version: 3.13.3
