@@ -16,7 +16,7 @@
 ## DDNS
 
 ```bash
-*/5 * * * * cd /home/ubuntu && /usr/bin/docker compose -f compose-ddns.yaml run --rm ddns
+*/5 * * * * cd /home/ubuntu/self-hosted/docker && /usr/bin/docker compose -f compose-ddns.yaml run --rm ddns
 ```
 
 ## Syncthing
