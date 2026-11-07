@@ -5,7 +5,7 @@ kubeGreen: true
 containers:
   - name: redlib
     # repository: quay.io/redlib/redlib
-    repository: ghcr.io/polak14/redlib
+    repository: ghcr.io/nachtalb/redlib
     tag: "latest"
     port: 8080
     livenessProbeScheme: tcp
