@@ -111,17 +111,6 @@ services:
       - /opt/tuwunel/data:/var/lib/tuwunel/
     networks:
       - matrix
-  mautrix-meta: # connect to `metabot`
-    # `start-chat $loginID $userID`
-    image: dock.mau.dev/mautrix/meta:v26.10
-    container_name: mautrix-meta
-    restart: always
-    volumes:
-      - /opt/matrix/mautrix-meta:/data:z
-    depends_on:
-      - tuwunel
-    networks:
-      - matrix
   mautrix-discord:
     # `create-portal $channelID`
     image: dock.mau.dev/mautrix/discord:v0.7.7
