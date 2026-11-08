@@ -1,26 +1,28 @@
-runnerScaleSetName: ENC[AES256_GCM,data:Lg4/jQ==,iv:EzLI4KOB8OUQdHA3nUUOi9zKmb0uf4fvITXvE3g5n8I=,tag:K5KgoyUtzaUBV++aaQw7/A==,type:str]
-githubConfigUrl: ENC[AES256_GCM,data:iFQzhsewOctNL75yiIR9y1jasMiqK37e++hUFQwZNHqgS7MdtW60i04=,iv:3KhnAnJSf7b2S9r7t0wXN6PJHV+8pukUATO5wyjaLv0=,tag:QjUODCWumdHEm8L8Jd7Dag==,type:str]
-githubConfigSecret: ENC[AES256_GCM,data:0aAnCwkY6yHDXWx7MenP,iv:hXt3FEt8I4kZj/5qJ8IFiE6mk8+iQ+AYLfq5xATzyjY=,tag:NybzQS9D+bxsZPa/ZrqiaQ==,type:str]
+runnerScaleSetName: ENC[AES256_GCM,data:RHRXZw==,iv:70f2C8kP2dr+rvBhnJ5aI3tMsJEpsXQtWBvl5IxX/sA=,tag:MlJCZycETFZ3BlvqKHE0SA==,type:str]
+githubConfigUrl: ENC[AES256_GCM,data:1t6fOT1DnwKhSLCuADxYL/18rF1QRw4DBA1lmvSk268xd7XIukiLQ9Y=,iv:RNtHEEqj/FedSbVpECde7wBb8Ag42K+ggViJz5Deyio=,tag:WYlGIu9JikzKVB6j9/PRgQ==,type:str]
+githubConfigSecret: ENC[AES256_GCM,data:HO7Bull9XtCksJd4P2FE,iv:54o+Lauoz5efmm3rAEEkb9Wfv5aZTvfBGqwgoBBLjQ8=,tag:yY+mwb7hQfB6FA+KVpvyDQ==,type:str]
 template:
     spec:
         containers:
             - command:
-                - ENC[AES256_GCM,data:0FG8yErUvSxi+CnYDmjjB5wJTQ==,iv:nYrGlZ8N9OXmoWOi8vF3/WYaWlBCCznikL/piomfUbk=,tag:Bf+2rN4gWm7k1qDahYk9wQ==,type:str]
-              image: ENC[AES256_GCM,data:5gZlO8WwqUWljIABFh0TuE+RlHl/FJqjg/4K7ZHvJPqxCMevfoPs8KjrMPeQ/Q==,iv:q6zBb4Y4g7HW11XKy6fooMeJ0sRVnmCYQPEtvoBhQCM=,tag:GKpgbVok5FPA0GpnHU2rlw==,type:str]
-              name: ENC[AES256_GCM,data:SQlrvuil,iv:ivihZETipYcm+zvPxsxfoEkkM8PhIKPUHiWstqGvgJE=,tag:4lxX7ujmzucaGB1EZ97Ktg==,type:str]
-              imagePullPolicy: ENC[AES256_GCM,data:yPs2rnb+,iv:LNSPOXrtiEccF6Ev5WBl+AAahvbKi6v9hLjvEcei2V4=,tag:Ro8a33YVsbU4OYm+Fvp9zA==,type:str]
+                - ENC[AES256_GCM,data:mkjkUa8UzTt8c8nvLM5Yu2xQwA==,iv:qPhxNHO1siUP3xBBT5En6/b/C2ZbKFptE0T1JUzZ3CI=,tag:wxHMdApvZDKSJakuw42T8w==,type:str]
+              image: ENC[AES256_GCM,data:qv+0AvCMAe2KUU+XUjBMsbYG3uQ7uNYDs+o5Fx2kvIUCNwrIvr8IjSCylhjCig==,iv:3y3o3YNs9nRi9Un2vi5RR8tysv2AbIeRW7l00HByW3w=,tag:n+mQZHp7IpZk6cuocHl/Gw==,type:str]
+              name: ENC[AES256_GCM,data:OIDPFOYo,iv:Nrz9vvUCYpjtBSjMfQPQjc9j280lG+WuJtXRxJ9oFvk=,tag:4HfGTRSnsBWsS/pD69Gw3Q==,type:str]
+              imagePullPolicy: ENC[AES256_GCM,data:RC0lP585,iv:LH9jxHZtG93ZiSsCxuan2+D9yAvEr8JuO+jtNF5APd4=,tag:iRRQM/kz7uKS3wt4MSyXRA==,type:str]
+containerMode:
+    type: ENC[AES256_GCM,data:qUgIyg==,iv:U0gtWzx+2OpHYixdyEELTnmVjBbYnlh0x646E6ICUiM=,tag:EI41k26Xkr8srW5KGDjaWQ==,type:str]
 sops:
     age:
         - enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB5M3crVUNKUFUzREpYZVc3
-            a3M3ckEyL1R4ZkVuZkxMZ3RabW9EMk4wZWxVCmdDdWgwK0c0aWcyU1d5ckF5bW94
-            K0dqeHVYMFZDRDhjcitRTXJLNlVudFkKLS0tIDUxY0JlaUU0cStxdUwyS1d5bmZw
-            RXp6d1p3bTRZTTVVMENuNnpnRktEeGMK0esSqplMiPZwYzmeaehdizBVRb6VSBsB
-            3k1qxto5T97z2hT8Y3m/676t5pVLyo65QfjTurTeKuIDCpPMnnSAVg==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBLbTQvWGVIU1R4N3prR01V
+            T2RIR0dqcjZQVEJiLzIxZ0VVS2VZN2ZmTGxVCnpYdkppWTRKYzl6ZDlxZHhBQlFZ
+            NzRlUXIxNCt3VXJNd2k0SkRpNGVnTDAKLS0tIGNTRlBoUUFzYlpPV2RWTUIvMjNZ
+            UWh6a0t1RWIreDFLZTZ5NEl6NXJBRkUKGDJfryGyPr17fQpGMzU4txhgPLi7htlI
+            TNk7TU27ZG7kSV9n41Su3v0fdBx90RDQAuyDdj+Sq20yd2pF9UXiSQ==
             -----END AGE ENCRYPTED FILE-----
           recipient: age14ke6m4zzfpgpu2herm8cu22wshyalyfkvjp2hjedm34h7wg0ypjss9e3ct
-    lastmodified: "2026-11-08T07:03:54Z"
-    mac: ENC[AES256_GCM,data:xKwLtXVhvdRarmDmORJlwJ2O5qFmzAVl7Xp5DRzQFjxQGTx4wlhj1ZFy0ryNEvgbyS51LcqiulV/rWZZyGXOq9NSTDGcGIAl73TZYQFGaufD2MU52Z39Y8nvUq7090HgZZPJN0QatNeLE91OR7AZhSqvcH+qySlzSPvk48eqdJU=,iv:3xMA2ZzezC2o8ivzwC6NwzNCN9N+uFKihAWeohW2zFs=,tag:98QRhPWMoKD8BNpNWdfP0Q==,type:str]
+    lastmodified: "2026-11-08T07:33:34Z"
+    mac: ENC[AES256_GCM,data:jd3vYTg7aPvHjR/+SBm2a9TRP9LQO9kLKGzDolp5e3SNfdhZnG7asMTarw2ZED5Up3S1+4XVR+Gnp2tuavLKZSQEBnHGREfhWLmfQUBfioNwpdzchjMtiYgOoKzZLbv4zieubEu5S5WQnQWwPSsUKRVI6NtHqyr0A5mD+FefQY4=,iv:590YKJfAPGqzi7ZRqJF2bV+P3rPQb+xLBCTmooFhCn0=,tag:ISbBqBdqh42QfVyccFFqpQ==,type:str]
     unencrypted_suffix: _unencrypted
     version: 3.13.3
