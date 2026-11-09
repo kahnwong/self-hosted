@@ -36,6 +36,23 @@ services:
     restart: always
     networks:
       - warpgate
+  adguardhome:
+    image: adguard/adguardhome:v0.107.80
+    container_name: adguardhome
+    restart: always
+    volumes:
+      - /opt/adguardhome/work:/opt/adguardhome/work
+      - /opt/adguardhome/conf:/opt/adguardhome/conf
+    ports:
+      - 53:53/tcp # DNS
+      - 53:53/udp # DNS
+      - 30080:80/tcp # DNS-over-HTTPS
+      - 30443:443/tcp # DNS-over-HTTPS
+      - 30443:443/udp # DNS-over-HTTPS
+      - 3010:3010/tcp # admin panel - initially set to `3000` then change to `3010` later, it has built-in redirection
+    networks:
+      adguardhome:
+        ipv4_address: 192.168.1.250
   # ---- rustdesk ----
   # # <https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/docker/>
   # # need to open tcp/udp for 21114-21119
@@ -127,6 +144,15 @@ networks:
     driver: bridge
   warpgate:
     driver: bridge
+  adguardhome:
+    driver: macvlan
+    driver_opts:
+      parent: eth0
+    ipam:
+      config:
+        - subnet: 192.168.1.0/24
+          gateway: 192.168.1.1
+          ip_range: 192.168.1.240/28
   rustdesk:
     driver: bridge
   umami:
