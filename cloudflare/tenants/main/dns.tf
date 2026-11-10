@@ -14,7 +14,6 @@ locals {
     "freellmapi",
     "fusion",
     "gist",
-    "ha",
     "invidious",
     "ladder",
     "linkding",
@@ -50,6 +49,7 @@ locals {
     "garage",
     "git",
     "go",
+    "ha",
     "harbor",
     "immich",
     "jellyfin", # https://github.com/jellyfin/jellyfin-media-player/issues/174#issuecomment-1306167299
