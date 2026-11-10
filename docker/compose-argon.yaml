@@ -52,7 +52,7 @@ services:
       - 3010:3010/tcp # admin panel - initially set to `3000` then change to `3010` later, it has built-in redirection
     networks:
       adguardhome:
-        ipv4_address: 192.168.1.250
+        ipv4_address: 192.168.1.74
   # ---- rustdesk ----
   # # <https://rustdesk.com/docs/en/self-host/rustdesk-server-oss/docker/>
   # # need to open tcp/udp for 21114-21119
