@@ -109,36 +109,6 @@ services:
       - 3000:3000
     networks:
       - umami
-  # ---- matrix ----
-  ##
-  # !admin appservices register
-  # ```
-  # # paste yaml here
-  # ```
-  ##
-  tuwunel:
-    image: jevolk/tuwunel:v1.9.4
-    container_name: tuwunel
-    restart: always
-    ports:
-      - 6167:6167
-    env_file:
-      - .env.app.tuwunel
-    volumes:
-      - /opt/tuwunel/data:/var/lib/tuwunel/
-    networks:
-      - matrix
-  mautrix-discord:
-    # `create-portal $channelID`
-    image: dock.mau.dev/mautrix/discord:v0.7.7
-    container_name: mautrix-discord
-    restart: always
-    volumes:
-      - /opt/matrix/mautrix-discord:/data:z
-    depends_on:
-      - tuwunel
-    networks:
-      - matrix
 networks:
   error-pages:
     driver: bridge
@@ -156,6 +126,4 @@ networks:
   rustdesk:
     driver: bridge
   umami:
-    driver: bridge
-  matrix:
     driver: bridge
