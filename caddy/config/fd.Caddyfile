@@ -49,9 +49,6 @@ secrets.karnwong.me {
 sshx.karnwong.me {
     import base 30028
 }
-subsonic-widgets.karnwong.me {
-    import base 30038
-}
 sync.koreader.karnwong.me {
     import base 30066
 }

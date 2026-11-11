@@ -29,7 +29,6 @@ locals {
     "rustpad",
     "secrets",
     "sshx",
-    "subsonic-widgets",
     "thai-tech-cal",
     "todotxt",
     "trmnl",

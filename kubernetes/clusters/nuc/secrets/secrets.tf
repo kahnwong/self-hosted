@@ -38,7 +38,6 @@ locals {
       "qrcode-api",
       "readeck",
       "retrooo",
-      "subsonic-widgets",
       "supersecretmessage-vault",
       "wakapi",
       "weather-api",

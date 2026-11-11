@@ -39,7 +39,6 @@ locals {
       "readeck",
       "retrooo",
       "sshx",
-      "subsonic-widgets",
       "supersecretmessage", "supersecretmessage-vault",
       "todotxt",
       "wabbajack",
