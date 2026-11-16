@@ -4,6 +4,9 @@ metadata:
   name: {{ template "name" . }}
   labels:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+  annotations: # <https://github.com/cloudnative-pg/cloudnative-pg/issues/11343>
+    container.apparmor.security.beta.kubernetes.io/postgres: unconfined
+    container.apparmor.security.beta.kubernetes.io/initdb: unconfined
 spec:
   imageName: {{ .Values.cnpg.image | quote }}
   instances: {{ .Values.cnpg.instances | default 1 }}

@@ -103,7 +103,7 @@ module "cloudnative_pg" {
 
   deployments   = local.deployments_cloudnative_pg
   chart_name    = "cloudnative-pg"
-  chart_version = "0.2.1"
+  chart_version = "0.2.2"
   values_extras = [
     # "./resources/valuesTaintNodeSelector.yaml",
   ]
