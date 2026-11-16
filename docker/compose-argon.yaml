@@ -100,7 +100,7 @@ services:
     networks:
       - umami
   umami:
-    image: ghcr.io/umami-software/umami:3.4.1
+    image: ghcr.io/umami-software/umami:3.5.0
     container_name: umami
     restart: always
     env_file:
