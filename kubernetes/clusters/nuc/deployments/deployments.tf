@@ -21,7 +21,7 @@ locals {
       "dashboard",
       "fava",
       "freellmapi",
-      "fusion",
+      # "fusion",
       "golinks",
       "golinks-anubis",
       "immich",
