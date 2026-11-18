@@ -14,6 +14,7 @@ locals {
     "freellmapi",
     "fusion",
     "gist",
+    "ha",
     "invidious",
     "ladder",
     "linkding",
