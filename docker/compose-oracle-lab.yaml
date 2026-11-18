@@ -1,6 +1,6 @@
 services:
   picoshare:
-    image: "mtlynch/picoshare:v1.5.4"
+    image: "mtlynch/picoshare:v1.5.5"
     container_name: picoshare
     restart: always
     env_file:
