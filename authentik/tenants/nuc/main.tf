@@ -29,7 +29,6 @@ locals {
   application_proxy = toset([
     "bifrost",
     "dashboard",
-    "evcc",
     "freellmapi",
     "ha",
     "invidious",

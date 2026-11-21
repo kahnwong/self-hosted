@@ -44,7 +44,6 @@ locals {
     "api.weather",
     "authentik",
     "cpubench",
-    "evcc",
     "garage",
     "git",
     "go",

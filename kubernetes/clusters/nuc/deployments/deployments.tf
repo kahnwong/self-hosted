@@ -15,7 +15,6 @@ locals {
       "trmnl",
     ]
     services = [
-      "evcc",
       "cloud",
       "cpubench",
       "dashboard",

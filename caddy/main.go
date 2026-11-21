@@ -39,7 +39,6 @@ func main() {
 		},
 		"servicesForwardAuth": {
 			"dashboard": "30053",
-			"evcc":      "30060",
 			"fava":      "30065",
 			"ha":        "8123",
 			"invidious": "3000",
