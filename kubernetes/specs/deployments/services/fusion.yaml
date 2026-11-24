@@ -4,7 +4,7 @@ replicaCount: 1
 containers:
   - name: fusion
     repository: ghcr.io/0x2e/fusion
-    tag: 1.3.0
+    tag: 1.3.2
     port: 8080
     envFrom:
       - secretRef:
